@@ -1,0 +1,123 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+// Load properties file, easier to manage versions of required dependencies
+file "build.properties" withReader {
+    def prop = new Properties()
+    prop.load(it)
+    ext.config = new ConfigSlurper().parse prop
+}
+
+if (System.getenv('VERSION') != null) {
+    version = System.getenv('VERSION')
+} else {
+    version = "1.1.3"
+}
+group = "tnfcmod"
+archivesBaseName = "Technodefirmacraft"
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft {
+    version = "${config.minecraft.version}-${config.forge.version}"
+    runDir = "run"
+    mappings = "stable_39"
+	
+	replace("@VERSION@", project.version)
+	replace("@FINGERPRINT@", project.findProperty("signSHA1"))
+    replaceIn("Technodefirmacraft.java")
+}
+
+repositories {
+    // Repositories required for dependencies, not ForgeGradle go here.
+    mavenCentral()
+    maven {
+        name = "CraftTweaker Maven"
+        url = "https://maven.blamejared.com/"
+    }
+    maven {
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        name = "Hwyla maven"
+        url "http://tehnut.info/maven"
+    }
+    maven { // TOP
+        name 'tterrag maven'
+        url "https://maven.tterrag.com/"
+    }
+    maven {
+        name = "CoFH Maven"
+        url = "https://maven.covers1624.net/"
+    }
+}
+
+String mcVersion = config.minecraft.version
+String shortVersion = mcVersion.substring(0, mcVersion.lastIndexOf('.'))
+String strippedVersion = shortVersion.replace(".", "") + "0"
+
+dependencies {
+    deobfProvided "CraftTweaker2:CraftTweaker2-MC${strippedVersion}-Main:${config.crafttweaker.version}"
+    deobfCompile "mezz.jei:jei_${config.minecraft.version}:${config.jei.version}"
+    compileOnly "mcp.mobius.waila:Hwyla:${config.HWYLA.version}_${config.minecraft.version}"
+    compileOnly "mcjty.theoneprobe:TheOneProbe-${shortVersion}:${config.TOP.version}"
+    compile fileTree(include: ["*.jar"], dir: "libs")
+}
+
+processResources {
+    // this will ensure that this task is redone when the versions change.
+   // this will ensure that this task is redone when the versions change.
+    inputs.property "version", config.version
+    inputs.property "mcversion", config.minecraft.version
+
+ 
+    // replace stuff in mcmod.info, nothing else
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+                
+        // replace version and mcversion variables/placeholders
+        expand "mod_version": version, "mc_version": config.minecraft.version
+    }
+        
+    // copy everything else except the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+	
+	// from the project root, include the LICENSE file
+    from('.') {
+        include "LICENSE.txt"
+    }
+}
+
+project.tasks.withType(Jar) { jarTask -> // For all jar tasks
+    jarTask.appendix = "MC" + project.minecraft.version
+}
+
+task signJar(type: SignJar, dependsOn: reobfJar) {
+    onlyIf { // Skip the task if our secret data isn't available
+        project.hasProperty('keyStore')
+    }
+
+    keyStore = project.findProperty('keyStore')
+    alias = project.findProperty('keyStoreAlias')
+    storePass = project.findProperty('keyStorePass')
+    keyPass = project.findProperty('keyStoreKeyPass')
+    inputFile = jar.archivePath
+    outputFile = jar.archivePath
+}
+
+build.dependsOn signJar

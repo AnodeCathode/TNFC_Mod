@@ -1,0 +1,13 @@
+[
+  {
+    "modid": "tnfcmod",
+    "name": "Technodefirmacraft",
+    "description": "Adds bits for TNFC modpack",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "authorList": [
+      "AnodeCathode"
+    ],
+    "credits": "The TFC dev team for this awesome mod."
+  }
+]
