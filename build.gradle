@@ -36,7 +36,7 @@ minecraft {
 	
 	replace("@VERSION@", project.version)
 	replace("@FINGERPRINT@", project.findProperty("signSHA1"))
-    replaceIn("Technodefirmacraft.java")
+    replaceIn("tnfcmod.java")
 }
 
 repositories {
@@ -79,29 +79,30 @@ dependencies {
 
 processResources {
     // this will ensure that this task is redone when the versions change.
-   // this will ensure that this task is redone when the versions change.
     inputs.property "version", config.version
-    inputs.property "mcversion", config.minecraft.version
+    inputs.property "mc_version", config.minecraft.version
 
- 
-    // replace stuff in mcmod.info, nothing else
+    // copy mcmod.info from resources
     from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-                
+        include "mcmod.info"
+
         // replace version and mcversion variables/placeholders
         expand "mod_version": version, "mc_version": config.minecraft.version
     }
-        
-    // copy everything else except the mcmod.info
+
+    // copy everything else from resources
     from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+        exclude "mcmod.info"
     }
-	
-	// from the project root, include the LICENSE file
+
+    // from the project root, include the LICENSE file
     from('.') {
         include "LICENSE.txt"
     }
+
+
 }
+
 
 project.tasks.withType(Jar) { jarTask -> // For all jar tasks
     jarTask.appendix = "MC" + project.minecraft.version

@@ -3,8 +3,8 @@
     "modid": "tnfcmod",
     "name": "Technodefirmacraft",
     "description": "Adds bits for TNFC modpack",
-    "version": "${version}",
-    "mcversion": "${mcversion}",
+    "version": "${mod_version}",
+    "mcversion": "${mc_version}",
     "authorList": [
       "AnodeCathode"
     ],
