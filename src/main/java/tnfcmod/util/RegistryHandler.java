@@ -141,6 +141,7 @@ public final class RegistryHandler
     public static void registerItems(ModelRegistryEvent event)
     {
         TNFCItems.registerModels();
+        //TODO: Register OreDic stuff here too
     }
 
     /**
