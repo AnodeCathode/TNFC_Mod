@@ -63,6 +63,22 @@ repositories {
         name = "CoFH Maven"
         url = "https://maven.covers1624.net/"
     }
+        maven {
+        name = "ChickenBones Maven"
+        url = "http://chickenbones.net/maven/"
+    }
+    maven {
+        name = "Covers Maven"
+        url = "http://maven.covers1624.net"
+    }
+    maven { // ModMaven, there is a bunch of stuff on there
+        name 'ModMaven'
+        url "http://modmaven.k-4u.nl/"
+    }
+    maven { // Shadowfacts - Forgelin
+        name 'Shadowfacts'
+        url "http://maven.shadowfacts.net/"
+    }
 }
 
 String mcVersion = config.minecraft.version
@@ -73,7 +89,13 @@ dependencies {
     deobfProvided "CraftTweaker2:CraftTweaker2-MC${strippedVersion}-Main:${config.crafttweaker.version}"
     deobfCompile "mezz.jei:jei_${config.minecraft.version}:${config.jei.version}"
     compileOnly "mcp.mobius.waila:Hwyla:${config.HWYLA.version}_${config.minecraft.version}"
-    compileOnly "mcjty.theoneprobe:TheOneProbe-${shortVersion}:${config.TOP.version}"
+    compile "mcjty.theoneprobe:TheOneProbe-${shortVersion}:${config.TOP.version}"
+    deobfCompile("betterwithmods:BetterWithMods:1.12-2.1.+") {
+        // exclude group: 'mezz.jei'
+    }
+    deobfCompile("blusunrize:ImmersiveEngineering:+") {
+        // exclude group: 'mezz.jei'
+    }
     compile fileTree(include: ["*.jar"], dir: "libs")
 }
 

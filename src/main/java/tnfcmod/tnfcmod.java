@@ -21,13 +21,13 @@ import tnfcmod.proxy.CommonProxy;
 
 
 @SuppressWarnings("WeakerAccess")
-@Mod(modid = tnfcmod.MODID, name = tnfcmod.NAME, version = tnfcmod.VERSION, dependencies = "required-after:tfc", certificateFingerprint = tnfcmod.SIGNING_KEY)
+@Mod(modid = tnfcmod.MODID, name = tnfcmod.NAME, version = tnfcmod.VERSION, dependencies = "required-after:tfc")
 public class tnfcmod
 {
     public static final String MODID = "tnfcmod";
     public static final String NAME = "Technodefirmacraft";
     public static final String VERSION = "@VERSION@";
-    public static final String SIGNING_KEY = "@FINGERPRINT@";
+
 
     private static Logger logger;
     private static final boolean signedBuild = true;
@@ -42,23 +42,13 @@ public class tnfcmod
     public static CommonProxy proxy;
 
 
-    @EventHandler
-    public void onFingerprintViolation(FMLFingerprintViolationEvent event)
-    {
-        /*if (!event.isDirectory())
-        {
-            signedBuild = false; // todo disabled for the time being
-        }*/
-    }
+
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
-        if (!signedBuild)
-        {
-            logger.error("INVALID FINGERPRINT DETECTED! This means this jar file has been compromised and are not supported.");
-        }
+
     }
 
     @EventHandler
@@ -69,6 +59,7 @@ public class tnfcmod
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
+        proxy.postInit(event);
     }
 
 

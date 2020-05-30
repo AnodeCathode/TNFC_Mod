@@ -1,6 +1,7 @@
 package tnfcmod.util;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -16,9 +17,12 @@ import net.dries007.tfc.api.recipes.knapping.KnappingRecipe;
 import net.dries007.tfc.api.registries.TFCRegistryEvent;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.api.types.Ore;
+import tnfcmod.Recipes.IERecipes;
 import tnfcmod.Recipes.TNFCRecipes;
 import tnfcmod.objects.items.TNFCItems;
 import tnfcmod.tnfcmod;
+
+import static tnfcmod.Recipes.IERecipes.registerMetalPressRecipes;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @Mod.EventBusSubscriber(modid = tnfcmod.MODID)
@@ -153,6 +157,12 @@ public final class RegistryHandler
         TNFCRecipes.registerKnapping(event);
     }
 
+
+    @SubscribeEvent
+    public static void registerRecipes(RegistryEvent.Register<IRecipe> event)
+    {
+        registerMetalPressRecipes();
+    }
     @SubscribeEvent
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
 //        ResourceLocation soundID = new ResourceLocation(MOD_ID, "item.flaskbreak");
