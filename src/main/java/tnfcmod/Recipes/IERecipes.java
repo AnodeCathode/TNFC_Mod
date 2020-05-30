@@ -4,12 +4,17 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 
+import blusunrize.immersiveengineering.api.crafting.CrusherRecipe;
 import blusunrize.immersiveengineering.api.crafting.MetalPressRecipe;
 import blusunrize.immersiveengineering.common.IEContent;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.Metal;
+import net.dries007.tfc.api.types.Ore;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
+import net.dries007.tfc.objects.items.metal.ItemOreTFC;
 import tnfcmod.objects.items.TNFCItems;
+
+import static net.dries007.tfc.api.types.Metal.ItemType.DUST;
 
 
 public class IERecipes
@@ -64,7 +69,7 @@ public class IERecipes
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SAW_BLADE), 1), ingredientIngot, new ItemStack(TNFCItems.mold_saw), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SCYTHE_BLADE), 1), ingredientIngot, new ItemStack(TNFCItems.mold_scythe), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHEARS), 1), ingredientKnives, new ItemStack(TNFCItems.mold_shears), 2400).setInputSize(2);
-                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHOVEL_HEAD), 1), ingredientKnives, new ItemStack(TNFCItems.mold_shovel), 2400).setInputSize(2);
+                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHOVEL_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_shovel), 2400).setInputSize(2);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SWORD_BLADE), 1), ingredientDoubleIngot, new ItemStack(TNFCItems.mold_sword), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.TUYERE), 1), ingredientDoubleSheet, new ItemStack(TNFCItems.mold_tuyere), 2400).setInputSize(2);
                 if (metal == Metal.RED_STEEL | metal == Metal.BLUE_STEEL)
@@ -76,6 +81,34 @@ public class IERecipes
 
         }
     }
+    public static void registerCrusherRecipes(){
+        for (Metal metal : TFCRegistries.METALS.getValuesCollection())
+        {
 
+            if (DUST.hasType(metal)){
+               Ingredient ingredientIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
+               CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST),1), ingredientIngot, 4000);
+            }
+            if (Metal.ItemType.SCRAP.hasType(metal) && DUST.hasType(metal)){
+               Ingredient ingredientScrap = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SCRAP)));
+               CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST),1), ingredientScrap, 4000);
+               //Do we want to be able to crush tools/armour/etc to scrap?
+
+            }
+        }
+        for (Ore ore : TFCRegistries.ORES.getValuesCollection())
+        {
+            if (ore.canMelt())
+            {
+                Metal metal = ore.getMetal();
+                if (Metal.ItemType.DUST.hasType(metal))
+                {
+                    Ingredient ingredientOre = Ingredient.fromStacks(new ItemStack(ItemOreTFC.get(ore)));
+                    CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 1), ingredientOre, 4000);
+                }
+            }
+        }
+
+    }
 
 }

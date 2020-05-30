@@ -17,11 +17,12 @@ import net.dries007.tfc.api.recipes.knapping.KnappingRecipe;
 import net.dries007.tfc.api.registries.TFCRegistryEvent;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.api.types.Ore;
-import tnfcmod.Recipes.IERecipes;
+
 import tnfcmod.Recipes.TNFCRecipes;
 import tnfcmod.objects.items.TNFCItems;
 import tnfcmod.tnfcmod;
 
+import static tnfcmod.Recipes.IERecipes.registerCrusherRecipes;
 import static tnfcmod.Recipes.IERecipes.registerMetalPressRecipes;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -136,6 +137,7 @@ public final class RegistryHandler
     public static void addItems(RegistryEvent.Register<Item> event)
     {
         TNFCItems.register(event.getRegistry());
+        //oredic registries?
     }
 
     /**
@@ -145,7 +147,7 @@ public final class RegistryHandler
     public static void registerItems(ModelRegistryEvent event)
     {
         TNFCItems.registerModels();
-        //TODO: Register OreDic stuff here too
+
     }
 
     /**
@@ -162,6 +164,7 @@ public final class RegistryHandler
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event)
     {
         registerMetalPressRecipes();
+        registerCrusherRecipes();
     }
     @SubscribeEvent
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
