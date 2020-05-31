@@ -5,12 +5,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import javax.annotation.Nullable;
 
-import net.minecraft.block.Block;
+import com.google.common.collect.Lists;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
@@ -28,13 +27,17 @@ import blusunrize.immersiveengineering.api.crafting.IngredientStack;
 import blusunrize.immersiveengineering.api.crafting.MetalPressRecipe;
 import blusunrize.immersiveengineering.api.tool.BelljarHandler;
 import blusunrize.immersiveengineering.common.IEContent;
+import blusunrize.immersiveengineering.common.blocks.plant.BlockIECrop;
 import net.dries007.tfc.api.recipes.quern.QuernRecipe;
 import net.dries007.tfc.api.registries.TFCRegistries;
+import net.dries007.tfc.api.types.ICrop;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.api.types.Ore;
+import net.dries007.tfc.api.types.Rock;
 import net.dries007.tfc.objects.Powder;
+import net.dries007.tfc.objects.blocks.BlocksTFC;
 import net.dries007.tfc.objects.blocks.agriculture.BlockCropSimple;
-import net.dries007.tfc.objects.blocks.stone.BlockRockVariant;
+import net.dries007.tfc.objects.blocks.agriculture.BlockCropTFC;
 import net.dries007.tfc.objects.fluids.FluidsTFC;
 import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
 import net.dries007.tfc.objects.items.ItemPowder;
@@ -50,10 +53,151 @@ import static net.dries007.tfc.api.types.Metal.ItemType.DUST;
 
 public class IERecipes
 {
+    private static final DefaultPlantHandler tfcBelljarHandler = new DefaultPlantHandler()
+    {
+        private HashMap<ComparableItemStack, IngredientStack> seedSoilMap = new HashMap();
+        private HashMap<ComparableItemStack, ItemStack[]> seedOutputMap = new HashMap();
+        private HashMap<ComparableItemStack, IBlockState[]> seedRenderMap = new HashMap();
+        private HashSet<ComparableItemStack> validSeeds = new HashSet<>();
+
+        @Override
+        @SideOnly(Side.CLIENT)
+        public float getRenderSize(ItemStack seed, ItemStack soil, float growth, TileEntity tile)
+        {
+            return .6675f;
+        }
+
+        @Override
+        protected HashSet<ComparableItemStack> getSeedSet() {return validSeeds;}
+
+        @Override
+        public boolean isValid(ItemStack seed)
+        {
+            return seed != null && this.getSeedSet().contains(new ComparableItemStack(seed, false, false));
+        }
+
+        @Override
+        public boolean isCorrectSoil(final ItemStack seed, final ItemStack soil)
+        {
+            IngredientStack reqSoil = (IngredientStack) this.seedSoilMap.get(new ComparableItemStack(seed, false, false));
+            return reqSoil.matchesItemStack(soil);
+        }
+
+        @Override
+        public ItemStack[] getOutput(ItemStack seed, ItemStack soil, TileEntity tile)
+        {
+            return (ItemStack[]) this.seedOutputMap.get(new ComparableItemStack(seed, false, false));
+        }
+
+        @Override
+        @SideOnly(Side.CLIENT)
+        public IBlockState[] getRenderedPlant(ItemStack seed, ItemStack soil, float growth, TileEntity tile)
+        {
+            // Will need to handle vanilla crops? IE Hemp in particular
+            IBlockState[] states = (IBlockState[]) this.seedRenderMap.get(new ComparableItemStack(seed, false, false));
+            //IBlockState[] states = null;
+            if (states == null)
+            {
+                return null;
+            }
+            else
+            {
+                IBlockState[] ret = new IBlockState[states.length];
+
+                label58:
+                for (int i = 0; i < states.length; ++i)
+                {
+                    if (states[i] != null)
+                    {
+                        if (states[i].getBlock() instanceof BlockCrops)
+                        {
+                            int max = ((BlockCrops) states[i].getBlock()).getMaxAge();
+                            ret[i] = ((BlockCrops) states[i].getBlock()).withAge(Math.min(max, Math.round((float) max * growth)));
+                        }
+                        else if (states[i].getBlock() instanceof BlockCropTFC)
+                        {
+                            BlockCropTFC bs = (BlockCropTFC) states[i].getBlock();
+                            ICrop crop = bs.getCrop();
+                            int curStage = states[i].getValue(bs.getStageProperty());
+                            int maxStage = crop.getMaxStage();
+                            int age = Math.min(maxStage, Math.round(growth * maxStage));
+                            return new IBlockState[] {states[i].getBlock().getStateFromMeta(age)};
+
+
+                        }
+                        //IE Block
+                        else if (states[i].getBlock() instanceof BlockIECrop)
+                        {
+                            int age = Math.min(4, Math.round(growth * 4));
+                            if (age == 4)
+                                return new IBlockState[] {states[i].getBlock().getStateFromMeta(age), states[i].getBlock().getStateFromMeta(age + 1)};
+                            return new IBlockState[] {states[i].getBlock().getStateFromMeta(age)};
+                        }
+                        else
+                        {
+                            Iterator var8 = states[i].getPropertyKeys().iterator();
+
+                            while (true)
+                            {
+                                IProperty prop;
+                                do
+                                {
+                                    do
+                                    {
+                                        if (!var8.hasNext())
+                                        {
+                                            if (ret[i] == null)
+                                            {
+                                                ret[i] = states[i];
+                                            }
+                                            continue label58;
+                                        }
+
+                                        prop = (IProperty) var8.next();
+                                    } while (!"age".equals(prop.getName()));
+                                } while (!(prop instanceof PropertyInteger));
+
+                                int maxx = 0;
+                                Iterator var11 = ((PropertyInteger) prop).getAllowedValues().iterator();
+
+                                while (var11.hasNext())
+                                {
+                                    Integer allowed = (Integer) var11.next();
+                                    if (allowed != null && allowed > maxx)
+                                    {
+                                        maxx = allowed;
+                                    }
+                                }
+
+                                ret[i] = states[i].withProperty(prop, Math.min(maxx, Math.round((float) maxx * growth)));
+                            }
+                        }
+                    }
+                }
+
+                return ret;
+            }
+        }
+
+        @Override
+        public void register(ItemStack seed, ItemStack[] output, Object soil, IBlockState... render)
+        {
+            this.register(seed, output, ApiUtils.createIngredientStack(soil), render);
+        }
+
+        public void register(ItemStack seed, ItemStack[] output, IngredientStack soil, IBlockState... render)
+        {
+            ComparableItemStack comp = new ComparableItemStack(seed, false, false);
+            this.getSeedSet().add(comp);
+            this.seedSoilMap.put(comp, soil);
+            this.seedOutputMap.put(comp, output);
+            this.seedRenderMap.put(comp, render);
+
+        }
+    };
+
     public static void registerMetalPressRecipes()
     {
-
-
         //Mold recipes
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_blank, 1), "sheetDoubleSteel", new ItemStack(IEContent.blockStorage, 1, 8), 2400);
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_doubleingot, 1), "ingotDoubleSteel", new ItemStack(TNFCItems.mold_blank, 1), 2400);
@@ -179,25 +323,45 @@ public class IERecipes
 
     public static void registerGardenClocheRecipes()
     {
+
+        java.util.List<ItemStack> soils = Lists.newArrayList();
         BelljarHandler.registerHandler(tfcBelljarHandler);
+        BlocksTFC.getAllBlockRockVariants().forEach(x ->
+        {
+            if (x.getType() == Rock.Type.DIRT || x.getType() == Rock.Type.GRASS || x.getType() == Rock.Type.FARMLAND)
+            {
+                soils.add(new ItemStack(x, 1));
+            }
+        });
+
 
         for (Crop crop : Crop.values())
         {
-
-            tfcBelljarHandler.register(ItemSeedsTFC.get(crop, 1), new ItemStack[] {new ItemStack(ItemSeedsTFC.get(crop), 1), crop.getFoodDrop(crop.getMaxStage())}, new ItemStack(Blocks.DIRT), BlockCropSimple.get(crop).getDefaultState());
+            tfcBelljarHandler.register(ItemSeedsTFC.get(crop, 1), new ItemStack[] {new ItemStack(ItemSeedsTFC.get(crop), 1), crop.getFoodDrop(crop.getMaxStage())}, soils, BlockCropSimple.get(crop).getDefaultState());
         }
+        //Hopefully this takes over from the built in handler for hemp and lets it work with Fresh_water and... stuff. Not caring enough to build it's own entire separate handler ffs
+        tfcBelljarHandler.register(new ItemStack(IEContent.itemSeeds, 1), new ItemStack[] {new ItemStack(IEContent.itemMaterial, 4, 4), new ItemStack(IEContent.itemSeeds, 1)}, soils, IEContent.blockCrop.getDefaultState());
         registerFluidFertilizer(new FluidFertilizerHandler()
         {
             @Override
             public boolean isValid(@Nullable FluidStack fertilizer)
             {
-                return fertilizer != null && fertilizer.getFluid() == FluidsTFC.FRESH_WATER.get();
+                return fertilizer != null && (fertilizer.getFluid() == FluidsTFC.FRESH_WATER.get() || fertilizer.getFluid() == FluidsTFC.HOT_WATER.get());
             }
 
             @Override
-            public float getGrowthMultiplier(FluidStack fluidStack, ItemStack itemStack, ItemStack itemStack1, TileEntity tileEntity)
+            public float getGrowthMultiplier(FluidStack fertilizer, ItemStack itemStack, ItemStack itemStack1, TileEntity tileEntity)
             {
-                return 1;
+                if (fertilizer.getFluid() == FluidsTFC.FRESH_WATER.get())
+                {
+                    return 1f;
+                }
+                else if (fertilizer.getFluid() == FluidsTFC.HOT_WATER.get())
+                {
+                    return 2f;
+                }
+                return 0f;
+
             }
         });
         registerItemFertilizer(new ItemFertilizerHandler()
@@ -213,135 +377,11 @@ public class IERecipes
             @Override
             public float getGrowthMultiplier(ItemStack itemStack, ItemStack itemStack1, ItemStack itemStack2, TileEntity tileEntity)
             {
-                return 2.5f;
+                return 1.2f;
             }
         });
 
     }
-
-    private static final DefaultPlantHandler tfcBelljarHandler = new DefaultPlantHandler()
-    {
-        private HashMap<ComparableItemStack, IngredientStack> seedSoilMap = new HashMap();
-        private HashMap<ComparableItemStack, ItemStack[]> seedOutputMap = new HashMap();
-        private HashMap<ComparableItemStack, IBlockState[]> seedRenderMap = new HashMap();
-
-
-        @Override
-        public void register(ItemStack seed, ItemStack[] output, Object soil, IBlockState... render)
-        {
-            this.register(seed, output, ApiUtils.createIngredientStack(soil), render);
-        }
-
-        public void register(ItemStack seed, ItemStack[] output, IngredientStack soil, IBlockState... render)
-        {
-            ComparableItemStack comp = new ComparableItemStack(seed, false, false);
-            this.getSeedSet().add(comp);
-            this.seedSoilMap.put(comp, soil);
-            this.seedOutputMap.put(comp, output);
-            this.seedRenderMap.put(comp, render);
-        }
-
-        @Override
-        public ItemStack[] getOutput(ItemStack seed, ItemStack soil, TileEntity tile)
-        {
-            return (ItemStack[]) this.seedOutputMap.get(new ComparableItemStack(seed, false, false));
-        }
-
-
-        private HashSet<ComparableItemStack> validSeeds = new HashSet<>();
-
-        @Override
-        protected HashSet<ComparableItemStack> getSeedSet() {return validSeeds;}
-
-
-        @Override
-        public boolean isValid(ItemStack seed)
-        {
-            return seed != null && this.getSeedSet().contains(new ComparableItemStack(seed, false, false));
-        }
-
-        @Override
-        public boolean isCorrectSoil(final ItemStack seed, final ItemStack soil)
-        {
-
-            if (Block.getBlockFromItem(soil.getItem()) instanceof BlockRockVariant)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        @Override
-        @SideOnly(Side.CLIENT)
-        public IBlockState[] getRenderedPlant(ItemStack seed, ItemStack soil, float growth, TileEntity tile)
-        {
-
-            IBlockState[] states = (IBlockState[]) this.seedRenderMap.get(new ComparableItemStack(seed, false, false));
-            //IBlockState[] states = null;
-            if (states == null)
-            {
-                return null;
-            }
-            else
-            {
-                IBlockState[] ret = new IBlockState[states.length];
-
-                label58:
-                for (int i = 0; i < states.length; ++i)
-                {
-                    if (states[i] != null)
-                    {
-                        if (states[i].getBlock() instanceof BlockCrops)
-                        {
-                            int max = ((BlockCrops) states[i].getBlock()).getMaxAge();
-                            ret[i] = ((BlockCrops) states[i].getBlock()).withAge(Math.min(max, Math.round((float) max * growth)));
-                        }
-                        else
-                        {
-                            Iterator var8 = states[i].getPropertyKeys().iterator();
-
-                            while (true)
-                            {
-                                IProperty prop;
-                                do
-                                {
-                                    do
-                                    {
-                                        if (!var8.hasNext())
-                                        {
-                                            if (ret[i] == null)
-                                            {
-                                                ret[i] = states[i];
-                                            }
-                                            continue label58;
-                                        }
-
-                                        prop = (IProperty) var8.next();
-                                    } while (!"age".equals(prop.getName()));
-                                } while (!(prop instanceof PropertyInteger));
-
-                                int maxx = 0;
-                                Iterator var11 = ((PropertyInteger) prop).getAllowedValues().iterator();
-
-                                while (var11.hasNext())
-                                {
-                                    Integer allowed = (Integer) var11.next();
-                                    if (allowed != null && allowed > maxx)
-                                    {
-                                        maxx = allowed;
-                                    }
-                                }
-
-                                ret[i] = states[i].withProperty(prop, Math.min(maxx, Math.round((float) maxx * growth)));
-                            }
-                        }
-                    }
-                }
-
-                return ret;
-            }
-        }
-    };
 
 
 
