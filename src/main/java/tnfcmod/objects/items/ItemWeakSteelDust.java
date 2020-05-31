@@ -3,7 +3,6 @@ package tnfcmod.objects.items;
 import javax.annotation.Nonnull;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import net.dries007.tfc.api.capability.size.Size;
@@ -13,11 +12,12 @@ import tnfcmod.tnfcmod;
 
 import static tnfcmod.tnfcmod.MODID;
 
-public class IEMetalPressMold extends ItemTFC
+public class ItemWeakSteelDust extends ItemTFC
 {
+
     protected String name;
 
-    public IEMetalPressMold(String name)
+    public ItemWeakSteelDust(String name)
     {
         this.name = name;
         setTranslationKey(MODID + "." + name);
@@ -29,23 +29,23 @@ public class IEMetalPressMold extends ItemTFC
 
         tnfcmod.proxy.registerItemRenderer(this, 0, name);
     }
+
     @Override
-    public IEMetalPressMold setCreativeTab(CreativeTabs tab) {
+    public ItemWeakSteelDust setCreativeTab(CreativeTabs tab) {
         super.setCreativeTab(tab);
         return this;
     }
-
     @Nonnull
     @Override
     public Size getSize(@Nonnull ItemStack itemStack)
     {
-        return Size.SMALL;
+        return Size.TINY;
     }
 
     @Nonnull
     @Override
     public Weight getWeight(@Nonnull ItemStack itemStack)
     {
-        return Weight.LIGHT;
+        return Weight.VERY_LIGHT;
     }
 }

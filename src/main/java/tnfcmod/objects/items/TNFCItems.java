@@ -32,40 +32,41 @@ public class TNFCItems
     public static IEMetalPressMold mold_sword = new IEMetalPressMold("mold_sword").setCreativeTab(CT_MISC);
     public static IEMetalPressMold mold_tuyere = new IEMetalPressMold("mold_tuyere").setCreativeTab(CT_MISC);
 
-
-
+    // You moved the headstones but left the textures? What?!?
+    public static ItemWeakSteelDust weak_steel_dust = new ItemWeakSteelDust("weak_steel_dust").setCreativeTab(CT_MISC);
+    public static ItemWeakSteelDust weak_red_steel_dust = new ItemWeakSteelDust("weak_red_steel_dust").setCreativeTab(CT_MISC);
+    public static ItemWeakSteelDust weak_blue_steel_dust = new ItemWeakSteelDust("weak_blue_steel_dust").setCreativeTab(CT_MISC);
 
 
      public static void register(IForgeRegistry<Item> registry) {
 
-            registry.register(backpackpiece);
-            registry.register(backpackframe);
-            registry.register(mold_axe);
-            registry.register(mold_blank);
-            registry.register(mold_block);
-            registry.register(mold_bucket);
-            registry.register(mold_chisel);
-            registry.register(mold_doubleingot);
-            registry.register(mold_hammer);
-            registry.register(mold_hoe);
-            registry.register(mold_hopper);
-            registry.register(mold_javelin);
-            registry.register(mold_knife);
-            registry.register(mold_lamp);
-            registry.register(mold_mace);
-            registry.register(mold_pick);
-            registry.register(mold_propick);
-            registry.register(mold_saw);
-            registry.register(mold_scythe);
-            registry.register(mold_shears);
-            registry.register(mold_sheet);
-            registry.register(mold_shovel);
-            registry.register(mold_sword);
-            registry.register(mold_tuyere);
-
-
-
-
+        registry.register(backpackpiece);
+        registry.register(backpackframe);
+        registry.register(mold_axe);
+        registry.register(mold_blank);
+        registry.register(mold_block);
+        registry.register(mold_bucket);
+        registry.register(mold_chisel);
+        registry.register(mold_doubleingot);
+        registry.register(mold_hammer);
+        registry.register(mold_hoe);
+        registry.register(mold_hopper);
+        registry.register(mold_javelin);
+        registry.register(mold_knife);
+        registry.register(mold_lamp);
+        registry.register(mold_mace);
+        registry.register(mold_pick);
+        registry.register(mold_propick);
+        registry.register(mold_saw);
+        registry.register(mold_scythe);
+        registry.register(mold_shears);
+        registry.register(mold_sheet);
+        registry.register(mold_shovel);
+        registry.register(mold_sword);
+        registry.register(mold_tuyere);
+        registry.register(weak_steel_dust);
+        registry.register(weak_red_steel_dust);
+        registry.register(weak_blue_steel_dust);
 
     }
 
@@ -95,5 +96,9 @@ public class TNFCItems
         mold_shovel.registerItemModel();
         mold_sword.registerItemModel();
         mold_tuyere.registerItemModel();
+        weak_steel_dust.registerItemModel();
+        weak_red_steel_dust.registerItemModel();
+        weak_blue_steel_dust.registerItemModel();
+
     }
 }

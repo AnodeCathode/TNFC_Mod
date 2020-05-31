@@ -219,7 +219,7 @@ public class VanillaRecipes
        modRegistry.remove(new ResourceLocation("minecraft:sandstone_slab"));
        modRegistry.remove(new ResourceLocation("minecraft:sandstone_stairs"));
        modRegistry.remove(new ResourceLocation("minecraft:sea_lantern"));
-       modRegistry.remove(new ResourceLocation("minecraft:shears"));
+
        modRegistry.remove(new ResourceLocation("minecraft:shield"));
        modRegistry.remove(new ResourceLocation("minecraft:slime"));
        modRegistry.remove(new ResourceLocation("minecraft:slime_ball"));
@@ -316,6 +316,7 @@ public class VanillaRecipes
        modRegistry.remove(new ResourceLocation("minecraft:redstone_lamp"));
        modRegistry.remove(new ResourceLocation("minecraft:redstone_repeater"));
        modRegistry.remove(new ResourceLocation("minecraft:steel_hopper"));
+       modRegistry.remove(new ResourceLocation("minecraft:shears"));
  
    }
 }

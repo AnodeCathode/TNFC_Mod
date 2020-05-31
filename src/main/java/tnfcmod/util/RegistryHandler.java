@@ -170,7 +170,7 @@ public final class RegistryHandler
         registerMetalPressRecipes();
         registerCrusherRecipes();
         registerGardenClocheRecipes();
-     
+
     }
     @SubscribeEvent
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
