@@ -18,6 +18,7 @@ import net.dries007.tfc.api.registries.TFCRegistryEvent;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.api.types.Ore;
 
+import tnfcmod.Recipes.OreDicEntries;
 import tnfcmod.Recipes.TNFCRecipes;
 import tnfcmod.objects.items.TNFCItems;
 import tnfcmod.tnfcmod;
@@ -138,7 +139,7 @@ public final class RegistryHandler
     public static void addItems(RegistryEvent.Register<Item> event)
     {
         TNFCItems.register(event.getRegistry());
-        //oredic registries?
+        OreDicEntries.init();
     }
 
     /**
