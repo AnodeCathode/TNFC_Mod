@@ -1,19 +1,50 @@
 package tnfcmod.Recipes;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import javax.annotation.Nullable;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockCrops;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.NonNullList;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
+import blusunrize.immersiveengineering.api.ApiUtils;
+import blusunrize.immersiveengineering.api.ComparableItemStack;
 import blusunrize.immersiveengineering.api.crafting.CrusherRecipe;
+import blusunrize.immersiveengineering.api.crafting.IngredientStack;
 import blusunrize.immersiveengineering.api.crafting.MetalPressRecipe;
+import blusunrize.immersiveengineering.api.tool.BelljarHandler;
 import blusunrize.immersiveengineering.common.IEContent;
+import net.dries007.tfc.api.recipes.quern.QuernRecipe;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.api.types.Ore;
+import net.dries007.tfc.objects.Powder;
+import net.dries007.tfc.objects.blocks.agriculture.BlockCropSimple;
+import net.dries007.tfc.objects.blocks.stone.BlockRockVariant;
+import net.dries007.tfc.objects.fluids.FluidsTFC;
+import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
+import net.dries007.tfc.objects.items.ItemPowder;
+import net.dries007.tfc.objects.items.ItemSeedsTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
 import net.dries007.tfc.objects.items.metal.ItemOreTFC;
+import net.dries007.tfc.util.agriculture.Crop;
 import tnfcmod.objects.items.TNFCItems;
 
+import static blusunrize.immersiveengineering.api.tool.BelljarHandler.*;
 import static net.dries007.tfc.api.types.Metal.ItemType.DUST;
 
 
@@ -81,19 +112,29 @@ public class IERecipes
 
         }
     }
+
     public static void registerCrusherRecipes(){
+
+
         for (Metal metal : TFCRegistries.METALS.getValuesCollection())
         {
-
+            //Basic ingot to dust
             if (DUST.hasType(metal)){
-               Ingredient ingredientIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
-               CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST),1), ingredientIngot, 4000);
+                Ingredient ingredientIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
+                CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 1), ingredientIngot, 8000);
             }
+            //Turn scrap into dust. Now to decide what turns into scrap.
             if (Metal.ItemType.SCRAP.hasType(metal) && DUST.hasType(metal)){
-               Ingredient ingredientScrap = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SCRAP)));
-               CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST),1), ingredientScrap, 4000);
-               //Do we want to be able to crush tools/armour/etc to scrap?
+                Ingredient ingredientScrap = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SCRAP)));
+                CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 1), ingredientScrap, 8000);
+                //Do we want to be able to crush tools/armour/etc to scrap?
 
+            }
+            //Throw your used anvils in the grinder for a satisfying crunch
+            if (Metal.ItemType.ANVIL.hasType(metal) && DUST.hasType(metal))
+            {
+                Ingredient ingredientAnvil = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.ANVIL)));
+                CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 14), ingredientAnvil, 112000);
             }
         }
         for (Ore ore : TFCRegistries.ORES.getValuesCollection())
@@ -101,14 +142,207 @@ public class IERecipes
             if (ore.canMelt())
             {
                 Metal metal = ore.getMetal();
+                // need to check grading and return different amounts.
                 if (Metal.ItemType.DUST.hasType(metal))
                 {
                     Ingredient ingredientOre = Ingredient.fromStacks(new ItemStack(ItemOreTFC.get(ore)));
-                    CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 1), ingredientOre, 4000);
+                    CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 2), ingredientOre, 4000);
                 }
             }
         }
+        // Clear out the recipes related
+        for (QuernRecipe quernRecipe : TFCRegistries.QUERN.getValuesCollection())
+        {
+            CrusherRecipe.removeRecipesForOutput(quernRecipe.getOutputs().get(0));
+        }
+        // Churn the quern and steal its recipes
+        for (QuernRecipe quernRecipe : TFCRegistries.QUERN.getValuesCollection())
+        {
+
+            NonNullList<IIngredient<ItemStack>> ingredientlist = quernRecipe.getIngredients();
+            IIngredient iingredient = ingredientlist.get(0);
+            NonNullList foo = iingredient.getValidIngredients();
+            Ingredient ingredient = Ingredient.fromStacks((ItemStack) foo.get(0));
+            ItemStack output = quernRecipe.getOutputs().get(0);
+
+
+            if (ingredient != null)
+            {
+                CrusherRecipe.addRecipe(output, ingredient, 4000);
+            }
+
+
+        }
+
 
     }
+
+    public static void registerGardenClocheRecipes()
+    {
+        BelljarHandler.registerHandler(tfcBelljarHandler);
+
+        for (Crop crop : Crop.values())
+        {
+
+            tfcBelljarHandler.register(ItemSeedsTFC.get(crop, 1), new ItemStack[] {new ItemStack(ItemSeedsTFC.get(crop), 1), crop.getFoodDrop(crop.getMaxStage())}, new ItemStack(Blocks.DIRT), BlockCropSimple.get(crop).getDefaultState());
+        }
+        registerFluidFertilizer(new FluidFertilizerHandler()
+        {
+            @Override
+            public boolean isValid(@Nullable FluidStack fertilizer)
+            {
+                return fertilizer != null && fertilizer.getFluid() == FluidsTFC.FRESH_WATER.get();
+            }
+
+            @Override
+            public float getGrowthMultiplier(FluidStack fluidStack, ItemStack itemStack, ItemStack itemStack1, TileEntity tileEntity)
+            {
+                return 1;
+            }
+        });
+        registerItemFertilizer(new ItemFertilizerHandler()
+        {
+            final ItemStack sylvite = ItemPowder.get(Powder.FERTILIZER, 1);
+
+            @Override
+            public boolean isValid(ItemStack fertilizer)
+            {
+                return !fertilizer.isEmpty() && OreDictionary.itemMatches(sylvite, fertilizer, true);
+            }
+
+            @Override
+            public float getGrowthMultiplier(ItemStack itemStack, ItemStack itemStack1, ItemStack itemStack2, TileEntity tileEntity)
+            {
+                return 2.5f;
+            }
+        });
+
+    }
+
+    private static final DefaultPlantHandler tfcBelljarHandler = new DefaultPlantHandler()
+    {
+        private HashMap<ComparableItemStack, IngredientStack> seedSoilMap = new HashMap();
+        private HashMap<ComparableItemStack, ItemStack[]> seedOutputMap = new HashMap();
+        private HashMap<ComparableItemStack, IBlockState[]> seedRenderMap = new HashMap();
+
+
+        @Override
+        public void register(ItemStack seed, ItemStack[] output, Object soil, IBlockState... render)
+        {
+            this.register(seed, output, ApiUtils.createIngredientStack(soil), render);
+        }
+
+        public void register(ItemStack seed, ItemStack[] output, IngredientStack soil, IBlockState... render)
+        {
+            ComparableItemStack comp = new ComparableItemStack(seed, false, false);
+            this.getSeedSet().add(comp);
+            this.seedSoilMap.put(comp, soil);
+            this.seedOutputMap.put(comp, output);
+            this.seedRenderMap.put(comp, render);
+        }
+
+        @Override
+        public ItemStack[] getOutput(ItemStack seed, ItemStack soil, TileEntity tile)
+        {
+            return (ItemStack[]) this.seedOutputMap.get(new ComparableItemStack(seed, false, false));
+        }
+
+
+        private HashSet<ComparableItemStack> validSeeds = new HashSet<>();
+
+        @Override
+        protected HashSet<ComparableItemStack> getSeedSet() {return validSeeds;}
+
+
+        @Override
+        public boolean isValid(ItemStack seed)
+        {
+            return seed != null && this.getSeedSet().contains(new ComparableItemStack(seed, false, false));
+        }
+
+        @Override
+        public boolean isCorrectSoil(final ItemStack seed, final ItemStack soil)
+        {
+
+            if (Block.getBlockFromItem(soil.getItem()) instanceof BlockRockVariant)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        @Override
+        @SideOnly(Side.CLIENT)
+        public IBlockState[] getRenderedPlant(ItemStack seed, ItemStack soil, float growth, TileEntity tile)
+        {
+
+            IBlockState[] states = (IBlockState[]) this.seedRenderMap.get(new ComparableItemStack(seed, false, false));
+            //IBlockState[] states = null;
+            if (states == null)
+            {
+                return null;
+            }
+            else
+            {
+                IBlockState[] ret = new IBlockState[states.length];
+
+                label58:
+                for (int i = 0; i < states.length; ++i)
+                {
+                    if (states[i] != null)
+                    {
+                        if (states[i].getBlock() instanceof BlockCrops)
+                        {
+                            int max = ((BlockCrops) states[i].getBlock()).getMaxAge();
+                            ret[i] = ((BlockCrops) states[i].getBlock()).withAge(Math.min(max, Math.round((float) max * growth)));
+                        }
+                        else
+                        {
+                            Iterator var8 = states[i].getPropertyKeys().iterator();
+
+                            while (true)
+                            {
+                                IProperty prop;
+                                do
+                                {
+                                    do
+                                    {
+                                        if (!var8.hasNext())
+                                        {
+                                            if (ret[i] == null)
+                                            {
+                                                ret[i] = states[i];
+                                            }
+                                            continue label58;
+                                        }
+
+                                        prop = (IProperty) var8.next();
+                                    } while (!"age".equals(prop.getName()));
+                                } while (!(prop instanceof PropertyInteger));
+
+                                int maxx = 0;
+                                Iterator var11 = ((PropertyInteger) prop).getAllowedValues().iterator();
+
+                                while (var11.hasNext())
+                                {
+                                    Integer allowed = (Integer) var11.next();
+                                    if (allowed != null && allowed > maxx)
+                                    {
+                                        maxx = allowed;
+                                    }
+                                }
+
+                                ret[i] = states[i].withProperty(prop, Math.min(maxx, Math.round((float) maxx * growth)));
+                            }
+                        }
+                    }
+                }
+
+                return ret;
+            }
+        }
+    };
+
+
 
 }

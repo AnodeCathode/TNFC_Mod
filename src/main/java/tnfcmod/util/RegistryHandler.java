@@ -24,6 +24,7 @@ import tnfcmod.tnfcmod;
 
 import static tnfcmod.Recipes.IERecipes.registerCrusherRecipes;
 import static tnfcmod.Recipes.IERecipes.registerMetalPressRecipes;
+import static tnfcmod.Recipes.IERecipes.registerGardenClocheRecipes;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @Mod.EventBusSubscriber(modid = tnfcmod.MODID)
@@ -165,6 +166,7 @@ public final class RegistryHandler
     {
         registerMetalPressRecipes();
         registerCrusherRecipes();
+        registerGardenClocheRecipes();
     }
     @SubscribeEvent
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
