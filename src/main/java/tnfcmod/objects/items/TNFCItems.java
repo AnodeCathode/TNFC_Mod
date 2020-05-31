@@ -1,11 +1,7 @@
 package tnfcmod.objects.items;
 
-import javax.annotation.Nonnull;
-
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
-
-import net.dries007.tfc.objects.fluids.properties.FluidWrapper;
 
 import static net.dries007.tfc.objects.CreativeTabsTFC.CT_MISC;
 
@@ -41,34 +37,34 @@ public class TNFCItems
 
 
      public static void register(IForgeRegistry<Item> registry) {
-        registry.registerAll(
-            backpackpiece,
-            backpackframe,
-            mold_axe,
-            mold_blank,
-            mold_block,
-            mold_bucket,
-            mold_chisel,
-            mold_doubleingot,
-            mold_hammer,
-            mold_hoe,
-            mold_hopper,
-            mold_javelin,
-            mold_knife,
-            mold_lamp,
-            mold_mace,
-            mold_pick,
-            mold_propick,
-            mold_saw,
-            mold_scythe,
-            mold_shears,
-            mold_sheet,
-            mold_shovel,
-            mold_sword,
-            mold_tuyere
+
+            registry.register(backpackpiece);
+            registry.register(backpackframe);
+            registry.register(mold_axe);
+            registry.register(mold_blank);
+            registry.register(mold_block);
+            registry.register(mold_bucket);
+            registry.register(mold_chisel);
+            registry.register(mold_doubleingot);
+            registry.register(mold_hammer);
+            registry.register(mold_hoe);
+            registry.register(mold_hopper);
+            registry.register(mold_javelin);
+            registry.register(mold_knife);
+            registry.register(mold_lamp);
+            registry.register(mold_mace);
+            registry.register(mold_pick);
+            registry.register(mold_propick);
+            registry.register(mold_saw);
+            registry.register(mold_scythe);
+            registry.register(mold_shears);
+            registry.register(mold_sheet);
+            registry.register(mold_shovel);
+            registry.register(mold_sword);
+            registry.register(mold_tuyere);
 
 
-        );
+
 
 
     }
