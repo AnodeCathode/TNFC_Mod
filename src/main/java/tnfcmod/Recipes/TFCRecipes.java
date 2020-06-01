@@ -12,8 +12,6 @@ import net.dries007.tfc.api.recipes.knapping.KnappingType;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
-import net.dries007.tfc.util.forge.ForgeRule;
-import net.dries007.tfc.util.forge.ForgeStep;
 import tnfcmod.objects.items.TNFCItems;
 
 import static net.dries007.tfc.api.types.Metal.ItemType.SHEET;
@@ -21,7 +19,7 @@ import static net.dries007.tfc.util.forge.ForgeRule.*;
 import static net.dries007.tfc.util.skills.SmithingSkill.Type.GENERAL;
 import static tnfcmod.tnfcmod.MODID;
 
-public class TNFCRecipes
+public class TFCRecipes
 {
 
     public static void registerKnapping(RegistryEvent.Register<KnappingRecipe> event) {

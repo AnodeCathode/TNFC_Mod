@@ -9,11 +9,18 @@ import net.dries007.tfc.objects.Gem;
 import net.dries007.tfc.objects.items.ItemGem;
 import net.dries007.tfc.objects.items.ItemsTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
+import tnfcmod.objects.items.TNFCItems;
 
 public class OreDicEntries
 {
     public static void init()
     {
+
+        //Register oredict entries for our 'fake' weak steel dusts
+        OreDictionary.registerOre("dustWeakSteel", new ItemStack(TNFCItems.weak_steel_dust,1));
+        OreDictionary.registerOre("dustWeakRedSteel", new ItemStack(TNFCItems.weak_red_steel_dust,1));
+        OreDictionary.registerOre("dustWeakBlueSteel", new ItemStack(TNFCItems.weak_blue_steel_dust,1));
+
         //OreDictionary.WILDCARD_VALUE;
         //Gems
         for (Gem gem : Gem.values()) {

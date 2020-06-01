@@ -19,13 +19,11 @@ import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.api.types.Ore;
 
 import tnfcmod.Recipes.OreDicEntries;
-import tnfcmod.Recipes.TNFCRecipes;
+import tnfcmod.Recipes.TFCRecipes;
 import tnfcmod.objects.items.TNFCItems;
 import tnfcmod.tnfcmod;
 
-import static tnfcmod.Recipes.IERecipes.registerCrusherRecipes;
-import static tnfcmod.Recipes.IERecipes.registerMetalPressRecipes;
-import static tnfcmod.Recipes.IERecipes.registerGardenClocheRecipes;
+import static tnfcmod.Recipes.IERecipes.*;
 import static tnfcmod.Recipes.VanillaRecipes.removeVanillaRecipes;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -45,38 +43,12 @@ public final class RegistryHandler
     public static void onPreRegisterOre(TFCRegistryEvent.RegisterPreBlock<Ore> event)
     {
         IForgeRegistry<Ore> r = event.getRegistry();
-//        //  Ores which *could* be melted directly if it's temperature is met
-//        r.register(new Ore(STIBNITE, ANTIMONY, true));
-//
-//        // Ores which we add tools, armor and textures inside TFC realm, but can't be melted directly (processing by other mods required)
-//        r.register(new Ore(NATIVE_ARDITE, ARDITE, false));
-//        r.register(new Ore(NATIVE_OSMIUM, OSMIUM, false));
-//        r.register(new Ore(BAUXITE, ALUMINIUM, false));
-//        r.register(new Ore(WOLFRAMITE, TUNGSTEN, false));
-//        r.register(new Ore(COBALTITE, COBALT, false));
-//        r.register(new Ore(RUTILE, TITANIUM, false));
-//
-//        // Ores without metals registered inside TFC
-//        r.register(new Ore(THORIANITE));
-//        r.register(new Ore(CHROMITE));
-//        r.register(new Ore(PYROLUSITE));
-//        r.register(new Ore(MAGNESITE));
-//        r.register(new Ore(BORON));
-//        r.register(new Ore(SPODUMENE));
     }
 
     @SubscribeEvent
     public static void onRegisterAlloyRecipe(RegistryEvent.Register<AlloyRecipe> event)
     {
         IForgeRegistry<AlloyRecipe> r = event.getRegistry();
-//        r.register(new AlloyRecipe.Builder(CONSTANTAN).add(COPPER, 0.4, 0.6).add(NICKEL, 0.4, 0.6).build());
-//        r.register(new AlloyRecipe.Builder(ELECTRUM).add(GOLD, 0.4, 0.6).add(SILVER, 0.4, 0.6).build());
-//        r.register(new AlloyRecipe.Builder(MITHRIL).add(COPPER, 0.88, 0.92).add(ANTIMONY, 0.08, 0.12).build());
-//        r.register(new AlloyRecipe.Builder(INVAR).add(WROUGHT_IRON, 0.6, 0.7).add(NICKEL, 0.3, 0.4).build());
-//        r.register(new AlloyRecipe.Builder(ALUMINIUM_BRASS).add(ALUMINIUM, 0.65, 0.85).add(COPPER, 0.15, 0.35).build());
-//        r.register(new AlloyRecipe.Builder(MANYULLYN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build());
-//        r.register(new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.02, 0.18).add(STEEL, 0.72, 0.98).build());
-//        r.register(new AlloyRecipe.Builder(NICKEL_SILVER).add(COPPER, 0.50, 0.65).add(ZINC, 0.1, 0.3).add(NICKEL, 0.1, 0.3).build());
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -84,54 +56,18 @@ public final class RegistryHandler
     public static void onRegisterBloomeryRecipeEvent(RegistryEvent.Register<BloomeryRecipe> event)
     {
         IForgeRegistry<BloomeryRecipe> registry = event.getRegistry();
-//        if (ConfigTFCM.RECIPES.aluminium)
-//        {
-//            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(ALUMINIUM), FuelManager::isItemBloomeryFuel));
-//        }
-//        if (ConfigTFCM.RECIPES.ardite)
-//        {
-//            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(ARDITE), FuelManager::isItemBloomeryFuel));
-//        }
-//        if (ConfigTFCM.RECIPES.cobalt)
-//        {
-//            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(COBALT), FuelManager::isItemBloomeryFuel));
-//        }
     }
 
     @SubscribeEvent
     public static void onRegisterBlastFurnaceRecipeEvent(RegistryEvent.Register<BlastFurnaceRecipe> event)
     {
         IForgeRegistry<BlastFurnaceRecipe> registry = event.getRegistry();
-//        if (ConfigTFCM.RECIPES.osmium)
-//        {
-//            Metal osmium = TFCRegistries.METALS.getValue(OSMIUM);
-//            if (osmium != null)
-//            {
-//                registry.register(new BlastFurnaceRecipe(osmium, osmium, IIngredient.of("dustFlux")));
-//            }
-//        }
-//        if (ConfigTFCM.RECIPES.titanium)
-//        {
-//            Metal titanium = TFCRegistries.METALS.getValue(TITANIUM);
-//            if (titanium != null)
-//            {
-//                registry.register(new BlastFurnaceRecipe(titanium, titanium, IIngredient.of("dustFlux")));
-//            }
-//        }
-//        if (ConfigTFCM.RECIPES.tungsten)
-//        {
-//            Metal tungsten = TFCRegistries.METALS.getValue(TUNGSTEN);
-//            if (tungsten != null)
-//            {
-//                registry.register(new BlastFurnaceRecipe(tungsten, tungsten, IIngredient.of("dustFlux")));
-//            }
-//        }
     }
 
     @SubscribeEvent
     public static void onRegisterAnvilRecipeEvent(RegistryEvent.Register<AnvilRecipe> event)
     {
-        TNFCRecipes.registerAnvil(event);
+        TFCRecipes.registerAnvil(event);
     }
     /**
      * Listen for the register event for creating custom items
@@ -159,7 +95,7 @@ public final class RegistryHandler
     @SubscribeEvent
     public static void onRegisterKnappingRecipeEvent(RegistryEvent.Register<KnappingRecipe> event)
     {
-        TNFCRecipes.registerKnapping(event);
+        TFCRecipes.registerKnapping(event);
     }
 
 
@@ -170,6 +106,7 @@ public final class RegistryHandler
         registerMetalPressRecipes();
         registerCrusherRecipes();
         registerGardenClocheRecipes();
+        registerArcFurnaceRecipes();
 
     }
     @SubscribeEvent

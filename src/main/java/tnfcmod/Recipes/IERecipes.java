@@ -22,6 +22,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import blusunrize.immersiveengineering.api.ApiUtils;
 import blusunrize.immersiveengineering.api.ComparableItemStack;
+import blusunrize.immersiveengineering.api.crafting.ArcFurnaceRecipe;
 import blusunrize.immersiveengineering.api.crafting.CrusherRecipe;
 import blusunrize.immersiveengineering.api.crafting.IngredientStack;
 import blusunrize.immersiveengineering.api.crafting.MetalPressRecipe;
@@ -260,6 +261,8 @@ public class IERecipes
     public static void registerCrusherRecipes(){
 
 
+
+
         for (Metal metal : TFCRegistries.METALS.getValuesCollection())
         {
             //Basic ingot to dust
@@ -280,6 +283,20 @@ public class IERecipes
                 Ingredient ingredientAnvil = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.ANVIL)));
                 CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 14), ingredientAnvil, 112000);
             }
+            //add our 'fake' weak steel dust recipes to the crusher
+            if (metal.toString().equals("weak_steel")){
+                Ingredient ingredientWeakIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
+                CrusherRecipe.addRecipe(new ItemStack(TNFCItems.weak_steel_dust, 1), ingredientWeakIngot, 8000);
+            }
+            if (metal.toString().equals("weak_blue_steel")){
+                Ingredient ingredientWeakBlueIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
+                CrusherRecipe.addRecipe(new ItemStack(TNFCItems.weak_blue_steel_dust, 1), ingredientWeakBlueIngot, 8000);
+            }
+            if (metal.toString().equals("weak_red_steel")){
+                Ingredient ingredientWeakRedIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
+                CrusherRecipe.addRecipe(new ItemStack(TNFCItems.weak_red_steel_dust, 1), ingredientWeakRedIngot, 8000);
+            }
+            // add selenite to glowstone recipe, also to quern
         }
         for (Ore ore : TFCRegistries.ORES.getValuesCollection())
         {
@@ -383,6 +400,13 @@ public class IERecipes
 
     }
 
+    public static void registerArcFurnaceRecipes()
+    {
+     //ArcFurnaceRecipe addRecipe(ItemStack output, Object input, @Nonnull ItemStack slag, int time, int energyPerTick, Object... additives)
+     //ArcFurnaceRecipe.addRecipe(new ItemStack(IEContent.itemMetal, 1, 8), "ingotIron", new ItemStack(IEContent.itemMaterial, 1, 7), 400, 512, "dustCoke");
+
+        //ArcFurnaceRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 1, 8), "dustWeakSteel", new ItemStack(IEContent.itemMaterial, 1, 7), 400, 512, "dustCoke");
+    }
 
 
 }
