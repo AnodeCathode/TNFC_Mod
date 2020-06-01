@@ -15,6 +15,7 @@ public class VanillaRecipes
        modRegistry.remove(new ResourceLocation("minecraft:furnace"));
 
        //Things remove by TFC-NG but not added. TBD
+       modRegistry.remove(new ResourceLocation("minecraft:coal_block"));
        modRegistry.remove(new ResourceLocation("minecraft:acacia_boat"));
        modRegistry.remove(new ResourceLocation("minecraft:acacia_door"));
        modRegistry.remove(new ResourceLocation("minecraft:acacia_fence"));
@@ -262,6 +263,7 @@ public class VanillaRecipes
        modRegistry.remove(new ResourceLocation("minecraft:yellow_dye_from_sunflower"));
         
        //Things actually added by TFC-NG, so leave them alone :)
+
        modRegistry.remove(new ResourceLocation("minecraft:armor_stand"));
        modRegistry.remove(new ResourceLocation("minecraft:bed"));
        modRegistry.remove(new ResourceLocation("minecraft:bucket"));
