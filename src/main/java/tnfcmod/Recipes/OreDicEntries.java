@@ -5,10 +5,14 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.Metal;
+import net.dries007.tfc.api.types.Ore;
+import net.dries007.tfc.api.types.Rock;
+import net.dries007.tfc.api.types.RockCategory;
 import net.dries007.tfc.objects.Gem;
 import net.dries007.tfc.objects.items.ItemGem;
 import net.dries007.tfc.objects.items.ItemsTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
+import net.dries007.tfc.objects.items.metal.ItemOreTFC;
 import tnfcmod.objects.items.TNFCItems;
 
 public class OreDicEntries
@@ -36,6 +40,15 @@ public class OreDicEntries
             if (gem == Gem.RUBY || gem == Gem.GARNET || gem == Gem.AGATE || gem == Gem.TOPAZ){
                 OreDictionary.registerOre("craftingRedGem", new ItemStack(ItemGem.get(gem), 1, OreDictionary.WILDCARD_VALUE));
             }
+        }
+        // Build some ore groups, for rockhounding
+
+        for (Ore ore : TFCRegistries.ORES.getValuesCollection()){
+             if (ore.isGraded()){
+                 //what to do. What do we pick
+                 OreDictionary.registerOre("gradedRichOres", ItemOreTFC.get(ore, Ore.Grade.RICH, 1));
+             }
+
         }
 
         //Crafting tools

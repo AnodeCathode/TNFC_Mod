@@ -63,7 +63,6 @@ public class VanillaRecipes
        modRegistry.remove(new ResourceLocation("minecraft:chiseled_sandstone"));
        modRegistry.remove(new ResourceLocation("minecraft:chiseled_stonebrick"));
        modRegistry.remove(new ResourceLocation("minecraft:coal"));
-       modRegistry.remove(new ResourceLocation("minecraft:coal_block"));
        modRegistry.remove(new ResourceLocation("minecraft:coarse_dirt"));
        modRegistry.remove(new ResourceLocation("minecraft:cobblestone_slab"));
        modRegistry.remove(new ResourceLocation("minecraft:cobblestone_wall"));
@@ -126,7 +125,6 @@ public class VanillaRecipes
        modRegistry.remove(new ResourceLocation("minecraft:hay_block"));
        modRegistry.remove(new ResourceLocation("minecraft:iron_axe"));
        modRegistry.remove(new ResourceLocation("minecraft:iron_bars"));
-       modRegistry.remove(new ResourceLocation("minecraft:iron_block"));
        modRegistry.remove(new ResourceLocation("minecraft:iron_boots"));
        modRegistry.remove(new ResourceLocation("minecraft:iron_chestplate"));
        modRegistry.remove(new ResourceLocation("minecraft:iron_helmet"));

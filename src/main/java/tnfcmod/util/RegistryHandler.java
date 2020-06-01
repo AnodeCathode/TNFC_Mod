@@ -1,7 +1,11 @@
 package tnfcmod.util;
 
+import java.util.ArrayList;
+
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -114,6 +118,5 @@ public final class RegistryHandler
 //        ResourceLocation soundID = new ResourceLocation(MOD_ID, "item.flaskbreak");
 //        event.getRegistry().register((new SoundEvent(soundID)).setRegistryName(soundID));
     }
-
 
 }
