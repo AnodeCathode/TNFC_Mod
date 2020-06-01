@@ -125,6 +125,11 @@ processResources {
 
 }
 
+// Deobf jar allows people to drop this in mod folder on a dev environment
+task deobfJar(type: Jar, dependsOn: 'jar') {
+    from sourceSets.main.output
+    classifier "deobf"
+}
 
 project.tasks.withType(Jar) { jarTask -> // For all jar tasks
     jarTask.appendix = "MC" + project.minecraft.version
