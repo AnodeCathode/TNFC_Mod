@@ -9,19 +9,20 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import tnfcmod.proxy.CommonProxy;
+import tnfcmod.util.VeinLoader;
 
 
 @SuppressWarnings("WeakerAccess")
-@Mod(modid = tnfcmod.MODID, name = tnfcmod.NAME, version = tnfcmod.VERSION, dependencies = "required-after:tfc")
+@Mod(modid = tnfcmod.MODID, name = tnfcmod.NAME, version = tnfcmod.VERSION, dependencies = tnfcmod.DEPENDENCIES)
 public class tnfcmod
 {
     public static final String MODID = "tnfcmod";
     public static final String NAME = "Technodefirmacraft";
     public static final String VERSION = "@VERSION@";
-
+    public static final String DEPENDENCIES = "required-after:tfc;after:rockhounding_chemistry;after:immersiveengineering";
 
     private static Logger logger;
-    private static final boolean signedBuild = true;
+
 
     public static Logger getLog()
     {
@@ -39,6 +40,7 @@ public class tnfcmod
     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
+        VeinLoader.INSTANCE.preInit(event.getModConfigurationDirectory());
 
     }
 
