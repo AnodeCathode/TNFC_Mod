@@ -1,12 +1,24 @@
 package tnfcmod.recipes;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
+import net.dries007.tfc.api.types.Ore;
+import net.dries007.tfc.objects.items.metal.ItemOreTFC;
+import tnfcmod.objects.items.TNFCItems;
+
+import static tnfcmod.util.VanillaRecipeHandler.addShapelessDmgOreRecipe;
+
 public class VanillaRecipes
 {
+    public static void registerVanillaRecipes(RegistryEvent.Register<IRecipe> event){
+
+        addShapelessDmgOreRecipe(new ItemStack(TNFCItems.copper_fishhook,1), 1,"nuggetCopper", "hammer");
+
+    }
 
     public static void removeVanillaRecipes(RegistryEvent.Register<IRecipe> event)
    {

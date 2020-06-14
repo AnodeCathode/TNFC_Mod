@@ -32,10 +32,13 @@ public class TNFCItems
     public static IEMetalPressMold mold_sword = new IEMetalPressMold("mold_sword").setCreativeTab(CT_MISC);
     public static IEMetalPressMold mold_tuyere = new IEMetalPressMold("mold_tuyere").setCreativeTab(CT_MISC);
 
+    public static CopperFishHook copper_fishhook = new CopperFishHook("copper_fishhook");
+
     // You moved the headstones but left the textures? What?!?
     public static ItemWeakSteelDust weak_steel_dust = new ItemWeakSteelDust("weak_steel_dust").setCreativeTab(CT_MISC);
     public static ItemWeakSteelDust weak_red_steel_dust = new ItemWeakSteelDust("weak_red_steel_dust").setCreativeTab(CT_MISC);
     public static ItemWeakSteelDust weak_blue_steel_dust = new ItemWeakSteelDust("weak_blue_steel_dust").setCreativeTab(CT_MISC);
+
 
 
      public static void register(IForgeRegistry<Item> registry) {
@@ -67,6 +70,7 @@ public class TNFCItems
         registry.register(weak_steel_dust);
         registry.register(weak_red_steel_dust);
         registry.register(weak_blue_steel_dust);
+        registry.register(copper_fishhook);
 
     }
 
@@ -99,6 +103,7 @@ public class TNFCItems
         weak_steel_dust.registerItemModel();
         weak_red_steel_dust.registerItemModel();
         weak_blue_steel_dust.registerItemModel();
+        copper_fishhook.registerItemModel();
 
     }
 }

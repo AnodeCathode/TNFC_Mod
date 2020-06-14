@@ -16,6 +16,7 @@ import tnfcmod.objects.items.TNFCItems;
 import static tnfcmod.recipes.IERecipes.*;
 
 import static tnfcmod.recipes.TFCRecipes.*;
+import static tnfcmod.recipes.VanillaRecipes.registerVanillaRecipes;
 import static tnfcmod.recipes.VanillaRecipes.removeVanillaRecipes;
 import static tnfcmod.tnfcmod.MODID;
 
@@ -57,6 +58,7 @@ public final class RegistryHandler
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event)
     {
         removeVanillaRecipes(event);
+        registerVanillaRecipes(event);
         registerMetalPressRecipes();
         registerCrusherRecipes();
         registerGardenClocheRecipes();

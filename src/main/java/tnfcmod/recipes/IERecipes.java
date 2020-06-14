@@ -268,7 +268,7 @@ public class IERecipes
                 Ingredient ingredientIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
                 CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 1), ingredientIngot, 8000);
             }
-            //Turn scrap into dust. Now to decide what turns into scrap.
+            //Turn scrap into dust. Scrap is the new orepile from 1.7.10.
             if (Metal.ItemType.SCRAP.hasType(metal) && DUST.hasType(metal)){
                 Ingredient ingredientScrap = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SCRAP)));
                 CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 1), ingredientScrap, 8000);
