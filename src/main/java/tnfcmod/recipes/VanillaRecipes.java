@@ -16,7 +16,7 @@ public class VanillaRecipes
 {
     public static void registerVanillaRecipes(RegistryEvent.Register<IRecipe> event){
 
-        addShapelessDmgOreRecipe(new ItemStack(TNFCItems.copper_fishhook,1), 1,"nuggetCopper", "hammer");
+        addShapelessDmgOreRecipe(new ItemStack(TNFCItems.copper_fishhook,1), 1,"oreCopperSmall", "hammer");
 
     }
 
