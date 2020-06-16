@@ -1,4 +1,4 @@
-package tnfcmod.util;
+package tnfcmod.handlers;
 
 import java.util.LinkedList;
 import java.util.List;

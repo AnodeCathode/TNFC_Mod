@@ -6,11 +6,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
-import net.dries007.tfc.api.types.Ore;
-import net.dries007.tfc.objects.items.metal.ItemOreTFC;
 import tnfcmod.objects.items.TNFCItems;
 
-import static tnfcmod.util.VanillaRecipeHandler.addShapelessDmgOreRecipe;
+import static tnfcmod.util.VanillaRecipeMaker.addShapelessDmgOreRecipe;
 
 public class VanillaRecipes
 {

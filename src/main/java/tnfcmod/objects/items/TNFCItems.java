@@ -1,12 +1,14 @@
 package tnfcmod.objects.items;
 
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import static net.dries007.tfc.objects.CreativeTabsTFC.CT_MISC;
 
 public class TNFCItems
 {
+    public static ItemPlowCartTFC PLOWCARTTNFC = new ItemPlowCartTFC("plowcarttfc");
     public static ItemBackpackPiece backpackpiece = new ItemBackpackPiece("backpackpiece").setCreativeTab(CT_MISC);
     public static ItemBackpackFrame backpackframe = new ItemBackpackFrame("backpackframe").setCreativeTab(CT_MISC);
     public static IEMetalPressMold mold_axe = new IEMetalPressMold("mold_axe").setCreativeTab(CT_MISC);
@@ -71,10 +73,11 @@ public class TNFCItems
         registry.register(weak_red_steel_dust);
         registry.register(weak_blue_steel_dust);
         registry.register(copper_fishhook);
+        registry.register(PLOWCARTTNFC);
 
     }
 
-    public static void registerModels()
+    public static void registerModels(Event event)
     {
         backpackpiece.registerItemModel();
         backpackframe.registerItemModel();
@@ -104,6 +107,8 @@ public class TNFCItems
         weak_red_steel_dust.registerItemModel();
         weak_blue_steel_dust.registerItemModel();
         copper_fishhook.registerItemModel();
+        PLOWCARTTNFC.registerItemModel();
+
 
     }
 }

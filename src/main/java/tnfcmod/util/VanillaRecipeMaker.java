@@ -16,7 +16,7 @@ import net.minecraftforge.registries.GameData;
 
 import net.dries007.tfc.objects.recipes.ShapelessDamageRecipe;
 
-public class VanillaRecipeHandler
+public class VanillaRecipeMaker
 {
     /*
     * Taken from https://github.com/TechReborn/RebornCore as the data-centric view can bite my shiny metal ass.

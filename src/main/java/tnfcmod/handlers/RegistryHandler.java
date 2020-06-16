@@ -1,4 +1,4 @@
-package tnfcmod.util;
+package tnfcmod.handlers;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
@@ -41,7 +41,7 @@ public final class RegistryHandler
     @SubscribeEvent
     public static void registerItems(ModelRegistryEvent event)
     {
-        TNFCItems.registerModels();
+        TNFCItems.registerModels(event);
 
     }
     /**

@@ -1,4 +1,4 @@
-package tnfcmod.util;
+package tnfcmod.handlers;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -27,6 +27,7 @@ import net.dries007.tfc.util.fuel.FuelManager;
 import tnfcmod.recipes.TFCRecipes;
 import tnfcmod.objects.materials.ArmorMaterialsTNFC;
 import tnfcmod.objects.materials.ToolMaterialsTNFC;
+import tnfcmod.util.ConfigTNFCMod;
 
 import static net.dries007.tfc.TerraFirmaCraft.MOD_ID;
 import static net.dries007.tfc.api.types.Metal.ItemType.INGOT;

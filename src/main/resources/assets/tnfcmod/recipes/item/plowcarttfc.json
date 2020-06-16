@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    "psp",
+    "waw"
+  ],
+  "key": {
+    "p": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+    "s": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "w": {
+      "item": "astikorcarts:wheel"
+    },
+    "a": {
+      "item": "betterwithmods:wooden_axle"
+    }
+  },
+  "result": {
+    "item": "tnfcmod:plowcarttfc"
+  }
+}
