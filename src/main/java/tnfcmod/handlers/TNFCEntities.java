@@ -47,7 +47,7 @@ public class TNFCEntities
 
         private static EntityEntry createEntry(Class<? extends Entity> entityClass, String name, int trackingRange, int updateFrequency, boolean sendVelocityUpdates)
         {
-            ResourceLocation resourceLocation = new ResourceLocation(MODID + "." + name);
+            ResourceLocation resourceLocation = new ResourceLocation(MODID , name);
             return EntityEntryBuilder.create().entity(entityClass).id(resourceLocation, id++).name(resourceLocation.toString()).tracker(trackingRange, updateFrequency, sendVelocityUpdates).build();
         }
 

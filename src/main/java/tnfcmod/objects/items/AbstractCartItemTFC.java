@@ -13,7 +13,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 
-import de.mennomax.astikorcarts.entity.AbstractDrawn;
 import tnfcmod.objects.entities.AbstractDrawnTFC;
 
 import static net.dries007.tfc.objects.CreativeTabsTFC.CT_MISC;
