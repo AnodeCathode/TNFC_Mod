@@ -4,10 +4,9 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 
+import tnfcmod.handlers.packets.CPacketOpenCartGui;
+import tnfcmod.handlers.packets.SPacketDrawnUpdate;
 
-import de.mennomax.astikorcarts.packets.CPacketOpenCartGui;
-import de.mennomax.astikorcarts.packets.CPacketToggleSlow;
-import de.mennomax.astikorcarts.packets.SPacketDrawnUpdate;
 
 public class PacketHandler {
     private static int id = 0;

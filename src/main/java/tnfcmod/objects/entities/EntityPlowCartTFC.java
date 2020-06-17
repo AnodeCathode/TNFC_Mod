@@ -25,6 +25,7 @@ import net.minecraft.world.World;
 
 import de.mennomax.astikorcarts.config.ModConfig;
 
+import de.mennomax.astikorcarts.entity.EntityPlowCart;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.objects.blocks.BlockPlacedItemFlat;
 import net.dries007.tfc.objects.items.metal.ItemMetalHoe;
@@ -35,31 +36,39 @@ import static tnfcmod.tnfcmod.instance;
 
 public class EntityPlowCartTFC extends AbstractDrawnInventoryTFC implements IInventoryChangedListener
 {
-    private static final DataParameter<Boolean> PLOWINGTFC;
+    private static final DataParameter<Boolean> PLOWING = EntityDataManager.<Boolean>createKey(EntityPlowCartTFC.class, DataSerializers.BOOLEAN);
     private static final double BLADEOFFSET = 1.7D;
-    private static final DataParameter[] TOOLSTFC;
+    @SuppressWarnings("rawtypes")
+    private static final DataParameter[] TOOLS = {
+        EntityDataManager.<ItemStack>createKey(EntityPlowCartTFC.class, DataSerializers.ITEM_STACK),
+        EntityDataManager.<ItemStack>createKey(EntityPlowCartTFC.class, DataSerializers.ITEM_STACK),
+        EntityDataManager.<ItemStack>createKey(EntityPlowCartTFC.class, DataSerializers.ITEM_STACK)
+    };
 
     public EntityPlowCartTFC(World worldIn)
     {
         super(worldIn);
+        this.setSize(1.5F, 1.4F);
+        this.spacing = 2.4D;
+        this.initInventory(this.getName(), true, 3);
+        this.inventory.addInventoryChangeListener(this);
     }
 
-    public boolean canBePulledBy(Entity pullingIn) {
-        if (this.isPassenger(pullingIn)) {
-            return false;
-        } else {
-            String[] var2 = ModConfig.plowCart.canPull;
-            int var3 = var2.length;
-
-            for(int var4 = 0; var4 < var3; ++var4) {
-                String entry = var2[var4];
-                if (entry.equals(pullingIn instanceof EntityPlayer ? "minecraft:player" : EntityList.getKey(pullingIn).toString())) {
-                    return true;
-                }
-            }
-
+    @Override
+    public boolean canBePulledBy(Entity pullingIn)
+    {
+        if (this.isPassenger(pullingIn))
+        {
             return false;
         }
+        for (String entry : ModConfig.plowCart.canPull)
+        {
+            if (entry.equals(pullingIn instanceof EntityPlayer ? "minecraft:player" : EntityList.getKey(pullingIn).toString()))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Item getCartItem() {
@@ -67,14 +76,14 @@ public class EntityPlowCartTFC extends AbstractDrawnInventoryTFC implements IInv
     }
 
     public boolean getPlowing() {
-        return (Boolean)this.dataManager.get(PLOWINGTFC);
+        return (Boolean)this.dataManager.get(PLOWING);
     }
 
     public void onUpdate()
     {
         super.onUpdate();
         EntityPlayer player = this.pulling != null && this.pulling.getControllingPassenger() instanceof EntityPlayer ? (EntityPlayer) this.pulling.getControllingPassenger() : (this.pulling instanceof EntityPlayer ? (EntityPlayer) this.pulling : null);
-        if (!this.world.isRemote && this.dataManager.get(PLOWINGTFC) && player != null)
+        if (!this.world.isRemote && this.dataManager.get(PLOWING) && player != null)
         {
             if (this.prevPosX != this.posX || this.prevPosZ != this.posZ)
             {
@@ -106,9 +115,9 @@ public class EntityPlowCartTFC extends AbstractDrawnInventoryTFC implements IInv
     @Override
     public void onInventoryChanged(IInventory invBasic)
     {
-        for(int i = 0; i < TOOLSTFC.length; ++i) {
-            if (this.dataManager.get(TOOLSTFC[i]) != invBasic.getStackInSlot(i)) {
-                this.dataManager.set(TOOLSTFC[i], this.inventory.getStackInSlot(i));
+        for(int i = 0; i < TOOLS.length; ++i) {
+            if (this.dataManager.get(TOOLS[i]) != invBasic.getStackInSlot(i)) {
+                this.dataManager.set(TOOLS[i], this.inventory.getStackInSlot(i));
             }
         }
 
@@ -117,7 +126,7 @@ public class EntityPlowCartTFC extends AbstractDrawnInventoryTFC implements IInv
     private void damageAndUpdateOnBreak(int slot, ItemStack itemstack, EntityPlayer player) {
         itemstack.damageItem(1, player);
         if (itemstack.isEmpty()) {
-            this.dataManager.set(TOOLSTFC[slot], ItemStack.EMPTY);
+            this.dataManager.set(TOOLS[slot], ItemStack.EMPTY);
         }
 
     }
@@ -161,42 +170,50 @@ public class EntityPlowCartTFC extends AbstractDrawnInventoryTFC implements IInv
             if (player.isSneaking()) {
                 player.openGui(instance, 0, this.world, this.getEntityId(), 0, 0);
             } else {
-                this.dataManager.set(PLOWINGTFC, !(Boolean)this.dataManager.get(PLOWINGTFC));
+                this.dataManager.set(PLOWING, !(Boolean)this.dataManager.get(PLOWING));
             }
         }
 
         return true;
     }
-    protected void readEntityFromNBT(NBTTagCompound compound) {
+
+    @SuppressWarnings("unchecked")
+    @Override
+    protected void readEntityFromNBT(NBTTagCompound compound)
+    {
         super.readEntityFromNBT(compound);
-        this.dataManager.set(PLOWINGTFC, compound.getBoolean("PlowingTFC"));
-
-        for(int i = 0; i < TOOLSTFC.length; ++i) {
-            this.dataManager.set(TOOLSTFC[i], this.inventory.getStackInSlot(i));
+        dataManager.set(PLOWING, compound.getBoolean("Plowing"));
+        for(int i = 0; i < TOOLS.length; i++)
+        {
+            this.dataManager.set(TOOLS[i], this.inventory.getStackInSlot(i));
         }
-
     }
 
-    protected void writeEntityToNBT(NBTTagCompound compound) {
+    @Override
+    protected void writeEntityToNBT(NBTTagCompound compound)
+    {
         super.writeEntityToNBT(compound);
-        compound.setBoolean("PlowingTFC", (Boolean)this.dataManager.get(PLOWINGTFC));
+        compound.setBoolean("Plowing", dataManager.get(PLOWING));
     }
 
-    protected void entityInit() {
+    @SuppressWarnings("unchecked")
+    @Override
+    protected void entityInit()
+    {
         super.entityInit();
-        this.dataManager.register(PLOWINGTFC, false);
-
-        for(int i = 0; i < TOOLSTFC.length; ++i) {
-            this.dataManager.register(TOOLSTFC[i], ItemStack.EMPTY);
+        this.dataManager.register(PLOWING, false);
+        for(int i = 0; i < TOOLS.length; i++)
+        {
+            this.dataManager.register(TOOLS[i], ItemStack.EMPTY);
         }
-
-    }
-    public ItemStack getTool(int i) {
-        return (ItemStack)this.dataManager.get(TOOLSTFC[i]);
     }
 
-    static {
-        PLOWINGTFC = EntityDataManager.createKey(EntityPlowCartTFC.class, DataSerializers.BOOLEAN);
-        TOOLSTFC = new DataParameter[]{EntityDataManager.createKey(EntityPlowCartTFC.class, DataSerializers.ITEM_STACK), EntityDataManager.createKey(EntityPlowCartTFC.class, DataSerializers.ITEM_STACK), EntityDataManager.createKey(EntityPlowCartTFC.class, DataSerializers.ITEM_STACK)};
+    @SuppressWarnings("unchecked")
+    public ItemStack getTool(int i)
+    {
+        return (ItemStack) this.dataManager.get(TOOLS[i]);
     }
 }
+
+
+

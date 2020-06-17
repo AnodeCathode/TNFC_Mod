@@ -1,6 +1,7 @@
 package tnfcmod;
 
 import org.apache.logging.log4j.Logger;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -10,6 +11,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 
+import tnfcmod.capabilities.IPull;
+import tnfcmod.capabilities.PullFactory;
+import tnfcmod.capabilities.PullStorage;
 import tnfcmod.handlers.GuiHandler;
 import tnfcmod.handlers.PacketHandler;
 import tnfcmod.proxy.CommonProxy;
@@ -47,6 +51,7 @@ public class tnfcmod {
     public void preInit(FMLPreInitializationEvent event)
     {
         PacketHandler.registerPackets();
+        CapabilityManager.INSTANCE.register(IPull.class, new PullStorage(), PullFactory::new);
         logger = event.getModLog();
         VeinLoader.INSTANCE.preInit(event.getModConfigurationDirectory());
         proxy.preInit(event);

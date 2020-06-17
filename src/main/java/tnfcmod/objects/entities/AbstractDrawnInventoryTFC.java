@@ -66,12 +66,23 @@ public abstract class AbstractDrawnInventoryTFC extends AbstractDrawnTFC
         compound.setTag("Items", nbttaglist);
     }
 
+    @SuppressWarnings("unchecked")
+    @Override
     @Nullable
-    public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
-        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? (T) this.itemHandler : super.getCapability(capability, facing);
+    public <T> T getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, @Nullable net.minecraft.util.EnumFacing facing)
+    {
+        if (capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+        {
+            return (T) itemHandler;
+        }
+        return super.getCapability(capability, facing);
     }
 
-    public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
-        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY || super.hasCapability(capability, facing);
+
+    @Override
+    public boolean hasCapability(net.minecraftforge.common.capabilities.Capability<?> capability, @Nullable net.minecraft.util.EnumFacing facing)
+    {
+        return capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY || super.hasCapability(capability, facing);
     }
+
 }

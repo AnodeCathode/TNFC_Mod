@@ -8,10 +8,12 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 
+import de.mennomax.astikorcarts.entity.AbstractDrawn;
 import tnfcmod.objects.entities.AbstractDrawnTFC;
 
 import static net.dries007.tfc.objects.CreativeTabsTFC.CT_MISC;
@@ -28,30 +30,33 @@ public abstract class AbstractCartItemTFC extends Item
 
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         ItemStack itemstack = playerIn.getHeldItem(handIn);
-        Vec3d vec3d = new Vec3d(playerIn.posX, playerIn.posY + (double)playerIn.getEyeHeight(), playerIn.posZ);
+        Vec3d vec3d = new Vec3d(playerIn.posX, playerIn.posY + playerIn.getEyeHeight(), playerIn.posZ);
         Vec3d lookVec = playerIn.getLookVec();
-        Vec3d vec3d1 = new Vec3d(lookVec.x * 5.0D + vec3d.x, lookVec.y * 5.0D + vec3d.y, lookVec.z * 5.0D + vec3d.z);
+        Vec3d vec3d1 = new Vec3d(lookVec.x * 5.0 + vec3d.x, lookVec.y * 5.0 + vec3d.y, lookVec.z * 5.0 + vec3d.z);
+
         RayTraceResult result = worldIn.rayTraceBlocks(vec3d, vec3d1, false);
-        if (result != null && result.typeOfHit == RayTraceResult.Type.BLOCK) {
-            if (!worldIn.isRemote) {
-                AbstractDrawnTFC cart = this.newCart(worldIn);
-                cart.setPosition(result.hitVec.x, result.hitVec.y, result.hitVec.z);
-                cart.rotationYaw = (playerIn.rotationYaw + 180.0F) % 360.0F;
-                worldIn.spawnEntity(cart);
-                if (!playerIn.capabilities.isCreativeMode) {
-                    itemstack.shrink(1);
+        if (result != null)
+        {
+            if (result.typeOfHit == Type.BLOCK)
+            {
+                if (!worldIn.isRemote)
+                {
+                    AbstractDrawnTFC cart = this.newCart(worldIn);
+                    cart.setPosition(result.hitVec.x, result.hitVec.y, result.hitVec.z);
+                    cart.rotationYaw = (playerIn.rotationYaw + 180) % 360;
+                    worldIn.spawnEntity(cart);
+
+                    if (!playerIn.capabilities.isCreativeMode)
+                    {
+                        itemstack.shrink(1);
+                    }
+                    playerIn.addStat(StatList.getObjectUseStats(this));
                 }
-
-                playerIn.addStat(StatList.getObjectUseStats(this));
+                return new ActionResult<ItemStack>(EnumActionResult.PASS, itemstack);
             }
-
-            return new ActionResult(EnumActionResult.PASS, itemstack);
-        } else {
-            return new ActionResult(EnumActionResult.FAIL, itemstack);
         }
+        return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
     }
 
-    public abstract AbstractDrawnTFC newCart(World var1);
+    public abstract AbstractDrawnTFC newCart(World worldIn);
 }
-
-
