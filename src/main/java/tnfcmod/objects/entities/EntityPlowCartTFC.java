@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.IInventoryChangedListener;
 import net.minecraft.item.Item;
@@ -19,6 +20,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -28,7 +30,9 @@ import de.mennomax.astikorcarts.config.ModConfig;
 import de.mennomax.astikorcarts.entity.AbstractDrawnInventory;
 
 import net.dries007.tfc.api.types.Metal;
+import net.dries007.tfc.api.types.Rock;
 import net.dries007.tfc.objects.blocks.BlockPlacedItemFlat;
+import net.dries007.tfc.objects.blocks.stone.BlockRockVariant;
 import net.dries007.tfc.objects.items.metal.ItemMetalHoe;
 import net.dries007.tfc.objects.items.metal.ItemMetalTool;
 import tnfcmod.objects.items.TNFCItems;
@@ -124,46 +128,59 @@ public class EntityPlowCartTFC extends AbstractDrawnInventory implements IInvent
 
     }
 
-    private void damageAndUpdateOnBreak(int slot, ItemStack itemstack, EntityPlayer player) {
+    private void damageAndUpdateOnBreak(BlockPos pos, int slot, ItemStack itemstack, EntityPlayer player) {
         itemstack.damageItem(1, player);
         if (itemstack.isEmpty()) {
             this.dataManager.set(TOOLS[slot], ItemStack.EMPTY);
+            if (!world.isRemote){
+                world.playSound(null, pos, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            }
         }
 
     }
-    private void handleTool(BlockPos pos, int slot, EntityPlayer player) {
+    private void handleTool(BlockPos pos, int slot, EntityPlayer player)
+    {
         IBlockState state = this.world.getBlockState(pos);
-        Block block = state.getBlock();
         ItemStack itemstack = this.inventory.getStackInSlot(slot);
         Item item = itemstack.getItem();
-        if (item instanceof ItemHoe || item instanceof ItemMetalHoe) {
-            if (block != Blocks.GRASS && block != Blocks.GRASS_PATH) {
-                if (block == Blocks.DIRT) {
-                    switch((BlockDirt.DirtType)state.getValue(BlockDirt.VARIANT)) {
-                        case DIRT:
-                            this.world.setBlockState(pos, Blocks.FARMLAND.getDefaultState(), 11);
-                            this.damageAndUpdateOnBreak(slot, itemstack, player);
-                            break;
-                        case COARSE_DIRT:
-                            this.world.setBlockState(pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT), 11);
-                            this.damageAndUpdateOnBreak(slot, itemstack, player);
+
+        if (state.getBlock() instanceof BlockRockVariant){
+            BlockRockVariant blockRock = (BlockRockVariant) state.getBlock();
+            if (blockRock.getType() == Rock.Type.GRASS || blockRock.getType() == Rock.Type.DIRT || blockRock.getType() == Rock.Type.DRY_GRASS){
+                if (item instanceof ItemHoe || item instanceof ItemMetalHoe)
+                {
+                    if (!world.isRemote)
+                    {
+                        world.playSound(null, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                        world.setBlockState(pos, BlockRockVariant.get(blockRock.getRock(), Rock.Type.FARMLAND).getDefaultState());
+                        damageAndUpdateOnBreak(pos, slot, itemstack, player);
+
                     }
                 }
-            } else {
-                this.world.setBlockState(pos, Blocks.FARMLAND.getDefaultState(), 11);
-                this.damageAndUpdateOnBreak(slot, itemstack, player);
-            }
-        } else if (itemstack.getItem() instanceof ItemSpade && block == Blocks.GRASS) {
-            this.world.setBlockState(pos, Blocks.GRASS_PATH.getDefaultState());
-            this.damageAndUpdateOnBreak(slot, itemstack, player);
-        } else if(itemstack.getItem() instanceof ItemMetalTool){
-                ItemMetalTool metaltool = (ItemMetalTool) itemstack.getItem();
-            if (metaltool.getType() == Metal.ItemType.SHOVEL && block == Blocks.GRASS){
-                this.world.setBlockState(pos, Blocks.GRASS_PATH.getDefaultState());
-                this.damageAndUpdateOnBreak(slot, itemstack, player);
+                else if (itemstack.getItem() instanceof ItemMetalTool)  //All the metal tools
+                {
+                    ItemMetalTool metaltool = (ItemMetalTool) itemstack.getItem();
+                    if (metaltool.getType() == Metal.ItemType.SHOVEL)
+                    {
+                        if (!world.isRemote)
+                        {
+                            world.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                            this.world.setBlockState(pos, BlockRockVariant.get(blockRock.getRock(), Rock.Type.PATH).getDefaultState());
+                            this.damageAndUpdateOnBreak(pos, slot, itemstack, player);
+                        }
+                    }
+                }
+                else if (itemstack.getItem() instanceof ItemSpade) //Gets the stone tools
+                {
+                    if (!world.isRemote)
+                    {
+                        world.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                        this.world.setBlockState(pos, BlockRockVariant.get(blockRock.getRock(), Rock.Type.PATH).getDefaultState());
+                        this.damageAndUpdateOnBreak(pos, slot, itemstack, player);
+                    }
+                }
             }
         }
-
     }
 
     public boolean processInitialInteract(EntityPlayer player, EnumHand hand) {
