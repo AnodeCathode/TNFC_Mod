@@ -25,7 +25,8 @@ import net.minecraft.world.World;
 
 import de.mennomax.astikorcarts.config.ModConfig;
 
-import de.mennomax.astikorcarts.entity.EntityPlowCart;
+import de.mennomax.astikorcarts.entity.AbstractDrawnInventory;
+
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.objects.blocks.BlockPlacedItemFlat;
 import net.dries007.tfc.objects.items.metal.ItemMetalHoe;
@@ -34,7 +35,7 @@ import tnfcmod.objects.items.TNFCItems;
 
 import static tnfcmod.tnfcmod.instance;
 
-public class EntityPlowCartTFC extends AbstractDrawnInventoryTFC implements IInventoryChangedListener
+public class EntityPlowCartTFC extends AbstractDrawnInventory implements IInventoryChangedListener
 {
     private static final DataParameter<Boolean> PLOWING = EntityDataManager.<Boolean>createKey(EntityPlowCartTFC.class, DataSerializers.BOOLEAN);
     private static final double BLADEOFFSET = 1.7D;

@@ -3,7 +3,7 @@ package tnfcmod.objects.items;
 import net.minecraft.world.World;
 
 
-import tnfcmod.objects.entities.AbstractDrawnTFC;
+import de.mennomax.astikorcarts.entity.AbstractDrawn;
 import tnfcmod.objects.entities.EntityPlowCartTFC;
 import tnfcmod.tnfcmod;
 
@@ -20,7 +20,7 @@ public class ItemPlowCartTFC extends AbstractCartItemTFC
 
         tnfcmod.proxy.registerItemRenderer(this, 0, name);
     }
-    public AbstractDrawnTFC newCart(World worldIn) {
+    public AbstractDrawn newCart(World worldIn) {
         return new EntityPlowCartTFC(worldIn);
     }
 

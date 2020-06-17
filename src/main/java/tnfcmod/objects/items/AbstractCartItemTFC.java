@@ -13,7 +13,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 
-import tnfcmod.objects.entities.AbstractDrawnTFC;
+import de.mennomax.astikorcarts.entity.AbstractDrawn;
 
 import static net.dries007.tfc.objects.CreativeTabsTFC.CT_MISC;
 import static tnfcmod.tnfcmod.MODID;
@@ -40,7 +40,7 @@ public abstract class AbstractCartItemTFC extends Item
             {
                 if (!worldIn.isRemote)
                 {
-                    AbstractDrawnTFC cart = this.newCart(worldIn);
+                    AbstractDrawn cart = this.newCart(worldIn);
                     cart.setPosition(result.hitVec.x, result.hitVec.y, result.hitVec.z);
                     cart.rotationYaw = (playerIn.rotationYaw + 180) % 360;
                     worldIn.spawnEntity(cart);
@@ -57,5 +57,5 @@ public abstract class AbstractCartItemTFC extends Item
         return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
     }
 
-    public abstract AbstractDrawnTFC newCart(World worldIn);
+    public abstract AbstractDrawn newCart(World worldIn);
 }

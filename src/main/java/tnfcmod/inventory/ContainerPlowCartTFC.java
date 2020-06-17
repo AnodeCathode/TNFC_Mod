@@ -2,8 +2,9 @@ package tnfcmod.inventory;
 
 
 
+import de.mennomax.astikorcarts.entity.AbstractDrawn;
 import net.dries007.tfc.objects.items.metal.ItemMetalTool;
-import tnfcmod.objects.entities.AbstractDrawnTFC;
+
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -16,9 +17,9 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerPlowCartTFC extends Container {
     private final IInventory plowInventory;
-    private final AbstractDrawnTFC drawn;
+    private final AbstractDrawn drawn;
 
-    public ContainerPlowCartTFC(InventoryPlayer playerInventory, IInventory plowInventory, AbstractDrawnTFC drawn, EntityPlayer player) {
+    public ContainerPlowCartTFC(InventoryPlayer playerInventory, IInventory plowInventory, AbstractDrawn drawn, EntityPlayer player) {
         this.plowInventory = plowInventory;
         this.drawn = drawn;
         plowInventory.openInventory(player);

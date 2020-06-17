@@ -11,11 +11,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 
-import tnfcmod.capabilities.IPull;
-import tnfcmod.capabilities.PullFactory;
-import tnfcmod.capabilities.PullStorage;
 import tnfcmod.handlers.GuiHandler;
-import tnfcmod.handlers.PacketHandler;
+
 import tnfcmod.proxy.CommonProxy;
 import tnfcmod.util.VeinLoader;
 
@@ -50,8 +47,7 @@ public class tnfcmod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        PacketHandler.registerPackets();
-        CapabilityManager.INSTANCE.register(IPull.class, new PullStorage(), PullFactory::new);
+
         logger = event.getModLog();
         VeinLoader.INSTANCE.preInit(event.getModConfigurationDirectory());
         proxy.preInit(event);
