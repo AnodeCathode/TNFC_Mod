@@ -1,5 +1,7 @@
 package tnfcmod.objects.items;
 
+import javax.annotation.Nonnull;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -14,11 +16,14 @@ import net.minecraft.world.World;
 
 
 import de.mennomax.astikorcarts.entity.AbstractDrawn;
+import net.dries007.tfc.api.capability.size.Size;
+import net.dries007.tfc.api.capability.size.Weight;
+import net.dries007.tfc.objects.items.ItemTFC;
 
 import static net.dries007.tfc.objects.CreativeTabsTFC.CT_MISC;
 import static tnfcmod.tnfcmod.MODID;
 
-public abstract class AbstractCartItemTFC extends Item
+public abstract class AbstractCartItemTFC extends ItemTFC
 {
     public AbstractCartItemTFC(String name) {
         this.setRegistryName(MODID ,name);
@@ -58,4 +63,18 @@ public abstract class AbstractCartItemTFC extends Item
     }
 
     public abstract AbstractDrawn newCart(World worldIn);
+
+    @Nonnull
+    @Override
+    public Size getSize(@Nonnull ItemStack itemStack)
+    {
+        return Size.HUGE;
+    }
+
+    @Nonnull
+    @Override
+    public Weight getWeight(@Nonnull ItemStack itemStack)
+    {
+        return Weight.VERY_HEAVY;
+    }
 }
