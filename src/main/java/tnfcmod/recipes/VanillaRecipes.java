@@ -1,5 +1,7 @@
 package tnfcmod.recipes;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
@@ -9,13 +11,14 @@ import net.minecraftforge.registries.IForgeRegistryModifiable;
 import tnfcmod.objects.items.TNFCItems;
 
 import static tnfcmod.util.VanillaRecipeMaker.addShapelessDmgOreRecipe;
+import static tnfcmod.util.VanillaRecipeMaker.addShapelessOreRecipe;
 
 public class VanillaRecipes
 {
     public static void registerVanillaRecipes(RegistryEvent.Register<IRecipe> event){
 
         addShapelessDmgOreRecipe(new ItemStack(TNFCItems.copper_fishhook,1), 1,"oreCopperSmall", "hammer");
-
+        addShapelessOreRecipe(new ItemStack(Items.CLAY_BALL, 4), Blocks.CLAY);
     }
 
     public static void removeVanillaRecipes(RegistryEvent.Register<IRecipe> event)
