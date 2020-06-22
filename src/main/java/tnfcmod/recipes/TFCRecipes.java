@@ -80,7 +80,7 @@ public class TFCRecipes
         //We're going to steal the 'scrap' items for OrePiles.
         for (Ore ore : TFCRegistries.ORES.getValuesCollection()){
 
-            if (ore.isGraded() && ore.canMelt())
+            if (ore.isGraded())
             {
                 Metal metal = ore.getMetal();
                 if (Metal.ItemType.SCRAP.hasType(metal))
