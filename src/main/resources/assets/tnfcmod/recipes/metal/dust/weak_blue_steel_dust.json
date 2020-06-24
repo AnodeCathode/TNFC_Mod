@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BbB",
+    "SBS",
+    "BsB"
+  ],
+  "key": {
+    "B": {
+      "type": "forge:ore_dict",
+      "ore": "dustBlackSteel"
+      },
+    "b": {
+      "type": "forge:ore_dict",
+      "ore": "dustBismuthBronze"
+    },
+    "s": {
+      "type": "forge:ore_dict",
+      "ore": "dustSterlingSilver"
+    },
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "dustSteel"
+    }
+  },
+  "result": {
+    "item": "tnfcmod:weak_blue_steel_dust",
+    "count": 9
+  }
+}

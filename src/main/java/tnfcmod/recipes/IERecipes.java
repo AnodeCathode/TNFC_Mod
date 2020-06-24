@@ -23,6 +23,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import blusunrize.immersiveengineering.api.ApiUtils;
 import blusunrize.immersiveengineering.api.ComparableItemStack;
+import blusunrize.immersiveengineering.api.crafting.ArcFurnaceRecipe;
 import blusunrize.immersiveengineering.api.crafting.CrusherRecipe;
 import blusunrize.immersiveengineering.api.crafting.IngredientStack;
 import blusunrize.immersiveengineering.api.crafting.MetalPressRecipe;
@@ -48,6 +49,7 @@ import tnfcmod.objects.items.TNFCItems;
 
 import static blusunrize.immersiveengineering.api.tool.BelljarHandler.*;
 import static net.dries007.tfc.api.types.Metal.ItemType.DUST;
+import static net.dries007.tfc.api.types.Metal.ItemType.INGOT;
 
 
 public class IERecipes
@@ -275,12 +277,9 @@ public class IERecipes
                 //Do we want to be able to crush tools/armour/etc to scrap?
 
             }
-            //Throw your used anvils in the grinder for a satisfying crunch
-            if (Metal.ItemType.ANVIL.hasType(metal) && DUST.hasType(metal))
-            {
-                Ingredient ingredientAnvil = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.ANVIL)));
-                CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 14), ingredientAnvil, 112000);
-            }
+            //pig iron and high carbon steel need to crush to pig iron dust. Also need HC others to crush to dusts
+
+
             //add our 'fake' weak steel dust recipes to the crusher
             if (metal.toString().equals("weak_steel")){
                 Ingredient ingredientWeakIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
@@ -294,8 +293,17 @@ public class IERecipes
                 Ingredient ingredientWeakRedIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
                 CrusherRecipe.addRecipe(new ItemStack(TNFCItems.weak_red_steel_dust, 1), ingredientWeakRedIngot, 8000);
             }
+
+            //Throw your used anvils in the grinder for a satisfying crunch
+            if (Metal.ItemType.ANVIL.hasType(metal) && DUST.hasType(metal))
+            {
+                Ingredient ingredientAnvil = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.ANVIL)));
+                CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 14), ingredientAnvil, 112000);
+            }
+
             // add selenite to glowstone recipe, also to quern
         }
+
         // Clear out the recipes related
         for (QuernRecipe quernRecipe : TFCRegistries.QUERN.getValuesCollection())
         {
@@ -304,23 +312,17 @@ public class IERecipes
         // Churn the quern and steal its recipes
         for (QuernRecipe quernRecipe : TFCRegistries.QUERN.getValuesCollection())
         {
-
             NonNullList<IIngredient<ItemStack>> ingredientlist = quernRecipe.getIngredients();
             IIngredient iingredient = ingredientlist.get(0);
             NonNullList foo = iingredient.getValidIngredients();
             Ingredient ingredient = Ingredient.fromStacks((ItemStack) foo.get(0));
             ItemStack output = quernRecipe.getOutputs().get(0);
 
-
             if (ingredient != null)
             {
                 CrusherRecipe.addRecipe(output, ingredient, 4000);
             }
-
-
         }
-
-
     }
 
     public static void registerGardenClocheRecipes()
@@ -389,8 +391,21 @@ public class IERecipes
     {
      //ArcFurnaceRecipe addRecipe(ItemStack output, Object input, @Nonnull ItemStack slag, int time, int energyPerTick, Object... additives)
      //ArcFurnaceRecipe.addRecipe(new ItemStack(IEContent.itemMetal, 1, 8), "ingotIron", new ItemStack(IEContent.itemMaterial, 1, 7), 400, 512, "dustCoke");
+        for (Metal metal : TFCRegistries.METALS.getValuesCollection())
+        {
+            //Basic dust to ingot
+            if (DUST.hasType(metal)){
+                ArcFurnaceRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, INGOT), 1, 8), ItemMetal.get(metal, DUST), null, 400, 512);
+            }
+        }
 
-        //ArcFurnaceRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, DUST), 1, 8), "dustWeakSteel", new ItemStack(IEContent.itemMaterial, 1, 7), 400, 512, "dustCoke");
+
+    }
+
+    public static void registerBlastFurnaceRecipes()
+    {
+        //currently in CT Script. Advantage to moving here?
+
     }
 
 

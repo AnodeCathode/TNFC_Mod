@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+     "SSS", 
+     "CCC", 
+     "SSS"
+  ],
+  "key": {
+    "C": {
+      "type": "forge:ore_dict",
+      "ore": "dustCopper"
+    },
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "dustSilver"
+    }
+  },
+  "result": {
+    "item": "tfc:metal/dust/sterling_silver",
+    "count": 9
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CGC", 
+    "SCS", 
+    "CGC"
+  ],
+  "key": {
+    "C": {
+      "type": "forge:ore_dict",
+      "ore": "dustCopper"
+      },
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "dustSilver"
+    },
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "dustGold"
+    }
+  },
+  "result": {
+    "item": "tfc:metal/dust/black_bronze",
+    "count": 9
+  }
+}

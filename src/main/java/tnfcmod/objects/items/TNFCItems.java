@@ -41,7 +41,14 @@ public class TNFCItems
     public static ItemWeakSteelDust weak_red_steel_dust = new ItemWeakSteelDust("weak_red_steel_dust").setCreativeTab(CT_MISC);
     public static ItemWeakSteelDust weak_blue_steel_dust = new ItemWeakSteelDust("weak_blue_steel_dust").setCreativeTab(CT_MISC);
 
+    //Add the high carbon and amalgam stuff too. Not sure we're using the amalgam yet
+    public static ItemHighCarbonDust hc_black_steel_dust = new ItemHighCarbonDust("hc_black_steel_dust").setCreativeTab(CT_MISC);
+    public static ItemHighCarbonDust hc_red_steel_dust = new ItemHighCarbonDust("hc_red_steel_dust").setCreativeTab(CT_MISC);
+    public static ItemHighCarbonDust hc_blue_steel_dust = new ItemHighCarbonDust("hc_blue_steel_dust").setCreativeTab(CT_MISC);
 
+    public static ItemSteelAmalgam hc_black_steel_amalgam = new ItemSteelAmalgam("hc_black_steel_amalgam").setCreativeTab(CT_MISC);
+    public static ItemSteelAmalgam hc_blue_steel_amalgam = new ItemSteelAmalgam("hc_blue_steel_amalgam").setCreativeTab(CT_MISC);
+    public static ItemSteelAmalgam hc_red_steel_amalgam = new ItemSteelAmalgam("hc_red_steel_amalgam").setCreativeTab(CT_MISC);
 
      public static void register(IForgeRegistry<Item> registry) {
 
@@ -74,7 +81,12 @@ public class TNFCItems
         registry.register(weak_blue_steel_dust);
         registry.register(copper_fishhook);
         registry.register(PLOWCARTTNFC);
-
+        registry.register(hc_black_steel_dust);
+        registry.register(hc_red_steel_dust);
+        registry.register(hc_blue_steel_dust);
+        registry.register(hc_black_steel_amalgam);
+        registry.register(hc_blue_steel_amalgam);
+        registry.register(hc_red_steel_amalgam);
     }
 
     public static void registerModels(Event event)
@@ -108,6 +120,12 @@ public class TNFCItems
         weak_blue_steel_dust.registerItemModel();
         copper_fishhook.registerItemModel();
         PLOWCARTTNFC.registerItemModel();
+        hc_black_steel_dust.registerItemModel();
+        hc_red_steel_dust.registerItemModel();
+        hc_blue_steel_dust.registerItemModel();
+        hc_black_steel_amalgam.registerItemModel();
+        hc_blue_steel_amalgam.registerItemModel();
+        hc_red_steel_amalgam.registerItemModel();
 
 
     }

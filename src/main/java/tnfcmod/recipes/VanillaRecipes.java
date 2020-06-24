@@ -8,8 +8,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
+import net.dries007.tfc.api.types.Metal;
+import net.dries007.tfc.objects.items.metal.ItemMetal;
 import tnfcmod.objects.items.TNFCItems;
 
+import static net.dries007.tfc.api.types.Metal.ItemType.DUST;
+import static tnfcmod.util.VanillaRecipeMaker.addShapedOreRecipe;
 import static tnfcmod.util.VanillaRecipeMaker.addShapelessDmgOreRecipe;
 import static tnfcmod.util.VanillaRecipeMaker.addShapelessOreRecipe;
 
@@ -19,6 +23,23 @@ public class VanillaRecipes
 
         addShapelessDmgOreRecipe(new ItemStack(TNFCItems.copper_fishhook,1), 1,"oreCopperSmall", "hammer");
         addShapelessOreRecipe(new ItemStack(Items.CLAY_BALL, 4), Blocks.CLAY);
+
+    //Alloy Dust Crafting
+
+        //weak black steel
+        //addShapedOreRecipe(new ItemStack(TFCItems.metalDust, 9, 27), "SNS", "BSB", "SNS", 'S', "dustSteel", 'N', "dustNickel", 'B', "dustBlackBronze"));
+        //weak blue steel
+        //addShapedOreRecipe(new ItemStack(TFCItems.metalDust, 9, 28), "BbB", "SBS", "BsB", 'B', "dustBlackSteel", 'b', "dustBismuthBronze", 'S', "dustSteel", 's', "dustSterlingSilver"));
+
+
+        //high carbon black steel
+        //GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(TFCItems.metalDust, 1, 21), "dustWeakSteel", "dustPigIron"));
+        //high carbon blue steel
+        //GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(TFCItems.metalDust, 1, 22), "dustWeakBlueSteel","dustBlackSteel"));
+        //high carbon red steel
+        //GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(TFCItems.metalDust, 1, 23), "dustWeakRedSteel", "dustBlackSteel"));
+
+
     }
 
     public static void removeVanillaRecipes(RegistryEvent.Register<IRecipe> event)

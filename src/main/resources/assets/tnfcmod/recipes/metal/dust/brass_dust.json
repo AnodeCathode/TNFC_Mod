@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+     "CCC", 
+     "CZC", 
+     "CCC"
+  ],
+  "key": {
+    "C": {
+      "type": "forge:ore_dict",
+      "ore": "dustCopper"
+      },
+    "Z": {
+      "type": "forge:ore_dict",
+      "ore": "dustZinc"
+    }
+
+  },
+  "result": {
+    "item": "tfc:metal/dust/brass",
+    "count": 9
+  }
+}

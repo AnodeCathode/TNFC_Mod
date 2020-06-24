@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+     "GGG", 
+     "CGC", 
+     "GGG"
+  ],
+  "key": {
+    "C": {
+      "type": "forge:ore_dict",
+      "ore": "dustCopper"
+    },
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "dustGold"
+    }
+  },
+  "result": {
+    "item": "tfc:metal/dust/rose_gold",
+    "count": 9
+  }
+}

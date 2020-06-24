@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "ZBZ",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "type": "forge:ore_dict",
+      "ore": "dustCopper"
+      },
+    "Z": {
+      "type": "forge:ore_dict",
+      "ore": "dustZinc"
+    },
+    "B": {
+      "type": "forge:ore_dict",
+      "ore": "dustBismuth"
+    }
+  },
+  "result": {
+    "item": "tfc:metal/dust/bismuth_bronze",
+    "count": 9
+  }
+}

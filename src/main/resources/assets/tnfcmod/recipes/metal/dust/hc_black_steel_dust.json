@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "dustWeakSteel"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dustPigIron"
+    }    
+  ],
+  "result": {
+    "item": "tnfcmod:hc_black_steel_dust",
+    "count": 1
+  }
+}
