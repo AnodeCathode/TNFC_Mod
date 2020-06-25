@@ -2,8 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " G ",
-    "lll",
-    "  "
+    "lll"
   ],
   "key": {
     "G": {
@@ -11,7 +10,8 @@
       "ore": "craftingRedGem"
     },
     "l": {
-      "item": "betterwithmods:material:34"
+      "item": "betterwithmods:material",
+      "data": 34
     }
   },
   "result": {
