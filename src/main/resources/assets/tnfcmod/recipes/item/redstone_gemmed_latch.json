@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " G ",
+    "lll",
+    "  "
+  ],
+  "key": {
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "craftingRedGem"
+    },
+    "l": {
+      "item": "betterwithmods:material:34"
+    }
+  },
+  "result": {
+    "item": "tnfcmod:redstone_gemmed_latch"
+  }
+}

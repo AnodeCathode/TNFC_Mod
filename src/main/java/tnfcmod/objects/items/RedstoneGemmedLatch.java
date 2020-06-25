@@ -12,11 +12,11 @@ import tnfcmod.tnfcmod;
 
 import static tnfcmod.tnfcmod.MODID;
 
-public class CopperFishHook extends ItemTFC
+public class RedstoneGemmedLatch extends ItemTFC
 {
     protected String name;
 
-    public CopperFishHook(String name)
+    public RedstoneGemmedLatch(String name)
     {
         this.name = name;
         setTranslationKey(MODID + "." + name);
@@ -30,7 +30,7 @@ public class CopperFishHook extends ItemTFC
     }
 
     @Override
-    public CopperFishHook setCreativeTab(CreativeTabs tab) {
+    public RedstoneGemmedLatch setCreativeTab(CreativeTabs tab) {
         super.setCreativeTab(tab);
         return this;
     }

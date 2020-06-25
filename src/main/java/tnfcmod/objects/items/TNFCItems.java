@@ -8,9 +8,14 @@ import static net.dries007.tfc.objects.CreativeTabsTFC.CT_MISC;
 
 public class TNFCItems
 {
+    //Random bits
     public static ItemPlowCartTFC PLOWCARTTNFC = new ItemPlowCartTFC("plowcarttfc");
+    public static RedstoneGemmedLatch redstone_gemmed_latch = new RedstoneGemmedLatch("redstone_gemmed_latch").setCreativeTab(CT_MISC);
+    public static CopperFishHook copper_fishhook = new CopperFishHook("copper_fishhook").setCreativeTab(CT_MISC);
     public static ItemBackpackPiece backpackpiece = new ItemBackpackPiece("backpackpiece").setCreativeTab(CT_MISC);
     public static ItemBackpackFrame backpackframe = new ItemBackpackFrame("backpackframe").setCreativeTab(CT_MISC);
+
+    //IE Molds
     public static IEMetalPressMold mold_axe = new IEMetalPressMold("mold_axe").setCreativeTab(CT_MISC);
     public static IEMetalPressMold mold_blank = new IEMetalPressMold("mold_blank").setCreativeTab(CT_MISC);
     public static IEMetalPressMold mold_block = new IEMetalPressMold("mold_block").setCreativeTab(CT_MISC);
@@ -34,8 +39,6 @@ public class TNFCItems
     public static IEMetalPressMold mold_sword = new IEMetalPressMold("mold_sword").setCreativeTab(CT_MISC);
     public static IEMetalPressMold mold_tuyere = new IEMetalPressMold("mold_tuyere").setCreativeTab(CT_MISC);
 
-    public static CopperFishHook copper_fishhook = new CopperFishHook("copper_fishhook");
-
     // You moved the headstones but left the textures? What?!?
     public static ItemWeakSteelDust weak_steel_dust = new ItemWeakSteelDust("weak_steel_dust").setCreativeTab(CT_MISC);
     public static ItemWeakSteelDust weak_red_steel_dust = new ItemWeakSteelDust("weak_red_steel_dust").setCreativeTab(CT_MISC);
@@ -52,6 +55,7 @@ public class TNFCItems
 
      public static void register(IForgeRegistry<Item> registry) {
 
+        registry.register(redstone_gemmed_latch);
         registry.register(backpackpiece);
         registry.register(backpackframe);
         registry.register(mold_axe);
@@ -91,6 +95,7 @@ public class TNFCItems
 
     public static void registerModels(Event event)
     {
+        redstone_gemmed_latch.registerItemModel();
         backpackpiece.registerItemModel();
         backpackframe.registerItemModel();
         mold_axe.registerItemModel();
