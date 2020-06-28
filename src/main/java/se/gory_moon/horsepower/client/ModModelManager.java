@@ -28,7 +28,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @SideOnly(Side.CLIENT)
-@Mod.EventBusSubscriber(Side.CLIENT)
+@Mod.EventBusSubscriber(value = Side.CLIENT, modid = Reference.MODID)
 public class ModModelManager {
 
     public static final ModModelManager INSTANCE = new ModModelManager();
