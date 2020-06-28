@@ -1,0 +1,21 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "horsepower:chopper"
+  },
+  "variants": {
+    "part": {
+      "base": { "model": "horsepower:chopper" },
+      "blade": { "model": "horsepower:chopper_blade" }
+    },
+    "facing": {
+      "up":    {},
+      "down": {},
+      "north": {},
+      "east":  { "y": 90 },
+      "south": { "y": 180 },
+      "west":  { "y": 270 }
+    },
+    "inventory": { "model": "horsepower:chopper" }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "horsepower:grindstone"
+  },
+  "variants": {
+    "part": {
+      "base": { "model": "horsepower:grindstone" },
+      "filled": { "model": "horsepower:grindstone_filled" }
+    },
+    "filled": {
+      "true": {},
+      "false": {}
+    },
+    "inventory": { "model": "horsepower:grindstone" }
+  }
+}

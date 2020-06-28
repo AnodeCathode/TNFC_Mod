@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "config",
+      "enabled": "flour"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "horsepower:flour"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "item": "horsepower:dough"
+  }
+}
