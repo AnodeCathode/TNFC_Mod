@@ -12,6 +12,7 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tileentity.TileEntity;
@@ -317,10 +318,16 @@ public class IERecipes
             NonNullList foo = iingredient.getValidIngredients();
             Ingredient ingredient = Ingredient.fromStacks((ItemStack) foo.get(0));
             ItemStack output = quernRecipe.getOutputs().get(0);
+            Item item = output.getItem();
+
+            //The IE Crusher is just super-efficient
+            int amount = output.getCount() * 2 + 2;
+            int meta = output.getMetadata();
+            ItemStack newoutput = new ItemStack(item, amount, meta);
 
             if (ingredient != null)
             {
-                CrusherRecipe.addRecipe(output, ingredient, 4000);
+                CrusherRecipe.addRecipe(newoutput, ingredient, 4000);
             }
         }
     }
