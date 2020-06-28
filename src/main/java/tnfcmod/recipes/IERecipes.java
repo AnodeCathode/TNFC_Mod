@@ -327,7 +327,7 @@ public class IERecipes
 
             if (ingredient != null)
             {
-                CrusherRecipe.addRecipe(newoutput, ingredient, 4000);
+                CrusherRecipe.addRecipe(newoutput, ingredient, amount * 1000);
             }
         }
     }
