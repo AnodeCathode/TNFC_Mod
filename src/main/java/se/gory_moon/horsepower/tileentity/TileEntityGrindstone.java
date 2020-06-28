@@ -8,6 +8,8 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
+
+import net.dries007.tfc.api.capability.food.CapabilityFood;
 import se.gory_moon.horsepower.blocks.BlockGrindstone;
 import se.gory_moon.horsepower.recipes.HPRecipeBase;
 import se.gory_moon.horsepower.recipes.HPRecipes;
@@ -116,13 +118,17 @@ public class TileEntityGrindstone extends TileEntityHPHorseBase {
             HPRecipeBase recipe = getRecipe();
             ItemStack result = recipe.getOutput();
             ItemStack secondary = recipe.getSecondary();
-
+            //somewhere in here we need to fix the creation date for foods.
             ItemStack input = getStackInSlot(0);
             ItemStack output = getStackInSlot(1);
             ItemStack secondaryOutput = getStackInSlot(2);
 
             if (output.isEmpty()) {
-                setInventorySlotContents(1, result.copy());
+                if (input.hasCapability(CapabilityFood.CAPABILITY, null))
+                {
+                    CapabilityFood.updateFoodFromPrevious(input, result);
+                }
+                setInventorySlotContents(1, result);
             } else if (output.isItemEqual(result)) {
                 output.grow(result.getCount());
             }
