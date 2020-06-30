@@ -18,6 +18,8 @@ import se.gory_moon.horsepower.util.Localization;
 import javax.annotation.Nullable;
 import java.awt.*;
 
+import static se.gory_moon.horsepower.util.Utils.cleanStack;
+
 public class TileEntityGrindstone extends TileEntityHPHorseBase {
 
     private int currentItemMillTime;
@@ -91,7 +93,7 @@ public class TileEntityGrindstone extends TileEntityHPHorseBase {
         if (currentItemMillTime >= totalItemMillTime) {
             currentItemMillTime = 0;
 
-            totalItemMillTime = HPRecipes.instance().getGrindstoneTime(getStackInSlot(0), false);
+            totalItemMillTime = HPRecipes.instance().getGrindstoneTime(cleanStack(getStackInSlot(0)), false);
             millItem();
             return true;
         }
@@ -100,12 +102,12 @@ public class TileEntityGrindstone extends TileEntityHPHorseBase {
 
     @Override
     public HPRecipeBase getRecipe() {
-        return HPRecipes.instance().getGrindstoneRecipe(getStackInSlot(0), false);
+        return HPRecipes.instance().getGrindstoneRecipe(cleanStack(getStackInSlot(0)), false);
     }
 
     @Override
     public ItemStack getRecipeItemStack() {
-        return HPRecipes.instance().getGrindstoneResult(getStackInSlot(0), false);
+        return HPRecipes.instance().getGrindstoneResult(cleanStack(getStackInSlot(0)), false);
     }
 
     @Override
@@ -118,7 +120,6 @@ public class TileEntityGrindstone extends TileEntityHPHorseBase {
             HPRecipeBase recipe = getRecipe();
             ItemStack result = recipe.getOutput();
             ItemStack secondary = recipe.getSecondary();
-            //somewhere in here we need to fix the creation date for foods.
             ItemStack input = getStackInSlot(0);
             ItemStack output = getStackInSlot(1);
             ItemStack secondaryOutput = getStackInSlot(2);
@@ -149,7 +150,7 @@ public class TileEntityGrindstone extends TileEntityHPHorseBase {
 
         boolean flag = !stack.isEmpty() && stack.isItemEqual(itemstack) && ItemStack.areItemStackTagsEqual(stack, itemstack);
         if (index == 0 && !flag) {
-            totalItemMillTime = HPRecipes.instance().getGrindstoneTime(stack, false);
+            totalItemMillTime = HPRecipes.instance().getGrindstoneTime(cleanStack(stack), false);
             currentItemMillTime = 0;
         }
         markDirty();
@@ -162,7 +163,7 @@ public class TileEntityGrindstone extends TileEntityHPHorseBase {
 
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
-        return index == 0 && HPRecipes.instance().hasGrindstoneRecipe(stack, false);
+        return index == 0 && HPRecipes.instance().hasGrindstoneRecipe(cleanStack(stack), false);
     }
 
     @Override

@@ -181,4 +181,13 @@ public class Utils {
         }
         return stacks;
     }
+
+    public static ItemStack cleanStack(ItemStack stack){
+        int amount = stack.getCount();
+        int meta = stack.getMetadata();
+        ItemStack cleanStack = new ItemStack(stack.getItem(), amount, meta);
+
+        return cleanStack;
+    }
+
 }
