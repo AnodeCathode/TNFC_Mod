@@ -90,34 +90,11 @@ String shortVersion = mcVersion.substring(0, mcVersion.lastIndexOf('.'))
 String strippedVersion = shortVersion.replace(".", "") + "0"
 
 dependencies {
-    deobfProvided ("CraftTweaker2:CraftTweaker2-MC${strippedVersion}-Main:${config.crafttweaker.version}"){
-        exclude group: 'mezz.jei', module:'jei_1.12.2'
-        exclude group: 'cofh', module:'RedstoneFlux'
-    }
+    deobfProvided ("CraftTweaker2:CraftTweaker2-MC${strippedVersion}-Main:${config.crafttweaker.version}")
+    
     // deobfCompile ("mezz.jei:jei_${config.minecraft.version}:${config.jei.version}")
     // deobfCompile ("cofh:RedstoneFlux:1.12-2.0.1+:deobf")
-    compileOnly ("mcp.mobius.waila:Hwyla:${config.HWYLA.version}_${config.minecraft.version}"){
-        exclude group: 'mezz.jei', module:'jei_1.12.2'
-        exclude group: 'cofh', module:'RedstoneFlux'
-    }
-    compile ("mcjty.theoneprobe:TheOneProbe-${shortVersion}:${config.TOP.version}"){
-        exclude group: 'mezz.jei', module:'jei_1.12.2'
-        exclude group: 'cofh', module:'RedstoneFlux'
-    }
-    deobfCompile ("gigaherz.guidebook:Guidebook-1.12.2:2.9.4"){
-        exclude group: 'mezz.jei', module:'jei_1.12.2'
-        exclude group: 'cofh', module:'RedstoneFlux'
-    }
-    
-    deobfCompile('TechReborn:TechReborn-1.12.2:+:universal') {
-        exclude group: 'mezz.jei', module:'jei_1.12.2'
-        exclude group: 'cofh', module:'RedstoneFlux'
-        }
-    deobfCompile("betterwithmods:BetterWithMods:1.12-2.1.+") {
-        exclude group: 'mezz.jei', module:'jei_1.12.2'
-        exclude group: 'cofh', module:'RedstoneFlux'
-    }
-    deobfCompile("blusunrize:ImmersiveEngineering:+") {
+     deobfCompile("betterwithmods:BetterWithMods:1.12-2.1.+") {
         exclude group: 'mezz.jei', module:'jei_1.12.2'
         exclude group: 'cofh', module:'RedstoneFlux'
     }
