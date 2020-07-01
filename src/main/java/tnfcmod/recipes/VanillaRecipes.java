@@ -308,7 +308,8 @@ public class VanillaRecipes
        modRegistry.remove(new ResourceLocation("minecraft:hay"));
        modRegistry.remove(new ResourceLocation("minecraft:hay_bale"));
        modRegistry.remove(new ResourceLocation("minecraft:item_frame"));
-       modRegistry.remove(new ResourceLocation("minecraft:ladder"));
+       //Get us some ladders made from sticks
+       //modRegistry.remove(new ResourceLocation("minecraft:ladder"));
        modRegistry.remove(new ResourceLocation("minecraft:lapis_lazuli_block"));
        modRegistry.remove(new ResourceLocation("minecraft:magenta_dye_lapis_red_pink"));
        modRegistry.remove(new ResourceLocation("minecraft:name_tag"));

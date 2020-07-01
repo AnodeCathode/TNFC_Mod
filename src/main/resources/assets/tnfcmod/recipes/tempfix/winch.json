@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    " Y ",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "type": "forge:ore_dict",
+      "ore": "rodWroughtIron"
+    },
+    "Y": {
+      "type": "forge:ore_dict",
+      "ore": "stickLongWroughtIron"
+    }
+  },
+  "result": {
+    "item": "tfctech:wiredraw/winch",
+    "count": 1
+  }
+}
