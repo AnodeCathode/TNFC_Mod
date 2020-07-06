@@ -124,11 +124,12 @@ public class TileEntityGrindstone extends TileEntityHPHorseBase {
             ItemStack secondaryOutput = getStackInSlot(2);
 
             if (output.isEmpty()) {
+                ItemStack newOutput = result.copy();
                 if (input.hasCapability(CapabilityFood.CAPABILITY, null))
                 {
-                    CapabilityFood.updateFoodFromPrevious(input, result);
+                    CapabilityFood.updateFoodFromPrevious(input, newOutput);
                 }
-                setInventorySlotContents(1, result);
+                setInventorySlotContents(1, newOutput);
             } else if (output.isItemEqual(result)) {
                 output.grow(result.getCount());
             }
