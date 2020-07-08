@@ -8,11 +8,13 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
+import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
 import tnfcmod.objects.items.TNFCItems;
 
 import static net.dries007.tfc.api.types.Metal.ItemType.DUST;
+import static net.dries007.tfc.api.types.Metal.ItemType.NUGGET;
 import static tnfcmod.util.VanillaRecipeMaker.addShapedOreRecipe;
 import static tnfcmod.util.VanillaRecipeMaker.addShapelessDmgOreRecipe;
 import static tnfcmod.util.VanillaRecipeMaker.addShapelessOreRecipe;
@@ -43,7 +45,7 @@ public class VanillaRecipes
             //Basic ingot to dust
             if (NUGGET.hasType(metal))
             {
-                addShapelessDmgOreRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.NUGGET), 9), 1,new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT),1), "hammer");
+                addShapelessDmgOreRecipe(new ItemStack(ItemMetal.get(metal, NUGGET), 9), 1,new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT),1), "hammer");
             }
         }
 
