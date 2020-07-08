@@ -1,0 +1,56 @@
+package tnfcmod.handlers;
+
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import net.dries007.tfc.api.capability.food.FoodStatsTFC;
+import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
+import net.dries007.tfc.api.capability.food.NutritionStats;
+
+import static tnfcmod.tnfcmod.MODID;
+
+@SuppressWarnings("unused")
+@Mod.EventBusSubscriber(modid = MODID)
+public class PlayerEventHandler
+{
+
+
+    @SubscribeEvent
+    public static void onPlayerClone(PlayerEvent.Clone event)
+    {
+        if (!event.isWasDeath()){return;};
+        if (event.getEntityPlayer() instanceof EntityPlayerMP && !event.getEntityPlayer().isCreative() )
+        {
+            EntityPlayer player = event.getEntityPlayer();
+            EntityPlayer oldPlayer = event.getOriginal();
+            //Going to take their old nutrition and apply it to their new body, plus randomly nuke one category.
+            //The death tax is waaaaay too low
+            // Food Stats
+            IFoodStatsTFC oldFoodStats = (IFoodStatsTFC) oldPlayer.getFoodStats();
+            FoodStatsTFC.replaceFoodStats(player);
+            IFoodStatsTFC newFoodStats = (IFoodStatsTFC) player.getFoodStats();
+            NutritionStats oldNutritionStats = oldFoodStats.getNutrition();
+            NutritionStats newNutritionStats = newFoodStats.getNutrition();
+            newNutritionStats.deserializeNBT(oldNutritionStats.serializeNBT());
+
+            //Dying is thirsty business
+            newFoodStats.addThirst(-10);
+
+
+
+
+        }
+
+    }
+    @SubscribeEvent
+    public static void onPlayerRespawn(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent event) {
+
+    }
+
+}
