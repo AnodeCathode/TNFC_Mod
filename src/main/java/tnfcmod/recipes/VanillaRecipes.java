@@ -38,7 +38,14 @@ public class VanillaRecipes
         //GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(TFCItems.metalDust, 1, 22), "dustWeakBlueSteel","dustBlackSteel"));
         //high carbon red steel
         //GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(TFCItems.metalDust, 1, 23), "dustWeakRedSteel", "dustBlackSteel"));
-
+      for (Metal metal : TFCRegistries.METALS.getValuesCollection())
+        {
+            //Basic ingot to dust
+            if (NUGGET.hasType(metal))
+            {
+                addShapelessDmgOreRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.NUGGET), 9), 1,new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT),1), "hammer");
+            }
+        }
 
     }
 
