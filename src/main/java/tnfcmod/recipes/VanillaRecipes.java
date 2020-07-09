@@ -26,21 +26,8 @@ public class VanillaRecipes
         addShapelessDmgOreRecipe(new ItemStack(TNFCItems.copper_fishhook,1), 1,"oreCopperSmall", "hammer");
         addShapelessOreRecipe(new ItemStack(Items.CLAY_BALL, 4), Blocks.CLAY);
 
-    //Alloy Dust Crafting
-
-        //weak black steel
-        //addShapedOreRecipe(new ItemStack(TFCItems.metalDust, 9, 27), "SNS", "BSB", "SNS", 'S', "dustSteel", 'N', "dustNickel", 'B', "dustBlackBronze"));
-        //weak blue steel
-        //addShapedOreRecipe(new ItemStack(TFCItems.metalDust, 9, 28), "BbB", "SBS", "BsB", 'B', "dustBlackSteel", 'b', "dustBismuthBronze", 'S', "dustSteel", 's', "dustSterlingSilver"));
-
-
-        //high carbon black steel
-        //GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(TFCItems.metalDust, 1, 21), "dustWeakSteel", "dustPigIron"));
-        //high carbon blue steel
-        //GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(TFCItems.metalDust, 1, 22), "dustWeakBlueSteel","dustBlackSteel"));
-        //high carbon red steel
-        //GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(TFCItems.metalDust, 1, 23), "dustWeakRedSteel", "dustBlackSteel"));
-      for (Metal metal : TFCRegistries.METALS.getValuesCollection())
+      //ADD Shapeless Hammer and Ingot recipes to make delicious metal nuggets.
+        for (Metal metal : TFCRegistries.METALS.getValuesCollection())
         {
             //Basic ingot to dust
             if (NUGGET.hasType(metal))
@@ -57,6 +44,10 @@ public class VanillaRecipes
         //things we remove so we can add our own:
        modRegistry.remove(new ResourceLocation("minecraft:furnace"));
 
+       //Things added by TFC-NG that we're going to remove.
+
+       //Ladders from planks. Ladders are made from sticks damnit
+       modRegistry.remove(new ResourceLocation("tfc:vanilla/ladder"));
        //Things remove by TFC-NG but not added. TBD
        modRegistry.remove(new ResourceLocation("minecraft:coal_block"));
        modRegistry.remove(new ResourceLocation("minecraft:acacia_boat"));
@@ -102,7 +93,8 @@ public class VanillaRecipes
        modRegistry.remove(new ResourceLocation("minecraft:chainmail_leggings"));
        modRegistry.remove(new ResourceLocation("minecraft:chest"));
        modRegistry.remove(new ResourceLocation("minecraft:chest_minecart"));
-       modRegistry.remove(new ResourceLocation("minecraft:chiseled_quartz_block"));
+       //Reenable as we can create quartz now
+       //modRegistry.remove(new ResourceLocation("minecraft:chiseled_quartz_block"));
        modRegistry.remove(new ResourceLocation("minecraft:chiseled_red_sandstone"));
        modRegistry.remove(new ResourceLocation("minecraft:chiseled_sandstone"));
        modRegistry.remove(new ResourceLocation("minecraft:chiseled_stonebrick"));
