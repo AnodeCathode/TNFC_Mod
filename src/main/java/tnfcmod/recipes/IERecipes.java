@@ -388,7 +388,7 @@ public class IERecipes
             @Override
             public float getGrowthMultiplier(ItemStack itemStack, ItemStack itemStack1, ItemStack itemStack2, TileEntity tileEntity)
             {
-                return 1.2f;
+                return 1.0f;
             }
         });
 
