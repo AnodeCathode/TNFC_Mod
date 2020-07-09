@@ -3,12 +3,14 @@ package tnfcmod.handlers;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import net.dries007.tfc.api.capability.food.FoodData;
 import net.dries007.tfc.api.capability.food.FoodStatsTFC;
 import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
 import net.dries007.tfc.api.capability.food.NutritionStats;
@@ -19,7 +21,7 @@ import static tnfcmod.tnfcmod.MODID;
 @Mod.EventBusSubscriber(modid = MODID)
 public class PlayerEventHandler
 {
-
+    public static final FoodData DEATHRATTLE = new FoodData(-2, -10.0F, 0.0F, -1.0F, -1.0F, -1.0F, -1.0F, -1.0F, 0.0F);
 
     @SubscribeEvent
     public static void onPlayerClone(PlayerEvent.Clone event)
@@ -38,10 +40,10 @@ public class PlayerEventHandler
             NutritionStats oldNutritionStats = oldFoodStats.getNutrition();
             NutritionStats newNutritionStats = newFoodStats.getNutrition();
             newNutritionStats.deserializeNBT(oldNutritionStats.serializeNBT());
-
-            //Dying is thirsty business
-            newFoodStats.addThirst(-10);
-
+            //Dying messes up your biochemistry
+            newNutritionStats.addNutrients(DEATHRATTLE);
+            //And makes you thirsty
+            newFoodStats.addThirst(-20);
 
 
 
