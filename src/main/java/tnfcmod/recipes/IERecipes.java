@@ -202,6 +202,7 @@ public class IERecipes
     {
         //Mold recipes
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_blank, 1), "sheetDoubleSteel", new ItemStack(IEContent.blockStorage, 1, 8), 2400);
+        MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_block, 1), "blockSteel", new ItemStack(TNFCItems.mold_blank, 1), 2400);
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_doubleingot, 1), "ingotDoubleSteel", new ItemStack(TNFCItems.mold_blank, 1), 2400);
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_sheet, 1), "sheetSteel", new ItemStack(TNFCItems.mold_blank, 1), 2400);
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_bucket, 1), "bucketRedSteel", new ItemStack(TNFCItems.mold_blank, 1), 2400);
@@ -402,7 +403,7 @@ public class IERecipes
         {
             //Basic dust to ingot
             if (DUST.hasType(metal)){
-                ArcFurnaceRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, INGOT), 1, 8), ItemMetal.get(metal, DUST), null, 400, 512);
+                ArcFurnaceRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, INGOT), 1), ItemMetal.get(metal, DUST), null, 400, 512);
             }
         }
 
