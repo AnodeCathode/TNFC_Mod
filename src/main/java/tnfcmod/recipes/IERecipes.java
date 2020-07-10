@@ -1,5 +1,6 @@
 package tnfcmod.recipes;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -399,11 +400,17 @@ public class IERecipes
     {
      //ArcFurnaceRecipe addRecipe(ItemStack output, Object input, @Nonnull ItemStack slag, int time, int energyPerTick, Object... additives)
      //ArcFurnaceRecipe.addRecipe(new ItemStack(IEContent.itemMetal, 1, 8), "ingotIron", new ItemStack(IEContent.itemMaterial, 1, 7), 400, 512, "dustCoke");
+//        ArrayList<ArcFurnaceRecipe> recipeList = ArcFurnaceRecipe.recipeList;
+//        recipeList.clear();
         for (Metal metal : TFCRegistries.METALS.getValuesCollection())
         {
             //Basic dust to ingot
             if (DUST.hasType(metal)){
-                ArcFurnaceRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, INGOT), 1), ItemMetal.get(metal, DUST), null, 400, 512);
+
+                ItemStack output = new ItemStack(ItemMetal.get(metal,INGOT), 1);
+                Ingredient input = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.DUST)));
+                ArcFurnaceRecipe.removeRecipes(output);
+                ArcFurnaceRecipe.addRecipe(output, input, ItemStack.EMPTY, 400, 512).setSpecialRecipeType("Ores");;
             }
         }
 
