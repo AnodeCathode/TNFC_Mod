@@ -218,7 +218,7 @@ public class VanillaRecipes
        modRegistry.remove(new ResourceLocation("minecraft:orange_bed"));
        modRegistry.remove(new ResourceLocation("minecraft:orange_dye_from_orange_tulip"));
        modRegistry.remove(new ResourceLocation("minecraft:paper"));
-       modRegistry.remove(new ResourceLocation("minecraft:pillar_quartz_block"));
+       //modRegistry.remove(new ResourceLocation("minecraft:pillar_quartz_block"));
        modRegistry.remove(new ResourceLocation("minecraft:pink_bed"));
        modRegistry.remove(new ResourceLocation("minecraft:pink_dye_from_peony"));
        modRegistry.remove(new ResourceLocation("minecraft:pink_dye_from_pink_tulip"));
@@ -234,9 +234,9 @@ public class VanillaRecipes
        modRegistry.remove(new ResourceLocation("minecraft:purpur_pillar"));
        modRegistry.remove(new ResourceLocation("minecraft:purpur_slab"));
        modRegistry.remove(new ResourceLocation("minecraft:purpur_stairs"));
-       modRegistry.remove(new ResourceLocation("minecraft:quartz_block"));
-       modRegistry.remove(new ResourceLocation("minecraft:quartz_slab"));
-       modRegistry.remove(new ResourceLocation("minecraft:quartz_stairs"));
+       //modRegistry.remove(new ResourceLocation("minecraft:quartz_block"));
+       //modRegistry.remove(new ResourceLocation("minecraft:quartz_slab"));
+       //modRegistry.remove(new ResourceLocation("minecraft:quartz_stairs"));
        modRegistry.remove(new ResourceLocation("minecraft:rabbit_stew_from_brown_mushroom"));
        modRegistry.remove(new ResourceLocation("minecraft:rabbit_stew_from_red_mushroom"));
        modRegistry.remove(new ResourceLocation("minecraft:red_bed"));
