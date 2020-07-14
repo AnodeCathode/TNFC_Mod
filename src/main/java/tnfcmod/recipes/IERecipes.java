@@ -331,6 +331,9 @@ public class IERecipes
             {
                 CrusherRecipe.addRecipe(newoutput, ingredient, amount * 1000);
             }
+            //Selenite to glowstone
+
+            //Also need sulfur to crushed whatever
         }
     }
 
@@ -404,13 +407,17 @@ public class IERecipes
 //        recipeList.clear();
         for (Metal metal : TFCRegistries.METALS.getValuesCollection())
         {
-            //Basic dust to ingot
-            if (DUST.hasType(metal)){
+            if (!metal.toString().endsWith("wrought_iron")) {
+            //Basic dust to ingot. Need to skip iron dust.
+                if (DUST.hasType(metal))
+                {
 
-                ItemStack output = new ItemStack(ItemMetal.get(metal,INGOT), 1);
-                Ingredient input = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.DUST)));
-                ArcFurnaceRecipe.removeRecipes(output);
-                ArcFurnaceRecipe.addRecipe(output, input, ItemStack.EMPTY, 400, 512).setSpecialRecipeType("Ores");;
+                    ItemStack output = new ItemStack(ItemMetal.get(metal, INGOT), 1);
+                    Ingredient input = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.DUST)));
+                    ArcFurnaceRecipe.removeRecipes(output);
+                    ArcFurnaceRecipe.addRecipe(output, input, ItemStack.EMPTY, 400, 512).setSpecialRecipeType("Ores");
+                    ;
+                }
             }
         }
 
