@@ -32,14 +32,18 @@ public class PlayerEventHandler
             EntityPlayer player = event.getEntityPlayer();
             EntityPlayer oldPlayer = event.getOriginal();
             //Going to take their old nutrition and apply it to their new body, plus randomly nuke one category.
-            //The death tax is waaaaay too low
+            //The death tax is waaaaay too low. But only if their nutrition is already crap. Otherwise, let the reset happen.
             // Food Stats
             IFoodStatsTFC oldFoodStats = (IFoodStatsTFC) oldPlayer.getFoodStats();
             FoodStatsTFC.replaceFoodStats(player);
             IFoodStatsTFC newFoodStats = (IFoodStatsTFC) player.getFoodStats();
             NutritionStats oldNutritionStats = oldFoodStats.getNutrition();
             NutritionStats newNutritionStats = newFoodStats.getNutrition();
-            newNutritionStats.deserializeNBT(oldNutritionStats.serializeNBT());
+            if (oldNutritionStats.getAverageNutrition() < 0.5)
+            {
+                newNutritionStats.deserializeNBT(oldNutritionStats.serializeNBT());
+
+            }
             //Dying messes up your biochemistry
             newNutritionStats.addNutrients(DEATHRATTLE);
             //And makes you thirsty
