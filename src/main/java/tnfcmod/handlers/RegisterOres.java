@@ -93,13 +93,13 @@ public final class RegisterOres
         r.register(new Metal(NICKEL_SILVER, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFFA4A4A5, ToolMaterialsTNFC.NICKEL_SILVER, ArmorMaterialsTNFC.NICKEL_SILVER));
         r.register(new Metal(RED_ALLOY, Metal.Tier.TIER_III, true, 0.35f, 1080, 0xFFDA6E6E, null, null));
         r.register(new Metal(INVAR, Metal.Tier.TIER_IV, true, 0.35f, 1450, 0xFF40444A, ToolMaterialsTNFC.INVAR, ArmorMaterialsTNFC.INVAR));
-        r.register(new Metal(ALUMINUM, Metal.Tier.TIER_IV, true, 0.3f, 660, 0xFFD9FBFC, ToolMaterialsTNFC.ALUMINUM, ArmorMaterialsTNFC.ALUMINUM));
-        r.register(new Metal(ALUMINUM_BRASS, Metal.Tier.TIER_IV, true, 0.3f, 630, 0xFFDCDABE, null, null));
-        r.register(new Metal(ARDITE, Metal.Tier.TIER_IV, true, 0.3f, 1050, 0xFF40444A, null, null));
-        r.register(new Metal(COBALT, Metal.Tier.TIER_IV, true, 0.3f, 1495, 0xFF6CA6E5, ToolMaterialsTNFC.COBALT, ArmorMaterialsTNFC.COBALT));
-        r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 1550, 0xFF40444A, ToolMaterialsTNFC.MANYULLYN, ArmorMaterialsTNFC.MANYULLYN));
+        r.register(new Metal(ALUMINUM, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFFD9FBFC, ToolMaterialsTNFC.ALUMINUM, ArmorMaterialsTNFC.ALUMINUM));
+        r.register(new Metal(ALUMINUM_BRASS, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFFDCDABE, null, null));
+        r.register(new Metal(ARDITE, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFF40444A, null, null));
+        r.register(new Metal(COBALT, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFF6CA6E5, ToolMaterialsTNFC.COBALT, ArmorMaterialsTNFC.COBALT));
+        r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFF40444A, ToolMaterialsTNFC.MANYULLYN, ArmorMaterialsTNFC.MANYULLYN));
         r.register(new Metal(OSMIUM, Metal.Tier.TIER_V, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTNFC.OSMIUM, ArmorMaterialsTNFC.OSMIUM));
-        r.register(new Metal(TITANIUM, Metal.Tier.TIER_V, true, 0.3f, 1700, 0xFFC2C4CC, ToolMaterialsTNFC.TITANIUM, ArmorMaterialsTNFC.TITANIUM));
+        r.register(new Metal(TITANIUM, Metal.Tier.TIER_V, true, 0.3f, 3025, 0xFFC2C4CC, ToolMaterialsTNFC.TITANIUM, ArmorMaterialsTNFC.TITANIUM));
         r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_V, true, 0.2f, 3400, 0xFF40444A, ToolMaterialsTNFC.TUNGSTEN, ArmorMaterialsTNFC.TUNGSTEN));
         r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTNFC.TUNGSTEN_STEEL, ArmorMaterialsTNFC.TUNGSTEN_STEEL));
 
