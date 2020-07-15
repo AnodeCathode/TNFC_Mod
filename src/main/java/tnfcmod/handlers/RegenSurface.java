@@ -55,6 +55,7 @@ public class RegenSurface
         {
             if (!POSITIONS.isEmpty())
             {
+
                 ChunkPos pos = POSITIONS.remove(0);
                 ChunkDataTFC chunkDataTFC = ChunkDataTFC.get(event.world, pos.getBlock(0, 0, 0));
 
@@ -66,7 +67,7 @@ public class RegenSurface
                 if (updateDelta > ConfigTFC.General.WORLD_REGEN.minimumTime * ICalendar.TICKS_IN_DAY && !chunkDataTFC.isSpawnProtected())
                 {
                     float regenerationModifier = MathHelper.clamp((float) updateDelta / (4 * ConfigTFC.General.WORLD_REGEN.minimumTime * ICalendar.TICKS_IN_DAY), 0, 1);
-
+                    tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
                     // Loose rocks - factors in time since last update
                     if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
                     {
