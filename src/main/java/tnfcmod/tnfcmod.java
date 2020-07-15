@@ -1,5 +1,6 @@
 package tnfcmod;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.Mod;
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import tnfcmod.handlers.GuiHandler;
 
 import tnfcmod.proxy.CommonProxy;
+import tnfcmod.recipes.LootTablesTNFC;
 import tnfcmod.util.VeinLoader;
 
 
@@ -28,27 +30,27 @@ public class tnfcmod {
     public static final String VERSION = "@VERSION@";
     public static final String DEPENDENCIES = "required-after:tfc;after:rockhounding_chemistry;after:immersiveengineering;after:betterwithmods;after:astikorcarts";
 
-    private static Logger logger;
+    private final Logger log = LogManager.getLogger(MODID);
 
 
 
-    public static Logger getLog()
-    {
-        return logger;
-    }
+    @Mod.Instance
+    private static tnfcmod INSTANCE = null;
 
     @SidedProxy(serverSide = "tnfcmod.proxy.CommonProxy",
         clientSide = "tnfcmod.proxy.ClientProxy")
     public static CommonProxy proxy;
 
 
-
+    public static Logger getLog()
+    {
+        return INSTANCE.log;
+    }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-
-        logger = event.getModLog();
+        log.info("Loading TechnodeFirmaCraft Stuff");
         VeinLoader.INSTANCE.preInit(event.getModConfigurationDirectory());
         proxy.preInit(event);
 
@@ -58,6 +60,7 @@ public class tnfcmod {
     public void init(FMLInitializationEvent event)
     {
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+        LootTablesTNFC.init();
     }
 
     @Mod.EventHandler

@@ -4,18 +4,20 @@ import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import net.dries007.tfc.api.recipes.knapping.KnappingRecipe;
+import tnfcmod.objects.items.TNFCItems;
 import tnfcmod.recipes.OreDicEntries;
 import tnfcmod.recipes.TFCRecipes;
-import tnfcmod.objects.items.TNFCItems;
+import tnfcmod.tnfcmod;
 
 import static tnfcmod.recipes.IERecipes.*;
-
-import static tnfcmod.recipes.TFCRecipes.*;
+import static tnfcmod.recipes.LootTablesTNFC.modifyLootTableLoad;
+import static tnfcmod.recipes.TFCRecipes.registerOrePileRecipes;
 import static tnfcmod.recipes.VanillaRecipes.registerVanillaRecipes;
 import static tnfcmod.recipes.VanillaRecipes.removeVanillaRecipes;
 import static tnfcmod.tnfcmod.MODID;
@@ -54,9 +56,18 @@ public final class RegistryHandler
     }
 
 
+    /**
+     * Register Loot Tables
+     */
+    @SubscribeEvent
+    public static void onLootTableLoad(LootTableLoadEvent event)
+    {
+           modifyLootTableLoad(event);
+    }
     @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event)
     {
+        tnfcmod.getLog().info("Registering TechnodeFirmaCraft recipes");
         removeVanillaRecipes(event);
         registerVanillaRecipes(event);
         registerMetalPressRecipes();
