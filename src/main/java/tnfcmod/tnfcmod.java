@@ -28,7 +28,7 @@ public class tnfcmod {
     public static final String MODID = "tnfcmod";
     public static final String NAME = "Technodefirmacraft";
     public static final String VERSION = "@VERSION@";
-    public static final String DEPENDENCIES = "required-after:tfc;after:rockhounding_chemistry;after:immersiveengineering;after:betterwithmods;after:astikorcarts";
+    public static final String DEPENDENCIES = "required-after:tfc;after:rockhounding_chemistry;after:immersiveengineering;after:betterwithmods;after:astikorcarts;after:jaff";
 
     private final Logger log = LogManager.getLogger(MODID);
 

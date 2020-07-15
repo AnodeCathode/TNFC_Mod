@@ -1,118 +1,67 @@
 {
   "pools": [
     {
-      "name": "main",
+      "name": "pooltnfc1",
       "entries": [
         {
-          "entryName": "minecraft:leather_boots",
+          "name": "tfc:animal/product/wool_cloth",
           "weight": 10,
           "quality": 0,
-          "type": "item",
-          "functions": [
-            {
-              "damage": {
-                "min": 0.0,
-                "max": 0.9
-              },
-              "function": "minecraft:set_damage"
-            }
-          ],
-          "name": "minecraft:leather_boots"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:leather",
+          "name": "minecraft:leather",
           "weight": 10,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:leather"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:bone",
+          "name": "minecraft:bone",
           "weight": 10,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:bone"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:potion",
-          "weight": 10,
-          "quality": 0,
-          "type": "item",
-          "functions": [
-            {
-              "tag": "{Potion:\"minecraft:water\"}",
-              "function": "minecraft:set_nbt"
-            }
-          ],
-          "name": "minecraft:potion"
-        },
-        {
-          "entryName": "minecraft:string",
+          "name": "minecraft:string",
           "weight": 5,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:string"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:fishing_rod",
+          "name": "jaff:iron_hook",
           "weight": 2,
           "quality": 0,
-          "type": "item",
-          "functions": [
-            {
-              "damage": {
-                "min": 0.0,
-                "max": 0.9
-              },
-              "function": "minecraft:set_damage"
-            }
-          ],
-          "name": "minecraft:fishing_rod"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:bowl",
+          "name": "tfc:ceramics/fired/jug",
           "weight": 10,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:bowl"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:stick",
+          "name": "minecraft:stick",
           "weight": 5,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:stick"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:dye",
+          "name": "tfc:ceramics/fired/mold/ingot",
           "weight": 1,
           "quality": 0,
-          "type": "item",
-          "functions": [
-            {
-              "data": 0.0,
-              "function": "minecraft:set_data"
-            },
-            {
-              "count": 10.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:dye"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:tripwire_hook",
+          "name": "tnfcmod:copper_fishhook",
           "weight": 10,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:tripwire_hook"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:rotten_flesh",
+          "name": "minecraft:rotten_flesh",
           "weight": 10,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:rotten_flesh"
+          "type": "item"
         }
       ],
       "rolls": 1.0

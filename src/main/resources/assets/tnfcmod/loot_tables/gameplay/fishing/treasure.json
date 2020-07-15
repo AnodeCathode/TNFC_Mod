@@ -1,31 +1,16 @@
 {
   "pools": [
     {
-      "name": "main",
+      "name": "pooltnfc1",
       "entries": [
         {
-          "entryName": "minecraft:waterlily",
+          "name": "firstaid:morphine",
           "weight": 1,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:waterlily"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:name_tag",
-          "weight": 1,
-          "quality": 0,
-          "type": "item",
-          "name": "minecraft:name_tag"
-        },
-        {
-          "entryName": "minecraft:saddle",
-          "weight": 1,
-          "quality": 0,
-          "type": "item",
-          "name": "minecraft:saddle"
-        },
-        {
-          "entryName": "minecraft:bow",
+          "name": "minecraft:bow",
           "weight": 1,
           "quality": 0,
           "type": "item",
@@ -42,43 +27,61 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:bow"
+          ]
         },
         {
-          "entryName": "minecraft:fishing_rod",
+          "name": "minecraft:saddle",
+          "weight": 1,
+          "quality": 0,
+          "type": "item"
+        },
+        {
+          "name": "firstaid:bandage",
+          "weight": 1,
+          "quality": 0,
+          "type": "item"
+        },
+        {
+          "name": "immersiveengineering:maintenance_kit",
+          "weight": 1,
+          "quality": 0,
+          "type": "item"
+        },
+        {
+          "name": "immersiveengineering:seed",
+          "weight": 1,
+          "quality": 0,
+          "type": "item"
+        },
+        {
+          "name": "immersiveengineering:wirecoil",
           "weight": 1,
           "quality": 0,
           "type": "item",
           "functions": [
             {
-              "damage": {
-                "min": 0.0,
-                "max": 0.25
-              },
-              "function": "minecraft:set_damage"
-            },
-            {
-              "levels": 30.0,
-              "treasure": true,
-              "function": "minecraft:enchant_with_levels"
+              "function": "set_data",
+              "data": 6
             }
-          ],
-          "name": "minecraft:fishing_rod"
+          ]
         },
         {
-          "entryName": "minecraft:book",
+          "name": "openblocks:sleeping_bag",
           "weight": 1,
           "quality": 0,
-          "type": "item",
-          "functions": [
-            {
-              "levels": 30.0,
-              "treasure": true,
-              "function": "minecraft:enchant_with_levels"
-            }
-          ],
-          "name": "minecraft:book"
+          "type": "item"
+        },
+        {
+          "name": "pneumaticcraft:scuba_upgrade",
+          "weight": 1,
+          "quality": 0,
+          "type": "item"
+        },
+        {
+          "name": "pneumaticcraft:nuke_virus",
+          "weight": 1,
+          "quality": 0,
+          "type": "item"
         }
       ],
       "rolls": 1.0

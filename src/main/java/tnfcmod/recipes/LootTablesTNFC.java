@@ -83,6 +83,13 @@ public class LootTablesTNFC
             event.getTable().addPool(event.getLootTableManager().getLootTableFromLocation(CHESTS_NETHER_BRIDGE).getPool("pooltnfc1"));
         }
 
+        // Fix Fishing Junk -
+        if ("minecraft:gameplay/fishing/junk".equals(event.getName().toString()))
+        {
+            tnfcmod.getLog().info("Modifying Fishing Junk Table entries");
+            remove(event, "minecraft:gameplay/fishing/junk", "main");
+            event.getTable().addPool(event.getLootTableManager().getLootTableFromLocation(GAMEPLAY_FISHING_JUNK).getPool("pooltnfc1"));
+        }
     }
 
     private static ResourceLocation register(String id)
