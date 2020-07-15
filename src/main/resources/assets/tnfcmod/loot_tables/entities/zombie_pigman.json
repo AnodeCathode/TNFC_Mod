@@ -1,0 +1,39 @@
+{
+  "pools": [
+    {
+      "name": "pooltnfc1",
+      "rolls": 1.0,
+      "entries": [
+          {
+          "name": "tfc:metal/nugget/gold",
+          "weight": 1,
+          "type": "item"
+          }
+          ]
+    },
+    {
+      "name": "pooltnfc2",
+      "rolls": 1.0,
+      "entries": [
+        {
+          "name": "tfc:metal/ingot/gold",
+          "weight": 1,
+          "quality": 0,
+          "type": "item"
+
+        }
+      ],
+      "conditions": [
+        {
+          "inverse": false,
+          "condition": "minecraft:killed_by_player"
+        },
+        {
+          "chance": 0.025,
+          "looting_multiplier": 0.01,
+          "condition": "minecraft:random_chance_with_looting"
+        }
+      ]
+    }
+  ]
+}

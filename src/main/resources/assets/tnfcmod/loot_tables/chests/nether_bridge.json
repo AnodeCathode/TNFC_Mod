@@ -1,0 +1,132 @@
+{
+  "pools": [
+    {
+      "name": "pooltnfc1",
+      "entries": [
+        {
+          "name": "tfc:gem/diamond",
+          "weight": 5,
+          "type": "item",
+          "functions": [
+            {
+              "count": {
+                "min": 1.0,
+                "max": 2.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "function": "set_data",
+              "data": 4
+            }
+          ]
+        },
+        {
+          "name": "tfc:metal/ingot/steel",
+          "weight": 5,
+          "type": "item",
+          "functions": [
+            {
+              "count": {
+                "min": 1.0,
+                "max": 5.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ]
+        },
+        {
+          "name": "tfc:metal/ingot/lead",
+          "weight": 15,
+          "type": "item",
+          "functions": [
+            {
+              "count": {
+                "min": 1.0,
+                "max": 3.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ]
+        },
+        {
+          "name": "tfc:metal/mace/wrought_iron",
+          "weight": 5,
+          "type": "item"
+        },
+        {
+          "name": "tfc:metal/sword/wrought_iron",
+          "weight": 5,
+          "type": "item"
+        },
+        {
+          "name": "tfc:metal/scythe/wrought_iron",
+          "weight": 5,
+          "type": "item"
+        },
+        {
+          "name": "tfc:metal/shears/wrought_iron",
+          "weight": 5,
+          "type": "item",
+          "functions": [
+            {
+              "count": {
+                "min": 3.0,
+                "max": 7.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ]
+        },
+        {
+          "name": "tfc:gem/emerald",
+          "weight": 10,
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_data",
+              "data": 4
+            }
+          ]
+        },
+        {
+          "name": "minecraft:golden_horse_armor",
+          "weight": 8,
+          "type": "item"
+        },
+        {
+          "name": "minecraft:iron_horse_armor",
+          "weight": 5,
+          "type": "item"
+        },
+        {
+          "name": "minecraft:diamond_horse_armor",
+          "weight": 3,
+          "type": "item"
+        },
+        {
+          "name": "betterwithmods:material",
+          "weight": 2,
+          "type": "item",
+          "functions": [
+            {
+              "count": {
+                "min": 2.0,
+                "max": 4.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "function": "set_data",
+              "data": 14
+            }
+          ]
+        }
+      ],
+      "rolls": {
+        "min": 2.0,
+        "max": 4.0
+      }
+    }
+  ]
+}
