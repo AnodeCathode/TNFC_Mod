@@ -241,7 +241,7 @@ public class IERecipes
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_axe), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.CHISEL_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_chisel), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.HAMMER_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_hammer), 2400);
-                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.HAMMER_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_hoe), 2400);
+                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.HOE_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_hoe), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.JAVELIN_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_javelin), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.KNIFE_BLADE), 1), ingredientIngot, new ItemStack(TNFCItems.mold_knife), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.LAMP), 1), ingredientIngot, new ItemStack(TNFCItems.mold_lamp), 2400);
