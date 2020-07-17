@@ -214,7 +214,8 @@ public class IERecipes
 
         //Need some block recipes to create sandstone. Let's try it
         MetalPressRecipe.addRecipe(new ItemStack(Blocks.SANDSTONE, 1), "sand", new ItemStack(TNFCItems.mold_block), 2400).setInputSize(9);
-
+        //While we're at it we'll do them all
+        
         for (Metal metal : TFCRegistries.METALS.getValuesCollection())
         {
             // are there non-tool metals that we want sheets/doubles from?
