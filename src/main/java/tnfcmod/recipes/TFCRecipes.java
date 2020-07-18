@@ -87,7 +87,7 @@ public class TFCRecipes
                 {
 
                     //Rich to poor
-                    addShapelessDmgOreRecipe(ItemOreTFC.get(ore, Ore.Grade.POOR, 4), 1, ItemOreTFC.get(ore, Ore.Grade.RICH, 1), "craftingToolMediumHammer");
+                    addShapelessDmgOreRecipe(ItemOreTFC.get(ore, Ore.Grade.POOR, 3), 1, ItemOreTFC.get(ore, Ore.Grade.RICH, 1), "craftingToolMediumHammer");
                     //Poor to Pile
                     addShapelessDmgOreRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SCRAP),1),1,ItemOreTFC.get(ore, Ore.Grade.POOR, 1),ItemOreTFC.get(ore, Ore.Grade.POOR, 1),ItemOreTFC.get(ore, Ore.Grade.POOR, 1),ItemOreTFC.get(ore, Ore.Grade.POOR, 1), "craftingToolMediumHammer");
                     //Normal to Pile
