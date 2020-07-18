@@ -323,15 +323,16 @@ public class IERecipes
                 if (DUST.hasType(metalTarget))
                 {
                     Ingredient blockOreIngredient = Ingredient.fromStacks(new ItemStack(blockOreTarget, 1));
-                    CrusherRecipe blockOreCrush = new CrusherRecipe(new ItemStack(ItemMetal.get(metalTarget, DUST), 1), blockOreIngredient, 8000);
+                    CrusherRecipe.addRecipe(new ItemStack(ItemMetal.get(metalTarget, DUST), 1), blockOreIngredient, 8000);
                 }
             }
             if (oreTarget.getMetal() == null){
-                //Here we deal with coal, kimberlite, other ones. Will require a bunch of special processing. Random gems for kimber
+                //Here we deal with coal, kimberlite, other ones. Just going to output the ore. Fugedaboudit.
 
                 Ingredient blockOreIngredient = Ingredient.fromStacks(new ItemStack(blockOreTarget, 1));
                 ItemStack output = new ItemStack(ItemOreTFC.get(oreTarget),1);
-                CrusherRecipe blockOreCrush = new CrusherRecipe(output, blockOreIngredient, 8000);
+                CrusherRecipe.addRecipe(output, blockOreIngredient, 8000);
+
             }
         }
 
