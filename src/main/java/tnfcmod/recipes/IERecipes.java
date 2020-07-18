@@ -36,22 +36,27 @@ import net.dries007.tfc.api.recipes.quern.QuernRecipe;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.ICrop;
 import net.dries007.tfc.api.types.Metal;
+import net.dries007.tfc.api.types.Ore;
 import net.dries007.tfc.api.types.Rock;
 import net.dries007.tfc.objects.Powder;
 import net.dries007.tfc.objects.blocks.BlocksTFC;
 import net.dries007.tfc.objects.blocks.agriculture.BlockCropSimple;
 import net.dries007.tfc.objects.blocks.agriculture.BlockCropTFC;
+import net.dries007.tfc.objects.blocks.stone.BlockOreTFC;
 import net.dries007.tfc.objects.fluids.FluidsTFC;
 import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
 import net.dries007.tfc.objects.items.ItemPowder;
 import net.dries007.tfc.objects.items.ItemSeedsTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
+import net.dries007.tfc.objects.items.metal.ItemOreTFC;
 import net.dries007.tfc.util.agriculture.Crop;
 import tnfcmod.objects.items.TNFCItems;
+import zmaster587.libVulpes.api.LibVulpesBlocks;
 
 import static blusunrize.immersiveengineering.api.tool.BelljarHandler.*;
 import static net.dries007.tfc.api.types.Metal.ItemType.DUST;
 import static net.dries007.tfc.api.types.Metal.ItemType.INGOT;
+import static net.dries007.tfc.api.types.Metal.ItemType.SCRAP;
 
 
 public class IERecipes
@@ -214,8 +219,7 @@ public class IERecipes
 
         //Need some block recipes to create sandstone. Let's try it
         MetalPressRecipe.addRecipe(new ItemStack(Blocks.SANDSTONE, 1), "sand", new ItemStack(TNFCItems.mold_block), 2400).setInputSize(9);
-        //While we're at it we'll do them all
-        
+
         for (Metal metal : TFCRegistries.METALS.getValuesCollection())
         {
             // are there non-tool metals that we want sheets/doubles from?
@@ -307,6 +311,29 @@ public class IERecipes
 
             // add selenite to glowstone recipe, also to quern
         }
+        //Going to add a raw ore block crush to dust recipe. Mostly for AR automining. But also for Silk Touch if it ever appears.
+        //Crushing an ore to 1 dust is a bonus. Either a double for a normal ore, or 25% for a rich ore.
+
+        for (BlockOreTFC blockOreTarget : BlocksTFC.getAllOreBlocks())
+        {
+            Ore oreTarget = blockOreTarget.ore;
+            if (oreTarget.isGraded())
+            {
+                Metal metalTarget = oreTarget.getMetal();
+                if (DUST.hasType(metalTarget))
+                {
+                    Ingredient blockOreIngredient = Ingredient.fromStacks(new ItemStack(blockOreTarget, 1));
+                    CrusherRecipe blockOreCrush = new CrusherRecipe(new ItemStack(ItemMetal.get(metalTarget, DUST), 1), blockOreIngredient, 8000);
+                }
+            }
+            if (oreTarget.getMetal() == null){
+                //Here we deal with coal, kimberlite, other ones. Will require a bunch of special processing. Random gems for kimber
+
+                Ingredient blockOreIngredient = Ingredient.fromStacks(new ItemStack(blockOreTarget, 1));
+                ItemStack output = new ItemStack(ItemOreTFC.get(oreTarget),1);
+                CrusherRecipe blockOreCrush = new CrusherRecipe(output, blockOreIngredient, 8000);
+            }
+        }
 
         // Clear out the recipes related
         for (QuernRecipe quernRecipe : TFCRegistries.QUERN.getValuesCollection())
@@ -332,9 +359,7 @@ public class IERecipes
             {
                 CrusherRecipe.addRecipe(newoutput, ingredient, amount * 1000);
             }
-            //Selenite to glowstone
 
-            //Also need sulfur to crushed whatever
         }
     }
 
@@ -417,8 +442,18 @@ public class IERecipes
                     Ingredient input = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.DUST)));
                     ArcFurnaceRecipe.removeRecipes(output);
                     ArcFurnaceRecipe.addRecipe(output, input, ItemStack.EMPTY, 400, 512).setSpecialRecipeType("Ores");
-                    ;
+
                 }
+
+            }
+            if (SCRAP.hasType(metal))
+            {
+
+                ItemStack output = new ItemStack(ItemMetal.get(metal, INGOT), 1);
+                Ingredient input = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SCRAP)));
+                ArcFurnaceRecipe.removeRecipes(output);
+                ArcFurnaceRecipe.addRecipe(output, input, ItemStack.EMPTY, 400, 512).setSpecialRecipeType("Ores");
+
             }
         }
 
