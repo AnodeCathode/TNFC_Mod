@@ -101,7 +101,7 @@ public final class RegisterOres
         r.register(new Metal(OSMIUM, Metal.Tier.TIER_V, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTNFC.OSMIUM, ArmorMaterialsTNFC.OSMIUM));
         r.register(new Metal(TITANIUM, Metal.Tier.TIER_V, true, 0.3f, 3025, 0xFFC2C4CC, ToolMaterialsTNFC.TITANIUM, ArmorMaterialsTNFC.TITANIUM));
         r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_V, true, 0.2f, 3400, 0xFF40444A, ToolMaterialsTNFC.TUNGSTEN, ArmorMaterialsTNFC.TUNGSTEN));
-        r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTNFC.TUNGSTEN_STEEL, ArmorMaterialsTNFC.TUNGSTEN_STEEL));
+        r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_V, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTNFC.TUNGSTEN_STEEL, ArmorMaterialsTNFC.TUNGSTEN_STEEL));
 
     }
 
