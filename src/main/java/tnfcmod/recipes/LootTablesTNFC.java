@@ -36,20 +36,6 @@ public class LootTablesTNFC
     public static void modifyLootTableLoad(LootTableLoadEvent event)
     {
 
-        //Okay here we are. We have a loot table being registered. Now what?
-        //Get rid of vanilla stuff in entities
-
-
-
-        //Get rid of vanilla stuff in dungeon chests
-        remove(event, "minecraft:chests/nether_bridge", "main");
-        remove(event, "minecraft:chests/end_city_treasure", "main");
-
-        //Get rid of gameplay (fishing) loots we don't like
-        remove(event, "minecraft:gameplay/fishing/junk", "main");
-        remove(event, "minecraft:gameplay/fishing/treasure", "main");
-        remove(event, "betterwithmods:gameplay/fishing/junk", "main");
-
         // Fix ZombiePigman
         if ("minecraft:entities/zombie_pigman".equals(event.getName().toString()))
         {
@@ -89,6 +75,13 @@ public class LootTablesTNFC
             tnfcmod.getLog().info("Modifying Fishing Junk Table entries");
             remove(event, "minecraft:gameplay/fishing/junk", "main");
             event.getTable().addPool(event.getLootTableManager().getLootTableFromLocation(GAMEPLAY_FISHING_JUNK).getPool("pooltnfc1"));
+        }
+
+        if("minecraft:chests/end_city_treasure".equals(event.getName().toString()))
+        {
+            tnfcmod.getLog().info("Modifying End City Treasure entries");
+            remove(event, "minecraft:chests/end_city_treasure", "main");
+            event.getTable().addPool(event.getLootTableManager().getLootTableFromLocation(CHESTS_END_CITY_TREASURE).getPool("pooltnfc1"));
         }
     }
 

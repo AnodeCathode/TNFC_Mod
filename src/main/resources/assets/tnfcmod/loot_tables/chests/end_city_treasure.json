@@ -1,26 +1,31 @@
 {
   "pools": [
     {
-      "name": "main",
+      "name": "pooltnfc1",
       "entries": [
         {
-          "entryName": "minecraft:diamond",
+          "name": "tfc:gem/diamond",
           "weight": 5,
           "quality": 0,
           "type": "item",
           "functions": [
             {
+              "function": "minecraft:set_count",
               "count": {
                 "min": 2.0,
                 "max": 7.0
-              },
-              "function": "minecraft:set_count"
+              }
+            },
+            {
+              "function": "set_data",
+              "data": 4
             }
-          ],
-          "name": "minecraft:diamond"
+
+
+          ]
         },
         {
-          "entryName": "minecraft:iron_ingot",
+          "name": "tfc:metal/ingot/red_steel",
           "weight": 10,
           "quality": 0,
           "type": "item",
@@ -32,11 +37,11 @@
               },
               "function": "minecraft:set_count"
             }
-          ],
-          "name": "minecraft:iron_ingot"
+          ]
+
         },
         {
-          "entryName": "minecraft:gold_ingot",
+          "name": "tfc:metal/ingot/blue_steel",
           "weight": 15,
           "quality": 0,
           "type": "item",
@@ -48,11 +53,10 @@
               },
               "function": "minecraft:set_count"
             }
-          ],
-          "name": "minecraft:gold_ingot"
+          ]
         },
         {
-          "entryName": "minecraft:emerald",
+          "name": "libvulpes:productgem",
           "weight": 2,
           "quality": 0,
           "type": "item",
@@ -64,11 +68,10 @@
               },
               "function": "minecraft:set_count"
             }
-          ],
-          "name": "minecraft:emerald"
+          ]
         },
         {
-          "entryName": "minecraft:beetroot_seeds",
+          "name": "tfc:metal/ingot/titanium",
           "weight": 5,
           "quality": 0,
           "type": "item",
@@ -80,39 +83,34 @@
               },
               "function": "minecraft:set_count"
             }
-          ],
-          "name": "minecraft:beetroot_seeds"
+          ]
         },
         {
-          "entryName": "minecraft:saddle",
+          "name": "minecraft:saddle",
           "weight": 3,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:saddle"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:iron_horse_armor",
+          "name": "minecraft:iron_horse_armor",
           "weight": 1,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:iron_horse_armor"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:golden_horse_armor",
+          "name": "minecraft:golden_horse_armor",
           "weight": 1,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:golden_horse_armor"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:diamond_horse_armor",
+          "name": "minecraft:diamond_horse_armor",
           "weight": 1,
           "quality": 0,
-          "type": "item",
-          "name": "minecraft:diamond_horse_armor"
+          "type": "item"
         },
         {
-          "entryName": "minecraft:diamond_sword",
+          "name": "tfc:metal/sword/tungsten_steel",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -125,11 +123,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:diamond_sword"
+          ]
         },
         {
-          "entryName": "minecraft:diamond_boots",
+          "name": "tfc:metal/boots/tungsten_steel",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -142,11 +139,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:diamond_boots"
+          ]
         },
         {
-          "entryName": "minecraft:diamond_chestplate",
+          "name": "tfc:metal/chestplate/tungsten_steel",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -159,11 +155,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:diamond_chestplate"
+          ]
         },
         {
-          "entryName": "minecraft:diamond_leggings",
+          "name": "tfc:metal/greaves/tungsten_steel",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -176,11 +171,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:diamond_leggings"
+          ]
         },
         {
-          "entryName": "minecraft:diamond_helmet",
+          "name": "tfc:metal/helmet/tungsten_steel",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -193,11 +187,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:diamond_helmet"
+          ]
         },
         {
-          "entryName": "minecraft:diamond_pickaxe",
+          "name": "tfc:metal/pick/tungsten_steel",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -210,11 +203,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:diamond_pickaxe"
+          ]
         },
         {
-          "entryName": "minecraft:diamond_shovel",
+          "name": "tfc:metal/scythe_blade/tungsten_steel",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -227,11 +219,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:diamond_shovel"
+          ]
         },
         {
-          "entryName": "minecraft:iron_sword",
+          "name": "tfc:metal/mace/red_steel",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -244,11 +235,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:iron_sword"
+          ]
         },
         {
-          "entryName": "minecraft:iron_boots",
+          "name": "tfc:metal/propick_head/tungsten_steel",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -261,11 +251,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:iron_boots"
+          ]
         },
         {
-          "entryName": "minecraft:iron_chestplate",
+          "name": "tfc:metal/shovel/tungsten_steel",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -278,11 +267,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:iron_chestplate"
+          ]
         },
         {
-          "entryName": "minecraft:iron_leggings",
+          "name": "tfc:metal/chestplate/cobalt",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -295,11 +283,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:iron_leggings"
+          ]
         },
         {
-          "entryName": "minecraft:iron_helmet",
+          "name": "tfc:metal/helmet/cobalt",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -312,11 +299,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:iron_helmet"
+          ]
         },
         {
-          "entryName": "minecraft:iron_pickaxe",
+          "name": "tfc:metal/pick/cobalt",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -329,11 +315,10 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:iron_pickaxe"
+          ]
         },
         {
-          "entryName": "minecraft:iron_shovel",
+          "name": "tfc:metal/saw/titanium",
           "weight": 3,
           "quality": 0,
           "type": "item",
@@ -346,8 +331,7 @@
               "treasure": true,
               "function": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:iron_shovel"
+          ]
         }
       ],
       "rolls": {
