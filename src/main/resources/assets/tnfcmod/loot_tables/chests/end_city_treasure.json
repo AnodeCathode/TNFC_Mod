@@ -12,8 +12,8 @@
             {
               "function": "minecraft:set_count",
               "count": {
-                "min": 2.0,
-                "max": 7.0
+                "min": 1.0,
+                "max": 2.0
               }
             },
             {
@@ -32,8 +32,8 @@
           "functions": [
             {
               "count": {
-                "min": 4.0,
-                "max": 8.0
+                "min": 1.0,
+                "max": 3.0
               },
               "function": "minecraft:set_count"
             }
@@ -48,8 +48,8 @@
           "functions": [
             {
               "count": {
-                "min": 2.0,
-                "max": 7.0
+                "min": 1.0,
+                "max": 3.0
               },
               "function": "minecraft:set_count"
             }
@@ -63,8 +63,8 @@
           "functions": [
             {
               "count": {
-                "min": 2.0,
-                "max": 6.0
+                "min": 1.0,
+                "max": 3.0
               },
               "function": "minecraft:set_count"
             }
@@ -238,7 +238,7 @@
           ]
         },
         {
-          "name": "tfc:metal/propick_head/tungsten_steel",
+          "name": "tfc:metal/propick/tungsten_steel",
           "weight": 3,
           "quality": 0,
           "type": "item",
