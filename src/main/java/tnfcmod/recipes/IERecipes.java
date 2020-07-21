@@ -215,8 +215,12 @@ public class IERecipes
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_bucket, 1), ingredientBlankMold, new ItemStack(ItemMetal.get(Metal.RED_STEEL, Metal.ItemType.BUCKET), 1), 2400);
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_bucket, 1), ingredientBlankMold, new ItemStack(ItemMetal.get(Metal.BLUE_STEEL, Metal.ItemType.BUCKET), 1), 2400);
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_bucket, 1), ingredientBlankMold,new ItemStack(Items.BUCKET),2400);
-
-
+        //Compressing pig iron recipes
+        Ingredient ingredientPigIron = Ingredient.fromStacks(new ItemStack(ItemMetal.get(Metal.PIG_IRON, Metal.ItemType.INGOT)));
+        Ingredient ingredientHighCarbonSteel = Ingredient.fromStacks(new ItemStack(ItemMetal.get(Metal.ItemType.HIGH_CARBON_STEEL, Metal.ItemType.INGOT)));
+        MetalPressRecipe.addRecipe(new ItemStack(new ItemMetal.get(Metal.HIGH_CARBON_STEEL, Metal.ItemType.INGOT), 1), ingredientPigIron, new ItemStack(IEContent.blockStorage, 1, 8), 2400);
+        MetalPressRecipe.addRecipe(new ItemStack(new ItemMetal.get(Metal.STEEL, Metal.ItemType.INGOT), 1), ingredientHighCarbonSteel, new ItemStack(IEContent.blockStorage, 1, 8), 2400);
+        
         //Need some block recipes to create sandstone. Let's try it
         MetalPressRecipe.addRecipe(new ItemStack(Blocks.SANDSTONE, 1), "sand", new ItemStack(TNFCItems.mold_block), 2400).setInputSize(9);
 
