@@ -207,14 +207,16 @@ public class IERecipes
     public static void registerMetalPressRecipes()
     {
         //Mold recipes
+        Ingredient ingredientBlankMold = Ingredient.fromStacks(new ItemStack(TNFCItems.mold_blank, 1));
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_blank, 1), "sheetDoubleSteel", new ItemStack(IEContent.blockStorage, 1, 8), 2400);
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_block, 1), "blockSteel", new ItemStack(TNFCItems.mold_blank, 1), 2400);
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_doubleingot, 1), "ingotDoubleSteel", new ItemStack(TNFCItems.mold_blank, 1), 2400);
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_sheet, 1), "sheetSteel", new ItemStack(TNFCItems.mold_blank, 1), 2400);
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_bucket, 1), "bucketRedSteel", new ItemStack(TNFCItems.mold_blank, 1), 2400);
         MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_bucket, 1), "bucketBlueSteel", new ItemStack(TNFCItems.mold_blank, 1), 2400);
-        Ingredient ingredientVanillaBucket = Ingredient.fromStacks(new ItemStack(Items.BUCKET));
-        MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_bucket, 1), ingredientVanillaBucket, new ItemStack(TNFCItems.mold_blank, 1), 2400);
+        //Ingredient ingredientVanillaBucket = Ingredient.fromStacks(new ItemStack(Items.BUCKET));
+        //MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_bucket, 1), ingredientVanillaBucket, new ItemStack(TNFCItems.mold_blank, 1), 2400);
+        MetalPressRecipe.addRecipe(new ItemStack(TNFCItems.mold_bucket, 1),ingredientBlankMold,new ItemStack(Items.BUCKET),2400);
 
 
         //Need some block recipes to create sandstone. Let's try it
