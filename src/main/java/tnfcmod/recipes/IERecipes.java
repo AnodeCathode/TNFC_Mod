@@ -222,24 +222,24 @@ public class IERecipes
 
         for (Metal metal : TFCRegistries.METALS.getValuesCollection())
         {
-            // are there non-tool metals that we want sheets/doubles from?
+            // are there non-tool metals that we want sheets/doubles from? :: **yes**
+            ItemStack outputDoubleIngot = new ItemStack(ItemMetal.get(metal, Metal.ItemType.DOUBLE_INGOT), 1);
+            ItemStack outputSheet = new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHEET), 1);
+            ItemStack outputDoubleSheet = new ItemStack(ItemMetal.get(metal, Metal.ItemType.DOUBLE_SHEET), 1);
+
+            Ingredient ingredientIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
+            Ingredient ingredientDoubleIngot = Ingredient.fromStacks(outputDoubleIngot);
+            Ingredient ingredientSheet = Ingredient.fromStacks(outputSheet);
+            Ingredient ingredientDoubleSheet = Ingredient.fromStacks(outputDoubleSheet);
+            MetalPressRecipe.addRecipe(outputDoubleIngot, ingredientIngot, new ItemStack(TNFCItems.mold_doubleingot), 2400).setInputSize(2);
+            MetalPressRecipe.addRecipe(outputSheet, ingredientIngot, new ItemStack(TNFCItems.mold_sheet), 2400).setInputSize(2);
+            MetalPressRecipe.addRecipe(outputSheet, ingredientDoubleIngot, new ItemStack(TNFCItems.mold_sheet), 2400);
+            MetalPressRecipe.addRecipe(outputDoubleSheet, ingredientSheet, new ItemStack(TNFCItems.mold_sheet), 2400).setInputSize(2);
             if (metal.isToolMetal() | metal.toString().equals("lead"))
             {
-                ItemStack outputDoubleIngot = new ItemStack(ItemMetal.get(metal, Metal.ItemType.DOUBLE_INGOT), 1);
-                ItemStack outputSheet = new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHEET), 1);
-                ItemStack outputDoubleSheet = new ItemStack(ItemMetal.get(metal, Metal.ItemType.DOUBLE_SHEET), 1);
-
-                Ingredient ingredientIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
-                Ingredient ingredientDoubleIngot = Ingredient.fromStacks(outputDoubleIngot);
-                Ingredient ingredientSheet = Ingredient.fromStacks(outputSheet);
-                Ingredient ingredientDoubleSheet = Ingredient.fromStacks(outputDoubleSheet);
                 Ingredient ingredientKnives = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.KNIFE_BLADE)));
 
                 //Sheets and doubles
-                MetalPressRecipe.addRecipe(outputDoubleIngot, ingredientIngot, new ItemStack(TNFCItems.mold_doubleingot), 2400).setInputSize(2);
-                MetalPressRecipe.addRecipe(outputSheet, ingredientIngot, new ItemStack(TNFCItems.mold_sheet), 2400).setInputSize(2);
-                MetalPressRecipe.addRecipe(outputSheet, ingredientDoubleIngot, new ItemStack(TNFCItems.mold_sheet), 2400);
-                MetalPressRecipe.addRecipe(outputDoubleSheet, ingredientSheet, new ItemStack(TNFCItems.mold_sheet), 2400).setInputSize(2);
 
                 //Tools
 
