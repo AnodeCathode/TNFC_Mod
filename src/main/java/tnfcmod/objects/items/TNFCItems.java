@@ -14,6 +14,7 @@ public class TNFCItems
     public static CopperFishHook copper_fishhook = new CopperFishHook("copper_fishhook").setCreativeTab(CT_MISC);
     public static ItemBackpackPiece backpackpiece = new ItemBackpackPiece("backpackpiece").setCreativeTab(CT_MISC);
     public static ItemBackpackFrame backpackframe = new ItemBackpackFrame("backpackframe").setCreativeTab(CT_MISC);
+    public static ItemWoodPulp woodpulp = new ItemWoodPulp("woodpulp").setCreativeTab(CT_MISC);
 
     //IE Molds
     public static IEMetalPressMold mold_axe = new IEMetalPressMold("mold_axe").setCreativeTab(CT_MISC);
@@ -91,6 +92,7 @@ public class TNFCItems
         registry.register(hc_black_steel_amalgam);
         registry.register(hc_blue_steel_amalgam);
         registry.register(hc_red_steel_amalgam);
+        registry.register(woodpulp);
     }
 
     public static void registerModels(Event event)
@@ -131,6 +133,7 @@ public class TNFCItems
         hc_black_steel_amalgam.registerItemModel();
         hc_blue_steel_amalgam.registerItemModel();
         hc_red_steel_amalgam.registerItemModel();
+        woodpulp.registerItemModel();
 
 
     }
