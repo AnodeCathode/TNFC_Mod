@@ -1,6 +1,5 @@
 package tnfcmod.recipes;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -51,12 +50,9 @@ import net.dries007.tfc.objects.items.metal.ItemMetal;
 import net.dries007.tfc.objects.items.metal.ItemOreTFC;
 import net.dries007.tfc.util.agriculture.Crop;
 import tnfcmod.objects.items.TNFCItems;
-import zmaster587.libVulpes.api.LibVulpesBlocks;
 
 import static blusunrize.immersiveengineering.api.tool.BelljarHandler.*;
-import static net.dries007.tfc.api.types.Metal.ItemType.DUST;
-import static net.dries007.tfc.api.types.Metal.ItemType.INGOT;
-import static net.dries007.tfc.api.types.Metal.ItemType.SCRAP;
+import static net.dries007.tfc.api.types.Metal.ItemType.*;
 
 
 public class IERecipes
