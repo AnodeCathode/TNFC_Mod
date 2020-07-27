@@ -4,11 +4,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import gigaherz.guidebook.client.BookRegistryEvent;
 import net.dries007.tfc.api.capability.forge.CapabilityForgeable;
 import net.dries007.tfc.api.capability.forge.IForgeable;
 import net.dries007.tfc.api.capability.forge.IForgeableMeasurableMetal;
@@ -24,18 +22,15 @@ import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
 import net.dries007.tfc.objects.items.ItemsTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
 import net.dries007.tfc.util.fuel.FuelManager;
-import tnfcmod.recipes.TFCRecipes;
 import tnfcmod.objects.materials.ArmorMaterialsTNFC;
 import tnfcmod.objects.materials.ToolMaterialsTNFC;
+import tnfcmod.recipes.TFCRecipes;
 import tnfcmod.util.ConfigTNFCMod;
 
 import static net.dries007.tfc.TerraFirmaCraft.MOD_ID;
 import static net.dries007.tfc.api.types.Metal.ItemType.INGOT;
 import static net.dries007.tfc.types.DefaultMetals.*;
-import static net.dries007.tfc.types.DefaultMetals.NICKEL;
-import static net.dries007.tfc.util.forge.ForgeRule.HIT_LAST;
-import static net.dries007.tfc.util.forge.ForgeRule.HIT_SECOND_LAST;
-import static net.dries007.tfc.util.forge.ForgeRule.HIT_THIRD_LAST;
+import static net.dries007.tfc.util.forge.ForgeRule.*;
 import static tnfcmod.tnfcmod.MODID;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -77,11 +72,6 @@ public final class RegisterOres
     public static final ResourceLocation SPODUMENE = new ResourceLocation(MOD_ID, "spodumene"); // lithium
 
 
-    @Optional.Method(modid="gbook")
-    @SubscribeEvent
-    public static void registerBook(BookRegistryEvent event) {
-        event.register(new ResourceLocation(MODID + ":xml/tnfcchanges.xml"));
-    }
 
     @SubscribeEvent
     public static void onPreRegisterMetal(TFCRegistryEvent.RegisterPreBlock<Metal> event)
@@ -128,6 +118,7 @@ public final class RegisterOres
         r.register(new Ore(MAGNESITE));
         r.register(new Ore(BORON));
         r.register(new Ore(SPODUMENE));
+
     }
 
     @SubscribeEvent
