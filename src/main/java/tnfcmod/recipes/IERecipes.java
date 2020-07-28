@@ -31,6 +31,7 @@ import blusunrize.immersiveengineering.api.crafting.MetalPressRecipe;
 import blusunrize.immersiveengineering.api.tool.BelljarHandler;
 import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.blocks.plant.BlockIECrop;
+import net.dries007.tfc.api.recipes.AlloyRecipe;
 import net.dries007.tfc.api.recipes.quern.QuernRecipe;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.ICrop;
@@ -48,6 +49,7 @@ import net.dries007.tfc.objects.items.ItemPowder;
 import net.dries007.tfc.objects.items.ItemSeedsTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
 import net.dries007.tfc.objects.items.metal.ItemOreTFC;
+import net.dries007.tfc.util.Alloy;
 import net.dries007.tfc.util.agriculture.Crop;
 import tnfcmod.objects.items.TNFCItems;
 
@@ -231,7 +233,7 @@ public class IERecipes
             MetalPressRecipe.addRecipe(outputSheet, ingredientIngot, new ItemStack(TNFCItems.mold_sheet), 2400).setInputSize(2);
             MetalPressRecipe.addRecipe(outputSheet, ingredientDoubleIngot, new ItemStack(TNFCItems.mold_sheet), 2400);
             MetalPressRecipe.addRecipe(outputDoubleSheet, ingredientSheet, new ItemStack(TNFCItems.mold_sheet), 2400).setInputSize(2);
-            if (metal.isToolMetal() | metal.toString().equals("lead"))
+            if (metal.isToolMetal())
             {
                 Ingredient ingredientKnives = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.KNIFE_BLADE)));
 
@@ -430,31 +432,23 @@ public class IERecipes
 //        recipeList.clear();
         for (Metal metal : TFCRegistries.METALS.getValuesCollection())
         {
+            ItemStack output = new ItemStack(ItemMetal.get(metal, INGOT), 1);
+            ArcFurnaceRecipe.removeRecipes(output);
             if (!metal.toString().endsWith("wrought_iron")) {
             //Basic dust to ingot. Need to skip iron dust.
                 if (DUST.hasType(metal))
                 {
-
-                    ItemStack output = new ItemStack(ItemMetal.get(metal, INGOT), 1);
                     Ingredient input = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.DUST)));
-                    ArcFurnaceRecipe.removeRecipes(output);
-                    ArcFurnaceRecipe.addRecipe(output, input, ItemStack.EMPTY, 400, 512).setSpecialRecipeType("Ores");
-
+                    ArcFurnaceRecipe.addRecipe(output, input, ItemStack.EMPTY, 200, 512).setSpecialRecipeType("Ores");
                 }
 
             }
             if (SCRAP.hasType(metal))
             {
-
-                ItemStack output = new ItemStack(ItemMetal.get(metal, INGOT), 1);
                 Ingredient input = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SCRAP)));
-                ArcFurnaceRecipe.removeRecipes(output);
                 ArcFurnaceRecipe.addRecipe(output, input, ItemStack.EMPTY, 400, 512).setSpecialRecipeType("Ores");
-
             }
         }
-
-
     }
 
     public static void registerBlastFurnaceRecipes()
