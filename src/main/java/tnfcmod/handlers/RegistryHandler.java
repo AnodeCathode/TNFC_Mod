@@ -19,7 +19,7 @@ import tnfcmod.recipes.TFCRecipes;
 import tnfcmod.tnfcmod;
 
 import static tnfcmod.recipes.IERecipes.*;
-import static tnfcmod.recipes.MillGrindRecipes.*;
+import static tnfcmod.recipes.BwMRecipes.*;
 import static tnfcmod.recipes.LootTablesTNFC.modifyLootTableLoad;
 import static tnfcmod.recipes.TFCRecipes.registerOrePileRecipes;
 import static tnfcmod.recipes.VanillaRecipes.registerVanillaRecipes;
@@ -89,7 +89,7 @@ public final class RegistryHandler
         registerGardenClocheRecipes();
         registerArcFurnaceRecipes();
         registerOrePileRecipes();
-        registerBwMMillRecipes();
+        registerBwMSawRecipes();
 
 
 
