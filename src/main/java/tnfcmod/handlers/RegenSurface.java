@@ -106,10 +106,8 @@ public class RegenSurface
                 {
                     //Should nuke any crops in the chunk.
                     removeAllCrops(event.world, pos);
-                    if (RANDOM.nextInt(20) == 0)
-                    {
-                        CROPS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
-                    }
+                    CROPS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
+
                     //Should nuke any bushes in the chunk. For now we just leave the bushes alone.
                     //BUSH_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
 
