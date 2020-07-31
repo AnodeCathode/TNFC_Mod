@@ -1,11 +1,10 @@
 package tnfcmod.handlers;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 import com.google.common.collect.Maps;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -21,6 +20,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.api.types.Tree;
+import net.dries007.tfc.objects.blocks.agriculture.BlockCropDead;
 import net.dries007.tfc.objects.te.TECropBase;
 import net.dries007.tfc.objects.te.TEPlacedItemFlat;
 import net.dries007.tfc.util.calendar.CalendarTFC;
@@ -31,6 +31,7 @@ import net.dries007.tfc.world.classic.worldgen.WorldGenBerryBushes;
 import net.dries007.tfc.world.classic.worldgen.WorldGenLooseRocks;
 import net.dries007.tfc.world.classic.worldgen.WorldGenTrees;
 import net.dries007.tfc.world.classic.worldgen.WorldGenWildCrops;
+import scala.Array;
 import tnfcmod.tnfcmod;
 
 import static tnfcmod.tnfcmod.MODID;
@@ -50,11 +51,11 @@ public class RegenSurface
     public static void onChunkLoad(ChunkDataEvent.Load event)
     {
 
-        if (event.getWorld().provider.getDimension() == 0)
+        if (event.getWorld().provider.getDimension() == 0 && POSITIONS.size() < 100)
         {
             ChunkDataTFC chunkDataTFC = ChunkDataTFC.get(event.getChunk());
-            //Only run this 4 times a year approx. per chunk
-            if (chunkDataTFC.isInitialized() && !chunkDataTFC.isSpawnProtected() && CalendarTFC.PLAYER_TIME.getTicks() - chunkDataTFC.getLastUpdateTick() > ConfigTFC.General.MISC.defaultMonthLength * ICalendar.TICKS_IN_DAY * 3)
+            //Only run this in the early months of each year
+            if (CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY) && !chunkDataTFC.isSpawnProtected() && CalendarTFC.CALENDAR_TIME.getTotalYears() > chunkDataTFC.getLastUpdateYear())
             {
                 tnfcmod.getLog().info("Adding chunk: " + event.getChunk().getPos().toString() + " to regen database");
                 POSITIONS.add(event.getChunk().getPos());
@@ -74,19 +75,17 @@ public class RegenSurface
                 IChunkProvider chunkProvider = event.world.getChunkProvider();
                 IChunkGenerator chunkGenerator = ((ChunkProviderServer) chunkProvider).chunkGenerator;
 
-                // If past the update time, then run regeneration of natural resources
-                long updateDelta = CalendarTFC.PLAYER_TIME.getTicks() - chunkDataTFC.getLastUpdateTick();
-                if (updateDelta > ConfigTFC.General.WORLD_REGEN.minimumTime * ICalendar.TICKS_IN_DAY && !chunkDataTFC.isSpawnProtected())
+                // Crops, sticks and rocks all regenerate once a year in the spring. Cause the spring thaw or something.
+                if (CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY) && !chunkDataTFC.isSpawnProtected() && CalendarTFC.CALENDAR_TIME.getTotalYears() > chunkDataTFC.getLastUpdateYear())
                 {
-                    float regenerationModifier = MathHelper.clamp((float) updateDelta / (4 * ConfigTFC.General.WORLD_REGEN.minimumTime * ICalendar.TICKS_IN_DAY), 0, 1);
                     tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
                     // Loose rocks - factors in time since last update
                     if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
                     {
-                        List<Tree> trees = chunkDataTFC.getValidTrees();
                         //nuke any rocks and sticks in chunk.
                         removeAllPlacedItems(event.world, pos);
-                        double rockModifier = ConfigTFC.General.WORLD_REGEN.sticksRocksModifier * regenerationModifier;
+                        List<Tree> trees = chunkDataTFC.getValidTrees();
+                        double rockModifier = ConfigTFC.General.WORLD_REGEN.sticksRocksModifier;
                         ROCKS_GEN.setFactor(rockModifier);
                         ROCKS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
 
@@ -99,18 +98,12 @@ public class RegenSurface
                         WorldGenTrees.generateLooseSticks(RANDOM, pos.x, pos.z, event.world, stickDensity);
                     }
 
-                    chunkDataTFC.resetLastUpdateTick();
-                }
-                // Plants + crops. Only runs once (maximum) each year
-                if (CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY) && !chunkDataTFC.isSpawnProtected() && CalendarTFC.CALENDAR_TIME.getTotalYears() > chunkDataTFC.getLastUpdateYear())
-                {
                     //Should nuke any crops in the chunk.
                     removeAllCrops(event.world, pos);
                     CROPS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
 
                     //Should nuke any bushes in the chunk. For now we just leave the bushes alone.
                     //BUSH_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
-
                     chunkDataTFC.resetLastUpdateYear();
                 }
 
@@ -121,8 +114,9 @@ public class RegenSurface
 
     private static void removeAllCrops(World world, ChunkPos pos)
     {
+        //If we want to remove the dead crops, then we need something better
         Map<BlockPos, TileEntity> teTargets = world.getChunk(pos.x, pos.z).getTileEntityMap();
-        Map<BlockPos, TileEntity> removals = Maps.newHashMap();
+        ArrayList<BlockPos> removals = new ArrayList<>();
 
         if (!teTargets.isEmpty())
         {
@@ -130,16 +124,32 @@ public class RegenSurface
             {
                 if (entry.getValue() instanceof TECropBase)
                 {
-                    removals.put(entry.getKey(), entry.getValue());
+                    removals.add(entry.getKey());
                 }
             }
         }
+
+//        int cx = pos.x << 4;
+//        int cz = pos.z << 4;
+//
+//        for( int x = pos.getXStart(); x < pos.getXEnd(); x++ ) {
+//            for( int z = pos.getZStart(); z < pos.getZEnd(); z++ ) {
+//
+//                BlockPos blockTest  = world.getTopSolidOrLiquidBlock(new BlockPos(x, 0, z));
+//                Block targetBlock = world.getBlockState(blockTest).getBlock();
+//
+//                if (targetBlock instanceof BlockCropDead){
+//                    removals.add(blockTest);
+//                }
+//            }
+//        }
         if (!removals.isEmpty())
         {
-            for (Map.Entry<BlockPos, TileEntity> remove : removals.entrySet())
+
+           for (BlockPos remove : removals)
             {
-                world.removeTileEntity(remove.getKey());
-                world.setBlockToAir(remove.getKey());
+                world.removeTileEntity(remove);
+                world.setBlockToAir(remove);
             }
         }
     }
@@ -147,7 +157,7 @@ public class RegenSurface
     private static void removeAllPlacedItems(World world, ChunkPos pos)
     {
         Map<BlockPos, TileEntity> teTargets = world.getChunk(pos.x, pos.z).getTileEntityMap();
-        Map<BlockPos, TileEntity> removals = Maps.newHashMap();
+        ArrayList<BlockPos> removals =  new ArrayList<>();
 
         if (!teTargets.isEmpty())
         {
@@ -155,16 +165,16 @@ public class RegenSurface
             {
                 if (entry.getValue() instanceof TEPlacedItemFlat)
                 {
-                    removals.put(entry.getKey(), entry.getValue());
+                    removals.add(entry.getKey());
                 }
             }
         }
         if (!removals.isEmpty())
         {
-            for (Map.Entry<BlockPos, TileEntity> remove : removals.entrySet())
+            for (BlockPos remove : removals)
             {
-                world.removeTileEntity(remove.getKey());
-                world.setBlockToAir(remove.getKey());
+                world.removeTileEntity(remove);
+                world.setBlockToAir(remove);
             }
         }
     }
