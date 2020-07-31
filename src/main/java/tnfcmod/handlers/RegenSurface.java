@@ -51,7 +51,7 @@ public class RegenSurface
     public static void onChunkLoad(ChunkDataEvent.Load event)
     {
 
-        if (event.getWorld().provider.getDimension() == 0 && POSITIONS.size() < 100)
+        if (event.getWorld().provider.getDimension() == 0 && ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0 && POSITIONS.size() < 100)
         {
             ChunkDataTFC chunkDataTFC = ChunkDataTFC.get(event.getChunk());
             //Only run this in the early months of each year
