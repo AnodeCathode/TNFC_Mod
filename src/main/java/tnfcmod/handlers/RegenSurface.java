@@ -79,10 +79,10 @@ public class RegenSurface
                 if (CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY) && !chunkDataTFC.isSpawnProtected() && CalendarTFC.CALENDAR_TIME.getTotalYears() > chunkDataTFC.getLastUpdateYear())
                 {
                     tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
-                    // Loose rocks - factors in time since last update
+                    
                     if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
                     {
-                        //nuke any rocks and sticks in chunk.
+                        //Nuke any rocks and sticks in chunk.
                         removeAllPlacedItems(event.world, pos);
                         List<Tree> trees = chunkDataTFC.getValidTrees();
                         double rockModifier = ConfigTFC.General.WORLD_REGEN.sticksRocksModifier;
@@ -98,7 +98,7 @@ public class RegenSurface
                         WorldGenTrees.generateLooseSticks(RANDOM, pos.x, pos.z, event.world, stickDensity);
                     }
 
-                    //Should nuke any crops in the chunk.
+                    //Nuke any crops in the chunk.
                     removeAllCrops(event.world, pos);
                     CROPS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
 
@@ -128,21 +128,6 @@ public class RegenSurface
                 }
             }
         }
-
-//        int cx = pos.x << 4;
-//        int cz = pos.z << 4;
-//
-//        for( int x = pos.getXStart(); x < pos.getXEnd(); x++ ) {
-//            for( int z = pos.getZStart(); z < pos.getZEnd(); z++ ) {
-//
-//                BlockPos blockTest  = world.getTopSolidOrLiquidBlock(new BlockPos(x, 0, z));
-//                Block targetBlock = world.getBlockState(blockTest).getBlock();
-//
-//                if (targetBlock instanceof BlockCropDead){
-//                    removals.add(blockTest);
-//                }
-//            }
-//        }
         if (!removals.isEmpty())
         {
 
