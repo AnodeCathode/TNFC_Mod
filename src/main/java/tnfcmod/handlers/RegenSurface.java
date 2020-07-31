@@ -57,7 +57,7 @@ public class RegenSurface
             //Only run this in the early months of each year
             if (CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY) && !chunkDataTFC.isSpawnProtected() && CalendarTFC.CALENDAR_TIME.getTotalYears() > chunkDataTFC.getLastUpdateYear())
             {
-                tnfcmod.getLog().info("Adding chunk: " + event.getChunk().getPos().toString() + " to regen database");
+                //tnfcmod.getLog().info("Adding chunk: " + event.getChunk().getPos().toString() + " to regen database");
                 POSITIONS.add(event.getChunk().getPos());
             }
         }
@@ -78,7 +78,7 @@ public class RegenSurface
                 // Crops, sticks and rocks all regenerate once a year in the spring. Cause the spring thaw or something.
                 if (CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY) && !chunkDataTFC.isSpawnProtected() && CalendarTFC.CALENDAR_TIME.getTotalYears() > chunkDataTFC.getLastUpdateYear())
                 {
-                    tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
+                    //tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
                     
                     if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
                     {
@@ -100,7 +100,12 @@ public class RegenSurface
 
                     //Nuke any crops in the chunk.
                     removeAllCrops(event.world, pos);
-                    CROPS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
+                    if (RANDOM.nextInt(5) == 0) //With dead crops not being removed, we're going to just add some odds.
+                                                  // These odds are stacked with the overall crop gen odds.
+                    {
+                        CROPS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
+                    }
+
 
                     //Should nuke any bushes in the chunk. For now we just leave the bushes alone.
                     //BUSH_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
