@@ -1,9 +1,11 @@
 package tnfcmod.handlers;
 
+import java.lang.reflect.WildcardType;
 import java.util.*;
 
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -21,6 +23,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.blocks.agriculture.BlockCropDead;
+import net.dries007.tfc.objects.blocks.agriculture.BlockCropTFC;
 import net.dries007.tfc.objects.te.TECropBase;
 import net.dries007.tfc.objects.te.TEPlacedItemFlat;
 import net.dries007.tfc.util.calendar.CalendarTFC;
@@ -34,6 +37,7 @@ import net.dries007.tfc.world.classic.worldgen.WorldGenWildCrops;
 import scala.Array;
 import tnfcmod.tnfcmod;
 
+import static net.dries007.tfc.objects.blocks.agriculture.BlockCropTFC.WILD;
 import static tnfcmod.tnfcmod.MODID;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -129,7 +133,12 @@ public class RegenSurface
             {
                 if (entry.getValue() instanceof TECropBase)
                 {
-                    removals.add(entry.getKey());
+                    IBlockState bs = world.getBlockState(entry.getKey());
+                    boolean isWild = bs.getValue(WILD);
+                    if (isWild){
+                        removals.add(entry.getKey());
+                    }
+
                 }
             }
         }
