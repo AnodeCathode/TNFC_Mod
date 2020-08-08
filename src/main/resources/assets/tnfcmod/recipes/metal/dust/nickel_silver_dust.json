@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CNC",
+    "ZCZ",
+    "CNC"
+  ],
+  "key": {
+    "C": {
+      "type": "forge:ore_dict",
+      "ore": "dustCopper"
+      },
+    "Z": {
+      "type": "forge:ore_dict",
+      "ore": "dustZinc"
+    },
+    "N": {
+      "type": "forge:ore_dict",
+      "ore": "dustNickel"
+    }
+  },
+  "result": {
+    "item": "tfc:metal/dust/nickel_silver",
+    "count": 9
+  }
+}
