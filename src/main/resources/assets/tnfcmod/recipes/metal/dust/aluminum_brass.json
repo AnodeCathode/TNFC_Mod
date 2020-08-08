@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "CAC",
+    "AAA"
+  ],
+  "key": {
+    "C": {
+      "type": "forge:ore_dict",
+      "ore": "dustCopper"
+      },
+    "A": {
+      "type": "forge:ore_dict",
+      "ore": "dustAluminum"
+    }
+  },
+  "result": {
+    "item": "tfc:metal/dust/aluminum_brass",
+    "count": 9
+  }
+}
