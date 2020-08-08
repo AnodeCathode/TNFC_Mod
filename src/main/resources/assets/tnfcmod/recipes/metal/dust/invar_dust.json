@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "NNN",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "type": "forge:ore_dict",
+      "ore": "dustWroughtIron"
+      },
+    "N": {
+      "type": "forge:ore_dict",
+      "ore": "dustNickel"
+    }
+  },
+  "result": {
+    "item": "tfc:metal/dust/invar",
+    "count": 9
+  }
+}
