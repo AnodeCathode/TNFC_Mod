@@ -31,6 +31,7 @@ import blusunrize.immersiveengineering.api.crafting.MetalPressRecipe;
 import blusunrize.immersiveengineering.api.tool.BelljarHandler;
 import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.blocks.plant.BlockIECrop;
+import net.dries007.tfc.api.capability.food.CapabilityFood;
 import net.dries007.tfc.api.recipes.AlloyRecipe;
 import net.dries007.tfc.api.recipes.quern.QuernRecipe;
 import net.dries007.tfc.api.registries.TFCRegistries;
@@ -345,20 +346,25 @@ public class IERecipes
             NonNullList<IIngredient<ItemStack>> ingredientlist = quernRecipe.getIngredients();
             IIngredient iingredient = ingredientlist.get(0);
             NonNullList foo = iingredient.getValidIngredients();
-            Ingredient ingredient = Ingredient.fromStacks((ItemStack) foo.get(0));
-            ItemStack output = quernRecipe.getOutputs().get(0);
-            Item item = output.getItem();
+            ItemStack input = (ItemStack) foo.get(0);
+            // if it's a food item we're going to skip it unless we can come up with a food expiry solution.
+            if (!input.hasCapability(CapabilityFood.CAPABILITY, null)){
+                Ingredient ingredient = Ingredient.fromStacks(input);
 
-            //The IE Crusher is just super-efficient
-            int amount = Math.min(output.getCount() * 2 + 2, 9);
-            int meta = output.getMetadata();
-            ItemStack newoutput = new ItemStack(item, amount, meta);
 
-            if (ingredient != null)
-            {
-                CrusherRecipe.addRecipe(newoutput, ingredient, amount * 1000);
+                ItemStack output = quernRecipe.getOutputs().get(0);
+                Item item = output.getItem();
+
+                //The IE Crusher is just super-efficient
+                int amount = Math.min(output.getCount() * 2 + 2, 9);
+                int meta = output.getMetadata();
+                ItemStack newoutput = new ItemStack(item, amount, meta);
+
+                if (ingredient != null)
+                {
+                    CrusherRecipe.addRecipe(newoutput, ingredient, amount * 1000);
+                }
             }
-
         }
     }
 
