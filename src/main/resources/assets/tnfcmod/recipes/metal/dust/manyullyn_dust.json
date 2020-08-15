@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "dustCobalt"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dustArdite"
+    }    
+  ],
+  "result": {
+    "item": "tfc:metal/dust/manyullyn",
+    "count": 2
+  }
+}

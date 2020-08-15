@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRR",
+    "CRC",
+    "RRR"
+  ],
+  "key": {
+    "R": {
+      "type": "forge:ore_dict",
+      "ore": "dustRedstone"
+      },
+    "C": {
+      "type": "forge:ore_dict",
+      "ore": "dustCopper"
+    }
+  },
+  "result": {
+    "item": "tfc:metal/dust/red_alloy",
+    "count": 9
+  }
+}

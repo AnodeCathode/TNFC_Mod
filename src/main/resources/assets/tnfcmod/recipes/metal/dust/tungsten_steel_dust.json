@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+     "SSS", 
+     "STS", 
+     "SSS"
+  ],
+  "key": {
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "dustSteel"
+      },
+    "T": {
+      "type": "forge:ore_dict",
+      "ore": "dustTungsten"
+    }
+
+  },
+  "result": {
+    "item": "tfc:metal/dust/tungsten_steel",
+    "count": 9
+  }
+}
