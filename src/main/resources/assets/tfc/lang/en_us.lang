@@ -125,27 +125,28 @@ tile.tfc.ore.stibnite.phyllite.name=Phyllite Stibnite
 tile.tfc.ore.stibnite.schist.name=Schist Stibnite
 tile.tfc.ore.stibnite.gneiss.name=Gneiss Stibnite
 tile.tfc.ore.stibnite.marble.name=Marble Stibnite
-tile.tfc.ore.thorianite.granite.name=Granite Thorianite
-tile.tfc.ore.thorianite.diorite.name=Diorite Thorianite
-tile.tfc.ore.thorianite.gabbro.name=Gabbro Thorianite
-tile.tfc.ore.thorianite.shale.name=Shale Thorianite
-tile.tfc.ore.thorianite.claystone.name=Claystone Thorianite
-tile.tfc.ore.thorianite.rocksalt.name=Rocksalt Thorianite
-tile.tfc.ore.thorianite.limestone.name=Limestone Thorianite
-tile.tfc.ore.thorianite.conglomerate.name=Conglomerate Thorianite
-tile.tfc.ore.thorianite.dolomite.name=Dolomite Thorianite
-tile.tfc.ore.thorianite.chert.name=Chert Thorianite
-tile.tfc.ore.thorianite.chalk.name=Chalk Thorianite
-tile.tfc.ore.thorianite.rhyolite.name=Rhyolite Thorianite
-tile.tfc.ore.thorianite.basalt.name=Basalt Thorianite
-tile.tfc.ore.thorianite.andesite.name=Andesite Thorianite
-tile.tfc.ore.thorianite.dacite.name=Dacite Thorianite
-tile.tfc.ore.thorianite.quartzite.name=Quartzite Thorianite
-tile.tfc.ore.thorianite.slate.name=Slate Thorianite
-tile.tfc.ore.thorianite.phyllite.name=Phyllite Thorianite
-tile.tfc.ore.thorianite.schist.name=Schist Thorianite
-tile.tfc.ore.thorianite.gneiss.name=Gneiss Thorianite
-tile.tfc.ore.thorianite.marble.name=Marble Thorianite
+# thorianite
+tile.tfc.ore.thorianite.granite.name=Thorianite Granite
+tile.tfc.ore.thorianite.diorite.name=Thorianite Diorite
+tile.tfc.ore.thorianite.gabbro.name=Thorianite Gabbro
+tile.tfc.ore.thorianite.shale.name=Thorianite Shale
+tile.tfc.ore.thorianite.claystone.name=Thorianite Claystone
+tile.tfc.ore.thorianite.rocksalt.name=Thorianite Rocksalt
+tile.tfc.ore.thorianite.limestone.name=Thorianite Limestone
+tile.tfc.ore.thorianite.conglomerate.name=Thorianite Conglomerate
+tile.tfc.ore.thorianite.dolomite.name=Thorianite Dolomite
+tile.tfc.ore.thorianite.chert.name=Thorianite Chert
+tile.tfc.ore.thorianite.chalk.name=Thorianite Chalk
+tile.tfc.ore.thorianite.rhyolite.name=Thorianite Rhyolite
+tile.tfc.ore.thorianite.basalt.name=Thorianite Basalt
+tile.tfc.ore.thorianite.andesite.name=Thorianite Andesite
+tile.tfc.ore.thorianite.dacite.name=Thorianite Dacite
+tile.tfc.ore.thorianite.quartzite.name=Thorianite Quartzite
+tile.tfc.ore.thorianite.slate.name=Thorianite Slate
+tile.tfc.ore.thorianite.phyllite.name=Thorianite Phyllite
+tile.tfc.ore.thorianite.schist.name=Thorianite Schist
+tile.tfc.ore.thorianite.gneiss.name=Thorianite Gneiss
+tile.tfc.ore.thorianite.marble.name=Thorianite Marble
 tile.tfc.ore.chromite.granite.name=Granite Chromite
 tile.tfc.ore.chromite.diorite.name=Diorite Chromite
 tile.tfc.ore.chromite.gabbro.name=Gabbro Chromite
@@ -364,8 +365,9 @@ item.tfc.metal.knife.aluminum.name=Aluminum Knife
 item.tfc.metal.knife_blade.aluminum.name=Aluminum Knife Blade
 item.tfc.metal.scythe.aluminum.name=Aluminum Scythe
 item.tfc.metal.scythe_blade.aluminum.name=Aluminum Scythe Blade
+tile.tfc.lamp.aluminium.name=Aluminium Lamp
+tile.tfc.lamp.aluminium.filled.name=%s Aluminium Lamp
 
-item.tfc.metal.lamp.aluminum.name=Aluminum Lamp
 item.tfc.ceramics.fired.mold.ingot.aluminum.name=Unshaped Aluminum
 
 # Metal Armors
@@ -422,8 +424,8 @@ item.tfc.metal.knife.aluminum_brass.name=Aluminum Brass Knife
 item.tfc.metal.knife_blade.aluminum_brass.name=Aluminum Brass Knife Blade
 item.tfc.metal.scythe.aluminum_brass.name=Aluminum Brass Scythe
 item.tfc.metal.scythe_blade.aluminum_brass.name=Aluminum Brass Scythe Blade
-
-item.tfc.metal.lamp.aluminum_brass.name=Aluminum Brass Lamp
+tile.tfc.lamp.aluminium_brass.name=Aluminium Brass Lamp
+tile.tfc.lamp.aluminium_brass.filled.name=%s Aluminium Brass Lamp
 item.tfc.ceramics.fired.mold.ingot.aluminum_brass.name=Unshaped Aluminum Brass
 
 # Metal Armors
@@ -480,8 +482,8 @@ item.tfc.metal.knife.red_alloy.name=Red Alloy Knife
 item.tfc.metal.knife_blade.red_alloy.name=Red Alloy Knife Blade
 item.tfc.metal.scythe.red_alloy.name=Red Alloy Scythe
 item.tfc.metal.scythe_blade.red_alloy.name=Red Alloy Scythe Blade
-
-item.tfc.metal.lamp.red_alloy.name=Red Alloy Lamp
+tile.tfc.lamp.red_alloy.name=Red Alloy Lamp
+tile.tfc.lamp.red_alloy.filled.name=%s Red Alloy Lamp
 item.tfc.ceramics.fired.mold.ingot.red_alloy.name=Unshaped Red Alloy
 
 # Metal Armors
@@ -538,8 +540,8 @@ item.tfc.metal.knife.antimony.name=Antimony Knife
 item.tfc.metal.knife_blade.antimony.name=Antimony Knife Blade
 item.tfc.metal.scythe.antimony.name=Antimony Scythe
 item.tfc.metal.scythe_blade.antimony.name=Antimony Scythe Blade
-
-item.tfc.metal.lamp.antimony.name=Antimony Lamp
+tile.tfc.lamp.antimony.name=Antimony Lamp
+tile.tfc.lamp.antimony.filled.name=%s Antimony Lamp
 item.tfc.ceramics.fired.mold.ingot.antimony.name=Unshaped Antimony
 
 # Metal Armors
@@ -596,8 +598,8 @@ item.tfc.metal.knife.ardite.name=Ardite Knife
 item.tfc.metal.knife_blade.ardite.name=Ardite Knife Blade
 item.tfc.metal.scythe.ardite.name=Ardite Scythe
 item.tfc.metal.scythe_blade.ardite.name=Ardite Scythe Blade
-
-item.tfc.metal.lamp.ardite.name=Ardite Lamp
+tile.tfc.lamp.ardite.name=Ardite Lamp
+tile.tfc.lamp.ardite.filled.name=%s Ardite Lamp
 item.tfc.ceramics.fired.mold.ingot.ardite.name=Unshaped Ardite
 
 # Metal Armors
@@ -654,8 +656,8 @@ item.tfc.metal.knife.cobalt.name=Cobalt Knife
 item.tfc.metal.knife_blade.cobalt.name=Cobalt Knife Blade
 item.tfc.metal.scythe.cobalt.name=Cobalt Scythe
 item.tfc.metal.scythe_blade.cobalt.name=Cobalt Scythe Blade
-
-item.tfc.metal.lamp.cobalt.name=Cobalt Lamp
+tile.tfc.lamp.cobalt.name=Cobalt Lamp
+tile.tfc.lamp.cobalt.filled.name=%s Cobalt Lamp
 item.tfc.ceramics.fired.mold.ingot.cobalt.name=Unshaped Cobalt
 
 # Metal Armors
@@ -712,8 +714,8 @@ item.tfc.metal.knife.constantan.name=Constantan Knife
 item.tfc.metal.knife_blade.constantan.name=Constantan Knife Blade
 item.tfc.metal.scythe.constantan.name=Constantan Scythe
 item.tfc.metal.scythe_blade.constantan.name=Constantan Scythe Blade
-
-item.tfc.metal.lamp.constantan.name=Constantan Lamp
+tile.tfc.lamp.constantan.name=Constantan Lamp
+tile.tfc.lamp.constantan.filled.name=%s Constantan Lamp
 item.tfc.ceramics.fired.mold.ingot.constantan.name=Unshaped Constantan
 
 # Metal Armors
@@ -770,8 +772,8 @@ item.tfc.metal.knife.electrum.name=Electrum Knife
 item.tfc.metal.knife_blade.electrum.name=Electrum Knife Blade
 item.tfc.metal.scythe.electrum.name=Electrum Scythe
 item.tfc.metal.scythe_blade.electrum.name=Electrum Scythe Blade
-
-item.tfc.metal.lamp.electrum.name=Electrum Lamp
+tile.tfc.lamp.electrum.name=Electrum Lamp
+tile.tfc.lamp.electrum.filled.name=%s Electrum Lamp
 item.tfc.ceramics.fired.mold.ingot.electrum.name=Unshaped Electrum
 
 # Metal Armors
@@ -828,8 +830,8 @@ item.tfc.metal.knife.invar.name=Invar Knife
 item.tfc.metal.knife_blade.invar.name=Invar Knife Blade
 item.tfc.metal.scythe.invar.name=Invar Scythe
 item.tfc.metal.scythe_blade.invar.name=Invar Scythe Blade
-
-item.tfc.metal.lamp.invar.name=Invar Lamp
+tile.tfc.lamp.invar.name=Invar Lamp
+tile.tfc.lamp.invar.filled.name=%s Invar Lamp
 item.tfc.ceramics.fired.mold.ingot.invar.name=Unshaped Invar
 
 # Metal Armors
@@ -886,8 +888,8 @@ item.tfc.metal.knife.manyullyn.name=Manyullyn Knife
 item.tfc.metal.knife_blade.manyullyn.name=Manyullyn Knife Blade
 item.tfc.metal.scythe.manyullyn.name=Manyullyn Scythe
 item.tfc.metal.scythe_blade.manyullyn.name=Manyullyn Scythe Blade
-
-item.tfc.metal.lamp.manyullyn.name=Manyullyn Lamp
+tile.tfc.lamp.manyullyn.name=Manyullyn Lamp
+tile.tfc.lamp.manyullyn.filled.name=%s Manyullyn Lamp
 item.tfc.ceramics.fired.mold.ingot.manyullyn.name=Unshaped Manyullyn
 
 # Metal Armors
@@ -944,8 +946,8 @@ item.tfc.metal.knife.mithril.name=Mithril Knife
 item.tfc.metal.knife_blade.mithril.name=Mithril Knife Blade
 item.tfc.metal.scythe.mithril.name=Mithril Scythe
 item.tfc.metal.scythe_blade.mithril.name=Mithril Scythe Blade
-
-item.tfc.metal.lamp.mithril.name=Mithril Lamp
+tile.tfc.lamp.mithril.name=Mithril Lamp
+tile.tfc.lamp.mithril.filled.name=%s Mithril Lamp
 item.tfc.ceramics.fired.mold.ingot.mithril.name=Unshaped Mithril
 
 # Metal Armors
@@ -1002,8 +1004,8 @@ item.tfc.metal.knife.osmium.name=Osmium Knife
 item.tfc.metal.knife_blade.osmium.name=Osmium Knife Blade
 item.tfc.metal.scythe.osmium.name=Osmium Scythe
 item.tfc.metal.scythe_blade.osmium.name=Osmium Scythe Blade
-
-item.tfc.metal.lamp.osmium.name=Osmium Lamp
+tile.tfc.lamp.osmium.name=Osmium Lamp
+tile.tfc.lamp.osmium.filled.name=%s Osmium Lamp
 item.tfc.ceramics.fired.mold.ingot.osmium.name=Unshaped Osmium
 
 # Metal Armors
@@ -1060,8 +1062,8 @@ item.tfc.metal.knife.titanium.name=Titanium Knife
 item.tfc.metal.knife_blade.titanium.name=Titanium Knife Blade
 item.tfc.metal.scythe.titanium.name=Titanium Scythe
 item.tfc.metal.scythe_blade.titanium.name=Titanium Scythe Blade
-
-item.tfc.metal.lamp.titanium.name=Titanium Lamp
+tile.tfc.lamp.titanium.name=Titanium Lamp
+tile.tfc.lamp.titanium.filled.name=%s Titanium Lamp
 item.tfc.ceramics.fired.mold.ingot.titanium.name=Unshaped Titanium
 
 # Metal Armors
@@ -1117,9 +1119,8 @@ item.tfc.metal.propick_head.tungsten.name=Tungsten Prospector's Pickaxe Head
 item.tfc.metal.knife.tungsten.name=Tungsten Knife
 item.tfc.metal.knife_blade.tungsten.name=Tungsten Knife Blade
 item.tfc.metal.scythe.tungsten.name=Tungsten Scythe
-item.tfc.metal.scythe_blade.tungsten.name=Tungsten Scythe Blade
-
-item.tfc.metal.lamp.tungsten.name=Tungsten Lamp
+tile.tfc.lamp.tungsten.name=Tungsten Lamp
+tile.tfc.lamp.tungsten.filled.name=%s Tungsten Lamp
 item.tfc.ceramics.fired.mold.ingot.tungsten.name=Unshaped Tungsten
 
 # Metal Armors
@@ -1176,8 +1177,8 @@ item.tfc.metal.knife.tungsten_steel.name=Tungsten Steel Knife
 item.tfc.metal.knife_blade.tungsten_steel.name=Tungsten Steel Knife Blade
 item.tfc.metal.scythe.tungsten_steel.name=Tungsten Steel Scythe
 item.tfc.metal.scythe_blade.tungsten_steel.name=Tungsten Steel Scythe Blade
-
-item.tfc.metal.lamp.tungsten_steel.name=Tungsten Steel Lamp
+tile.tfc.lamp.tungsten_steel.name=Tungsten Steel Lamp
+tile.tfc.lamp.tungsten_steel.filled.name=%s Tungsten Steel Lamp
 item.tfc.ceramics.fired.mold.ingot.tungsten_steel.name=Unshaped Tungsten Steel
 
 # Metal Armors
@@ -1234,8 +1235,8 @@ item.tfc.metal.knife.nickel_silver.name=Nickel Silver Knife
 item.tfc.metal.knife_blade.nickel_silver.name=Nickel Silver Knife Blade
 item.tfc.metal.scythe.nickel_silver.name=Nickel Silver Scythe
 item.tfc.metal.scythe_blade.nickel_silver.name=Nickel Silver Scythe Blade
-
-item.tfc.metal.lamp.nickel_silver.name=Nickel Silver Lamp
+tile.tfc.lamp.nickel_silver.name=Nickel Silver Lamp
+tile.tfc.lamp.nickel_silver.filled.name=%s Nickel Silver Lamp
 item.tfc.ceramics.fired.mold.ingot.nickel_silver.name=Unshaped Nickel Silver
 
 # Metal Armors
@@ -1263,12 +1264,12 @@ tfc.types.metal.electrum=Electrum
 tfc.types.metal.invar=Invar
 tfc.types.metal.titanium=Titanium
 tfc.types.metal.manyullyn=Manyullyn
-tfc.types.metal.mithril=Mithril
 tfc.types.metal.osmium=Osmium
 tfc.types.metal.tungsten=Tungsten
 tfc.types.metal.tungsten_steel=Tungsten Steel
 tfc.types.metal.nickel_silver=Nickel Silver
 tfc.types.metal.red_alloy=Red Alloy
+tfc.types.metal.thorium=Thorium
 
 #Fluids
 fluid.antimony=Molten Antimony
@@ -1305,6 +1306,7 @@ vein.bauxite.name=Bauxite
 vein.native_osmium.name=Native Osmium
 vein.native_ardite.name=Ardite
 vein.thorianite.name=Thorianite
+vein.surface_thorianite.name=Surface Thorianite
 vein.chromite.name=Chromite
 vein.pyrolusite.name=Pyrolusite
 vein.magnesite.name=Magnesite
@@ -1312,9 +1314,71 @@ vein.spodumene.name=Spodumene
 vein.rutile.name=Rutile
 vein.boron.name=Boron
 
+
+# Metal items
+fluid.thorium=Molten Thorium
+item.tfc.metal.ingot.thorium.name=Thorium Ingot
+item.tfc.ceramics.fired.mold.ingot.thorium.name=Unshaped Thorium
+item.tfc.metal.double_ingot.thorium.name=Thorium Double Ingot
+item.tfc.ceramics.fired.mold.double_ingot.thorium.name=Double Ingot Thorium
+item.tfc.metal.scrap.thorium.name=Thorium Scrap
+item.tfc.ceramics.fired.mold.scrap.thorium.name=Scrap Thorium
+item.tfc.metal.dust.thorium.name=Thorium Dust
+item.tfc.ceramics.fired.mold.dust.thorium.name=Dust Thorium
+item.tfc.metal.nugget.thorium.name=Thorium Nugget
+item.tfc.ceramics.fired.mold.nugget.thorium.name=Nugget Thorium
+item.tfc.metal.sheet.thorium.name=Thorium Sheet
+item.tfc.ceramics.fired.mold.sheet.thorium.name=Sheet Thorium
+item.tfc.metal.double_sheet.thorium.name=Thorium Double Sheet
+item.tfc.ceramics.fired.mold.double_sheet.thorium.name=Double Sheet Thorium
+item.tfc.ceramics.fired.mold.anvil.thorium.name=Anvil Thorium
+item.tfc.metal.tuyere.thorium.name=Thorium Tuyere
+item.tfc.ceramics.fired.mold.tuyere.thorium.name=Tuyere Thorium
+tile.tfc.lamp.thorium.name=Thorium Lamp
+tile.tfc.lamp.thorium.filled.name=%s Thorium Lamp
+item.tfc.ceramics.fired.mold.lamp.thorium.name=Lamp Thorium
+item.tfc.ceramics.fired.mold.pick.thorium.name=Pick Thorium
+item.tfc.ceramics.fired.mold.pick_head.thorium.name=Pick Head Thorium
+item.tfc.ceramics.fired.mold.shovel.thorium.name=Shovel Thorium
+item.tfc.ceramics.fired.mold.shovel_head.thorium.name=Shovel Head Thorium
+item.tfc.ceramics.fired.mold.axe.thorium.name=Axe Thorium
+item.tfc.ceramics.fired.mold.axe_head.thorium.name=Axe Head Thorium
+item.tfc.ceramics.fired.mold.hoe.thorium.name=Hoe Thorium
+item.tfc.ceramics.fired.mold.hoe_head.thorium.name=Hoe Head Thorium
+item.tfc.ceramics.fired.mold.chisel.thorium.name=Chisel Thorium
+item.tfc.ceramics.fired.mold.chisel_head.thorium.name=Chisel Head Thorium
+item.tfc.ceramics.fired.mold.sword.thorium.name=Sword Thorium
+item.tfc.ceramics.fired.mold.sword_blade.thorium.name=Sword Blade Thorium
+item.tfc.ceramics.fired.mold.mace.thorium.name=Mace Thorium
+item.tfc.ceramics.fired.mold.mace_head.thorium.name=Mace Head Thorium
+item.tfc.ceramics.fired.mold.saw.thorium.name=Saw Thorium
+item.tfc.ceramics.fired.mold.saw_blade.thorium.name=Saw Blade Thorium
+item.tfc.ceramics.fired.mold.javelin.thorium.name=Javelin Thorium
+item.tfc.ceramics.fired.mold.javelin_head.thorium.name=Javelin Head Thorium
+item.tfc.ceramics.fired.mold.hammer.thorium.name=Hammer Thorium
+item.tfc.ceramics.fired.mold.hammer_head.thorium.name=Hammer Head Thorium
+item.tfc.ceramics.fired.mold.propick.thorium.name=Propick Thorium
+item.tfc.ceramics.fired.mold.propick_head.thorium.name=Propick Head Thorium
+item.tfc.ceramics.fired.mold.knife.thorium.name=Knife Thorium
+item.tfc.ceramics.fired.mold.knife_blade.thorium.name=Knife Blade Thorium
+item.tfc.ceramics.fired.mold.scythe.thorium.name=Scythe Thorium
+item.tfc.ceramics.fired.mold.scythe_blade.thorium.name=Scythe Blade Thorium
+item.tfc.ceramics.fired.mold.shears.thorium.name=Shears Thorium
+item.tfc.ceramics.fired.mold.unfinished_chestplate.thorium.name=Unfinished Chestplate Thorium
+item.tfc.ceramics.fired.mold.chestplate.thorium.name=Chestplate Thorium
+item.tfc.ceramics.fired.mold.unfinished_greaves.thorium.name=Unfinished Greaves Thorium
+item.tfc.ceramics.fired.mold.greaves.thorium.name=Greaves Thorium
+item.tfc.ceramics.fired.mold.unfinished_boots.thorium.name=Unfinished Boots Thorium
+item.tfc.ceramics.fired.mold.boots.thorium.name=Boots Thorium
+item.tfc.ceramics.fired.mold.unfinished_helmet.thorium.name=Unfinished Helmet Thorium
+item.tfc.ceramics.fired.mold.helmet.thorium.name=Helmet Thorium
+item.tfc.metal.shield.thorium.name=Thorium Shield
+item.tfc.bloom.unrefined.thorium.name=Raw Thorium Bloom
+item.tfc.bloom.refined.thorium.name=Refined Thorium Bloom
+
 #Config
-config.tfcmetallum=TFC-Metallum
-config.tfcmetallum.tooltip=TFC-Metallum Mod Configuration
+config.tfcmetallum=TNFC-Metallum
+config.tfcmetallum.tooltip=TNFC-Metallum Mod Configuration
 
 ##Recipes
 config.tfcmetallum.recipes=Recipe Configuration
