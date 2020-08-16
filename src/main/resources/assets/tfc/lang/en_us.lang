@@ -365,8 +365,8 @@ item.tfc.metal.knife.aluminum.name=Aluminum Knife
 item.tfc.metal.knife_blade.aluminum.name=Aluminum Knife Blade
 item.tfc.metal.scythe.aluminum.name=Aluminum Scythe
 item.tfc.metal.scythe_blade.aluminum.name=Aluminum Scythe Blade
-tile.tfc.lamp.aluminium.name=Aluminium Lamp
-tile.tfc.lamp.aluminium.filled.name=%s Aluminium Lamp
+tile.tfc.lamp.aluminum.name=Aluminum Lamp
+tile.tfc.lamp.aluminum.filled.name=%s Aluminum Lamp
 
 item.tfc.ceramics.fired.mold.ingot.aluminum.name=Unshaped Aluminum
 
@@ -424,8 +424,8 @@ item.tfc.metal.knife.aluminum_brass.name=Aluminum Brass Knife
 item.tfc.metal.knife_blade.aluminum_brass.name=Aluminum Brass Knife Blade
 item.tfc.metal.scythe.aluminum_brass.name=Aluminum Brass Scythe
 item.tfc.metal.scythe_blade.aluminum_brass.name=Aluminum Brass Scythe Blade
-tile.tfc.lamp.aluminium_brass.name=Aluminium Brass Lamp
-tile.tfc.lamp.aluminium_brass.filled.name=%s Aluminium Brass Lamp
+tile.tfc.lamp.aluminum_brass.name=Aluminum Brass Lamp
+tile.tfc.lamp.aluminum_brass.filled.name=%s Aluminum Brass Lamp
 item.tfc.ceramics.fired.mold.ingot.aluminum_brass.name=Unshaped Aluminum Brass
 
 # Metal Armors
