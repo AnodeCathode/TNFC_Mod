@@ -53,7 +53,7 @@ public final class RegisterOres
     public static final ResourceLocation TUNGSTEN_STEEL = new ResourceLocation(MOD_ID, "tungsten_steel");
     public static final ResourceLocation NICKEL_SILVER = new ResourceLocation(MOD_ID, "nickel_silver"); // Copper + zinc + nickel
     public static final ResourceLocation RED_ALLOY = new ResourceLocation(MOD_ID, "red_alloy"); // Copper + redstone (although not obtainable with just TFC + metallum
-
+    public static final ResourceLocation THORIUM = new ResourceLocation(MOD_ID, "thorium");
     //Ores
     public static final ResourceLocation NATIVE_ARDITE = new ResourceLocation(MOD_ID, "native_ardite");
     public static final ResourceLocation NATIVE_OSMIUM = new ResourceLocation(MOD_ID, "native_osmium");
@@ -85,9 +85,10 @@ public final class RegisterOres
         r.register(new Metal(INVAR, Metal.Tier.TIER_IV, true, 0.35f, 1450, 0xFF40444A, ToolMaterialsTNFC.INVAR, ArmorMaterialsTNFC.INVAR));
         r.register(new Metal(ALUMINUM, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFFD9FBFC, ToolMaterialsTNFC.ALUMINUM, ArmorMaterialsTNFC.ALUMINUM));
         r.register(new Metal(ALUMINUM_BRASS, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFFDCDABE, null, null));
-        r.register(new Metal(ARDITE, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFF40444A, null, null));
+        r.register(new Metal(THORIUM, Metal.Tier.TIER_IV, true, 0.3f, 630, 0xFF3D4548, null, null));
         r.register(new Metal(COBALT, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFF6CA6E5, ToolMaterialsTNFC.COBALT, ArmorMaterialsTNFC.COBALT));
         r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFF40444A, ToolMaterialsTNFC.MANYULLYN, ArmorMaterialsTNFC.MANYULLYN));
+        r.register(new Metal(ARDITE, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFF40444A, null, null));
         r.register(new Metal(OSMIUM, Metal.Tier.TIER_V, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTNFC.OSMIUM, ArmorMaterialsTNFC.OSMIUM));
         r.register(new Metal(TITANIUM, Metal.Tier.TIER_V, true, 0.3f, 3025, 0xFFC2C4CC, ToolMaterialsTNFC.TITANIUM, ArmorMaterialsTNFC.TITANIUM));
         r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_V, true, 0.2f, 3400, 0xFF40444A, ToolMaterialsTNFC.TUNGSTEN, ArmorMaterialsTNFC.TUNGSTEN));
@@ -110,9 +111,10 @@ public final class RegisterOres
         r.register(new Ore(WOLFRAMITE, TUNGSTEN, false));
         r.register(new Ore(COBALTITE, COBALT, false));
         r.register(new Ore(RUTILE, TITANIUM, false));
+        r.register(new Ore(THORIANITE, THORIUM, false));
+
 
         // Ores without metals registered inside TFC
-        r.register(new Ore(THORIANITE));
         r.register(new Ore(CHROMITE));
         r.register(new Ore(PYROLUSITE));
         r.register(new Ore(MAGNESITE));
