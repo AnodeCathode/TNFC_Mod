@@ -1,0 +1,1349 @@
+#########################################################################################
+#																						#
+#						Русский перевод TFC-Metallum от Кураги							#
+#																						#
+#							Russian transtation by Gargarien							#
+#																						#
+#	По поводу ошибок писать сюда: vk.com/mr_pisos или дискорд Gargarien#8756			#
+#																						#
+#########################################################################################
+
+# Ore blocks
+tile.tfc.ore.bauxite.granite.name=Гранит с бокситом
+tile.tfc.ore.bauxite.diorite.name=Диорит с бокситом
+tile.tfc.ore.bauxite.gabbro.name=Габбро с бокситом
+tile.tfc.ore.bauxite.shale.name=Сланец с бокситом
+tile.tfc.ore.bauxite.claystone.name=Аргиллит с бокситом
+tile.tfc.ore.bauxite.rocksalt.name=Каменная соль с бокситом
+tile.tfc.ore.bauxite.limestone.name=Известняк с бокситом
+tile.tfc.ore.bauxite.conglomerate.name=Конгломерат с бокситом
+tile.tfc.ore.bauxite.dolomite.name=Доломит с бокситом
+tile.tfc.ore.bauxite.chert.name=Кремнистый известняк с бокситом
+tile.tfc.ore.bauxite.chalk.name=Мел с бокситом
+tile.tfc.ore.bauxite.rhyolite.name=Риолит с бокситом
+tile.tfc.ore.bauxite.basalt.name=Базальт с бокситом
+tile.tfc.ore.bauxite.andesite.name=Андезит с бокситом
+tile.tfc.ore.bauxite.dacite.name=Дацит с бокситом
+tile.tfc.ore.bauxite.quartzite.name=Кварцит с бокситом
+tile.tfc.ore.bauxite.slate.name=Шифер с бокситом
+tile.tfc.ore.bauxite.phyllite.name=Филлит с бокситом
+tile.tfc.ore.bauxite.schist.name=Аспидный сланец с бокситом
+tile.tfc.ore.bauxite.gneiss.name=Гнейс с бокситом
+tile.tfc.ore.bauxite.marble.name=Мрамор с бокситом
+tile.tfc.ore.wolframite.granite.name=Гранит с вольфрамитом
+tile.tfc.ore.wolframite.diorite.name=Диорит с вольфрамитом
+tile.tfc.ore.wolframite.gabbro.name=Габбро с вольфрамитом
+tile.tfc.ore.wolframite.shale.name=Сланец с вольфрамитом
+tile.tfc.ore.wolframite.claystone.name=Аргиллит с вольфрамитом
+tile.tfc.ore.wolframite.rocksalt.name=Каменная соль с вольфрамитом
+tile.tfc.ore.wolframite.limestone.name=Известняк с вольфрамитом
+tile.tfc.ore.wolframite.conglomerate.name=Конгломерат с вольфрамитом
+tile.tfc.ore.wolframite.dolomite.name=Доломит с вольфрамитом
+tile.tfc.ore.wolframite.chert.name=Кремнистый известняк с вольфрамитом
+tile.tfc.ore.wolframite.chalk.name=Мел с вольфрамитом
+tile.tfc.ore.wolframite.rhyolite.name=Риолит с вольфрамитом
+tile.tfc.ore.wolframite.basalt.name=Базальт с вольфрамитом
+tile.tfc.ore.wolframite.andesite.name=Андезит с вольфрамитом
+tile.tfc.ore.wolframite.dacite.name=Дацит с вольфрамитом
+tile.tfc.ore.wolframite.quartzite.name=Кварцит с вольфрамитом
+tile.tfc.ore.wolframite.slate.name=Шифер с вольфрамитом
+tile.tfc.ore.wolframite.phyllite.name=Филлит с вольфрамитом
+tile.tfc.ore.wolframite.schist.name=Аспидный сланец с вольфрамитом
+tile.tfc.ore.wolframite.gneiss.name=Гнейс с вольфрамитом
+tile.tfc.ore.wolframite.marble.name=Мрамор с вольфрамитом
+tile.tfc.ore.native_ardite.granite.name=Гранит с чистым ардитом
+tile.tfc.ore.native_ardite.diorite.name=Диорит с чистым ардитом
+tile.tfc.ore.native_ardite.gabbro.name=Габбро с чистым ардитом
+tile.tfc.ore.native_ardite.shale.name=Сланец с чистым ардитом
+tile.tfc.ore.native_ardite.claystone.name=Аргиллит с чистым ардитом
+tile.tfc.ore.native_ardite.rocksalt.name=Каменная соль с чистым ардитом
+tile.tfc.ore.native_ardite.limestone.name=Известняк с чистым ардитом
+tile.tfc.ore.native_ardite.conglomerate.name=Конгломерат с чистым ардитом
+tile.tfc.ore.native_ardite.dolomite.name=Доломит с чистым ардитом
+tile.tfc.ore.native_ardite.chert.name=Кремнистый известняк с чистым ардитом
+tile.tfc.ore.native_ardite.chalk.name=Мел с чистым ардитом
+tile.tfc.ore.native_ardite.rhyolite.name=Риолит с чистым ардитом
+tile.tfc.ore.native_ardite.basalt.name=Базальт с чистым ардитом
+tile.tfc.ore.native_ardite.andesite.name=Андезит с чистым ардитом
+tile.tfc.ore.native_ardite.dacite.name=Дацит с чистым ардитом
+tile.tfc.ore.native_ardite.quartzite.name=Кварцит с чистым ардитом
+tile.tfc.ore.native_ardite.slate.name=Шифер с чистым ардитом
+tile.tfc.ore.native_ardite.phyllite.name=Филлит с чистым ардитом
+tile.tfc.ore.native_ardite.schist.name=Аспидный сланец с чистым ардитом
+tile.tfc.ore.native_ardite.gneiss.name=Гнейс с чистым ардитом
+tile.tfc.ore.native_ardite.marble.name=Мрамор с чистым ардитом
+tile.tfc.ore.native_osmium.granite.name=Гранит с чистым ардитом
+tile.tfc.ore.native_osmium.diorite.name=Диорит с чистым ардитом
+tile.tfc.ore.native_osmium.gabbro.name=Габбро с чистым ардитом
+tile.tfc.ore.native_osmium.shale.name=Сланец с чистым ардитом
+tile.tfc.ore.native_osmium.claystone.name=Аргиллит с чистым осмием
+tile.tfc.ore.native_osmium.rocksalt.name=Каменная соль с чистым осмием
+tile.tfc.ore.native_osmium.limestone.name=Известняк с чистым осмием
+tile.tfc.ore.native_osmium.conglomerate.name=Конгломерат с чистым осмием
+tile.tfc.ore.native_osmium.dolomite.name=Доломит с чистым осмием
+tile.tfc.ore.native_osmium.chert.name=Кремнистый известняк с чистым осмием
+tile.tfc.ore.native_osmium.chalk.name=Мел с чистым осмием
+tile.tfc.ore.native_osmium.rhyolite.name=Риолит с чистым осмием
+tile.tfc.ore.native_osmium.basalt.name=Базальт с чистым осмием
+tile.tfc.ore.native_osmium.andesite.name=Андезит с чистым осмием
+tile.tfc.ore.native_osmium.dacite.name=Дацит с чистым осмием
+tile.tfc.ore.native_osmium.quartzite.name=Кварцит с чистым осмием
+tile.tfc.ore.native_osmium.slate.name=Шифер с чистым осмием
+tile.tfc.ore.native_osmium.phyllite.name=Филлит с чистым осмием
+tile.tfc.ore.native_osmium.schist.name=Аспидный сланец с чистым осмием
+tile.tfc.ore.native_osmium.gneiss.name=Гнейс с чистым осмием
+tile.tfc.ore.native_osmium.marble.name=Мрамор с чистым осмием
+tile.tfc.ore.cobaltite.granite.name=Гранит с кобальтином
+tile.tfc.ore.cobaltite.diorite.name=Диорит с кобальтином
+tile.tfc.ore.cobaltite.gabbro.name=Габбро с кобальтином
+tile.tfc.ore.cobaltite.shale.name=Сланец с кобальтином
+tile.tfc.ore.cobaltite.claystone.name=Аргиллит с кобальтином
+tile.tfc.ore.cobaltite.rocksalt.name=Каменная соль с кобальтином
+tile.tfc.ore.cobaltite.limestone.name=Известняк с кобальтином
+tile.tfc.ore.cobaltite.conglomerate.name=Конгломерат с кобальтином
+tile.tfc.ore.cobaltite.dolomite.name=Доломит с кобальтином
+tile.tfc.ore.cobaltite.chert.name=Кремнистый известняк с кобальтином
+tile.tfc.ore.cobaltite.chalk.name=Мел с кобальтином
+tile.tfc.ore.cobaltite.rhyolite.name=Риолит с кобальтином
+tile.tfc.ore.cobaltite.basalt.name=Базальт с кобальтином
+tile.tfc.ore.cobaltite.andesite.name=Андезит с кобальтином
+tile.tfc.ore.cobaltite.dacite.name=Дацит с кобальтином
+tile.tfc.ore.cobaltite.quartzite.name=Кварцит с кобальтином
+tile.tfc.ore.cobaltite.slate.name=Шифер с кобальтином
+tile.tfc.ore.cobaltite.phyllite.name=Филлит с кобальтином
+tile.tfc.ore.cobaltite.schist.name=Аспидный сланец с кобальтином
+tile.tfc.ore.cobaltite.gneiss.name=Гнейс с кобальтином
+tile.tfc.ore.cobaltite.marble.name=Мрамор с кобальтином
+tile.tfc.ore.stibnite.granite.name=Гранит с антимонитом
+tile.tfc.ore.stibnite.diorite.name=Диорит с антимонитом
+tile.tfc.ore.stibnite.gabbro.name=Габбро с антимонитом
+tile.tfc.ore.stibnite.shale.name=Сланец с антимонитом
+tile.tfc.ore.stibnite.claystone.name=Аргиллит с антимонитом
+tile.tfc.ore.stibnite.rocksalt.name=Каменная соль с антимонитом
+tile.tfc.ore.stibnite.limestone.name=Известняк с антимонитом
+tile.tfc.ore.stibnite.conglomerate.name=Конгломерат с антимонитом
+tile.tfc.ore.stibnite.dolomite.name=Доломит с антимонитом
+tile.tfc.ore.stibnite.chert.name=Кремнистый известняк с антимонитом
+tile.tfc.ore.stibnite.chalk.name=Мел с антимонитом
+tile.tfc.ore.stibnite.rhyolite.name=Риолит с антимонитом
+tile.tfc.ore.stibnite.basalt.name=Базальт с антимонитом
+tile.tfc.ore.stibnite.andesite.name=Андезит с антимонитом
+tile.tfc.ore.stibnite.dacite.name=Дацит с антимонитом
+tile.tfc.ore.stibnite.quartzite.name=Кварцит с антимонитом
+tile.tfc.ore.stibnite.slate.name=Шифер с антимонитом
+tile.tfc.ore.stibnite.phyllite.name=Филлит с антимонитом
+tile.tfc.ore.stibnite.schist.name=Аспидный сланец с антимонитом
+tile.tfc.ore.stibnite.gneiss.name=Гнейс с антимонитом
+tile.tfc.ore.stibnite.marble.name=Мрамор с антимонитом
+tile.tfc.ore.thorianite.granite.name=Гранит с торианитом
+tile.tfc.ore.thorianite.diorite.name=Диорит с торианитом
+tile.tfc.ore.thorianite.gabbro.name=Габбро с торианитом
+tile.tfc.ore.thorianite.shale.name=Сланец с торианитом
+tile.tfc.ore.thorianite.claystone.name=Аргиллит с торианитом
+tile.tfc.ore.thorianite.rocksalt.name=Каменная соль с торианитом
+tile.tfc.ore.thorianite.limestone.name=Известняк с торианитом
+tile.tfc.ore.thorianite.conglomerate.name=Конгломерат с торианитом
+tile.tfc.ore.thorianite.dolomite.name=Доломит с торианитом
+tile.tfc.ore.thorianite.chert.name=Кремнистый известняк с торианитом
+tile.tfc.ore.thorianite.chalk.name=Мел с торианитом
+tile.tfc.ore.thorianite.rhyolite.name=Риолит с торианитом
+tile.tfc.ore.thorianite.basalt.name=Базальт с торианитом
+tile.tfc.ore.thorianite.andesite.name=Андезит с торианитом
+tile.tfc.ore.thorianite.dacite.name=Дацит с торианитом
+tile.tfc.ore.thorianite.quartzite.name=Кварцит с торианитом
+tile.tfc.ore.thorianite.slate.name=Шифер с торианитом
+tile.tfc.ore.thorianite.phyllite.name=Филлит с торианитом
+tile.tfc.ore.thorianite.schist.name=Аспидный сланец с торианитом
+tile.tfc.ore.thorianite.gneiss.name=Гнейс с торианитом
+tile.tfc.ore.thorianite.marble.name=Мрамор с торианитом
+tile.tfc.ore.chromite.granite.name=Гранит с хромитом
+tile.tfc.ore.chromite.diorite.name=Диорит с хромитом
+tile.tfc.ore.chromite.gabbro.name=Габбро с хромитом
+tile.tfc.ore.chromite.shale.name=Сланец с хромитом
+tile.tfc.ore.chromite.claystone.name=Аргиллит с хромитом
+tile.tfc.ore.chromite.rocksalt.name=Каменная соль с хромитом
+tile.tfc.ore.chromite.limestone.name=Известняк с хромитом
+tile.tfc.ore.chromite.conglomerate.name=Конгломерат с хромитом
+tile.tfc.ore.chromite.dolomite.name=Доломит с хромитом
+tile.tfc.ore.chromite.chert.name=Кремнистый известняк с хромитом
+tile.tfc.ore.chromite.chalk.name=Мел с хромитом
+tile.tfc.ore.chromite.rhyolite.name=Риолит с хромитом
+tile.tfc.ore.chromite.basalt.name=Базальт с хромитом
+tile.tfc.ore.chromite.andesite.name=Андезит с хромитом
+tile.tfc.ore.chromite.dacite.name=Дацит с хромитом
+tile.tfc.ore.chromite.quartzite.name=Кварцит с хромитом
+tile.tfc.ore.chromite.slate.name=Шифер с хромитом
+tile.tfc.ore.chromite.phyllite.name=Филлит с хромитом
+tile.tfc.ore.chromite.schist.name=Аспидный сланец с хромитом
+tile.tfc.ore.chromite.gneiss.name=Гнейс с хромитом
+tile.tfc.ore.chromite.marble.name=Мрамор с хромитом
+tile.tfc.ore.pyrolusite.granite.name=Гранит с пиролюзитом
+tile.tfc.ore.pyrolusite.diorite.name=Диорит с пиролюзитом
+tile.tfc.ore.pyrolusite.gabbro.name=Габбро с пиролюзитом
+tile.tfc.ore.pyrolusite.shale.name=Сланец с пиролюзитом
+tile.tfc.ore.pyrolusite.claystone.name=Аргиллит с пиролюзитом
+tile.tfc.ore.pyrolusite.rocksalt.name=Каменная соль с пиролюзитом
+tile.tfc.ore.pyrolusite.limestone.name=Известняк с пиролюзитом
+tile.tfc.ore.pyrolusite.conglomerate.name=Конгломерат с пиролюзитом
+tile.tfc.ore.pyrolusite.dolomite.name=Доломит с пиролюзитом
+tile.tfc.ore.pyrolusite.chert.name=Кремнистый известняк с пиролюзитом
+tile.tfc.ore.pyrolusite.chalk.name=Мел с пиролюзитом
+tile.tfc.ore.pyrolusite.rhyolite.name=Риолит с пиролюзитом
+tile.tfc.ore.pyrolusite.basalt.name=Базальт с пиролюзитом
+tile.tfc.ore.pyrolusite.andesite.name=Андезит с пиролюзитом
+tile.tfc.ore.pyrolusite.dacite.name=Дацит с пиролюзитом
+tile.tfc.ore.pyrolusite.quartzite.name=Кварцит с пиролюзитом
+tile.tfc.ore.pyrolusite.slate.name=Шифер с пиролюзитом
+tile.tfc.ore.pyrolusite.phyllite.name=Филлит с пиролюзитом
+tile.tfc.ore.pyrolusite.schist.name=Аспидный сланец с пиролюзитом
+tile.tfc.ore.pyrolusite.gneiss.name=Гнейс с пиролюзитом
+tile.tfc.ore.pyrolusite.marble.name=Мрамор с пиролюзитом
+tile.tfc.ore.magnesite.granite.name=Гранит с магнезитом
+tile.tfc.ore.magnesite.diorite.name=Диорит с магнезитом
+tile.tfc.ore.magnesite.gabbro.name=Габбро с магнезитом
+tile.tfc.ore.magnesite.shale.name=Сланец с магнезитом
+tile.tfc.ore.magnesite.claystone.name=Аргиллит с магнезитом
+tile.tfc.ore.magnesite.rocksalt.name=Каменная соль с магнезитом
+tile.tfc.ore.magnesite.limestone.name=Известняк с магнезитом
+tile.tfc.ore.magnesite.conglomerate.name=Конгломерат с магнезитом
+tile.tfc.ore.magnesite.dolomite.name=Доломит с магнезитом
+tile.tfc.ore.magnesite.chert.name=Кремнистый известняк с магнезитом
+tile.tfc.ore.magnesite.chalk.name=Мел с магнезитом
+tile.tfc.ore.magnesite.rhyolite.name=Риолит с магнезитом
+tile.tfc.ore.magnesite.basalt.name=Базальт с магнезитом
+tile.tfc.ore.magnesite.andesite.name=Андезит с магнезитом
+tile.tfc.ore.magnesite.dacite.name=Дацит с магнезитом
+tile.tfc.ore.magnesite.quartzite.name=Кварцит с магнезитом
+tile.tfc.ore.magnesite.slate.name=Шифер с магнезитом
+tile.tfc.ore.magnesite.phyllite.name=Филлит с магнезитом
+tile.tfc.ore.magnesite.schist.name=Аспидный сланец с магнезитом
+tile.tfc.ore.magnesite.gneiss.name=Гнейс с магнезитом
+tile.tfc.ore.magnesite.marble.name=Мрамор с магнезитом
+tile.tfc.ore.boron.granite.name=Гранит с бором
+tile.tfc.ore.boron.diorite.name=Диорит с бором
+tile.tfc.ore.boron.gabbro.name=Габбро с бором
+tile.tfc.ore.boron.shale.name=Сланец с бором
+tile.tfc.ore.boron.claystone.name=Аргиллит с бором
+tile.tfc.ore.boron.rocksalt.name=Каменная соль с бором
+tile.tfc.ore.boron.limestone.name=Известняк с бором
+tile.tfc.ore.boron.conglomerate.name=Конгломерат с бором
+tile.tfc.ore.boron.dolomite.name=Доломит с бором
+tile.tfc.ore.boron.chert.name=Кремнистый известняк с бором
+tile.tfc.ore.boron.chalk.name=Мел с бором
+tile.tfc.ore.boron.rhyolite.name=Риолит с бором
+tile.tfc.ore.boron.basalt.name=Базальт с бором
+tile.tfc.ore.boron.andesite.name=Андезит с бором
+tile.tfc.ore.boron.dacite.name=Дацит с бором
+tile.tfc.ore.boron.quartzite.name=Кварцит с бором
+tile.tfc.ore.boron.slate.name=Шифер с бором
+tile.tfc.ore.boron.phyllite.name=Филлит с бором
+tile.tfc.ore.boron.schist.name=Аспидный сланец с бором
+tile.tfc.ore.boron.gneiss.name=Гнейс с бором
+tile.tfc.ore.boron.marble.name=Мрамор с бором
+tile.tfc.ore.spodumene.granite.name=Гранит со сподуменом
+tile.tfc.ore.spodumene.diorite.name=Диорит со сподуменом
+tile.tfc.ore.spodumene.gabbro.name=Габбро со сподуменом
+tile.tfc.ore.spodumene.shale.name=Сланец со сподуменом
+tile.tfc.ore.spodumene.claystone.name=Аргиллит со сподуменом
+tile.tfc.ore.spodumene.rocksalt.name=Каменная соль со сподуменом
+tile.tfc.ore.spodumene.limestone.name=Известняк со сподуменом
+tile.tfc.ore.spodumene.conglomerate.name=Конгломерат со сподуменом
+tile.tfc.ore.spodumene.dolomite.name=Доломит со сподуменом
+tile.tfc.ore.spodumene.chert.name=Кремнистый известняк со сподуменом
+tile.tfc.ore.spodumene.chalk.name=Мел со сподуменом
+tile.tfc.ore.spodumene.rhyolite.name=Риолит со сподуменом
+tile.tfc.ore.spodumene.basalt.name=Базальт со сподуменом
+tile.tfc.ore.spodumene.andesite.name=Андезит со сподуменом
+tile.tfc.ore.spodumene.dacite.name=Дацит со сподуменом
+tile.tfc.ore.spodumene.quartzite.name=Кварцит со сподуменом
+tile.tfc.ore.spodumene.slate.name=Шифер со сподуменом
+tile.tfc.ore.spodumene.phyllite.name=Филлит со сподуменом
+tile.tfc.ore.spodumene.schist.name=Аспидный сланец со сподуменом
+tile.tfc.ore.spodumene.gneiss.name=Гнейс со сподуменом
+tile.tfc.ore.spodumene.marble.name=Мрамор со сподуменом
+tile.tfc.ore.rutile.granite.name=Гранит с рутилом
+tile.tfc.ore.rutile.diorite.name=Диорит с рутилом
+tile.tfc.ore.rutile.gabbro.name=Габбро с рутилом
+tile.tfc.ore.rutile.shale.name=Сланец с рутилом
+tile.tfc.ore.rutile.claystone.name=Аргиллит с рутилом
+tile.tfc.ore.rutile.rocksalt.name=Каменная соль с рутилом
+tile.tfc.ore.rutile.limestone.name=Известняк с рутилом
+tile.tfc.ore.rutile.conglomerate.name=Конгломерат с рутилом
+tile.tfc.ore.rutile.dolomite.name=Доломит с рутилом
+tile.tfc.ore.rutile.chert.name=Кремнистый известняк с рутилом
+tile.tfc.ore.rutile.chalk.name=Мел с рутилом
+tile.tfc.ore.rutile.rhyolite.name=Риолит с рутилом
+tile.tfc.ore.rutile.basalt.name=Базальт с рутилом
+tile.tfc.ore.rutile.andesite.name=Андезит с рутилом
+tile.tfc.ore.rutile.dacite.name=Дацит с рутилом
+tile.tfc.ore.rutile.quartzite.name=Кварцит с рутилом
+tile.tfc.ore.rutile.slate.name=Шифер с рутилом
+tile.tfc.ore.rutile.phyllite.name=Филлит с рутилом
+tile.tfc.ore.rutile.schist.name=Аспидный сланец с рутилом
+tile.tfc.ore.rutile.gneiss.name=Гнейс с рутилом
+tile.tfc.ore.rutile.marble.name=Мрамор с рутилом
+
+# Ore items
+item.tfc.ore.bauxite.name=Боксит
+item.tfc.ore.bauxite.poor.name=Бедный боксит
+item.tfc.ore.bauxite.rich.name=Богатый боксид
+item.tfc.ore.small.bauxite.name=Самородок боксита
+item.tfc.ore.native_ardite.name=Чистый ардит
+item.tfc.ore.native_ardite.poor.name=Бедный чистый ардит
+item.tfc.ore.native_ardite.rich.name=Богатый чистый ардит
+item.tfc.ore.small.native_ardite.name=Самородок чистого ардита
+item.tfc.ore.native_osmium.name=Чистый осмий
+item.tfc.ore.native_osmium.poor.name=Бедный чистый осмий
+item.tfc.ore.native_osmium.rich.name=Богатый чистый осмий
+item.tfc.ore.small.native_osmium.name=Самородок чистого осмия
+item.tfc.ore.wolframite.name=Вольфрамит
+item.tfc.ore.wolframite.poor.name=Бедный вольфрамит
+item.tfc.ore.wolframite.rich.name=Богатый вольфрамит
+item.tfc.ore.small.wolframite.name=Самородок вольфрамита
+item.tfc.ore.cobaltite.name=Кобальтин
+item.tfc.ore.cobaltite.poor.name=Бедный кобальтин
+item.tfc.ore.cobaltite.rich.name=Богатый кобальтин
+item.tfc.ore.small.cobaltite.name=Самородок кобальтина
+item.tfc.ore.stibnite.name=Антимонит
+item.tfc.ore.stibnite.poor.name=Бедный антимонит
+item.tfc.ore.stibnite.rich.name=Богатый антимонит
+item.tfc.ore.small.stibnite.name=Самородок антимонита
+item.tfc.ore.thorianite.name=Торианит
+item.tfc.ore.thorianite.poor.name=Бедный торианит
+item.tfc.ore.thorianite.rich.name=Богатый торианит
+item.tfc.ore.small.thorianite.name=Самородок торианита
+item.tfc.ore.chromite.name=Хромит
+item.tfc.ore.chromite.poor.name=Бедный хромит
+item.tfc.ore.chromite.rich.name=Богатый хромит
+item.tfc.ore.small.chromite.name=Самородок хромита
+item.tfc.ore.magnesite.name=Магнезит
+item.tfc.ore.magnesite.poor.name=Бедный магнезит
+item.tfc.ore.magnesite.rich.name=Богатый магнезит
+item.tfc.ore.small.magnesite.name=Самородок магнезита
+item.tfc.ore.boron.name=Бор
+item.tfc.ore.boron.poor.name=Бедный бор
+item.tfc.ore.boron.rich.name=Богатый бор
+item.tfc.ore.small.boron.name=Самородок бора
+item.tfc.ore.pyrolusite.name=Пиролюзит
+item.tfc.ore.pyrolusite.poor.name=Бедный пиролюзит
+item.tfc.ore.pyrolusite.rich.name=Богатый пиролюзит
+item.tfc.ore.small.pyrolusite.name=Самородок пиролюзита
+item.tfc.ore.spodumene.name=Сподумен
+item.tfc.ore.rutile.name=Рутил
+item.tfc.ore.rutile.poor.name=Бедный рутил
+item.tfc.ore.rutile.rich.name=Богатый рутил
+item.tfc.ore.small.rutile.name=Самородок рутила
+
+#Aluminium
+# Metal items
+item.tfc.metal.ingot.aluminium.name=Алюминиевый слиток
+item.tfc.metal.double_ingot.aluminium.name=Двойной алюминиевый слиток
+item.tfc.metal.scrap.aluminium.name=Металлолом из алюминия
+item.tfc.metal.dust.aluminium.name=Пыль из алюминия
+item.tfc.metal.nugget.aluminium.name=Самородок алюминия
+item.tfc.metal.sheet.aluminium.name=Лист из алюминия
+item.tfc.metal.double_sheet.aluminium.name=Двойной лист из алюминия
+item.tfc.metal.tuyere.aluminium.name=Алюминиевая фурма
+
+# Metal tools
+item.tfc.metal.pick.aluminium.name=Алюминиевая кирка
+item.tfc.metal.pick_head.aluminium.name=Алюминиевое оголовье кирки
+item.tfc.metal.shovel.aluminium.name=Алюминиевая лопата
+item.tfc.metal.shovel_head.aluminium.name=Алюминиевое оголовье лопаты
+item.tfc.metal.axe.aluminium.name=Алюминиевый топор
+item.tfc.metal.axe_head.aluminium.name=Алюминиевое оголовье топора
+item.tfc.metal.hoe.aluminium.name=Алюминиевая мотыга
+item.tfc.metal.hoe_head.aluminium.name=Алюминиевое оголовье мотыги
+item.tfc.metal.chisel.aluminium.name=Алюминиевая стамеска
+item.tfc.metal.chisel_head.aluminium.name=Алюминиевое оголовье стамески
+item.tfc.metal.sword.aluminium.name=Алюминиевый меч
+item.tfc.metal.sword_blade.aluminium.name=Алюминиевое лезвие меча
+item.tfc.metal.mace.aluminium.name=Алюминиевая булава
+item.tfc.metal.mace_head.aluminium.name=Алюминиевое оголовье булавы
+item.tfc.metal.saw.aluminium.name=Алюминиевая ножовка
+item.tfc.metal.saw_blade.aluminium.name=Алюминиевое оголовье ножовки
+item.tfc.metal.shears.aluminium.name=Алюминиевые ножницы
+item.tfc.metal.shield.aluminium.name=Алюминиевый щит
+item.tfc.metal.javelin.aluminium.name=Алюминиевое копье
+item.tfc.metal.javelin_head.aluminium.name=Алюминиевый наконечник копья
+item.tfc.metal.hammer.aluminium.name=Алюминиевый молот
+item.tfc.metal.hammer_head.aluminium.name=Алюминиевое оголовье молота
+item.tfc.metal.propick.aluminium.name=Алюминиевая кирка геолога
+item.tfc.metal.propick_head.aluminium.name=Алюминиевое оголовье кирки геолога
+item.tfc.metal.knife.aluminium.name=Алюминиевый нож
+item.tfc.metal.knife_blade.aluminium.name=Алюминиевое лезвие ножа
+item.tfc.metal.scythe.aluminium.name=Алюминиевая коса
+item.tfc.metal.scythe_blade.aluminium.name=Алюминиевое лезвие косы
+
+item.tfc.metal.lamp.aluminium.name=Алюминиевая лампа
+item.tfc.ceramics.fired.mold.ingot.aluminium.name=Неформованный алюминий
+
+# Metal Armors
+item.tfc.metal.chestplate.aluminium.name=Алюминиевый нагрудник
+item.tfc.metal.greaves.aluminium.name=Алюминиевые поножи
+item.tfc.metal.boots.aluminium.name=Алюминиевые ботинки
+item.tfc.metal.helmet.aluminium.name=Алюминиевый шлем
+
+item.tfc.metal.unfinished_chestplate.aluminium.name=Алюминиевый незаконченый нагрудник
+item.tfc.metal.unfinished_boots.aluminium.name=Алюминиевые незаконченые ботинки
+item.tfc.metal.unfinished_helmet.aluminium.name=Алюминиевый незаконченый шлем
+item.tfc.metal.unfinished_greaves.aluminium.name=Алюминиевые незаконченые поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.aluminium.name=Алюминиевая наковальня
+
+#Aluminium Brass
+# Metal items
+item.tfc.metal.ingot.aluminium_brass.name=Слиток алюминиевой латуни
+item.tfc.metal.double_ingot.aluminium_brass.name=Двойной слиток алюминиевой латуни
+item.tfc.metal.scrap.aluminium_brass.name=Металлолом из алюминиевой латуни
+item.tfc.metal.dust.aluminium_brass.name=Пыль из алюминиевой латуни
+item.tfc.metal.nugget.aluminium_brass.name=Самородок алюминиевой латуни
+item.tfc.metal.sheet.aluminium_brass.name=Лист из алюминиевой латуни
+item.tfc.metal.double_sheet.aluminium_brass.name=Двойной лист из алюминиевой латуни
+item.tfc.metal.tuyere.aluminium_brass.name=Фурма из алюминиевой латуни
+
+# Metal tools
+item.tfc.metal.pick.aluminium_brass.name=Aluminium Brass кирка
+item.tfc.metal.pick_head.aluminium_brass.name=Aluminium Brass оголовье кирки
+item.tfc.metal.shovel.aluminium_brass.name=Aluminium Brass лопата
+item.tfc.metal.shovel_head.aluminium_brass.name=Aluminium Brass оголовье лопаты
+item.tfc.metal.axe.aluminium_brass.name=Aluminium Brass топор
+item.tfc.metal.axe_head.aluminium_brass.name=Aluminium Brass оголовье топора
+item.tfc.metal.hoe.aluminium_brass.name=Aluminium Brass мотыга
+item.tfc.metal.hoe_head.aluminium_brass.name=Aluminium Brass оголовье мотыги
+item.tfc.metal.chisel.aluminium_brass.name=Aluminium Brass стамеска
+item.tfc.metal.chisel_head.aluminium_brass.name=Aluminium Brass оголовье стамески
+item.tfc.metal.sword.aluminium_brass.name=Aluminium Brass меч
+item.tfc.metal.sword_blade.aluminium_brass.name=Aluminium Brass лезвие меча
+item.tfc.metal.mace.aluminium_brass.name=Aluminium Brass булава
+item.tfc.metal.mace_head.aluminium_brass.name=Aluminium Brass оголовье булавы
+item.tfc.metal.saw.aluminium_brass.name=Aluminium Brass ножовка
+item.tfc.metal.saw_blade.aluminium_brass.name=Aluminium Brass полотно ножовки
+item.tfc.metal.shears.aluminium_brass.name=Aluminium Brass ножницы
+item.tfc.metal.shield.aluminium_brass.name=Aluminium Brass щит
+item.tfc.metal.javelin.aluminium_brass.name=Aluminium Brass копьё
+item.tfc.metal.javelin_head.aluminium_brass.name=Aluminium Brass наконечник копья
+item.tfc.metal.hammer.aluminium_brass.name=Aluminium Brass молот
+item.tfc.metal.hammer_head.aluminium_brass.name=Aluminium Brass оголовье молота
+item.tfc.metal.propick.aluminium_brass.name=Aluminium Brass кирка геолога
+item.tfc.metal.propick_head.aluminium_brass.name=Aluminium Brass оголовье кирки геолога
+item.tfc.metal.knife.aluminium_brass.name=Aluminium Brass нож
+item.tfc.metal.knife_blade.aluminium_brass.name=Aluminium Brass лезвие ножа
+item.tfc.metal.scythe.aluminium_brass.name=Aluminium Brass коса
+item.tfc.metal.scythe_blade.aluminium_brass.name=Aluminium Brass лезвие косы
+
+item.tfc.metal.lamp.aluminium_brass.name=Лампа из алюминиевой латуни
+item.tfc.ceramics.fired.mold.ingot.aluminium_brass.name=Неформованный слиток алюминиевой латуни
+
+# Metal Armors
+item.tfc.metal.chestplate.aluminium_brass.name=Aluminium Brass нагрудник
+item.tfc.metal.greaves.aluminium_brass.name=Aluminium Brass поножи
+item.tfc.metal.boots.aluminium_brass.name=Aluminium Brass ботинки
+item.tfc.metal.helmet.aluminium_brass.name=Aluminium Brass шлем
+
+item.tfc.metal.unfinished_chestplate.aluminium_brass.name=Unfinished Aluminium Brass нагрудник
+item.tfc.metal.unfinished_boots.aluminium_brass.name=Unfinished Aluminium Brass ботинки
+item.tfc.metal.unfinished_helmet.aluminium_brass.name=Unfinished Aluminium Brass шлем
+item.tfc.metal.unfinished_greaves.aluminium_brass.name=Unfinished Aluminium Brass поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.aluminium_brass.name=Aluminium Brass Anvil
+
+#Red Alloy Brass
+# Metal items
+item.tfc.metal.ingot.red_alloy.name=Слиток красной легированной латуни
+item.tfc.metal.double_ingot.red_alloy.name=Двойной слиток красной легированной латуни
+item.tfc.metal.scrap.red_alloy.name=Металлолом из красной легированной латуни
+item.tfc.metal.dust.red_alloy.name=Пыль из красной легированной латуни
+item.tfc.metal.nugget.red_alloy.name=Самородок красной легированной латуни
+item.tfc.metal.sheet.red_alloy.name=Лист из красной легированной латуни
+item.tfc.metal.double_sheet.red_alloy.name=Двойной лист из красной легированной латуни
+item.tfc.metal.tuyere.red_alloy.name=Фурма из красной легированной латуни
+# Metal tools
+item.tfc.metal.pick.red_alloy.name=Red Alloy кирка
+item.tfc.metal.pick_head.red_alloy.name=Red Alloy оголовье кирки
+item.tfc.metal.shovel.red_alloy.name=Red Alloy лопата
+item.tfc.metal.shovel_head.red_alloy.name=Red Alloy оголовье лопаты
+item.tfc.metal.axe.red_alloy.name=Red Alloy топор
+item.tfc.metal.axe_head.red_alloy.name=Red Alloy оголовье топора
+item.tfc.metal.hoe.red_alloy.name=Red Alloy мотыга
+item.tfc.metal.hoe_head.red_alloy.name=Red Alloy оголовье мотыги
+item.tfc.metal.chisel.red_alloy.name=Red Alloy стамеска
+item.tfc.metal.chisel_head.red_alloy.name=Red Alloy оголовье стамески
+item.tfc.metal.sword.red_alloy.name=Red Alloy меч
+item.tfc.metal.sword_blade.red_alloy.name=Red Alloy лезвие меча
+item.tfc.metal.mace.red_alloy.name=Red Alloy булава
+item.tfc.metal.mace_head.red_alloy.name=Red Alloy оголовье булавы
+item.tfc.metal.saw.red_alloy.name=Red Alloy ножовка
+item.tfc.metal.saw_blade.red_alloy.name=Red Alloy полотно ножовки
+item.tfc.metal.shears.red_alloy.name=Red Alloy ножницы
+item.tfc.metal.shield.red_alloy.name=Red Alloy щит
+item.tfc.metal.javelin.red_alloy.name=Red Alloy копьё
+item.tfc.metal.javelin_head.red_alloy.name=Red Alloy наконечник копья
+item.tfc.metal.hammer.red_alloy.name=Red Alloy молот
+item.tfc.metal.hammer_head.red_alloy.name=Red Alloy оголовье молота
+item.tfc.metal.propick.red_alloy.name=Red Alloy кирка геолога
+item.tfc.metal.propick_head.red_alloy.name=Red Alloy оголовье кирки геолога
+item.tfc.metal.knife.red_alloy.name=Red Alloy нож
+item.tfc.metal.knife_blade.red_alloy.name=Red Alloy лезвие ножа
+item.tfc.metal.scythe.red_alloy.name=Red Alloy коса
+item.tfc.metal.scythe_blade.red_alloy.name=Red Alloy лезвие косы
+
+item.tfc.metal.lamp.red_alloy.name=Лампа из красной легированной латуни
+item.tfc.ceramics.fired.mold.ingot.red_alloy.name=Неформованный слиток красной легированной латуни
+
+# Metal Armors
+item.tfc.metal.chestplate.red_alloy.name=Red Alloy нагрудник
+item.tfc.metal.greaves.red_alloy.name=Red Alloy поножи
+item.tfc.metal.boots.red_alloy.name=Red Alloy ботинки
+item.tfc.metal.helmet.red_alloy.name=Red Alloy шлем
+
+item.tfc.metal.unfinished_chestplate.red_alloy.name=Unfinished Red Alloy нагрудник
+item.tfc.metal.unfinished_boots.red_alloy.name=Unfinished Red Alloy ботинки
+item.tfc.metal.unfinished_helmet.red_alloy.name=Unfinished Red Alloy шлем
+item.tfc.metal.unfinished_greaves.red_alloy.name=Unfinished Red Alloy поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.red_alloy.name=Red Alloy Anvil
+
+#Antimony
+# Metal items
+item.tfc.metal.ingot.antimony.name=Слиток сурьмы
+item.tfc.metal.double_ingot.antimony.name=Двойной слиток сурьмы
+item.tfc.metal.scrap.antimony.name=Металлолом из сурьмы
+item.tfc.metal.dust.antimony.name=Пыль из сурьмы
+item.tfc.metal.nugget.antimony.name=Самородок сурьмы
+item.tfc.metal.sheet.antimony.name=Лист из сурьмы
+item.tfc.metal.double_sheet.antimony.name=Двойной лист из сурьмы
+item.tfc.metal.tuyere.antimony.name=Фурма из сурьмы
+# Metal tools
+item.tfc.metal.pick.antimony.name=Antimony кирка
+item.tfc.metal.pick_head.antimony.name=Antimony оголовье кирки
+item.tfc.metal.shovel.antimony.name=Antimony лопата
+item.tfc.metal.shovel_head.antimony.name=Antimony оголовье лопаты
+item.tfc.metal.axe.antimony.name=Antimony топор
+item.tfc.metal.axe_head.antimony.name=Antimony оголовье топора
+item.tfc.metal.hoe.antimony.name=Antimony мотыга
+item.tfc.metal.hoe_head.antimony.name=Antimony оголовье мотыги
+item.tfc.metal.chisel.antimony.name=Antimony стамеска
+item.tfc.metal.chisel_head.antimony.name=Antimony оголовье стамески
+item.tfc.metal.sword.antimony.name=Antimony меч
+item.tfc.metal.sword_blade.antimony.name=Antimony лезвие меча
+item.tfc.metal.mace.antimony.name=Antimony булава
+item.tfc.metal.mace_head.antimony.name=Antimony оголовье булавы
+item.tfc.metal.saw.antimony.name=Antimony ножовка
+item.tfc.metal.saw_blade.antimony.name=Antimony полотно ножовки
+item.tfc.metal.shears.antimony.name=Antimony ножницы
+item.tfc.metal.shield.antimony.name=Antimony щит
+item.tfc.metal.javelin.antimony.name=Antimony копьё
+item.tfc.metal.javelin_head.antimony.name=Antimony наконечник копья
+item.tfc.metal.hammer.antimony.name=Antimony молот
+item.tfc.metal.hammer_head.antimony.name=Antimony оголовье молота
+item.tfc.metal.propick.antimony.name=Antimony кирка геолога
+item.tfc.metal.propick_head.antimony.name=Antimony оголовье кирки геолога
+item.tfc.metal.knife.antimony.name=Antimony нож
+item.tfc.metal.knife_blade.antimony.name=Antimony лезвие ножа
+item.tfc.metal.scythe.antimony.name=Antimony коса
+item.tfc.metal.scythe_blade.antimony.name=Antimony лезвие косы
+
+item.tfc.metal.lamp.antimony.name=Лампа из сурьмы
+item.tfc.ceramics.fired.mold.ingot.antimony.name=Неформованный слиток сурьмы
+
+# Metal Armors
+item.tfc.metal.chestplate.antimony.name=Antimony нагрудник
+item.tfc.metal.greaves.antimony.name=Antimony поножи
+item.tfc.metal.boots.antimony.name=Antimony ботинки
+item.tfc.metal.helmet.antimony.name=Antimony шлем
+
+item.tfc.metal.unfinished_chestplate.antimony.name=Unfinished Antimony нагрудник
+item.tfc.metal.unfinished_boots.antimony.name=Unfinished Antimony ботинки
+item.tfc.metal.unfinished_helmet.antimony.name=Unfinished Antimony шлем
+item.tfc.metal.unfinished_greaves.antimony.name=Unfinished Antimony поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.antimony.name=Antimony Anvil
+
+#Ardite
+# Metal items
+item.tfc.metal.ingot.ardite.name=Ардитовый слиток 
+item.tfc.metal.double_ingot.ardite.name=Двойной слиток ардита
+item.tfc.metal.scrap.ardite.name=Металлолом из ардита
+item.tfc.metal.dust.ardite.name=Пыль из ардита
+item.tfc.metal.nugget.ardite.name=Самородок ардита
+item.tfc.metal.sheet.ardite.name=Лист из ардита
+item.tfc.metal.double_sheet.ardite.name=Двойной лист из ардита
+item.tfc.metal.tuyere.ardite.name=Ардитовая фурма
+
+# Metal tools
+item.tfc.metal.pick.ardite.name=Ардитовый кирка
+item.tfc.metal.pick_head.ardite.name=Ардитовое оголовье кирки
+item.tfc.metal.shovel.ardite.name=Ардитовый лопата
+item.tfc.metal.shovel_head.ardite.name=Ардитовое оголовье лопаты
+item.tfc.metal.axe.ardite.name=Ардитовый топор
+item.tfc.metal.axe_head.ardite.name=Ардитовое оголовье топора
+item.tfc.metal.hoe.ardite.name=Ардитовый мотыга
+item.tfc.metal.hoe_head.ardite.name=Ардитовое оголовье мотыги
+item.tfc.metal.chisel.ardite.name=Ардитовый стамеска
+item.tfc.metal.chisel_head.ardite.name=Ардитовое оголовье стамески
+item.tfc.metal.sword.ardite.name=Ардитовый меч
+item.tfc.metal.sword_blade.ardite.name=Ардитовый лезвие меча
+item.tfc.metal.mace.ardite.name=Ардитовый булава
+item.tfc.metal.mace_head.ardite.name=Ардитовое оголовье булавы
+item.tfc.metal.saw.ardite.name=Ардитовый ножовка
+item.tfc.metal.saw_blade.ardite.name=Ардитовый полотно ножовки
+item.tfc.metal.shears.ardite.name=Ардитовый ножницы
+item.tfc.metal.shield.ardite.name=Ардитовый щит
+item.tfc.metal.javelin.ardite.name=Ардитовый копьё
+item.tfc.metal.javelin_head.ardite.name=Ардитовый наконечник копья
+item.tfc.metal.hammer.ardite.name=Ардитовый молот
+item.tfc.metal.hammer_head.ardite.name=Ардитовое оголовье молота
+item.tfc.metal.propick.ardite.name=Ардитовый кирка геолога
+item.tfc.metal.propick_head.ardite.name=Ардитовое оголовье кирки геолога
+item.tfc.metal.knife.ardite.name=Ардитовый нож
+item.tfc.metal.knife_blade.ardite.name=Ардитовый лезвие ножа
+item.tfc.metal.scythe.ardite.name=Ардитовый коса
+item.tfc.metal.scythe_blade.ardite.name=Ардитовый лезвие косы
+
+item.tfc.metal.lamp.ardite.name=Ардитовая лампа
+item.tfc.ceramics.fired.mold.ingot.ardite.name=Неформованный слиток ардита
+
+# Metal Armors
+item.tfc.metal.chestplate.ardite.name=Ардитовый нагрудник
+item.tfc.metal.greaves.ardite.name=Ардитовый поножи
+item.tfc.metal.boots.ardite.name=Ардитовый ботинки
+item.tfc.metal.helmet.ardite.name=Ардитовый шлем
+
+item.tfc.metal.unfinished_chestplate.ardite.name=Unfinished Ардитовый нагрудник
+item.tfc.metal.unfinished_boots.ardite.name=Unfinished Ардитовый ботинки
+item.tfc.metal.unfinished_helmet.ardite.name=Unfinished Ардитовый шлем
+item.tfc.metal.unfinished_greaves.ardite.name=Unfinished Ардитовый поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.ardite.name=Ардитовый Anvil
+
+#Cobalt
+# Metal items
+item.tfc.metal.ingot.cobalt.name=Кобальтовый слиток
+item.tfc.metal.double_ingot.cobalt.name=Двойной слиток кобальта
+item.tfc.metal.scrap.cobalt.name=Металлолом из кобальта
+item.tfc.metal.dust.cobalt.name=Пыль из кобальта
+item.tfc.metal.nugget.cobalt.name=Самородок кобальта
+item.tfc.metal.sheet.cobalt.name=Лист из кобальта
+item.tfc.metal.double_sheet.cobalt.name=Двойной лист из кобальта
+item.tfc.metal.tuyere.cobalt.name=Фурма из кобальта
+
+# Metal tools
+item.tfc.metal.pick.cobalt.name=Кобальтовая кирка
+item.tfc.metal.pick_head.cobalt.name=Кобальтовое оголовье кирки
+item.tfc.metal.shovel.cobalt.name=Кобальтовая лопата
+item.tfc.metal.shovel_head.cobalt.name=Кобальтовое оголовье лопаты
+item.tfc.metal.axe.cobalt.name=Кобальтовая топор
+item.tfc.metal.axe_head.cobalt.name=Кобальтовое оголовье топора
+item.tfc.metal.hoe.cobalt.name=Кобальтовая мотыга
+item.tfc.metal.hoe_head.cobalt.name=Кобальтовое оголовье мотыги
+item.tfc.metal.chisel.cobalt.name=Кобальтовая стамеска
+item.tfc.metal.chisel_head.cobalt.name=Кобальтовое оголовье стамески
+item.tfc.metal.sword.cobalt.name=Кобальтовый меч
+item.tfc.metal.sword_blade.cobalt.name=Кобальтовое лезвие меча
+item.tfc.metal.mace.cobalt.name=Кобальтовая булава
+item.tfc.metal.mace_head.cobalt.name=Кобальтовое оголовье булавы
+item.tfc.metal.saw.cobalt.name=Кобальтовая ножовка
+item.tfc.metal.saw_blade.cobalt.name=Кобальтовое полотно ножовки
+item.tfc.metal.shears.cobalt.name=Кобальтовые ножницы
+item.tfc.metal.shield.cobalt.name=Кобальтовый щит
+item.tfc.metal.javelin.cobalt.name=Кобальтовое копьё
+item.tfc.metal.javelin_head.cobalt.name=Кобальтовый наконечник копья
+item.tfc.metal.hammer.cobalt.name=Кобальтовый молот
+item.tfc.metal.hammer_head.cobalt.name=Кобальтовое оголовье молота
+item.tfc.metal.propick.cobalt.name=Кобальтовая кирка геолога
+item.tfc.metal.propick_head.cobalt.name=Кобальтовое оголовье кирки геолога
+item.tfc.metal.knife.cobalt.name=Кобальтовый нож
+item.tfc.metal.knife_blade.cobalt.name=Кобальтовое лезвие ножа
+item.tfc.metal.scythe.cobalt.name=Кобальтовая коса
+item.tfc.metal.scythe_blade.cobalt.name=Кобальтовое лезвие косы
+
+item.tfc.metal.lamp.cobalt.name=Кобальтовая лампа
+item.tfc.ceramics.fired.mold.ingot.cobalt.name=Неформованный кобальтовый слиток
+
+# Metal Armors
+item.tfc.metal.chestplate.cobalt.name=Кобальтовый нагрудник
+item.tfc.metal.greaves.cobalt.name=Кобальтовые поножи
+item.tfc.metal.boots.cobalt.name=Кобальтовые ботинки
+item.tfc.metal.helmet.cobalt.name=Кобальтовый шлем
+
+item.tfc.metal.unfinished_chestplate.cobalt.name=Кобальтовый незаконченый нагрудник
+item.tfc.metal.unfinished_boots.cobalt.name=Кобальтовые незаконченые ботинки
+item.tfc.metal.unfinished_helmet.cobalt.name=Кобальтовый незаконченый шлем
+item.tfc.metal.unfinished_greaves.cobalt.name=Кобальтовые незаконченые поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.cobalt.name=Кобальтовая наковальня
+
+#Constantan
+# Metal items
+item.tfc.metal.ingot.constantan.name=Константановый слиток
+item.tfc.metal.double_ingot.constantan.name=Двойной слиток константана
+item.tfc.metal.scrap.constantan.name=Металлолом из константана
+item.tfc.metal.dust.constantan.name=Пыль из константана
+item.tfc.metal.nugget.constantan.name=Константановый самородок
+item.tfc.metal.sheet.constantan.name=Лист из константана
+item.tfc.metal.double_sheet.constantan.name=Двойной лист из константана
+item.tfc.metal.tuyere.constantan.name=Фурма из константана
+
+
+
+# Metal tools
+item.tfc.metal.pick.constantan.name=Constantan кирка
+item.tfc.metal.pick_head.constantan.name=Constantan оголовье кирки
+item.tfc.metal.shovel.constantan.name=Constantan лопата
+item.tfc.metal.shovel_head.constantan.name=Constantan оголовье лопаты
+item.tfc.metal.axe.constantan.name=Constantan топор
+item.tfc.metal.axe_head.constantan.name=Constantan оголовье топора
+item.tfc.metal.hoe.constantan.name=Constantan мотыга
+item.tfc.metal.hoe_head.constantan.name=Constantan оголовье мотыги
+item.tfc.metal.chisel.constantan.name=Constantan стамеска
+item.tfc.metal.chisel_head.constantan.name=Constantan оголовье стамески
+item.tfc.metal.sword.constantan.name=Constantan меч
+item.tfc.metal.sword_blade.constantan.name=Constantan лезвие меча
+item.tfc.metal.mace.constantan.name=Constantan булава
+item.tfc.metal.mace_head.constantan.name=Constantan оголовье булавы
+item.tfc.metal.saw.constantan.name=Constantan ножовка
+item.tfc.metal.saw_blade.constantan.name=Constantan полотно ножовки
+item.tfc.metal.shears.constantan.name=Constantan ножницы
+item.tfc.metal.shield.constantan.name=Constantan щит
+item.tfc.metal.javelin.constantan.name=Constantan копьё
+item.tfc.metal.javelin_head.constantan.name=Constantan наконечник копья
+item.tfc.metal.hammer.constantan.name=Constantan молот
+item.tfc.metal.hammer_head.constantan.name=Constantan оголовье молота
+item.tfc.metal.propick.constantan.name=Constantan кирка геолога
+item.tfc.metal.propick_head.constantan.name=Constantan оголовье кирки геолога
+item.tfc.metal.knife.constantan.name=Constantan нож
+item.tfc.metal.knife_blade.constantan.name=Constantan лезвие ножа
+item.tfc.metal.scythe.constantan.name=Constantan коса
+item.tfc.metal.scythe_blade.constantan.name=Constantan лезвие косы
+
+item.tfc.metal.lamp.constantan.name=Константановая лампа
+item.tfc.ceramics.fired.mold.ingot.constantan.name=Неформованный константан
+
+# Metal Armors
+item.tfc.metal.chestplate.constantan.name=Constantan нагрудник
+item.tfc.metal.greaves.constantan.name=Constantan поножи
+item.tfc.metal.boots.constantan.name=Constantan ботинки
+item.tfc.metal.helmet.constantan.name=Constantan шлем
+
+item.tfc.metal.unfinished_chestplate.constantan.name=Unfinished Constantan нагрудник
+item.tfc.metal.unfinished_boots.constantan.name=Unfinished Constantan ботинки
+item.tfc.metal.unfinished_helmet.constantan.name=Unfinished Constantan шлем
+item.tfc.metal.unfinished_greaves.constantan.name=Unfinished Constantan поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.constantan.name=Constantan Anvil
+
+#Electrum
+# Metal items
+item.tfc.metal.ingot.electrum.name=Электрумовый слиток
+item.tfc.metal.double_ingot.electrum.name=Двойной электрумовый слиток
+item.tfc.metal.scrap.electrum.name=Металлолом из электрума
+item.tfc.metal.dust.electrum.name=Пыль из электрума
+item.tfc.metal.nugget.electrum.name=Электрумовый самородок
+item.tfc.metal.sheet.electrum.name=Лист из электрума
+item.tfc.metal.double_sheet.electrum.name=Двойной лист из электрума
+item.tfc.metal.tuyere.electrum.name=Фурма из электрума
+
+# Metal tools
+item.tfc.metal.pick.electrum.name=Электрумовый кирка
+item.tfc.metal.pick_head.electrum.name=Электрумовое оголовье кирки
+item.tfc.metal.shovel.electrum.name=Электрумовый лопата
+item.tfc.metal.shovel_head.electrum.name=Электрумовое оголовье лопаты
+item.tfc.metal.axe.electrum.name=Электрумовый топор
+item.tfc.metal.axe_head.electrum.name=Электрумовое оголовье топора
+item.tfc.metal.hoe.electrum.name=Электрумовый мотыга
+item.tfc.metal.hoe_head.electrum.name=Электрумовое оголовье мотыги
+item.tfc.metal.chisel.electrum.name=Электрумовый стамеска
+item.tfc.metal.chisel_head.electrum.name=Электрумовое оголовье стамески
+item.tfc.metal.sword.electrum.name=Электрумовый меч
+item.tfc.metal.sword_blade.electrum.name=Электрумовый лезвие меча
+item.tfc.metal.mace.electrum.name=Электрумовый булава
+item.tfc.metal.mace_head.electrum.name=Электрумовое оголовье булавы
+item.tfc.metal.saw.electrum.name=Электрумовый ножовка
+item.tfc.metal.saw_blade.electrum.name=Электрумовый полотно ножовки
+item.tfc.metal.shears.electrum.name=Электрумовый ножницы
+item.tfc.metal.shield.electrum.name=Электрумовый щит
+item.tfc.metal.javelin.electrum.name=Электрумовый копьё
+item.tfc.metal.javelin_head.electrum.name=Электрумовый наконечник копья
+item.tfc.metal.hammer.electrum.name=Электрумовый молот
+item.tfc.metal.hammer_head.electrum.name=Электрумовое оголовье молота
+item.tfc.metal.propick.electrum.name=Электрумовый кирка геолога
+item.tfc.metal.propick_head.electrum.name=Электрумовое оголовье кирки геолога
+item.tfc.metal.knife.electrum.name=Электрумовый нож
+item.tfc.metal.knife_blade.electrum.name=Электрумовый лезвие ножа
+item.tfc.metal.scythe.electrum.name=Электрумовый коса
+item.tfc.metal.scythe_blade.electrum.name=Электрумовый лезвие косы
+
+item.tfc.metal.lamp.electrum.name=Электрумовая лампа
+item.tfc.ceramics.fired.mold.ingot.electrum.name=Неформованный электрум
+
+# Metal Armors
+item.tfc.metal.chestplate.electrum.name=Электрумовый нагрудник
+item.tfc.metal.greaves.electrum.name=Электрумовый поножи
+item.tfc.metal.boots.electrum.name=Электрумовый ботинки
+item.tfc.metal.helmet.electrum.name=Электрумовый шлем
+
+item.tfc.metal.unfinished_chestplate.electrum.name=Unfinished Electrum нагрудник
+item.tfc.metal.unfinished_boots.electrum.name=Unfinished Electrum ботинки
+item.tfc.metal.unfinished_helmet.electrum.name=Unfinished Electrum шлем
+item.tfc.metal.unfinished_greaves.electrum.name=Unfinished Electrum поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.electrum.name=Электрумовый Anvil
+
+#Invar
+# Metal items
+item.tfc.metal.ingot.invar.name=Инваровый слиток
+item.tfc.metal.double_ingot.invar.name=Двойной инваровый слиток
+item.tfc.metal.scrap.invar.name=Металлолом из инвара
+item.tfc.metal.dust.invar.name=Пыль из инвара
+item.tfc.metal.nugget.invar.name=Инваровый самородок
+item.tfc.metal.sheet.invar.name=Лист из инвара
+item.tfc.metal.double_sheet.invar.name=Двойной лист из инвара
+item.tfc.metal.tuyere.invar.name=Фурма из инвара
+
+# Metal tools
+item.tfc.metal.pick.invar.name=Инваровая кирка
+item.tfc.metal.pick_head.invar.name=Инваровое оголовье кирки
+item.tfc.metal.shovel.invar.name=Инваровый лопата
+item.tfc.metal.shovel_head.invar.name=Инваровое оголовье лопаты
+item.tfc.metal.axe.invar.name=Инваровый топор
+item.tfc.metal.axe_head.invar.name=Инваровое оголовье топора
+item.tfc.metal.hoe.invar.name=Инваровая мотыга
+item.tfc.metal.hoe_head.invar.name=Инваровое оголовье мотыги
+item.tfc.metal.chisel.invar.name=Инваровая стамеска
+item.tfc.metal.chisel_head.invar.name=Инваровое оголовье стамески
+item.tfc.metal.sword.invar.name=Инваровый меч
+item.tfc.metal.sword_blade.invar.name=Инваровый лезвие меча
+item.tfc.metal.mace.invar.name=Инваровая булава
+item.tfc.metal.mace_head.invar.name=Инваровое оголовье булавы
+item.tfc.metal.saw.invar.name=Инваровая ножовка
+item.tfc.metal.saw_blade.invar.name=Инваровое полотно ножовки
+item.tfc.metal.shears.invar.name=Инваровые ножницы
+item.tfc.metal.shield.invar.name=Инваровый щит
+item.tfc.metal.javelin.invar.name=Инваровое копьё
+item.tfc.metal.javelin_head.invar.name=Инваровый наконечник копья
+item.tfc.metal.hammer.invar.name=Инваровый молот
+item.tfc.metal.hammer_head.invar.name=Инваровое оголовье молота
+item.tfc.metal.propick.invar.name=Инваровая кирка геолога
+item.tfc.metal.propick_head.invar.name=Инваровое оголовье кирки геолога
+item.tfc.metal.knife.invar.name=Инваровый нож
+item.tfc.metal.knife_blade.invar.name=Инваровое лезвие ножа
+item.tfc.metal.scythe.invar.name=Инваровая коса
+item.tfc.metal.scythe_blade.invar.name=Инваровое лезвие косы
+
+item.tfc.metal.lamp.invar.name=Инваровая лампа
+item.tfc.ceramics.fired.mold.ingot.invar.name=Неформованный инвар
+
+# Metal Armors
+item.tfc.metal.chestplate.invar.name=Инваровый нагрудник
+item.tfc.metal.greaves.invar.name=Инваровые поножи
+item.tfc.metal.boots.invar.name=Инваровые ботинки
+item.tfc.metal.helmet.invar.name=Инваровый шлем
+
+item.tfc.metal.unfinished_chestplate.invar.name=Незаконченый инваровый нагрудник
+item.tfc.metal.unfinished_boots.invar.name=Незаконченые инваровые ботинки
+item.tfc.metal.unfinished_helmet.invar.name=Незаконченый инваровый шлем
+item.tfc.metal.unfinished_greaves.invar.name=Незаконченые инваровые поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.invar.name=Инваровая наковальня
+
+#Manyullyn
+# Metal items
+item.tfc.metal.ingot.manyullyn.name=Мануллиновый слиток
+item.tfc.metal.double_ingot.manyullyn.name=Двойной мануллиновый слиток
+item.tfc.metal.scrap.manyullyn.name=Металлолом из мануллина
+item.tfc.metal.dust.manyullyn.name=Пыль из мануллина
+item.tfc.metal.nugget.manyullyn.name=Мануллиновый самородок
+item.tfc.metal.sheet.manyullyn.name=Лист из мануллина
+item.tfc.metal.double_sheet.manyullyn.name=Двойной лист из мануллина
+item.tfc.metal.tuyere.manyullyn.name=Фурма из мануллина
+
+# Metal tools
+item.tfc.metal.pick.manyullyn.name=Мануллиновая кирка
+item.tfc.metal.pick_head.manyullyn.name=Мануллиновое оголовье кирки
+item.tfc.metal.shovel.manyullyn.name=Мануллиновая лопата
+item.tfc.metal.shovel_head.manyullyn.name=Мануллиновое оголовье лопаты
+item.tfc.metal.axe.manyullyn.name=Мануллиновый топор
+item.tfc.metal.axe_head.manyullyn.name=Мануллиновое оголовье топора
+item.tfc.metal.hoe.manyullyn.name=Мануллиновая мотыга
+item.tfc.metal.hoe_head.manyullyn.name=Мануллиновое оголовье мотыги
+item.tfc.metal.chisel.manyullyn.name=Мануллиновая стамеска
+item.tfc.metal.chisel_head.manyullyn.name=Мануллиновое оголовье стамески
+item.tfc.metal.sword.manyullyn.name=Мануллиновый меч
+item.tfc.metal.sword_blade.manyullyn.name=Мануллиновое лезвие меча
+item.tfc.metal.mace.manyullyn.name=Мануллиновая булава
+item.tfc.metal.mace_head.manyullyn.name=Мануллиновое оголовье булавы
+item.tfc.metal.saw.manyullyn.name=Мануллиновая ножовка
+item.tfc.metal.saw_blade.manyullyn.name=Мануллиновое полотно ножовки
+item.tfc.metal.shears.manyullyn.name=Мануллиновые ножницы
+item.tfc.metal.shield.manyullyn.name=Мануллиновый щит
+item.tfc.metal.javelin.manyullyn.name=Мануллиновое копьё
+item.tfc.metal.javelin_head.manyullyn.name=Мануллиновый наконечник копья
+item.tfc.metal.hammer.manyullyn.name=Мануллиновый молот
+item.tfc.metal.hammer_head.manyullyn.name=Мануллиновое оголовье молота
+item.tfc.metal.propick.manyullyn.name=Мануллиновая кирка геолога
+item.tfc.metal.propick_head.manyullyn.name=Мануллиновое оголовье кирки геолога
+item.tfc.metal.knife.manyullyn.name=Мануллиновый нож
+item.tfc.metal.knife_blade.manyullyn.name=Мануллиновое лезвие ножа
+item.tfc.metal.scythe.manyullyn.name=Мануллиновая коса
+item.tfc.metal.scythe_blade.manyullyn.name=Мануллиновое лезвие косы
+
+item.tfc.metal.lamp.manyullyn.name=Мануллиновая лампа
+item.tfc.ceramics.fired.mold.ingot.manyullyn.name=Неформованный мануллин
+
+# Metal Armors
+item.tfc.metal.chestplate.manyullyn.name=Мануллиновый нагрудник
+item.tfc.metal.greaves.manyullyn.name=Мануллиновые поножи
+item.tfc.metal.boots.manyullyn.name=Мануллиновые ботинки
+item.tfc.metal.helmet.manyullyn.name=Мануллиновый шлем
+
+item.tfc.metal.unfinished_chestplate.manyullyn.name=Мануллиновый незаконченый нагрудник
+item.tfc.metal.unfinished_boots.manyullyn.name=Мануллиновые незаконченые ботинки
+item.tfc.metal.unfinished_helmet.manyullyn.name=Мануллиновый незаконченый шлем
+item.tfc.metal.unfinished_greaves.manyullyn.name=Мануллиновые незаконченые поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.manyullyn.name=Мануллиновая наковальня
+
+#Mithril
+# Metal items
+item.tfc.metal.ingot.mithril.name=Мифриловый слиток
+item.tfc.metal.double_ingot.mithril.name=Двойной мифриловый слиток
+item.tfc.metal.scrap.mithril.name=Металлолом из мифрила
+item.tfc.metal.dust.mithril.name=Пыль из мифрила
+item.tfc.metal.nugget.mithril.name=Мифриловый самородок
+item.tfc.metal.sheet.mithril.name=Лист из мифрила
+item.tfc.metal.double_sheet.mithril.name=Двойной лист из мифрила
+item.tfc.metal.tuyere.mithril.name=Фурма из мифрила
+
+# Metal tools
+item.tfc.metal.pick.mithril.name=Мифриловая кирка
+item.tfc.metal.pick_head.mithril.name=Мифриловое оголовье кирки
+item.tfc.metal.shovel.mithril.name=Мифриловая лопата
+item.tfc.metal.shovel_head.mithril.name=Мифриловое оголовье лопаты
+item.tfc.metal.axe.mithril.name=Мифриловый топор
+item.tfc.metal.axe_head.mithril.name=Мифриловое оголовье топора
+item.tfc.metal.hoe.mithril.name=Мифриловая мотыга
+item.tfc.metal.hoe_head.mithril.name=Мифриловое оголовье мотыги
+item.tfc.metal.chisel.mithril.name=Мифриловая стамеска
+item.tfc.metal.chisel_head.mithril.name=Мифриловое оголовье стамески
+item.tfc.metal.sword.mithril.name=Мифриловый меч
+item.tfc.metal.sword_blade.mithril.name=Мифриловое лезвие меча
+item.tfc.metal.mace.mithril.name=Мифриловая булава
+item.tfc.metal.mace_head.mithril.name=Мифриловое оголовье булавы
+item.tfc.metal.saw.mithril.name=Мифриловая ножовка
+item.tfc.metal.saw_blade.mithril.name=Мифриловое полотно ножовки
+item.tfc.metal.shears.mithril.name=Мифриловые ножницы
+item.tfc.metal.shield.mithril.name=Мифриловый щит
+item.tfc.metal.javelin.mithril.name=Мифриловое копьё
+item.tfc.metal.javelin_head.mithril.name=Мифриловый наконечник копья
+item.tfc.metal.hammer.mithril.name=Мифриловый молот
+item.tfc.metal.hammer_head.mithril.name=Мифриловое оголовье молота
+item.tfc.metal.propick.mithril.name=Мифриловая кирка геолога
+item.tfc.metal.propick_head.mithril.name=Мифриловое оголовье кирки геолога
+item.tfc.metal.knife.mithril.name=Мифриловый нож
+item.tfc.metal.knife_blade.mithril.name=Мифриловое лезвие ножа
+item.tfc.metal.scythe.mithril.name=Мифриловая коса
+item.tfc.metal.scythe_blade.mithril.name=Мифриловое лезвие косы
+
+item.tfc.metal.lamp.mithril.name=Мифриловая лампа
+item.tfc.ceramics.fired.mold.ingot.mithril.name=Неформованный мифрил
+
+# Metal Armors
+item.tfc.metal.chestplate.mithril.name=Мифриловый нагрудник
+item.tfc.metal.greaves.mithril.name=Мифриловые поножи
+item.tfc.metal.boots.mithril.name=Мифриловые ботинки
+item.tfc.metal.helmet.mithril.name=Мифриловый шлем
+
+item.tfc.metal.unfinished_chestplate.mithril.name=Мифриловый незаконченый нагрудник
+item.tfc.metal.unfinished_boots.mithril.name=Мифриловые незаконченые ботинки
+item.tfc.metal.unfinished_helmet.mithril.name=Мифриловый незаконченый шлем
+item.tfc.metal.unfinished_greaves.mithril.name=Мифриловые незаконченые поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.mithril.name=Мифриловая наковальня
+
+#Osmium
+# Metal items
+item.tfc.metal.ingot.osmium.name=Осмиевый слиток
+item.tfc.metal.double_ingot.osmium.name=Двойной осмиевый слиток
+item.tfc.metal.scrap.osmium.name=Металлолом из осмия
+item.tfc.metal.dust.osmium.name=Пыль из осмия
+item.tfc.metal.nugget.osmium.name=Осмиевый самородок
+item.tfc.metal.sheet.osmium.name=Лист из осмия
+item.tfc.metal.double_sheet.osmium.name=Двойной лист из осмия
+item.tfc.metal.tuyere.osmium.name=Фурма из осмия
+
+# Metal tools
+item.tfc.metal.pick.osmium.name=Осмиевая кирка
+item.tfc.metal.pick_head.osmium.name=Осмиевое оголовье кирки
+item.tfc.metal.shovel.osmium.name=Осмиевая лопата
+item.tfc.metal.shovel_head.osmium.name=Осмиевое оголовье лопаты
+item.tfc.metal.axe.osmium.name=Осмиевый топор
+item.tfc.metal.axe_head.osmium.name=Осмиевое оголовье топора
+item.tfc.metal.hoe.osmium.name=Осмиевая мотыга
+item.tfc.metal.hoe_head.osmium.name=Осмиевое оголовье мотыги
+item.tfc.metal.chisel.osmium.name=Осмиевая стамеска
+item.tfc.metal.chisel_head.osmium.name=Осмиевое оголовье стамески
+item.tfc.metal.sword.osmium.name=Осмиевый меч
+item.tfc.metal.sword_blade.osmium.name=Осмиевое лезвие меча
+item.tfc.metal.mace.osmium.name=Осмиевая булава
+item.tfc.metal.mace_head.osmium.name=Осмиевое оголовье булавы
+item.tfc.metal.saw.osmium.name=Осмиевая ножовка
+item.tfc.metal.saw_blade.osmium.name=Осмиевое полотно ножовки
+item.tfc.metal.shears.osmium.name=Осмиевые ножницы
+item.tfc.metal.shield.osmium.name=Осмиевый щит
+item.tfc.metal.javelin.osmium.name=Осмиевое копьё
+item.tfc.metal.javelin_head.osmium.name=Осмиевый наконечник копья
+item.tfc.metal.hammer.osmium.name=Осмиевый молот
+item.tfc.metal.hammer_head.osmium.name=Осмиевое оголовье молота
+item.tfc.metal.propick.osmium.name=Осмиевая кирка геолога
+item.tfc.metal.propick_head.osmium.name=Осмиевое оголовье кирки геолога
+item.tfc.metal.knife.osmium.name=Осмиевый нож
+item.tfc.metal.knife_blade.osmium.name=Осмиевое лезвие ножа
+item.tfc.metal.scythe.osmium.name=Осмиевая коса
+item.tfc.metal.scythe_blade.osmium.name=Осмиевое лезвие косы
+
+item.tfc.metal.lamp.osmium.name=Осмиевая лампа
+item.tfc.ceramics.fired.mold.ingot.osmium.name=Неформованный осмий
+
+# Metal Armors
+item.tfc.metal.chestplate.osmium.name=Осмиевый нагрудник
+item.tfc.metal.greaves.osmium.name=Осмиевые поножи
+item.tfc.metal.boots.osmium.name=Осмиевые ботинки
+item.tfc.metal.helmet.osmium.name=Осмиевый шлем
+
+item.tfc.metal.unfinished_chestplate.osmium.name=Осмиевый незаконченый нагрудник
+item.tfc.metal.unfinished_boots.osmium.name=Осмиевые незаконченые ботинки
+item.tfc.metal.unfinished_helmet.osmium.name=Осмиевый незаконченый шлем
+item.tfc.metal.unfinished_greaves.osmium.name=Осмиевые незаконченые поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.osmium.name=Осмиевая наковальня
+
+#Titanium
+# Metal items
+item.tfc.metal.ingot.titanium.name=Титановый слиток
+item.tfc.metal.double_ingot.titanium.name=Двойной титановый слиток
+item.tfc.metal.scrap.titanium.name=Металлолом из титана
+item.tfc.metal.dust.titanium.name=Пыль из титана
+item.tfc.metal.nugget.titanium.name=Титановый самородок
+item.tfc.metal.sheet.titanium.name=Лист из титана
+item.tfc.metal.double_sheet.titanium.name=Двойной лист из титана
+item.tfc.metal.tuyere.titanium.name=Фурма из титана
+
+# Metal tools
+item.tfc.metal.pick.titanium.name=Титановая кирка
+item.tfc.metal.pick_head.titanium.name=Титановое оголовье кирки
+item.tfc.metal.shovel.titanium.name=Титановая лопата
+item.tfc.metal.shovel_head.titanium.name=Титановое оголовье лопаты
+item.tfc.metal.axe.titanium.name=Титановый топор
+item.tfc.metal.axe_head.titanium.name=Титановое оголовье топора
+item.tfc.metal.hoe.titanium.name=Титановая мотыга
+item.tfc.metal.hoe_head.titanium.name=Титановое оголовье мотыги
+item.tfc.metal.chisel.titanium.name=Титановая стамеска
+item.tfc.metal.chisel_head.titanium.name=Титановое оголовье стамески
+item.tfc.metal.sword.titanium.name=Титановый меч
+item.tfc.metal.sword_blade.titanium.name=Титановое лезвие меча
+item.tfc.metal.mace.titanium.name=Титановая булава
+item.tfc.metal.mace_head.titanium.name=Титановое оголовье булавы
+item.tfc.metal.saw.titanium.name=Титановая ножовка
+item.tfc.metal.saw_blade.titanium.name=Титановое полотно ножовки
+item.tfc.metal.shears.titanium.name=Титановые ножницы
+item.tfc.metal.shield.titanium.name=Титановый щит
+item.tfc.metal.javelin.titanium.name=Титановое копьё
+item.tfc.metal.javelin_head.titanium.name=Титановый наконечник копья
+item.tfc.metal.hammer.titanium.name=Титановый молот
+item.tfc.metal.hammer_head.titanium.name=Титановое оголовье молота
+item.tfc.metal.propick.titanium.name=Титановая кирка геолога
+item.tfc.metal.propick_head.titanium.name=Титановое оголовье кирки геолога
+item.tfc.metal.knife.titanium.name=Титановый нож
+item.tfc.metal.knife_blade.titanium.name=Титановое лезвие ножа
+item.tfc.metal.scythe.titanium.name=Титановая коса
+item.tfc.metal.scythe_blade.titanium.name=Титановое лезвие косы
+
+item.tfc.metal.lamp.titanium.name=Титановая лампа
+item.tfc.ceramics.fired.mold.ingot.titanium.name=Неформованный титан
+
+# Metal Armors
+item.tfc.metal.chestplate.titanium.name=Титановый нагрудник
+item.tfc.metal.greaves.titanium.name=Титановые поножи
+item.tfc.metal.boots.titanium.name=Титановые ботинки
+item.tfc.metal.helmet.titanium.name=Титановый шлем
+
+item.tfc.metal.unfinished_chestplate.titanium.name=Титановый незаконченый  нагрудник
+item.tfc.metal.unfinished_boots.titanium.name=Титановые незаконченые  ботинки
+item.tfc.metal.unfinished_helmet.titanium.name=Титановый незаконченый  шлем
+item.tfc.metal.unfinished_greaves.titanium.name=Титановые незаконченые  поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.titanium.name=Титановая наковальня
+
+#Tungsten
+# Metal items
+item.tfc.metal.ingot.tungsten.name=Вольфрамовый слиток
+item.tfc.metal.double_ingot.tungsten.name=Двойной вольфрамовый слиток
+item.tfc.metal.scrap.tungsten.name=Металлолом из вольфрама
+item.tfc.metal.dust.tungsten.name=Пыль из вольфрама
+item.tfc.metal.nugget.tungsten.name=Вольфрамовый самородок
+item.tfc.metal.sheet.tungsten.name=Лист из вольфрама
+item.tfc.metal.double_sheet.tungsten.name=Двойной лист из вольфрама
+item.tfc.metal.tuyere.tungsten.name=Фурма из вольфрама
+
+# Metal tools
+item.tfc.metal.pick.tungsten.name=Вольфрамовая кирка
+item.tfc.metal.pick_head.tungsten.name=Вольфрамовое оголовье кирки
+item.tfc.metal.shovel.tungsten.name=Вольфрамовая лопата
+item.tfc.metal.shovel_head.tungsten.name=Вольфрамовое оголовье лопаты
+item.tfc.metal.axe.tungsten.name=Вольфрамовый топор
+item.tfc.metal.axe_head.tungsten.name=Вольфрамовое оголовье топора
+item.tfc.metal.hoe.tungsten.name=Вольфрамовая мотыга
+item.tfc.metal.hoe_head.tungsten.name=Вольфрамовое оголовье мотыги
+item.tfc.metal.chisel.tungsten.name=Вольфрамовая стамеска
+item.tfc.metal.chisel_head.tungsten.name=Вольфрамовое оголовье стамески
+item.tfc.metal.sword.tungsten.name=Вольфрамовый меч
+item.tfc.metal.sword_blade.tungsten.name=Вольфрамовое лезвие меча
+item.tfc.metal.mace.tungsten.name=Вольфрамовая булава
+item.tfc.metal.mace_head.tungsten.name=Вольфрамовое оголовье булавы
+item.tfc.metal.saw.tungsten.name=Вольфрамовая ножовка
+item.tfc.metal.saw_blade.tungsten.name=Вольфрамовое полотно ножовки
+item.tfc.metal.shears.tungsten.name=Вольфрамовые ножницы
+item.tfc.metal.shield.tungsten.name=Вольфрамовый щит
+item.tfc.metal.javelin.tungsten.name=Вольфрамовое копьё
+item.tfc.metal.javelin_head.tungsten.name=Вольфрамовый наконечник копья
+item.tfc.metal.hammer.tungsten.name=Вольфрамовый молот
+item.tfc.metal.hammer_head.tungsten.name=Вольфрамовое оголовье молота
+item.tfc.metal.propick.tungsten.name=Вольфрамовая кирка геолога
+item.tfc.metal.propick_head.tungsten.name=Вольфрамовое оголовье кирки геолога
+item.tfc.metal.knife.tungsten.name=Вольфрамовый нож
+item.tfc.metal.knife_blade.tungsten.name=Вольфрамовое лезвие ножа
+item.tfc.metal.scythe.tungsten.name=Вольфрамовая коса
+item.tfc.metal.scythe_blade.tungsten.name=Вольфрамовое лезвие косы
+
+item.tfc.metal.lamp.tungsten.name=Вольфрамовая лампа
+item.tfc.ceramics.fired.mold.ingot.tungsten.name=Неформованный вольфрам
+
+# Metal Armors
+item.tfc.metal.chestplate.tungsten.name=Вольфрамовый нагрудник
+item.tfc.metal.greaves.tungsten.name=Вольфрамовые поножи
+item.tfc.metal.boots.tungsten.name=Вольфрамовые ботинки
+item.tfc.metal.helmet.tungsten.name=Вольфрамовый шлем
+
+item.tfc.metal.unfinished_chestplate.tungsten.name=Вольфрамовый незаконченый нагрудник
+item.tfc.metal.unfinished_boots.tungsten.name=Вольфрамовые незаконченые ботинки
+item.tfc.metal.unfinished_helmet.tungsten.name=Вольфрамовый незаконченый шлем
+item.tfc.metal.unfinished_greaves.tungsten.name=Вольфрамовые незаконченые поножи
+
+#Metal Anvils
+item.tfc.metal.anvil.tungsten.name=Вольфрамовая наковальня
+
+#Tungsten Steel
+# Metal items
+item.tfc.metal.ingot.tungsten_steel.name=Слиток вольфрамовой стали
+item.tfc.metal.double_ingot.tungsten_steel.name=Двойной слиток вольфрамовой стали
+item.tfc.metal.scrap.tungsten_steel.name=Металлолом из вольфрамовой стали
+item.tfc.metal.dust.tungsten_steel.name=Пыль из вольфрамовой стали
+item.tfc.metal.nugget.tungsten_steel.name=Самородок вольфрамовой стали
+item.tfc.metal.sheet.tungsten_steel.name=Лист из вольфрамовой стали
+item.tfc.metal.double_sheet.tungsten_steel.name=Двойной лист из вольфрамовой стали
+item.tfc.metal.tuyere.tungsten_steel.name=Фурма из вольфрамовой стали
+
+# Metal tools
+item.tfc.metal.pick.tungsten_steel.name=Кирка из вольфрамовой стали
+item.tfc.metal.pick_head.tungsten_steel.name=Оголовье кирки из вольфрамовой стали
+item.tfc.metal.shovel.tungsten_steel.name=Лопата из вольфрамовой стали
+item.tfc.metal.shovel_head.tungsten_steel.name=Оголовье лопаты из вольфрамовой стали
+item.tfc.metal.axe.tungsten_steel.name=Топор из вольфрамовой стали
+item.tfc.metal.axe_head.tungsten_steel.name=Оголовье топора из вольфрамовой стали
+item.tfc.metal.hoe.tungsten_steel.name=Мотыга из вольфрамовой стали
+item.tfc.metal.hoe_head.tungsten_steel.name=Оголовье мотыги из вольфрамовой стали
+item.tfc.metal.chisel.tungsten_steel.name=Стамеска из вольфрамовой стали
+item.tfc.metal.chisel_head.tungsten_steel.name=Оголовье стамески из вольфрамовой стали
+item.tfc.metal.sword.tungsten_steel.name=Меч из вольфрамовой стали
+item.tfc.metal.sword_blade.tungsten_steel.name=Лезвие меча из вольфрамовой стали
+item.tfc.metal.mace.tungsten_steel.name=Булава из вольфрамовой стали
+item.tfc.metal.mace_head.tungsten_steel.name=Оголовье булавы из вольфрамовой стали
+item.tfc.metal.saw.tungsten_steel.name=Ножовка из вольфрамовой стали
+item.tfc.metal.saw_blade.tungsten_steel.name=Полотно ножовки из вольфрамовой стали
+item.tfc.metal.shears.tungsten_steel.name=Ножницы из вольфрамовой стали
+item.tfc.metal.shield.tungsten_steel.name=Щит из вольфрамовой стали
+item.tfc.metal.javelin.tungsten_steel.name=Копьё из вольфрамовой стали
+item.tfc.metal.javelin_head.tungsten_steel.name=Наконечник копья из вольфрамовой стали
+item.tfc.metal.hammer.tungsten_steel.name=Молот из вольфрамовой стали
+item.tfc.metal.hammer_head.tungsten_steel.name=Оголовье молота из вольфрамовой стали
+item.tfc.metal.propick.tungsten_steel.name=Кирка геолога из вольфрамовой стали
+item.tfc.metal.propick_head.tungsten_steel.name=Оголовье кирки геолога из вольфрамовой стали
+item.tfc.metal.knife.tungsten_steel.name=Нож из вольфрамовой стали
+item.tfc.metal.knife_blade.tungsten_steel.name=Лезвие ножа из вольфрамовой стали
+item.tfc.metal.scythe.tungsten_steel.name=Коса из вольфрамовой стали
+item.tfc.metal.scythe_blade.tungsten_steel.name=Лезвие косы из вольфрамовой стали
+
+item.tfc.metal.lamp.tungsten_steel.name=Лампа из вольфрамовой стали
+item.tfc.ceramics.fired.mold.ingot.tungsten_steel.name=Неформованная вольфрамовая сталь
+
+# Metal Armors
+item.tfc.metal.chestplate.tungsten_steel.name=Нагрудник из вольфрамовой стали
+item.tfc.metal.greaves.tungsten_steel.name=Поножи из вольфрамовой стали
+item.tfc.metal.boots.tungsten_steel.name=Ботинки из вольфрамовой стали
+item.tfc.metal.helmet.tungsten_steel.name=Шлем из вольфрамовой стали
+
+item.tfc.metal.unfinished_chestplate.tungsten_steel.name=Незаконченый нагрудник из вольфрамовой стали
+item.tfc.metal.unfinished_boots.tungsten_steel.name=Незаконченые ботинки из вольфрамовой стали
+item.tfc.metal.unfinished_helmet.tungsten_steel.name=Незаконченый шлем из вольфрамовой стали
+item.tfc.metal.unfinished_greaves.tungsten_steel.name=Незаконченые поножи из вольфрамовой стали
+
+# Metal Anvils
+item.tfc.metal.anvil.tungsten_steel.name=Наковальня из вольфрамовой стали
+
+#Nickel Silver
+# Metal items
+item.tfc.metal.ingot.nickel_silver.name=Слиток нейзильбера
+item.tfc.metal.double_ingot.nickel_silver.name=Двойной слиток нейзильбера
+item.tfc.metal.scrap.nickel_silver.name=Металлолом из нейзильбера
+item.tfc.metal.dust.nickel_silver.name=Пыль из нейзильбера
+item.tfc.metal.nugget.nickel_silver.name=Самородок нейзильбера
+item.tfc.metal.sheet.nickel_silver.name=Лист из нейзильбера
+item.tfc.metal.double_sheet.nickel_silver.name=Двойной лист из нейзильбера
+item.tfc.metal.tuyere.nickel_silver.name=Фурма из нейзильбера
+
+# Metal tools
+item.tfc.metal.pick.nickel_silver.name=Кирка из нейзильбера
+item.tfc.metal.pick_head.nickel_silver.name=Оголовье кирки из нейзильбера
+item.tfc.metal.shovel.nickel_silver.name=Лопата из нейзильбера
+item.tfc.metal.shovel_head.nickel_silver.name=Оголовье лопаты из нейзильбера
+item.tfc.metal.axe.nickel_silver.name=Топор из нейзильбера
+item.tfc.metal.axe_head.nickel_silver.name=Оголовье топора из нейзильбера
+item.tfc.metal.hoe.nickel_silver.name=Мотыга из нейзильбера
+item.tfc.metal.hoe_head.nickel_silver.name=Оголовье мотыги из нейзильбера
+item.tfc.metal.chisel.nickel_silver.name=Стамеска из нейзильбера
+item.tfc.metal.chisel_head.nickel_silver.name=Оголовье стамески из нейзильбера
+item.tfc.metal.sword.nickel_silver.name=Меч из нейзильбера
+item.tfc.metal.sword_blade.nickel_silver.name=Лезвие меча из нейзильбера
+item.tfc.metal.mace.nickel_silver.name=Булава из нейзильбера
+item.tfc.metal.mace_head.nickel_silver.name=Оголовье булавы из нейзильбера
+item.tfc.metal.saw.nickel_silver.name=Ножовка из нейзильбера
+item.tfc.metal.saw_blade.nickel_silver.name=Полотно ножовки из нейзильбера
+item.tfc.metal.shears.nickel_silver.name=Ножницы из нейзильбера
+item.tfc.metal.shield.nickel_silver.name=Щит из нейзильбера
+item.tfc.metal.javelin.nickel_silver.name=Копьё из нейзильбера
+item.tfc.metal.javelin_head.nickel_silver.name=Наконечник копья из нейзильбера
+item.tfc.metal.hammer.nickel_silver.name=Молот из нейзильбера
+item.tfc.metal.hammer_head.nickel_silver.name=Оголовье молота из нейзильбера
+item.tfc.metal.propick.nickel_silver.name=Кирка геолога из нейзильбера
+item.tfc.metal.propick_head.nickel_silver.name=Оголовье кирки геолога из нейзильбера
+item.tfc.metal.knife.nickel_silver.name=Нож из нейзильбера
+item.tfc.metal.knife_blade.nickel_silver.name=Лезвие ножа нейзильбера
+item.tfc.metal.scythe.nickel_silver.name=Коса нейзильбера
+item.tfc.metal.scythe_blade.nickel_silver.name=Лезвие косы из нейзильбера
+
+item.tfc.metal.lamp.nickel_silver.name=Лампа из нейзильбера
+item.tfc.ceramics.fired.mold.ingot.nickel_silver.name=Неформованный нейзильбер
+
+# Metal Armors
+item.tfc.metal.chestplate.nickel_silver.name=Нагрудник из нейзильбера
+item.tfc.metal.greaves.nickel_silver.name=Поножи из нейзильбера
+item.tfc.metal.boots.nickel_silver.name=Ботинки из нейзильбера
+item.tfc.metal.helmet.nickel_silver.name=Шлем из нейзильбера
+
+item.tfc.metal.unfinished_chestplate.nickel_silver.name=Незаконченый нагрудник из нейзильбера
+item.tfc.metal.unfinished_boots.nickel_silver.name=Незаконченые ботинки из нейзильбера
+item.tfc.metal.unfinished_helmet.nickel_silver.name=Незаконченый шлем из нейзильбера
+item.tfc.metal.unfinished_greaves.nickel_silver.name=Незаконченые поножи из нейзильбера
+
+# Metal Anvils
+item.tfc.metal.anvil.nickel_silver.name=Наковальня из нейзильбера
+
+# Metal types
+tfc.types.metal.aluminium=Алюминий
+tfc.types.metal.aluminium_brass=Алюминиевая латунь
+tfc.types.metal.antimony=Сурьма
+tfc.types.metal.ardite=Ардит
+tfc.types.metal.cobalt=Кобальт
+tfc.types.metal.constantan=Константан
+tfc.types.metal.electrum=Электрум
+tfc.types.metal.invar=Инвар
+tfc.types.metal.titanium=Титан
+tfc.types.metal.manyullyn=Мануллин
+tfc.types.metal.mithril=Мифрил
+tfc.types.metal.osmium=Осмий
+tfc.types.metal.tungsten=Вольфрам
+tfc.types.metal.tungsten_steel=Вольфрамовая сталь
+tfc.types.metal.nickel_silver=Нейзильбер
+tfc.types.metal.red_alloy=Красная легированая латунь
+
+#Fluids
+fluid.antimony=Расплавленная сурьма
+fluid.constantan=Расплавленный константан
+fluid.electrum=Расплавленный электрум
+fluid.mithril=Расплавленный мифрил
+fluid.invar=Расплавленный инвар
+fluid.aluminium=Расплавленный алюминий
+fluid.aluminium_brass=Расплавленная алюминиевая латунь
+fluid.ardite=Расплавленный ардит
+fluid.cobalt=Расплавленный кобальт
+fluid.manyullyn=Расплавленный мануллин
+fluid.osmium=Расплавленный осмий
+fluid.titanium=Расплавленный титан
+fluid.tungsten=Расплавленный вольфрам
+fluid.tungsten_steel=Расплавленная вольфрамовая сталь
+fluid.nickel_silver=Расплавленный нейзильбер
+fluid.red_alloy=Расплавленная красная легированная латунь
+
+#Blooms
+item.tfc.bloom.unrefined.aluminium.name=Неочищенная алюминиевая крица
+item.tfc.bloom.refined.aluminium.name=Очищенная алюминиевая крица
+item.tfc.bloom.unrefined.ardite.name=Неочищенная ардитовая крица
+item.tfc.bloom.refined.ardite.name=Refined ардитовая крица
+item.tfc.bloom.unrefined.cobalt.name=Неочищенная кобальтовая крица
+item.tfc.bloom.refined.cobalt.name=Очищенная кобальтовая крица
+
+#Veins
+vein.stibnite.name=Антимонит
+vein.surface_stibnite.name=Поверхностный антимонит
+vein.cobaltite.name=Кобальтит
+vein.wolframite.name=Вольфрамит
+vein.bauxite.name=Боксит
+vein.native_osmium.name=Чистый осмий
+vein.native_ardite.name=Ардит
+vein.thorianite.name=Торианит
+vein.chromite.name=Хромит
+vein.pyrolusite.name=Пиролюзит
+vein.magnesite.name=Магнезит
+vein.spodumene.name=Сподумен
+vein.rutile.name=Рутил
+vein.boron.name=Бор
+
+#Config
+config.tfcmetallum=TFC-Metallum
+config.tfcmetallum.tooltip=TFC-Metallum Mod Configuration
+
+##Recipes
+config.tfcmetallum.recipes=Настройки рецептов
+config.tfcmetallum.recipes.tooltip=Включение/выключение расширенных рецептов металлов
+
+config.tfcmetallum.recipes.ardite=Ардит через кричной горн
+config.tfcmetallum.recipes.ardite.tooltip=Включить рецепт ардита через кричной горн?
+
+config.tfcmetallum.recipes.aluminium=Алюминий через кричной горн
+config.tfcmetallum.recipes.aluminium.tooltip=Включить рецепт алюминия через кричной горн?
+
+config.tfcmetallum.recipes.cobalt=Кобальт через кричной горн
+config.tfcmetallum.recipes.cobalt.tooltip=Включить рецепт кобальта через кричной горн?
+
+config.tfcmetallum.recipes.osmium=Осмий через доменную печь 
+config.tfcmetallum.recipes.osmium.tooltip=Включить рецепт осмия через доменную печь?
+
+config.tfcmetallum.recipes.titanium=Титан через доменную печь 
+config.tfcmetallum.recipes.titanium.tooltip=Включить рецепт титана через доменную печь?
+
+config.tfcmetallum.recipes.tungsten=Вольфрам через доменную печь 
+config.tfcmetallum.recipes.tungsten.tooltip=Включить рецепт вольфрама через доменную печь?

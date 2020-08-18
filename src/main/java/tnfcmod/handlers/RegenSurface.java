@@ -1,16 +1,11 @@
 package tnfcmod.handlers;
 
-import java.lang.reflect.WildcardType;
 import java.util.*;
 
-import com.google.common.collect.Maps;
-import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderServer;
@@ -22,20 +17,15 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.api.types.Tree;
-import net.dries007.tfc.objects.blocks.agriculture.BlockCropDead;
-import net.dries007.tfc.objects.blocks.agriculture.BlockCropTFC;
 import net.dries007.tfc.objects.te.TECropBase;
 import net.dries007.tfc.objects.te.TEPlacedItemFlat;
 import net.dries007.tfc.util.calendar.CalendarTFC;
-import net.dries007.tfc.util.calendar.ICalendar;
 import net.dries007.tfc.util.calendar.Month;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import net.dries007.tfc.world.classic.worldgen.WorldGenBerryBushes;
 import net.dries007.tfc.world.classic.worldgen.WorldGenLooseRocks;
 import net.dries007.tfc.world.classic.worldgen.WorldGenTrees;
 import net.dries007.tfc.world.classic.worldgen.WorldGenWildCrops;
-import scala.Array;
-import tnfcmod.tnfcmod;
 
 import static net.dries007.tfc.objects.blocks.agriculture.BlockCropTFC.WILD;
 import static tnfcmod.tnfcmod.MODID;

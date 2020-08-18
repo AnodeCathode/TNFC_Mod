@@ -14,4 +14,8 @@ public class ToolMaterialsTNFC
     public static final Item.ToolMaterial OSMIUM = EnumHelper.addToolMaterial("tfcm_osmium", 4, 7000, 20, 9.0f, 24);
     public static final Item.ToolMaterial TUNGSTEN = EnumHelper.addToolMaterial("tfcm_tungsten", 4, 6600, 18, 10.0f, 24);
     public static final Item.ToolMaterial TUNGSTEN_STEEL = EnumHelper.addToolMaterial("tfcm_tungsten_steel", 5, 9200, 20, 11.5f, 24);
+    public static final Item.ToolMaterial BORON = EnumHelper.addToolMaterial("tfcm_boron", 2, 1500, 10, 4.2f, 14);
+    public static final Item.ToolMaterial ZIRCALOY = EnumHelper.addToolMaterial("tfcm_zircaloy", 5, 6500, 8, 7.9f, 26);
+    public static final Item.ToolMaterial BERYLLIUM_COPPER = EnumHelper.addToolMaterial("tfcm_beryllium_copper", 4, 9000, 8, 7.9f, 26);
+
 }
