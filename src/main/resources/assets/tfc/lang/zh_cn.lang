@@ -305,119 +305,119 @@ item.tfc.ore.small.spodumene.name=小型锂辉石
 
 #铝
 # Metal items
-item.tfc.metal.ingot.aluminium.name=铝锭
-item.tfc.metal.double_ingot.aluminium.name=铝双锭
-item.tfc.metal.scrap.aluminium.name=铝碎片
-item.tfc.metal.dust.aluminium.name=铝粉
-item.tfc.metal.nugget.aluminium.name=铝粒
-item.tfc.metal.sheet.aluminium.name=铝薄板
-item.tfc.metal.double_sheet.aluminium.name=铝双层薄板
-item.tfc.metal.tuyere.aluminium.name=铝鼓风口
+item.tfc.metal.ingot.aluminum.name=铝锭
+item.tfc.metal.double_ingot.aluminum.name=铝双锭
+item.tfc.metal.scrap.aluminum.name=铝碎片
+item.tfc.metal.dust.aluminum.name=铝粉
+item.tfc.metal.nugget.aluminum.name=铝粒
+item.tfc.metal.sheet.aluminum.name=铝薄板
+item.tfc.metal.double_sheet.aluminum.name=铝双层薄板
+item.tfc.metal.tuyere.aluminum.name=铝鼓风口
 
 # Metal tools
-item.tfc.metal.pick.aluminium.name=铝镐
-item.tfc.metal.pick_head.aluminium.name=铝镐头
-item.tfc.metal.shovel.aluminium.name=铝铲
-item.tfc.metal.shovel_head.aluminium.name=铝铲头
-item.tfc.metal.axe.aluminium.name=铝斧
-item.tfc.metal.axe_head.aluminium.name=铝斧头
-item.tfc.metal.hoe.aluminium.name=铝锄
-item.tfc.metal.hoe_head.aluminium.name=铝锄头
-item.tfc.metal.chisel.aluminium.name=铝凿
-item.tfc.metal.chisel_head.aluminium.name=铝凿头
-item.tfc.metal.sword.aluminium.name=铝剑
-item.tfc.metal.sword_blade.aluminium.name=铝剑刃
-item.tfc.metal.mace.aluminium.name=铝狼牙棒
-item.tfc.metal.mace_head.aluminium.name=铝狼牙棒头
-item.tfc.metal.saw.aluminium.name=铝锯
-item.tfc.metal.saw_blade.aluminium.name=铝锯片
-item.tfc.metal.shears.aluminium.name=铝剪刀
-item.tfc.metal.shield.aluminium.name=铝盾牌
-item.tfc.metal.javelin.aluminium.name=铝标枪
-item.tfc.metal.javelin_head.aluminium.name=铝标枪头
-item.tfc.metal.hammer.aluminium.name=铝锤
-item.tfc.metal.hammer_head.aluminium.name=铝锤头
-item.tfc.metal.propick.aluminium.name=铝勘矿镐
-item.tfc.metal.propick_head.aluminium.name=铝勘矿镐头
-item.tfc.metal.knife.aluminium.name=铝刀
-item.tfc.metal.knife_blade.aluminium.name=铝刀刃
-item.tfc.metal.scythe.aluminium.name=铝镰刀
-item.tfc.metal.scythe_blade.aluminium.name=铝镰刀头
+item.tfc.metal.pick.aluminum.name=铝镐
+item.tfc.metal.pick_head.aluminum.name=铝镐头
+item.tfc.metal.shovel.aluminum.name=铝铲
+item.tfc.metal.shovel_head.aluminum.name=铝铲头
+item.tfc.metal.axe.aluminum.name=铝斧
+item.tfc.metal.axe_head.aluminum.name=铝斧头
+item.tfc.metal.hoe.aluminum.name=铝锄
+item.tfc.metal.hoe_head.aluminum.name=铝锄头
+item.tfc.metal.chisel.aluminum.name=铝凿
+item.tfc.metal.chisel_head.aluminum.name=铝凿头
+item.tfc.metal.sword.aluminum.name=铝剑
+item.tfc.metal.sword_blade.aluminum.name=铝剑刃
+item.tfc.metal.mace.aluminum.name=铝狼牙棒
+item.tfc.metal.mace_head.aluminum.name=铝狼牙棒头
+item.tfc.metal.saw.aluminum.name=铝锯
+item.tfc.metal.saw_blade.aluminum.name=铝锯片
+item.tfc.metal.shears.aluminum.name=铝剪刀
+item.tfc.metal.shield.aluminum.name=铝盾牌
+item.tfc.metal.javelin.aluminum.name=铝标枪
+item.tfc.metal.javelin_head.aluminum.name=铝标枪头
+item.tfc.metal.hammer.aluminum.name=铝锤
+item.tfc.metal.hammer_head.aluminum.name=铝锤头
+item.tfc.metal.propick.aluminum.name=铝勘矿镐
+item.tfc.metal.propick_head.aluminum.name=铝勘矿镐头
+item.tfc.metal.knife.aluminum.name=铝刀
+item.tfc.metal.knife_blade.aluminum.name=铝刀刃
+item.tfc.metal.scythe.aluminum.name=铝镰刀
+item.tfc.metal.scythe_blade.aluminum.name=铝镰刀头
 
-item.tfc.metal.lamp.aluminium.name=铝灯
-item.tfc.ceramics.fired.mold.ingot.aluminium.name=未成形铝
+item.tfc.metal.lamp.aluminum.name=铝灯
+item.tfc.ceramics.fired.mold.ingot.aluminum.name=未成形铝
 
 # Metal Armors
-item.tfc.metal.chestplate.aluminium.name=铝胸甲
-item.tfc.metal.greaves.aluminium.name=铝护腿
-item.tfc.metal.boots.aluminium.name=铝靴
-item.tfc.metal.helmet.aluminium.name=铝头盔
+item.tfc.metal.chestplate.aluminum.name=铝胸甲
+item.tfc.metal.greaves.aluminum.name=铝护腿
+item.tfc.metal.boots.aluminum.name=铝靴
+item.tfc.metal.helmet.aluminum.name=铝头盔
 
-item.tfc.metal.unfinished_chestplate.aluminium.name=未完成的铝胸甲
-item.tfc.metal.unfinished_boots.aluminium.name=未完成的铝靴
-item.tfc.metal.unfinished_helmet.aluminium.name=未完成的铝头盔
-item.tfc.metal.unfinished_greaves.aluminium.name=未完成的铝护腿
+item.tfc.metal.unfinished_chestplate.aluminum.name=未完成的铝胸甲
+item.tfc.metal.unfinished_boots.aluminum.name=未完成的铝靴
+item.tfc.metal.unfinished_helmet.aluminum.name=未完成的铝头盔
+item.tfc.metal.unfinished_greaves.aluminum.name=未完成的铝护腿
 
 #Metal Anvils
-item.tfc.metal.anvil.aluminium.name=铝砧
+item.tfc.metal.anvil.aluminum.name=铝砧
 
 #铝黄铜
 # Metal items
-item.tfc.metal.ingot.aluminium_brass.name=铝黄铜锭
-item.tfc.metal.double_ingot.aluminium_brass.name=铝黄铜双锭
-item.tfc.metal.scrap.aluminium_brass.name=铝黄铜碎片
-item.tfc.metal.dust.aluminium_brass.name=铝黄铜粉
-item.tfc.metal.nugget.aluminium_brass.name=铝黄铜粒
-item.tfc.metal.sheet.aluminium_brass.name=铝黄铜薄板
-item.tfc.metal.double_sheet.aluminium_brass.name=铝黄铜双层薄板
-item.tfc.metal.tuyere.aluminium_brass.name=铝黄铜鼓风口
+item.tfc.metal.ingot.aluminum_brass.name=铝黄铜锭
+item.tfc.metal.double_ingot.aluminum_brass.name=铝黄铜双锭
+item.tfc.metal.scrap.aluminum_brass.name=铝黄铜碎片
+item.tfc.metal.dust.aluminum_brass.name=铝黄铜粉
+item.tfc.metal.nugget.aluminum_brass.name=铝黄铜粒
+item.tfc.metal.sheet.aluminum_brass.name=铝黄铜薄板
+item.tfc.metal.double_sheet.aluminum_brass.name=铝黄铜双层薄板
+item.tfc.metal.tuyere.aluminum_brass.name=铝黄铜鼓风口
 
 # Metal tools
-item.tfc.metal.pick.aluminium_brass.name=铝黄铜镐
-item.tfc.metal.pick_head.aluminium_brass.name=铝黄铜镐头
-item.tfc.metal.shovel.aluminium_brass.name=铝黄铜铲
-item.tfc.metal.shovel_head.aluminium_brass.name=铝黄铜铲头
-item.tfc.metal.axe.aluminium_brass.name=铝黄铜斧
-item.tfc.metal.axe_head.aluminium_brass.name=铝黄铜斧头
-item.tfc.metal.hoe.aluminium_brass.name=铝黄铜锄
-item.tfc.metal.hoe_head.aluminium_brass.name=铝黄铜锄头
-item.tfc.metal.chisel.aluminium_brass.name=铝黄铜凿
-item.tfc.metal.chisel_head.aluminium_brass.name=铝黄铜凿头
-item.tfc.metal.sword.aluminium_brass.name=铝黄铜剑
-item.tfc.metal.sword_blade.aluminium_brass.name=铝黄铜剑刃
-item.tfc.metal.mace.aluminium_brass.name=铝黄铜狼牙棒
-item.tfc.metal.mace_head.aluminium_brass.name=铝黄铜狼牙棒头
-item.tfc.metal.saw.aluminium_brass.name=铝黄铜锯
-item.tfc.metal.saw_blade.aluminium_brass.name=铝黄铜锯片
-item.tfc.metal.shears.aluminium_brass.name=铝黄铜剪刀
-item.tfc.metal.shield.aluminium_brass.name=铝黄铜盾牌
-item.tfc.metal.javelin.aluminium_brass.name=铝黄铜标枪
-item.tfc.metal.javelin_head.aluminium_brass.name=铝黄铜标枪头
-item.tfc.metal.hammer.aluminium_brass.name=铝黄铜锤
-item.tfc.metal.hammer_head.aluminium_brass.name=铝黄铜锤头
-item.tfc.metal.propick.aluminium_brass.name=铝黄铜勘矿镐
-item.tfc.metal.propick_head.aluminium_brass.name=铝黄铜勘矿镐头
-item.tfc.metal.knife.aluminium_brass.name=铝黄铜刀
-item.tfc.metal.knife_blade.aluminium_brass.name=铝黄铜刀刃
-item.tfc.metal.scythe.aluminium_brass.name=铝黄铜镰刀
-item.tfc.metal.scythe_blade.aluminium_brass.name=铝黄铜镰刀头
+item.tfc.metal.pick.aluminum_brass.name=铝黄铜镐
+item.tfc.metal.pick_head.aluminum_brass.name=铝黄铜镐头
+item.tfc.metal.shovel.aluminum_brass.name=铝黄铜铲
+item.tfc.metal.shovel_head.aluminum_brass.name=铝黄铜铲头
+item.tfc.metal.axe.aluminum_brass.name=铝黄铜斧
+item.tfc.metal.axe_head.aluminum_brass.name=铝黄铜斧头
+item.tfc.metal.hoe.aluminum_brass.name=铝黄铜锄
+item.tfc.metal.hoe_head.aluminum_brass.name=铝黄铜锄头
+item.tfc.metal.chisel.aluminum_brass.name=铝黄铜凿
+item.tfc.metal.chisel_head.aluminum_brass.name=铝黄铜凿头
+item.tfc.metal.sword.aluminum_brass.name=铝黄铜剑
+item.tfc.metal.sword_blade.aluminum_brass.name=铝黄铜剑刃
+item.tfc.metal.mace.aluminum_brass.name=铝黄铜狼牙棒
+item.tfc.metal.mace_head.aluminum_brass.name=铝黄铜狼牙棒头
+item.tfc.metal.saw.aluminum_brass.name=铝黄铜锯
+item.tfc.metal.saw_blade.aluminum_brass.name=铝黄铜锯片
+item.tfc.metal.shears.aluminum_brass.name=铝黄铜剪刀
+item.tfc.metal.shield.aluminum_brass.name=铝黄铜盾牌
+item.tfc.metal.javelin.aluminum_brass.name=铝黄铜标枪
+item.tfc.metal.javelin_head.aluminum_brass.name=铝黄铜标枪头
+item.tfc.metal.hammer.aluminum_brass.name=铝黄铜锤
+item.tfc.metal.hammer_head.aluminum_brass.name=铝黄铜锤头
+item.tfc.metal.propick.aluminum_brass.name=铝黄铜勘矿镐
+item.tfc.metal.propick_head.aluminum_brass.name=铝黄铜勘矿镐头
+item.tfc.metal.knife.aluminum_brass.name=铝黄铜刀
+item.tfc.metal.knife_blade.aluminum_brass.name=铝黄铜刀刃
+item.tfc.metal.scythe.aluminum_brass.name=铝黄铜镰刀
+item.tfc.metal.scythe_blade.aluminum_brass.name=铝黄铜镰刀头
 
-item.tfc.metal.lamp.aluminium_brass.name=铝黄铜灯
-item.tfc.ceramics.fired.mold.ingot.aluminium_brass.name=未成形铝黄铜
+item.tfc.metal.lamp.aluminum_brass.name=铝黄铜灯
+item.tfc.ceramics.fired.mold.ingot.aluminum_brass.name=未成形铝黄铜
 
 # Metal Armors
-item.tfc.metal.chestplate.aluminium_brass.name=铝黄铜胸甲
-item.tfc.metal.greaves.aluminium_brass.name=铝黄铜护腿
-item.tfc.metal.boots.aluminium_brass.name=铝黄铜靴
-item.tfc.metal.helmet.aluminium_brass.name=铝黄铜头盔
+item.tfc.metal.chestplate.aluminum_brass.name=铝黄铜胸甲
+item.tfc.metal.greaves.aluminum_brass.name=铝黄铜护腿
+item.tfc.metal.boots.aluminum_brass.name=铝黄铜靴
+item.tfc.metal.helmet.aluminum_brass.name=铝黄铜头盔
 
-item.tfc.metal.unfinished_chestplate.aluminium_brass.name=未完成的铝黄铜胸甲
-item.tfc.metal.unfinished_boots.aluminium_brass.name=未完成的铝黄铜靴
-item.tfc.metal.unfinished_helmet.aluminium_brass.name=未完成的铝黄铜头盔
-item.tfc.metal.unfinished_greaves.aluminium_brass.name=未完成的铝黄铜护腿
+item.tfc.metal.unfinished_chestplate.aluminum_brass.name=未完成的铝黄铜胸甲
+item.tfc.metal.unfinished_boots.aluminum_brass.name=未完成的铝黄铜靴
+item.tfc.metal.unfinished_helmet.aluminum_brass.name=未完成的铝黄铜头盔
+item.tfc.metal.unfinished_greaves.aluminum_brass.name=未完成的铝黄铜护腿
 
 #Metal Anvils
-item.tfc.metal.anvil.aluminium_brass.name=铝黄铜砧
+item.tfc.metal.anvil.aluminum_brass.name=铝黄铜砧
 
 #红石合金黄铜
 # Metal items
@@ -1232,8 +1232,8 @@ item.tfc.metal.unfinished_greaves.nickel_silver.name=未完成的白铜护腿
 item.tfc.metal.anvil.nickel_silver.name=白铜砧
 
 # Metal types
-tfc.types.metal.aluminium=铝
-tfc.types.metal.aluminium_brass=铝黄铜
+tfc.types.metal.aluminum=铝
+tfc.types.metal.aluminum_brass=铝黄铜
 tfc.types.metal.antimony=锑
 tfc.types.metal.ardite=阿迪特
 tfc.types.metal.cobalt=钴
@@ -1255,8 +1255,8 @@ fluid.constantan=熔融康铜
 fluid.electrum=熔融琥珀金
 fluid.mithril=熔融秘银
 fluid.invar=熔融殷钢
-fluid.aluminium=熔融铝
-fluid.aluminium_brass=熔融铝黄铜
+fluid.aluminum=熔融铝
+fluid.aluminum_brass=熔融铝黄铜
 fluid.ardite=熔融阿迪特
 fluid.cobalt=熔融钴
 fluid.manyullyn=熔融玛玉灵

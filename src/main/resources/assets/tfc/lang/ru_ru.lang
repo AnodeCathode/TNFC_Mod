@@ -334,121 +334,121 @@ item.tfc.ore.rutile.poor.name=Бедный рутил
 item.tfc.ore.rutile.rich.name=Богатый рутил
 item.tfc.ore.small.rutile.name=Самородок рутила
 
-#Aluminium
+#Aluminum
 # Metal items
-item.tfc.metal.ingot.aluminium.name=Алюминиевый слиток
-item.tfc.metal.double_ingot.aluminium.name=Двойной алюминиевый слиток
-item.tfc.metal.scrap.aluminium.name=Металлолом из алюминия
-item.tfc.metal.dust.aluminium.name=Пыль из алюминия
-item.tfc.metal.nugget.aluminium.name=Самородок алюминия
-item.tfc.metal.sheet.aluminium.name=Лист из алюминия
-item.tfc.metal.double_sheet.aluminium.name=Двойной лист из алюминия
-item.tfc.metal.tuyere.aluminium.name=Алюминиевая фурма
+item.tfc.metal.ingot.aluminum.name=Алюминиевый слиток
+item.tfc.metal.double_ingot.aluminum.name=Двойной алюминиевый слиток
+item.tfc.metal.scrap.aluminum.name=Металлолом из алюминия
+item.tfc.metal.dust.aluminum.name=Пыль из алюминия
+item.tfc.metal.nugget.aluminum.name=Самородок алюминия
+item.tfc.metal.sheet.aluminum.name=Лист из алюминия
+item.tfc.metal.double_sheet.aluminum.name=Двойной лист из алюминия
+item.tfc.metal.tuyere.aluminum.name=Алюминиевая фурма
 
 # Metal tools
-item.tfc.metal.pick.aluminium.name=Алюминиевая кирка
-item.tfc.metal.pick_head.aluminium.name=Алюминиевое оголовье кирки
-item.tfc.metal.shovel.aluminium.name=Алюминиевая лопата
-item.tfc.metal.shovel_head.aluminium.name=Алюминиевое оголовье лопаты
-item.tfc.metal.axe.aluminium.name=Алюминиевый топор
-item.tfc.metal.axe_head.aluminium.name=Алюминиевое оголовье топора
-item.tfc.metal.hoe.aluminium.name=Алюминиевая мотыга
-item.tfc.metal.hoe_head.aluminium.name=Алюминиевое оголовье мотыги
-item.tfc.metal.chisel.aluminium.name=Алюминиевая стамеска
-item.tfc.metal.chisel_head.aluminium.name=Алюминиевое оголовье стамески
-item.tfc.metal.sword.aluminium.name=Алюминиевый меч
-item.tfc.metal.sword_blade.aluminium.name=Алюминиевое лезвие меча
-item.tfc.metal.mace.aluminium.name=Алюминиевая булава
-item.tfc.metal.mace_head.aluminium.name=Алюминиевое оголовье булавы
-item.tfc.metal.saw.aluminium.name=Алюминиевая ножовка
-item.tfc.metal.saw_blade.aluminium.name=Алюминиевое оголовье ножовки
-item.tfc.metal.shears.aluminium.name=Алюминиевые ножницы
-item.tfc.metal.shield.aluminium.name=Алюминиевый щит
-item.tfc.metal.javelin.aluminium.name=Алюминиевое копье
-item.tfc.metal.javelin_head.aluminium.name=Алюминиевый наконечник копья
-item.tfc.metal.hammer.aluminium.name=Алюминиевый молот
-item.tfc.metal.hammer_head.aluminium.name=Алюминиевое оголовье молота
-item.tfc.metal.propick.aluminium.name=Алюминиевая кирка геолога
-item.tfc.metal.propick_head.aluminium.name=Алюминиевое оголовье кирки геолога
-item.tfc.metal.knife.aluminium.name=Алюминиевый нож
-item.tfc.metal.knife_blade.aluminium.name=Алюминиевое лезвие ножа
-item.tfc.metal.scythe.aluminium.name=Алюминиевая коса
-item.tfc.metal.scythe_blade.aluminium.name=Алюминиевое лезвие косы
+item.tfc.metal.pick.aluminum.name=Алюминиевая кирка
+item.tfc.metal.pick_head.aluminum.name=Алюминиевое оголовье кирки
+item.tfc.metal.shovel.aluminum.name=Алюминиевая лопата
+item.tfc.metal.shovel_head.aluminum.name=Алюминиевое оголовье лопаты
+item.tfc.metal.axe.aluminum.name=Алюминиевый топор
+item.tfc.metal.axe_head.aluminum.name=Алюминиевое оголовье топора
+item.tfc.metal.hoe.aluminum.name=Алюминиевая мотыга
+item.tfc.metal.hoe_head.aluminum.name=Алюминиевое оголовье мотыги
+item.tfc.metal.chisel.aluminum.name=Алюминиевая стамеска
+item.tfc.metal.chisel_head.aluminum.name=Алюминиевое оголовье стамески
+item.tfc.metal.sword.aluminum.name=Алюминиевый меч
+item.tfc.metal.sword_blade.aluminum.name=Алюминиевое лезвие меча
+item.tfc.metal.mace.aluminum.name=Алюминиевая булава
+item.tfc.metal.mace_head.aluminum.name=Алюминиевое оголовье булавы
+item.tfc.metal.saw.aluminum.name=Алюминиевая ножовка
+item.tfc.metal.saw_blade.aluminum.name=Алюминиевое оголовье ножовки
+item.tfc.metal.shears.aluminum.name=Алюминиевые ножницы
+item.tfc.metal.shield.aluminum.name=Алюминиевый щит
+item.tfc.metal.javelin.aluminum.name=Алюминиевое копье
+item.tfc.metal.javelin_head.aluminum.name=Алюминиевый наконечник копья
+item.tfc.metal.hammer.aluminum.name=Алюминиевый молот
+item.tfc.metal.hammer_head.aluminum.name=Алюминиевое оголовье молота
+item.tfc.metal.propick.aluminum.name=Алюминиевая кирка геолога
+item.tfc.metal.propick_head.aluminum.name=Алюминиевое оголовье кирки геолога
+item.tfc.metal.knife.aluminum.name=Алюминиевый нож
+item.tfc.metal.knife_blade.aluminum.name=Алюминиевое лезвие ножа
+item.tfc.metal.scythe.aluminum.name=Алюминиевая коса
+item.tfc.metal.scythe_blade.aluminum.name=Алюминиевое лезвие косы
 
-item.tfc.metal.lamp.aluminium.name=Алюминиевая лампа
-item.tfc.ceramics.fired.mold.ingot.aluminium.name=Неформованный алюминий
+item.tfc.metal.lamp.aluminum.name=Алюминиевая лампа
+item.tfc.ceramics.fired.mold.ingot.aluminum.name=Неформованный алюминий
 
 # Metal Armors
-item.tfc.metal.chestplate.aluminium.name=Алюминиевый нагрудник
-item.tfc.metal.greaves.aluminium.name=Алюминиевые поножи
-item.tfc.metal.boots.aluminium.name=Алюминиевые ботинки
-item.tfc.metal.helmet.aluminium.name=Алюминиевый шлем
+item.tfc.metal.chestplate.aluminum.name=Алюминиевый нагрудник
+item.tfc.metal.greaves.aluminum.name=Алюминиевые поножи
+item.tfc.metal.boots.aluminum.name=Алюминиевые ботинки
+item.tfc.metal.helmet.aluminum.name=Алюминиевый шлем
 
-item.tfc.metal.unfinished_chestplate.aluminium.name=Алюминиевый незаконченый нагрудник
-item.tfc.metal.unfinished_boots.aluminium.name=Алюминиевые незаконченые ботинки
-item.tfc.metal.unfinished_helmet.aluminium.name=Алюминиевый незаконченый шлем
-item.tfc.metal.unfinished_greaves.aluminium.name=Алюминиевые незаконченые поножи
+item.tfc.metal.unfinished_chestplate.aluminum.name=Алюминиевый незаконченый нагрудник
+item.tfc.metal.unfinished_boots.aluminum.name=Алюминиевые незаконченые ботинки
+item.tfc.metal.unfinished_helmet.aluminum.name=Алюминиевый незаконченый шлем
+item.tfc.metal.unfinished_greaves.aluminum.name=Алюминиевые незаконченые поножи
 
 #Metal Anvils
-item.tfc.metal.anvil.aluminium.name=Алюминиевая наковальня
+item.tfc.metal.anvil.aluminum.name=Алюминиевая наковальня
 
-#Aluminium Brass
+#Aluminum Brass
 # Metal items
-item.tfc.metal.ingot.aluminium_brass.name=Слиток алюминиевой латуни
-item.tfc.metal.double_ingot.aluminium_brass.name=Двойной слиток алюминиевой латуни
-item.tfc.metal.scrap.aluminium_brass.name=Металлолом из алюминиевой латуни
-item.tfc.metal.dust.aluminium_brass.name=Пыль из алюминиевой латуни
-item.tfc.metal.nugget.aluminium_brass.name=Самородок алюминиевой латуни
-item.tfc.metal.sheet.aluminium_brass.name=Лист из алюминиевой латуни
-item.tfc.metal.double_sheet.aluminium_brass.name=Двойной лист из алюминиевой латуни
-item.tfc.metal.tuyere.aluminium_brass.name=Фурма из алюминиевой латуни
+item.tfc.metal.ingot.aluminum_brass.name=Слиток алюминиевой латуни
+item.tfc.metal.double_ingot.aluminum_brass.name=Двойной слиток алюминиевой латуни
+item.tfc.metal.scrap.aluminum_brass.name=Металлолом из алюминиевой латуни
+item.tfc.metal.dust.aluminum_brass.name=Пыль из алюминиевой латуни
+item.tfc.metal.nugget.aluminum_brass.name=Самородок алюминиевой латуни
+item.tfc.metal.sheet.aluminum_brass.name=Лист из алюминиевой латуни
+item.tfc.metal.double_sheet.aluminum_brass.name=Двойной лист из алюминиевой латуни
+item.tfc.metal.tuyere.aluminum_brass.name=Фурма из алюминиевой латуни
 
 # Metal tools
-item.tfc.metal.pick.aluminium_brass.name=Aluminium Brass кирка
-item.tfc.metal.pick_head.aluminium_brass.name=Aluminium Brass оголовье кирки
-item.tfc.metal.shovel.aluminium_brass.name=Aluminium Brass лопата
-item.tfc.metal.shovel_head.aluminium_brass.name=Aluminium Brass оголовье лопаты
-item.tfc.metal.axe.aluminium_brass.name=Aluminium Brass топор
-item.tfc.metal.axe_head.aluminium_brass.name=Aluminium Brass оголовье топора
-item.tfc.metal.hoe.aluminium_brass.name=Aluminium Brass мотыга
-item.tfc.metal.hoe_head.aluminium_brass.name=Aluminium Brass оголовье мотыги
-item.tfc.metal.chisel.aluminium_brass.name=Aluminium Brass стамеска
-item.tfc.metal.chisel_head.aluminium_brass.name=Aluminium Brass оголовье стамески
-item.tfc.metal.sword.aluminium_brass.name=Aluminium Brass меч
-item.tfc.metal.sword_blade.aluminium_brass.name=Aluminium Brass лезвие меча
-item.tfc.metal.mace.aluminium_brass.name=Aluminium Brass булава
-item.tfc.metal.mace_head.aluminium_brass.name=Aluminium Brass оголовье булавы
-item.tfc.metal.saw.aluminium_brass.name=Aluminium Brass ножовка
-item.tfc.metal.saw_blade.aluminium_brass.name=Aluminium Brass полотно ножовки
-item.tfc.metal.shears.aluminium_brass.name=Aluminium Brass ножницы
-item.tfc.metal.shield.aluminium_brass.name=Aluminium Brass щит
-item.tfc.metal.javelin.aluminium_brass.name=Aluminium Brass копьё
-item.tfc.metal.javelin_head.aluminium_brass.name=Aluminium Brass наконечник копья
-item.tfc.metal.hammer.aluminium_brass.name=Aluminium Brass молот
-item.tfc.metal.hammer_head.aluminium_brass.name=Aluminium Brass оголовье молота
-item.tfc.metal.propick.aluminium_brass.name=Aluminium Brass кирка геолога
-item.tfc.metal.propick_head.aluminium_brass.name=Aluminium Brass оголовье кирки геолога
-item.tfc.metal.knife.aluminium_brass.name=Aluminium Brass нож
-item.tfc.metal.knife_blade.aluminium_brass.name=Aluminium Brass лезвие ножа
-item.tfc.metal.scythe.aluminium_brass.name=Aluminium Brass коса
-item.tfc.metal.scythe_blade.aluminium_brass.name=Aluminium Brass лезвие косы
+item.tfc.metal.pick.aluminum_brass.name=Aluminum Brass кирка
+item.tfc.metal.pick_head.aluminum_brass.name=Aluminum Brass оголовье кирки
+item.tfc.metal.shovel.aluminum_brass.name=Aluminum Brass лопата
+item.tfc.metal.shovel_head.aluminum_brass.name=Aluminum Brass оголовье лопаты
+item.tfc.metal.axe.aluminum_brass.name=Aluminum Brass топор
+item.tfc.metal.axe_head.aluminum_brass.name=Aluminum Brass оголовье топора
+item.tfc.metal.hoe.aluminum_brass.name=Aluminum Brass мотыга
+item.tfc.metal.hoe_head.aluminum_brass.name=Aluminum Brass оголовье мотыги
+item.tfc.metal.chisel.aluminum_brass.name=Aluminum Brass стамеска
+item.tfc.metal.chisel_head.aluminum_brass.name=Aluminum Brass оголовье стамески
+item.tfc.metal.sword.aluminum_brass.name=Aluminum Brass меч
+item.tfc.metal.sword_blade.aluminum_brass.name=Aluminum Brass лезвие меча
+item.tfc.metal.mace.aluminum_brass.name=Aluminum Brass булава
+item.tfc.metal.mace_head.aluminum_brass.name=Aluminum Brass оголовье булавы
+item.tfc.metal.saw.aluminum_brass.name=Aluminum Brass ножовка
+item.tfc.metal.saw_blade.aluminum_brass.name=Aluminum Brass полотно ножовки
+item.tfc.metal.shears.aluminum_brass.name=Aluminum Brass ножницы
+item.tfc.metal.shield.aluminum_brass.name=Aluminum Brass щит
+item.tfc.metal.javelin.aluminum_brass.name=Aluminum Brass копьё
+item.tfc.metal.javelin_head.aluminum_brass.name=Aluminum Brass наконечник копья
+item.tfc.metal.hammer.aluminum_brass.name=Aluminum Brass молот
+item.tfc.metal.hammer_head.aluminum_brass.name=Aluminum Brass оголовье молота
+item.tfc.metal.propick.aluminum_brass.name=Aluminum Brass кирка геолога
+item.tfc.metal.propick_head.aluminum_brass.name=Aluminum Brass оголовье кирки геолога
+item.tfc.metal.knife.aluminum_brass.name=Aluminum Brass нож
+item.tfc.metal.knife_blade.aluminum_brass.name=Aluminum Brass лезвие ножа
+item.tfc.metal.scythe.aluminum_brass.name=Aluminum Brass коса
+item.tfc.metal.scythe_blade.aluminum_brass.name=Aluminum Brass лезвие косы
 
-item.tfc.metal.lamp.aluminium_brass.name=Лампа из алюминиевой латуни
-item.tfc.ceramics.fired.mold.ingot.aluminium_brass.name=Неформованный слиток алюминиевой латуни
+item.tfc.metal.lamp.aluminum_brass.name=Лампа из алюминиевой латуни
+item.tfc.ceramics.fired.mold.ingot.aluminum_brass.name=Неформованный слиток алюминиевой латуни
 
 # Metal Armors
-item.tfc.metal.chestplate.aluminium_brass.name=Aluminium Brass нагрудник
-item.tfc.metal.greaves.aluminium_brass.name=Aluminium Brass поножи
-item.tfc.metal.boots.aluminium_brass.name=Aluminium Brass ботинки
-item.tfc.metal.helmet.aluminium_brass.name=Aluminium Brass шлем
+item.tfc.metal.chestplate.aluminum_brass.name=Aluminum Brass нагрудник
+item.tfc.metal.greaves.aluminum_brass.name=Aluminum Brass поножи
+item.tfc.metal.boots.aluminum_brass.name=Aluminum Brass ботинки
+item.tfc.metal.helmet.aluminum_brass.name=Aluminum Brass шлем
 
-item.tfc.metal.unfinished_chestplate.aluminium_brass.name=Unfinished Aluminium Brass нагрудник
-item.tfc.metal.unfinished_boots.aluminium_brass.name=Unfinished Aluminium Brass ботинки
-item.tfc.metal.unfinished_helmet.aluminium_brass.name=Unfinished Aluminium Brass шлем
-item.tfc.metal.unfinished_greaves.aluminium_brass.name=Unfinished Aluminium Brass поножи
+item.tfc.metal.unfinished_chestplate.aluminum_brass.name=Unfinished Aluminum Brass нагрудник
+item.tfc.metal.unfinished_boots.aluminum_brass.name=Unfinished Aluminum Brass ботинки
+item.tfc.metal.unfinished_helmet.aluminum_brass.name=Unfinished Aluminum Brass шлем
+item.tfc.metal.unfinished_greaves.aluminum_brass.name=Unfinished Aluminum Brass поножи
 
 #Metal Anvils
-item.tfc.metal.anvil.aluminium_brass.name=Aluminium Brass Anvil
+item.tfc.metal.anvil.aluminum_brass.name=Aluminum Brass Anvil
 
 #Red Alloy Brass
 # Metal items
@@ -1263,8 +1263,8 @@ item.tfc.metal.unfinished_greaves.nickel_silver.name=Незаконченые п
 item.tfc.metal.anvil.nickel_silver.name=Наковальня из нейзильбера
 
 # Metal types
-tfc.types.metal.aluminium=Алюминий
-tfc.types.metal.aluminium_brass=Алюминиевая латунь
+tfc.types.metal.aluminum=Алюминий
+tfc.types.metal.aluminum_brass=Алюминиевая латунь
 tfc.types.metal.antimony=Сурьма
 tfc.types.metal.ardite=Ардит
 tfc.types.metal.cobalt=Кобальт
@@ -1286,8 +1286,8 @@ fluid.constantan=Расплавленный константан
 fluid.electrum=Расплавленный электрум
 fluid.mithril=Расплавленный мифрил
 fluid.invar=Расплавленный инвар
-fluid.aluminium=Расплавленный алюминий
-fluid.aluminium_brass=Расплавленная алюминиевая латунь
+fluid.aluminum=Расплавленный алюминий
+fluid.aluminum_brass=Расплавленная алюминиевая латунь
 fluid.ardite=Расплавленный ардит
 fluid.cobalt=Расплавленный кобальт
 fluid.manyullyn=Расплавленный мануллин
@@ -1299,8 +1299,8 @@ fluid.nickel_silver=Расплавленный нейзильбер
 fluid.red_alloy=Расплавленная красная легированная латунь
 
 #Blooms
-item.tfc.bloom.unrefined.aluminium.name=Неочищенная алюминиевая крица
-item.tfc.bloom.refined.aluminium.name=Очищенная алюминиевая крица
+item.tfc.bloom.unrefined.aluminum.name=Неочищенная алюминиевая крица
+item.tfc.bloom.refined.aluminum.name=Очищенная алюминиевая крица
 item.tfc.bloom.unrefined.ardite.name=Неочищенная ардитовая крица
 item.tfc.bloom.refined.ardite.name=Refined ардитовая крица
 item.tfc.bloom.unrefined.cobalt.name=Неочищенная кобальтовая крица
@@ -1333,8 +1333,8 @@ config.tfcmetallum.recipes.tooltip=Включение/выключение ра�
 config.tfcmetallum.recipes.ardite=Ардит через кричной горн
 config.tfcmetallum.recipes.ardite.tooltip=Включить рецепт ардита через кричной горн?
 
-config.tfcmetallum.recipes.aluminium=Алюминий через кричной горн
-config.tfcmetallum.recipes.aluminium.tooltip=Включить рецепт алюминия через кричной горн?
+config.tfcmetallum.recipes.aluminum=Алюминий через кричной горн
+config.tfcmetallum.recipes.aluminum.tooltip=Включить рецепт алюминия через кричной горн?
 
 config.tfcmetallum.recipes.cobalt=Кобальт через кричной горн
 config.tfcmetallum.recipes.cobalt.tooltip=Включить рецепт кобальта через кричной горн?
