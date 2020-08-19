@@ -166,6 +166,7 @@ public final class RegisterOres
         r.register(new Ore(FLUORITE));
         r.register(new Ore(CAROBBIITE));
         r.register(new Ore(ARSENIC));
+        //r.register(new Ore(BORON));
 
 
     }

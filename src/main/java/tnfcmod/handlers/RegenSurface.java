@@ -73,7 +73,7 @@ public class RegenSurface
                 if (CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY) && !chunkDataTFC.isSpawnProtected() && CalendarTFC.CALENDAR_TIME.getTotalYears() > chunkDataTFC.getLastUpdateYear())
                 {
                     //tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
-                    
+                    // Check server performance here and cancel if no tick budget? Also check if the chunk is loaded?
                     if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
                     {
                         //Nuke any rocks and sticks in chunk.
@@ -104,6 +104,9 @@ public class RegenSurface
                     //Should nuke any bushes in the chunk. For now we just leave the bushes alone.
                     //BUSH_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
                     chunkDataTFC.resetLastUpdateYear();
+
+                //Need to add an else in here. If it doesn't meet any of the criteria, then mark it updated and move on. Need some nuance work on that though.
+
                 }
 
             }
