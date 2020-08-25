@@ -8,13 +8,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
-import net.dries007.tfc.api.capability.forge.CapabilityForgeable;
-import net.dries007.tfc.api.capability.forge.IForgeable;
-import net.dries007.tfc.api.capability.forge.IForgeableMeasurableMetal;
 import net.dries007.tfc.api.recipes.AlloyRecipe;
-import net.dries007.tfc.api.recipes.BlastFurnaceRecipe;
-import net.dries007.tfc.api.recipes.BloomeryRecipe;
-import net.dries007.tfc.api.recipes.anvil.AnvilRecipe;
 import net.dries007.tfc.api.recipes.quern.QuernRecipe;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.registries.TFCRegistryEvent;
@@ -23,18 +17,12 @@ import net.dries007.tfc.api.types.Ore;
 import net.dries007.tfc.objects.Powder;
 import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
 import net.dries007.tfc.objects.items.ItemPowder;
-import net.dries007.tfc.objects.items.ItemsTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
-import net.dries007.tfc.util.fuel.FuelManager;
 import tnfcmod.objects.materials.ArmorMaterialsTNFC;
 import tnfcmod.objects.materials.ToolMaterialsTNFC;
-import tnfcmod.recipes.TFCRecipes;
-import tnfcmod.util.ConfigTNFCMod;
 
 import static net.dries007.tfc.TerraFirmaCraft.MOD_ID;
-import static net.dries007.tfc.api.types.Metal.ItemType.INGOT;
 import static net.dries007.tfc.types.DefaultMetals.*;
-import static net.dries007.tfc.util.forge.ForgeRule.*;
 import static tnfcmod.tnfcmod.MODID;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -166,142 +154,29 @@ public final class RegisterOres
         r.register(new Ore(FLUORITE));
         r.register(new Ore(CAROBBIITE));
         r.register(new Ore(ARSENIC));
-        //r.register(new Ore(BORON));
-
-
     }
 
     @SubscribeEvent
     public static void onRegisterAlloyRecipe(RegistryEvent.Register<AlloyRecipe> event)
     {
         IForgeRegistry<AlloyRecipe> r = event.getRegistry();
-        r.register(new AlloyRecipe.Builder(CONSTANTAN).add(COPPER, 0.4, 0.6).add(NICKEL, 0.4, 0.6).build());
-        r.register(new AlloyRecipe.Builder(ELECTRUM).add(GOLD, 0.4, 0.6).add(SILVER, 0.4, 0.6).build());
-        r.register(new AlloyRecipe.Builder(INVAR).add(WROUGHT_IRON, 0.6, 0.7).add(NICKEL, 0.3, 0.4).build());
-        r.register(new AlloyRecipe.Builder(ALUMINUM_BRASS).add(ALUMINUM, 0.65, 0.85).add(COPPER, 0.15, 0.35).build());
-        r.register(new AlloyRecipe.Builder(MANYULLYN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build());
-        r.register(new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.02, 0.18).add(STEEL, 0.72, 0.98).build());
-        r.register(new AlloyRecipe.Builder(NICKEL_SILVER).add(COPPER, 0.50, 0.65).add(ZINC, 0.1, 0.3).add(NICKEL, 0.1, 0.3).build());
-        r.register(new AlloyRecipe.Builder(FERROBORON).add(STEEL, 0.4, 0.6).add(BORON, 0.4, 0.6).build());
-        r.register(new AlloyRecipe.Builder(HSLA_STEEL).add(STEEL, 0.2, 0.4).add(MANGANESE, 0.4, 0.6).build());
-        r.register(new AlloyRecipe.Builder(MAGNESIUM_DIBORIDE).add(BORON, 0.4, 0.6).add(MAGNESIUM, 0.2, 0.4).build());
-        r.register(new AlloyRecipe.Builder(BERYLLIUM_COPPER).add(BERYLLIUM, 0.3, 0.6).add(COPPER, 0.3, 0.6).add(ALUMINUM, 0.1, 0.3).build());
-        r.register(new AlloyRecipe.Builder(ZIRCALOY).add(ZIRCONIUM, 0.72, 0.98).add(TIN, 0.2, 0.4).build());
-        r.register(new AlloyRecipe.Builder(TOUGH).add(FERROBORON, 0.4, 0.6).add(LITHIUM, 0.4, 0.6).build());
+        r.registerAll(
+            new AlloyRecipe.Builder(CONSTANTAN).add(COPPER, 0.4, 0.6).add(NICKEL, 0.4, 0.6).build(),
+            new AlloyRecipe.Builder(ELECTRUM).add(GOLD, 0.4, 0.6).add(SILVER, 0.4, 0.6).build(),
+            new AlloyRecipe.Builder(INVAR).add(WROUGHT_IRON, 0.6, 0.7).add(NICKEL, 0.3, 0.4).build(),
+            new AlloyRecipe.Builder(ALUMINUM_BRASS).add(ALUMINUM, 0.65, 0.85).add(COPPER, 0.15, 0.35).build(),
+            new AlloyRecipe.Builder(MANYULLYN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build(),
+            new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.02, 0.18).add(STEEL, 0.72, 0.98).build(),
+            new AlloyRecipe.Builder(NICKEL_SILVER).add(COPPER, 0.50, 0.65).add(ZINC, 0.1, 0.3).add(NICKEL, 0.1, 0.3).build(),
+            new AlloyRecipe.Builder(FERROBORON).add(STEEL, 0.4, 0.6).add(BORON, 0.4, 0.6).build(),
+            new AlloyRecipe.Builder(HSLA_STEEL).add(STEEL, 0.2, 0.4).add(MANGANESE, 0.4, 0.6).build(),
+            new AlloyRecipe.Builder(MAGNESIUM_DIBORIDE).add(BORON, 0.4, 0.6).add(MAGNESIUM, 0.2, 0.4).build(),
+            new AlloyRecipe.Builder(BERYLLIUM_COPPER).add(BERYLLIUM, 0.3, 0.6).add(COPPER, 0.3, 0.6).add(ALUMINUM, 0.1, 0.3).build(),
+            new AlloyRecipe.Builder(ZIRCALOY).add(ZIRCONIUM, 0.72, 0.98).add(TIN, 0.2, 0.4).build(),
+            new AlloyRecipe.Builder(TOUGH).add(FERROBORON, 0.4, 0.6).add(LITHIUM, 0.4, 0.6).build()
+        );
     }
 
-    @SuppressWarnings("ConstantConditions")
-    @SubscribeEvent
-    public static void onRegisterBloomeryRecipeEvent(RegistryEvent.Register<BloomeryRecipe> event)
-    {
-        IForgeRegistry<BloomeryRecipe> registry = event.getRegistry();
-        if (ConfigTNFCMod.RECIPES.aluminum)
-        {
-            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(ALUMINUM), FuelManager::isItemBloomeryFuel));
-        }
-        if (ConfigTNFCMod.RECIPES.ardite)
-        {
-            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(ARDITE), FuelManager::isItemBloomeryFuel));
-        }
-        if (ConfigTNFCMod.RECIPES.cobalt)
-        {
-            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(COBALT), FuelManager::isItemBloomeryFuel));
-        }
-    }
-
-    @SubscribeEvent
-    public static void onRegisterBlastFurnaceRecipeEvent(RegistryEvent.Register<BlastFurnaceRecipe> event)
-    {
-        IForgeRegistry<BlastFurnaceRecipe> registry = event.getRegistry();
-        if (ConfigTNFCMod.RECIPES.osmium)
-        {
-            Metal osmium = TFCRegistries.METALS.getValue(OSMIUM);
-            if (osmium != null)
-            {
-                registry.register(new BlastFurnaceRecipe(osmium, osmium, IIngredient.of("dustFlux")));
-            }
-        }
-        if (ConfigTNFCMod.RECIPES.titanium)
-        {
-            Metal titanium = TFCRegistries.METALS.getValue(TITANIUM);
-            if (titanium != null)
-            {
-                registry.register(new BlastFurnaceRecipe(titanium, titanium, IIngredient.of("dustFlux")));
-            }
-        }
-        if (ConfigTNFCMod.RECIPES.tungsten)
-        {
-            Metal tungsten = TFCRegistries.METALS.getValue(TUNGSTEN);
-            if (tungsten != null)
-            {
-                registry.register(new BlastFurnaceRecipe(tungsten, tungsten, IIngredient.of("dustFlux")));
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public static void onRegisterAnvilRecipeEvent(RegistryEvent.Register<AnvilRecipe> event)
-    {
-        IForgeRegistry<AnvilRecipe> r = event.getRegistry();
-        TFCRecipes.registerAnvil(event);
-        if (ConfigTNFCMod.RECIPES.aluminum)
-        {
-            Metal aluminium = TFCRegistries.METALS.getValue(ALUMINUM);
-            if (aluminium != null)
-            {
-                r.register(new AnvilRecipe(new ResourceLocation(MODID, "aluminium_bloom"), x ->
-                {
-                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
-                    {
-                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
-                        if (cap instanceof IForgeableMeasurableMetal)
-                        {
-                            return ((IForgeableMeasurableMetal) cap).getMetal() == aluminium && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
-                        }
-                    }
-                    return false;
-                }, new ItemStack(ItemMetal.get(aluminium, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
-            }
-        }
-        if (ConfigTNFCMod.RECIPES.ardite)
-        {
-            Metal ardite = TFCRegistries.METALS.getValue(ARDITE);
-            if (ardite != null)
-            {
-                r.register(new AnvilRecipe(new ResourceLocation(MODID, "ardite_bloom"), x ->
-                {
-                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
-                    {
-                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
-                        if (cap instanceof IForgeableMeasurableMetal)
-                        {
-                            return ((IForgeableMeasurableMetal) cap).getMetal() == ardite && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
-                        }
-                    }
-                    return false;
-                }, new ItemStack(ItemMetal.get(ardite, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
-            }
-        }
-        if (ConfigTNFCMod.RECIPES.cobalt)
-        {
-            Metal cobalt = TFCRegistries.METALS.getValue(COBALT);
-            if (cobalt != null)
-            {
-                r.register(new AnvilRecipe(new ResourceLocation(MODID, "cobalt_bloom"), x ->
-                {
-                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
-                    {
-                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
-                        if (cap instanceof IForgeableMeasurableMetal)
-                        {
-                            return ((IForgeableMeasurableMetal) cap).getMetal() == cobalt && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
-                        }
-                    }
-                    return false;
-                }, new ItemStack(ItemMetal.get(cobalt, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
-            }
-        }
-    }
 
     @SubscribeEvent
     public static void onRegisterQuernRecipeEvent(RegistryEvent.Register<QuernRecipe> event)

@@ -10,8 +10,10 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.registries.IForgeRegistry;
 
 import gigaherz.guidebook.client.BookRegistryEvent;
+import net.dries007.tfc.api.recipes.anvil.AnvilRecipe;
 import net.dries007.tfc.api.recipes.knapping.KnappingRecipe;
 import tnfcmod.objects.items.TNFCItems;
 import tnfcmod.recipes.OreDicEntries;
@@ -99,5 +101,12 @@ public final class RegistryHandler
 //        ResourceLocation soundID = new ResourceLocation(MOD_ID, "item.flaskbreak");
 //        event.getRegistry().register((new SoundEvent(soundID)).setRegistryName(soundID));
     }
+
+    @SubscribeEvent
+    public static void onRegisterAnvilRecipeEvent(RegistryEvent.Register<AnvilRecipe> event)
+    {
+        TFCRecipes.registerAnvil(event);
+    }
+
 
 }
