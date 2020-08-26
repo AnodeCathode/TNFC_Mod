@@ -195,8 +195,6 @@ public final class RegisterOres
             modRegistry.remove(new ResourceLocation(MOD_ID, "borax"));
             r.register(new QuernRecipe(IIngredient.of("gemBorax"), new ItemStack(ItemMetal.get(boron, Metal.ItemType.DUST), 4)).setRegistryName("boron_dust"));
         }
-
-        
     }
 
 }
