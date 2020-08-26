@@ -196,7 +196,7 @@ public final class RegisterOres
             r.register(new QuernRecipe(IIngredient.of("gemBorax"), new ItemStack(ItemMetal.get(boron, Metal.ItemType.DUST), 4)).setRegistryName("boron_dust"));
         }
 
-        r.register(new QuernRecipe(IIngredient.of("gemFluorite"), new ItemStack(ItemPowder.get(Powder.FLUX), 6)).setRegistryName("fluorite_flux"));
+        
     }
 
 }
