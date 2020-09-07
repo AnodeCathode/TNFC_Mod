@@ -225,15 +225,18 @@ public class IERecipes
             ItemStack outputDoubleIngot = new ItemStack(ItemMetal.get(metal, Metal.ItemType.DOUBLE_INGOT), 1);
             ItemStack outputSheet = new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHEET), 1);
             ItemStack outputDoubleSheet = new ItemStack(ItemMetal.get(metal, Metal.ItemType.DOUBLE_SHEET), 1);
-
+            ItemStack emptyReturn = new ItemStack(Items.AIR, 1);
             Ingredient ingredientIngot = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT)));
             Ingredient ingredientDoubleIngot = Ingredient.fromStacks(outputDoubleIngot);
             Ingredient ingredientSheet = Ingredient.fromStacks(outputSheet);
             Ingredient ingredientDoubleSheet = Ingredient.fromStacks(outputDoubleSheet);
-            MetalPressRecipe.addRecipe(outputDoubleIngot, ingredientIngot, new ItemStack(TNFCItems.mold_doubleingot), 2400).setInputSize(2);
-            MetalPressRecipe.addRecipe(outputSheet, ingredientIngot, new ItemStack(TNFCItems.mold_sheet), 2400).setInputSize(2);
-            MetalPressRecipe.addRecipe(outputSheet, ingredientDoubleIngot, new ItemStack(TNFCItems.mold_sheet), 2400);
-            MetalPressRecipe.addRecipe(outputDoubleSheet, ingredientSheet, new ItemStack(TNFCItems.mold_sheet), 2400).setInputSize(2);
+            if (!outputDoubleIngot.isEmpty()){
+                MetalPressRecipe.addRecipe(outputDoubleIngot, ingredientIngot, new ItemStack(TNFCItems.mold_doubleingot), 2400).setInputSize(2);
+                MetalPressRecipe.addRecipe(outputSheet, ingredientIngot, new ItemStack(TNFCItems.mold_sheet), 2400).setInputSize(2);
+                MetalPressRecipe.addRecipe(outputSheet, ingredientDoubleIngot, new ItemStack(TNFCItems.mold_sheet), 2400);
+                MetalPressRecipe.addRecipe(outputDoubleSheet, ingredientSheet, new ItemStack(TNFCItems.mold_sheet), 2400).setInputSize(2);
+            }
+
             if (metal.isToolMetal())
             {
                 Ingredient ingredientKnives = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.KNIFE_BLADE)));
@@ -249,14 +252,16 @@ public class IERecipes
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.JAVELIN_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_javelin), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.KNIFE_BLADE), 1), ingredientIngot, new ItemStack(TNFCItems.mold_knife), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.LAMP), 1), ingredientIngot, new ItemStack(TNFCItems.mold_lamp), 2400);
-                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.MACE_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_mace), 2400);
+                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.MACE_HEAD), 1), ingredientDoubleIngot, new ItemStack(TNFCItems.mold_mace), 2400);
+                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.MACE_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_mace), 2400).setInputSize(2);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.PICK_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_pick), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.PROPICK_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_propick), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SAW_BLADE), 1), ingredientIngot, new ItemStack(TNFCItems.mold_saw), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SCYTHE_BLADE), 1), ingredientIngot, new ItemStack(TNFCItems.mold_scythe), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHEARS), 1), ingredientKnives, new ItemStack(TNFCItems.mold_shears), 2400).setInputSize(2);
-                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHOVEL_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_shovel), 2400).setInputSize(2);
+                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHOVEL_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_shovel), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SWORD_BLADE), 1), ingredientDoubleIngot, new ItemStack(TNFCItems.mold_sword), 2400);
+                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SWORD_BLADE), 1), ingredientIngot, new ItemStack(TNFCItems.mold_sword), 2400).setInputSize(2);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.TUYERE), 1), ingredientDoubleSheet, new ItemStack(TNFCItems.mold_tuyere), 2400).setInputSize(2);
                 if (metal == Metal.RED_STEEL | metal == Metal.BLUE_STEEL)
                 {
