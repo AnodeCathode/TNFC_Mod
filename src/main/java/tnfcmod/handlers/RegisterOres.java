@@ -134,18 +134,19 @@ public final class RegisterOres
         //  Ores which *could* be melted directly if it's temperature is met
         r.register(new Ore(STIBNITE, ANTIMONY, true));
         r.register(new Ore(SPODUMENE, LITHIUM, true));
+        r.register(new Ore(COBALTITE, COBALT, true));
+        r.register(new Ore(NATIVE_ARDITE, ARDITE, true));
+        r.register(new Ore(NATIVE_OSMIUM, OSMIUM, true));
+        r.register(new Ore(ZIRCON, ZIRCONIUM, true));
 
         // Ores which we add tools, armor and textures inside TFC realm, but can't be melted directly (processing by other mods required)
-        r.register(new Ore(NATIVE_ARDITE, ARDITE, false));
-        r.register(new Ore(NATIVE_OSMIUM, OSMIUM, false));
         r.register(new Ore(BAUXITE, ALUMINUM, false));
         r.register(new Ore(WOLFRAMITE, TUNGSTEN, false));
-        r.register(new Ore(COBALTITE, COBALT, false));
         r.register(new Ore(RUTILE, TITANIUM, false));
         r.register(new Ore(THORIANITE, THORIUM, false));
         r.register(new Ore(PYROLUSITE, MANGANESE, false));
         r.register(new Ore(MAGNESITE, MAGNESIUM, false));
-        r.register(new Ore(ZIRCON, ZIRCONIUM, false));
+
 
         // Ores without metals registered inside TFC
         r.register(new Ore(CHROMITE));
