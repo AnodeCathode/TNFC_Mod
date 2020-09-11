@@ -1,5 +1,6 @@
 package tnfcmod.recipes;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
@@ -29,7 +30,8 @@ public class TFCRecipes
     public static void registerKnapping(RegistryEvent.Register<KnappingRecipe> event) {
         event.getRegistry().registerAll(
             new KnappingRecipeSimple(KnappingType.LEATHER, true, new ItemStack(TNFCItems.backpackpiece),
-                "XX XX", " XXX ", "XXXXX", " XXX ", "XX XX").setRegistryName("backpackpiece")
+                "XX XX", " XXX ", "XXXXX", " XXX ", "XX XX").setRegistryName("backpackpiece"),
+            new KnappingRecipeSimple(KnappingType.LEATHER, true, new ItemStack(TNFCItems.leather_tunic), "X   X", "XXXXX", "XXXXX", "XXXXX", "XXXXX").setRegistryName("leather_tunic")
        );
    }
 

@@ -1,10 +1,12 @@
 package tnfcmod.objects.items;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import static net.dries007.tfc.objects.CreativeTabsTFC.CT_MISC;
+import static net.minecraft.inventory.EntityEquipmentSlot.CHEST;
 
 public class TNFCItems
 {
@@ -54,6 +56,10 @@ public class TNFCItems
     public static ItemSteelAmalgam hc_blue_steel_amalgam = new ItemSteelAmalgam("hc_blue_steel_amalgam").setCreativeTab(CT_MISC);
     public static ItemSteelAmalgam hc_red_steel_amalgam = new ItemSteelAmalgam("hc_red_steel_amalgam").setCreativeTab(CT_MISC);
 
+    // Register the leather chestplate as a baubles item
+    public static LeatherTunicBauble leather_tunic = new LeatherTunicBauble("leather_tunic", ItemArmor.ArmorMaterial.LEATHER, 0, CHEST);
+
+
      public static void register(IForgeRegistry<Item> registry) {
 
         registry.register(redstone_gemmed_latch);
@@ -93,6 +99,7 @@ public class TNFCItems
         registry.register(hc_blue_steel_amalgam);
         registry.register(hc_red_steel_amalgam);
         registry.register(woodpulp);
+        registry.register(leather_tunic);
     }
 
     public static void registerModels(Event event)
@@ -134,6 +141,7 @@ public class TNFCItems
         hc_blue_steel_amalgam.registerItemModel();
         hc_red_steel_amalgam.registerItemModel();
         woodpulp.registerItemModel();
+        leather_tunic.registerItemModel();
 
 
     }
