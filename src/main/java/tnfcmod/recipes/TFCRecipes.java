@@ -31,7 +31,7 @@ public class TFCRecipes
         event.getRegistry().registerAll(
             new KnappingRecipeSimple(KnappingType.LEATHER, true, new ItemStack(TNFCItems.backpackpiece),
                 "XX XX", " XXX ", "XXXXX", " XXX ", "XX XX").setRegistryName("backpackpiece"),
-            new KnappingRecipeSimple(KnappingType.LEATHER, true, new ItemStack(TNFCItems.leather_tunic), "X   X", "XXXXX", "XXXXX", "XXXXX", "XXXXX").setRegistryName("leather_tunic")
+            new KnappingRecipeSimple(KnappingType.LEATHER, true, new ItemStack(TNFCItems.leather_tunic), "X X X", "XXXXX", "XXXXX", "XXXXX", "XXXXX").setRegistryName("leather_tunic")
        );
    }
 
