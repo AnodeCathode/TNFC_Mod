@@ -1,13 +1,16 @@
 package com.lumintorious.ambiental.modifiers;
 
 
+import baubles.api.BaublesApi;
 import com.lumintorious.ambiental.capability.TemperatureSystem;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.objects.items.ItemArmorTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetalArmor;
+import tnfcmod.objects.items.TNFCItems;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
@@ -27,58 +30,57 @@ public class EquipmentModifier extends BaseModifier{
 		for(ItemStack stack : armor) {
 			if(stack.getItem() instanceof ItemArmor) {
 			    if(stack.getItem() instanceof ItemArmorTFC) {
-			        //got tfc armour. So now we can do stuff :) Check for metal, check for tier
-                    float divisor = 0f;
-                    float potency = 0f;
+
+                    float modifier = 2f;
+                    float potency = -0.1f;
 
                     ItemMetalArmor metalarmor = (ItemMetalArmor) stack.getItem();
                     Metal metal = metalarmor.getMetal(stack);
 
-                    switch(metal.getTier()){
-
-                        case TIER_I:
-                            divisor = 6f;
-                            potency = 0f;
-                        case TIER_II:
-                            divisor = 5f;
+                    switch(metal.toString()){
+                        case "copper":
+                            modifier = 2f;
+                            potency = -0.1f;
+                            break;
+                        case "bronze":
+                            modifier = 2.5f;
+                            potency = 0.2f;
+                            break;
+                        case "black_bronze":
+                            modifier = -2.5f;
+                            potency = 0.2f;
+                            break;
+                        case "bismuth_bronze":
+                            modifier = 2.5f;
+                            potency = 0.2f;
+                            break;
+                        case "wrought_iron":
+                            modifier = 3.0f;
+                            potency = 0.3f;
+                            break;
+                        case "steel":
+                            modifier = 4.0f;
+                            potency = 0.4f;
+                            break;
+                        case "black_steel":
+                            modifier = -5.0f;
                             potency = 0.5f;
-                        case TIER_III:
-                            divisor = 4f;
-                            potency = 0.6f;
-                        case TIER_IV:
-                            divisor = 3.0f;
-                            potency = 0.7f;
-                        case TIER_V:
-                            divisor = 2.0f;
-                            potency = 0.8f;
-                        case TIER_VI:
-                            divisor = 1.0f;
-                            potency = 0.9f;
+                            break;
+                        case "blue_steel":
+                            modifier = 7.0f;
+                            potency = 0.5f;
+                            break;
+                        case "red_steel":
+                            modifier = -7.0f;
+                            potency = 0.5f;
+                            break;
 
                     }
                     if (metalarmor.armorType != EntityEquipmentSlot.HEAD)
                     {
-                        float envTemp = EnvironmentalModifier.getEnvironmentTemperature(player);
-                        float targetTemp = TemperatureSystem.getTemperatureFor(player).savedTarget;
-                        float playerTemp = TemperatureSystem.getTemperatureFor(player).bodyTemperature;
-
-                        if(playerTemp > TemperatureSystem.AVERAGE)
-                        {
-                            divisor = - divisor;
-                            potency = - potency;
-                            float diff = Math.max(playerTemp - TemperatureSystem.AVERAGE, 0.1f) / divisor;
-                            modifiers.add(new EquipmentModifier("armor" + metal.getTier().toString(), diff, potency));
-                        }
-                        else if(playerTemp <  TemperatureSystem.AVERAGE)
-                        {
-                            float diff = Math.max(playerTemp + TemperatureSystem.AVERAGE, 0.1f) / divisor;
-                            modifiers.add(new EquipmentModifier("armor" + metal.getTier().toString(), diff, potency));
-                        }
-
+                        modifiers.add(new EquipmentModifier("armor_" + metal.toString(), modifier, potency));
                     }
-
-
-                }
+			    }
 				ItemArmor thing = (ItemArmor)stack.getItem();
 				if(thing.armorType == EntityEquipmentSlot.HEAD) {
 					if(player.world.getLight(player.getPosition()) > 14) {
@@ -89,6 +91,16 @@ public class EquipmentModifier extends BaseModifier{
 					}
 				}
 			}
+
+			if(BaublesApi.isBaubleEquipped(player, TNFCItems.leather_tunic) > 0){
+                if (modifiers.contains("charcoal_forge")){
+                    BaseModifier mod = modifiers.get("charcoal_forge");
+                    float temp = mod.getChange();
+                    float potency = mod.getPotency();
+                    temp = temp / 3;
+                    mod.setChange(temp);
+                }
+            }
 		}
 	}
 
