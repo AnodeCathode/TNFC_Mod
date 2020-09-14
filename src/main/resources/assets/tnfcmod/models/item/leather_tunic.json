@@ -1,7 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "tnfcmod:items/leather_tunic",
-        "layer1": "tnfcmod:items/leather_tunic_overlay"
+        "layer0": "tnfcmod:items/leather_tunic"
     }
 }

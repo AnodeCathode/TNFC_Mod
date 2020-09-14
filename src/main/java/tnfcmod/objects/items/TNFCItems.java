@@ -57,7 +57,7 @@ public class TNFCItems
     public static ItemSteelAmalgam hc_red_steel_amalgam = new ItemSteelAmalgam("hc_red_steel_amalgam").setCreativeTab(CT_MISC);
 
     // Register the leather chestplate as a baubles item
-    public static LeatherTunicBauble leather_tunic = new LeatherTunicBauble("leather_tunic", ItemArmor.ArmorMaterial.LEATHER, 0, CHEST);
+    public static LeatherTunicBauble leather_tunic = new LeatherTunicBauble("leather_tunic");
 
 
      public static void register(IForgeRegistry<Item> registry) {
