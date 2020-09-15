@@ -1,5 +1,8 @@
 package com.lumintorious.ambiental.modifiers;
 
+import blusunrize.immersiveengineering.common.blocks.metal.TileEntityArcFurnace;
+import blusunrize.immersiveengineering.common.blocks.metal.TileEntityElectricLantern;
+import blusunrize.immersiveengineering.common.blocks.metal.TileEntityFurnaceHeater;
 import com.lumintorious.ambiental.capability.TemperatureSystem;
 
 import net.dries007.tfc.objects.te.TEBloomery;
@@ -8,6 +11,7 @@ import net.dries007.tfc.objects.te.TEFirePit;
 import net.dries007.tfc.objects.te.TELamp;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityFurnace;
 
 public class TileEntityModifier extends BlockModifier{
 	
@@ -47,8 +51,49 @@ public class TileEntityModifier extends BlockModifier{
 			return null;
 		}
 	}
-	
-	public static TileEntityModifier handleBloomery(TileEntity tile, EntityPlayer player) {
+
+	public static TileEntityModifier handleFurnace(TileEntity tile, EntityPlayer player) {
+        if(tile instanceof TileEntityFurnace)
+        {
+            TileEntityFurnace furnace = (TileEntityFurnace) tile;
+            if (furnace.isBurning())
+            {
+                float change = 10f;
+                float potency = 5f;
+                return new TileEntityModifier("furnace", change, potency);
+            }
+        }
+        return null;
+    }
+
+    public static TileEntityModifier handleExternalHeater(TileEntity tile, EntityPlayer player) {
+        if(tile instanceof TileEntityFurnaceHeater) {
+            TileEntityFurnaceHeater heater = (TileEntityFurnaceHeater)tile;
+            if (heater.active)
+            {
+                float change = 20f;
+                float potency = 8f;
+                return new TileEntityModifier("externalheater", change, potency);
+            }
+        }
+        return null;
+    }
+
+    public static TileEntityModifier handleElecLantern(TileEntity tile, EntityPlayer player) {
+        if(tile instanceof TileEntityElectricLantern) {
+            TileEntityElectricLantern latern = (TileEntityElectricLantern) tile;
+            if (latern.active)
+            {
+                float change = 2f;
+                float potency = 0.2f;
+                return new TileEntityModifier("electriclight", change, potency);
+            }
+        }
+        return null;
+    }
+
+
+    public static TileEntityModifier handleBloomery(TileEntity tile, EntityPlayer player) {
 		if(tile instanceof TEBloomery) {
 			TEBloomery bloomery = (TEBloomery)tile;
 			float change = bloomery.getRemainingTicks() > 0 ? 4f : 0f;

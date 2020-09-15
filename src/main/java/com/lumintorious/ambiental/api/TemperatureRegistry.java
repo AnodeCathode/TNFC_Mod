@@ -40,10 +40,14 @@ public class TemperatureRegistry<Type extends ITemperatureProvider> implements I
 	public static final TemperatureRegistry<IEnvironmentalTemperatureProvider> ENVIRONMENT = new TemperatureRegistry<>();
 
 	static {
+
 		TILE_ENTITIES.register(TileEntityModifier::handleCharcoalForge);
 		TILE_ENTITIES.register(TileEntityModifier::handleFirePit);
 		TILE_ENTITIES.register(TileEntityModifier::handleBloomery);
 		TILE_ENTITIES.register(TileEntityModifier::handleLamps);
+        TILE_ENTITIES.register(TileEntityModifier::handleFurnace);
+        TILE_ENTITIES.register(TileEntityModifier::handleExternalHeater);
+        TILE_ENTITIES.register(TileEntityModifier::handleElecLantern);
 	
 		BLOCKS.register((state, pos, player) -> state.getBlock() == Blocks.FIRE ? new BlockModifier("fire", 3f, 3f) : null);
 		BLOCKS.register((state, pos, player) -> state.getBlock() == Blocks.LAVA ? new BlockModifier("lava", 3f, 3f) : null);
