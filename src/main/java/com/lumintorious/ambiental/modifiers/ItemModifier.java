@@ -28,6 +28,7 @@ public class ItemModifier extends BaseModifier{
 	public static void computeModifiers(EntityPlayer player, ModifierStorage modifiers) {
 	    int strawCount = 0;
 	    int iceCount = 0;
+	    int snowCount = 0;
 		for(ItemStack stack : player.inventoryContainer.inventoryItemStacks) {
 			if(stack.hasCapability(CapabilityItemHeat.ITEM_HEAT_CAPABILITY, null)) {
 				IItemHeat heat = stack.getCapability(CapabilityItemHeat.ITEM_HEAT_CAPABILITY, null);
@@ -50,12 +51,18 @@ public class ItemModifier extends BaseModifier{
             if (stack.getItem() == Item.getItemFromBlock(BlocksTFC.SEA_ICE) || stack.getItem() == Item.getItemFromBlock(Blocks.ICE)){
                 iceCount += 1;
             }
+            if (stack.getItem() == Item.getItemFromBlock(Blocks.SNOW)){
+                snowCount += 1;
+            }
 		}
         if (strawCount > 0 ){
             modifiers.add(new ItemModifier("straw_insulation", strawCount * 0.4f, 0.2f));
         }
         if (iceCount > 0){
             modifiers.add(new ItemModifier("iceblocks", iceCount* -0.4f, 0.2f));
+        }
+        if (snowCount > 0){
+            modifiers.add(new ItemModifier("snowblocks", snowCount* -0.2f, 0.2f));
         }
 
 	}
