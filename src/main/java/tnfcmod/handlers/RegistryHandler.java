@@ -14,6 +14,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import gigaherz.guidebook.client.BookRegistryEvent;
 import net.dries007.tfc.api.recipes.anvil.AnvilRecipe;
+import net.dries007.tfc.api.recipes.barrel.BarrelRecipe;
 import net.dries007.tfc.api.recipes.knapping.KnappingRecipe;
 import tnfcmod.objects.items.TNFCItems;
 import tnfcmod.recipes.OreDicEntries;
@@ -106,6 +107,12 @@ public final class RegistryHandler
     public static void onRegisterAnvilRecipeEvent(RegistryEvent.Register<AnvilRecipe> event)
     {
         TFCRecipes.registerAnvil(event);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterBarrelRecipeEvent(RegistryEvent.Register<BarrelRecipe> event)
+    {
+        TFCRecipes.registerBarrel(event);
     }
 
 
