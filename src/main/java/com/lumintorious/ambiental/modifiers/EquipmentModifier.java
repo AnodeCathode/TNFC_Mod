@@ -29,59 +29,61 @@ public class EquipmentModifier extends BaseModifier{
 		Iterable<ItemStack> armor = player.getArmorInventoryList();
 		for(ItemStack stack : armor) {
 			if(stack.getItem() instanceof ItemArmor) {
-			    if(stack.getItem() instanceof ItemArmorTFC) {
-
-                    float modifier = 2f;
-                    float potency = -0.1f;
-
+                ItemArmor thing = (ItemArmor)stack.getItem();
+                float modifier = 2f;
+                float potency = -0.1f;
+                if(stack.getItem() instanceof ItemMetalArmor) {
                     ItemMetalArmor metalarmor = (ItemMetalArmor) stack.getItem();
                     Metal metal = metalarmor.getMetal(stack);
+                    if (metal != null){
+                        switch(metal.toString()){
+                            case "copper":
+                                modifier = 2f;
+                                potency = -0.1f;
+                                break;
+                            case "bronze":
+                                modifier = 2.5f;
+                                potency = 0.2f;
+                                break;
+                            case "black_bronze":
+                                modifier = -2.5f;
+                                potency = 0.2f;
+                                break;
+                            case "bismuth_bronze":
+                                modifier = 2.5f;
+                                potency = 0.2f;
+                                break;
+                            case "wrought_iron":
+                                modifier = 3.0f;
+                                potency = 0.3f;
+                                break;
+                            case "steel":
+                                modifier = 4.0f;
+                                potency = 0.4f;
+                                break;
+                            case "black_steel":
+                                modifier = -5.0f;
+                                potency = 0.5f;
+                                break;
+                            case "blue_steel":
+                                modifier = 7.0f;
+                                potency = 0.5f;
+                                break;
+                            case "red_steel":
+                                modifier = -7.0f;
+                                potency = 0.5f;
+                                break;
 
-                    switch(metal.toString()){
-                        case "copper":
-                            modifier = 2f;
-                            potency = -0.1f;
-                            break;
-                        case "bronze":
-                            modifier = 2.5f;
-                            potency = 0.2f;
-                            break;
-                        case "black_bronze":
-                            modifier = -2.5f;
-                            potency = 0.2f;
-                            break;
-                        case "bismuth_bronze":
-                            modifier = 2.5f;
-                            potency = 0.2f;
-                            break;
-                        case "wrought_iron":
-                            modifier = 3.0f;
-                            potency = 0.3f;
-                            break;
-                        case "steel":
-                            modifier = 4.0f;
-                            potency = 0.4f;
-                            break;
-                        case "black_steel":
-                            modifier = -5.0f;
-                            potency = 0.5f;
-                            break;
-                        case "blue_steel":
-                            modifier = 7.0f;
-                            potency = 0.5f;
-                            break;
-                        case "red_steel":
-                            modifier = -7.0f;
-                            potency = 0.5f;
-                            break;
-
+                        }
                     }
+
                     if (metalarmor.armorType != EntityEquipmentSlot.HEAD)
                     {
                         modifiers.add(new EquipmentModifier("armor_" + metal.toString(), modifier, potency));
                     }
-			    }
-				ItemArmor thing = (ItemArmor)stack.getItem();
+			    } else if(thing.armorType != EntityEquipmentSlot.HEAD) {
+                    modifiers.add(new EquipmentModifier("armor_other", modifier, potency));
+                }
 				if(thing.armorType == EntityEquipmentSlot.HEAD) {
 					if(player.world.getLight(player.getPosition()) > 14) {
                         float envTemp = EnvironmentalModifier.getEnvironmentTemperature(player);
