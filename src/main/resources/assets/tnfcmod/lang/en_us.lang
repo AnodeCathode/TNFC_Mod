@@ -37,3 +37,5 @@ item.tnfcmod.redstone_gemmed_latch.name=Red Gemmed Latch
 item.tnfcmod.woodpulp.name=Wood Pulp
 entity.tnfcmod:plowcarttfc.name=Plow
 item.tnfcmod:plowcarttfc.name=Plow
+tfcambiental.hypothermia= froze to death.
+tfcambiental.hyperthermia= died of heatstroke.
