@@ -1,15 +1,20 @@
 package tnfcmod.handlers;
 
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.DimensionType;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import net.dries007.tfc.TerraFirmaCraft;
 import net.dries007.tfc.api.capability.food.FoodData;
 import net.dries007.tfc.api.capability.food.FoodStatsTFC;
 import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
@@ -19,7 +24,7 @@ import static tnfcmod.tnfcmod.MODID;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = MODID)
-public class PlayerEventHandler
+public class GeneralEventHandler
 {
     public static final FoodData DEATHRATTLE = new FoodData(-2, -10.0F, 0.0F, -1.0F, -1.0F, -1.0F, -1.0F, -1.0F, 0.0F);
 
@@ -57,6 +62,19 @@ public class PlayerEventHandler
     @SubscribeEvent
     public static void onPlayerRespawn(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent event) {
 
+    }
+
+    @SubscribeEvent
+    public static void onEntityJoinWorldEvent(EntityJoinWorldEvent event)
+    {
+        Entity entity = event.getEntity();
+        if (event.getWorld().getWorldType() == TerraFirmaCraft.getWorldType() && event.getWorld().provider.getDimensionType() == DimensionType.OVERWORLD)
+        {
+            if (entity instanceof EntityChicken)
+            {
+                event.setCanceled(true);
+            }
+        }
     }
 
 }
