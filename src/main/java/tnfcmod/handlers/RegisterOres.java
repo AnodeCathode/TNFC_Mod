@@ -146,6 +146,7 @@ public final class RegisterOres
         r.register(new Ore(NATIVE_ARDITE, ARDITE, false));
         r.register(new Ore(NATIVE_OSMIUM, OSMIUM, false));
         r.register(new Ore(ZIRCON, ZIRCONIUM, false));
+        r.register(new Ore(BERYL, BERYLLIUM, false));
 
         // Ores without metals registered inside TFC
         r.register(new Ore(CHROMITE));
