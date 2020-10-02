@@ -64,12 +64,13 @@ public class GeneralEventHandler
 
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority=EventPriority.HIGHEST)
     public static void onEntityJoinWorldEvent(EntityJoinWorldEvent event)
     {
-        Entity entity = event.getEntity();
+
         if (event.getWorld().getWorldType() == TerraFirmaCraft.getWorldType() && event.getWorld().provider.getDimensionType() == DimensionType.OVERWORLD)
         {
+            Entity entity = event.getEntity();
             if (entity instanceof EntityChicken)
             {
                 event.setCanceled(true);

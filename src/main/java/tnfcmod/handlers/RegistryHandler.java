@@ -9,8 +9,8 @@ import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Optional;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.registries.IForgeRegistry;
 
 import gigaherz.guidebook.client.BookRegistryEvent;
 import net.dries007.tfc.api.recipes.anvil.AnvilRecipe;
@@ -21,8 +21,8 @@ import tnfcmod.recipes.OreDicEntries;
 import tnfcmod.recipes.TFCRecipes;
 import tnfcmod.tnfcmod;
 
+import static tnfcmod.recipes.BwMRecipes.registerBwMSawRecipes;
 import static tnfcmod.recipes.IERecipes.*;
-import static tnfcmod.recipes.BwMRecipes.*;
 import static tnfcmod.recipes.LootTablesTNFC.modifyLootTableLoad;
 import static tnfcmod.recipes.TFCRecipes.registerOrePileRecipes;
 import static tnfcmod.recipes.VanillaRecipes.registerVanillaRecipes;
@@ -75,7 +75,7 @@ public final class RegistryHandler
     /**
      * Register Loot Tables
      */
-    @SubscribeEvent
+    @SubscribeEvent(priority= EventPriority.LOWEST)
     public static void onLootTableLoad(LootTableLoadEvent event)
     {
            modifyLootTableLoad(event);
@@ -93,8 +93,6 @@ public final class RegistryHandler
         registerArcFurnaceRecipes();
         registerOrePileRecipes();
         registerBwMSawRecipes();
-
-
 
     }
     @SubscribeEvent
