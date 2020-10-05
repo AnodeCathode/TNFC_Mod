@@ -29,7 +29,7 @@ public class VanillaRecipes
       //ADD Shapeless Hammer and Ingot recipes to make delicious metal nuggets.
         for (Metal metal : TFCRegistries.METALS.getValuesCollection())
         {
-            //Basic ingot to dust
+            //Basic ingot to nugget
             if (NUGGET.hasType(metal))
             {
                 addShapelessDmgOreRecipe(new ItemStack(ItemMetal.get(metal, NUGGET), 9), 1,new ItemStack(ItemMetal.get(metal, Metal.ItemType.INGOT),1), "hammer");
