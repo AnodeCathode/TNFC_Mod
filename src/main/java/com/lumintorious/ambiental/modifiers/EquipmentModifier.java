@@ -99,7 +99,7 @@ public class EquipmentModifier extends BaseModifier{
                     BaseModifier mod = modifiers.get("charcoal_forge");
                     float temp = mod.getChange();
                     float potency = mod.getPotency();
-                    temp = temp / 3;
+                    temp = temp / 2;
                     mod.setChange(temp);
                 }
             }

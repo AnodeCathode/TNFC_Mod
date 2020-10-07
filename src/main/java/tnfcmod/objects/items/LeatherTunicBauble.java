@@ -46,7 +46,7 @@ public class LeatherTunicBauble extends ItemTFC implements IBauble
     @Override
     public void onWornTick(ItemStack itemstack, EntityLivingBase player)
     {
-        player.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 5, 125, false, false));
+        player.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 5, 2, false, false));
     }
 
     @Override
