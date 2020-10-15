@@ -1,5 +1,6 @@
 package tnfcmod.objects.items;
 
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.fml.common.eventhandler.Event;
@@ -17,6 +18,7 @@ public class TNFCItems
     public static ItemBackpackPiece backpackpiece = new ItemBackpackPiece("backpackpiece").setCreativeTab(CT_MISC);
     public static ItemBackpackFrame backpackframe = new ItemBackpackFrame("backpackframe").setCreativeTab(CT_MISC);
     public static ItemWoodPulp woodpulp = new ItemWoodPulp("woodpulp").setCreativeTab(CT_MISC);
+    public static StrawHat straw_hat = new StrawHat("straw_hat");
 
     //IE Molds
     public static IEMetalPressMold mold_axe = new IEMetalPressMold("mold_axe").setCreativeTab(CT_MISC);
@@ -100,6 +102,7 @@ public class TNFCItems
         registry.register(hc_red_steel_amalgam);
         registry.register(woodpulp);
         registry.register(leather_tunic);
+        registry.register(straw_hat);
     }
 
     public static void registerModels(Event event)
@@ -142,6 +145,7 @@ public class TNFCItems
         hc_red_steel_amalgam.registerItemModel();
         woodpulp.registerItemModel();
         leather_tunic.registerItemModel();
+        straw_hat.registerItemModel();
 
 
     }

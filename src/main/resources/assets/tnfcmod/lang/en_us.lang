@@ -35,6 +35,7 @@ item.tnfcmod.hc_red_steel_amalgam.name=Red Steel Amalgam
 item.tnfcmod.copper_fishhook.name=Copper Fishhook
 item.tnfcmod.redstone_gemmed_latch.name=Red Gemmed Latch
 item.tnfcmod.woodpulp.name=Wood Pulp
+item.tnfcmod.straw_hat.name=Nifty Straw Hat
 entity.tnfcmod:plowcarttfc.name=Plow
 item.tnfcmod:plowcarttfc.name=Plow
 tfcambiental.hypothermia= froze to death.

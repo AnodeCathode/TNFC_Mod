@@ -2,7 +2,10 @@ package tnfcmod;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.capabilities.CapabilityManager;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -32,7 +35,15 @@ public class tnfcmod {
 
     private final Logger log = LogManager.getLogger(MODID);
 
-
+    public static final ItemArmor.ArmorMaterial strawArmorMaterial = EnumHelper.addArmorMaterial(
+        "STRAW"
+        , MODID + ":straw_hat"
+        , 1
+        , new int[]{0, 0, 0, 0}
+        , 0
+        , SoundEvents.ITEM_ARMOR_EQUIP_LEATHER
+        , 0.0F
+    );
 
     @Mod.Instance
     private static tnfcmod INSTANCE = null;

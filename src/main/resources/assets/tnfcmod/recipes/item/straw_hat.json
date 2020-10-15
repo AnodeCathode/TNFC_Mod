@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    "s s",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "type": "forge:ore_dict",
+      "ore": "wicker"
+    },
+    "s": {
+      "type": "forge:ore_dict",
+      "ore": "straw"
+    }
+  },
+  "result": {
+    "item": "tnfcmod:straw_hat"
+  }
+}
