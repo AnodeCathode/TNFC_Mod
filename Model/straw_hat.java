@@ -12,7 +12,7 @@ public class custom_model extends ModelBase {
 
 		bb_main = new ModelRenderer(this);
 		bb_main.setRotationPoint(0.0F, 24.0F, 0.0F);
-		bb_main.cubeList.add(new ModelBox(bb_main, 10, 12, -2.0F, -4.0F, -2.0F, 4, 4, 4, 0.0F, false));
+		bb_main.cubeList.add(new ModelBox(bb_main, 40, 9, -2.0F, -4.0F, -2.0F, 4, 4, 4, 0.0F, false));
 		bb_main.cubeList.add(new ModelBox(bb_main, 14, 34, -5.0F, -1.0F, -5.0F, 10, 1, 10, 0.0F, false));
 	}
 
