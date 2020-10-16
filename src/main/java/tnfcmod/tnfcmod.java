@@ -38,7 +38,7 @@ public class tnfcmod {
     public static final ItemArmor.ArmorMaterial strawArmorMaterial = EnumHelper.addArmorMaterial(
         "STRAW"
         , MODID + ":straw_hat"
-        , 1
+        , 5
         , new int[]{0, 0, 0, 0}
         , 0
         , SoundEvents.ITEM_ARMOR_EQUIP_LEATHER
