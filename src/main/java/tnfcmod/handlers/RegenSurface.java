@@ -76,23 +76,23 @@ public class RegenSurface
                 {
                     //tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
                     // Check server performance here and cancel if no tick budget? Also check if the chunk is loaded?
-                    if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
-                    {
-                        //Nuke any rocks and sticks in chunk.
-                        removeAllPlacedItems(event.world, pos);
-                        List<Tree> trees = chunkDataTFC.getValidTrees();
-                        double rockModifier = ConfigTFC.General.WORLD_REGEN.sticksRocksModifier;
-                        ROCKS_GEN.setFactor(rockModifier);
-                        ROCKS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
-
-                        final float density = chunkDataTFC.getFloraDensity();
-                        int stickDensity = 3 + (int) (4f * density + 1.5f * trees.size() * rockModifier);
-                        if (trees.isEmpty())
-                        {
-                            stickDensity = 1 + (int) (1.5f * density * rockModifier);
-                        }
-                        WorldGenTrees.generateLooseSticks(RANDOM, pos.x, pos.z, event.world, stickDensity);
-                    }
+//                    if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
+//                    {
+//                        //Nuke any rocks and sticks in chunk.
+//                        removeAllPlacedItems(event.world, pos);
+//                        List<Tree> trees = chunkDataTFC.getValidTrees();
+//                        double rockModifier = ConfigTFC.General.WORLD_REGEN.sticksRocksModifier;
+//                        ROCKS_GEN.setFactor(rockModifier);
+//                        ROCKS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
+//
+//                        final float density = chunkDataTFC.getFloraDensity();
+//                        int stickDensity = 3 + (int) (4f * density + 1.5f * trees.size() * rockModifier);
+//                        if (trees.isEmpty())
+//                        {
+//                            stickDensity = 1 + (int) (1.5f * density * rockModifier);
+//                        }
+//                        WorldGenTrees.generateLooseSticks(RANDOM, pos.x, pos.z, event.world, stickDensity);
+//                    }
 
                     //Nuke any crops in the chunk.
                     //removeAllCrops(event.world, pos);
