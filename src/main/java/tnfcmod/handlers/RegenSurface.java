@@ -7,6 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderServer;
 import net.minecraft.world.gen.IChunkGenerator;
@@ -65,6 +66,7 @@ public class RegenSurface
             if (!POSITIONS.isEmpty())
             {
                 ChunkPos pos = POSITIONS.remove(0);
+                Chunk chunk = event.world.getChunk(pos.x, pos.z);
                 ChunkDataTFC chunkDataTFC = ChunkDataTFC.get(event.world, pos.getBlock(0, 0, 0));
                 IChunkProvider chunkProvider = event.world.getChunkProvider();
                 IChunkGenerator chunkGenerator = ((ChunkProviderServer) chunkProvider).chunkGenerator;
@@ -74,26 +76,26 @@ public class RegenSurface
                 {
                     //tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
                     // Check server performance here and cancel if no tick budget? Also check if the chunk is loaded?
-                    if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
-                    {
-                        //Nuke any rocks and sticks in chunk.
-                        removeAllPlacedItems(event.world, pos);
-                        List<Tree> trees = chunkDataTFC.getValidTrees();
-                        double rockModifier = ConfigTFC.General.WORLD_REGEN.sticksRocksModifier;
-                        ROCKS_GEN.setFactor(rockModifier);
-                        ROCKS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
-
-                        final float density = chunkDataTFC.getFloraDensity();
-                        int stickDensity = 3 + (int) (4f * density + 1.5f * trees.size() * rockModifier);
-                        if (trees.isEmpty())
-                        {
-                            stickDensity = 1 + (int) (1.5f * density * rockModifier);
-                        }
-                        WorldGenTrees.generateLooseSticks(RANDOM, pos.x, pos.z, event.world, stickDensity);
-                    }
+//                    if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
+//                    {
+//                        //Nuke any rocks and sticks in chunk.
+//                        removeAllPlacedItems(event.world, pos);
+//                        List<Tree> trees = chunkDataTFC.getValidTrees();
+//                        double rockModifier = ConfigTFC.General.WORLD_REGEN.sticksRocksModifier;
+//                        ROCKS_GEN.setFactor(rockModifier);
+//                        ROCKS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
+//
+//                        final float density = chunkDataTFC.getFloraDensity();
+//                        int stickDensity = 3 + (int) (4f * density + 1.5f * trees.size() * rockModifier);
+//                        if (trees.isEmpty())
+//                        {
+//                            stickDensity = 1 + (int) (1.5f * density * rockModifier);
+//                        }
+//                        WorldGenTrees.generateLooseSticks(RANDOM, pos.x, pos.z, event.world, stickDensity);
+//                    }
 
                     //Nuke any crops in the chunk.
-                    removeAllCrops(event.world, pos);
+                    //removeAllCrops(event.world, pos);
                     if (RANDOM.nextInt(5) == 0) //With dead crops not being removed, we're going to just add some odds.
                                                   // These odds are stacked with the overall crop gen odds.
                     {
@@ -104,11 +106,10 @@ public class RegenSurface
                     //Should nuke any bushes in the chunk. For now we just leave the bushes alone.
                     //BUSH_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
                     chunkDataTFC.resetLastUpdateYear();
-
                 //Need to add an else in here. If it doesn't meet any of the criteria, then mark it updated and move on. Need some nuance work on that though.
 
                 }
-
+                ((ChunkProviderServer) chunkProvider).queueUnload(chunk);
             }
         }
 
