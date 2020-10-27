@@ -32,7 +32,6 @@ import blusunrize.immersiveengineering.api.tool.BelljarHandler;
 import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.blocks.plant.BlockIECrop;
 import net.dries007.tfc.api.capability.food.CapabilityFood;
-import net.dries007.tfc.api.recipes.AlloyRecipe;
 import net.dries007.tfc.api.recipes.quern.QuernRecipe;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.ICrop;
@@ -50,7 +49,6 @@ import net.dries007.tfc.objects.items.ItemPowder;
 import net.dries007.tfc.objects.items.ItemSeedsTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
 import net.dries007.tfc.objects.items.metal.ItemOreTFC;
-import net.dries007.tfc.util.Alloy;
 import net.dries007.tfc.util.agriculture.Crop;
 import tnfcmod.objects.items.TNFCItems;
 
@@ -449,8 +447,32 @@ public class IERecipes
             //Basic dust to ingot. Need to skip iron dust.
                 if (DUST.hasType(metal))
                 {
-                    Ingredient input = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.DUST)));
-                    ArcFurnaceRecipe.addRecipe(output, input, ItemStack.EMPTY, 200, 512).setSpecialRecipeType("Ores");
+                    // need to see if it's got an oredict and use that instead of the actual item.
+
+                    ItemStack dust = new ItemStack(ItemMetal.get(metal, Metal.ItemType.DUST));
+                    int intOreDics[] = OreDictionary.getOreIDs(dust);
+                    String oreDicString = "";
+                    for (int num : intOreDics)
+                    {
+                        String dictName = OreDictionary.getOreName(num);
+                        if (!dictName.toLowerCase().contains("anybronze"))
+                        {
+                            oreDicString = dictName;
+                            break;
+                        }
+                    }
+
+                    if (OreDictionary.doesOreNameExist(oreDicString))
+                    {
+                        ArcFurnaceRecipe.addRecipe(output, oreDicString, ItemStack.EMPTY, 200, 512).setSpecialRecipeType("Ores");
+                    }
+                    else
+                    {
+                        Ingredient input = Ingredient.fromStacks(dust);
+                        ArcFurnaceRecipe.addRecipe(output, input, ItemStack.EMPTY, 200, 512).setSpecialRecipeType("Ores");
+                    }
+
+
                 }
 
             }
