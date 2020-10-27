@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
@@ -14,11 +15,15 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import net.dries007.tfc.ConfigTFC;
+import net.dries007.tfc.Constants;
 import net.dries007.tfc.TerraFirmaCraft;
 import net.dries007.tfc.api.capability.food.FoodData;
 import net.dries007.tfc.api.capability.food.FoodStatsTFC;
 import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
 import net.dries007.tfc.api.capability.food.NutritionStats;
+import net.dries007.tfc.util.MonsterEquipment;
+import tnfcmod.util.MonsterGear;
 
 import static tnfcmod.tnfcmod.MODID;
 
@@ -67,6 +72,19 @@ public class GeneralEventHandler
     @SubscribeEvent(priority=EventPriority.HIGHEST)
     public static void onEntityJoinWorldEvent(EntityJoinWorldEvent event)
     {
+
+        if  (event.getWorld().provider.getDimensionType() != DimensionType.OVERWORLD){
+            Entity entity = event.getEntity();
+            // Set equipment to some mobs
+            MonsterGear equipment = MonsterGear.get(entity);
+            if (equipment != null)
+            {
+                for (EntityEquipmentSlot slot : EntityEquipmentSlot.values())
+                {
+                    equipment.getEquipment(slot, Constants.RNG).ifPresent(stack -> entity.setItemStackToSlot(slot, stack));
+                }
+            }
+        }
 
     }
 
