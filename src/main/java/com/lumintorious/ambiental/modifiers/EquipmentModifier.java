@@ -1,18 +1,16 @@
 package com.lumintorious.ambiental.modifiers;
 
 
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
+
 import baubles.api.BaublesApi;
 import com.lumintorious.ambiental.capability.TemperatureSystem;
 import net.dries007.tfc.api.types.Metal;
-import net.dries007.tfc.objects.items.ItemArmorTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetalArmor;
 import tnfcmod.objects.items.TNFCItems;
-
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemStack;
 
 
 public class EquipmentModifier extends BaseModifier{
@@ -27,8 +25,10 @@ public class EquipmentModifier extends BaseModifier{
 	
 	public static void getModifiers(EntityPlayer player, ModifierStorage modifiers) {
 		Iterable<ItemStack> armor = player.getArmorInventoryList();
-		for(ItemStack stack : armor) {
-			if(stack.getItem() instanceof ItemArmor) {
+        for (ItemStack stack : armor)
+        {
+            if (stack.getItem() instanceof ItemArmor)
+            {
                 ItemArmor thing = (ItemArmor)stack.getItem();
                 float modifier = 2f;
                 float potency = -0.1f;
@@ -81,29 +81,42 @@ public class EquipmentModifier extends BaseModifier{
                     {
                         modifiers.add(new EquipmentModifier("armor_" + metal.toString(), modifier, potency));
                     }
-			    } else if(thing.armorType != EntityEquipmentSlot.HEAD) {
+                }
+                else if (thing.armorType != EntityEquipmentSlot.HEAD)
+                {
                     modifiers.add(new EquipmentModifier("armor_other", modifier, potency));
                 }
-				if(thing.armorType == EntityEquipmentSlot.HEAD) {
-					if(player.world.getLight(player.getPosition()) > 14) {
+                if (thing.armorType == EntityEquipmentSlot.HEAD)
+                {
+                    if (player.world.getLight(player.getPosition()) > 14)
+                    {
                         float envTemp = EnvironmentalModifier.getEnvironmentTemperature(player);
-						if(envTemp > TemperatureSystem.AVERAGE + 3) {
-							modifiers.add(new EquipmentModifier("helmet", - envTemp / 3, -0.4f));
-						}
-					}
-				}
-			}
-
-			if(BaublesApi.isBaubleEquipped(player, TNFCItems.leather_tunic) > 0){
-                if (modifiers.contains("charcoal_forge")){
-                    BaseModifier mod = modifiers.get("charcoal_forge");
-                    float temp = mod.getChange();
-                    float potency = mod.getPotency();
-                    temp = temp / 2;
-                    mod.setChange(temp);
+                        if (envTemp > TemperatureSystem.AVERAGE + 3)
+                        {
+                            modifiers.add(new EquipmentModifier("helmet", -envTemp / 3, -0.4f));
+                        }
+                    }
                 }
             }
-		}
+            if (stack.hasTagCompound())
+            {
+                if (stack.getTagCompound().hasKey("ncRadiationResistance"))
+                {
+                    modifiers.add(new EquipmentModifier("radshielding", 2, 0.1f));
+                }
+            }
+        }
+
+        if (BaublesApi.isBaubleEquipped(player, TNFCItems.leather_tunic) > 0)
+        {
+            if (modifiers.contains("charcoal_forge"))
+            {
+                BaseModifier mod = modifiers.get("charcoal_forge");
+                float temp = mod.getChange();
+                temp = temp / 2;
+                mod.setChange(temp);
+            }
+        }
 	}
 
 }
