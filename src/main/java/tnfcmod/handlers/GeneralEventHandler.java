@@ -69,6 +69,20 @@ public class GeneralEventHandler
         }
 
     }
+    @SubscribeEvent
+    public static void onCropsGrow(BlockEvent.CropGrowEvent event)
+    {
+        ChunkDataTFC data = ChunkDataTFC.get(event.getWorld(), event.getPos());
+        if (data.isSpawnProtected())
+        {
+            if (event.getState().getBlock() instanceof BlockShortGrassTFC || event.getState().getBlock() instanceof BlockTallGrassTFC)
+            {
+                event.setResult(Event.Result.DENY);
+                event.getWorld().setBlockToAir(event.getPos());
+            }
+        }
+    }
+
 
     @SubscribeEvent(priority=EventPriority.HIGHEST)
     public static void onEntityJoinWorldEvent(EntityJoinWorldEvent event)
