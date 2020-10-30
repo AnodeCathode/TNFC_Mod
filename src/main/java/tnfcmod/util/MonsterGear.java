@@ -6,10 +6,7 @@ package tnfcmod.util;
  * and if this is done, may as well merge into entity resistance data
  */
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableMap;
@@ -17,6 +14,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
@@ -31,10 +29,11 @@ public class MonsterGear
 {
     private static final Map<String, MonsterGear> ENTRIES = new HashMap<>();
 
+    public static  WeightedCollection<EnumRarity> SHADERBAGS = new WeightedCollection<>();
+    public static WeightedCollection<Metal> metals = new WeightedCollection<>();
     static
     {
         //Would need to rework this to make it all work.
-        WeightedCollection<Metal> metals = new WeightedCollection<>();
         metals.add(0.8, Metal.BRONZE);
         metals.add(0.7, Metal.BLACK_BRONZE);
         metals.add(0.7, Metal.BISMUTH_BRONZE);
@@ -78,6 +77,11 @@ public class MonsterGear
         // Do some of these even spawn? I think not...
         ENTRIES.put("minecraft:zombie_pigman", equipment);
         ENTRIES.put("minecraft:zombie", equipment);
+
+        SHADERBAGS.add(0.7, EnumRarity.COMMON);
+        SHADERBAGS.add(0.3, EnumRarity.UNCOMMON);
+        SHADERBAGS.add(0.2, EnumRarity.RARE);
+        SHADERBAGS.add(0.2, EnumRarity.EPIC);
     }
 
     @Nullable

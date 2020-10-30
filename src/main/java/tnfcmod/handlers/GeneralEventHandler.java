@@ -1,14 +1,13 @@
 package tnfcmod.handlers;
 
 
-import java.util.Map;
-import java.util.Optional;
 import java.util.Random;
 
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -16,28 +15,32 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.NonNullList;
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
 
+import blusunrize.immersiveengineering.common.IEContent;
+import blusunrize.immersiveengineering.common.util.ItemNBTHelper;
 import net.dries007.tfc.Constants;
 import net.dries007.tfc.api.capability.food.FoodData;
 import net.dries007.tfc.api.capability.food.FoodStatsTFC;
 import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
 import net.dries007.tfc.api.capability.food.NutritionStats;
+import net.dries007.tfc.api.types.IPredator;
 import net.dries007.tfc.objects.blocks.plants.BlockShortGrassTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockTallGrassTFC;
-import net.dries007.tfc.objects.entity.animal.EntityBlackBearTFC;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import tnfcmod.util.MonsterGear;
 
 import static tnfcmod.tnfcmod.MODID;
+import static tnfcmod.util.MonsterGear.SHADERBAGS;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = MODID)
@@ -45,6 +48,7 @@ public class GeneralEventHandler
 {
     private static final Random RANDOM = new Random();
     public static final FoodData DEATHRATTLE = new FoodData(-2, -10.0F, 0.0F, -1.0F, -1.0F, -1.0F, -1.0F, -1.0F, 0.0F);
+
 
     @SubscribeEvent
     public static void onPlayerClone(PlayerEvent.Clone event)
@@ -112,42 +116,80 @@ public class GeneralEventHandler
                 {
                     for (EntityEquipmentSlot slot : EntityEquipmentSlot.values())
                     {
-                        Optional<ItemStack> gear = equipment.getEquipment(slot, Constants.RNG);
-                        if (gear.isPresent())
-                        {
-                            ItemStack actual = gear.get();
-                            if (RANDOM.nextInt(5) == 0)
-                            {
-                                EnchantmentHelper.addRandomEnchantment(Constants.RNG, actual, RANDOM.nextInt(2) + 1, false);
-                            }
-
-                            entity.setItemStackToSlot(slot, actual);
-                        }
+                        equipment.getEquipment(slot, Constants.RNG).ifPresent(stack -> entity.setItemStackToSlot(slot, stack));
                     }
                 }
             }
         }
-
     }
+
+
 
     @SubscribeEvent
     public static void onEntityLivingDeath(LivingDeathEvent event)
     {
         Entity entity = event.getEntity();
-        if(entity instanceof EntityPlayer)
+        if (entity instanceof EntityLivingBase)
         {
-            // You play with the bear, you sometimes get your head ripped clean off!
-            if(event.getSource().getTrueSource() instanceof EntityBlackBearTFC && event.getEntityLiving().world.rand. nextDouble() * 100 <= 50)
+            if (entity instanceof EntityPlayer)
             {
-                ItemStack playerHead = new ItemStack(Items.SKULL, 1, 3);
-                playerHead.setTagCompound(new NBTTagCompound());
-                EntityPlayer player = (EntityPlayer)entity;
-                String playerName = player.getDisplayNameString();
-                playerHead.getTagCompound().setString("SkullOwner", playerName);
-                event.getEntityLiving().entityDropItem(playerHead, 0.5F);
+                // You play with the bear, you sometimes get your head ripped clean off!
+                if (RANDOM.nextDouble() * 100 <= 10 && event.getSource().getTrueSource() instanceof IPredator)
+                {
+                    ItemStack playerHead = new ItemStack(Items.SKULL, 1, 3);
+                    playerHead.setTagCompound(new NBTTagCompound());
+                    EntityPlayer player = (EntityPlayer) entity;
+                    String playerName = player.getDisplayNameString();
+                    playerHead.getTagCompound().setString("SkullOwner", playerName);
+                    entity.entityDropItem(playerHead, 0.5F);
+                    if (RANDOM.nextDouble() * 100 <= 5)
+                    {
+                        // Soulforged steel nugget
+                        NonNullList<ItemStack> nugget = OreDictionary.getOres("nuggetSoulforgedSteel");
+                        entity.entityDropItem(nugget.get(0), 0.5F);
+                    }
+                }
+            }
 
+            // All mobs at Y<100 chance drop of IE shader grab-bags and soul forged nuggets
+            if (RANDOM.nextDouble() * 100 <= 10 && entity.posY < 100 && entity.isCreatureType(EnumCreatureType.MONSTER, false) && event.getSource().getTrueSource() instanceof EntityPlayer)
+            {
+                ItemStack shaderbag = new ItemStack(IEContent.itemShaderBag);
+                ItemNBTHelper.setString(shaderbag, "rarity", SHADERBAGS.getRandomEntry(Constants.RNG).toString());
+                entity.entityDropItem(shaderbag, 0.5F);
+                if (RANDOM.nextDouble() * 100 <= 35)
+                {
+                    // Soulforged steel nugget
+                    NonNullList<ItemStack> nugget = OreDictionary.getOres("nuggetSoulforgedSteel");
+                    entity.entityDropItem(nugget.get(0), 0.5F);
+                }
+            }
+            //Spider drops redstone at low Y levels
+            if (entity.posY < 100 && entity instanceof EntitySpider & event.getSource().getTrueSource() instanceof EntityPlayer && RANDOM.nextDouble() * 100 <= 25)
+            {
+                entity.entityDropItem(new ItemStack(Items.REDSTONE, 1), 0.5F);
+                //Add a random chance for 2?
+                if (RANDOM.nextDouble() * 100 <= 25)
+                {
+                    entity.entityDropItem(new ItemStack(Items.REDSTONE, 1), 0.5F);
+                }
+            }
+            //Creeper drops glowstone at low Y levels
+            if (entity.posY < 100 && entity instanceof EntityCreeper & event.getSource().getTrueSource() instanceof EntityPlayer && RANDOM.nextDouble() * 100 <= 25)
+            {
+                entity.entityDropItem(new ItemStack(Items.GLOWSTONE_DUST, 1), 0.5F);
+            }
+
+            //Soulforged steel nugget - only on other planets
+            if (entity.world.provider.getDimension() > 0 && RANDOM.nextDouble() * 100 <= 50 && entity.posY < 100 && entity.isCreatureType(EnumCreatureType.MONSTER, false) && event.getSource().getTrueSource() instanceof EntityPlayer)
+            {
+                // Soulforged steel nugget
+                NonNullList<ItemStack> nugget = OreDictionary.getOres("nuggetSoulforgedSteel");
+                entity.entityDropItem(nugget.get(0), 0.5F);
             }
         }
+
+
     }
 
 
