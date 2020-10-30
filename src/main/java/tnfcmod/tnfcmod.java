@@ -2,6 +2,9 @@ package tnfcmod;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import net.minecraft.entity.monster.EntityWitch;
+import net.minecraft.entity.passive.EntityRabbit;
+import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.capabilities.CapabilityManager;
@@ -15,11 +18,14 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 
+import net.dries007.tfc.objects.entity.animal.*;
 import tnfcmod.handlers.GuiHandler;
 
 import tnfcmod.proxy.CommonProxy;
 import tnfcmod.recipes.LootTablesTNFC;
 import tnfcmod.util.VeinLoader;
+
+import static betterwithmods.module.hardcore.creatures.HCEnchanting.addScrollDrop;
 
 
 @SuppressWarnings("WeakerAccess")
@@ -70,6 +76,16 @@ public class tnfcmod {
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
+        addScrollDrop(EntityPolarBearTFC.class, Enchantments.FROST_WALKER);
+        addScrollDrop(EntityGrizzlyBearTFC.class, Enchantments.KNOCKBACK);
+        addScrollDrop(EntityBlackBearTFC.class, Enchantments.LOOTING);
+        addScrollDrop(EntityDireWolfTFC.class, Enchantments.POWER);
+        addScrollDrop(EntitySaberToothTFC.class, Enchantments.FORTUNE);
+        addScrollDrop(EntityPantherTFC.class, Enchantments.EFFICIENCY);
+        addScrollDrop(EntityLionTFC.class, Enchantments.UNBREAKING);
+        addScrollDrop(EntityCougarTFC.class, Enchantments.SHARPNESS);
+        addScrollDrop(EntityRabbitTFC.class, Enchantments.LUCK_OF_THE_SEA);
+
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
         LootTablesTNFC.init();
     }
