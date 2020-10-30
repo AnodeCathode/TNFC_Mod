@@ -33,33 +33,43 @@ public class MonsterGear
 
     static
     {
+        //Would need to rework this to make it all work.
+        WeightedCollection<Metal> metals = new WeightedCollection<>();
+        metals.add(0.8, Metal.BRONZE);
+        metals.add(0.7, Metal.BLACK_BRONZE);
+        metals.add(0.7, Metal.BISMUTH_BRONZE);
+        metals.add(0.3, Metal.WROUGHT_IRON);
+        metals.add(0.2, Metal.STEEL);
+        metals.add(0.1, Metal.BLUE_STEEL);
+        metals.add(0.1, Metal.RED_STEEL);
+
         WeightedCollection<ItemStack> weapons = new WeightedCollection<>();
         weapons.add(0.4, ItemStack.EMPTY);
-        weapons.add(0.2, new ItemStack(ItemMetal.get(Metal.WROUGHT_IRON, Metal.ItemType.MACE)));
-        weapons.add(0.2, new ItemStack(ItemMetalSword.get(Metal.WROUGHT_IRON)));
-        weapons.add(0.2, new ItemStack(ItemMetal.get(Metal.WROUGHT_IRON, Metal.ItemType.KNIFE)));
+        weapons.add(0.2, new ItemStack(ItemMetal.get(Metal.BRONZE, Metal.ItemType.MACE)));
+        weapons.add(0.2, new ItemStack(ItemMetalSword.get(Metal.BRONZE)));
+        weapons.add(0.2, new ItemStack(ItemMetal.get(Metal.BRONZE, Metal.ItemType.KNIFE)));
 
         WeightedCollection<ItemStack> rangedWeapons = new WeightedCollection<>();
         rangedWeapons.add(0.7, new ItemStack(Items.BOW));
-        rangedWeapons.add(0.1, new ItemStack(ItemMetal.get(Metal.WROUGHT_IRON, Metal.ItemType.MACE)));
-        rangedWeapons.add(0.1, new ItemStack(ItemMetalSword.get(Metal.WROUGHT_IRON)));
-        rangedWeapons.add(0.2, new ItemStack(ItemMetal.get(Metal.WROUGHT_IRON, Metal.ItemType.KNIFE)));
+        rangedWeapons.add(0.1, new ItemStack(ItemMetal.get(Metal.BRONZE, Metal.ItemType.MACE)));
+        rangedWeapons.add(0.1, new ItemStack(ItemMetalSword.get(Metal.BRONZE)));
+        rangedWeapons.add(0.2, new ItemStack(ItemMetal.get(Metal.BRONZE, Metal.ItemType.KNIFE)));
 
         WeightedCollection<ItemStack> helmets = new WeightedCollection<>();
         helmets.add(0.8, ItemStack.EMPTY);
-        helmets.add(0.2, new ItemStack(ItemMetalArmor.get(Metal.WROUGHT_IRON, Metal.ItemType.HELMET)));
+        helmets.add(0.2, new ItemStack(ItemMetalArmor.get(Metal.BRONZE, Metal.ItemType.HELMET)));
 
         WeightedCollection<ItemStack> chestplates = new WeightedCollection<>();
         chestplates.add(0.8, ItemStack.EMPTY);
-        chestplates.add(0.2, new ItemStack(ItemMetalArmor.get(Metal.WROUGHT_IRON, Metal.ItemType.CHESTPLATE)));
+        chestplates.add(0.2, new ItemStack(ItemMetalArmor.get(Metal.BRONZE, Metal.ItemType.CHESTPLATE)));
 
         WeightedCollection<ItemStack> leggings = new WeightedCollection<>();
         leggings.add(0.8, ItemStack.EMPTY);
-        leggings.add(0.2, new ItemStack(ItemMetalArmor.get(Metal.WROUGHT_IRON, Metal.ItemType.GREAVES)));
+        leggings.add(0.2, new ItemStack(ItemMetalArmor.get(Metal.BRONZE, Metal.ItemType.GREAVES)));
 
         WeightedCollection<ItemStack> boots = new WeightedCollection<>();
         boots.add(0.8, ItemStack.EMPTY);
-        boots.add(0.2, new ItemStack(ItemMetalArmor.get(Metal.WROUGHT_IRON, Metal.ItemType.BOOTS)));
+        boots.add(0.2, new ItemStack(ItemMetalArmor.get(Metal.BRONZE, Metal.ItemType.BOOTS)));
 
         MonsterGear equipment = new MonsterGear(weapons, helmets, chestplates, leggings, boots);
         MonsterGear rangedEquipment = new MonsterGear(rangedWeapons, helmets, chestplates, leggings, boots);
