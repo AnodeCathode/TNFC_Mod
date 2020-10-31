@@ -17,15 +17,6 @@ public class HeatDamageSource extends DamageSource{
 	}
 	
 	@Override
-	public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn) {
-		if(entityLivingBaseIn.getName() != null) {
-			return new TextComponentString(entityLivingBaseIn.getName() + Util.translate("tfcambiental.hyperthermia"));
-		}else {
-			return null;
-		}
-	}
-	
-	@Override
 	public boolean isDamageAbsolute() {
 		return true;
 	}

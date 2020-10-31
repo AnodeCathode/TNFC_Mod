@@ -15,14 +15,14 @@ public class ColdDamageSource extends DamageSource{
 		super("tfcambiental.cold");
 	}
 	
-	@Override
-	public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn) {
-		if(entityLivingBaseIn.getName() != null) {
-			return new TextComponentString(entityLivingBaseIn.getName() + Util.translate("tfcambiental.hypothermia"));
-		}else {
-			return null;
-		}
-	}
+//	@Override
+//	public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn) {
+//		if(entityLivingBaseIn.getName() != null) {
+//			return new TextComponentString(entityLivingBaseIn.getName() + Util.translate("tfcambiental.hypothermia"));
+//		}else {
+//			return null;
+//		}
+//	}
 	
 	@Override
 	public boolean isDamageAbsolute() {
