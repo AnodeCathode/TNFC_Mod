@@ -40,3 +40,7 @@ entity.tnfcmod:plowcarttfc.name=Plow
 item.tnfcmod:plowcarttfc.name=Plow
 tfcambiental.hypothermia= froze to death.
 tfcambiental.hyperthermia= died of heatstroke.
+death.attack.tfcambiental.hypothermia= froze to death.
+death.attack.tfcambiental.hypothermia.player= froze to death.
+death.attack.tfcambiental.hyperthermia= died of heatstroke.
+death.attack.tfcambiental.hyperthermia.player= died of heatstroke.
