@@ -1,0 +1,35 @@
+tile.tubestuff.storage.0.name=Silver Block
+tile.tubestuff.storage.1.name=Tin Block
+tile.tubestuff.storage.2.name=Copper Block
+tile.tubestuff.storage.3.name=Nikolite Block
+tile.tubestuff.storage.4.name=Coal Brick Block
+tile.tubestuff.storage.5.name=Powdered Redstone Block
+tile.tubestuff.storage.6.name=Blue Alloy Block
+tile.tubestuff.storage.7.name=Red Alloy Block
+tile.tubestuff.storage.8.name=Brass Block
+tile.tubestuff.storage.9.name=Charcoal Block
+
+tile.tubestuff.buffer.name=Buffer
+tile.tubestuff.act2.name=Automatic Crafting Table MkII
+tile.tubestuff.bhc.name=Black Hole Chest
+tile.tubestuff.incinerator.name=Incinerator
+tile.tubestuff.duplicator.name=Duplicator
+tile.tubestuff.retrievulator.name=Retrievulator
+tile.tubestuff.breaker.name=Block Breaker
+tile.tubestuff.liquidincinerator.name=Liquid Disposer
+tile.tubestuff.liquidduplicator.name=Liquid Duplicator
+tile.tubestuff.playerdetector.name=Online Player Detector
+tile.tubestuff.mct2.name=Manual Crafting Table MkII
+tile.tubestuff.deployer.name=Deployer
+
+item.tubestuff.jammer.name=Retriever Jammer
+
+gui.tubestuff.act2.button.clear=C
+gui.tubestuff.act2.button.oredict=OD
+gui.tubestuff.act2.button.stackOn=64
+gui.tubestuff.act2.button.stackOff=1
+
+gui.tubestuff.bhc.page=Page %1$d of %2$d
+
+tubestuff.duplicator.openFail=Only ops can open this GUI.
+tubestuff.duplicator.placeFail=Only ops can place duplicators.
