@@ -1,0 +1,274 @@
+59.0.3:
+* Fixed interaction of deployers with redstone. They now work like dispensers.
+* Fixed deployers being able to open glitched GUIs of some modded blocks in singleplayer.
+
+59.0.2:
+* Fixed crashes when using block breaker with certain other mods installed. 
+
+59.0.1:
+* Fixed black hole chests dropping their contents when broken.
+
+59.0.0:
+* Updated to 1.7.10.
+* Online player detectors use UUIDs instead of player names. Existing ones must be broken and replaced.
+* 1.7.10 seems to have broken the previous rendering fixes. You are recommended to turn off the fancy BHC rendering (or don't use BHCs, or set graphics to fast which disables it automatically).
+
+58.1.3:
+* Fixed the blackness in black hole chests being visible behind other things.
+* Fixed the circles inside black hole chests sometimes rendering weirdly.
+* Possibly made black hole chest rendering slightly faster on some GPUs.
+
+58.1.2:
+* Fixed ACT2's losing their recipe when unloaded.
+
+58.1.1:
+* Fixed the mod not loading.
+
+58.1.0:
+* Updated to 1.7.2.
+* Removed compatibility with RedPower 2.
+* Removed retrievulator code.
+
+57.1.3:
+* Fixed deployers and ACT2s not visually updating when rotated.
+
+57.1.2:
+* Fixed crash when using deployers in SMP.
+* Removed "[RP2 Machine/Logic/BC Energy/Transport/Factory] doesn't seem to be installed" messages at startup
+
+57.1.1:
+* Wrenches and stone hoes can rotate deployers, same as ACT2s.
+
+57.1.0:
+* Added deployers!
+* Block breakers can output into chests or BuildCraft pipes on the back side.
+* Fixed block breakers not dropping XP.
+* Block breakers can output Liquid XP to tanks below, if Liquid XP is installed. (Pipes will not work as they won't connect) 
+* Removed retrievulators from creative mode.
+
+57.0.2:
+* Workaround for a Buildcraft bug which caused liquid duplicators and liquid disposers to not connect to pipes.
+* Fixed JonReed's crash.
+
+57.0.1:
+* If a block breaker crashes when rendering an item, it will stop trying to render the item, instead of crashing the client. (Not tested)
+
+57.0.0:
+* Updated to Minecraft 1.6.4.
+
+56.0.3:
+* Fixed buffer not working with Buildcraft.
+* Requires Immibis Core 56.0.5.
+
+56.0.2:
+* Fixed crash when draining from a liquid duplicator whose liquid has not been set.
+* Black hole chests have more "stars".
+
+56.0.1:
+* Re-added NEI plugin.
+
+56.0.0:
+* Updated to Minecraft 1.6.2.
+* Changed coal blocks to coal brick blocks. Made by crafting coal blocks with stone brick. Can be uncrafted into coal blocks.
+* Now fully translatable.
+* Removed NEI integration because NEI isn't updated yet.
+
+55.0.5:
+* Fixed not being able to extract items from the bottom of an ACT2.
+* Added Feronzed's retrievulator texture.
+* Changed retrievulator recipe to match the texture now.
+
+55.0.4:
+* Fixed a dupe bug.
+
+55.0.3:
+* ACT2's will consider damage value 32767 to mean "any damage value"; fixes NEI recipe importing.
+
+55.0.2:
+* Redstone block renamed to Powdered Redstone Block, still available by crafting sand with a vanilla redstone block, and can be uncrafted into a vanilla redstone block.
+
+55.0.1:
+* Block breakers' fake players have a valid position instead of (0,0,0) - might fix Axe of the Stream.
+* Fixed block breaker item rendering.
+* Items dropped by block breakers are less weird.
+
+55.0.0:
+* Updated to Minecraft 1.5.2.
+* Updated ACT2 NEI integration.
+* You can't insert things into the output of an ACT2 any more.
+
+54.0.0:
+* Updated to Minecraft 1.5.1.
+
+53.0.2:
+* Fixed texture files not being included.
+
+53.0.1:
+* Un-disabled NEI integration.
+
+53.0.0:
+* Disabled BC and IC2 integration until they update.
+  - Disabled compatibility with IC2 and BC wrenches.
+  - Disabled retriever jammer recycler blacklist.
+  - Disabled OD button support for IC2 recipes.
+* Added comparator support to buffer, which returns inventory full %, like vanilla inventories.
+* Added comparator support to ACT2, which:
+  - If set to 1, returns a full signal if the output slot is non-empty, otherwise no signal.
+  - If set to 64, returns the percentage full of the output slot.
+* Added comparator support to block breaker, which returns the amount of uses left in the tool.
+* Temporarily disabled NEI integration.
+
+52.3.2:
+* Fixed retrievulator recipe.
+
+52.3.1:
+* Reversed the order the ACT2 searches for items.
+
+52.3.0:
+* Adjusted recipes. The ACT2's RP2-based recipes are significantly cheaper, and its
+  BC-based recipes are slightly more expensive.
+* Fixed the Liquid Disposer being cheaper than intended - a simple copy-paste error.
+* Added Online Player Detector, for servers which require you to turn your machines off when you're offline.
+* Fixed BHC animation - turns out I was relying on a bug in my graphics driver, so have a distorted end portal effect instead.
+* Fixed problems with the BHC's GUI.
+
+52.2.2:
+* Fixed item spawning/duping bug, server owners should update immediately!
+
+52.2.1:
+* Fixed existing ACT2s, but not new ones, flashing golden hoes in all slots - a leftover debugging "feature". 
+
+52.2.0:
+* Added: Any wrench that implements BC's IToolWrench counts as a wrench. This includes crescent hammers and omniwrenches.
+* Added: Forge and IC2 ore-dictionary recipe support to the ACT2. Click the new "OD" button after entering a recipe to enable this.
+  For example, if you set a 3x3 grid of IC2 copper then click the button, the ACT2 will accept any type of copper to make
+  copper blocks. Editing the recipe after pressing the button will undo the effect.
+* Added: NEI integration. Open an ACT2 GUI, then click the ? in an NEI recipe, to import the recipe. 
+* Added: Click the new "C" button in an ACT2 to clear the recipe.
+
+52.1.3:
+* Fixed Minium Stones, RP2 handsaws, etc not being destroyed when used up in the ACT2.
+
+52.1.2:
+* Actually removed console spam listing RedPower items.
+
+52.1.1:
+* Removed console spam listing RedPower items.
+
+52.1.0:
+* Added liquid duplicator and liquid disposer.
+
+52.0.8:
+* Fixed recipes involving the timer where WRCBE is installed and WRCBE receivers have a lower ID than RP2 timers.
+
+52.0.7:
+* Removed retrievulator debug spam.
+
+52.0.6:
+* Fixed RedPower compatibility for crafting recipes and retrievulators.
+
+52.0.5:
+* Properly fixed compatibility with RedPower handsaws.
+
+52.0.4:
+* Recompiled with Java 6.
+* Added workaround for RedPower handsaws.
+
+52.0.3:
+* Fixed packaging again.
+
+52.0.2:
+* Fixed mcmod.info
+
+52.0.1:
+* Fixed packaging.
+
+52.0.0:
+* Updated to 1.4.6.
+* Removed a debug message when clicking the 1/64 button.
+
+51.0.5:
+* Improved auto-assigning.
+
+51.0.4:
+* ACT2's will not crash if a mod tries to put items in an unknown side. Mods that do this will access the entire input buffer, but you
+  should tell them to fix themselves. It will also print a warning to the console the first time it happens.
+
+51.0.3:
+* Gave fake players a username of [TubeStuff]
+
+51.0.2:
+* Fixed buffer output to BuildCraft.
+* Removed the peripheral functions of the buffer. Nobody uses it and turtles can do everything it can do, except for ID detection (without an addon)
+
+51.0.0:
+* Fixed retriever jammer background (it's now transparent)
+* Allowed retrievulators to be rotated with any "wrench".
+* Allowed ACT2's to be rotated with any "wrench".
+* The following items count as wrenches: RP2 screwdriver, RP2 sonic screwdriver, BC wrench, IC wrench, stone hoe.
+* Capitalized "block" in names.
+* Gave silver, tin, copper and brass blocks ore dictionary recipes.
+* Added block breaker.
+* Made blocks non-opaque, necessary for the block breaker. They still count as solid on all sides.
+* Updated to 1.4.5.
+* Ended support for 1.2.5, 1.3.2 and 1.4.2.
+
+50.1.4:
+* Fixed recipes being invisible (but still working) in SMP, unless you played SSP first.
+
+50.1.3:
+* Added 1/64 button to ACT2.
+
+50.1.2:
+* Added charcoal blocks (requested by alfw)
+* Added config option for slow (sand-like) falling of redstone and nikolite blocks. (1.4.2 only)
+  Disabled by default because the sand dupe bug affects this. They have odd textures while falling (vanilla/Forge bug)
+  With this disabled they just teleport to the ground, like before.
+
+50.1.1:
+* Fixed the buffer's interaction with Buildcraft in 1.4.2.
+
+50.1.0:
+* Updated to 1.4.2.
+
+50.0.2:
+* Fixed BuildCraft detection in 1.3.
+
+50.0.1:
+* Fixed storage blocks not appearing in NEI and creative (except for silver)
+
+50.0.0pr2:
+* Fixed crash on startup on non-LAN servers.
+
+50.0.0pr1:
+* Updated to 1.3.2. A LOT of internal changes for 1.2.5 and 1.3.2 compatibility.
+  Fortunately, you don't need to worry about those.
+* Fixed crash when you had redpower.cfg but didn't actually have RedPower.
+
+49.3.0:
+* If any exception is thrown while trying to add the retriever jammer to the
+  IC2 recycler blacklist, it will be ignored. (Possibly caused by having the IC2 API
+  but not IC2 itself)
+* Retrievulators now always stop emitting a redstone signal when there are enough items
+  in the target inventory.
+* All blocks are now non-solid and will not conduct redstone. Retrievulators can be placed
+  adjacent to each other without causing problems.
+* Retriever jammers on the ground will disappear if you walk over them instead of being picked up.
+* Retrievulators will slow down after some time without any items passing through them.
+* Retrievulators can be rotated with screwdrivers (including sonic screwdrivers)
+* Added storage blocks
+* Added config option to disable retrievulators.
+
+49.2.0:
+* Started this changelog
+* Fixed BHC shift-clicking
+* Retrievulator now uses fake slots similar to the Logistics Pipe ones in the T area.
+  Existing items in this area will become fake items and you will not be able to get
+  them back!
+  Right click to add, left click to subtract items. Shift to go faster. If the slot
+  is empty, click on it with any stack to copy that stack.
+
+49.1.3:
+* Made BHC config option available on servers, so you don't have to spawn it.
+* Fixed BHC chunk corruption
+* Fixed retrievulator orientation in SMP
