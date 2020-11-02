@@ -42,3 +42,4 @@ death.attack.tfcambiental.cold=%1$s froze to death.
 death.attack.tfcambiental.cold.player=%1$s froze to death.
 death.attack.tfcambiental.heat= %1$s died of heatstroke.
 death.attack.tfcambiental.heat.player=%1$s died of heatstroke.
+tile.tnfcmod.player_detector.name=Player Detector

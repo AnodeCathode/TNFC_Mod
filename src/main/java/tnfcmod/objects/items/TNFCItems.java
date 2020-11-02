@@ -1,13 +1,13 @@
 package tnfcmod.objects.items;
 
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import tnfcmod.objects.blocks.TNFCBlocks;
+
 import static net.dries007.tfc.objects.CreativeTabsTFC.CT_MISC;
-import static net.minecraft.inventory.EntityEquipmentSlot.CHEST;
 
 public class TNFCItems
 {
@@ -103,6 +103,11 @@ public class TNFCItems
         registry.register(woodpulp);
         registry.register(leather_tunic);
         registry.register(straw_hat);
+
+
+        // ItemBlocks
+        registry.register(new ItemBlock(TNFCBlocks.blockPlayerDetector).setRegistryName(TNFCBlocks.blockPlayerDetector.getRegistryName()));
+
     }
 
     public static void registerModels(Event event)
@@ -146,6 +151,9 @@ public class TNFCItems
         woodpulp.registerItemModel();
         leather_tunic.registerItemModel();
         straw_hat.registerItemModel();
+
+        // Itemblocks
+        TNFCBlocks.blockPlayerDetector.registerItemModel();
 
 
     }

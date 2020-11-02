@@ -1,5 +1,6 @@
 package tnfcmod.handlers;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
@@ -16,6 +17,7 @@ import gigaherz.guidebook.client.BookRegistryEvent;
 import net.dries007.tfc.api.recipes.anvil.AnvilRecipe;
 import net.dries007.tfc.api.recipes.barrel.BarrelRecipe;
 import net.dries007.tfc.api.recipes.knapping.KnappingRecipe;
+import tnfcmod.objects.blocks.TNFCBlocks;
 import tnfcmod.objects.items.TNFCItems;
 import tnfcmod.recipes.OreDicEntries;
 import tnfcmod.recipes.TFCRecipes;
@@ -42,6 +44,15 @@ public final class RegistryHandler
         event.register(new ResourceLocation(MODID + ":xml/tnfcchanges.xml"));
     }
 
+    /**
+     * Listen for the register event for creating custom blocks
+     */
+    @SubscribeEvent
+    public static void addBlocks(RegistryEvent.Register<Block> event)
+    {
+        TNFCBlocks.registerBlocks(event);
+
+    }
 
     /**
      * Listen for the register event for creating custom items
@@ -112,6 +123,7 @@ public final class RegistryHandler
     {
         TFCRecipes.registerBarrel(event);
     }
+
 
 
 }
