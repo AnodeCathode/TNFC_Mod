@@ -3,14 +3,9 @@
   "forge_marker": 1,
   "defaults": {
     "model": "cube_all",
-    "textures": {
-      "all": "tnfcmod:blocks/detector-off"
-    }
-  },
-  "variants": {
-    "normal": {
-      "transform": "forge:default-block"
+    "transform": "forge:default-block"
     },
+  "variants": {
     "enabled": {
       "false": {
         "all": "tnfcmod:blocks/detector-off"
