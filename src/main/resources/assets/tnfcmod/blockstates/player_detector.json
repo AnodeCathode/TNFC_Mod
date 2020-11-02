@@ -1,21 +1,19 @@
-
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "cube_all",
-    "transform": "forge:default-block",
+    "model": "tnfcmod:player_detector",
     "textures": {
-      "all": "tnfcmod:blocks/detector-off"
+      "txt": "tnfcmod:blocks/detector-off"
     }
-    },
+  },
   "variants": {
+    "normal": [{}],
+    "inventory": [{}],
     "enabled": {
-      "false": {
-        "all": "tnfcmod:blocks/detector-off"
-      },
+      "false": {},
       "true": {
         "textures": {
-          "all": "tnfcmod:blocks/detector-on"
+          "txt": "tnfcmod:blocks/detector-on"
         }
       }
     }

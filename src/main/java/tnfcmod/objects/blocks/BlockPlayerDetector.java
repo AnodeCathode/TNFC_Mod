@@ -101,6 +101,6 @@ public class BlockPlayerDetector extends BlockContainer
 
     public void registerItemModel() {
 
-        tnfcmod.proxy.registerNormalItemRenderer(Item.getItemFromBlock(this), 0, name);
+        tnfcmod.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, name);
     }
 }
