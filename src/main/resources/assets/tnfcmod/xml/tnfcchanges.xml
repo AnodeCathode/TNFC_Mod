@@ -17,7 +17,7 @@
       <link ref="changelogs" color="#000066">-&gt;Pack Changelogs</link>
     </section>
   </chapter>
-  <chapter>
+  <chapter id="intro">
     <section>
       <p bold="true">Introduction</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
@@ -96,7 +96,7 @@
       <p space="10"/>
       <p>Temperature in general. Stay hydrated. Stay well fed. Meat and dairy in the cold. Fruit and veg in the heat. Stay in the shade. Build enclosed, lit spaces for comfort.</p>
       <p space="10"/>
-      <p>There are hint rocks for the minerals that don't have surface ores. If you see a rock on the surface out of place for the surrounding rock type, it's a clue to something underneath.</p>
+      <p>There are hint rocks for the minerals that don't have surface ores. If you see a rock on the surface out of place for the surrounding rock type, it's a clue to something underneath. Check the recipe for an ore block. Then click the Vein Info tab. Click the title at the top to display vein information for ALL TNFC ores with their small ore or hint rock</p>
       <p space="10"/>
       <p>You can make a boat with an alternative recipe not requiring a saw, great for early exploration!</p>
       <p space="10"/>
@@ -238,7 +238,7 @@
       <p space="10"/>
       <p><link href="https://old.reddit.com/r/Technode/comments/i6juqe/how_to_find_a_good_tfc_seed/">Original Reddit Article</link></p>
       <p space="10"/>
-      <p>Probably one of the most requested and source of most complaints in early TFC/TNFC (my Modpack that extends TFC) is finding the resources one needs to progress. As this is a much more involved, complicated and possibly time-consuming process, I thought I'd go over my own process for finding what I consider a good seed for our server and share it.</p>
+      <p>Probably one of the most requested and source of most complaints in early TFC/TNFC is finding the resources one needs to progress. As this is a much more involved, complicated and possibly time-consuming process, I thought I'd go over my own process for finding what I consider a good seed for our server and share it.</p>
       <p space="10"/>
       <p>For simplicity sake I'll refer to TFC, the advice I provide will also apply to Technodefirmacraft, wherever there are specific differences applicable only to the modpack, I will try and indicate. Otherwise, the advice is pretty universal to TFC Minecraft. Also note that all my advice is somewhat more specifically tied to the 1.12.2 TFC-NG versions. Although the general advice will of course be applicable to older TFC versions.</p>
       <p space="10"/>
@@ -247,7 +247,7 @@
       <p>First, the background. TFC as a complete Minecraft makeover mod, changes the way the worldgen works to such a large extend that it's helpful to just forget everything you know about choosing a good Minecraft map. The key to progression in TFC is understanding rock types.</p>
       <p space="10"/>
       <p>Rather than Minecraft's 'Stone', in TFC you have 22 different types of rock. These are divided into 4 types of rock (Sedimentary, Metamorphic, Igneous Extrusive and Igneous Intrusive). The rocks are world generated in 3 layers. All 22 rock types can appear at the top layer, but in the 2 deeper layers, only some of them will be used. The ores (copper, bismuth, tin, kaolinite, etc) will only spawn in certain rock types (eg. Cassiterite/Tin is only found Igneous Intrusive rock) or even in one particular rock (eg. Garnierite/Nickel ONLY spawns in Gabbro rock).</p>
-      <p space="10"/><p>In addition, certain rocks perform additional functions. The first anvil you need comes from raw stone, and only from the Igneous Intrusive or Igneous Extrusive rock types, which contain 7 kinds of rock in them in total. The second and probably the most common source of early game frustration, is the flux rocks. Flux is used in the anvil to weld metals together. This is a key progression requirement. Only 4 rocks can be crushed to create flux (Chalk, Dolomite, Limestone and Marble). There is also a mineral that TFC generates (Borax) which can be used as flux, but it ONLY generates in rocksalt. Rocksalt itself is a special rock case, as it is the only source for salt, which can be used to preserve meat.</p>
+      <p space="10"/><p>In addition, certain rocks perform additional functions. The first anvil you need comes from raw stone, and only from the Igneous Intrusive or Igneous Extrusive rock types, which contain 7 kinds of rock in them in total. The second and probably the most common source of early game frustration, is the flux rocks. Flux is used in the anvil to weld metals together. This is a key progression requirement. Only 4 rocks can be crushed to create flux (Chalk, Dolomite, Limestone and Marble). There is also a mineral that TFC generates (Borax) which can be used as flux, but NOT in TNFC. It's used instead for Boron, sorry. Rocksalt itself is a special rock case, as it is the only source for salt, which can be used to preserve meat.</p>
       <p>The other issue that frequently catches players new to TFC out is the size of these rock biomes (I will refer to areas that a rock spawns at the top layer as a biome for convenience. These are not regular Minecraft or TFC 'biomes', do not appear differently in the F3 Debug overlay but when the world is generated, different rock types are selected for the top, middle and bottom layers. For convenience I will refer to the various rocks generated on the top layer as Rock Biomes). Rock biomes in TFC can be rather massive, it is not uncommon to walk 6000 blocks and see the same top layer rocks and soil for the entire journey. Travel and exploration is a key element to TFC so expect to do extensive walking or boating, but it can be frustrating walking 50-60 thousand blocks to find flux rock needed to progress out of the stone age. Hence this long screed.</p>
       <p space="10"/>
       <p>So you need certain rocks, and particularly in the early game you need them at the top layer, as exploiting resources in the deeper layer is far more difficult and a discussion for another tutorial. For this one, we need to decide, what are the rocks we need reasonably adjacent to our spawn in order to have a reasonable chance of progression. This is a matter of opinion and also changes dependent on whether you are playing just TFC itself or within a modpack such as Technodefirmacraft (TNFC) as modpacks will have additional ores and further will utilize more of the ores in TFC that are sometimes of limited import.</p>
