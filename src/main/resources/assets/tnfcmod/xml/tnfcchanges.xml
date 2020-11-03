@@ -27,7 +27,7 @@
       <p space="10"/>
       <p>A lot of work has got us to this point, but there is always work left to do. We always need your assistance to get us the polish and shine that TNFC was known for.</p>
       <p space="10"/>
-      <p>TFC-NG or TNG has brought the vast majority of the TFC systems to 1.12.2. Some got left behind but overall the mod is very slick and well put together.</p>
+      <p>TFC-NG or TNG has brought the vast majority of the TFC systems to 1.12.2. <link href="https://tng.terrafirmacraft.com/Differences_From_Classic">Some got left behind </link> but overall the mod is very slick and well put together.</p>
       <p space="10"/>
       <p>We've added some new mods, some familiar mods from 1.7.10 and mostly have them all working together to provide a long and interesting experience from Stone Age to the beyond.</p>
 
@@ -110,6 +110,9 @@
       <p space="10"/>
       <p>Don't swim in the ocean at night. you will freeze.</p>
       <p space="10"/>
+      <p>Crops and fruit trees are very particular about growing conditions. Rainfall and temp both apply to whether a crop or fruit tree will grow.</p>
+      <p>This <link href="https://docs.google.com/spreadsheets/d/1Ghw3dCmVO5Gv0MMGBydUxox_nwLYmmcZkGSbbf0QSAE/edit#gid=37622487">spreadsheet</link> will provide all the details about crops and fruit trees and the conditions they require.</p>
+      <p space="10"/>
       <p>The IE Electric Lights and Electric Heater are great ways to automate heat in the winter</p>
       <p space="10"/>
       <p>The IE Excavator does not like to touch TFC blocks (including snow!). When you build the Excavator, remove all blocks within 2 of the Excavator's bucket wheel (including the sides). Also put a roof over the top (with a 2 space gap) to prevent snow from accumulating on the wheel. Failure to do so will crash your game or server.</p>
@@ -117,6 +120,12 @@
       <p>The IE Mining Drill has a bug with falling blocks. When using the Drill to mine, only drill when no blocks will fall. Either by drilling straight down, or by only drilling in areas with supports. Failure to do so will crash your server/game.</p>
       <p space="10"/>
       <p>When you make a space station, make copies of the station id chip. If you for some reason lose your only chip and can't get back to the station with a space elevator, the station is lost</p>
+      <p space="10"/>
+      <p>If you're having timeout issues connecting to a TNFC server, or sometimes even loading a save in single player.</p>
+      <p>Add this parameter to the startup for the server:</p>
+      <p space="10"/>
+      <p bold = "true">-Dfml.readTimeout=512</p>
+      <p>Or even to the java parameters for the client.</p>
       <p space="10"/>
       <p>
         <link href="http://github.com/anodecathode/technodefirmacraft">Technodefirmacraft Github</link>
