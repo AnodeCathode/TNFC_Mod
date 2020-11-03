@@ -8,6 +8,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.server.MinecraftServer;
 
 import net.dries007.tfc.objects.te.TETickableBase;
 
@@ -18,6 +19,7 @@ public class TilePlayerDetector extends TETickableBase
 
     public int redstone_output = 0;
     public UUID owner;
+    public String playername = "";
     private boolean enabled = false;
     private int updateTime = 0;
 
@@ -31,6 +33,7 @@ public class TilePlayerDetector extends TETickableBase
         if (player instanceof EntityPlayer)
         {
             owner = ((EntityPlayer) player).getGameProfile().getId(); // TODO check correctness
+            playername = ((EntityPlayer) player).getGameProfile().getName();
             enabled = true;
             updateNow();
         }
@@ -41,6 +44,10 @@ public class TilePlayerDetector extends TETickableBase
             enabled = false;
         }
 
+    }
+
+    public String getPlayername(){
+            return playername;
     }
 
     @Override
@@ -59,7 +66,7 @@ public class TilePlayerDetector extends TETickableBase
     public void updateNow()
     {
         int old = redstone_output;
-
+        boolean oldstate = enabled;
         redstone_output = 0;
         enabled = false;
 
@@ -73,11 +80,22 @@ public class TilePlayerDetector extends TETickableBase
             }
         }
 
-        if (redstone_output != old)
+        if (redstone_output != old || enabled != oldstate)
         {
             updateBlock();
         }
     }
+
+
+    protected void updateBlock()
+    {
+        IBlockState state = world.getBlockState(pos);
+        world.setBlockState(pos, state.withProperty(ENABLED, enabled));
+        world.notifyBlockUpdate(pos, state, state, 3);
+        world.notifyNeighborsOfStateChange(pos, state.getBlock(),true);
+        markForSync();
+    }
+
 
     @Override
     public void readFromNBT(NBTTagCompound nbt)
@@ -91,7 +109,7 @@ public class TilePlayerDetector extends TETickableBase
         {
             owner = new UUID(0, 0);
         }
-        enabled = nbt.getBoolean("enabled");
+        playername = nbt.getString("playername");
     }
 
     @Override
@@ -99,7 +117,7 @@ public class TilePlayerDetector extends TETickableBase
     public NBTTagCompound writeToNBT(NBTTagCompound nbt)
     {
         nbt.setString("owner", owner.toString());
-        nbt.setBoolean("enabled", enabled);
+        nbt.setString("playername", playername);
         return super.writeToNBT(nbt);
     }
 
@@ -112,12 +130,5 @@ public class TilePlayerDetector extends TETickableBase
         }
     }
 
-    protected void updateBlock()
-    {
-        IBlockState state = world.getBlockState(pos);
-        world.setBlockState(pos, state.withProperty(ENABLED, enabled));
-        world.notifyBlockUpdate(pos, state, state, 3);
-        markForSync();
-    }
 
 }

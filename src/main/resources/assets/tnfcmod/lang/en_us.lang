@@ -42,4 +42,6 @@ death.attack.tfcambiental.cold=%1$s froze to death.
 death.attack.tfcambiental.cold.player=%1$s froze to death.
 death.attack.tfcambiental.heat= %1$s died of heatstroke.
 death.attack.tfcambiental.heat.player=%1$s died of heatstroke.
-tile.tnfcmod.player_detector.name=Player Detector
+waila.tnfc.devices.playerdetector_online= %s is online
+waila.tnfc.devices.playerdetector_offline= %s is offline
+tile.tnfcmod.player_detector.name=Online Player Detector
