@@ -6,7 +6,10 @@ package tnfcmod.util;
  * and if this is done, may as well merge into entity resistance data
  */
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Random;
 import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableMap;

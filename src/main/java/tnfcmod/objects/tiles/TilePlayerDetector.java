@@ -9,7 +9,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 
-import net.dries007.tfc.objects.te.TEBase;
 import net.dries007.tfc.objects.te.TETickableBase;
 
 import static tnfcmod.objects.blocks.BlockPlayerDetector.ENABLED;

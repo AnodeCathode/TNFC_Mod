@@ -1,13 +1,10 @@
 package tnfcmod.objects.entities;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockDirt;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.IInventoryChangedListener;
@@ -26,9 +23,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 import de.mennomax.astikorcarts.config.ModConfig;
-
 import de.mennomax.astikorcarts.entity.AbstractDrawnInventory;
-
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.api.types.Rock;
 import net.dries007.tfc.objects.blocks.BlockPlacedItemFlat;

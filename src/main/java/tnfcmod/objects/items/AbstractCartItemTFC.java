@@ -3,7 +3,6 @@ package tnfcmod.objects.items;
 import javax.annotation.Nonnull;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.ActionResult;
@@ -13,7 +12,6 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-
 
 import de.mennomax.astikorcarts.entity.AbstractDrawn;
 import net.dries007.tfc.api.capability.size.Size;

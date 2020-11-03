@@ -2,12 +2,9 @@ package tnfcmod;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import net.minecraft.entity.monster.EntityWitch;
-import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemArmor;
-import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -17,10 +14,8 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
-
 import net.dries007.tfc.objects.entity.animal.*;
 import tnfcmod.handlers.GuiHandler;
-
 import tnfcmod.proxy.CommonProxy;
 import tnfcmod.recipes.LootTablesTNFC;
 import tnfcmod.util.VeinLoader;

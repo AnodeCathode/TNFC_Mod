@@ -17,7 +17,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import net.dries007.tfc.ConfigTFC;
-import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.te.TECropBase;
 import net.dries007.tfc.objects.te.TEPlacedItemFlat;
 import net.dries007.tfc.util.calendar.CalendarTFC;
@@ -25,7 +24,6 @@ import net.dries007.tfc.util.calendar.Month;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import net.dries007.tfc.world.classic.worldgen.WorldGenBerryBushes;
 import net.dries007.tfc.world.classic.worldgen.WorldGenLooseRocks;
-import net.dries007.tfc.world.classic.worldgen.WorldGenTrees;
 import net.dries007.tfc.world.classic.worldgen.WorldGenWildCrops;
 
 import static net.dries007.tfc.objects.blocks.agriculture.BlockCropTFC.WILD;

@@ -1,11 +1,6 @@
 package tnfcmod.inventory;
 
 
-
-import de.mennomax.astikorcarts.entity.AbstractDrawn;
-import net.dries007.tfc.objects.items.metal.ItemMetalTool;
-
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -14,6 +9,9 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
+
+import de.mennomax.astikorcarts.entity.AbstractDrawn;
+import net.dries007.tfc.objects.items.metal.ItemMetalTool;
 
 public class ContainerPlowCartTFC extends Container {
     private final IInventory plowInventory;

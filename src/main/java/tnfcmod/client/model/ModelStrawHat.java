@@ -3,7 +3,6 @@ package tnfcmod.client.model;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.entity.Entity;
 
 public class ModelStrawHat extends ModelBiped
 {

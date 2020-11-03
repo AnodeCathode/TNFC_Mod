@@ -6,11 +6,8 @@ import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
 
 import betterwithmods.common.BWRegistry;
-import betterwithmods.common.items.ItemMaterial;
-import betterwithmods.common.registry.block.recipe.SawRecipe;
 import net.dries007.tfc.objects.blocks.BlocksTFC;
 import net.dries007.tfc.objects.blocks.wood.BlockLogTFC;
-import net.dries007.tfc.objects.blocks.wood.BlockPlanksTFC;
 import net.dries007.tfc.objects.items.wood.ItemLumberTFC;
 import tfctech.objects.items.TechItems;
 
