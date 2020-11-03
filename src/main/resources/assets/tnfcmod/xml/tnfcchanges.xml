@@ -1,102 +1,729 @@
-<book title="TechnodeFirmaCraft"> 
+<book title="TechnodeFirmaCraft">
+  <chapter id="index">
+    <section>
+      <p bold="true">TechnodeFirmaCraft</p>
+      <p space="10"/>
+      <p color="#CC3333">Table of contents</p>
+      <p space="10"/>
+      <link ref="intro" color="#000066">-&gt;General Notes</link>
+      <link ref="tips" color="#000066">-&gt; Tips and Tricks</link>
+      <p space="10"/>
+      <link ref="progression" color="#000066">-&gt;Biletooth's Progression</link>
+      <p space="10"/>
+      <link ref="rockhounding" color="#000066">-&gt;Benanov and Rockhounding</link>
+      <p space="10"/>
+      <link ref="changelogs" color="#000066">-&gt;Pack Changelogs</link>
+    </section>
+  </chapter>
   <chapter>
     <section>
-      <p color="#606060" space="8">This book is a work in progress.</p>
+      <p bold="true">Introduction</p>
+      <link ref="index" color="#CC3333">&lt;- Index</link>
+      <p space="10"/>
+      <p>Welcome to the latest beta release of TechnodeFirmaCraft for MC 1.12.2</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>A lot of work has got us to this point, but there is a lot of work left to go. At this point we need your assistance to get us the polish and shine that TNFC was known for.</p>
+      <p space="10"/>
+      <p>TFC-NG or TNG has brought the vast majority of the TFC systems to 1.12.2. Some got left behind but overall the mod is very slick and well put together.</p>
+      <p space="10"/>
+      <p>We've added some new mods, some familiar mods from 1.7.10 and hope to get them all working together to provide a long and interesting experience from Stone Age to the beyond.</p>
+
+      <p>As it stands now:</p>
+      <p space="10"/>
+      <p>The basic set of mods are in place. The core oregen should be in place. This means that worlds should be stable as we update the other bits.</p>
+      <p space="10"/>
+      <p>The other bits will be scripty stuff to integrate mods in, change recipes, change machine mechanics and config changes to balance things out.</p>
+      <p space="10"/>
+      <p>We can't promise a no-restart-ever future for TNFC but I believe it's pretty stable and you should be able to continue with a world along many TNFC updates.</p>
+      <p space="10"/>
+      <p>The progression path is similar to 1.7.10 TNFC.</p>
+      <p>The core initial gameplay is very much the TFC experience. You will need to progress with TFC to at least the Iron Age before the features and benefits (and jetpacks) in TNFC start to become feasible.</p>
+      <p space="10"/>
+      <p>The BetterWithMods, Astikorcarts and HorsePower mods allow some early automation and are worth exploring. Once solidly into Iron, Immersive Engineering will open up. Most of it will be gated by steel, so it's wise to continue along the TFC progression (ideally all the way to coloured steels). Immersive Engineering and Petroleum will open up a lot of options.</p>
+      <p>PneumaticCraft and Rockhounding open up all sorts of options. Leading finally to</p>
+      <p>Advanced Rocketry! The moons and planets yield many things, including The End, which is a moon around another planet you'll have to find.</p>
+      <p>So tech up, get to The End, kill the Dragon and craft the ultimate prize from it's Egg!</p>
+      <p space="10"/>
+      <p>We think we like the various settings and recipes, lot's of work has gone into balancing and setup.</p>
+      <p>But this is where you come in. We need you to let us know about all the issues. Something exploitable, or impossible, or just excessively expensive?</p>
+      <p>Need to know where we need to continue to polish things.</p>
+      <p space="10"/>
+      <p>Also, the IE hemp seeds no longer come from zombies. Instead, if you want Hemp you gotta get high. If that's not enough of a clue, use a knife or a scythe on grass at heights greater than 170. It's a rare drop.</p>
+
+      <p space="10"/>
+      <p>The Issues link on the Main Page will take you to the Github repo for pack. Where we're going to corral and work the issues.</p>
+      <p>Get your issues in. Suggestions, ideas, and requests are all good too.</p>
+
+
+      <p>
+        <link href="http://github.com/anodecathode/technodefirmacraft">Technodefirmacraft Github</link>
+      </p>
+      <p space="10"/>
+      <p>Good luck.</p>
+
     </section>
+  </chapter>
+  <chapter id="tips">
     <section>
-      <page_title>
-        <title>TechnodeFirmaCraft Changelog</title>
-      </page_title>
-          <p>Welcome to the latest beta release of TechnodeFirmaCraft for MC 1.12.2</p>
-          <p space="10" />
-          <p space="10" />
-          <p>A lot of work has got us to this point, but there is a lot of work left to go. At this point we need your assistance to get us the polish and shine that TNFC was known for.</p>
-          <p space="10" />
-          <p>TFC-NG or TNG has brought the vast majority of the TFC systems to 1.12.2. Some got left behind but overall the mod is very slick and well put together.</p>  
-          <p space="10" />
-          <p>We've added some new mods, some familiar mods from 1.7.10 and hope to get them all working together to provide a long and interesting experience from Stone Age to the beyond.</p>
-          
-          <p>As it stands now:</p>
-          <p space="10" />
-          <p>The basic set of mods are in place. The core oregen should be in place. This means that worlds should be stable as we update the other bits.</p> 
-          <p space="10" />
-          <p>The other bits will be scripty stuff to integrate mods in, change recipes, change machine mechanics and config changes to balance things out.</p>
-          <p space="10" />
-          <p>We can't promise a no-restart-ever future for TNFC but I believe it's pretty stable and you should be able to continue with a world along many TNFC updates.</p>
-          <p space="10" />
-          <p>The progression path is similar to 1.7.10 TNFC.</p>
-          <p>The core initial gameplay is very much the TFC experience. You will need to progress with TFC to at least the Iron Age before the features and benefits (and jetpacks) in TNFC start to become feasible.</p>
-          <p space="10" />
-          <p>The BetterWithMods, Astikorcarts and HorsePower mods allow some early automation and are worth exploring. Once solidly into Iron, Immersive Engineering will open up. Most of it will be gated by steel, so it's wise to continue along the TFC progression (ideally all the way to coloured steels). Immersive Engineering and Petroleum will open up a lot of options.</p>
-          <p>PneumaticCraft and Rockhounding open up all sorts of options. Leading finally to  </p>
-          <p>Advanced Rocketry! The moons and planets yield many things, including The End, which is a moon around another planet you'll have to find.</p>
-          <p>So tech up, get to The End, kill the Dragon and craft the ultimate prize from it's Egg!</p>
-          <p space="10" />
-          <p>We think we like the various settings and recipes, lot's of work has gone into balancing and setup.</p>
-          <p>But this is where you come in. We need you to let us know about all the issues. Something exploitable, or impossible, or just excessively expensive?</p>
-          <p>Need to know where we need to continue to polish things.</p>
-          <p space="10" />
-          <p>Also, the IE hemp seeds no longer come from zombies. Instead, if you want Hemp you gotta get high. If that's not enough of a clue, use a knife or a scythe on grass at heights greater than 170. It's a rare drop. </p>
-          
-          <p space="10" />
-          <p>The Issues link on the Main Page will take you to the Github repo for pack. Where we're going to corral and work the issues.</p>
-          <p>Get your issues in. Suggestions, ideas, and requests are all good too.</p>
-          
-          
-          <p><link href="http://github.com/anodecathode/technodefirmacraft">Technodefirmacraft Github</link></p>
-          <p space="10" />
-          <p>Good luck.</p>
+      <p bold="true">Tips</p>
+      <link ref="index" color="#CC3333">&lt;- Index</link>
+      <p space="10"/>
+      <p italics="true">Things to be aware of in TechnodeFirmaCraft for MC 1.12.2</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Putting hot things (ingots, sheets, tools) into wooden (chests) or leather (backpack) containers will cause the container to catch on fire. You've been warned</p>
+      <p space="10"/>
+      <p>The IE hemp seeds no longer come from zombies. Instead, if you want Hemp you gotta get high. If that's not enough of a clue, use a knife or a scythe on grass at heights greater than 170. It's a rare drop.</p>
+      <p space="10"/>
+      <p>Being in the dark without a light source will lead to Gloom, Blindness or even the Grue! Carry a torch in your offhand to light up those areas as you explore</p>
+      <p space="10"/>
+      <p>Walking in grass slows you down. Make paths with shovels, or the Plow Cart to speed your travels. Spending time in a chunk accumulates 'Spawn Protection'. Once a chunk is protected, the grass will no longer grow high.</p>
+      <p space="10"/>
+      <p>Cold is a killer. You can use straw in your inventory to stay warm in exchange for inventory space. Each slot occupied provides some warmth.</p>
+      <p space="10"/>
+      <p>Heat is a killer. You can use ice or snow blocks in your inventory to stay cool in exchange for inventory space. Each slot occupied provides some warmth.</p>
+      <p space="10"/>
+      <p>Heat is a killer. Wear a hat. You can craft a simple Nifty Straw Hat from straw to keep the rays off your melon.</p>
+      <p space="10"/>
+      <p>Cold is a killer. Wear armour. The leather and metal armours provide increasing levels of cold protection. Exception being Black Bronze and Red Steel</p>
+      <p space="10"/>
+      <p>Heat is a killer. Wear armour. Black Bronze and Red Steel armours provide protection against heat... because reasons.</p>
+      <p space="10"/>
+      <p>Heat is a killer. The Forge is very hot. You can convert a Leather Tunic into a Leather Forging Bib by soaking it in limewater. Worn in Baubles slot it prevents Forge heat.</p>
+      <p space="10"/>
+      <p>Temperature in general. Stay hydrated. Stay well fed. Meat and dairy in the cold. Fruit and veg in the heat. Stay in the shade. Build enclosed, lit spaces for comfort.</p>
+      <p space="10"/>
+      <p>There are hint rocks for the minerals that don't have surface ores. If you see a rock on the surface out of place for the surrounding rock type, it's a clue to something underneath.</p>
+      <p space="10"/>
+      <p>You can make a boat with an alternative recipe not requiring a saw, great for early exploration!</p>
+      <p space="10"/>
+      <p>The mod mineral tracker is integrated with JourneyMap. Switch to topographic view to see any surface ores you've picked up.</p>
+      <p space="10"/>
+      <p>Alternate paper making recipes. Sawdust from BwM saws. Woodpulp from sawdust and vinegar in barrel. Press wood pulp to make paper.</p>
+      <p space="10"/>
+      <p>Placing a ladder on every second block works perfectly fine and is a good way to save ladders</p>
+      <p space="10"/>
+      <p>Stuck in the rain? Fire not starting? throw some straw down, make sure you have a log and three sticks, and hide under a tree so you're not directly under the rain.</p>
+      <p space="10"/>
+      <p>Don't swim in the ocean at night. you will freeze.</p>
+      <p space="10"/>
+      <p>The IE Electric Lights and Electric Heater are great ways to automate heat in the winter</p>
+      <p space="10"/>
+      <p>The IE Excavator does not like to touch TFC blocks (including snow!). When you build the Excavator, remove all blocks within 2 of the Excavator's bucket wheel (including the sides). Also put a roof over the top (with a 2 space gap) to prevent snow from accumulating on the wheel. Failure to do so will crash your game or server.</p>
+      <p space="10"/>
+      <p>The IE Mining Drill has a bug with falling blocks. When using the Drill to mine, only drill when no blocks will fall. Either by drilling straight down, or by only drilling in areas with supports. Failure to do so will crash your server/game.</p>
+      <p space="10"/>
+      <p>When you make a space station, make copies of the station id chip. If you for some reason lose your only chip and can't get back to the station with a space elevator, the station is lost</p>
+      <p space="10"/>
+      <p>
+        <link href="http://github.com/anodecathode/technodefirmacraft">Technodefirmacraft Github</link>
+      </p>
+      <p space="10"/>
+      <p>Good luck.</p>
+
     </section>
+  </chapter>
+  <chapter id="progression">
     <section>
-      <page_title>
-        <title>TechnodeFirmaCraft Tips and Tricks</title>
-      </page_title>
-          <p>Things to be aware of in TechnodeFirmaCraft for MC 1.12.2</p>
-          <p space="10" />
-          <p space="10" />
-          <p>Putting hot things (ingots, sheets, tools) into wooden (chests) or leather (backpack) containers will cause the container to catch on fire. You've been warned</p>
-          <p space="10" />
-          <p>The IE hemp seeds no longer come from zombies. Instead, if you want Hemp you gotta get high. If that's not enough of a clue, use a knife or a scythe on grass at heights greater than 170. It's a rare drop. </p>
-          <p space="10" />
-          <p>Being in the dark without a light source will lead to Gloom, Blindness or even the Grue! Carry a torch in your offhand to light up those areas as you explore</p>
-          <p space="10" />
-          <p>Walking in grass slows you down. Make paths with shovels, or the Plow Cart to speed your travels.</p>
-          <p space="10" />
-          <p>Cold is a killer. You can use straw in your inventory to stay warm in exchange for inventory space. Each slot occupied provides some warmth.</p>
-          <p space="10" />
-          <p>Heat is a killer. You can use ice or snow blocks in your inventory to stay cool in exchange for inventory space. Each slot occupied provides some warmth.</p>
-          <p space="10" />
-          <p>Heat is a killer. Wear a hat. You can craft a simple Nifty Straw Hat from straw to keep the rays off your melon.</p>
-          <p space="10" />
-          <p>Cold is a killer. Wear armour. The leather and metal armours provide increasing levels of cold protection. Exception being Black Bronze and Red Steel</p>
-          <p space="10" />
-          <p>Heat is a killer. Wear armour. Black Bronze and Red Steel armours provide protection against heat... because reasons.</p>
-          <p space="10" />
-          <p>Heat is a killer. The Forge is very hot. You can convert a Leather Tunic into a Leather Forging Bib by soaking it in limewater. Worn in Baubles slot it prevents Forge heat.</p>
-          <p space="10" />
-          <p>Temperature in general. Stay hydrated. Stay well fed. Meat and dairy in the cold. Fruit and veg in the heat. Stay in the shade. Build enclosed, lit spaces for comfort.</p>
-          <p space="10" />
-          <p>There are hint rocks for the minerals that don't have surface ores. If you see a rock on the surface out of place for the surrounding rock type, it's a clue to something underneath.</p>
-          <p space="10" />
-          <p>You can make a boat with an alternative recipe not requiring a saw, great for early exploration!</p>
-          <p space="10" />
-          <p>The mod mineral tracker is integrated with JourneyMap. Switch to topographic view to see any surface ores you've picked up.</p>
-          <p space="10" />
-          <p>Alternate paper making recipes. Sawdust from BwM saws. Woodpulp from sawdust and vinegar in barrel. Press wood pulp to make paper.</p>
-          <p space="10" />
-          <p>When you make a space station, make copies of the station id chip. If you for some reason lose your only chip and can't get back to the station with a space elevator, the station is lost</p>
-          <p space="10" />
-          <p>Placing a ladder on every second block works perfectly fine and is a good way to save ladders</p>
-          <p space="10" />
-          <p>The IE Electric Lights and Electric Heater are great ways to automate heat in the winter</p>
-          <p space="10" />
-          
-          
-          
-          <p><link href="http://github.com/anodecathode/technodefirmacraft">Technodefirmacraft Github</link></p>
-          <p space="10" />
-          <p>Good luck.</p>
+      <p bold="true">Biletooth's TNFC Progression</p>
+      <p space="2"/>
+      <link ref="index" color="#CC3333">&lt;- Index</link>
+      <p space="10"/>
+      <p italics="true">TNFC is rather daunting with many ways to progress. To get you started, Biletooth chronicles how he progressed through TNFC.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Note that this is just my way of progressing and I highly recommend you carve your own path. There is no guide for TNFC but by combining the information pinned in the TNFC discord channels and using JEI you should be able to figure everything out. TNFC works with TFC 1.12 now, there is many changes from classic and I recommend looking at the 1.12 changes wiki page to clarify this.
+        <link href="https://tng.terrafirmacraft.com/Differences_From_Classic">TFC Differences from Classic</link>
+      </p>
+      <p space="10"/>
+      <p>For the TFC part there is also a well implemented Patchouli book available. Finally I recommend taking a look at the modlist of TNFC and searching in JEI with @[modname] to see what the mod has to offer and go from there. Some general tips include: looking up what kind of rare resources you need for certain mods (like redstone, lapiz, glowstone or even nickel for black steel etc.) and only start progressing in those mods when you know you have access to them. In that regard I also highly recommend playing on a server so you can trade for resources if you don’t find them. Tool progression is very important in this pack, different tiers of Hammers/chisels/saws WILL unlock different recipes. The higher tier machines won’t be craftable with a low tier tool.</p>
+      <p space="10"/>
+      <p>Now onto my actual progression.</p>
+      <p space="10"/>
+      <p>It all starts with base TFC. Again this is totally up to you how you progress through TFC. I made the 'challenge' for myself to not look at better ways of getting steel before I had made a full, max capacity TFC blast furnace for example. If you're new to TFC or new to TFC 1.12 I recommend reading through the new manual for it. I personally spend the first in game year exploring for several key resources and a base location.</p>
+      <p space="10"/>
+      <p>The first venture into mods other than TFC started for me after steel. At this point you can start making Yabba barrels and organise your storage better. I also started to look at some BmW features like the windmill for a saw and a grindstone and a bit later I decided to look at the Horsepower horse press and horse grindstone. After that I progress my way up to black steel. When reaching black steel tier, and more specifically a black steel hammer and chisel, I looked at Immersive Engineering. Getting the metal press is a huge quality of life upgrade from base TFC and I recommend getting it early. When the age of IE starts there's lots to do. There’s several energy generating options where I started with windmills and waterwheels. When I had a basic power setup I looked at the Electric crucible and Electric forge which again are a massive Quality of Life item. The vanilla steel furnace and IE Crusher is also on this list.</p>
+      <p space="10"/>
+      <p>Somewhere around this time I teched up further to red/blue steel tier and made the appropriate anvil, tools and buckets. Then I tried out the diesel generator with an IE refinery and pump jack when I had a steady supply of diesel I made an excavator and spend the next couple of in game days scouting for deposits and harvesting them. To conclude the energy track I constructed a steam turbine with solar towers. There’s also the furnace track in IE which starts with the coke oven and crude blast furnace and eventually ends in the Arc furnace. There's lots of other stuff in IE which I haven't done yet or that I could have done earlier, again here, take a look at what the mod has to offer and what you want to focus on, IE also has a great in game manual. I "ended" Immersive Engineering by making the mining drill, 3 excavators and another pump jack not connected to the refinery for raw oil. The whole systems runs on a steam turbine with 4 solar towers and 2 steel tanks that store excess steam to get through the night. It generates 12k rf/t which I split into 2x6k lines, 1 line for 1 excavator an Arc furnace and misc machines (connected to a big capacitor battery and not using everything at the same time). The other 6k lines goes to the two other excavators and an RF flux generator.</p>
+      <p space="10"/>
+      <p>This flux generator leads me to the next mod I looked at, Pneumaticcraft. This was the first time I ever played with PnC and I loved every second of it. I highly recommend checking out its guidebook and the YouTube videos of Danny and Son. To get the flux generator you basically have to progress through the whole mod. Starting with getting the pressure chamber, oil refinery, plastic maker and the machines that make the circuit board. You will need advanced pressure to complete this track. Once I had the right infrastructure for it I created several of its nifty items like the Amadron tablet, omnidirectional hoppers, logistics drones (a whole topic on its own, great for storage) and finally I spend a lot of time on making the PNC armor and it's upgrades. I also tried out the pneumatic elevator to reach a place 40 blocks up, it’s not the greatest lift tbh but it is very immersive and I quite enjoy using it. The PNC track got concluded for me after making the upgraded armor set and crafting the Ariel interface (note you will have to go to the nether for this). Many things require plastic so this is a mod I frequently return to. Again check JEI and its manual to see all the stuff it has to offer, I probably missed most of it!</p>
+      <p space="10"/>
+      <p>We’re coming up to the point where I currently am. I was debating between checking out RH and AR and went with the latter. AR has a very unique progression imo but it’s not well documented. There is a great video series on YouTube by Thorgal Daily Gaming where I got all my knowledge from, there’s also a wiki. At this point I made all the multiblock structures needed to make space infrastructure. I haven't yet build a rocket or the machines to fuelling it. I have however been to space as I play on the server and I 'bought' a subscription from another player where he build me a space elevator at my base and I pay him for using it to get access to space. I did notice you could build the 'lathe' from AR a lot earlier in this pack as it automates the making of rods (needed for rails and pistons) so you could make it a lot earlier if you wanted to automate this. AR progression is the only way to reach the End! So if you need stuff from the End this is the way.</p>
+      <p space="10"/>
+      <p>So that leaves me with the mods I haven't touched yet and there’s quite a lot of them that I could have already started and could have sped up my progress in other paths but such is the way of the sandbox. In particular XNet’s cable system seems to be very powerful but I have yet to explore it. RH has a whole progression path I still have to look at as well. That concludes my main tech progression so far.</p>
+      <p space="10"/>
+      <p>There’s several smaller mods that can aid you with several mods or that give a huge quality of life upgrade. The ones I've tested in this are: Wearable Backpacks, Waterflasks (recommend teching up to flask asap), a fishing rod for early food (tweaked recipe, use JEI), some BmW stuff, Waystone teleporting and some chisel and bits. There’s several smaller mods that I don’t know or haven’t used like Advanced Hook Launchers, AstikorCarts (great for animals and path making), First Aid bandages (I use hot spring healing and avoiding combat ;^) ), Immersive Cables, Just a Few Fish, Animal nets, OpenBlocks stuff and Simply Jetpacks.</p>
+      <p space="10"/>
     </section>
-    
+  </chapter>
+  <chapter id="rockhounding">
+    <section>
+      <p bold="true">Rockhounding Tips by Benanov</p>
+      <link ref="index" color="#CC3333">&lt;- Index</link>
+      <p space="10"/>
+      <p italics="true">Rockhounding is rather complicated. To get you started, here are some starting tips from our resident RH expert.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Expect to need to stockpile a lot of resources to get a meaningful operation off the ground. Save those Uninspected Minerals!</p>
+      <p space="10"/>
+      <p>Mineral Sizer requires fuel (Syngas). Lava will work but honestly you want Syngas.</p>
+      <p space="10"/>
+      <p>Flue Gas won't work, but considering I use the same setup is to make Flue Gas and Syngas. The RH setup machine guide has a small annotation about whether a machine requires RF or Fuel.</p>
+      <p space="10"/>
+      <p>Fun fact: The Electrochemical CSTR requires both for all recipes in the TNFC pack</p>
+      <p space="10"/>
+      <p>The orientation of machines does matter in RH. If there's a blue arrow or orange arrow you need to make sure you're facing the correct way when placing the block.</p>
+      <p space="10"/>
+      <p>And servers are generally not required for machines, as far as i can tell. The Chemical Extractor and Mineral Sizer run fine without them. Servers are great for "do this X number of times" jobs - which is why I use it for the Metal Alloyer (otherwise it'll convert all of my element cabinet contents to White Gold or something).</p>
+      <p space="10"/>
+      <p>IMO the Syngas setup is the first thing you should build in RH. Don't start chasing shards until you have a Gas Holder (not a mere pressure vessel) with at least a pixel of Syngas. (When you see how much Gas Holders hold, you'll understand.)</p>
+      <p space="10"/>
+      <p italics="true">A Note about Salt</p>
+      <p>Salt is a valuable material in TechNode. You can use it to preserve food and it is an absolutely essential ingredient for two very important liquids in the Rockhounding Mineral cycle - Hydrochloric Acid and Sodium Cyanide. While you can also use salt to create Salt Water, this is generally not necessary.</p>
+      <p space="10"/>
+      <p>If you live in Rock Salt or have it nearby, great! If not you will need to spend some time making the Rockhounding Evaporation Tank and the Seasoning Rack. You will not be able to meaningfully do this until you can work Wrought Iron into ingots.</p>
+      <p space="10"/>
+      <p>The Rockhounding Evaporation Tank has many modes, accessible with the Mod Wrench. For making salt, you do not need the wrench. (You will require one later to make Evaporation Tanks export Saturated Brine, an ingredient for Sodium Hydroxide.)</p>
+      <p space="10"/>
+      <p>The Profiling Bench is required to make almost every other machine, and will be one of the first things you create. It does not require power to run. To change modes, punch it. To use it, place an item into it with right-click. To extract the product, right-click again.</p>
+      <p space="10"/>
+      <p italics="true">A note about Sulfur</p>
+      <p space="10"/>
+      <p>Sulfur is a common extract from a lot of shards and relatively easy to select for even without filter upgrades, but until you start pulling sulfur out of your chemical extractor, you're going to want a few stacks of the yellow stinky stuff.</p>
+      <p>If you can't find any, turn Bituminous Coal into Syngas and check your Particulate Collectors.</p>
+      <p>Another option for obtaining Sulfur is recycling Toxic Waste. You can use an existing Syngas setup but you'll want a separate output vessel for the Flue Gas.</p>
+      <p space="10"/>
+      <p>A word of warning: Do not fill your cistern to capacity with Toxic Waste! Process it a few buckets at a time.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p italics="true">My Machine Isn't Processing!</p>
+      <p space="10"/>
+      <p>Many different parts of a machine require consumables. Common things to check besides power source are Slurry Agitators, Crushing Gears, Test Tubes, Graduated Cylinders, and Catalysts. All liquids and gases must be present in order for a machine to run.</p>
+      <p space="10"/>
+      <p>If your machine is running but keeps resetting its progress halfway through, you're out of power. Machines that require RF can have their power source upgraded with a Gas Turbine to burn Syngas to generate RF. (We have not found this to be a good method for generating RF to run the rest of your base.)</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p italics="true">What is that Explosion?</p>
+      <p space="10"/>
+      <p>Pressure Vessels only hold 1,000 Cu (the equivalent of 1,000 mB) of gas. This is a surprisingly small amount. Consider upgrading to a Gas Holder, or shut off the input to that Pressure Vessel and dump the contents.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p italics="true">There's Green Stuff all Over my Base!</p>
+      <p space="10"/>
+      <p>Congratulations, you've had your first industrial accident. Don't store pollutant fluids in Rockhounding tanks for any long period of time and do not allow a tank to be filled to capacity. With pollutant gases you have fewer options.</p>
+      <p space="10"/>
+      <p>PneumaticCraft Liquid Hoppers are incredibly useful for this purpose.</p>
+      <p space="10"/>
+      <p>I have found that the Lab Oven's Fluid Output system requires all of the Product to be drained before the Waste will export. If your output systems are not fast enough at picking up the Product, the Toxic Waste will build up and leak all over your lab.</p>
+      <p space="10"/>
+    </section>
+  </chapter>
+  <chapter id="changelogs">
+    <section>
+      <p bold="true">Changelogs</p>
+      <link ref="index" color="#CC3333">&lt;- Index</link>
+      <p space="10"/>
+      <p bold="true">Version 12.2.41 - It's a block.</p>
+      <p>Recreated my favourite block. The Online Player Detector, previously a part of Immibis' TubeStuff mod. Wonderful block for turning off machines or recalling drones when you're not online.</p>
+      <p bold="true">Version 12.2.40 - Don't Lose Your Head, It's just Enchanting.</p>
+      <p>Lots of new weirdness.  </p>
+      <p>Predators have learned the habit of occasionally ripping a players head clean off.</p>
+      <p>Mobs in the deep (Y less than 100) and other places have started dropping new things. </p>
+      <p>Add various mob drops for IE Shader Grabbags; redstone; glowstone and soulforged steel nuggets</p>
+      <p>All mobs and predators now will rarely drop Arcane Scrolls</p>
+      <p>The Infernal Enchanter is now craftable. Barely.</p>
+      <p>Soulforged Steel is now somewhat obtainable (other planets are richer in this material) and thus recipe have been added to create stuff from it</p>
+      <p>All Bronze Gears can now be used in recipes</p>
+      <p>RH Alloyer recipe for bronze now has the correct recipe</p>
+      <p>Disabled some COFH enchantments that were unneeded</p>
+      <p>Turned off the BwM Enchantment override for mobs. This fixes the enchantment chaos witnessed</p>
+      <p>The PnC gasoline (fuel) and Immersive Tech gasoline (gasoline) have been consolidated together. Thanks eagleeyes005 for the PR</p>
+      <p>Remove the Immersive  Petroleum reinforced hull as it doesn't work</p>
+      <p>Nether mobs now spawn with TFC appropriate weapons and armour</p>
+      <p>Added </p>
+      <p>- MouseTweaks by popular request.</p>
+      <p>Updated</p>
+      <p>-TNFCMod</p>
+      <p bold="true">Version 12.2.39 - Cleanup</p>
+      <p>Lots of recipe adjustments to get a lot of late game machines outputing the same types of stuff.</p>
+      <p>All the terrafirmathings items using jute fiber in the recipe have equivalent recipe with hemp rope.</p>
+      <p>The Arc Furnace recipe generator now uses the OreDictionary name of inputs to increase compatibility</p>
+      <p>Radiation shielding added to any clothing or armour increases cold resistance of that piece</p>
+      <p>NC Melter had all Metal Blocks removed as they were an exploit</p>
+      <p>Grass will slowly die and disappear in spawn protected chunks.</p>
+      <p>CnB config changed yet again. Stone chisel is back, Iron chisel durability reset. Raw stone blocks are no longer chiselable as the exploit of chiseling a single bit and breaking it easily was not readily solvable.</p>
+      <p>Pig Zombies no longer spawn with vanilla weapons. They also sometimes come with armour.</p>
+      <p>TFC Decorations added for some more decorative blocks.</p>
+      <p>Main menu reworked and screenshot gallery added. Always looking for more cool screenshots, preferably with shaders. Post in the TNFC Discord screenshots channel</p>
+      <p>Added:</p>
+      <p>- JustEnoughPetroleum</p>
+      <p>Updated:</p>
+      <p>- TerraFirmaThings</p>
+      <p bold="true">Version 12.2.38 - Same day two updates?</p>
+      <p>Well TFC blindsides me with a late TFC update. Has a couple of important fixes so here it comes.</p>
+      <p>Update:</p>
+      <p>- TFC</p>
+      <p bold="true">Version 12.2.37 - Can we have Hwyla back please?</p>
+      <p>Very minor little update. Apparently the dependency isn't there anymore, so we can return to using Hwyla. This should work much better with everything. Also updated the ChiselNBits recipes/config to allow for TFC log/dirt/gravel chiseling. TerraFirmaThings gem displays now emit redstone signal. See the mods page for details. Also updated the Faithful TFC Resource Pack.</p>
+      <p>Updates:</p>
+      <p>terrafirmathings</p>
+      <p>Added:</p>
+      <p>Hwyla</p>
+      <p>Removed:</p>
+      <p>TheOneProbe</p>
+      <p bold="true">Version 12.2.36 - Cause Gems are Cool</p>
+      <p>Terrafirmathings is 1.0 so the update brings pretty new Gem Display Cases. Show off those Exquisites!</p>
+      <p>I also, finally, did a few updates to the TNFC book. Still planning to switch over to Patchouli and extend the TFC book but in the meantime I threw some of the tips and tricks unique to TNFC into the book. </p>
+      <p>Fixed NC Ammonia and  RH Flue Gas processing</p>
+      <p>Extended Old Age length for TFC animals significantly</p>
+      <p>Changed the way recipe removals are done. This should result in far fewer 'known good' errors filling the log. Thanks rongmario!</p>
+      <p>Blacklisted another PnC puzzle piece as it easily causes server crashes.</p>
+      <p>Fix the NC Basic Lithium Battery to use proper plating</p>
+      <p>Removed the BwM Shaft from the fuels list. No more converting sticks and getting cheap fuel.</p>
+      <p>Updated the crop regen routines in TNFCMod. Chunks updated should now properly unload themselves. I've disabled the rock/stick regen as it needs more work.</p>
+      <p>Added AutoWalk for your automated boating needs. Now you can chat and fiddle with inventory while you cross the vast TFC oceans.</p>
+      <p>Added ReAuth for those who know what it is and want it.</p>
+      <p>Updated the Dynmap renderdata for server installs.</p>
+      <p>Added:</p>
+      <p>- ReAuth</p>
+      <p>- Autowalk</p>
+      <p>- MixinBootstrap (for Dynamic Surroundings)</p>
+      <p>Updated:</p>
+      <p>- Terrafirmathings - Gem Display!</p>
+      <p>- Immersive Tech</p>
+      <p>- Patchouli</p>
+      <p>- Dynamic Surroundings</p>
+      <p bold="true">Version 12.2.35 - Well it's a hat</p>
+      <p>- Add a nifty straw hat to keep the heat off your melon in the summer months</p>
+      <p>- Remove a bunch of unused/uncraftable items from view</p>
+      <p>- Reduce the Gas Turbine startup power requirements</p>
+      <p>- Update Waterflasks - Bears drop bladders again. A number of other critters now do too</p>
+      <p>	Animals	Butchering		Minimum</p>
+      <p> 				Skill			Chance</p>
+      <p>	Bears		Novice			50</p>
+      <p>	Bovines	Adept			60</p>
+      <p>	Equines	Adept			50</p>
+      <p>	Camel		Adept			50</p>
+      <p>	Sheep		Expert			25</p>
+      <p>	Goat		Expert			25</p>
+      <p>	Alpaca		Expert			25</p>
+      <p>	Llama		Expert			25</p>
+      <p>	Deer		Expert			15</p>
+      <p>	Gazelle		Expert			15</p>
+      <p>- Prevent Firepits from burning up with hot ingots</p>
+      <p>- Add barrel recipe to create tallow from raw meats and hot spring water</p>
+      <p>- Add barrel recipe to create sugar from beets and hot spring water</p>
+      <p>- Add candles and candle holder recipes</p>
+      <p>- Update dynamic lights to support candles and thermite torches</p>
+      <p>- Cleanup BwM foods. They will eventually get crafting recipes. In the meantime, hide them</p>
+      <p>- Add Emojicord as a client side optional. Cause who doesn't what emojis in chat :)</p>
+      <p>- Removed the OpenBlocks donation station that was renamed</p>
+      <p>- Add JEID cause we're out of ID's captain!</p>
+      <p>- Finally add OpenComputers cause we have the ID's to support it</p>
+      <p>Updates:</p>
+      <p>- TNFCMod</p>
+      <p>- Waterflasks</p>
+      <p>- Immersive Technology</p>
+      <p>Added:</p>
+      <p>- Emojicord</p>
+      <p>- JEID</p>
+      <p>- OpenComputers</p>
+      <p bold="true">Version 12.2.34.1 - Hotfix some bits</p>
+      <p>Add ToastControl to get rid of some annoying popups</p>
+      <p>Also fix foamfix to allow defaultoptions mod to work again</p>
+      <p>Remove error in script name</p>
+      <p bold="true">Version 12.2.34 - Noname update</p>
+      <p>- Fix various recipes with vanilla trapdoors</p>
+      <p>- Tone down the debuff on the Leather Tunic</p>
+      <p>Update:</p>
+      <p>- TFC - Stack those iron rods</p>
+      <p>- TNFCMod</p>
+      <p>- TerraFirmaThings (rope bridges!)</p>
+      <p>- CraftTweaker</p>
+      <p>- AdvancedRocketry</p>
+      <p bold="true">Version 12.2.33 - Fix things</p>
+      <p>- Remove Red bucket from PnC etching acid recipe</p>
+      <p>- Remove gold dust -> Vanilla Gold Ingot Arc Furnace recipe</p>
+      <p>- Remove vanilla dirt from gravestones</p>
+      <p>- Remove IE Iron Rods</p>
+      <p>- Slow crop/fruit tree growth to match Month length</p>
+      <p>- Change PnC Puzzlepiece blacklist :)</p>
+      <p>- Remove AR Coal Generator</p>
+      <p>- Mobs no longer can spawn with backpacks</p>
+      <p>- Minor change to TNFCMod</p>
+      <p>-Readded FastWorkbench</p>
+      <p>- Update Nuclearcraft; TFC-Storage; Randompatches; AdvancedRocketry</p>
+      <p bold="true">Version 12.2.32 - Some new stuff</p>
+      <p>Think you can make the wind chimes. Maybe?</p>
+      <p>ImmersivePosts has been added to reduce the number of people being electrocuted.</p>
+      <p>OpenComputers has been added. The recipes are still a work in progress.</p>
+      <p>TFC Updated - Black dye stuff works. Crushed Firepits don't crash the world</p>
+      <p>Nuclearcraft updated - Rock Crusher doesn't crash the client</p>
+      <p>PneumaticCraft etching acid recipe no longer requires Rain Water</p>
+      <p>Few more Signpost signs allowed per player (16)</p>
+      <p>Other little config changes</p>
+      <p bold="true">Version 12.2.31 - Always something</p>
+      <p>- Mushrooms are edible... barely</p>
+      <p>- Beryl now spawns... doh</p>
+      <p>- Engineer's workshop recipes shouldn't eat tools</p>
+      <p>- Arc Furnace recycling is disabled. Too unbalanced. May re-add by hand later</p>
+      <p>- Disabled DynamicSurround sounds in non-applicable dimensions</p>
+      <p>- Adjusted old age data and Animalnet config for new TFC animals.</p>
+      <p>- Updated TFC-Tech</p>
+      <p bold="true">Version 12.2.30 - Fixes</p>
+      <p>Repair some bad things.</p>
+      <p>- Fix the tin plate recipes that resulted in steel grit.</p>
+      <p>- Fix making MC Anvil from logs on the Metal Press</p>
+      <p>- Fix crash resulting from equipping TFC Quiver</p>
+      <p>- Fix MC Chicken spawning resulting in severe server lag</p>
+      <p>- Fix broken language entries for Ambiental death messages</p>
+      <p>- Fix Leather armour not providing any temperature protection</p>
+      <p>- updates for Terrafirmathings, NuclearCraft, CraftTweaker</p>
+      <p bold="true">Version 12.2.29 - No Free Lunch</p>
+      <p>Update to the Leather Forging Tunic. It now comes with a debuff while worn. You will be immune from the forge heat but you always won't be able to move, and your focus will be squarely on your forge and anvil. Also changed the Leather Tunic recipe. Now is made from a Leather Chestplate soaked in Limewater for 8 hours.</p>
+      <p>Added a small ore to normal hammer recipe. Now those small ore nuggets can be turned into a normal one at a 5 to 1 rate. Good for those non-meltable ores.</p>
+      <p>- Fixed the BwM wicker recipe to use TFC reeds. This allows the creation of BwM elevators.</p>
+      <p>- Fixed a minor recipe for Engineers Decor stained blocks to use all the TFC dirt instead of vanilla.</p>
+      <p>- Turned the TFC-Ambiental temp display permanently on. Due to the implementation if you want to revert to the default, hold shift to display, behaviour you will have to edit the config/tfcambiental.cfg and set sneakyDetails=true</p>
+      <p>- Updated ImmersiveTech</p>
+      <p> </p>
+      <p bold="true">Version 12.2.28.1 - Hotfix 1</p>
+      <p>Update for TFC-Storage - Fixed TOP display on dedicated servers</p>
+      <p>Also added the ability to feed apples to horses. Not being able to give a horse an apple is a sacrilege.</p>
+      <p bold="true">Version 12.2.28 - Creature Comforts</p>
+      <p>Lots of little changes to maybe make life a tiny bit more survivable. </p>
+      <p>1. Enhancements to the body temperature (TFCAmbiental) mod. A number of changes have been made:</p>
+      <p> - Different armour provides different levels of protection. Amazingly, Black Bronze now provides protection from the sun, not the cold! Must be the gold/silver conducting heat to the soil. Yeah, that's it. This protection is also extended to Red Steel armour. All other vanilla TFC armours provide increasing levels of protection from the cold. The TFC Metallum armours only provide the standard protection.</p>
+      <p>- A Leather Tunic has been added that when equipped in the Baubles (yes, that's new) chest slot, will protect the wearer from the searing temperatures while working the forge. It provides no other protection.</p>
+      <p>- Straw can be used to provide limited cold protection while in inventory. The protection is based on how many slots in inventory are occupied by straw, not the amount in the stack. So spreading out your straw to take all slots will provide quite a bit of cold protection, at the exchange of inventory slots. The exact amount probably needs tweaking, so I look forward to your feedback.</p>
+      <p>- Similarly, ice blocks can be used in the same fashion to provide cooling. Ice blocks can be obtained by breaking ice blocks with a saw. Same mechanism as straw, each slot occupied by an ice block will provide cooling. Feedback needed.</p>
+      <p>- The Steel Furnace will provide heat while it's burning</p>
+      <p>- The IE External Heater, while running and connected to a Steel Furnace will provide significant heat. A lever can be used to enable the heater/furnace even without items in the furnace to process. Looking to add a redstone enabled thermometer which should allow redstone mechanisms to automatically provide a set amount of heat.</p>
+      <p>- The IE Electric lanterns provide a small amount of heat when powered. Again, feedback on amount needed.</p>
+      <p>2. TFCStorage. Lumintorious has been at it again and brought us another nifty mod, TFCStorage! This provides a number of storage options to increase the lifetime of stored foods. Includes meat hooks, storage jars, storage shelves, grain piles and new mechanisms to combat food decay. Feedback appreciated. The One Probe data on the stored foods is currently broken on dedicated servers, but hopefully will be fixed soon. See the CurseForge page for the TFC-Storage mod for exact details.</p>
+      <p>3. The One Probe - We've switched from Hywla to the One Probe. It's been configured to look like Hywla so not a lot should be changed. Reason for the switch is a current hard-coded dependency for TFC-Storage. Makes little difference to me.</p>
+      <p>4. Snow shoes may? be fixed.</p>
+      <p>5. Fixed the broken trap door and Nickel Silver armour textures. Now you have no reason not to have a Manganese trapdoor. Textures by me, so they are not pretty</p>
+      <p>6. The previous changes to allow some of the TFC-Metallum metals to be melted in the forge/induction crucible given sufficient temperature has been reverted. A number of issues arose and for now, was easier to just revert to previous behaviour. A wholesale rework of the metals/alloys/temperatures/armour and tool strengths will be looked at in upcoming versions. I am also going to provide a mechanism to convert the surface nuggets of these metals to scrap for Arc Furnace processing.</p>
+      <p>7. Small reduction in the plank output from the BwM Saw and Horsepower Saw. Not quite the doubling of output as previous.</p>
+      <p>8. Dynmap render data for dedicated servers has been updated to fix the rendering of TFC Fresh/Salt/Hot water.</p>
+      <p>9. Fixed some of the Tin Plate hijinks. The Tin  Plate should now be Metal Pressable and meltable. </p>
+      <p>10. The AR Precision Assembler recipes have been altered to utilize Ore Dictionary entries wherever possible.</p>
+      <p>11. The NC Light Rad Shielding recipe has been fixed. Eventually want to add the Rad shielding to the Ambiental setup. Will see this in upcoming versions.</p>
+      <p>12. Maybe finally fixed the Stone Age boat recipe to actually use all 3 logs it specifies in the recipe.</p>
+      <p>13. Nuclearcraft updated.</p>
+      <p>As always, I look forward to your feedback and issues. Likely will be a follow-on release fairly soon with an update for some known issues, particularly with TFC-Storage.</p>
+      <p bold="true">Version 12.2.27 - Plate it up</p>
+      <p>- Went through and fixed all the ingot>plate>sheet recipes. Allow plates to be melted. Should hopefully close any dupe loops in plate processing.</p>
+      <p>- Fix stone-age boat recipe. I said 3 logs damnit!</p>
+      <p>- Allow unfired crucible to be fired in the Steel Furnace</p>
+      <p>- Allow some of the other ores to be melted directly (Cobalt, Ardite, Osmium, Zircon) given sufficient temperature</p>
+      <p>- Toned down TFCAmbiental. A rework of this is coming soon. More options and flexibility</p>
+      <p>- Updated ChunkPreGenerator</p>
+      <p>- Removed all the optional for mods key to the pack.</p>
+      <p bold="true">Version 12.2.26 - Little bugs squashed</p>
+      <p>- Add stoneage plaster recipe with items from the land</p>
+      <p>- Add recipe for vanilla Crafting Table for Engineers Workshop</p>
+      <p>- Fix Engineer Workshop recipes to not eat tools</p>
+      <p>- Remove some Steel and Iron Sheet Plate dupe bugs</p>
+      <p>- Fix Jetpack recipes and names</p>
+      <p>- Fix NuclearCraft Machine Chassis</p>
+      <p>- Fix raw fish having zero nutrition</p>
+      <p>- Allow grinding/milling of manuals into paper</p>
+      <p>- Change manuals to be given out once. Not on respawn</p>
+      <p>- Update TFC to Version 161</p>
+      <p>- Update randompatches</p>
+      <p>- Update ImmersiveTech</p>
+      <p bold="true">Version 12.2.25 - Fixing the broken unbroken things</p>
+      <p>- Changed Chisel and Bits bitsaw to use any decent gems</p>
+      <p>- Added all the missing shulker box colour recipes</p>
+      <p>- Added a stone age boat. 3 logs and an axe head.</p>
+      <p>- Add some quern/millstone/grindstone recipes for boron, fluorite</p>
+      <p>- Remove Borax recipes for Grinder and Mill</p>
+      <p>- Remove the other borax recipe from IE Crusher</p>
+      <p>- Update TFC for various issues including purple donkeys</p>
+      <p>- Couple of fixes for nuclearcraft recipes</p>
+      <p>- Added:</p>
+      <p>   - Terrafirmathings for some cool little bits. Bear traps, Snow shoes.</p>
+      <p>   - EngineersDecor for some other cool little blocks and decorations</p>
+      <p>- Updated:</p>
+      <p>   - Nuclearcraft - New stuff and updates</p>
+      <p>   - TFC - Little fixes for new animals, patchouli book, other stuff</p>
+      <p>   - TNFCMod - oredict and small changes</p>
+      <p>   - JEI</p>
+      <p>   - Immersive Technology - Gas Turbines!</p>
+      <p bold="true">Version 12.2.24 - Break the unbroken things</p>
+      <p>NOTE: This Version is a world-breaker!!!!! Do not use this with existing worlds. Due to extensive changes to worldgen, you need a new world. Cannot emphasize this enough!</p>
+      <p>This Version brings nuclearcraft and all the bits to go with it. Lots of new ores, lots of new machines, lots of new bugs. We also see the return of Steve's Workshop, now called Engineers Workshop. Nice little crafting table mod.</p>
+      <p>AdvancedTFCTech is finally ready to go. This brings an IE Like Auto Loom that is very cool.</p>
+      <p>Added a number of small performance mods that may enhance the experience. Or they may bring new bugs. I look forward to your feedback.</p>
+      <p>Mod updates:</p>
+      <p>  - TFC - Adds a pile of new animals and seasonal colours.</p>
+      <p>  - TNFCMod - Adds a number of new ores to bring nuclearcraft to life. Also the mod has been renamed to fix an issue with overwriting bits of the TFC Patchouli book.</p>
+      <p>Adds ores/metals:</p>
+      <p>FERROBORON</p>
+      <p>THORIUM</p>
+      <p>LITHIUM</p>
+      <p>MANGANESE</p>
+      <p>MAGNESIUM</p>
+      <p>BERYLLIUM</p>
+      <p>BERYLLIUM_COPPER</p>
+      <p>ZIRCONIUM</p>
+      <p>ZIRCALOY</p>
+      <p>HSLA_STEEL</p>
+      <p>MAGNESIUM_DIBORIDE</p>
+      <p>TOUGH</p>
+      <p>URANIUM</p>
+      <p>Removes:</p>
+      <p>BORON and uses Borax from TFC Itself</p>
+      <p>  - SimplyJetpacks</p>
+      <p> - Immersive Technology</p>
+      <p>  - JEI</p>
+      <p>  - Crafttweaker</p>
+      <p>New mods:</p>
+      <p>  - NuclearCraft (Reborn edition)</p>
+      <p>  - EngineersWorkshopReborn</p>
+      <p>  - RebornCore</p>
+      <p>  - VanillaFix</p>
+      <p>  - FastWorkbench</p>
+      <p>  - Surge</p>
+      <p>  - ClientTweaks</p>
+      <p>  - FoamFix</p>
+      <p>  - RandomPatches</p>
+      <p>Removed Mods:</p>
+      <p>TFCSeasonal - Folded into base TFC mod.</p>
+      <p>Again, I apologize for the world-breaking nature of this update. If you're curious, the issue is that using this update with existing worlds breaks the metal melting configuration. Nothing will melt in a crucible from an existing world. YOU HAVE BEEN WARNED!!!!!!</p>
+      <p>Otherwise, look forward to your feedback. Given the amount of stuff that nuclearcraft adds, I fully expect a large amount of bugs and likely a number of hotfixes to come out.</p>
+      <p bold="true">Version 12.2.23 - Fix the broken things</p>
+      <p>- Crop regen will check if a crop is wild before removing.</p>
+      <p>- Add some missing dusts for metals</p>
+      <p>- The IE Crusher and BwM Mill failed their Food Hygiene test. They will not be able to grind grains into flour until they pass</p>
+      <p>- Fix the missing metal lamp textures and language entries</p>
+      <p>- Add thorium from thorianite for future use</p>
+      <p>- Fix all the PneumaticCraft upgrade recipes</p>
+      <p>- Fix XNet Routing Cable recipe</p>
+      <p>- Move the AdvancedRocketry gui items to not overlap with TFCAmbient temperature</p>
+      <p>- Stop generating BiomeTweaker output files</p>
+      <p>- Allow IE Excavator on AR Planets</p>
+      <p>- Fix IE Crusher with Bronze Ingots</p>
+      <p>- Wearable backpacks will no longer occupy chest slot. Allowing full armour use while carrying a backpack</p>
+      <p>- IE Crusher - Cobble to gravel and gravel to sand recipes</p>
+      <p>- IE Arc Furnace - Add sand to glass recipes</p>
+      <p>- Fix fish decay times</p>
+      <p>- Fix chorus fruit to be a superfood</p>
+      <p>- Change thorianite to use loose thorianite ore in worldgen</p>
+      <p>- Added: </p>
+      <p>     - TFC Seasonal - make things purdier</p>
+      <p>-Updated:</p>
+      <p>    - TFC Ambiental</p>
+      <p>    - Immersive Technology - adds cooling tower</p>
+      <p>    - SimplyJetpacks</p>
+      <p>    - Controlling</p>
+      <p>    - BiomeTweaker</p>
+      <p bold="true">Version 12.2.22 - Few little things</p>
+      <p>- Fix BwM Saw recipes to return lumber rather than planks.</p>
+      <p>- Actually implement crop/stick/rock regen. Will regen in the spring/early summer months. Odds of crops regen are 5x the TFC Config regen value. (So 1 in 250 by default). Rocks and sticks and ore nuggets will all regen. If this is laggy or breaking, changing the D:sticksRocksModifier=0.4 to 0 will disable ALL chunk regeneration.</p>
+      <p>- Fix the Arc Furnace recipe adding. Stop removing recipes!</p>
+      <p>- Added TFCAmbiental - Brings body temperature to TFC. Set the configs fairly forgiving so it should be not too bad. We'll see</p>
+      <p>- Updated TFCTech - No more stacking weirdness and easy duping of wires.</p>
+      <p>- Updated TFC. Little bug fixes.</p>
+      <p bold="true">Version 12.2.21 - More things to tweak and fix</p>
+      <p>- New TFC update. Adds patchoulli guidebook for TFC. May extend to cover TNFC at some point.</p>
+      <p>- Alternate paper making recipes. Sawdust from BwM saws. Woodpulp from sawdust and vinegar in barrel. Press wood pulp to make paper.</p>
+      <p> - Add sawdust as secondary output from BwM saws</p>
+      <p>- Fix End City loot</p>
+      <p>- New icons for items</p>
+      <p>- Add woodpulp item</p>
+      <p>- Add sheet/double ingot metal press recipes for non-tool metals</p>
+      <p>- Tungsten Steel drops to Tier V</p>
+      <p>- IP Lava Reservoirs will slowly regenerate</p>
+      <p>- TFC Bloomery and Blast for non-TFC metals disabled</p>
+      <p>- Lot of changes to planet worldgen. </p>
+      <p>- Cargocart exempted from Oversized Item limits</p>
+      <p>- Removed armour sounds </p>
+      <p>- Removed hammer and ingot recipe for iron plates</p>
+      <p>- Updated welding recipes for option smithing skill.</p>
+      <p>- Added some ridiculous end game recipe for the End victor</p>
+      <p>- Lots of little scripty changes, large and small. Check github if you are really curious.</p>
+      <p bold="true">Version 12.2.20.3 Beta - Minor tweaks.</p>
+      <p>- With all the fun with the missing ores, was time to do something to clean it up. All of the non-surface clue generating ores will now generate a clue. The clue will be a surface rock that does not match the surrounding rock biome. Watch for this!</p>
+      <p>- Made another set of adjustments to the IE Excavator. Removed some of the silts and adjusted the setup for some of the newer mineral sets added.</p>
+      <p>- Also the rules around metal blocks have been adjusted. They now take two double sheets to make on the anvil. Or 8 ingots on the metal press. This results in 800 units when the block is melted. And also 8 dusts when crushed. </p>
+      <p>- Any blocks that do not melt, will continue to require 9 ingots to create and should result in 9 ingots on breaking up.</p>
+      <p>- The Oregen for other biomes has also been adjusted to add the new ores.</p>
+      <p bold="true">Version 12.2.20.2 Beta - The Hotfix Edition part 2. </p>
+      <p>MCTImmersiveTechnologies update was yanked and then updated. So we update too.</p>
+      <p bold="true">Version 12.2.20.1 Beta - The Hotfix Edition</p>
+      <p>Maybe generate some Rutile for some titanium? Okay then. Also maybe the excavator could find some too? Good idea!</p>
+      <p bold="true">Version 12.2.20 Beta - The OMGWTFBBQ Update</p>
+      <p>You may/will get warnings upon loading an existing world with the inclusion of BiomeTweakerCore. I've not found any issues with loading anyway, as none of the changes affect TFC worlds. But take a backup first anyway. You've been warned.</p>
+      <p>There are lots of little tweaks/fixes/etc in this version. Please look at the commit history for the pack and the mod on Github.</p>
+      <p>The resource pack was updated. So if you had it setup before, you'll need to go and re-add it. The defaultoptions will select it upon a new install.</p>
+      <p>- Added Advanced Rocketry</p>
+      <p>  - Lot of stuff went into adding this one. Lots of config and recipe changes. Please let me know about issues, I know there will be lots. Discord is best place to do that.</p>
+      <p>- Added BiomeTweaker/BiomeTweakerCore</p>
+      <p>  - To make TFClike biomes on other planets</p>
+      <p>- Added RealisticOreVeins</p>
+      <p>  - To provide TFC ores in said TFCLike biomes</p>
+      <p>Updated TFC Mod:</p>
+      <p>     -Changes to mob spawning control. Mobs in non-TFC worlds will now be left alone.</p>
+      <p>    - Change mature crops. Mature crops will eventually die regardless of temperature. Immortal crops in tropical areas will eventually die. Currently 2 full crop stages until they die.</p>
+      <p>   - Configurable support beam range. No change in TNFC but go nuts if you suck at TFC mining.</p>
+      <p>    - Other little bits.</p>
+      <p>Updated TNFC_Mod:</p>
+      <p>- Add ability to crush whole TFC ore blocks in IE grinder</p>
+      <p>- Fix Rich Scrap to Poor Scrap amount</p>
+      <p>- Fix IE Metal Press output TFC Hammer with Hoe mold inserted</p>
+      <p>- Fix the tfctech copper inductor recipe</p>
+      <p>- Updated Time4TFC to support changes in TFC</p>
+      <p>- Updated MCTImmersiveTech</p>
+      <p>- Updated the TFC Faithful Resource Pack. Should now be recognized as the correct version</p>
+      <p bold="true">Version 12.2.19 Beta -</p>
+      <p>- Fix all the loot tables for some mobs, chests, fishing</p>
+      <p>- Only copy nutrition on death if below default</p>
+      <p>- Add some logging for a change</p>
+      <p>- Create copper inductor recipe with oreDict entries</p>
+      <p>- Bump Aluminum melting point to reflect difficulty in processing bauxite</p>
+      <p>- Add purdy new icons to main page. Thanks FiringIron!</p>
+      <p>- Rope to Hemp and Rope Block to ropes recipes</p>
+      <p>- Change JAFF dimension restrictions</p>
+      <p>- Fix IE Drill Head recipe (steel exploit via Arc Furnace recycling)</p>
+      <p>- Add Treated Planks Barrel Recipe. Thanks Dhs92</p>
+      <p>- Restore IE Crusher Sulfur recipe</p>
+      <p>- Fix the Hangglider recipe</p>
+      <p>- Update DSurround config</p>
+      <p>- Turn off Chunk Pregen client UI by default</p>
+      <p>- Add IE Arc Furnace Ingot to Alloy recipes (dusts coming soon)</p>
+      <p>- Permit Ducks to be captured by AnimalNets</p>
+      <p>- Add raw and cooked meats to proper Oredict for salting and use in sandwiches, salads, etc.</p>
+      <p>- Remove LootTweaker. We don't need it. Anode learned about LootTables</p>
+      <p>- Update:</p>
+      <p>   Technodefirmacraft mod - natch</p>
+      <p>   ImmersiveTechnology</p>
+      <p>- Remove the Arc Furnace Wrought Iron dust > ingot recipe</p>
+      <p bold="true">Version 12.2.18 Beta -</p>
+      <p>- Fix the IE Excavator Output. Was a little wonky. Okay a lot wonky.</p>
+      <p>- Enable spawning of Selenite. Oops. It is available from the Excavator too</p>
+      <p>- Added a gold block recipe. For future reasons </p>
+      <p>- Other little bits.</p>
+      <p>-Mod Update:</p>
+      <p>     ForgeEnderTech</p>
+      <p>     Athenaeum</p>
+      <p>      AdHooks</p>
+      <p>     TNFCMod - Enable all the quartz things</p>
+      <p bold="true">Version 12.2.17.1 Beta Hotfix Edition - </p>
+      <p>- Actually fix the Arc Furnace recipes for TFC Dusts.</p>
+      <p>- Also fix PnC plastic creation</p>
+      <p bold="true">Version 12.2.17 Beta -</p>
+      <p>//Fixes</p>
+      <p>- Fixed the Arc Furnace recipes for TFC dusts</p>
+      <p>- Added a number of tools to use the TFC Tool Racks</p>
+      <p>- Add TFC Lapis to IE Crusher recipes</p>
+      <p>- Cleanup IE blueprints</p>
+      <p>- Fix the YABBA blank barrel upgrade</p>
+      <p>- Fix the coal to diamonds Pneumaticcraft recipe</p>
+      <p>- Add Fabric creation recipes to the Horsepower Press (totally legit I swear). Less input efficient but automation is messy. If you want to maximize your usage, go click on a loom</p>
+      <p>//Additions</p>
+      <p>-Controlling - for all your keybinding needs</p>
+      <p>- LootTweaker - I'm going to need this soon</p>
+      <p>- animalnet - for all your domestic critter transportation needs</p>
+      <p bold="true">Version 12.2.16 Beta - </p>
+      <p>- Death costs more</p>
+      <p>- Nuggets can be made</p>
+      <p>- HOP Ingots can be made in blast furnace</p>
+      <p>- HOP Blueprint recipe changed</p>
+      <p>- Garden cloche usage modified</p>
+      <p>- Change recipe using vanilla coal</p>
+      <p>- Fix Immersive Petroleum recipes</p>
+      <p>- Removed ContentTweaker and BASE library as we're not using it</p>
+      <p bold="true">Version 12.2.15 Beta-</p>
+      <p>Changes - Disabled the old age dying of animals. Without domestic animal respawn, it's cruel and silly.</p>
+      <p>Update:</p>
+      <p>- TNFCMod - Properly fix the Horsepower Grindstone.</p>
+      <p>  - TFC to 153  - Fixes Clean Jute Net cleaning. Other fixes</p>
+      <p>- JEI</p>
+      <p>- Crafttweaker2</p>
+      <p>- CustomNPCs</p>
+      <p>- Athenaeum</p>
+      <p>- BNBGamingCore</p>
+      <p bold="true">Version 12.2.14 Beta -</p>
+      <p>- Fix Winch Recipe from TFCTech</p>
+      <p>- Fix Ladders from sticks recipe</p>
+      <p>- Adjust Kaol and Graphite output from BwM Millstone and Horsepower Grindstone</p>
+      <p bold="true">Version 12.2.13 Beta - </p>
+      <p>- Changed the previous change to the Horsepower Grindstone. The TNFC version has been removed. The original Horsepower Grindstone now should work to process all recipes, including foods.</p>
+      <p>- Added the Horsepower chopper to more efficiently chop wood into planks.</p>
+      <p>- The Horsepower press now works to press Olives directly into Olive Oil water.</p>
+      <p>- Adjusted the Olive Oil Water to Olive Oil barrel recipe to allow for processing of full barrels with 40 Jute Nets.</p>
+      <p>- Fixed the IE Crusher recipes to output proper items. Capped output to prevent dupe loops.</p>
+      <p>- Various other small fixes and changes.</p>
+      <p bold="true">Version 12.2.12Beta-</p>
+      <p> Added TNFC version of Horsepower Grindstone to allow grinding of TFC foods. It is a new block so you will have to replace any existing ones.</p>
+      <p>- Sulfur now correctly oregens. Oops.</p>
+      <p>- Added ingot>nugget recipes for all TFC metals</p>
+      <p>- Tweaked the auto-recipes for IE Crusher to make it worth the build</p>
+      <p>- Created source of nether quartz. A crap one and several better ones.</p>
+      <p>- Fixed all the food recipes for Millstone and Mill</p>
+      <p>- Added furnace recipes for all clay items and foods</p>
+      <p>- Fixed some of the food registries - Wolf chops should cook/ Fish should cook faster</p>
+      <p>- Broken IE Lantern recipe</p>
+      <p>- Fixed slow movement on chiselandbits blocks</p>
+      <p>- Updated </p>
+      <p>  - OIISA - No more fires in the quenching barrel</p>
+      <p>      Mod got fixed so back to don't put hot things in flammable storage devices</p>
+      <p>- JEI</p>
+      <p>- Guidebook</p>
+      <p>- FTBUtilities</p>
+      <p>- ImmersiveTechnology</p>
+      <p>- TNFC_Mod </p>
+      <p> </p>
+      <p bold="true">Version 12.2.11Beta-</p>
+      <p>- Added FirstAid mod. Adds bandages, plasters and morphine solutions. Also adds a localized dmg model. Seems fun. Feedback wanted.</p>
+      <p>- Added Gemmed Redstone Latch</p>
+      <p>- Made Waystones actually craftable again.  Through the use of, you guessed it, gemmed redstone latches.</p>
+      <p>- Bunch of recipes for Rockhounding Chemistry. All the basic functions should now be sorted for the mod. The basic TFC alloys are also craftable within the mod. Now just need to work on ore doubling/tripling. Soon:  Geminus fluid!</p>
+      <p bold="true">Version 12.2.10Beta-</p>
+      <p>Added HC Steel Dusts</p>
+      <p>Added HC Steel Amalgams</p>
+      <p>Reworked IE Blast furnace recipes. Arc furnace recipes still need work. As do Alloy Furnace recipes.</p>
+      <p>Added dust > alloy recipes.</p>
+      <p>Added Wrought Iron Ingot to Oredict IngotIron (not plates) - May have consquences, needs testing.</p>
+      <p>Updated:</p>
+      <p>FTBLib</p>
+      <p>FTBUtilities</p>
+      <p>TNFCMod</p>
+      <p bold="true">Version 12.2.9Beta - </p>
+      <p>Fixes:</p>
+      <p>Iron ore piles not being craftable - Thx Biletooth</p>
+      <p>Furnace recipe not craftable</p>
+      <p>Changed:</p>
+      <p>Jetpack recipes reworked</p>
+      <p>Waystone recipe tweaked</p>
+      <p>Signpost config  and recipes tweaked - Thx bobgoogwin123</p>
+      <p>Various recipe changes. </p>
+      <p>Amadon tablet configurated for TNFC</p>
+      <p>Updated:</p>
+      <p>TNFCMod</p>
+      <p>TFC </p>
+      <p>JEI</p>
+      <p>Added:</p>
+      <p>Debarked mod - Thx Therighthon</p>
+      <p>   This mod let's you remove the bark from logs. Either by shift-right clicking a log in the world with an axe, or as a crafting recipe with the log(s) and an axe. Debarked logs are purely for decorative purposes.</p>
+      <p bold="true">Version 12.2.8Beta -  Small script fixes and TFC Update</p>
+      <p bold="true">Version 12.2.7Beta - Added a TFC compatible Plow Cart. Now equip it with shovels to make paths, or hoe's to make farmland.</p>
+      <p>Added clay block > clay recipe</p>
+      <p>Tweaked signposts recipes and config.</p>
+      <p>Removed all the borked achievements to cut down on the 8 pages of log-spam at startup.</p>
+      <p>Other misc. stuff probably.</p>
+      <p bold="true">Version 12.2.6Beta- Little things</p>
+      <p>Small changes. Been actually playing through so  had a chance to see a few things and make some changes. The 'big' one is the availability of the wooden fishing pole earlier than iron through the introduction of the copper fishhook. Some other minor changes based on things I'd noticed during my playthrough. Also removed the TFC Debug block from a recipe. Likely nobody noticed but it was in there for testing and forgot to remove it.  Also added a new mod from ClayCorp to manage the TFC Size and Weight in use with modded inventories </p>
+      <p bold="true">Version 12.2.5- Beta - Let's Start Some More</p>
+      <p>Now with some actual tech mods and 'some' of their progression. More of the Rockhounding stuff is configured.</p>
+      <p>Updated ImmersiveTech to ImmersiveTechnology. Thanks for the headsup from Grigoriewich. Now we have working distillers and boilers for stuff.</p>
+      <p>Some other config updates.</p>
+      <p>Some config  and mod updates.  Added the Orepiles from 1.7.10. A high tier hammer can pound various ore grades into uniform scrap piles for easy processing.</p>
+      <p>Added some server stuff: Dynmap and it's renderdata for modblocks</p>
+    </section>
   </chapter>
 </book>
