@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -57,17 +58,6 @@ public class BlockPlayerDetector extends Block
         return true;
     }
 
-    @Override
-    public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random)
-    {
-        // super.updateTick(worldIn, pos, state, random);
-        TilePlayerDetector te = Helpers.getTE(worldIn, pos, TilePlayerDetector.class);
-        if (te != null)
-        {
-            te.update();
-        }
-
-    }
 
     @Override
     public int getWeakPower(IBlockState blockState, IBlockAccess world, BlockPos pos, EnumFacing side)
@@ -90,6 +80,11 @@ public class BlockPlayerDetector extends Block
         }
 
 
+    }
+
+    @Override
+    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
+        return world.getBlockState(pos).withProperty(ENABLED, true);
     }
 
     @Override

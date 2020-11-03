@@ -91,9 +91,10 @@ public class TilePlayerDetector extends TETickableBase
     {
         IBlockState state = world.getBlockState(pos);
         world.setBlockState(pos, state.withProperty(ENABLED, enabled));
-        world.notifyBlockUpdate(pos, state, state, 3);
+        world.notifyBlockUpdate(pos, state.withProperty(ENABLED, false), state.withProperty(ENABLED, true), 3);
         world.notifyNeighborsOfStateChange(pos, state.getBlock(),true);
         markForSync();
+        super.update();
     }
 
 
@@ -110,6 +111,8 @@ public class TilePlayerDetector extends TETickableBase
             owner = new UUID(0, 0);
         }
         playername = nbt.getString("playername");
+        enabled = nbt.getBoolean("enabled");
+        redstone_output = nbt.getInteger("redstone");
     }
 
     @Override
@@ -118,17 +121,12 @@ public class TilePlayerDetector extends TETickableBase
     {
         nbt.setString("owner", owner.toString());
         nbt.setString("playername", playername);
+        nbt.setBoolean("enabled", enabled);
+        nbt.setInteger("redstone", redstone_output);
         return super.writeToNBT(nbt);
     }
 
-    @Override
-    public void onLoad()
-    {
-        if (!world.isRemote)
-        {
-            enabled = world.getBlockState(pos).getValue(ENABLED);
-        }
-    }
+
 
 
 }
