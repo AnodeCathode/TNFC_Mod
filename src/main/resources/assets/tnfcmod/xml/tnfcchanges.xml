@@ -299,6 +299,42 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p>Version 12.2.41 - It's a block, and a book, but mostly a block.</p>
+      <p space="10"/>
+      <p>Recreated my favourite block. The Online Player Detector, previously a part of Immibis' TubeStuff mod. Wonderful block for turning off machines or recalling drones when you're not online.</p>
+      <p space="10"/>
+      <p>Also revamped and expanded the TNFC book. It's got a lot of decent content in there now. Highly recommended.</p>
+      <p space="10"/>
+      <p>Adjusted the ratio and ingredients of some of the newer alloys.</p>
+      <p space="10"/>
+      <p>Added alloys and recipes to Rockhounding Material Cabinet and Alloyer.</p>
+      <p space="10"/>
+      <p>Add Filtered Sand recipe to RH Blender</p>
+      <p space="10"/>
+      <p>Renamed the Leather Forging Tunic to the Leather Forging Bib</p>
+      <p space="10"/>
+      <p>Fix the Kebab recipe to handle food expiry dates. No more cheaty kebabs for you!</p>
+      <p space="10"/>
+      <p>Allow fish to survive vacuum. Allows for fish farming on other planets and space stations.</p>
+      <p space="10"/>
+      <p>Allow respawn on planets with an atmosphere</p>
+      <p space="10"/>
+      <p>Change chisel and bits print recipes to use dyes instead of minerals</p>
+      <p space="10"/>
+      <p>Added metal press and grinder recipes to automate scrap creation from ores. Thanks eagleeyes005 again for the PR</p>
+      <p space="10"/>
+      <p>Remove the JEI bookmarks from the config</p>
+      <p space="10"/>
+      <p>Add crafting recipe for the revamped TNFC book</p>
+      <p space="10"/>
+      <p>Adjust some IE tool recipes.</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p>- DynamicSurroundings</p>
+      <p>- Immersive Technology</p>
+      <p>- Terrafirmathings</p>
+      <p space="10"/>
       <p bold="true">Version 12.2.41 - It's a block.</p>
       <p>Recreated my favourite block. The Online Player Detector, previously a part of Immibis' TubeStuff mod. Wonderful block for turning off machines or recalling drones when you're not online.</p>
       <p bold="true">Version 12.2.40 - Don't Lose Your Head, It's just Enchanting.</p>
