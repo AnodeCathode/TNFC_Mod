@@ -1,0 +1,25 @@
+{
+  "type": "tfc:damage_item_food_recipe",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "categoryVegetable"
+    },
+{
+      "type": "forge:ore_dict",
+      "ore": "categoryMeat"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+
+    {
+      "item": "tfc:plants/porcini"
+    }
+  ],
+  "result": {
+    "item": "betterwithmods:raw_kebab",
+    "count": 2
+  }
+}
