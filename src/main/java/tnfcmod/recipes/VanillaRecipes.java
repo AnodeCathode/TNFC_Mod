@@ -4,6 +4,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
@@ -43,6 +44,9 @@ public class VanillaRecipes
         //things we remove so we can add our own:
        RecipeUtils.removeRecipeByName(modRegistry,"minecraft", "furnace");
 
+       //Other recipes I need to remove here rather than in CT:
+       RecipeUtils.removeRecipeByName(modRegistry,"betterwithmods", "raw_kebab");
+      
        //Things added by TFC-NG that we're going to remove.
 
        //Ladders from planks. Ladders are made from sticks damnit
