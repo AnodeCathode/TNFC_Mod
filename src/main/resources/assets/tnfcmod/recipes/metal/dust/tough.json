@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "dustFerroboron"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dustLithium"
+    }    
+  ],
+  "result": {
+    "item": "tfc:metal/dust/constantan",
+    "count": 2
+  }
+}
