@@ -299,6 +299,25 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p>Version 12.2.42-Life, The Universe and Bugfixes</p>
+      <p space="10"/>
+      <p>A tiny update to sort out a couple of issues with the previous update.</p>
+      <p space="10"/>
+      <p>Changed some dust recipes to match new alloys</p>
+      <p space="10"/>
+      <p>Removed some IE Crusher recipes that conflict with new ore crushing recipes</p>
+      <p space="10"/>
+      <p>Added new dust recipes for recently added alloys</p>
+      <p space="10"/>
+      <p>Fixed oreDict entry for RH dustRosegold</p>
+      <p space="10"/>
+      <p>Minecraft mushrooms will drop TFC porcini mushrooms. Mostly applies to nether</p>
+      <p space="10"/>
+      <p>Grass growing suppression modified to hopefully prevent multiblocks being broken</p>
+      <p space="10"/>
+      <p>AR Cutting Machine will now process TFC logs. With bonus amount of lumber and sawdust for paper</p>
+      <p space="10"/>
+      <p space="10"/>
       <p>Version 12.2.41 - It's a block, and a book, but mostly a block.</p>
       <p space="10"/>
       <p>Recreated my favourite block. The Online Player Detector, previously a part of Immibis' TubeStuff mod. Wonderful block for turning off machines or recalling drones when you're not online.</p>
