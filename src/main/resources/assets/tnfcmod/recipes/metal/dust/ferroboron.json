@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+     "SSS", 
+     "STS", 
+     "SSS"
+  ],
+  "key": {
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "dustBlackSteel"
+      },
+    "T": {
+      "type": "forge:ore_dict",
+      "ore": "dustBoron"
+    }
+
+  },
+  "result": {
+    "item": "tfc:metal/dust/ferroboron",
+    "count": 9
+  }
+}

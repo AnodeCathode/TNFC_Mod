@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+     "SSS", 
+     "STS", 
+     "SSS"
+  ],
+  "key": {
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "dustZirconium"
+      },
+    "T": {
+      "type": "forge:ore_dict",
+      "ore": "dustTin"
+    }
+
+  },
+  "result": {
+    "item": "tfc:metal/dust/zircaloy",
+    "count": 9
+  }
+}

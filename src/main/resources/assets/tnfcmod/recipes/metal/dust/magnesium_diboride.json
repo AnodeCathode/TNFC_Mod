@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+     "STS",
+     "SSS",
+     "STS"
+  ],
+  "key": {
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "dustBoron"
+      },
+    "T": {
+      "type": "forge:ore_dict",
+      "ore": "dustMagnesium"
+    }
+
+  },
+  "result": {
+    "item": "tfc:metal/dust/magnesium_diboride",
+    "count": 9
+  }
+}

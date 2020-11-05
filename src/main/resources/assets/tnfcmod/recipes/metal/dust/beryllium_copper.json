@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+     "CTC",
+     "CCC",
+     "CAC"
+  ],
+  "key": {
+    "C": {
+      "type": "forge:ore_dict",
+      "ore": "dustCopper"
+      },
+    "B": {
+      "type": "forge:ore_dict",
+      "ore": "dustBeryllium"
+    },
+    "A": {
+      "type": "forge:ore_dict",
+      "ore": "dustAluminum"
+    }
+
+  },
+  "result": {
+    "item": "tfc:metal/dust/beryllium_copper",
+    "count": 9
+  }
+}
