@@ -82,6 +82,8 @@
       <p space="10"/>
       <p>Walking in grass slows you down. Make paths with shovels, or the Plow Cart to speed your travels. Spending time in a chunk accumulates 'Spawn Protection'. Once a chunk is protected, the grass will no longer grow high.</p>
       <p space="10"/>
+      <p>The MineralTracker mod will track the small ores you pick off the ground if you right click to pick them up.</p>
+      <p space="10"/>
       <p>Cold is a killer. You can use straw in your inventory to stay warm in exchange for inventory space. Each slot occupied provides some warmth.</p>
       <p space="10"/>
       <p>Heat is a killer. You can use ice or snow blocks in your inventory to stay cool in exchange for inventory space. Each slot occupied provides some warmth.</p>
@@ -298,6 +300,22 @@
     <section>
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
+      <p space="10"/>
+      <p>Version 12.2.43 - Call it a Release</p>
+      <p space="10"/>
+      <p>Just fixing little things</p>
+      <p space="10"/>
+      <p>- Oredict entry for HSLA Steel</p>
+      <p>- Increase effectiveness of Leather Forging Bib</p>
+      <p>- Fix recipe for Tough Ingot dusts</p>
+      <p>- Minor tweaks to default oregen</p>
+      <p>- Reduce power of Terrafirmathings Sling</p>
+      <p space="10"/>
+      <p>Update:</p>
+      <p>- Terrafirmathings</p>
+      <p>- TNFC_Mod</p>
+      <p>- CraftTweaker</p>
+      <p space="10"/>
       <p space="10"/>
       <p>Version 12.2.42-Life, The Universe and Bugfixes</p>
       <p space="10"/>
