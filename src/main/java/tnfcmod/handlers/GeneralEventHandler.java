@@ -6,44 +6,45 @@ import java.util.Random;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Blocks;
+import net.minecraft.entity.projectile.EntityFishHook;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.DimensionType;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
 
 import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.util.ItemNBTHelper;
+import com.tmtravlr.jaff.entities.EntityIronFishHook;
+import com.tmtravlr.jaff.items.ItemHookedFishingRod;
+import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.Constants;
 import net.dries007.tfc.api.capability.food.FoodData;
 import net.dries007.tfc.api.capability.food.FoodStatsTFC;
 import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
 import net.dries007.tfc.api.capability.food.NutritionStats;
 import net.dries007.tfc.api.types.IPredator;
-import net.dries007.tfc.objects.blocks.BlocksTFC;
-import net.dries007.tfc.objects.blocks.plants.BlockPlantTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockShortGrassTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockTallGrassTFC;
-import net.dries007.tfc.objects.items.ItemsTFC;
-import net.dries007.tfc.types.DefaultPlants;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import tnfcmod.util.MonsterGear;
 
@@ -107,33 +108,56 @@ public class GeneralEventHandler
     }
 
 
-
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onEntityJoinWorldEvent(EntityJoinWorldEvent event)
     {
-        if (event.getWorld().provider.getDimensionType() != DimensionType.OVERWORLD)
+        Entity entity = event.getEntity();
+        if (entity instanceof EntityIronFishHook && entity.getClass().equals(EntityIronFishHook.class))
         {
-            Entity entity = event.getEntity();
-
-            if (entity instanceof EntityChicken)
+            World world = event.getWorld();
+            if (!world.isRemote)
             {
-                event.setCanceled(true); // NO!
-            }
-
-            if (event.getEntity().isCreatureType(EnumCreatureType.MONSTER, false))
-            {
-                // Set equipment to some mobs
-                MonsterGear equipment = MonsterGear.get(entity);
-                if (equipment != null)
+                EntityPlayer player = ((EntityFishHook) entity).getAngler();
+                ItemStack stack = player.getHeldItem(EnumHand.MAIN_HAND);
+                if (stack.getItem() instanceof ItemHookedFishingRod)
                 {
-                    for (EntityEquipmentSlot slot : EntityEquipmentSlot.values())
+                    if (stack.hasTagCompound()) {
+                        NBTTagList baitList = stack.getTagCompound().getTagList("Bait", 10);
+                        if (baitList.isEmpty()){
+                            entity.setDead();
+                            player.sendStatusMessage(new TextComponentTranslation("tnfcmod.nobait"), ConfigTFC.Client.TOOLTIP.propickOutputToActionBar);
+                        }
+                    }
+                    else
                     {
-                        equipment.getEquipment(slot, Constants.RNG).ifPresent(stack -> entity.setItemStackToSlot(slot, stack));
+                        entity.setDead();
+                        player.sendStatusMessage(new TextComponentTranslation("tnfcmod.nobait"), ConfigTFC.Client.TOOLTIP.propickOutputToActionBar);
+                    }
+                }
+            }
+       }
+            if (event.getWorld().provider.getDimensionType() != DimensionType.OVERWORLD)
+            {
+
+                if (entity instanceof EntityChicken)
+                {
+                    event.setCanceled(true); // NO!
+                }
+
+                if (event.getEntity().isCreatureType(EnumCreatureType.MONSTER, false))
+                {
+                    // Set equipment to some mobs
+                    MonsterGear equipment = MonsterGear.get(entity);
+                    if (equipment != null)
+                    {
+                        for (EntityEquipmentSlot slot : EntityEquipmentSlot.values())
+                        {
+                            equipment.getEquipment(slot, Constants.RNG).ifPresent(stack -> entity.setItemStackToSlot(slot, stack));
+                        }
                     }
                 }
             }
         }
-    }
 
 
 
