@@ -99,6 +99,7 @@ dependencies {
         exclude group: 'cofh', module:'RedstoneFlux'
     }
     compile fileTree(include: ["*.jar"], dir: "libs")
+    compileOnly fileTree(include: ["*.jar"], dir: "libsCompile")
 }
 
 processResources {
