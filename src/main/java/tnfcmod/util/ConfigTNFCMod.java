@@ -6,6 +6,7 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import static net.dries007.tfc.TerraFirmaCraft.MOD_ID;
 import static tnfcmod.tnfcmod.MODID;
 
 @SuppressWarnings("unused")
@@ -14,9 +15,10 @@ import static tnfcmod.tnfcmod.MODID;
 @Mod.EventBusSubscriber(modid = MODID)
 public class ConfigTNFCMod
 {
-    @Config.Comment("Recipes configuration")
-    @Config.LangKey("config." + MODID + ".recipes")
-    public static ConfigTNFCMod.Recipes RECIPES = new ConfigTNFCMod.Recipes();
+
+    @Config.Comment("General configuration")
+    @Config.LangKey("config." + MODID + ".general")
+    public static ConfigTNFCMod.General GENERAL = new ConfigTNFCMod.General();
 
 
     @SubscribeEvent
@@ -28,36 +30,13 @@ public class ConfigTNFCMod
         }
     }
 
-    public static class Recipes
+    public static class General
     {
-        @Config.Comment({"Register ardite recipe via bloomery?"})
-        @Config.LangKey("config." + MODID + ".recipes.ardite")
+        @Config.Comment({"Number of ticks for a chunk to be frozen?"})
+        @Config.LangKey("config." + MODID + ".frozentime")
         @Config.RequiresMcRestart
-        public boolean ardite = true;
-
-        @Config.Comment({"Register aluminum recipe via bloomery?"})
-        @Config.LangKey("config." + MODID + ".recipes.aluminum")
-        @Config.RequiresMcRestart
-        public boolean aluminum = true;
-
-        @Config.Comment({"Register cobalt recipe via bloomery?"})
-        @Config.LangKey("config." + MODID + ".recipes.cobalt")
-        @Config.RequiresMcRestart
-        public boolean cobalt = true;
-
-        @Config.Comment({"Register osmium recipe via blast furnace?"})
-        @Config.LangKey("config." + MODID + ".recipes.osmium")
-        @Config.RequiresMcRestart
-        public boolean osmium = true;
-
-        @Config.Comment({"Register titanium recipe via blast furnace?"})
-        @Config.LangKey("config." + MODID + ".recipes.titanium")
-        @Config.RequiresMcRestart
-        public boolean titanium = true;
-
-        @Config.Comment({"Register tungsten recipe via blast furnace?"})
-        @Config.LangKey("config." + MODID + ".recipes.tungsten")
-        @Config.RequiresMcRestart
-        public boolean tungsten = true;
+        public int frozentime = 6912000;
     }
+
+
 }
