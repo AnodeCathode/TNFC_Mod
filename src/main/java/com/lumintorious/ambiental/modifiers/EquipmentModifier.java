@@ -1,6 +1,8 @@
 package com.lumintorious.ambiental.modifiers;
 
 
+import java.util.Iterator;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
@@ -8,35 +10,51 @@ import net.minecraft.item.ItemStack;
 
 import baubles.api.BaublesApi;
 import com.lumintorious.ambiental.capability.TemperatureSystem;
+import me.desht.pneumaticcraft.common.item.ItemPneumaticArmor;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.objects.items.metal.ItemMetalArmor;
 import tnfcmod.objects.items.TNFCItems;
+import zmaster587.advancedRocketry.armor.ItemSpaceArmor;
 
 
-public class EquipmentModifier extends BaseModifier{
-	
-	public EquipmentModifier(String name) {
-		super(name);
-	}
-	
-	public EquipmentModifier(String unlocalizedName, float change, float potency) {
-		super(unlocalizedName, change, potency);
-	}
-	
-	public static void getModifiers(EntityPlayer player, ModifierStorage modifiers) {
-		Iterable<ItemStack> armor = player.getArmorInventoryList();
+public class EquipmentModifier extends BaseModifier
+{
+
+    public EquipmentModifier(String name)
+    {
+        super(name);
+    }
+
+    public EquipmentModifier(String unlocalizedName, float change, float potency)
+    {
+        super(unlocalizedName, change, potency);
+    }
+
+    public static void getModifiers(EntityPlayer player, ModifierStorage modifiers)
+    {
+        int superArmourCount = 0;
+        Iterable<ItemStack> armor = player.getArmorInventoryList();
         for (ItemStack stack : armor)
         {
+
             if (stack.getItem() instanceof ItemArmor)
             {
-                ItemArmor thing = (ItemArmor)stack.getItem();
+                if (stack.getItem() instanceof ItemSpaceArmor || stack.getItem() instanceof ItemPneumaticArmor)
+                {
+                    superArmourCount += 1;
+                }
+
+                ItemArmor thing = (ItemArmor) stack.getItem();
                 float modifier = 2f;
                 float potency = -0.1f;
-                if(stack.getItem() instanceof ItemMetalArmor) {
+                if (stack.getItem() instanceof ItemMetalArmor)
+                {
                     ItemMetalArmor metalarmor = (ItemMetalArmor) stack.getItem();
                     Metal metal = metalarmor.getMetal(stack);
-                    if (metal != null){
-                        switch(metal.toString()){
+                    if (metal != null)
+                    {
+                        switch (metal.toString())
+                        {
                             case "copper":
                                 modifier = 2f;
                                 potency = -0.1f;
@@ -69,10 +87,15 @@ public class EquipmentModifier extends BaseModifier{
                                 modifier = 7.0f;
                                 potency = 0.5f;
                                 break;
+                            case "tungsten_steel":
+                                modifier = 7.0f;
+                                potency = 0.5f;
+                                break;
                             case "red_steel":
                                 modifier = -7.0f;
                                 potency = 0.5f;
                                 break;
+
 
                         }
                     }
@@ -106,6 +129,24 @@ public class EquipmentModifier extends BaseModifier{
                 }
             }
         }
+        if (superArmourCount == 4)
+        {
+            //Player wearing complete space suit. Remove all the nasty modifiers
+            Iterator<BaseModifier> it = modifiers.iterator();
+            while (it.hasNext())
+            {
+                BaseModifier mod = it.next();
+                if (mod.getUnlocalizedName() == "environment")
+                {
+                    mod.setChange(15f);
+                }
+                else
+                {
+                    it.remove();
+                }
+
+            }
+        }
 
         if (BaublesApi.isBaubleEquipped(player, TNFCItems.leather_tunic) > 0)
         {
@@ -117,7 +158,7 @@ public class EquipmentModifier extends BaseModifier{
                 mod.setChange(temp);
             }
         }
-	}
+    }
 
 }
 
