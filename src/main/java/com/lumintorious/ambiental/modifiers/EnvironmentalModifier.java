@@ -76,7 +76,24 @@ public class EnvironmentalModifier extends BaseModifier {
 			return null;
 		}
 	}
-	
+    public static EnvironmentalModifier handleDimensions(EntityPlayer player) {
+
+	    int dimension = player.world.provider.getDimension();
+	    if (dimension == 0){
+	        return null;
+        }
+	    else if (dimension == -1){
+	        // It's Hell. It outta be hawt!
+            return new EnvironmentalModifier("in_hell", 12f, 6f);
+        }
+        else if (dimension == 1)
+        {
+            // It's the End. It outta be cold!
+            return new EnvironmentalModifier("in_end", -12f, 6f);
+        }
+	    return null;
+    }
+
 	public static EnvironmentalModifier handleRain(EntityPlayer player) {
 		if(player.world.isRaining()) {
 			if(getSkylight(player) < 15) {
@@ -165,6 +182,7 @@ public class EnvironmentalModifier extends BaseModifier {
 		}
 		return null;
 	}
+
 	
 	public static int getSkylight(EntityPlayer player) {
 		BlockPos pos = new BlockPos(player.getPosition());
