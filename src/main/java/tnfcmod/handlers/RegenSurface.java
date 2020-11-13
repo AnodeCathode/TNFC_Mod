@@ -17,6 +17,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import net.dries007.tfc.ConfigTFC;
+import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.te.TECropBase;
 import net.dries007.tfc.objects.te.TEPlacedItemFlat;
 import net.dries007.tfc.util.calendar.CalendarTFC;
@@ -24,7 +25,10 @@ import net.dries007.tfc.util.calendar.Month;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import net.dries007.tfc.world.classic.worldgen.WorldGenBerryBushes;
 import net.dries007.tfc.world.classic.worldgen.WorldGenLooseRocks;
+import net.dries007.tfc.world.classic.worldgen.WorldGenTrees;
 import net.dries007.tfc.world.classic.worldgen.WorldGenWildCrops;
+import tnfcmod.tnfcmod;
+import tnfcmod.util.ConfigTNFCMod;
 
 import static net.dries007.tfc.objects.blocks.agriculture.BlockCropTFC.WILD;
 import static tnfcmod.tnfcmod.MODID;
@@ -44,9 +48,27 @@ public class RegenSurface
     public static void onChunkLoad(ChunkDataEvent.Load event)
     {
 
+        ChunkDataTFC chunkDataTFC = ChunkDataTFC.get(event.getChunk());
+        //chunk freeze check
+        if (event.getWorld().provider.getDimension() == 0 && chunkDataTFC.getLastUpdateTick() + ConfigTNFCMod.GENERAL.frozentime < CalendarTFC.PLAYER_TIME.getTicks())
+        {
+            // Last update take is greater than 4 in-game days?
+            // Reset Animals, Crops, Trees?, others?
+
+            //Whatever else happens, let's reset the value.
+            chunkDataTFC.resetLastUpdateTick();
+
+        }
+        else
+        {
+            //Otherwise it's been more recent so just update the data and move on.
+            chunkDataTFC.resetLastUpdateTick();
+        }
+
+        //stick/rock/crop regen
         if (event.getWorld().provider.getDimension() == 0 && ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0 && POSITIONS.size() < 100)
         {
-            ChunkDataTFC chunkDataTFC = ChunkDataTFC.get(event.getChunk());
+
             //Only run this in the early months of each year
             if (CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY) && !chunkDataTFC.isSpawnProtected() && CalendarTFC.CALENDAR_TIME.getTotalYears() > chunkDataTFC.getLastUpdateYear())
             {
@@ -72,29 +94,29 @@ public class RegenSurface
                 // Crops, sticks and rocks all regenerate once a year in the spring. Cause the spring thaw or something.
                 if (CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY) && !chunkDataTFC.isSpawnProtected() && CalendarTFC.CALENDAR_TIME.getTotalYears() > chunkDataTFC.getLastUpdateYear())
                 {
-                    //tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
+                    tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
                     // Check server performance here and cancel if no tick budget? Also check if the chunk is loaded?
-//                    if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
-//                    {
-//                        //Nuke any rocks and sticks in chunk.
-//                        removeAllPlacedItems(event.world, pos);
-//                        List<Tree> trees = chunkDataTFC.getValidTrees();
-//                        double rockModifier = ConfigTFC.General.WORLD_REGEN.sticksRocksModifier;
-//                        ROCKS_GEN.setFactor(rockModifier);
-//                        ROCKS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
-//
-//                        final float density = chunkDataTFC.getFloraDensity();
-//                        int stickDensity = 3 + (int) (4f * density + 1.5f * trees.size() * rockModifier);
-//                        if (trees.isEmpty())
-//                        {
-//                            stickDensity = 1 + (int) (1.5f * density * rockModifier);
-//                        }
-//                        WorldGenTrees.generateLooseSticks(RANDOM, pos.x, pos.z, event.world, stickDensity);
-//                    }
+                    if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
+                    {
+                        //Nuke any rocks and sticks in chunk.
+                        removeAllPlacedItems(event.world, pos);
+                        List<Tree> trees = chunkDataTFC.getValidTrees();
+                        double rockModifier = ConfigTFC.General.WORLD_REGEN.sticksRocksModifier;
+                        ROCKS_GEN.setFactor(rockModifier);
+                        ROCKS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
+
+                        final float density = chunkDataTFC.getFloraDensity();
+                        int stickDensity = 3 + (int) (4f * density + 1.5f * trees.size() * rockModifier);
+                        if (trees.isEmpty())
+                        {
+                            stickDensity = 1 + (int) (1.5f * density * rockModifier);
+                        }
+                        WorldGenTrees.generateLooseSticks(RANDOM, pos.x, pos.z, event.world, stickDensity);
+                    }
 
                     //Nuke any crops in the chunk.
                     //removeAllCrops(event.world, pos);
-                    if (RANDOM.nextInt(5) == 0) //With dead crops not being removed, we're going to just add some odds.
+                    if (RANDOM.nextInt(1) == 0) //With dead crops not being removed, we're going to just add some odds.
                                                   // These odds are stacked with the overall crop gen odds.
                     {
                         CROPS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
