@@ -133,13 +133,6 @@
       <p space="10"/>
       <p bold = "true">-Dfml.readTimeout=512</p>
       <p>Or even to the java parameters for the client.</p>
-      <p space="10"/>
-      <p>
-        <link href="http://github.com/anodecathode/technodefirmacraft">Technodefirmacraft Github</link>
-      </p>
-      <p space="10"/>
-      <p>Good luck.</p>
-
     </section>
   </chapter>
   <chapter id="progression">
@@ -491,7 +484,43 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
-
+      <p>Version 12.2.44 - The Dev Giveth and the Dev Taketh Away</p>
+      <p space="10"/>
+      <p>TFC updated with fixes to sluicing and gold panning. Also brings a new World Generation option to adjust the size of the rock layers. I recommend reducing it to 4 for single player. Lower than that and many ore veins will be cutoff due to the small size of the rock layer areas.</p>
+      <p space="10"/>
+      <p>Fishing revamp - No more fishing without bait. Too cheaty and silly. Now you MUST you use bait to cast the rod. In exchange, the IE Hemp seeds can now be used as bait.  Fishing is still silly and I will continue to improve on it.</p>
+      <p space="10"/>
+      <p>Ambiental changes. The Nether, being literally Hell, is now hotter. The End, is now cold. Also, wearing a full space suit or PnC Pneumatic Armour will make you immune from all temperature effects. Also added the Tungsten Steel armour as a cold protector, equivalent to Blue Steel.</p>
+      <p space="10"/>
+      <p>OIISA added a feature. Don't put on armour that is hot off the anvil. You will not like the result. You have been warned!</p>
+      <p space="10"/>
+      <p>Added a wrought iron ingot recipe to the RH Metal Alloyer. This also required adding Charcoal Dust to the Material Cabinet.</p>
+      <p space="10"/>
+      <p>Added an industrial vinegar recipe using the RH Lab Oven. Utilizes a Iridium Catalyst that can be made on the Profiling Bench. The process is a fake version of the IRL Cativa process used IRL to make acetic acid. </p>
+      <p space="10"/>
+      <p>Small change to the neverending story of chunk regen. I fixed it so that if rockStickRegen is set to 0, crops will continue to regen.</p>
+      <p space="10"/>
+      <p>Fix the durability on the straw hat. It barely has any.</p>
+      <p space="10"/>
+      <p>IE Heavy Engineering Block recipe fixed. The vanilla recipe is removed and the TNFC recipe now outputs 2 blocks.</p>
+      <p space="10"/>
+      <p>Made a number of changes to the oregen. Finally removed some minerals that I suspect never will be used. So Olivine, Petrified Wood and Jet are gone. Also made a number of changes to rarity, density, vein size and finally to base rocks. Most ores/minerals that were spawning in one specific rock (ie: granite) have been expanded to include the rock type (ie: sedimentary). A number of balance changes have been made to ensure that ores are not entirely impossible to find. Check the JEI Vein Info tab for details on the changes.</p>
+      <p>Another tweaking update. </p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- YNot - allows Open Computers to interface with XNet. Hoping to fix it to support RH gasses in XNet in the future</p>
+      <p>- TFCAgedDrinks. Because why not?</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p>- TFC</p>
+      <p>- TFCStorage</p>
+      <p>- Terrafirmathings</p>
+      <p>- Immersive Technology</p>
+      <p>- CraftTweaker</p>
+      <p>- OversizedItemInStorageArea</p>
+      <p space="10"/>
+      <p space="10"/>
       <p>Version 12.2.43 - Call it a Release</p>
       <p space="10"/>
       <p>Just fixing little things</p>
