@@ -119,6 +119,10 @@ public class GeneralEventHandler
             {
                 EntityPlayer player = ((EntityFishHook) entity).getAngler();
                 ItemStack stack = player.getHeldItem(EnumHand.MAIN_HAND);
+                if (!(stack.getItem() instanceof ItemHookedFishingRod))
+                {
+                    stack = player.getHeldItem(EnumHand.OFF_HAND);
+                }
                 if (stack.getItem() instanceof ItemHookedFishingRod)
                 {
                     if (stack.hasTagCompound()) {
