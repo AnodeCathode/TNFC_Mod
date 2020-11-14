@@ -62,7 +62,7 @@
         <link href="http://github.com/anodecathode/technodefirmacraft">Technodefirmacraft Github</link>
       </p>
       <p space="10"/>
-      <p>Good luck.</p>
+      <p>Good luck. 2837</p>
 
     </section>
   </chapter>
@@ -73,8 +73,11 @@
       <p space="10"/>
       <p italics="true">Things to be aware of in TechnodeFirmaCraft for MC 1.12.2</p>
       <p space="10"/>
+      <p>You can now change the size of the rock layers. If in single player, I recommend setting Rock Layer size to 4 to increase the number of rock layers in your immediate area. Smaller than 4 results in very tiny rock layer regions.</p>
       <p space="10"/>
       <p>Putting hot things (ingots, sheets, tools) into wooden (chests) or leather (backpack) containers will cause the container to catch on fire. You've been warned</p>
+      <p space="10"/>
+      <p>Wearing armour still hot from the anvil will have disastrous results. Again, you have been warned.</p>
       <p space="10"/>
       <p>The IE hemp seeds no longer come from zombies. Instead, if you want Hemp you gotta get high. If that's not enough of a clue, use a knife or a scythe on grass at heights greater than 170. It's a rare drop.</p>
       <p space="10"/>
@@ -101,6 +104,8 @@
       <p>There are hint rocks for the minerals that don't have surface ores. If you see a rock on the surface out of place for the surrounding rock type, it's a clue to something underneath. Check the recipe for an ore block. Then click the Vein Info tab. Click the title at the top to display vein information for ALL TNFC ores with their small ore or hint rock</p>
       <p space="10"/>
       <p>You can make a boat with an alternative recipe not requiring a saw, great for early exploration!</p>
+      <p space="10"/>
+      <p>Horsepower devices do not require a familiarized animal. Just leash one to the mill, press, saw and go!</p>
       <p space="10"/>
       <p>The mod mineral tracker is integrated with JourneyMap. Switch to topographic view to see any surface ores you've picked up.</p>
       <p space="10"/>
@@ -186,6 +191,33 @@
       <p space="10"/>
       <p>Fun fact: The Electrochemical CSTR requires both for all recipes in the TNFC pack</p>
       <p space="10"/>
+      <p italics="true">Syngas for the Lazy</p>
+      <p space="10"/>
+      <p>So you want to set up Syngas, but don't want the discovery of figuring it all out yourself? Look no further.</p>
+      <p space="10"/>
+      <p>You need Fresh Water. An Immersive Engineering Pump or Rockhounding Water Pump are good choices, but my favorite is the PneumaticCraft Liquid Hopper with a dispenser upgrade. It's a little on the expensive side, but it requires zero RF and will keep up with the demands of multiple machines (plus you can make speed ugprades). You'll want the standard infinite 2x2 sink if you're placing your own water sources. Remember to cover the water with pipes or a slab so it doesn't freeze.</p>
+      <p space="10"/>
+      <p>Make a Slurry Pond. Set the concentration to 10%. That will use 4 solids at a time to make quite a bit of output. The higher concentrations use less solids and take less time, but don't give you as much output. This is silly. We're making the fuel that the rest of your lab runs on; you want to maximize your liquid output. Don't start making slurry until you've finished placement.</p>
+      <p space="10"/>
+      <p>For Coal users: Make a Mineral Sizer to make Cracked Coal. You need Coal Blocks, so that means Bituminous Coal. Don't be an exploiter and use NuclearCraft to craft Bituminous Coal from Graphite. (Bonus points to anyone who then uses the Coal Tar compound to create more Graphite, but you won't profit from this; you don't get enough Coal Tar compound.)</p>
+      <p space="10"/>
+      <p>Make a Gasifier Burner. Place your slurry pond in such a way that you can pipe the output into the top tank. (Now you can start making slurry.) Feed fresh water into the bottom tank ofthe burner, and fresh water into the slurry pond itself. One Liquid Hopper or IE pump can feed both. If you're using Rotten Flesh you can skip the Particulate Collector. I recommend putting one in eventually, so you can use this setup to process Toxic Waste and Coal, but in the beginning if you're using solely rotten flesh, you can skip having to make the 6 bottles.</p>
+      <p space="10"/>
+      <p>Make a Gas Purifier. Note that the "output" Pressure Vessel from the Burner can be the "input" Vessel for the Purifier. Saved you a vessel, you're welcome. You will want the Particulate Collector here for Fly Ash, which can be hydrated then smelted to make bricks for a Refractory Upgrade, which makes the Burner hold its temperature (costing you less fuel).</p>
+      <p space="10"/>
+      <p>Store the output in a Gas Holder. Put a Gas Pump on the output of the holder, and run Gas ducts to all the INPUTs (the back) of your Power Stations. Turn the pump ON.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p italics="true">Bootstrapping</p>
+      <p space="10"/>
+      <p>Okay but Power Stations run on fuel, Benanov! How do we get them hot enough to make fuel? Well thankfully the Power Stations will also run on lava, but really inefficiently. You'll want to put about 3-4 buckets of lava (it'll convert all the lava to fuel units, then you put another in, and another in) until you can't put in any more.</p>
+      <p space="10"/>
+      <p>Turn on the Purifier first. Then turn on the Gas Burner, and continue to put lava in the Gas Burner Power Station until you the Syngas tank is relatively full.</p>
+      <p space="10"/>
+      <p>Remember to turn the burner off when you're out of slurry.</p>
+      <p space="10"/>
+      <p>You're gonna want about 3-4 stacks of flesh or cracked coal.</p>
+      <p space="10"/>
       <p>The orientation of machines does matter in RH. If there's a blue arrow or orange arrow you need to make sure you're facing the correct way when placing the block.</p>
       <p space="10"/>
       <p>And servers are generally not required for machines, as far as i can tell. The Chemical Extractor and Mineral Sizer run fine without them. Servers are great for "do this X number of times" jobs - which is why I use it for the Metal Alloyer (otherwise it'll convert all of my element cabinet contents to White Gold or something).</p>
@@ -230,6 +262,162 @@
       <p space="10"/>
       <p>I have found that the Lab Oven's Fluid Output system requires all of the Product to be drained before the Waste will export. If your output systems are not fast enough at picking up the Product, the Toxic Waste will build up and leak all over your lab.</p>
       <p space="10"/>
+      <p italics="true">Chemical Extractor</p>
+      <p space="10"/>
+      <p>This is my notes for the entire Chemical Extraction Process, from Uninspected Mineral to Elemental Dust. This is done entirely from memory without the game in front of me, you've been warned.</p>
+      <p space="10"/>
+      <p>Make the following machines:</p>
+      <p space="10"/>
+      <p>I will assume you have a working Syngas setup.</p>
+      <p space="10"/>
+      <p>First a Lab Blender. RH requires some initial processing to take the ingredients from other mods to get started. Lab Blenders run on RF and can be extracted with hoppers, conveyor belts, or lackey.</p>
+      <p space="10"/>
+      <p>Second, you'll also want a Lab Oven. Feed it plenty of Fresh Water and RF.</p>
+      <p space="10"/>
+      <p>Third, build the Mineral Sizer. In it, Uninspected Minerals are turned into Gangue. Gangue is a fancy word for "stuff we don't want that's attached to stuff we do want" - you pick the Communition Level and that yields a particular type of Gangue. If you did Bituminous Coal for Syngas, you already made one of these, as you need it for Cracked Coal.</p>
+      <p space="10"/>
+      <p>Which type do you want? Pick an element you want. Example: Lead. Search for "Lead" and you will see all the shards that make Lead. In JEI pay attention to what Gangues yield Lead.</p>
+      <p space="10"/>
+      <p>I started with Sulfide as I thought I'd need tons of Sulfur. Honestly one might have better luck with Native. If this is your first batch, it really doesn't matter as you don't have filter upgrades.</p>
+      <p space="10"/>
+      <p>The path branches here. However, for both paths, you need Sulfuric Acid from the Lab Oven. My recommendation: make the Vanadium Catalyst as soon as you can if you have the Arc Furnace available (or borrow someone's). It doubles your output. The problem is - you can't do this until you get usable Vanadium from your extractor. In the short term, harvest some Sulfur. You will be hitting the Chloride Bearing Compound pretty hard too, so stock up the blender.</p>
+      <p space="10"/>
+      <p>You also need Water Vapor which is made in the Gasifier Burner by feeding Fresh Water into both chambers. I honestly made a second burner (you don't need the purifier on this one) to load a Gas Holder full of vapor so I didn't have to keep mucking with the Syngas setup, but if you make enough vapor you're good for a long while. 80,000 cu lasted quite a while.</p>
+      <p space="10"/>
+      <p>Finally you'll need a source of Rainwater. In the amounts you'll need? Make the NuclearCraft infinite water source. The lowest tier is fine.</p>
+      <p space="10"/>
+      <p italics="true">Path One, the easy path:</p>
+      <p space="10"/>
+      <p>Stick your Gangues in the Slurry Pond with Sulfuric Acid. As your Slurry Pond was already created because you have Syngas, hey look another machine you can re-use! This yields Leachate. Jump down to where you see "Leachate" again. Be quick about it.</p>
+      <p space="10"/>
+      <p italics="true">Path Two, the Harder Path, the one I originally followed:</p>
+      <p space="10"/>
+      <p>Okay, we have Gangue. Now we need a Leaching Controller.</p>
+      <p space="10"/>
+      <p>Leaching Controllers need four fluids (3 liquids, 1 gas) in order to function.</p>
+      <p space="10"/>
+      <p>Sodium Hydroxide is created by mixing Saturated Brine (TFC brine will not work) and Fresh Water in an Electrochemical CSTR. You can get Saturated Brine by using the Mod Wrench on Evaporation Tanks until they spit out "Brine" - I think it's stage 3. Use a RH pump to extract the brine from the tanks and route that sucker to the Fluid Input system on the CSTR. Because Saturated Brine is made via rainstorm, I used a Liquid Hopper and an OpenBlocks tank to hold enough as a buffer for when I wanted to make some when it wasn't raining. NaOH is not a pollutant, but you'll want quite a bit of it.</p>
+      <p space="10"/>
+      <p>Hydrochloric Acid is made in the Lab Oven. You'll want to make Sulfuric Acid first. There's no catalyst for HCl, so have lots of salt handy.</p>
+      <p space="10"/>
+      <p>And finally, you need Rainwater.</p>
+      <p space="10"/>
+      <p>You also need Water Vapor. Note you need TWO pressure vessels of Water Vapor. Two Gas Holders would be a little ridiculous.</p>
+      <p space="10"/>
+      <p>Okay, so now you can turn Gangue into Shards. You also get Leachate. At this point you don't need to process your Leachate (whereas on the "easy" path, you do).</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Leachate is a pollutant. Get it out of that Buffer Tank as soon as possible (ideally, have a way to do this that is set up before you start running the machines!)</p>
+      <p space="10"/>
+      <p>In the Rentention Vat (Retention Controller), you can process Leachate for even more shards; some shards don't come from Gangue, but only from Leachate. Greicite (pure Lithium) only comes from Leachate, and that was my big win here.</p>
+      <p space="10"/>
+      <p>You'll need Water Vapor to run the controller, as well as Rainwater.</p>
+      <p space="10"/>
+      <p>You'll also need Hydrofluoric Acid. There are two ways to get Hydrofluoric Acid:</p>
+      <p space="10"/>
+      <p>The first is the Lab Oven. You can turn Sulfuric Acid into Hydrofluoric Acid if you live near Granite. Mine out Raw Granite, run it through Mineral Sizer, and hey look, Fluorite Bearing Compound, and Bob's your Uncle. Easy.</p>
+      <p space="10"/>
+      <p>The second is a little bit circumlocuitous - this is the way I did it, because I'm stupid and forgot to get Raw Granite while mining for Redstone. You need either Villaumite or Loose Granite Rocks. Stuff the NuclearCraft rock crusher full of your haul and pull the Villaumite dust you get out (also, hey, sulfur!) and refine it in the manufactory until you get Sodium Fluoride. I think at this point it's a NuclearCraft Fluid Infuser, then a NuclearCraft Chemical Reactor, and then a few other steps. You'll want a NuclearCraft Electrolyzer too to make Hydrogen. If you're lucky enough to find Villaumuite, you can skip the rock crusher but not the manufactory. Follow a bunch of steps in JEI and you should end up with a way to make the Hydrofluoric Acid you need.</p>
+      <p space="10"/>
+      <p>Once the machine is up and running, pump in a SMALL amount of Leachate into the Flotation tank, about 200mB. If you use a PneumaticCraft Liquid Hopper set to "redstone high" mode, and use a button to momentarily pass in a redstone signal, you will import 300mb. Hit the button twice and that's enough for 3 runs of the machine.)</p>
+      <p space="10"/>
+      <p>The bigger problem is that 200mB of Leachate becomes 1000mB of Toxic Waste. Be ready to store a LOT of Toxic Waste until you can process it later (or void it).</p>
+      <p space="10"/>
+      <p>Be sure to put hoppers on your specimen collectors. The machine will not do batch #2 until the product from batch #1 is extracted. Also without fine filter meshes, you are going to get a really wide range of shards if you pick certain specific gravities. Have enough storage for that. Seriously - you're gonna get a giant pile of shards if you pick the middle. There is an argument for doing this - I did it that way for fun and then processed them all.</p>
+      <p space="10"/>
+      <p>Also, water vapor DOES cause Pressure Vessels to explode, which scares guests and will hurt you minorly (my entirely green body went yellow, but I didn't take enough damage to suffer slowness or fatigue effects). The best fix to that is to have a regen potion on hand or just be near a hot spring. I haven't figured out a good system for keeping both sets of pressure vessels (the two on the leaching controller and the one on the retention vat) filled when I want them and not filling when I don't want them. Right now I'm just breaking pipes and turning off the main shutoff valve. </p>
+      <p space="10"/>
+      <p>Now we've got our shards and it's time to step up to the really difficult portion of the machine cycle. Yes. Seriously. I know, you've spent all this time reading it and you still don't have useful output - Most shards aren't very useful at this point unless you make the 100% carbon shards (then you can make graphite in small quantities if you also made Coal Syngas)</p>
+      <p space="10"/>
+      <p>The Chemical Extractor requires four things to work.</p>
+      <p space="10"/>
+      <p>First, you need Ferrous Catalysts. I've processed about maybe 1,000 shards and I'm still on my first set. Do you have 6 wrought iron ingots? That's all you need.</p>
+      <p space="10"/>
+      <p>Second, you need Glassware - test tubes and graduated cylinders. These are consumed slowly by the process, so have spares handy. Enchanting these with Unbreaking does work, something to keep in mind for the future.</p>
+      <p space="10"/>
+      <p>Now you need two liquids. Both are made from Liquid Ammonia. I hate this stuff. Of all the chemical spills on my base, the majority were from this. You WILL respect Liquid Ammonia; whether you do it by default or by repeated lessons is up to you.</p>
+      <p space="10"/>
+      <p>The easiest and safest way to make Liquid Ammonia is to use NuclearCraft to make it - in the Chemical Reactor. Use an Electrolyzer to feed in the Hydrogen, and one Nitrogen Collector to feed in the Nitrogen. Save the Oxygen. As for the Deuterium, that's useful in NuclearCraft, but not for your Rockhounding Lab. Liquid Ammonia takes a bit to make with this process, but it's 100% safe and you can easily batch up 16 buckets in a hopper and 16 buckets in the machine's output tank.</p>
+      <p space="10"/>
+      <p>The first actual liquid ingredient to make is Sodium Cyanide. NaCN is made in the Lab Oven. Make yourself a Graphite Catalyst ASAP. It's cheap and you want it. This is the other reason you need tons of salt. You don't need to use a button to dump in the amount of fluid slowly - you can let this one pour in a little faster, but again don't back up the Fluid Input System. I use a 4x or higher speed upgrade and I can chew through 16 buckets of Liquid Ammonia before any of it spills.</p>
+      <p space="10"/>
+      <p>You need a lot of this liquid - no matter how you set your Chemical Extractor, you always nice twice the amount of NaCN as compared to...</p>
+      <p space="10"/>
+      <p>The second is Nitric Acid. Nitric Acid is a pollutant. Nitric Acid requires a large machine, the Reforming Controller. One thing you'll note is that you don't actually need ALL the pressure vessels it calls for. You only need two (and the buffer tank up top). You DO, however, need all 10 catalysts. Only certain catalysts are available for each recipe. You can't use Osmium Catalysts for Nitric Acid, for example. You can make Ammonia in this machine, but why? You have a 100% safe option in the Chemical Reactor.</p>
+      <p space="10"/>
+      <p>So let's talk about how to get the two ingredients into the machine. You will want two Gas Expansion machines. The Oxygen one is pretty easy. Fill the top tank with Liquid Oxygen, and turn it on. You can just leave it on and powered. The Pressure Vessel will never explode. It will sip fuel and sip Liquid Oxygen and turn it into Oxygen Gas and be very well behaved. After all, you have all this leftover oxygen from the Electrolyzer.</p>
+      <p space="10"/>
+      <p>The Ammonia one is where you need to have some respect. My suggestion is two-fold: First, a button mechanism to inject 300mb into the buffer tank is sufficient for the amounts you need to make a good quantity of Nitric Acid. Second, do not be afraid to dump the tank and the pressure vessel on this side. Liquid Ammonia, once you start being able to make it in quantity, is pretty cheap. Dumping less than 300mB of liquid is a lot cheaper than 5-6 stupid deaths or being poisoned down to a sliver of health.</p>
+      <p space="10"/>
+      <p>So now you need catalysts. If the machine is not working but has ingredients and RF, well...it won't work without catalysts.</p>
+      <p space="10"/>
+      <p>Fuzzy on these, need more research. I never mixed and matched catalysts within the same category.NiAl catalysts = 1x? - a good argument for Metal Alloyer early, and it's just Nickel and Aluminum, no fancy trace elements. You should be able to make this with only an IE Crusher.Graphite catalysts = 2x? - If you have an Arc Furnace, these are super cheap.White gold catalysts = 3x</p>
+      <p space="10"/>
+      <p>Gold catalysts = 1x - cheap and easyPlatinum catalysts = 2x - hey look, a use for platinum!</p>
+      <p space="10"/>
+      <p>Phew! That's all 4 ingredients.</p>
+      <p space="10"/>
+      <p>Then pick a shard, and pick an "Intensity" level. I just picked 10 so that the liquid amounts would all even out. I'm not exactly sure what this does, but higher intensity requires more liquid, so I would presume you get more minerals per shard.</p>
+      <p space="10"/>
+      <p>Then watch your elements cabinet slowly fill. You can move the Cabinet to the Metal Alloyer and it'll keep inventory. To extract the dusts (in the order they were created), hook a hopper to your Lab Balance, and put a graduated cylinder in the top half of the Elements Cabinet.</p>
+      <p space="10"/>
+      <p>Be sure to cackle loudly as your chest fills.</p>
+      <p space="10"/>
+      <p>SCIENCE!</p>
+      <p space="10"/>
+      <p>I have never had the Nitric Acid in the fluid input system leak. It'll leak from the output tank of the Reforming Reactor, though.</p>
+      <p space="10"/>
+      <p>Now that you have a pile of dust, what to do with it?</p>
+      <p space="10"/>
+      <p italics="true">Dial-An-Element</p>
+      <p space="10"/>
+      <p>The shards at the ends of the spectrum of specific gravity are easier to isolate. For everything else, there's...</p>
+      <p space="10"/>
+      <p italics="true">Leaching Filter Upgrades</p>
+      <p space="10"/>
+      <p>You want two Tier 5 Leaching Filter Upgrades - one for the Leaching Controller, one for the Retention Vat. This will allow you to turn the giant shard lists into just lists of 1-3 shards.</p>
+      <p space="10"/>
+      <p>As an example: can't find lithium? Dial in Greicite shards and turn all your Leachate into Lithium dust.</p>
+      <p space="10"/>
+      <p italics="true">Didymium Glass</p>
+      <p space="10"/>
+      <p>This relatively hard glass (it's not ghast proof, sadly, because it looks badass in the Nether) is a nice prestige item and will allow you to force your visitors to view your lab through rose-colored glass. I mean, it is Pink. Laugh. It's funny.</p>
+      <p space="10"/>
+      <p>It's also an ingredient for the Infernal Enchanter.</p>
+      <p space="10"/>
+      <p italics="true">Catalysts</p>
+      <p space="10"/>
+      <p>Vanadium gets you more Sulfuric Acid. You need exactly one catalyst and the Arc Furnace.</p>
+      <p space="10"/>
+      <p italics="true">Fly Ash</p>
+      <p space="10"/>
+      <p>This byproduct from your syngas production should be hoarded until you get 64. Then make the Refractory Upgrade to provide better insulation to your burner. I've lost an upgrade after a chemical spill on your burner, so do be careful.</p>
+      <p space="10"/>
+      <p italics="true">Carbon Dust</p>
+      <p space="10"/>
+      <p>There's no other way to make a CO2 scrubber than making Carbon Dust and running the Arc Furnace. IMO the easiest way to get a pile of Carbon dust - more than you'll know what to do with - is by refining Toxic Waste.</p>
+      <p space="10"/>
+      <p italics="true">Speed Upgrades</p>
+      <p space="10"/>
+      <p>Some machines eat more fuel with speed upgrades, or consume more precursor at a time (meaning you need to pull the upgrade to use that last little bit of Toxic Waste in the cistern). Others...there is no reason not to upgrade. Be sure your fluid transport systems can keep up with the load!</p>
+      <p space="10"/>
+      <p italics="true">Metal Alloys</p>
+      <p space="10"/>
+      <p>RH adds a lot of metal alloys; as the pack progresses many will be required for additional recipes, and older methods of obtaining the metal alloys will be removed. Expect to build one.</p>
+      <p space="10"/>
+      <p>You can (as of version 42) make TFC Metal Alloys, like Rose Gold, Black Bronze, etc. in the Metal Alloyer. Tungsten Steel is comparatively expensive. You won't be able to make it the old way soon, so get ready to make lots of Red Steel!</p>
+      <p space="10"/>
+      <p>The Elements and Material Cabinets retain their contents when broken, so you can fill from a Chemical Extractor and then move the two cabinets over to a Metal Alloyer with no loss. If you don't want to do the entire Extraction setup you can fill your cabinets via Graduated Cylinders.</p>
+      <p space="10"/>
+      <p>The server is amazingly useful for the Metal Alloyer and of all the RH machines available this is the one I recommend plugging a server into. Server Files are not cheap, but are infinitely reusable and reprogrammable. Remember to turn the server ON if you want the Alloyer to run your batches - otherwise it'll just continuously make alloys until it's out of ingredients.</p>
+      <p space="10"/>
+      <p>I have noticed a bunch of off-by-one errors. I think it's because a partially completed ingot will be allowed to finish before starting the batch.</p>
+      <p space="10"/>
+      <p>NOTE: Do not break either the Elements or Materials Cabinets while connected to an active Metal Alloyer. This will crash your game/server!</p>
+
+
+
+
     </section>
   </chapter>
   <chapter id="seedfinding">
@@ -241,6 +429,8 @@
       <p><link href="https://old.reddit.com/r/Technode/comments/i6juqe/how_to_find_a_good_tfc_seed/">Original Reddit Article</link></p>
       <p space="10"/>
       <p>Probably one of the most requested and source of most complaints in early TFC/TNFC is finding the resources one needs to progress. As this is a much more involved, complicated and possibly time-consuming process, I thought I'd go over my own process for finding what I consider a good seed for our server and share it.</p>
+      <p space="10"/>
+      <p>A big change with TFC version 165+ is the ability to change the size of the rock layers. You may find turning down the size of the rock layers to 4 works better for single player play. As the change results in a zoomed out rock layer, it will look identical to the seedmaker results outlined below, just the image represents a smaller area.</p>
       <p space="10"/>
       <p>For simplicity sake I'll refer to TFC, the advice I provide will also apply to Technodefirmacraft, wherever there are specific differences applicable only to the modpack, I will try and indicate. Otherwise, the advice is pretty universal to TFC Minecraft. Also note that all my advice is somewhat more specifically tied to the 1.12.2 TFC-NG versions. Although the general advice will of course be applicable to older TFC versions.</p>
       <p space="10"/>
@@ -301,6 +491,7 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+
       <p>Version 12.2.43 - Call it a Release</p>
       <p space="10"/>
       <p>Just fixing little things</p>
