@@ -66,7 +66,7 @@ public class RegenSurface
         }
 
         //stick/rock/crop regen
-        if (event.getWorld().provider.getDimension() == 0 && ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0 && POSITIONS.size() < 100)
+        if (event.getWorld().provider.getDimension() == 0 && POSITIONS.size() < 100)
         {
 
             //Only run this in the early months of each year
@@ -94,7 +94,7 @@ public class RegenSurface
                 // Crops, sticks and rocks all regenerate once a year in the spring. Cause the spring thaw or something.
                 if (CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY) && !chunkDataTFC.isSpawnProtected() && CalendarTFC.CALENDAR_TIME.getTotalYears() > chunkDataTFC.getLastUpdateYear())
                 {
-                    tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
+                    //tnfcmod.getLog().info("Regenerating chunk at " + pos.x + " " + pos.z );
                     // Check server performance here and cancel if no tick budget? Also check if the chunk is loaded?
                     if (ConfigTFC.General.WORLD_REGEN.sticksRocksModifier > 0)
                     {
@@ -119,6 +119,7 @@ public class RegenSurface
                     if (RANDOM.nextInt(1) == 0) //With dead crops not being removed, we're going to just add some odds.
                                                   // These odds are stacked with the overall crop gen odds.
                     {
+                        tnfcmod.getLog().info("Regenerating crops at " + pos.x + " " + pos.z );
                         CROPS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
                     }
 
@@ -129,6 +130,7 @@ public class RegenSurface
                 //Need to add an else in here. If it doesn't meet any of the criteria, then mark it updated and move on. Need some nuance work on that though.
 
                 }
+                chunk.markDirty();
                 ((ChunkProviderServer) chunkProvider).queueUnload(chunk);
             }
         }
