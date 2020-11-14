@@ -142,7 +142,7 @@ public class EquipmentModifier extends BaseModifier
                 }
                 else
                 {
-                    it.remove();
+                   mod.setChange(0f);
                 }
 
             }
