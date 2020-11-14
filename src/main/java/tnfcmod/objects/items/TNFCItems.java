@@ -19,6 +19,7 @@ public class TNFCItems
     public static ItemBackpackFrame backpackframe = new ItemBackpackFrame("backpackframe").setCreativeTab(CT_MISC);
     public static ItemWoodPulp woodpulp = new ItemWoodPulp("woodpulp").setCreativeTab(CT_MISC);
     public static StrawHat straw_hat = new StrawHat("straw_hat");
+    public static IridiumCatalyst iridium_catalyst = new IridiumCatalyst("iridium_catalyst");
 
     //IE Molds
     public static IEMetalPressMold mold_axe = new IEMetalPressMold("mold_axe").setCreativeTab(CT_MISC);
@@ -103,7 +104,7 @@ public class TNFCItems
         registry.register(woodpulp);
         registry.register(leather_tunic);
         registry.register(straw_hat);
-
+        registry.register(iridium_catalyst);
 
         // ItemBlocks
         registry.register(new ItemBlock(TNFCBlocks.blockPlayerDetector).setRegistryName(TNFCBlocks.blockPlayerDetector.getRegistryName()));
@@ -151,6 +152,7 @@ public class TNFCItems
         woodpulp.registerItemModel();
         leather_tunic.registerItemModel();
         straw_hat.registerItemModel();
+        iridium_catalyst.registerItemModel();
 
         // Itemblocks
         TNFCBlocks.blockPlayerDetector.registerItemModel();
