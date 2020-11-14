@@ -22,6 +22,7 @@ public class StrawHat extends ItemArmor
 
     public StrawHat(String name) {
         super(strawArmorMaterial,1, EntityEquipmentSlot.HEAD);
+        this.setMaxDamage(10);
         this.setNoRepair();
         this.name= name;
         setRegistryName(name);
