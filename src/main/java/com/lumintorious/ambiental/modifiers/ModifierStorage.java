@@ -1,6 +1,8 @@
 package com.lumintorious.ambiental.modifiers;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue.Consumer;
 
@@ -94,12 +96,6 @@ public class ModifierStorage implements Iterable<BaseModifier>
             {
                 return mapIterator.next().getValue();
             }
-
-            @Override
-            public void remove() {
-                map.remove(mapIterator.next());
-            }
-
         };
     }
 }
