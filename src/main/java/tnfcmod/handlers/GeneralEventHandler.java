@@ -118,13 +118,18 @@ public class GeneralEventHandler
         {
             if (entity.isRiding())
             {
-                tnfcmod.getLog().info("Found you jockey mofo!");
+
                 Entity whothefuck = entity.getRidingEntity();
-                entity.setDropItemsWhenDead(false);
-                entity.setDead();
-                whothefuck.setDropItemsWhenDead(false);
-                whothefuck.setDead();
-                event.setCanceled(true);
+                //so we don't kill spider jockey's cause they are hilarious.
+                if (whothefuck instanceof EntityChicken){
+                    tnfcmod.getLog().info("Found you chicken jockey mofo!");
+                    entity.setDropItemsWhenDead(false);
+                    entity.setDead();
+                    whothefuck.setDropItemsWhenDead(false);
+                    whothefuck.setDead();
+                    event.setCanceled(true);
+                }
+
             }
         }
         //Just nuke them from orbit. It's the only way to be sure
