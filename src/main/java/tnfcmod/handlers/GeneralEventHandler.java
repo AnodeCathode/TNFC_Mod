@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
@@ -47,6 +48,7 @@ import net.dries007.tfc.objects.blocks.plants.BlockShortGrassTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockTallGrassTFC;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import tnfcmod.util.MonsterGear;
+import tnfcmod.tnfcmod;
 
 import static tnfcmod.tnfcmod.MODID;
 import static tnfcmod.util.MonsterGear.SHADERBAGS;
@@ -112,6 +114,27 @@ public class GeneralEventHandler
     public static void onEntityJoinWorldEvent(EntityJoinWorldEvent event)
     {
         Entity entity = event.getEntity();
+        if (entity instanceof EntityMob)
+        {
+            if (entity.isRiding())
+            {
+                tnfcmod.getLog().info("Found you jockey mofo!");
+                Entity whothefuck = entity.getRidingEntity();
+                entity.setDropItemsWhenDead(false);
+                entity.setDead();
+                whothefuck.setDropItemsWhenDead(false);
+                whothefuck.setDead();
+                event.setCanceled(true);
+            }
+        }
+        //Just nuke them from orbit. It's the only way to be sure
+        if (entity instanceof EntityChicken)
+        {
+            entity.setDropItemsWhenDead(false);
+            entity.setDead();
+            event.setCanceled(true); // NO!
+        }
+
         if (entity instanceof EntityIronFishHook && entity.getClass().equals(EntityIronFishHook.class))
         {
             World world = event.getWorld();
@@ -142,11 +165,6 @@ public class GeneralEventHandler
        }
             if (event.getWorld().provider.getDimensionType() != DimensionType.OVERWORLD)
             {
-
-                if (entity instanceof EntityChicken)
-                {
-                    event.setCanceled(true); // NO!
-                }
 
                 if (event.getEntity().isCreatureType(EnumCreatureType.MONSTER, false))
                 {
