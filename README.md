@@ -3,6 +3,8 @@ TechnodeFirmaCraft Mod
 This is the repo for the 'glue' mod in the modpack TechnodeFirmaCraft (http://github.com/anodecathode/technodefirmacraft). 
 
 
+We use YourKit Java Profiler to monitor/profile and learn about the exotic issues faced by modded Minecraft developers. Highly recommended!
+
 ![YourKit](https://www.yourkit.com/images/yklogo.png)
 
 YourKit supports open source projects with innovative and intelligent tools
