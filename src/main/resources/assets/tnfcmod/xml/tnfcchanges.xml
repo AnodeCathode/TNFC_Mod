@@ -484,6 +484,16 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p italics="true">Version 12.2.45 - Oh How I Hate You Chicken Jockeys</p>
+      <p space="10"/>
+      <p>- Small update to mostly fix the perennial issue with Cave Chickens. This fix finally prevents them from slowly filling your caves with TFC chickens.</p>
+      <p space="10"/>
+      <p>- Also added the new birds to the pluckables list </p>
+      <p space="10"/>
+      <p>- Added latex to wooden bucket list</p>
+      <p space="10"/>
+      <p>- Fix the NC Alloy Furnace Ferroboron recipe</p>
+      <p space="10"/>
       <p>Version 12.2.44 - The Dev Giveth and the Dev Taketh Away</p>
       <p space="10"/>
       <p>TFC updated with fixes to sluicing and gold panning. Also brings a new World Generation option to adjust the size of the rock layers. I recommend reducing it to 4 for single player. Lower than that and many ore veins will be cutoff due to the small size of the rock layer areas.</p>
