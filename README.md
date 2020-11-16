@@ -3,7 +3,7 @@ TechnodeFirmaCraft Mod
 This is the repo for the 'glue' mod in the modpack TechnodeFirmaCraft (http://github.com/anodecathode/technodefirmacraft). 
 
 
-("https://www.yourkit.com/images/yklogo.png")
+(https://www.yourkit.com/images/yklogo.png)
 
 YourKit supports open source projects with innovative and intelligent tools
 for monitoring and profiling Java and .NET applications.
