@@ -122,7 +122,6 @@ public class GeneralEventHandler
                 Entity whothefuck = entity.getRidingEntity();
                 //so we don't kill spider jockey's cause they are hilarious.
                 if (whothefuck instanceof EntityChicken){
-                    tnfcmod.getLog().info("Found you chicken jockey mofo!");
                     entity.setDropItemsWhenDead(false);
                     entity.setDead();
                     whothefuck.setDropItemsWhenDead(false);
