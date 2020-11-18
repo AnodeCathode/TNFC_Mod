@@ -46,5 +46,7 @@ death.attack.tfcambiental.heat.player=%1$s died of heatstroke.
 waila.tnfc.devices.playerdetector_online= %s is online
 waila.tnfc.devices.playerdetector_offline= %s is offline
 tile.tnfcmod.player_detector.name=Online Player Detector
+tile.tnfcmod.pakifier.name=Pakifier
 tnfcmod.nobait=No bait on rod for fishing
 config.tnfcmod.frozentime=Number of ticks before a chunk is considered 'frozen'
+

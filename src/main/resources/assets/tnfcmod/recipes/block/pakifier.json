@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "s s",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "type": "forge:ore_dict",
+      "ore": "fabricHemp"
+    },
+    "s": {
+      "type": "forge:ore_dict",
+      "ore": "sheetGold"
+    }
+  },
+  "result": {
+    "item": "tnfcmod:pakifier"
+  }
+}

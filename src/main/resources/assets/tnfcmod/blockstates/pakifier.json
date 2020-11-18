@@ -1,0 +1,14 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "tnfcmod:pakifier",
+    "uvlock": true,
+    "textures": {
+      "all": "tnfcmod:blocks/pakifier"
+    }
+  },
+  "variants": {
+      "normal": [{}],
+      "inventory": [{}]
+  }
+}

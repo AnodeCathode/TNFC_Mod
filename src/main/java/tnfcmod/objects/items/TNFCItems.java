@@ -108,7 +108,7 @@ public class TNFCItems
 
         // ItemBlocks
         registry.register(new ItemBlock(TNFCBlocks.blockPlayerDetector).setRegistryName(TNFCBlocks.blockPlayerDetector.getRegistryName()));
-
+        registry.register(new ItemBlock(TNFCBlocks.blockPakifier).setRegistryName(TNFCBlocks.blockPakifier.getRegistryName()));
     }
 
     public static void registerModels(Event event)
@@ -156,6 +156,7 @@ public class TNFCItems
 
         // Itemblocks
         TNFCBlocks.blockPlayerDetector.registerItemModel();
+        TNFCBlocks.blockPakifier.registerItemModel();
 
 
     }
