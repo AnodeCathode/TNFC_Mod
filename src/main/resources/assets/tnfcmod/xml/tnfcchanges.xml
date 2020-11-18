@@ -117,6 +117,10 @@
       <p space="10"/>
       <p>Don't swim in the ocean at night. you will freeze.</p>
       <p space="10"/>
+      <p>A barrel of water or other liquid can be use in crafting recipes as the equivalent of 10 buckets. Make lots of dough, or treated wood</p>
+      <p space="10"/>
+      <p>The incredibly tough TFC grass can break levers, buttons and other objects when it grows. Create paths or other hard surfaces underneath devices, switches and multiblocks.</p>
+      <p space="10"/>
       <p>Crops and fruit trees are very particular about growing conditions. Rainfall and temp both apply to whether a crop or fruit tree will grow.</p>
       <p>This <link href="https://docs.google.com/spreadsheets/d/1Ghw3dCmVO5Gv0MMGBydUxox_nwLYmmcZkGSbbf0QSAE/edit#gid=37622487">spreadsheet</link> will provide all the details about crops and fruit trees and the conditions they require.</p>
       <p space="10"/>
@@ -483,6 +487,27 @@
     <section>
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
+      <p space="10"/>
+      <p italics="true">Version 12.2.46 - Information is power</p>
+      <p space="10"/>
+      <p>Quick update because a new TFC released. It adds tooltips for saplings and seeds indicating what they require for growing.</p>
+      <p space="10"/>
+      <p>Also added the Pakifier. A simple block to quieten the 6am rooster crowing. Just for Pakratt</p>
+      <p space="10"/>
+      <p>Also downgraded Chunk Pregenerator because latest is broken with TFC</p>
+      <p space="10"/>
+      <p>Random new tips added to TNFC manual.</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p>- TFC</p>
+      <p>- BiomeTweaker</p>
+      <p>- Chunk+Pregenerator</p>
+      <p>- Immersive Technology</p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- WorldUtils (optional for server stuff). READ THE INSTRUCTIONS! It's complicated</p>
+      <p space="10"/>
       <p space="10"/>
       <p italics="true">Version 12.2.45 - Oh How I Hate You Chicken Jockeys</p>
       <p space="10"/>
