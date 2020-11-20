@@ -62,7 +62,7 @@ import static tnfcmod.util.MonsterGear.SHADERBAGS;
 public class GeneralEventHandler
 {
     private static final Random RANDOM = new Random();
-    public static final FoodData DEATHRATTLE = new FoodData(-2, -10.0F, 0.0F, -1.0F, -1.0F, -1.0F, -1.0F, -1.0F, 0.0F);
+    public static final FoodData DEATHRATTLE = new FoodData(-2, -10.0F, 0.0F, -2.0F, -2.0F, -2.0F, -2.0F, -2.0F, 0.0F);
 
 
     @SubscribeEvent
@@ -90,8 +90,6 @@ public class GeneralEventHandler
             newNutritionStats.addNutrients(DEATHRATTLE);
             //And makes you thirsty
             newFoodStats.addThirst(-20);
-
-
 
         }
 
@@ -147,13 +145,13 @@ public class GeneralEventHandler
             if (entity.isRiding())
             {
 
-                Entity whothefuck = entity.getRidingEntity();
+                Entity ridingEntity = entity.getRidingEntity();
                 //so we don't kill spider jockey's cause they are hilarious.
-                if (whothefuck instanceof EntityChicken){
+                if (ridingEntity instanceof EntityChicken){
                     entity.setDropItemsWhenDead(false);
                     entity.setDead();
-                    whothefuck.setDropItemsWhenDead(false);
-                    whothefuck.setDead();
+                    ridingEntity.setDropItemsWhenDead(false);
+                    ridingEntity.setDead();
                     event.setCanceled(true);
                 }
 
