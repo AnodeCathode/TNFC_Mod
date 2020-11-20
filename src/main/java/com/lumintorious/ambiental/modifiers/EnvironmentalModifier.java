@@ -4,6 +4,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DimensionType;
 import net.minecraft.world.EnumSkyBlock;
 
 import com.lumintorious.ambiental.TFCAmbientalConfig;
@@ -32,24 +33,41 @@ public class EnvironmentalModifier extends BaseModifier
 
     public static float getEnvironmentTemperature(EntityPlayer player)
     {
-        float avg = ClimateData.DEFAULT.getRegionalTemp() + 2.5f;
-        float incr = 0f;
-        float actual = ClimateTFC.getActualTemp(player.world, player.getPosition());
-        if (TFCAmbientalConfig.GENERAL.harsherTemperateAreas)
+        float actual = 0f;
+        if (player.world.provider.getDimensionType() == DimensionType.OVERWORLD)
         {
-            float diff = actual - TemperatureSystem.AVERAGE;
-            float sign = Math.signum(diff);
-            float generalDiff = Math.abs(avg - TemperatureSystem.AVERAGE);
-            float mult0 = Math.max(0f, TFCAmbientalConfig.GENERAL.harsherMultiplier - 1f);
-            float multiplier = 1 + Math.max(0, 1 - generalDiff / 40) * mult0;
-            actual = TemperatureSystem.AVERAGE + (diff + 3f * sign) * multiplier;
+            float avg = ClimateData.DEFAULT.getRegionalTemp() + 2.5f;
+            float incr = 0f;
+            actual = ClimateTFC.getActualTemp(player.world, player.getPosition());
+            if (TFCAmbientalConfig.GENERAL.harsherTemperateAreas)
+            {
+                float diff = actual - TemperatureSystem.AVERAGE;
+                float sign = Math.signum(diff);
+                float generalDiff = Math.abs(avg - TemperatureSystem.AVERAGE);
+                float mult0 = Math.max(0f, TFCAmbientalConfig.GENERAL.harsherMultiplier - 1f);
+                float multiplier = 1 + Math.max(0, 1 - generalDiff / 40) * mult0;
+                actual = TemperatureSystem.AVERAGE + (diff + 3f * sign) * multiplier;
+            }
+
+        }
+        else
+        {
+            actual = 15;
         }
         return actual;
     }
 
     public static float getEnvironmentHumidity(EntityPlayer player)
     {
-        return ClimateTFC.getRainfall(player.world, player.getPosition()) / 3000;
+        if (player.world.provider.getDimensionType() == DimensionType.OVERWORLD)
+        {
+            return ClimateTFC.getRainfall(player.world, player.getPosition()) / 3000;
+        }
+        else
+        {
+            return 0;
+        }
+
     }
 
     public static EnvironmentalModifier handleFire(EntityPlayer player)
@@ -105,21 +123,25 @@ public class EnvironmentalModifier extends BaseModifier
 
     public static EnvironmentalModifier handleRain(EntityPlayer player)
     {
-        if (player.world.isRaining())
+        if (player.world.provider.getDimensionType() == DimensionType.OVERWORLD)
         {
-            if (getSkylight(player) < 15)
+            if (player.world.isRaining())
             {
-                return new EnvironmentalModifier("rain", -2f, 0.1f);
+                if (getSkylight(player) < 15)
+                {
+                    return new EnvironmentalModifier("rain", -2f, 0.1f);
+                }
+                else
+                {
+                    return new EnvironmentalModifier("rain", -4f, 0.3f);
+                }
             }
             else
             {
-                return new EnvironmentalModifier("rain", -4f, 0.3f);
+                return null;
             }
         }
-        else
-        {
-            return null;
-        }
+        return null;
     }
 
     public static EnvironmentalModifier handleSprinting(EntityPlayer player)
@@ -136,18 +158,22 @@ public class EnvironmentalModifier extends BaseModifier
 
     public static EnvironmentalModifier handleUnderground(EntityPlayer player)
     {
-        if (player.world.getLight(player.getPosition()) < 1 && player.getPosition().getY() < 135)
-        {
-            return new EnvironmentalModifier("underground", -6f, 0.2f);
+        if (player.world.provider.getDimensionType() == DimensionType.OVERWORLD){
+            if (player.world.getLight(player.getPosition()) < 1 && player.getPosition().getY() < 135)
+            {
+                return new EnvironmentalModifier("underground", -6f, 0.2f);
+            }
+            else
+            {
+                return null;
+            }
         }
-        else
-        {
-            return null;
-        }
+        return null;
     }
 
     public static EnvironmentalModifier handleShade(EntityPlayer player)
     {
+
         int light = getSkylight(player);
         light = Math.max(12, light);
         float temp = getEnvironmentTemperature(player);
