@@ -105,7 +105,7 @@
       <p space="10"/>
       <p>Temperature in general. The Advanced Rocketry Space Suit and PneumaticCraft Armour are both immune from temperature effects when complete suit is worn.</p>
       <p space="10"/>
-      <p>There are hint rocks for the minerals that don't have surface ores. If you see a rock on the surface out of place for the surrounding rock type, it's a clue to something underneath. Check the recipe for an ore block. Then click the Vein Info tab. Click the title at the top to display vein information for ALL TNFC ores with their small ore or hint rock</p>
+      <p>There are hint rocks for the minerals that don't have surface ores. If you see a rock on the surface out of place for the surrounding rock type, it's a clue to something underneath. Check the recipe for an ore. Then click the Vein Info tab. Click the title at the top to display vein information for ALL TNFC ores with their small ore or hint rock</p>
       <p space="10"/>
       <p>You can make a boat with an alternative recipe not requiring a saw, great for early exploration!</p>
       <p space="10"/>
@@ -494,6 +494,31 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p italics="true">Version 12.2.47 - Eat, drink, be merry</p>
+      <p space="10"/>
+      <p>Adjusted the long broken death penalty to actually function as a death penalty. It will get harder to use death as an easy reset button.</p>
+      <p space="10"/>
+      <p>Updated TFC. Brings a volume reduction in Roosters among other tiny tweaks</p>
+      <p space="10"/>
+      <p>Adjusted Ambiental. Now properly makes Hell hot regardless of what's going on in the overworld</p>
+      <p space="10"/>
+      <p>Add TFC Chromium</p>
+      <p space="10"/>
+      <p>Changed TFC Zircaloy recipe. Was far too simple for such powerful metal. Also adjusted armor stats and temps for making things from it.</p>
+      <p space="10"/>
+      <p>Added recipes to turn aged drinks into vinegar. For the barrels that you forgot about and don't need the buff juice. Also the aged drinks can be put into wooden buckets. </p>
+      <p space="10"/>
+      <p>The ability to use a saw to obtain ice blocks has been modified. It now requires a Tier VI saw. Sea Ice will drop Packed Ice and Fresh water ice will continue to drop regular Ice blocks.</p>
+      <p space="10"/>
+      <p>Add the missing diet handling to the ambiental system. Meat and Dairy nutrition will keep you warmer. Fruit and Vegetables will help keep you cooler.</p>
+      <p space="10"/>
+      <p>Adjusted FirstAid to give all your body parts a bit more durability. This should help make the mod a little less overwhelming.</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TFC</p>
+      <p>- TNFCMod</p>
+      <p>- Terrafirmathings</p>
+
       <p italics="true">Version 12.2.46 - Information is power</p>
       <p space="10"/>
       <p>Quick update because a new TFC released. It adds tooltips for saplings and seeds indicating what they require for growing.</p>
