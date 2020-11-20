@@ -43,6 +43,7 @@ public class TemperatureRegistry<Type extends ITemperatureProvider> implements I
         ENVIRONMENT.register(EnvironmentalModifier::handleCozy);
         ENVIRONMENT.register(EnvironmentalModifier::handleThirst);
         ENVIRONMENT.register(EnvironmentalModifier::handleFood);
+        ENVIRONMENT.register(EnvironmentalModifier::handleDiet);
         ENVIRONMENT.register(EnvironmentalModifier::handleFire);
         ENVIRONMENT.register(EnvironmentalModifier::handleWater);
         ENVIRONMENT.register(EnvironmentalModifier::handleRain);
