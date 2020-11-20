@@ -33,6 +33,8 @@ public class ItemModifier extends BaseModifier
         int snowCount = 0;
         for (ItemStack stack : player.inventoryContainer.inventoryItemStacks)
         {
+            Item item = stack.getItem();
+
             if (stack.hasCapability(CapabilityItemHeat.ITEM_HEAT_CAPABILITY, null))
             {
                 IItemHeat heat = stack.getCapability(CapabilityItemHeat.ITEM_HEAT_CAPABILITY, null);
@@ -41,7 +43,7 @@ public class ItemModifier extends BaseModifier
                 float potency = 0f;
                 modifiers.add(new ItemModifier("heat_item", change, potency * stack.getCount()));
             }
-            if (stack.getItem() instanceof IItemTemperatureOwner)
+            if (item instanceof IItemTemperatureOwner)
             {
                 IItemTemperatureOwner owner = (IItemTemperatureOwner) stack.getItem();
                 modifiers.add(owner.getModifier(stack, player));
@@ -51,11 +53,11 @@ public class ItemModifier extends BaseModifier
                 modifiers.add(provider.getModifier(stack, player));
             }
             //individual stacks of straw provide a small amount of cold protection. Stack size doesn't matter.
-            if (stack.getItem() == ItemsTFC.STRAW)
+            if (item == ItemsTFC.STRAW)
             {
                 strawCount += 1;
             }
-            if (stack.getItem() == Item.getItemFromBlock(BlocksTFC.SEA_ICE) || stack.getItem() == Item.getItemFromBlock(Blocks.ICE))
+            if (item == Item.getItemFromBlock(Blocks.PACKED_ICE) || item == Item.getItemFromBlock(Blocks.ICE) )
             {
                 iceCount += 1;
             }
