@@ -42,10 +42,7 @@ import com.tmtravlr.jaff.entities.EntityIronFishHook;
 import com.tmtravlr.jaff.items.ItemHookedFishingRod;
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.Constants;
-import net.dries007.tfc.api.capability.food.FoodData;
-import net.dries007.tfc.api.capability.food.FoodStatsTFC;
-import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
-import net.dries007.tfc.api.capability.food.NutritionStats;
+import net.dries007.tfc.api.capability.food.*;
 import net.dries007.tfc.api.types.IPredator;
 import net.dries007.tfc.objects.blocks.BlocksTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockShortGrassTFC;
@@ -62,7 +59,7 @@ import static tnfcmod.util.MonsterGear.SHADERBAGS;
 public class GeneralEventHandler
 {
     private static final Random RANDOM = new Random();
-    public static final FoodData DEATHRATTLE = new FoodData(-2, -10.0F, 0.0F, -2.0F, -2.0F, -2.0F, -2.0F, -2.0F, 0.0F);
+    public static final FoodData DEATHRATTLE = new FoodData(-2, -10.0F, 0.0F, 3.0F, 3.0F, 3.0F, 3.0F, 3.0F, 0.0F);
 
 
     @SubscribeEvent
@@ -81,11 +78,12 @@ public class GeneralEventHandler
             IFoodStatsTFC newFoodStats = (IFoodStatsTFC) player.getFoodStats();
             NutritionStats oldNutritionStats = oldFoodStats.getNutrition();
             NutritionStats newNutritionStats = newFoodStats.getNutrition();
-            if (oldNutritionStats.getAverageNutrition() < 0.5)
+            if (oldNutritionStats.getAverageNutrition() < 0.38 && oldNutritionStats.getAverageNutrition() > 0.1)
             {
                 newNutritionStats.deserializeNBT(oldNutritionStats.serializeNBT());
 
             }
+
             //Dying messes up your biochemistry
             newNutritionStats.addNutrients(DEATHRATTLE);
             //And makes you thirsty

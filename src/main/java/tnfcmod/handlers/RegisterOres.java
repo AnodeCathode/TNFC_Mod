@@ -58,6 +58,7 @@ public final class RegisterOres
     public static final ResourceLocation MAGNESIUM_DIBORIDE = new ResourceLocation(MOD_ID, "magnesium_diboride"); // magnesium + steel
     public static final ResourceLocation TOUGH = new ResourceLocation(MOD_ID, "tough"); // Ferroboron + lithium
     public static final ResourceLocation URANIUM = new ResourceLocation(MOD_ID, "uranium");
+    public static final ResourceLocation CHROMIUM = new ResourceLocation(MOD_ID, "chromium");
 
 
     //Ores
@@ -75,9 +76,10 @@ public final class RegisterOres
     public static final ResourceLocation MAGNESITE = new ResourceLocation(MOD_ID, "magnesite"); //magnesium
     public static final ResourceLocation BERYL = new ResourceLocation(MOD_ID, "beryl"); //beryllium
     public static final ResourceLocation ZIRCON = new ResourceLocation(MOD_ID, "zircon"); // zirconium
+    public static final ResourceLocation CHROMITE = new ResourceLocation(MOD_ID, "chromite"); // chrome
 
     //Ore without TFC-M metals
-    public static final ResourceLocation CHROMITE = new ResourceLocation(MOD_ID, "chromite"); // chrome
+
     public static final ResourceLocation VILLIAUMITE = new ResourceLocation(MOD_ID, "villiaumite");
     public static final ResourceLocation RHODOCHROSITE = new ResourceLocation(MOD_ID, "rhodochrosite");
     public static final ResourceLocation FLUORITE = new ResourceLocation(MOD_ID, "fluorite");
@@ -109,6 +111,7 @@ public final class RegisterOres
         r.register(new Metal(INVAR, Metal.Tier.TIER_IV, true, 0.35f, 1450, 0xFF40444A, ToolMaterialsTNFC.INVAR, ArmorMaterialsTNFC.INVAR));
         r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 3025, 0xFF40444A, ToolMaterialsTNFC.MANYULLYN, ArmorMaterialsTNFC.MANYULLYN));
         r.register(new Metal(THORIUM, Metal.Tier.TIER_IV, true, 0.3f, 630, 0xFF3D4548, null, null));
+        r.register(new Metal(CHROMIUM, Metal.Tier.TIER_IV, false, 0.35f, 1630, 0xFF3D4548, null, null));
         r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_V, true, 0.35f, 1300, 0xFFE4EADA, null, null));
         r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_V, true, 0.35f, 1500, 0xFFEAAE90, ToolMaterialsTNFC.BERYLLIUM_COPPER, ArmorMaterialsTNFC.BERYLLIUM_COPPER));
         r.register(new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, 3025, 0xFF4B4B4B, null, null));
@@ -118,7 +121,7 @@ public final class RegisterOres
         r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_V, true, 0.2f, 3400, 0xFF40444A, ToolMaterialsTNFC.TUNGSTEN, ArmorMaterialsTNFC.TUNGSTEN));
         r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_V, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTNFC.TUNGSTEN_STEEL, ArmorMaterialsTNFC.TUNGSTEN_STEEL));
         r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_V, true, 0.35f, 1500, 0xFF747527, null, null));
-        r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_V, true, 0.35f, 1500, 0xFF43423A, ToolMaterialsTNFC.ZIRCALOY, ArmorMaterialsTNFC.ZIRCALOY));
+        r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_V, true, 0.35f, 1800, 0xFF43423A, ToolMaterialsTNFC.ZIRCALOY, ArmorMaterialsTNFC.ZIRCALOY));
         r.register(new Metal(TOUGH, Metal.Tier.TIER_V, true, 0.3f, 3000, 0xFF3F2B61, null, null));
 
 
@@ -145,9 +148,10 @@ public final class RegisterOres
         r.register(new Ore(NATIVE_OSMIUM, OSMIUM, false));
         r.register(new Ore(ZIRCON, ZIRCONIUM, false));
         r.register(new Ore(BERYL, BERYLLIUM, false));
+        r.register(new Ore(CHROMITE, CHROMIUM));
 
         // Ores without metals registered inside TFC
-        r.register(new Ore(CHROMITE));
+
         r.register(new Ore(VILLIAUMITE));
         r.register(new Ore(RHODOCHROSITE));
         r.register(new Ore(FLUORITE));
@@ -171,7 +175,7 @@ public final class RegisterOres
             new AlloyRecipe.Builder(HSLA_STEEL).add(BLACK_STEEL, 0.8, 0.9).add(MANGANESE, 0.01, 0.09).build(),
             new AlloyRecipe.Builder(MAGNESIUM_DIBORIDE).add(BORON, 0.6, 0.8).add(MAGNESIUM, 0.2, 0.4).build(),
             new AlloyRecipe.Builder(BERYLLIUM_COPPER).add(BERYLLIUM, 0.01, 0.03).add(COPPER, 0.9, 0.96).add(ALUMINUM, 0.01, 0.03).build(),
-            new AlloyRecipe.Builder(ZIRCALOY).add(ZIRCONIUM, 0.95, 0.98).add(TIN, 0.02, 0.04).build(),
+            new AlloyRecipe.Builder(ZIRCALOY).add(ZIRCONIUM, 0.95, 0.98).add(TIN, 0.02, 0.04).add(PIG_IRON, 0.01, 0.01).add(CHROMIUM, 0.01, 0.01).build(),
             new AlloyRecipe.Builder(TOUGH).add(FERROBORON, 0.4, 0.6).add(LITHIUM, 0.4, 0.6).build()
         );
     }
