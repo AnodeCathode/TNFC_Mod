@@ -6,7 +6,7 @@ import net.minecraft.tileentity.TileEntityFurnace;
 
 import blusunrize.immersiveengineering.common.blocks.metal.TileEntityElectricLantern;
 import blusunrize.immersiveengineering.common.blocks.metal.TileEntityFurnaceHeater;
-import com.lumintorious.ambiental.capability.TemperatureSystem;
+import com.lumintorious.ambiental.capability.TemperatureCapability;
 import net.dries007.tfc.objects.te.TEBloomery;
 import net.dries007.tfc.objects.te.TECharcoalForge;
 import net.dries007.tfc.objects.te.TEFirePit;
@@ -129,7 +129,7 @@ public class TileEntityModifier extends BlockModifier
         if (tile instanceof TELamp)
         {
             TELamp lamp = (TELamp) tile;
-            if (EnvironmentalModifier.getEnvironmentTemperature(player) < TemperatureSystem.AVERAGE)
+            if (EnvironmentalModifier.getEnvironmentTemperature(player) < TemperatureCapability.AVERAGE)
             {
                 float change = (lamp.isPowered() && lamp.getFuel() > 0) ? 2f : 0f;
                 float potency = 0f;

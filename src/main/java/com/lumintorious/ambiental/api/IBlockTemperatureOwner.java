@@ -7,7 +7,6 @@ import net.minecraft.util.math.BlockPos;
 import com.lumintorious.ambiental.modifiers.BlockModifier;
 
 // Blocks you create should implement this if necessary
-public interface IBlockTemperatureOwner
-{
-    public BlockModifier getModifier(IBlockState state, BlockPos blockPos, EntityPlayer player);
+public interface IBlockTemperatureOwner{
+	public BlockModifier getModifier(IBlockState state, BlockPos blockPos, EntityPlayer player);
 }

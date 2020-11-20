@@ -9,7 +9,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
 import baubles.api.BaublesApi;
-import com.lumintorious.ambiental.capability.TemperatureSystem;
+import com.lumintorious.ambiental.capability.TemperatureCapability;
 import me.desht.pneumaticcraft.common.item.ItemPneumaticArmor;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.objects.items.metal.ItemMetalArmor;
@@ -114,7 +114,7 @@ public class EquipmentModifier extends BaseModifier
                     if (player.world.getLight(player.getPosition()) > 14)
                     {
                         float envTemp = EnvironmentalModifier.getEnvironmentTemperature(player);
-                        if (envTemp > TemperatureSystem.AVERAGE + 3)
+                        if (envTemp > TemperatureCapability.AVERAGE + 3)
                         {
                             modifiers.add(new EquipmentModifier("helmet", -envTemp / 3, -0.4f));
                         }

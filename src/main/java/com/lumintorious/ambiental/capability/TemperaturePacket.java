@@ -10,16 +10,15 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import io.netty.buffer.ByteBuf;
 import net.dries007.tfc.TerraFirmaCraft;
 
-public class TemperaturePacket implements IMessage
-{
-
-    public NBTTagCompound tag = new NBTTagCompound();
-
-    public TemperaturePacket()
+public class TemperaturePacket implements IMessage{
+	
+	public NBTTagCompound tag = new NBTTagCompound();
+	
+	public TemperaturePacket()
     {
     }
 
-    public TemperaturePacket(NBTTagCompound tag)
+	public TemperaturePacket(NBTTagCompound tag)
     {
         this.tag = tag;
     }
@@ -35,7 +34,7 @@ public class TemperaturePacket implements IMessage
     {
         ByteBufUtils.writeTag(buf, tag);
     }
-
+    
     public static final class Handler implements IMessageHandler<TemperaturePacket, IMessage>
     {
         @Override
@@ -45,10 +44,10 @@ public class TemperaturePacket implements IMessage
                 EntityPlayer player = TerraFirmaCraft.getProxy().getPlayer(ctx);
                 if (player != null)
                 {
-                    ITemperatureSystem temp = TemperatureSystem.getTemperatureFor(player);
-                    if (temp != null)
+                    ITemperatureCapability sys = player.getCapability(TemperatureCapability.CAPABILITY, null);
+                    if (sys != null)
                     {
-                        temp.deserializeNBT(message.tag);
+                    	sys.deserializeNBT(message.tag);
                     }
                 }
             });
