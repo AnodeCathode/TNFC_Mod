@@ -448,6 +448,9 @@ item.tfc.ore.thorianite.poor.name=Poor Thorianite
 item.tfc.ore.thorianite.rich.name=Rich Thorianite
 item.tfc.ore.small.thorianite.name=Small Thorianite
 item.tfc.ore.chromite.name=Chromite
+item.tfc.ore.small.chromite.name=Small Chromite
+item.tfc.ore.chromite.poor.name=Poor Chromite
+item.tfc.ore.chromite.rich.name=Rich Chromite
 item.tfc.ore.pyrolusite.name=Pyrolusite
 item.tfc.ore.pyrolusite.poor.name=Poor Pyrolusite
 item.tfc.ore.pyrolusite.rich.name=Rich Pyrolusite
@@ -479,6 +482,8 @@ item.tfc.ore.carobbiite.name=Carobbiite
 item.tfc.ore.arsenic.name=Arsenic
 
 # Metal items
+fluid.chromium=Molten Chromium
+item.tfc.metal.ingot.chromium.name=Chromium Ingot
 fluid.antimony=Molten Antimony
 item.tfc.metal.ingot.antimony.name=Antimony Ingot
 item.tfc.ceramics.fired.mold.ingot.antimony.name=Unshaped Antimony

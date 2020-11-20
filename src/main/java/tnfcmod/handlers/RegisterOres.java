@@ -175,7 +175,7 @@ public final class RegisterOres
             new AlloyRecipe.Builder(HSLA_STEEL).add(BLACK_STEEL, 0.8, 0.9).add(MANGANESE, 0.01, 0.09).build(),
             new AlloyRecipe.Builder(MAGNESIUM_DIBORIDE).add(BORON, 0.6, 0.8).add(MAGNESIUM, 0.2, 0.4).build(),
             new AlloyRecipe.Builder(BERYLLIUM_COPPER).add(BERYLLIUM, 0.01, 0.03).add(COPPER, 0.9, 0.96).add(ALUMINUM, 0.01, 0.03).build(),
-            new AlloyRecipe.Builder(ZIRCALOY).add(ZIRCONIUM, 0.95, 0.98).add(TIN, 0.02, 0.04).add(PIG_IRON, 0.01, 0.01).add(CHROMIUM, 0.01, 0.01).build(),
+            new AlloyRecipe.Builder(ZIRCALOY).add(ZIRCONIUM, 0.95, 0.98).add(TIN, 0.02, 0.04).add(PIG_IRON, 0.01, 0.02).add(CHROMIUM, 0.01, 0.02).build(),
             new AlloyRecipe.Builder(TOUGH).add(FERROBORON, 0.4, 0.6).add(LITHIUM, 0.4, 0.6).build()
         );
     }
