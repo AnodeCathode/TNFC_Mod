@@ -3,6 +3,8 @@ package tnfcmod.handlers;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureType;
@@ -13,6 +15,7 @@ import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityFishHook;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
@@ -46,9 +49,9 @@ import net.dries007.tfc.api.capability.food.NutritionStats;
 import net.dries007.tfc.api.types.IPredator;
 import net.dries007.tfc.objects.blocks.plants.BlockShortGrassTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockTallGrassTFC;
+import net.dries007.tfc.util.OreDictionaryHelper;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import tnfcmod.util.MonsterGear;
-import tnfcmod.tnfcmod;
 
 import static tnfcmod.tnfcmod.MODID;
 import static tnfcmod.util.MonsterGear.SHADERBAGS;
@@ -109,6 +112,21 @@ public class GeneralEventHandler
         }
     }
 
+    @SubscribeEvent
+    public static void onBlockHarvestDrops(BlockEvent.HarvestDropsEvent event)
+    {
+        final EntityPlayer player = event.getHarvester();
+        final ItemStack heldItem = player == null ? ItemStack.EMPTY : player.getHeldItemMainhand();
+        final IBlockState state = event.getState();
+        final Block block = state.getBlock();
+
+        // Harvest ice from saws
+        if (OreDictionaryHelper.doesStackMatchOre(heldItem, "craftingToolHardSaw") && block == Blocks.ICE)
+        {
+            event.getDrops().add(new ItemStack(Blocks.PACKED_ICE));
+        }
+
+    }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onEntityJoinWorldEvent(EntityJoinWorldEvent event)
