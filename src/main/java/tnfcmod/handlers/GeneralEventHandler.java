@@ -47,6 +47,7 @@ import net.dries007.tfc.api.capability.food.FoodStatsTFC;
 import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
 import net.dries007.tfc.api.capability.food.NutritionStats;
 import net.dries007.tfc.api.types.IPredator;
+import net.dries007.tfc.objects.blocks.BlocksTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockShortGrassTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockTallGrassTFC;
 import net.dries007.tfc.util.OreDictionaryHelper;
@@ -121,9 +122,18 @@ public class GeneralEventHandler
         final Block block = state.getBlock();
 
         // Harvest ice from saws
-        if (OreDictionaryHelper.doesStackMatchOre(heldItem, "craftingToolHardSaw") && block == Blocks.ICE)
+        if (OreDictionaryHelper.doesStackMatchOre(heldItem, "craftingToolEliteSaw"))
         {
-            event.getDrops().add(new ItemStack(Blocks.PACKED_ICE));
+            if (block == Blocks.ICE)
+            {
+                event.getDrops().add(new ItemStack(Blocks.ICE));
+            }
+
+            if (block == BlocksTFC.SEA_ICE)
+            {
+                event.getDrops().add(new ItemStack(Blocks.PACKED_ICE));
+            }
+
         }
 
     }
