@@ -1,8 +1,8 @@
-package com.jaquadro.minecraft.storagedrawersextra.config;
+package com.jaquadro.minecraft.storagedrawerstfc.config;
 
 import com.jaquadro.minecraft.chameleon.config.ConfigSection;
-import com.jaquadro.minecraft.storagedrawersextra.StorageDrawersExtra;
-import com.jaquadro.minecraft.storagedrawersextra.block.EnumMod;
+import com.jaquadro.minecraft.storagedrawerstfc.StorageDrawersTFC;
+import com.jaquadro.minecraft.storagedrawerstfc.block.EnumMod;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 
@@ -23,7 +23,7 @@ public class ConfigManagerExt
     public ConfigManagerExt (File file) {
         config = new Configuration(file);
 
-        sectionMaster = new ConfigSection.Common(config, StorageDrawersExtra.MOD_ID + ".config.");
+        sectionMaster = new ConfigSection.Common(config, StorageDrawersTFC.MOD_ID + ".config.");
         sectionGeneral = new ConfigSection(sectionMaster, "general", "general");
         sectionMods = new ConfigSection(sectionMaster, "mods", "mods");
 

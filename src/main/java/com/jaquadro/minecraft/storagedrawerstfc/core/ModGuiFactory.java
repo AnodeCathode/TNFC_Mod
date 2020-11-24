@@ -1,6 +1,6 @@
-package com.jaquadro.minecraft.storagedrawersextra.core;
+package com.jaquadro.minecraft.storagedrawerstfc.core;
 
-import com.jaquadro.minecraft.storagedrawersextra.config.ModConfigGui;
+import com.jaquadro.minecraft.storagedrawerstfc.config.ModConfigGui;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.fml.client.IModGuiFactory;

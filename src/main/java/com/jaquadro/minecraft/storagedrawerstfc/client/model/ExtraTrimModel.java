@@ -1,4 +1,4 @@
-package com.jaquadro.minecraft.storagedrawersextra.client.model;
+package com.jaquadro.minecraft.storagedrawerstfc.client.model;
 
 import com.google.common.collect.ImmutableList;
 import com.jaquadro.minecraft.chameleon.Chameleon;
@@ -9,12 +9,12 @@ import com.jaquadro.minecraft.chameleon.render.ChamRender;
 import com.jaquadro.minecraft.chameleon.render.helpers.ModularBoxRenderer;
 import com.jaquadro.minecraft.chameleon.resources.register.DefaultRegister;
 import com.jaquadro.minecraft.storagedrawers.StorageDrawers;
-import com.jaquadro.minecraft.storagedrawersextra.StorageDrawersExtra;
-import com.jaquadro.minecraft.storagedrawersextra.block.BlockTrimExtra;
-import com.jaquadro.minecraft.storagedrawersextra.block.EnumMod;
-import com.jaquadro.minecraft.storagedrawersextra.block.EnumVariant;
-import com.jaquadro.minecraft.storagedrawersextra.config.ConfigManagerExt;
-import com.jaquadro.minecraft.storagedrawersextra.core.ModBlocks;
+import com.jaquadro.minecraft.storagedrawerstfc.StorageDrawersTFC;
+import com.jaquadro.minecraft.storagedrawerstfc.block.BlockTrimExtra;
+import com.jaquadro.minecraft.storagedrawerstfc.block.EnumMod;
+import com.jaquadro.minecraft.storagedrawerstfc.block.EnumVariant;
+import com.jaquadro.minecraft.storagedrawerstfc.config.ConfigManagerExt;
+import com.jaquadro.minecraft.storagedrawerstfc.core.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.IBakedModel;
@@ -65,7 +65,7 @@ public class ExtraTrimModel extends ChamModel
 
         @Override
         public List<ResourceLocation> getTextureResources () {
-            ConfigManagerExt configExt = StorageDrawersExtra.config;
+            ConfigManagerExt configExt = StorageDrawersTFC.config;
             List<ResourceLocation> resources = new ArrayList<>();
 
             for (int i = 0; i < 16; i++) {
@@ -78,7 +78,7 @@ public class ExtraTrimModel extends ChamModel
                     continue;
 
                 String path = "blocks/" + variant.getDomain() + "/drawers_" + variant.getPath() + "_side";
-                resources.add(new ResourceLocation(StorageDrawersExtra.MOD_ID, path));
+                resources.add(new ResourceLocation(StorageDrawersTFC.MOD_ID, path));
             }
 
             return resources;

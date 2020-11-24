@@ -1,6 +1,6 @@
-package com.jaquadro.minecraft.storagedrawersextra.block;
+package com.jaquadro.minecraft.storagedrawerstfc.block;
 
-import com.jaquadro.minecraft.storagedrawersextra.StorageDrawersExtra;
+import com.jaquadro.minecraft.storagedrawerstfc.StorageDrawersTFC;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
 
@@ -11,7 +11,7 @@ import java.util.Map;
 
 public enum EnumVariant implements IStringSerializable
 {
-    DEFAULT(StorageDrawersExtra.MOD_ID, "default", 0, null, 0),
+    DEFAULT(StorageDrawersTFC.MOD_ID, "default", 0, null, 0),
 
     IMMENG_TREATED(ID.IMMENG, "immeng_treated", 1, "treatedWood", 0, "treatedWoodSlab", 0),
     TFC_ACACIA(ID.TFC, "acacia", 2, "wood/planks/acacia", 0, "slab/wood/acacia", 0),
@@ -63,12 +63,12 @@ public enum EnumVariant implements IStringSerializable
 
     @Nonnull
     public String getDomain () {
-        return resource.getResourceDomain();
+        return resource.getNamespace();
     }
 
     @Nonnull
     public String getPath () {
-        return resource.getResourcePath();
+        return resource.getPath();
     }
 
     @Override

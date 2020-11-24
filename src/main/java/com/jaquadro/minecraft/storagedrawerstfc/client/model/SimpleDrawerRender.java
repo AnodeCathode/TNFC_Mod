@@ -1,4 +1,4 @@
-package com.jaquadro.minecraft.storagedrawersextra.client.model;
+package com.jaquadro.minecraft.storagedrawerstfc.client.model;
 
 import com.jaquadro.minecraft.chameleon.Chameleon;
 import com.jaquadro.minecraft.chameleon.render.ChamRender;
@@ -8,8 +8,8 @@ import com.jaquadro.minecraft.chameleon.resources.IconRegistry;
 import com.jaquadro.minecraft.storagedrawers.api.storage.EnumBasicDrawer;
 import com.jaquadro.minecraft.storagedrawers.block.BlockStandardDrawers;
 import com.jaquadro.minecraft.storagedrawers.block.dynamic.StatusModelData;
-import com.jaquadro.minecraft.storagedrawersextra.block.BlockExtraDrawers;
-import com.jaquadro.minecraft.storagedrawersextra.block.EnumVariant;
+import com.jaquadro.minecraft.storagedrawerstfc.block.BlockExtraDrawers;
+import com.jaquadro.minecraft.storagedrawerstfc.block.EnumVariant;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.util.EnumFacing;

@@ -1,7 +1,7 @@
-package com.jaquadro.minecraft.storagedrawersextra.item;
+package com.jaquadro.minecraft.storagedrawerstfc.item;
 
-import com.jaquadro.minecraft.storagedrawersextra.block.BlockTrimExtra;
-import com.jaquadro.minecraft.storagedrawersextra.block.EnumVariant;
+import com.jaquadro.minecraft.storagedrawerstfc.block.BlockTrimExtra;
+import com.jaquadro.minecraft.storagedrawerstfc.block.EnumVariant;
 import net.minecraft.block.Block;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -29,7 +29,7 @@ public class ItemTrimExtra extends ItemBlock
 
     @Override
     @Nonnull
-    public String getUnlocalizedName (@Nonnull ItemStack stack) {
+    public String getTranslationKey (@Nonnull ItemStack stack) {
         return "tile.extra_trim";
     }
 

@@ -1,6 +1,6 @@
-package com.jaquadro.minecraft.storagedrawersextra.block;
+package com.jaquadro.minecraft.storagedrawerstfc.block;
 
-import com.jaquadro.minecraft.storagedrawersextra.config.EnumToggle;
+import com.jaquadro.minecraft.storagedrawerstfc.config.EnumToggle;
 import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.fml.common.Loader;
 

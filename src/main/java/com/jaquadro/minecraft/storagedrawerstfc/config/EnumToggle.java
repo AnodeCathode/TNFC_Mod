@@ -1,4 +1,4 @@
-package com.jaquadro.minecraft.storagedrawersextra.config;
+package com.jaquadro.minecraft.storagedrawerstfc.config;
 
 public enum EnumToggle
 {

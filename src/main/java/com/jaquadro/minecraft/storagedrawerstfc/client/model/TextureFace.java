@@ -1,7 +1,7 @@
-package com.jaquadro.minecraft.storagedrawersextra.client.model;
+package com.jaquadro.minecraft.storagedrawerstfc.client.model;
 
-import com.jaquadro.minecraft.storagedrawersextra.StorageDrawersExtra;
-import com.jaquadro.minecraft.storagedrawersextra.block.EnumVariant;
+import com.jaquadro.minecraft.storagedrawerstfc.StorageDrawersTFC;
+import com.jaquadro.minecraft.storagedrawerstfc.block.EnumVariant;
 import net.minecraft.util.ResourceLocation;
 
 public enum TextureFace {
@@ -26,6 +26,6 @@ public enum TextureFace {
             .append(variant.getPath())
             .append(suffix);
 
-        return new ResourceLocation(StorageDrawersExtra.MOD_ID, builder.toString());
+        return new ResourceLocation(StorageDrawersTFC.MOD_ID, builder.toString());
     }
 }

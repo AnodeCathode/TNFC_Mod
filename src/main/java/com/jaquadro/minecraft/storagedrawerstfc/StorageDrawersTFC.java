@@ -1,9 +1,9 @@
-package com.jaquadro.minecraft.storagedrawersextra;
+package com.jaquadro.minecraft.storagedrawerstfc;
 
 import com.jaquadro.minecraft.storagedrawers.core.handlers.GuiHandler;
-import com.jaquadro.minecraft.storagedrawersextra.config.ConfigManagerExt;
-import com.jaquadro.minecraft.storagedrawersextra.core.CommonProxy;
-import com.jaquadro.minecraft.storagedrawersextra.core.ModBlocks;
+import com.jaquadro.minecraft.storagedrawerstfc.config.ConfigManagerExt;
+import com.jaquadro.minecraft.storagedrawerstfc.core.CommonProxy;
+import com.jaquadro.minecraft.storagedrawerstfc.core.ModBlocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -15,23 +15,22 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 import java.io.File;
 
-@Mod(modid = StorageDrawersExtra.MOD_ID, name = StorageDrawersExtra.MOD_NAME, version = StorageDrawersExtra.MOD_VERSION,
+@Mod(modid = StorageDrawersTFC.MOD_ID, name = StorageDrawersTFC.MOD_NAME, version = StorageDrawersTFC.MOD_VERSION,
     dependencies = "required-after:storagedrawers;required-after:chameleon;after:waila;",
-    guiFactory = StorageDrawersExtra.SOURCE_PATH + "core.ModGuiFactory",
-    acceptedMinecraftVersions = "[1.12,1.13)")
-public class StorageDrawersExtra
+    guiFactory = StorageDrawersTFC.SOURCE_PATH + "core.ModGuiFactory")
+public class StorageDrawersTFC
 {
-    public static final String MOD_ID = "storagedrawersextra";
-    public static final String MOD_NAME = "Storage Drawers Extras";
-    public static final String MOD_VERSION = "@VERSION@";
-    public static final String SOURCE_PATH = "com.jaquadro.minecraft.storagedrawersextra.";
+    public static final String MOD_ID = "storagedrawerstfc";
+    public static final String MOD_NAME = "Storage Drawers TFC";
+    public static final String MOD_VERSION = "12.2.48";
+    public static final String SOURCE_PATH = "com.jaquadro.minecraft.storagedrawerstfc.";
 
     public static final ModBlocks blocks = new ModBlocks();
 
     public static ConfigManagerExt config;
 
     @Mod.Instance(MOD_ID)
-    public static StorageDrawersExtra instance;
+    public static StorageDrawersTFC instance;
 
     @SidedProxy(clientSide = SOURCE_PATH + "core.ClientProxy", serverSide = SOURCE_PATH + "core.CommonProxy")
     public static CommonProxy proxy;

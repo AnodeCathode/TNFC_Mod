@@ -1,9 +1,9 @@
-package com.jaquadro.minecraft.storagedrawersextra.block;
+package com.jaquadro.minecraft.storagedrawerstfc.block;
 
 import com.jaquadro.minecraft.storagedrawers.api.storage.INetworked;
-import com.jaquadro.minecraft.storagedrawersextra.StorageDrawersExtra;
-import com.jaquadro.minecraft.storagedrawersextra.config.ConfigManagerExt;
-import com.jaquadro.minecraft.storagedrawersextra.core.ModCreativeTabs;
+import com.jaquadro.minecraft.storagedrawerstfc.StorageDrawersTFC;
+import com.jaquadro.minecraft.storagedrawerstfc.config.ConfigManagerExt;
+import com.jaquadro.minecraft.storagedrawerstfc.core.ModCreativeTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -42,7 +42,7 @@ public class BlockTrimExtra extends Block implements INetworked
 
         this.group = group;
 
-        setUnlocalizedName(blockName);
+        setTranslationKey(blockName);
         setRegistryName(registryName);
         setHardness(5f);
         setSoundType(SoundType.WOOD);
@@ -78,7 +78,7 @@ public class BlockTrimExtra extends Block implements INetworked
 
     @Override
     public void getSubBlocks (CreativeTabs creativeTabs, NonNullList<ItemStack> list) {
-        ConfigManagerExt configExt = StorageDrawersExtra.config;
+        ConfigManagerExt configExt = StorageDrawersTFC.config;
 
         for (EnumVariant variant : EnumVariant.values()) {
             if (variant == EnumVariant.DEFAULT)

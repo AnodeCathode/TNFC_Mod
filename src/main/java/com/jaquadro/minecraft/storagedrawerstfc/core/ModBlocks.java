@@ -1,20 +1,20 @@
-package com.jaquadro.minecraft.storagedrawersextra.core;
+package com.jaquadro.minecraft.storagedrawerstfc.core;
 
 import com.jaquadro.minecraft.chameleon.Chameleon;
 import com.jaquadro.minecraft.chameleon.resources.ModelRegistry;
 import com.jaquadro.minecraft.storagedrawers.StorageDrawers;
 import com.jaquadro.minecraft.storagedrawers.api.storage.EnumBasicDrawer;
 import com.jaquadro.minecraft.storagedrawers.config.ConfigManager;
-import com.jaquadro.minecraft.storagedrawersextra.StorageDrawersExtra;
-import com.jaquadro.minecraft.storagedrawersextra.block.BlockExtraDrawers;
-import com.jaquadro.minecraft.storagedrawersextra.block.BlockTrimExtra;
-import com.jaquadro.minecraft.storagedrawersextra.block.EnumMod;
-import com.jaquadro.minecraft.storagedrawersextra.block.EnumVariant;
-import com.jaquadro.minecraft.storagedrawersextra.client.model.ExtraDrawerModel;
-import com.jaquadro.minecraft.storagedrawersextra.client.model.ExtraTrimModel;
-import com.jaquadro.minecraft.storagedrawersextra.config.ConfigManagerExt;
-import com.jaquadro.minecraft.storagedrawersextra.item.ItemExtraDrawers;
-import com.jaquadro.minecraft.storagedrawersextra.item.ItemTrimExtra;
+import com.jaquadro.minecraft.storagedrawerstfc.StorageDrawersTFC;
+import com.jaquadro.minecraft.storagedrawerstfc.block.BlockExtraDrawers;
+import com.jaquadro.minecraft.storagedrawerstfc.block.BlockTrimExtra;
+import com.jaquadro.minecraft.storagedrawerstfc.block.EnumMod;
+import com.jaquadro.minecraft.storagedrawerstfc.block.EnumVariant;
+import com.jaquadro.minecraft.storagedrawerstfc.client.model.ExtraDrawerModel;
+import com.jaquadro.minecraft.storagedrawerstfc.client.model.ExtraTrimModel;
+import com.jaquadro.minecraft.storagedrawerstfc.config.ConfigManagerExt;
+import com.jaquadro.minecraft.storagedrawerstfc.item.ItemExtraDrawers;
+import com.jaquadro.minecraft.storagedrawerstfc.item.ItemTrimExtra;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -38,7 +38,7 @@ public class ModBlocks
     public static BlockExtraDrawers extraDrawers;
     public static BlockTrimExtra[] extraTrim;
 
-    @Mod.EventBusSubscriber(modid = StorageDrawersExtra.MOD_ID)
+    @Mod.EventBusSubscriber(modid = StorageDrawersTFC.MOD_ID)
     public static class Registration
     {
         @SubscribeEvent
@@ -88,7 +88,7 @@ public class ModBlocks
         public static void registerRecipes (RegistryEvent.Register<IRecipe> event) {
             IForgeRegistry<IRecipe> registry = event.getRegistry();
             ConfigManager config = StorageDrawers.config;
-            ConfigManagerExt configExt = StorageDrawersExtra.config;
+            ConfigManagerExt configExt = StorageDrawersTFC.config;
 
             for (EnumVariant variant : EnumVariant.values()) {
                 if (variant == EnumVariant.DEFAULT)

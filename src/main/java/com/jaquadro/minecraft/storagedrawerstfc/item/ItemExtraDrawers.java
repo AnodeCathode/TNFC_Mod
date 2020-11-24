@@ -1,4 +1,4 @@
-package com.jaquadro.minecraft.storagedrawersextra.item;
+package com.jaquadro.minecraft.storagedrawerstfc.item;
 
 import com.google.common.base.Function;
 import com.jaquadro.minecraft.storagedrawers.api.storage.EnumBasicDrawer;
@@ -38,8 +38,8 @@ public class ItemExtraDrawers extends ItemDrawers
 
     @Override
     @Nonnull
-    public String getUnlocalizedName (@Nonnull ItemStack stack) {
-        return super.getUnlocalizedName() + "." + nameFunction.apply(stack);
+    public String getTranslationKey (@Nonnull ItemStack stack) {
+        return super.getTranslationKey() + "." + nameFunction.apply(stack);
     }
 
     @Override
