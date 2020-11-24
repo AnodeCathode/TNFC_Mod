@@ -1,0 +1,33 @@
+itemGroup.storagedrawersextra=Storage Drawers Extras
+
+tile.extraDrawers.fulldrawers1.name=Basic Drawer
+tile.extraDrawers.fulldrawers2.name=Basic Drawer 1x2
+tile.extraDrawers.fulldrawers4.name=Basic Drawer 2x2
+tile.extraDrawers.halfdrawers2.name=Half Drawers 1x2
+tile.extraDrawers.halfdrawers4.name=Half Drawers 2x2
+tile.extra_trim.name=Storage Trim
+
+# Materials (Terrafirmacraft)
+storagedrawers.material.tfc:acacia=Acacia
+storagedrawers.material.tfc:ash=Ash
+storagedrawers.material.tfc:aspen=Aspen
+storagedrawers.material.tfc:birch=Birch
+storagedrawers.material.tfc:blackwood=Blackwood
+storagedrawers.material.tfc:chestnut=Chestnut
+storagedrawers.material.tfc:douglas_fir=Douglas Fir
+storagedrawers.material.tfc:hickory=Hickory
+storagedrawers.material.tfc:kapok=Kapok
+storagedrawers.material.tfc:maple=Maple
+storagedrawers.material.tfc:oak=Oak
+storagedrawers.material.tfc:palm=Palm
+storagedrawers.material.tfc:pine=Pine
+storagedrawers.material.tfc:rosewood=Rosewood
+storagedrawers.material.tfc:sequoia=Sequoia
+storagedrawers.material.tfc:spruce=Spruce
+storagedrawers.material.tfc:sycamore=Sycamore
+storagedrawers.material.tfc:white_cedar=White Cedar
+storagedrawers.material.tfc:willow=Willow
+storagedrawers.material.tfc:hevea=Hevea
+
+# Materials (Immersive Engineering)
+storagedrawers.material.immersiveengineering:immeng_treated=Treated Wood
