@@ -8,6 +8,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntitySpider;
@@ -18,16 +19,19 @@ import net.minecraft.entity.projectile.EntityFishHook;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -42,13 +46,24 @@ import com.tmtravlr.jaff.entities.EntityIronFishHook;
 import com.tmtravlr.jaff.items.ItemHookedFishingRod;
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.Constants;
-import net.dries007.tfc.api.capability.food.*;
+import net.dries007.tfc.api.capability.food.FoodData;
+import net.dries007.tfc.api.capability.food.FoodStatsTFC;
+import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
+import net.dries007.tfc.api.capability.food.NutritionStats;
+import net.dries007.tfc.api.capability.player.CapabilityPlayerData;
 import net.dries007.tfc.api.types.IPredator;
+import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.blocks.BlocksTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockShortGrassTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockTallGrassTFC;
+import net.dries007.tfc.objects.blocks.wood.BlockLeavesTFC;
+import net.dries007.tfc.objects.blocks.wood.BlockSaplingTFC;
 import net.dries007.tfc.util.OreDictionaryHelper;
+import net.dries007.tfc.util.config.OreTooltipMode;
+import net.dries007.tfc.util.skills.SkillType;
+import net.dries007.tfc.util.skills.SmithingSkill;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
+import tnfcmod.util.ConfigTNFCMod;
 import tnfcmod.util.MonsterGear;
 
 import static tnfcmod.tnfcmod.MODID;
@@ -92,6 +107,45 @@ public class GeneralEventHandler
         }
 
     }
+
+
+    @SubscribeEvent
+    public static void onPlayerUpdate(LivingUpdateEvent event)
+    {
+        if (!(event.getEntityLiving() instanceof EntityPlayer))
+        {
+            return;
+        }
+
+        EntityPlayer player = (EntityPlayer) event.getEntityLiving();
+        if (player.isCreative() || player.isSpectator())
+        {
+            return;
+        }
+
+
+        if (ConfigTNFCMod.GENERAL.skillbasedTempDisplay)
+        {
+            SmithingSkill skill = CapabilityPlayerData.getSkill(player, SkillType.SMITHING);
+            if (skill.getLevel() > 0.5)
+            {
+
+                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode != OreTooltipMode.ADVANCED)
+                {
+                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ADVANCED;
+                }
+            }
+            else
+            {
+                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode == OreTooltipMode.ADVANCED)
+                {
+                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ALL_INFO;
+                }
+            }
+        }
+    }
+
+
     @SubscribeEvent
     public static void onCropsGrow(BlockEvent.CropGrowEvent event)
     {
@@ -108,6 +162,40 @@ public class GeneralEventHandler
             }
         }
     }
+
+
+    @SubscribeEvent
+    public static void onBlockBreak(BlockEvent.BreakEvent event)
+    {
+        final EntityPlayer player = event.getPlayer();
+        final ItemStack heldItem = player == null ? ItemStack.EMPTY : player.getHeldItemMainhand();
+        final IBlockState state = event.getState();
+        final Block block = state.getBlock();
+
+        // Sequoia saplings
+        if (OreDictionaryHelper.doesStackMatchOre(heldItem, "craftingToolEliteShears"))
+        {
+            if (block instanceof BlockLeavesTFC)
+            {
+                BlockLeavesTFC blockLeavesTFC = (BlockLeavesTFC) block;
+                if (blockLeavesTFC.wood == Tree.SEQUOIA)
+                {
+                    double chance = ConfigTNFCMod.GENERAL.saplingdropchance;
+                    if ((double) Constants.RNG.nextFloat() < chance)
+                    {
+                        BlockPos pos = event.getPos();
+                        EntityItem sapling = new net.minecraft.entity.item.EntityItem(player.world, pos.getX(), pos.getY(), pos.getZ(),
+                            new ItemStack(Item.getItemFromBlock(BlockSaplingTFC.get(blockLeavesTFC.wood))));
+                        sapling.setDefaultPickupDelay();
+                        player.world.spawnEntity(sapling);
+                        heldItem.damageItem(1, player);
+                    }
+                }
+            }
+        }
+
+    }
+
 
     @SubscribeEvent
     public static void onBlockHarvestDrops(BlockEvent.HarvestDropsEvent event)

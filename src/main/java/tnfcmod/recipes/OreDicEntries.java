@@ -109,6 +109,7 @@ public class OreDicEntries
                     OreDictionary.registerOre("craftingToolMediumPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolHardPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolElitePick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
+                    OreDictionary.registerOre("craftingToolEliteShears",new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHEARS),1,OreDictionary.WILDCARD_VALUE));
                 }
             }
         }

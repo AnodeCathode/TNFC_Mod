@@ -36,6 +36,15 @@ public class ConfigTNFCMod
         @Config.LangKey("config." + MODID + ".frozentime")
         @Config.RequiresMcRestart
         public int frozentime = 6912000;
+
+        @Config.Comment({"Chance for sapling drop with elite shears?"})
+        @Config.LangKey("config." + MODID + ".saplingdropchance")
+        public double  saplingdropchance = 0.1;
+
+        @Config.Comment({"Smithing skill controls whether numeric temp display?"})
+        @Config.LangKey("config." + MODID + ".skillbaseTempDisplay")
+        public boolean skillbasedTempDisplay= true;
+
     }
 
 
