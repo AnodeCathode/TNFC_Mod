@@ -125,7 +125,7 @@ public class AmbientalHandler {
 		}
 
 		EntityPlayer player = (EntityPlayer) event.getEntityLiving();
-		if(player.isCreative()) {
+		if(player.isCreative() || player.isSpectator()) {
 			return;
 		}
 		TemperatureCapability temp = (TemperatureCapability)player.getCapability(TemperatureCapability.CAPABILITY, null);
