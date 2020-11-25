@@ -8,6 +8,8 @@
       <link ref="intro" color="#000066">-&gt;General Notes</link>
       <link ref="tips" color="#000066">-&gt; Tips and Tricks</link>
       <p space="10"/>
+      <link ref="storage" color="#000066">-&gt; TFC Storage</link>
+      <p space="10"/>
       <link ref="progression" color="#000066">-&gt;Biletooth's Progression</link>
       <p space="10"/>
       <link ref="rockhounding" color="#000066">-&gt;Benanov and Rockhounding</link>
@@ -143,6 +145,34 @@
       <p space="10"/>
       <p bold = "true">-Dfml.readTimeout=512</p>
       <p>Or even to the java parameters for the client.</p>
+    </section>
+  </chapter>
+  <chapter id="storage">
+    <section>
+      <p bold="true">TFC Storage</p>
+      <p space="2"/>
+      <link ref="index" color="#CC3333">&lt;- Index</link>
+      <p space="10"/>
+      <p italics="true">Adds metal crates, food shelves, preserving jars, meat hangers and grain piles to TerraFirmaCraft: The Next Generation</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Food Shelves - Made out of wood, can hold any type of food, provides a 0.8x decay modifier generally and another 0.5x modifier when underground (below y 140 and shielded from sunlight)</p>
+      <p>Meat Hangers - Made out of wood too, can hold cooked meat, cheese and garlic, provides a 0.6x decay modifier generally and another 0.5x when underground like the food shelves.</p>
+      <p>Preserving jars - Made out of glass and a tin cap, can hold any food that can be pickled, provides a 0.09x modifier when filled with vinegar and holding a pickled food item.</p>
+      <p>Grain Piles - Like log piles, shift click on the ground with a grain item (wheat, barley etc.) and it will place a grain pile with a capacity of 16. Create silos and shelter those pile from direct sunlight to add a modifier of 0.4x to them</p>
+      <p>Metal crates - made out of wrought iron, these crates act just like chests with 27 x 3 inventory spaces, but when put together up to 27, you can use the search bar to filter items in the entire crate system. You can easily have a warehouse with a few crate piles dedicated to different types of items and always just search for what you want to get.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Food shelves and hangers need to have 0 sunlight to be considered cool, grain piles need to have sunlight less than 15 to be considered sheltered (just having a roof above helps)</p>
+      <p space="10"/>
+      <p italics="true">Generally</p>
+      <p space="10"/>
+      <p>Right-clicking on a block from the mod inserts the stack you are holding into it,</p>
+      <p>Left-clicking extracts one item</p>
+      <p>Shift left-clicking extracts the whole stack.</p>
+      <p space="10"/>
+      <p>Due to how TFC food stacking works, you are not allowed to insert more items in a block that already has items. If you want to fill it more, extract the items, stack them using the TFC hotkey for food stacking and insert them all back.</p>
     </section>
   </chapter>
   <chapter id="progression">
