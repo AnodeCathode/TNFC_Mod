@@ -127,7 +127,7 @@ public class GeneralEventHandler
         if (ConfigTNFCMod.GENERAL.skillbasedTempDisplay)
         {
             SmithingSkill skill = CapabilityPlayerData.getSkill(player, SkillType.SMITHING);
-            if (skill.getLevel() > 0.5)
+            if (skill.getLevel() >= (ConfigTNFCMod.GENERAL.skillbasedThreshold))
             {
 
                 if (ConfigTFC.Client.TOOLTIP.oreTooltipMode != OreTooltipMode.ADVANCED)

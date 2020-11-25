@@ -6,7 +6,7 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import static net.dries007.tfc.TerraFirmaCraft.MOD_ID;
+
 import static tnfcmod.tnfcmod.MODID;
 
 @SuppressWarnings("unused")
@@ -39,11 +39,23 @@ public class ConfigTNFCMod
 
         @Config.Comment({"Chance for sapling drop with elite shears?"})
         @Config.LangKey("config." + MODID + ".saplingdropchance")
+        @Config.RangeDouble(
+            min = 0.0D,
+            max = 1.0D
+        )
         public double  saplingdropchance = 0.1;
 
         @Config.Comment({"Smithing skill controls whether numeric temp display?"})
         @Config.LangKey("config." + MODID + ".skillbaseTempDisplay")
         public boolean skillbasedTempDisplay= true;
+
+        @Config.Comment({"Amount of skill to enable numeric temp display 0-4?"})
+        @Config.LangKey("config." + MODID + ".skillbaseThreshold")
+        @Config.RangeInt(
+            min = 0,
+            max = 4
+        )
+        public int skillbasedThreshold= 2;
 
     }
 
