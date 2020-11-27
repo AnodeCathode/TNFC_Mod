@@ -49,14 +49,6 @@ public class ConfigTNFCMod
         @Config.LangKey("config." + MODID + ".skillbaseTempDisplay")
         public boolean skillbasedTempDisplay= true;
 
-        @Config.Comment({"Amount of skill to enable numeric temp display 0-4?"})
-        @Config.LangKey("config." + MODID + ".skillbaseThreshold")
-        @Config.RangeInt(
-            min = 0,
-            max = 4
-        )
-        public int skillbasedThreshold= 2;
-
     }
 
 

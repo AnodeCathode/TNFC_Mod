@@ -1,6 +1,7 @@
 package tnfcmod.handlers;
 
 
+import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
@@ -51,15 +52,21 @@ import net.dries007.tfc.api.capability.food.FoodStatsTFC;
 import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
 import net.dries007.tfc.api.capability.food.NutritionStats;
 import net.dries007.tfc.api.capability.player.CapabilityPlayerData;
+import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.IPredator;
+import net.dries007.tfc.api.types.Plant;
 import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.blocks.BlocksTFC;
+import net.dries007.tfc.objects.blocks.plants.BlockMushroomTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockShortGrassTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockTallGrassTFC;
 import net.dries007.tfc.objects.blocks.wood.BlockLeavesTFC;
 import net.dries007.tfc.objects.blocks.wood.BlockSaplingTFC;
+import net.dries007.tfc.objects.items.ItemsTFC;
+import net.dries007.tfc.types.DefaultPlants;
 import net.dries007.tfc.util.OreDictionaryHelper;
 import net.dries007.tfc.util.config.OreTooltipMode;
+import net.dries007.tfc.util.skills.SkillTier;
 import net.dries007.tfc.util.skills.SkillType;
 import net.dries007.tfc.util.skills.SmithingSkill;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
@@ -126,8 +133,8 @@ public class GeneralEventHandler
 
         if (ConfigTNFCMod.GENERAL.skillbasedTempDisplay)
         {
-            SmithingSkill skill = CapabilityPlayerData.getSkill(player, SkillType.SMITHING);
-            if (skill.getLevel() >= (ConfigTNFCMod.GENERAL.skillbasedThreshold))
+            SkillTier tier= CapabilityPlayerData.getSkill(player, SkillType.SMITHING).getTier();
+            if (tier.isAtLeast(SkillTier.EXPERT))
             {
 
                 if (ConfigTFC.Client.TOOLTIP.oreTooltipMode != OreTooltipMode.ADVANCED)
@@ -172,6 +179,16 @@ public class GeneralEventHandler
         final IBlockState state = event.getState();
         final Block block = state.getBlock();
 
+        if (block == Blocks.BROWN_MUSHROOM || block == Blocks.RED_MUSHROOM || block instanceof BlockMushroomTFC){
+            // Some sort of mushroom. Get a brand new mushroom or otherwise they are old stupid mushrooms.
+            BlockPos pos = event.getPos();
+            EntityItem mushroom = new net.minecraft.entity.item.EntityItem(player.world, pos.getX(), pos.getY(), pos.getZ(),
+                new ItemStack(BlockMushroomTFC.get(TFCRegistries.PLANTS.getValue(DefaultPlants.PORCINI))));
+            mushroom.setDefaultPickupDelay();
+            player.world.spawnEntity(mushroom);
+
+
+        }
         // Sequoia saplings
         if (OreDictionaryHelper.doesStackMatchOre(heldItem, "craftingToolEliteShears"))
         {
@@ -189,6 +206,7 @@ public class GeneralEventHandler
                         sapling.setDefaultPickupDelay();
                         player.world.spawnEntity(sapling);
                         heldItem.damageItem(1, player);
+
                     }
                 }
             }
@@ -217,9 +235,11 @@ public class GeneralEventHandler
             {
                 event.getDrops().add(new ItemStack(Blocks.PACKED_ICE));
             }
-
         }
-
+        if (block == Blocks.BROWN_MUSHROOM || block == Blocks.RED_MUSHROOM || block instanceof BlockMushroomTFC){
+            // Some sort of mushroom. Get a brand new mushroom or otherwise they are old stupid mushrooms.
+            event.setDropChance(0);
+        }
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
