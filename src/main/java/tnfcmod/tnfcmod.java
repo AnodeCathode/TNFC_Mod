@@ -32,7 +32,7 @@ public class tnfcmod {
     public static final String MODID = "tnfcmod";
     public static final String NAME = "Technodefirmacraft";
     public static final String VERSION = "@VERSION@";
-    public static final String DEPENDENCIES = "required-after:tfc;required-after:rockhounding_chemistry;after:immersiveengineering;required-after:betterwithmods;required-after:astikorcarts;required-after:jaff;required-after:firstaid";
+    public static final String DEPENDENCIES = "required-after:tfc;required-after:rockhounding_chemistry;after:immersiveengineering;required-after:betterwithmods;required-after:astikorcarts;required-after:jaff;required-after:firstaid;after:mineraltracker";
 
     private final Logger log = LogManager.getLogger(MODID);
 

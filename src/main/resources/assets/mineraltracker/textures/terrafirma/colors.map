@@ -1,0 +1,34 @@
+# Base TFC
+bismuthinite=0x305F29
+cassiterite=0x857F6A
+galena=0x545155
+garnierite=0x254C2C
+hematite=0xAB6466
+limonite=0x38281E
+magnetite=0x636564
+malachite=0x6CB9A9
+sphalerite=0xD0D0D0
+tetrahedrite=0xABAAAA
+native_copper=0xDC7C4E
+native_gold=0xD9A517
+native_platinum=0xD8E1E3
+native_silver=0xC0C5D6
+
+# TFC Metallum
+bauxite=0xB56C44
+cobaltite=0x1D67DF
+stibnite=0x514C6A
+wolframite=0x29130E
+native_ardite=0xE5700F
+native_osmium=0x76758E
+beryl=0x7595c7
+chromite=0x5b5f66
+magnesite=0x6c7c96
+pyrolusite=0x49494a
+rutile=0x450908
+spodumene=0x481e75
+thorianite=0x4a0707
+zircon=0x665323
+
+# Misc
+clay=0xAFB9D6
