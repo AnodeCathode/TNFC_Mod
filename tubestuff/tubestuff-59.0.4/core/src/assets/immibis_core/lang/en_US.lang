@@ -1,4 +1,0 @@
-mods.immibis.core.tps.avg=Average TPS over last %d ticks: %s (lowest: %s)
-mods.immibis.core.tps.lastTime=Time between last two ticks: %s (%s TPS)
-mods.immibis.core.tps.time=%dms
-mods.immibis.core.tps.tps=%s
