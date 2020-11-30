@@ -182,8 +182,8 @@ public class GeneralEventHandler
                 int intMaxHealth = damageablePart.getMaxHealth();
                 float percentage = currentHealth / intMaxHealth;
                 float newMax = damageablePart.initialMaxHealth * healthModifier;
-                int newInt = (int) newMax;
-                tnfcmod.tnfcmod.getLog().info("old max:" + newMax + " | new max: " + newInt);
+                int newInt = (int) Math.round(newMax);
+                //tnfcmod.tnfcmod.getLog().info("old max:" + newMax + " | new max: " + newInt);
                 damageablePart.setMaxHealth(newInt);
                 damageablePart.currentHealth = newInt * percentage;
             }
