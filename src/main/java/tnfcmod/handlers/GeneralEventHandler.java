@@ -2,6 +2,7 @@ package tnfcmod.handlers;
 
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 import net.minecraft.block.Block;
@@ -9,6 +10,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityMob;
@@ -45,6 +47,9 @@ import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.util.ItemNBTHelper;
 import com.tmtravlr.jaff.entities.EntityIronFishHook;
 import com.tmtravlr.jaff.items.ItemHookedFishingRod;
+import ichttt.mods.firstaid.api.CapabilityExtendedHealthSystem;
+import ichttt.mods.firstaid.api.damagesystem.AbstractDamageablePart;
+import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.Constants;
 import net.dries007.tfc.api.capability.food.FoodData;
@@ -116,19 +121,19 @@ public class GeneralEventHandler
     }
 
 
-//    @SubscribeEvent
-//    public static void onPlayerUpdate(LivingUpdateEvent event)
-//    {
-//        if (!(event.getEntityLiving() instanceof EntityPlayer))
-//        {
-//            return;
-//        }
-//
-//        EntityPlayer player = (EntityPlayer) event.getEntityLiving();
-//        if (player.isCreative() || player.isSpectator())
-//        {
-//            return;
-//        }
+    @SubscribeEvent
+    public static void onPlayerUpdate(LivingUpdateEvent event)
+    {
+        if (!(event.getEntityLiving() instanceof EntityPlayer))
+        {
+            return;
+        }
+
+        EntityPlayer player = (EntityPlayer) event.getEntityLiving();
+        if (player.isCreative() || player.isSpectator())
+        {
+            return;
+        }
 //
 //
 //        if (ConfigTNFCMod.GENERAL.skillbasedTempDisplay)
@@ -150,7 +155,40 @@ public class GeneralEventHandler
 //                }
 //            }
 //        }
-//    }
+
+
+        if (player.getFoodStats() instanceof IFoodStatsTFC)
+        {
+            float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
+            if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
+            {
+                healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
+            }
+            if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
+            {
+                healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
+            }
+            //So we have the healthModifier that TFC calcs from nutrition. Now we need to toss that info to FirstAid
+            //So we need to scale the FirstAid body parts for the health modifier
+//            double maxhealth = player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getAttributeValue();
+//            double newhealth = maxhealth * healthModifier;
+//
+//            tnfcmod.tnfcmod.getLog().info("MaxHealth:" + maxhealth + " | NewHealth: " + newhealth);
+//            player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(newhealth);
+            AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
+            for (AbstractDamageablePart damageablePart : damageModel)
+            {
+                float currentHealth = damageablePart.currentHealth;
+                int intMaxHealth = damageablePart.getMaxHealth();
+                float percentage = currentHealth / intMaxHealth;
+                float newMax = damageablePart.initialMaxHealth * healthModifier;
+                int newInt = (int) newMax;
+                tnfcmod.tnfcmod.getLog().info("old max:" + newMax + " | new max: " + newInt);
+                damageablePart.setMaxHealth(newInt);
+                damageablePart.currentHealth = newInt * percentage;
+            }
+        }
+    }
 
 
     @SubscribeEvent
