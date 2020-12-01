@@ -1,7 +1,6 @@
 package tnfcmod.handlers;
 
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
@@ -10,7 +9,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityMob;
@@ -59,7 +57,6 @@ import net.dries007.tfc.api.capability.food.NutritionStats;
 import net.dries007.tfc.api.capability.player.CapabilityPlayerData;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.IPredator;
-import net.dries007.tfc.api.types.Plant;
 import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.blocks.BlocksTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockMushroomTFC;
@@ -67,13 +64,11 @@ import net.dries007.tfc.objects.blocks.plants.BlockShortGrassTFC;
 import net.dries007.tfc.objects.blocks.plants.BlockTallGrassTFC;
 import net.dries007.tfc.objects.blocks.wood.BlockLeavesTFC;
 import net.dries007.tfc.objects.blocks.wood.BlockSaplingTFC;
-import net.dries007.tfc.objects.items.ItemsTFC;
 import net.dries007.tfc.types.DefaultPlants;
 import net.dries007.tfc.util.OreDictionaryHelper;
 import net.dries007.tfc.util.config.OreTooltipMode;
 import net.dries007.tfc.util.skills.SkillTier;
 import net.dries007.tfc.util.skills.SkillType;
-import net.dries007.tfc.util.skills.SmithingSkill;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import tnfcmod.util.ConfigTNFCMod;
 import tnfcmod.util.MonsterGear;
@@ -134,27 +129,26 @@ public class GeneralEventHandler
         {
             return;
         }
-//
-//
-//        if (ConfigTNFCMod.GENERAL.skillbasedTempDisplay)
-//        {
-//            SkillTier tier= CapabilityPlayerData.getSkill(player, SkillType.SMITHING).getTier();
-//            if (tier.isAtLeast(SkillTier.EXPERT))
-//            {
-//
-//                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode != OreTooltipMode.ADVANCED)
-//                {
-//                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ADVANCED;
-//                }
-//            }
-//            else
-//            {
-//                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode == OreTooltipMode.ADVANCED)
-//                {
-//                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ALL_INFO;
-//                }
-//            }
-//        }
+
+        if (ConfigTNFCMod.GENERAL.skillbasedTempDisplay)
+        {
+            SkillTier tier = CapabilityPlayerData.getSkill(player, SkillType.SMITHING).getTier();
+            if (tier.isAtLeast(SkillTier.EXPERT))
+            {
+
+                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode != OreTooltipMode.ADVANCED)
+                {
+                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ADVANCED;
+                }
+            }
+            else
+            {
+                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode == OreTooltipMode.ADVANCED)
+                {
+                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ALL_INFO;
+                }
+            }
+        }
 
 
         if (player.getFoodStats() instanceof IFoodStatsTFC)
@@ -168,13 +162,7 @@ public class GeneralEventHandler
             {
                 healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
             }
-            //So we have the healthModifier that TFC calcs from nutrition. Now we need to toss that info to FirstAid
-            //So we need to scale the FirstAid body parts for the health modifier
-//            double maxhealth = player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getAttributeValue();
-//            double newhealth = maxhealth * healthModifier;
-//
-//            tnfcmod.tnfcmod.getLog().info("MaxHealth:" + maxhealth + " | NewHealth: " + newhealth);
-//            player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(newhealth);
+
             AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
             for (AbstractDamageablePart damageablePart : damageModel)
             {
@@ -183,7 +171,6 @@ public class GeneralEventHandler
                 float percentage = currentHealth / intMaxHealth;
                 float newMax = damageablePart.initialMaxHealth * healthModifier;
                 int newInt = (int) Math.round(newMax);
-                //tnfcmod.tnfcmod.getLog().info("old max:" + newMax + " | new max: " + newInt);
                 damageablePart.setMaxHealth(newInt);
                 damageablePart.currentHealth = newInt * percentage;
             }
