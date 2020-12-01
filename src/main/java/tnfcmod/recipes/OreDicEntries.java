@@ -56,7 +56,7 @@ public class OreDicEntries
                     OreDictionary.registerOre("craftingToolChisel",new ItemStack(ItemMetal.get(metal, Metal.ItemType.CHISEL),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolSaw",new ItemStack(ItemMetal.get(metal, Metal.ItemType.SAW),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolAxe",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
-                    OreDictionary.registerOre("craftingToolPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
+                    OreDictionary.registerOre("craftingToolPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.PICK),1,OreDictionary.WILDCARD_VALUE));
                 }
                 if (metal.getTier().isAtLeast(Metal.Tier.TIER_IV) ){
                     OreDictionary.registerOre("craftingToolHammer",new ItemStack(ItemMetal.get(metal, Metal.ItemType.HAMMER),1,OreDictionary.WILDCARD_VALUE));
@@ -66,9 +66,9 @@ public class OreDicEntries
                     OreDictionary.registerOre("craftingToolSaw",new ItemStack(ItemMetal.get(metal, Metal.ItemType.SAW),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolMediumSaw",new ItemStack(ItemMetal.get(metal, Metal.ItemType.SAW),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolAxe",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
-                    OreDictionary.registerOre("craftingToolPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
+                    OreDictionary.registerOre("craftingToolPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.PICK),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolMediumAxe",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
-                    OreDictionary.registerOre("craftingToolMediumPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
+                    OreDictionary.registerOre("craftingToolMediumPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.PICK),1,OreDictionary.WILDCARD_VALUE));
 
                 }
                 if (metal.getTier().isAtLeast(Metal.Tier.TIER_V) ){
@@ -82,11 +82,11 @@ public class OreDicEntries
                     OreDictionary.registerOre("craftingToolMediumSaw",new ItemStack(ItemMetal.get(metal, Metal.ItemType.SAW),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolHardSaw",new ItemStack(ItemMetal.get(metal, Metal.ItemType.SAW),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolAxe",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
-                    OreDictionary.registerOre("craftingToolPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
+                    OreDictionary.registerOre("craftingToolPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.PICK),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolMediumAxe",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
-                    OreDictionary.registerOre("craftingToolMediumPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
+                    OreDictionary.registerOre("craftingToolMediumPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.PICK),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolHardAxe",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
-                    OreDictionary.registerOre("craftingToolHardPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
+                    OreDictionary.registerOre("craftingToolHardPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.PICK),1,OreDictionary.WILDCARD_VALUE));
                 }
                 if (metal.getTier().isAtLeast(Metal.Tier.TIER_VI) ){
                     OreDictionary.registerOre("craftingToolHammer",new ItemStack(ItemMetal.get(metal, Metal.ItemType.HAMMER),1,OreDictionary.WILDCARD_VALUE));
@@ -105,10 +105,10 @@ public class OreDicEntries
                     OreDictionary.registerOre("craftingToolMediumAxe",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolHardAxe",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolEliteAxe",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
-                    OreDictionary.registerOre("craftingToolPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
-                    OreDictionary.registerOre("craftingToolMediumPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
-                    OreDictionary.registerOre("craftingToolHardPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
-                    OreDictionary.registerOre("craftingToolElitePick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE),1,OreDictionary.WILDCARD_VALUE));
+                    OreDictionary.registerOre("craftingToolPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.PICK),1,OreDictionary.WILDCARD_VALUE));
+                    OreDictionary.registerOre("craftingToolMediumPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.PICK),1,OreDictionary.WILDCARD_VALUE));
+                    OreDictionary.registerOre("craftingToolHardPick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.PICK),1,OreDictionary.WILDCARD_VALUE));
+                    OreDictionary.registerOre("craftingToolElitePick",new ItemStack(ItemMetal.get(metal, Metal.ItemType.PICK),1,OreDictionary.WILDCARD_VALUE));
                     OreDictionary.registerOre("craftingToolEliteShears",new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHEARS),1,OreDictionary.WILDCARD_VALUE));
                 }
             }
