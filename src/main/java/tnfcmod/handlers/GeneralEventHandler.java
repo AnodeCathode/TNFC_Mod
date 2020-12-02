@@ -39,15 +39,19 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.oredict.OreDictionary;
 
 import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.util.ItemNBTHelper;
+import com.lumintorious.ambiental.TFCAmbientalConfig;
 import com.tmtravlr.jaff.entities.EntityIronFishHook;
 import com.tmtravlr.jaff.items.ItemHookedFishingRod;
+import ichttt.mods.firstaid.FirstAidConfig;
 import ichttt.mods.firstaid.api.CapabilityExtendedHealthSystem;
 import ichttt.mods.firstaid.api.damagesystem.AbstractDamageablePart;
 import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
+import ichttt.mods.firstaid.common.util.CommonUtils;
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.Constants;
 import net.dries007.tfc.api.capability.food.FoodData;
@@ -83,6 +87,37 @@ public class GeneralEventHandler
     private static final Random RANDOM = new Random();
     public static final FoodData DEATHRATTLE = new FoodData(-2, -10.0F, 0.0F, 3.0F, 3.0F, 3.0F, 3.0F, 3.0F, 0.0F);
 
+
+    @SubscribeEvent
+    public static void tickPlayers(TickEvent.PlayerTickEvent event) {
+        if (event.phase == TickEvent.Phase.START && CommonUtils.isSurvivalOrAdventure(event.player)) {
+
+            if (event.player.getFoodStats() instanceof IFoodStatsTFC)
+            {
+                float healthModifier = ((IFoodStatsTFC) event.player.getFoodStats()).getHealthModifier();
+                if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
+                {
+                    healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
+                }
+                if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
+                {
+                    healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
+                }
+
+                AbstractPlayerDamageModel damageModel = Objects.requireNonNull(event.player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
+                for (AbstractDamageablePart damageablePart : damageModel)
+                {
+                    float currentHealth = damageablePart.currentHealth;
+                    int intMaxHealth = damageablePart.getMaxHealth();
+                    float percentage = currentHealth / intMaxHealth;
+                    float newMax = damageablePart.initialMaxHealth * healthModifier;
+                    int newInt = (int) Math.round(newMax);
+                    damageablePart.setMaxHealth(newInt);
+                    damageablePart.currentHealth = newInt * percentage;
+                }
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void onPlayerClone(PlayerEvent.Clone event)
@@ -147,32 +182,6 @@ public class GeneralEventHandler
                 {
                     ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ALL_INFO;
                 }
-            }
-        }
-
-
-        if (player.getFoodStats() instanceof IFoodStatsTFC)
-        {
-            float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
-            if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
-            {
-                healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
-            }
-            if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
-            {
-                healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
-            }
-
-            AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
-            for (AbstractDamageablePart damageablePart : damageModel)
-            {
-                float currentHealth = damageablePart.currentHealth;
-                int intMaxHealth = damageablePart.getMaxHealth();
-                float percentage = currentHealth / intMaxHealth;
-                float newMax = damageablePart.initialMaxHealth * healthModifier;
-                int newInt = (int) Math.round(newMax);
-                damageablePart.setMaxHealth(newInt);
-                damageablePart.currentHealth = newInt * percentage;
             }
         }
     }
@@ -271,6 +280,7 @@ public class GeneralEventHandler
     public static void onEntityJoinWorldEvent(EntityJoinWorldEvent event)
     {
         Entity entity = event.getEntity();
+
         if (entity instanceof EntityMob)
         {
             if (entity.isRiding())
