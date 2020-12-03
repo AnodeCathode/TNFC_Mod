@@ -44,13 +44,13 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.util.ItemNBTHelper;
-import com.lumintorious.ambiental.TFCAmbientalConfig;
 import com.tmtravlr.jaff.entities.EntityIronFishHook;
 import com.tmtravlr.jaff.items.ItemHookedFishingRod;
 import ichttt.mods.firstaid.FirstAidConfig;
 import ichttt.mods.firstaid.api.CapabilityExtendedHealthSystem;
 import ichttt.mods.firstaid.api.damagesystem.AbstractDamageablePart;
 import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
+import ichttt.mods.firstaid.api.enums.EnumPlayerPart;
 import ichttt.mods.firstaid.common.util.CommonUtils;
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.Constants;
@@ -88,10 +88,11 @@ public class GeneralEventHandler
     public static final FoodData DEATHRATTLE = new FoodData(-2, -10.0F, 0.0F, 3.0F, 3.0F, 3.0F, 3.0F, 3.0F, 0.0F);
 
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void tickPlayers(TickEvent.PlayerTickEvent event) {
-        if (event.phase == TickEvent.Phase.START && CommonUtils.isSurvivalOrAdventure(event.player)) {
 
+        if (event.phase == TickEvent.Phase.END && CommonUtils.isSurvivalOrAdventure(event.player) && event.player.ticksExisted % 20 == 0)
+        {
             if (event.player.getFoodStats() instanceof IFoodStatsTFC)
             {
                 float healthModifier = ((IFoodStatsTFC) event.player.getFoodStats()).getHealthModifier();
@@ -104,18 +105,33 @@ public class GeneralEventHandler
                     healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
                 }
 
+
+                float curHealth = event.player.getHealth();
+                float basePercentage = curHealth / 20;
+
+
                 AbstractPlayerDamageModel damageModel = Objects.requireNonNull(event.player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
                 for (AbstractDamageablePart damageablePart : damageModel)
                 {
-                    float currentHealth = damageablePart.currentHealth;
-                    int intMaxHealth = damageablePart.getMaxHealth();
-                    float percentage = currentHealth / intMaxHealth;
-                    float newMax = damageablePart.initialMaxHealth * healthModifier;
-                    int newInt = (int) Math.round(newMax);
+                    float partHealth = damageablePart.currentHealth;
+                    float partMax = damageablePart.getMaxHealth();
+                    float partPercentage = partHealth / partMax;
+
+                    if (basePercentage == 1 && event.player.ticksExisted == 0)
+                    {
+                        partPercentage = 1;
+                    }
+
+                    int initialMax = damageablePart.initialMaxHealth;
+                    float newMax = initialMax * healthModifier;
+                    int newInt = (int) Math.ceil(newMax);
+
                     damageablePart.setMaxHealth(newInt);
-                    damageablePart.currentHealth = newInt * percentage;
+                    damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
+
                 }
             }
+
         }
     }
 
@@ -164,6 +180,7 @@ public class GeneralEventHandler
         {
             return;
         }
+
 
         if (ConfigTNFCMod.GENERAL.skillbasedTempDisplay)
         {
