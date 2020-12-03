@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.util.DamageSource;
-
+import lyeoj.tfcthings.init.TFCThingsDamageSources;
 import com.lumintorious.ambiental.AmbientalDamage;
 import ichttt.mods.firstaid.api.distribution.DamageDistributionBuilderFactory;
 import ichttt.mods.firstaid.api.enums.EnumPlayerPart;
@@ -54,8 +54,10 @@ public class FirstAidDmgSources
             .addDistributionLayer(EntityEquipmentSlot.LEGS, EnumPlayerPart.LEFT_LEG, EnumPlayerPart.RIGHT_LEG)
             .registerStatic(DamageSourcesTFC.BERRYBUSH);
 
-        //This is for the terrafirmathings bear trap. Really needs it's own dmg source
-        distributionBuilderFactory.newEqualBuilder().reductionMultiplier(0.1F).registerStatic(DamageSource.CACTUS);
+        distributionBuilderFactory.newStandardBuilder()
+            .addDistributionLayer(EntityEquipmentSlot.FEET, EnumPlayerPart.LEFT_FOOT, EnumPlayerPart.RIGHT_FOOT)
+            .registerStatic(TFCThingsDamageSources.BEAR_TRAP);
+
 
 
     }
