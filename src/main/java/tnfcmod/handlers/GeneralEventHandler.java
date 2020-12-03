@@ -105,6 +105,7 @@ public class GeneralEventHandler
                     healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
                 }
 
+                healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
 
                 float curHealth = event.player.getHealth();
                 float basePercentage = curHealth / 20;
@@ -116,11 +117,6 @@ public class GeneralEventHandler
                     float partHealth = damageablePart.currentHealth;
                     float partMax = damageablePart.getMaxHealth();
                     float partPercentage = partHealth / partMax;
-
-                    if (basePercentage == 1 && event.player.ticksExisted == 0)
-                    {
-                        partPercentage = 1;
-                    }
 
                     int initialMax = damageablePart.initialMaxHealth;
                     float newMax = initialMax * healthModifier;
