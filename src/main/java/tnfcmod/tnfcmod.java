@@ -17,6 +17,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.dries007.tfc.objects.entity.animal.*;
 import tnfcmod.handlers.GuiHandler;
 import tnfcmod.proxy.CommonProxy;
+import tnfcmod.recipes.FirstAidDmgSources;
 import tnfcmod.recipes.LootTablesTNFC;
 import tnfcmod.util.VeinLoader;
 
@@ -80,7 +81,7 @@ public class tnfcmod {
         addScrollDrop(EntityLionTFC.class, Enchantments.UNBREAKING);
         addScrollDrop(EntityCougarTFC.class, Enchantments.SHARPNESS);
         addScrollDrop(EntityRabbitTFC.class, Enchantments.LUCK_OF_THE_SEA);
-
+        FirstAidDmgSources.registerDefaults();
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
         LootTablesTNFC.init();
     }
