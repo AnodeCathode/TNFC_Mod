@@ -163,41 +163,41 @@ public class GeneralEventHandler
     }
 
 
-    @SubscribeEvent
-    public static void onPlayerUpdate(LivingUpdateEvent event)
-    {
-        if (!(event.getEntityLiving() instanceof EntityPlayer))
-        {
-            return;
-        }
-
-        EntityPlayer player = (EntityPlayer) event.getEntityLiving();
-        if (player.isCreative() || player.isSpectator())
-        {
-            return;
-        }
-
-
-        if (ConfigTNFCMod.GENERAL.skillbasedTempDisplay)
-        {
-            SkillTier tier = CapabilityPlayerData.getSkill(player, SkillType.SMITHING).getTier();
-            if (tier.isAtLeast(SkillTier.EXPERT))
-            {
-
-                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode != OreTooltipMode.ADVANCED)
-                {
-                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ADVANCED;
-                }
-            }
-            else
-            {
-                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode == OreTooltipMode.ADVANCED)
-                {
-                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ALL_INFO;
-                }
-            }
-        }
-    }
+//    @SubscribeEvent
+//    public static void onPlayerUpdate(LivingUpdateEvent event)
+//    {
+//        if (!(event.getEntityLiving() instanceof EntityPlayer))
+//        {
+//            return;
+//        }
+//
+//        EntityPlayer player = (EntityPlayer) event.getEntityLiving();
+//        if (player.isCreative() || player.isSpectator())
+//        {
+//            return;
+//        }
+//
+//
+//        if (ConfigTNFCMod.GENERAL.skillbasedTempDisplay)
+//        {
+//            SkillTier tier = CapabilityPlayerData.getSkill(player, SkillType.SMITHING).getTier();
+//            if (tier.isAtLeast(SkillTier.EXPERT))
+//            {
+//
+//                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode != OreTooltipMode.ADVANCED)
+//                {
+//                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ADVANCED;
+//                }
+//            }
+//            else
+//            {
+//                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode == OreTooltipMode.ADVANCED)
+//                {
+//                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ALL_INFO;
+//                }
+//            }
+//        }
+//    }
 
 
     @SubscribeEvent
