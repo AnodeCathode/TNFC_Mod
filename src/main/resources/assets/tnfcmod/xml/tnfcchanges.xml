@@ -524,6 +524,55 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p italics="true">Version 12.2.49 - You Can't Have Any Pudding If You Don't Eat Your Meat!</p>
+      <p space="10"/>
+      <p>Integrated FirstAid with TFC nutrition. Now your total health from good nutrition affects the amount of hearts each First Aid body part has. Get your nutrition way up, take multiple hits from skellies and shrug them off. Neglect your nutrition and let your HP dwindle? Get one-shot by angry squirrels. Did also make a tiny change to the First Aid config which should give you a slightly better chance of survival.</p>
+      <p space="10"/>
+      <p>Added some better damage modeling for various dmg sources and made the bandages/plaster cheaper.</p>
+      <p space="10"/>
+      <p>Added PlayerRevive. Now when you go down, if you've got a buddy nearby, they can revive you. You're going to be in rough shape, but alive and not 9000 blocks away where you last spawned. You'll be beat up, but it could be worse.</p>
+      <p space="10"/>
+      <p>The ultimate bucket is back! Okay, nothing really changed, other than I really liked the purple bucket texture. YMMV. </p>
+      <p space="10"/>
+      <p>Fixed the Open Computer recipes requiring vanilla stone buttons.</p>
+      <p space="10"/>
+      <p>Added ConnectedTextureManager. If you are still using Yabba barrels then you may not want to select this. The barrels will be transparent. Trade in those barrels for storage drawers. Yabba will eventually get dropped!</p>
+      <p space="10"/>
+
+      <p italics="true">Version 12.2.48 - Even in the Darkest Moments</p>
+      <p space="10"/>
+      <p>Added Storage Drawers. This is part of a transition away from Yabba. Yabba barrels are cool but there is a bug where they are invisible when using ConnectedTextureManager. We'd like to offer/enable CTM in TNFC but the invisible barrels are a little off-putting. So we've added Storage Drawers as a replacement and made them compatible with all TFC wood. There is a trade-in recipe to allow you to swap yabba barrels for their SD equivalent. At some point we may remove Yabba, or just note that if using CTM, they will be invisible.  </p>
+      <p space="10"/>
+      <p>Surface regen has been updated. Rocks/stick/small ores will now regen in Spring. Also mushrooms will regen in appropriate areas. </p>
+      <p space="10"/>
+      <p>Other little changes:</p>
+      <p>Wrought iron duping in RH squashed. </p>
+      <p>IE Jerrycans now consume the wooden buckets. </p>
+      <p>The medium animal net is now crafted with Iron Sticks rather than rods. Which means you no longer have to have a metal press in order to construct them. </p>
+      <p>NC Manufactory crafting recipe changed a bit.</p>
+      <p>NC Manufactory bronze to dust recipe fixed.</p>
+      <p>A bunch of NC Alloy Furnace recipes fixed or removed</p>
+      <p>More NC Melter recipes fixed</p>
+      <p>IE Alloy Furnace recipes fixed to match other alloy recipes.</p>
+      <p>Sequoia saplings are now a very rare drop when using Tier VI shears on Sequoia leaves.</p>
+      <p>Arc Furnace recipe output should provide TFC ingots for all applicable recipes</p>
+      <p>IE Crusher Flux recipes fixed</p>
+      <p>IE Excavator recipes refined</p>
+      <p>Icons for MineralTracker ores updated for TNFC added ores</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- Storage Drawers</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TFC</p>
+      <p>- TNFCMod</p>
+      <p>- TerraFirmaThings</p>
+      <p>- MineralTracker</p>
+      <p>- TFC_Decoration</p>
+      <p>- RandomPatches</p>
+      <p>- Immersive Technology</p>
+      <p space="10"/>
       <p italics="true">Version 12.2.47 - Eat, drink, be merry</p>
       <p space="10"/>
       <p>Adjusted the long broken death penalty to actually function as a death penalty. It will get harder to use death as an easy reset button.</p>

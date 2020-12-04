@@ -160,6 +160,7 @@ public class RegenSurface
                     }
                     chunk.markDirty();
                     ((ChunkProviderServer) chunkProvider).queueUnload(chunk);
+
                 }
                 else //TPS too low. Just remove it and move on. Or do we leave it?
                 {
