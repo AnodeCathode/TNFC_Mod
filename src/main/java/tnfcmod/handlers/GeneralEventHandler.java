@@ -438,6 +438,10 @@ public class GeneralEventHandler
                     float partMax = damageablePart.getMaxHealth();
                     float partPercentage = partHealth / partMax;
 
+                    if (basePercentage == 1)
+                    {
+                        partPercentage = 1;
+                    }
                     int initialMax = damageablePart.initialMaxHealth;
                     float newMax = initialMax * healthModifier;
                     int newInt = (int) Math.ceil(newMax);
