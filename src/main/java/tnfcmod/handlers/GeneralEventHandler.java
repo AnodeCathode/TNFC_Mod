@@ -105,10 +105,6 @@ public class GeneralEventHandler
 
                     healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
 
-                    float curHealth = player.getHealth();
-                    float basePercentage = curHealth / 20;
-
-
                     AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
                     for (AbstractDamageablePart damageablePart : damageModel)
                     {
@@ -145,59 +141,56 @@ public class GeneralEventHandler
             //Going to take their old nutrition and apply it to their new body, plus randomly nuke one category.
             //The death tax is waaaaay too low. But only if their nutrition is already crap. Otherwise, let the reset happen.
             // Food Stats
-            if (player.getFoodStats() instanceof IFoodStatsTFC)
+            IFoodStatsTFC oldFoodStats = (IFoodStatsTFC) oldPlayer.getFoodStats();
+            FoodStatsTFC.replaceFoodStats(player);
+            IFoodStatsTFC newFoodStats = (IFoodStatsTFC) player.getFoodStats();
+            NutritionStats oldNutritionStats = oldFoodStats.getNutrition();
+            NutritionStats newNutritionStats = newFoodStats.getNutrition();
+            if (oldNutritionStats.getAverageNutrition() < 0.38 && oldNutritionStats.getAverageNutrition() > 0.1)
             {
-
-                IFoodStatsTFC oldFoodStats = (IFoodStatsTFC) oldPlayer.getFoodStats();
-                FoodStatsTFC.replaceFoodStats(player);
-                IFoodStatsTFC newFoodStats = (IFoodStatsTFC) player.getFoodStats();
-                NutritionStats oldNutritionStats = oldFoodStats.getNutrition();
-                NutritionStats newNutritionStats = newFoodStats.getNutrition();
-                if (oldNutritionStats.getAverageNutrition() < 0.38 && oldNutritionStats.getAverageNutrition() > 0.1)
-                {
-                    newNutritionStats.deserializeNBT(oldNutritionStats.serializeNBT());
-
-                }
-
-                //Dying messes up your biochemistry
-                newNutritionStats.addNutrients(DEATHRATTLE);
-                //And makes you thirsty
-                newFoodStats.addThirst(-20);
-
-
-                float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
-                if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
-                {
-                    healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
-                }
-                if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
-                {
-                    healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
-                }
-
-                healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
-
-                float curHealth = player.getHealth();
-                float basePercentage = curHealth / 20;
-
-
-                AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
-                for (AbstractDamageablePart damageablePart : damageModel)
-                {
-                    float partHealth = damageablePart.currentHealth;
-                    float partMax = damageablePart.getMaxHealth();
-                    float partPercentage = partHealth / partMax;
-
-                    int initialMax = damageablePart.initialMaxHealth;
-                    float newMax = initialMax * healthModifier;
-                    int newInt = (int) Math.ceil(newMax);
-
-                    damageablePart.setMaxHealth(newInt);
-                    damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
-
-                }
+                newNutritionStats.deserializeNBT(oldNutritionStats.serializeNBT());
             }
 
+            //Dying messes up your biochemistry
+            newNutritionStats.addNutrients(DEATHRATTLE);
+            //And makes you thirsty
+            newFoodStats.addThirst(-20);
+
+            float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
+            if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
+            {
+                healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
+            }
+            if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
+            {
+                healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
+            }
+
+            healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
+
+            float curHealth = player.getHealth();
+            float basePercentage = curHealth / 20;
+
+
+            AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
+            for (AbstractDamageablePart damageablePart : damageModel)
+            {
+                float partHealth = damageablePart.currentHealth;
+                float partMax = damageablePart.getMaxHealth();
+                float partPercentage = partHealth / partMax;
+
+                if (basePercentage == 1)
+                {
+                    partPercentage = 1;
+                }
+                int initialMax = damageablePart.initialMaxHealth;
+                float newMax = initialMax * healthModifier;
+                int newInt = (int) Math.ceil(newMax);
+
+                damageablePart.setMaxHealth(newInt);
+                damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
+
+            }
         }
 
     }
@@ -411,7 +404,7 @@ public class GeneralEventHandler
     @SubscribeEvent
     public static void onPlayerLoggedIn(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent event)
     {
-        if (event.player instanceof EntityPlayerMP)
+        if (event.player instanceof EntityPlayerMP && ServerUtils.isSurvivalOrAdventure(event.player))
         {
             if (event.player.getFoodStats() instanceof IFoodStatsTFC)
             {
