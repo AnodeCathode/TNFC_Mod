@@ -32,33 +32,25 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.oredict.OreDictionary;
 
 import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.util.ItemNBTHelper;
 import com.tmtravlr.jaff.entities.EntityIronFishHook;
 import com.tmtravlr.jaff.items.ItemHookedFishingRod;
-import ichttt.mods.firstaid.FirstAidConfig;
 import ichttt.mods.firstaid.api.CapabilityExtendedHealthSystem;
 import ichttt.mods.firstaid.api.damagesystem.AbstractDamageablePart;
 import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
-import ichttt.mods.firstaid.api.enums.EnumPlayerPart;
-import ichttt.mods.firstaid.common.util.CommonUtils;
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.Constants;
-import net.dries007.tfc.api.capability.food.FoodData;
-import net.dries007.tfc.api.capability.food.FoodStatsTFC;
-import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
-import net.dries007.tfc.api.capability.food.NutritionStats;
-import net.dries007.tfc.api.capability.player.CapabilityPlayerData;
+import net.dries007.tfc.api.capability.food.*;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.IPredator;
 import net.dries007.tfc.api.types.Tree;
@@ -70,12 +62,10 @@ import net.dries007.tfc.objects.blocks.wood.BlockLeavesTFC;
 import net.dries007.tfc.objects.blocks.wood.BlockSaplingTFC;
 import net.dries007.tfc.types.DefaultPlants;
 import net.dries007.tfc.util.OreDictionaryHelper;
-import net.dries007.tfc.util.config.OreTooltipMode;
-import net.dries007.tfc.util.skills.SkillTier;
-import net.dries007.tfc.util.skills.SkillType;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import tnfcmod.util.ConfigTNFCMod;
 import tnfcmod.util.MonsterGear;
+import tnfcmod.util.ServerUtils;
 
 import static tnfcmod.tnfcmod.MODID;
 import static tnfcmod.util.MonsterGear.SHADERBAGS;
@@ -88,14 +78,94 @@ public class GeneralEventHandler
     public static final FoodData DEATHRATTLE = new FoodData(-2, -10.0F, 0.0F, 3.0F, 3.0F, 3.0F, 3.0F, 3.0F, 0.0F);
 
 
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void tickPlayers(TickEvent.PlayerTickEvent event) {
+    @SubscribeEvent
+    public static void onEntityUseItem(LivingEntityUseItemEvent.Finish event)
+    {
+        //Need to check if the player is eating. Then adjust the FirstAid stuff
 
-        if (event.phase == TickEvent.Phase.END && CommonUtils.isSurvivalOrAdventure(event.player) && event.player.ticksExisted % 20 == 0)
+        if (event.getEntity() instanceof EntityPlayer)
         {
-            if (event.player.getFoodStats() instanceof IFoodStatsTFC)
+            ItemStack stack = event.getItem();
+            IFood cap = stack.getCapability(CapabilityFood.CAPABILITY, null);
+            if (cap != null)
             {
-                float healthModifier = ((IFoodStatsTFC) event.player.getFoodStats()).getHealthModifier();
+                // We have a food item. Let's recalc.
+                EntityPlayer player = (EntityPlayer) event.getEntity();
+                if (player.getFoodStats() instanceof IFoodStatsTFC)
+                {
+                    float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
+                    if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
+                    {
+                        healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
+                    }
+                    if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
+                    {
+                        healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
+                    }
+
+                    healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
+
+                    float curHealth = player.getHealth();
+                    float basePercentage = curHealth / 20;
+
+
+                    AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
+                    for (AbstractDamageablePart damageablePart : damageModel)
+                    {
+                        float partHealth = damageablePart.currentHealth;
+                        float partMax = damageablePart.getMaxHealth();
+                        float partPercentage = partHealth / partMax;
+
+                        int initialMax = damageablePart.initialMaxHealth;
+                        float newMax = initialMax * healthModifier;
+                        int newInt = (int) Math.ceil(newMax);
+
+                        damageablePart.setMaxHealth(newInt);
+                        damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
+
+                    }
+                }
+            }
+
+        }
+    }
+
+
+    @SubscribeEvent
+    public static void onPlayerClone(PlayerEvent.Clone event)
+    {
+        if (!event.isWasDeath()){return;};
+
+        if (event.getEntityPlayer() instanceof EntityPlayerMP && ServerUtils.isSurvivalOrAdventure(event.getEntityPlayer()))
+        {
+
+            EntityPlayer player = event.getEntityPlayer();
+            EntityPlayer oldPlayer = event.getOriginal();
+
+            //Going to take their old nutrition and apply it to their new body, plus randomly nuke one category.
+            //The death tax is waaaaay too low. But only if their nutrition is already crap. Otherwise, let the reset happen.
+            // Food Stats
+            if (player.getFoodStats() instanceof IFoodStatsTFC)
+            {
+
+                IFoodStatsTFC oldFoodStats = (IFoodStatsTFC) oldPlayer.getFoodStats();
+                FoodStatsTFC.replaceFoodStats(player);
+                IFoodStatsTFC newFoodStats = (IFoodStatsTFC) player.getFoodStats();
+                NutritionStats oldNutritionStats = oldFoodStats.getNutrition();
+                NutritionStats newNutritionStats = newFoodStats.getNutrition();
+                if (oldNutritionStats.getAverageNutrition() < 0.38 && oldNutritionStats.getAverageNutrition() > 0.1)
+                {
+                    newNutritionStats.deserializeNBT(oldNutritionStats.serializeNBT());
+
+                }
+
+                //Dying messes up your biochemistry
+                newNutritionStats.addNutrients(DEATHRATTLE);
+                //And makes you thirsty
+                newFoodStats.addThirst(-20);
+
+
+                float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
                 if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
                 {
                     healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
@@ -107,11 +177,11 @@ public class GeneralEventHandler
 
                 healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
 
-                float curHealth = event.player.getHealth();
+                float curHealth = player.getHealth();
                 float basePercentage = curHealth / 20;
 
 
-                AbstractPlayerDamageModel damageModel = Objects.requireNonNull(event.player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
+                AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
                 for (AbstractDamageablePart damageablePart : damageModel)
                 {
                     float partHealth = damageablePart.currentHealth;
@@ -127,36 +197,6 @@ public class GeneralEventHandler
 
                 }
             }
-
-        }
-    }
-
-    @SubscribeEvent
-    public static void onPlayerClone(PlayerEvent.Clone event)
-    {
-        if (!event.isWasDeath()){return;};
-        if (event.getEntityPlayer() instanceof EntityPlayerMP && !event.getEntityPlayer().isCreative() )
-        {
-            EntityPlayer player = event.getEntityPlayer();
-            EntityPlayer oldPlayer = event.getOriginal();
-            //Going to take their old nutrition and apply it to their new body, plus randomly nuke one category.
-            //The death tax is waaaaay too low. But only if their nutrition is already crap. Otherwise, let the reset happen.
-            // Food Stats
-            IFoodStatsTFC oldFoodStats = (IFoodStatsTFC) oldPlayer.getFoodStats();
-            FoodStatsTFC.replaceFoodStats(player);
-            IFoodStatsTFC newFoodStats = (IFoodStatsTFC) player.getFoodStats();
-            NutritionStats oldNutritionStats = oldFoodStats.getNutrition();
-            NutritionStats newNutritionStats = newFoodStats.getNutrition();
-            if (oldNutritionStats.getAverageNutrition() < 0.38 && oldNutritionStats.getAverageNutrition() > 0.1)
-            {
-                newNutritionStats.deserializeNBT(oldNutritionStats.serializeNBT());
-
-            }
-
-            //Dying messes up your biochemistry
-            newNutritionStats.addNutrients(DEATHRATTLE);
-            //And makes you thirsty
-            newFoodStats.addThirst(-20);
 
         }
 
@@ -363,8 +403,52 @@ public class GeneralEventHandler
                     }
                 }
             }
-        }
 
+
+    }
+
+
+    @SubscribeEvent
+    public static void onPlayerLoggedIn(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent event)
+    {
+        if (event.player instanceof EntityPlayerMP)
+        {
+            if (event.player.getFoodStats() instanceof IFoodStatsTFC)
+            {
+                float healthModifier = ((IFoodStatsTFC) event.player.getFoodStats()).getHealthModifier();
+                if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
+                {
+                    healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
+                }
+                if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
+                {
+                    healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
+                }
+
+                healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
+
+                float curHealth = event.player.getHealth();
+                float basePercentage = curHealth / 20;
+
+
+                AbstractPlayerDamageModel damageModel = Objects.requireNonNull(event.player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
+                for (AbstractDamageablePart damageablePart : damageModel)
+                {
+                    float partHealth = damageablePart.currentHealth;
+                    float partMax = damageablePart.getMaxHealth();
+                    float partPercentage = partHealth / partMax;
+
+                    int initialMax = damageablePart.initialMaxHealth;
+                    float newMax = initialMax * healthModifier;
+                    int newInt = (int) Math.ceil(newMax);
+
+                    damageablePart.setMaxHealth(newInt);
+                    damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
+
+                }
+            }
+        }
+    }
 
 
     @SubscribeEvent

@@ -1,5 +1,6 @@
 package tnfcmod.util;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
 import static com.google.common.math.DoubleMath.mean;
@@ -15,5 +16,7 @@ public class ServerUtils
 
     }
 
-
+    public static boolean isSurvivalOrAdventure(EntityPlayer player) {
+        return !player.isSpectator() && !player.isCreative();
+    }
 }
