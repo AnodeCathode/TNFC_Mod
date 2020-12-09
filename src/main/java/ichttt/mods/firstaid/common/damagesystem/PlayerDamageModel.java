@@ -134,8 +134,7 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
         else if (sleepBlockTicks < 0)
             throw new RuntimeException("Negative sleepBlockTicks " + sleepBlockTicks);
 
-        //float newCurrentHealth = calculateNewCurrentHealth(player);
-        float newCurrentHealth = player.getHealth();
+        float newCurrentHealth = calculateNewCurrentHealth(player);
         if (Float.isNaN(newCurrentHealth)) {
             FirstAid.LOGGER.warn("New current health is not a number, setting it to 0!");
             newCurrentHealth = 0F;
@@ -156,15 +155,15 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
         if (Float.isInfinite(newCurrentHealth)) {
             FirstAid.LOGGER.error("Error calculating current health: Value was infinite"); //Shouldn't happen anymore, but let's be safe
         } else {
-            //if (newCurrentHealth != prevHealthCurrent)
-                //((DataManagerWrapper) player.dataManager).set_impl(EntityPlayer.HEALTH, newCurrentHealth);
+            if (newCurrentHealth != prevHealthCurrent)
+                ((DataManagerWrapper) player.dataManager).set_impl(EntityPlayer.HEALTH, newCurrentHealth);
             prevHealthCurrent = newCurrentHealth;
         }
 
         if (!this.hasTutorial)
             this.hasTutorial = CapProvider.tutorialDone.contains(player.getName());
 
-        //runScaleLogic(player);
+        runScaleLogic(player);
 
         //morphine update
         if (this.needsMorphineUpdate) {
@@ -288,6 +287,10 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
                 float avgCritical = currentCritical / maxCritical;
                 currentHealth = (avgCritical + avgNormal) / 2;
                 break;
+            case TNFC:
+                for (AbstractDamageablePart part : this)
+                    currentHealth += part.currentHealth;
+                currentHealth = currentHealth / getCurrentMaxHealth();
             default:
                 throw new RuntimeException("Unknown constant " + mode);
         }
