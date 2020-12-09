@@ -62,8 +62,8 @@ public class TemperatureCapability<C> implements ICapabilitySerializable<NBTTagC
 		return savedTarget;
 	}
 
-	public static final float BAD_MULTIPLIER = 0.002f;
-	public static final float GOOD_MULTIPLIER = 0.002f;
+	public static final float BAD_MULTIPLIER = 0.009f;
+	public static final float GOOD_MULTIPLIER = 0.009f;
 	public static final float CHANGE_CAP = 7.5f;
 	public static final float HIGH_CHANGE = 0.20f;
 	
@@ -104,7 +104,7 @@ public class TemperatureCapability<C> implements ICapabilitySerializable<NBTTagC
                 return;
             }else {
                 tick = 0;
-                if(damageTick > 40) {
+                if(damageTick > 9) {
                     damageTick = 0;
                     if(TFCAmbientalConfig.GENERAL.takeDamage) {
                         if(this.getTemperature() > BURN_THRESHOLD) {
