@@ -24,6 +24,7 @@ import ichttt.mods.firstaid.FirstAid;
 import ichttt.mods.firstaid.FirstAidConfig;
 import ichttt.mods.firstaid.api.CapabilityExtendedHealthSystem;
 import ichttt.mods.firstaid.api.IDamageDistribution;
+import ichttt.mods.firstaid.api.damagesystem.AbstractDamageablePart;
 import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
 import ichttt.mods.firstaid.common.apiimpl.FirstAidRegistryImpl;
 import ichttt.mods.firstaid.common.config.ConfigEntry;
@@ -41,6 +42,9 @@ import ichttt.mods.firstaid.common.util.CommonUtils;
 import ichttt.mods.firstaid.common.util.ProjectileHelper;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
+import net.dries007.tfc.ConfigTFC;
+import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -150,6 +154,35 @@ public class EventHandler {
         if (obj instanceof EntityPlayer && !(obj instanceof FakePlayer)) {
             EntityPlayer player = (EntityPlayer) obj;
             AbstractPlayerDamageModel damageModel = PlayerDamageModel.create();
+            if (player.getFoodStats() instanceof IFoodStatsTFC)
+            {
+                float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
+                if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
+                {
+                    healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
+                }
+                if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
+                {
+                    healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
+                }
+
+                healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
+
+                for (AbstractDamageablePart damageablePart : damageModel)
+                {
+                    float partHealth = damageablePart.currentHealth;
+                    float partMax = damageablePart.getMaxHealth();
+                    float partPercentage = partHealth / partMax;
+
+                    int initialMax = damageablePart.initialMaxHealth;
+                    float newMax = initialMax * healthModifier;
+                    int newInt = (int) Math.ceil(newMax);
+
+                    damageablePart.setMaxHealth(newInt);
+                    damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
+
+                }
+            }
             event.addCapability(CapProvider.IDENTIFIER, new CapProvider(damageModel));
             //replace the data manager with our wrapper to grab absorption
             player.dataManager = new DataManagerWrapper(player, player.dataManager);
