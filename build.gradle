@@ -127,7 +127,11 @@ processResources {
 
 
 }
-
+jar {
+    manifest {
+        attributes 'FMLAT' : 'tnfc_at.cfg'
+    }
+}
 // Deobf jar allows people to drop this in mod folder on a dev environment
 task deobfJar(type: Jar, dependsOn: 'jar') {
     from sourceSets.main.output
