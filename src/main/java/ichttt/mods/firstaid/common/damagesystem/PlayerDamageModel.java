@@ -21,6 +21,7 @@ package ichttt.mods.firstaid.common.damagesystem;
 import com.creativemd.playerrevive.api.IRevival;
 import ichttt.mods.firstaid.FirstAid;
 import ichttt.mods.firstaid.FirstAidConfig;
+import ichttt.mods.firstaid.api.CapabilityExtendedHealthSystem;
 import ichttt.mods.firstaid.api.FirstAidRegistry;
 import ichttt.mods.firstaid.api.damagesystem.AbstractDamageablePart;
 import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
@@ -35,6 +36,9 @@ import ichttt.mods.firstaid.common.apiimpl.FirstAidRegistryImpl;
 import ichttt.mods.firstaid.common.damagesystem.debuff.SharedDebuff;
 import ichttt.mods.firstaid.common.network.MessageSyncDamageModel;
 import ichttt.mods.firstaid.common.util.CommonUtils;
+import net.dries007.tfc.ConfigTFC;
+import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -288,9 +292,39 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
                 currentHealth = (avgCritical + avgNormal) / 2;
                 break;
             case TNFC:
+                if (player.getFoodStats() instanceof IFoodStatsTFC)
+                {
+                    float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
+                    if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
+                    {
+                        healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
+                    }
+                    if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
+                    {
+                        healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
+                    }
+
+                    healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
+
+                    for (AbstractDamageablePart damageablePart : this)
+                    {
+                        float partHealth = damageablePart.currentHealth;
+                        float partMax = damageablePart.getMaxHealth();
+                        float partPercentage = partHealth / partMax;
+
+                        int initialMax = damageablePart.initialMaxHealth;
+                        float newMax = initialMax * healthModifier;
+                        int newInt = (int) Math.ceil(newMax);
+
+                        damageablePart.setMaxHealth(newInt);
+                        damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
+
+                    }
+                }
                 for (AbstractDamageablePart part : this)
                     currentHealth += part.currentHealth;
                 currentHealth = currentHealth / getCurrentMaxHealth();
+                break;
             default:
                 throw new RuntimeException("Unknown constant " + mode);
         }

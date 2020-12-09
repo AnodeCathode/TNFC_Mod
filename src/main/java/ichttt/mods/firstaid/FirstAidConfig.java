@@ -84,10 +84,11 @@ public class FirstAidConfig {
             "AVERAGE_ALL simply takes all limbs and calculates the average of it.\n" +
             "AVERAGE_CRITICAL takes all critical limbs and calculates the average of it\n" +
             "MIN_CRITICAl takes the smallest health value of all critical limb\n" +
+            "TNFC calculates based upon nutrition\n" +
             "Does not have any effect if all critical limbs have been disabled.")
     @Config.RequiresWorldRestart
     @ExtraConfig.Sync
-    public static VanillaHealthCalculationMode vanillaHealthCalculation = VanillaHealthCalculationMode.AVERAGE_ALL;
+    public static VanillaHealthCalculationMode vanillaHealthCalculation = VanillaHealthCalculationMode.TNFC;
 
     public enum VanillaHealthCalculationMode {
         AVERAGE_ALL, AVERAGE_CRITICAL, MIN_CRITICAL, CRITICAL_50_PERCENT_OTHER_50_PERCENT, TNFC
