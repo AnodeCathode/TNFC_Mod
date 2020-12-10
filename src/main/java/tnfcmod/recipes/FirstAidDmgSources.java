@@ -52,7 +52,7 @@ public class FirstAidDmgSources
         distributionBuilderFactory.newStandardBuilder()
             .addDistributionLayer(EntityEquipmentSlot.FEET, EnumPlayerPart.LEFT_FOOT, EnumPlayerPart.RIGHT_FOOT)
             .addDistributionLayer(EntityEquipmentSlot.LEGS, EnumPlayerPart.LEFT_LEG, EnumPlayerPart.RIGHT_LEG)
-            .registerStatic(DamageSource.CACTUS);
+            .registerStatic(DamageSourcesTFC.BERRYBUSH);
 
         distributionBuilderFactory.newStandardBuilder()
             .addDistributionLayer(EntityEquipmentSlot.FEET, EnumPlayerPart.LEFT_FOOT, EnumPlayerPart.RIGHT_FOOT)
