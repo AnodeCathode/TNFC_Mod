@@ -33,6 +33,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -51,6 +52,7 @@ import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.Constants;
 import net.dries007.tfc.api.capability.food.*;
+import net.dries007.tfc.api.capability.player.CapabilityPlayerData;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.IPredator;
 import net.dries007.tfc.api.types.Tree;
@@ -62,6 +64,9 @@ import net.dries007.tfc.objects.blocks.wood.BlockLeavesTFC;
 import net.dries007.tfc.objects.blocks.wood.BlockSaplingTFC;
 import net.dries007.tfc.types.DefaultPlants;
 import net.dries007.tfc.util.OreDictionaryHelper;
+import net.dries007.tfc.util.config.OreTooltipMode;
+import net.dries007.tfc.util.skills.SkillTier;
+import net.dries007.tfc.util.skills.SkillType;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import tnfcmod.util.ConfigTNFCMod;
 import tnfcmod.util.MonsterGear;
@@ -184,41 +189,41 @@ public class GeneralEventHandler
     }
 
 
-//    @SubscribeEvent
-//    public static void onPlayerUpdate(LivingUpdateEvent event)
-//    {
-//        if (!(event.getEntityLiving() instanceof EntityPlayer))
-//        {
-//            return;
-//        }
-//
-//        EntityPlayer player = (EntityPlayer) event.getEntityLiving();
-//        if (player.isCreative() || player.isSpectator())
-//        {
-//            return;
-//        }
-//
-//
-//        if (ConfigTNFCMod.GENERAL.skillbasedTempDisplay)
-//        {
-//            SkillTier tier = CapabilityPlayerData.getSkill(player, SkillType.SMITHING).getTier();
-//            if (tier.isAtLeast(SkillTier.EXPERT))
-//            {
-//
-//                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode != OreTooltipMode.ADVANCED)
-//                {
-//                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ADVANCED;
-//                }
-//            }
-//            else
-//            {
-//                if (ConfigTFC.Client.TOOLTIP.oreTooltipMode == OreTooltipMode.ADVANCED)
-//                {
-//                    ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ALL_INFO;
-//                }
-//            }
-//        }
-//    }
+   @SubscribeEvent
+   public static void onPlayerUpdate(LivingEvent.LivingUpdateEvent event)
+   {
+       if (!(event.getEntityLiving() instanceof EntityPlayer))
+       {
+           return;
+       }
+
+       EntityPlayer player = (EntityPlayer) event.getEntityLiving();
+       if (player.isCreative() || player.isSpectator())
+       {
+           return;
+       }
+
+
+       if (ConfigTNFCMod.GENERAL.skillbasedTempDisplay)
+       {
+           SkillTier tier = CapabilityPlayerData.getSkill(player, SkillType.SMITHING).getTier();
+           if (tier.isAtLeast(SkillTier.EXPERT))
+           {
+
+               if (ConfigTFC.Client.TOOLTIP.oreTooltipMode != OreTooltipMode.ADVANCED)
+               {
+                   ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ADVANCED;
+               }
+           }
+           else
+           {
+               if (ConfigTFC.Client.TOOLTIP.oreTooltipMode == OreTooltipMode.ADVANCED)
+               {
+                   ConfigTFC.Client.TOOLTIP.oreTooltipMode = OreTooltipMode.ALL_INFO;
+               }
+           }
+       }
+   }
 
 
     @SubscribeEvent
