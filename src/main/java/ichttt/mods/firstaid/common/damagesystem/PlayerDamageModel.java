@@ -159,8 +159,7 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
         if (Float.isInfinite(newCurrentHealth)) {
             FirstAid.LOGGER.error("Error calculating current health: Value was infinite"); //Shouldn't happen anymore, but let's be safe
         } else {
-            if (newCurrentHealth != prevHealthCurrent)
-                ((DataManagerWrapper) player.dataManager).set_impl(EntityPlayer.HEALTH, newCurrentHealth);
+            ((DataManagerWrapper) player.dataManager).set_impl(EntityPlayer.HEALTH, newCurrentHealth);
             prevHealthCurrent = newCurrentHealth;
         }
 
@@ -324,6 +323,7 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
                 for (AbstractDamageablePart part : this)
                     currentHealth += part.currentHealth;
                 currentHealth = currentHealth / getCurrentMaxHealth();
+                //somewhere in here is where we have to fix the vanilla health.
                 break;
             default:
                 throw new RuntimeException("Unknown constant " + mode);
