@@ -154,35 +154,6 @@ public class EventHandler {
         if (obj instanceof EntityPlayer && !(obj instanceof FakePlayer)) {
             EntityPlayer player = (EntityPlayer) obj;
             AbstractPlayerDamageModel damageModel = PlayerDamageModel.create();
-            if (player.getFoodStats() instanceof IFoodStatsTFC)
-            {
-                float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
-                if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
-                {
-                    healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
-                }
-                if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
-                {
-                    healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
-                }
-
-                healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
-
-                for (AbstractDamageablePart damageablePart : damageModel)
-                {
-                    float partHealth = damageablePart.currentHealth;
-                    float partMax = damageablePart.getMaxHealth();
-                    float partPercentage = partHealth / partMax;
-
-                    int initialMax = damageablePart.initialMaxHealth;
-                    float newMax = initialMax * healthModifier;
-                    int newInt = (int) Math.ceil(newMax);
-
-                    damageablePart.setMaxHealth(newInt);
-                    damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
-
-                }
-            }
             event.addCapability(CapProvider.IDENTIFIER, new CapProvider(damageModel));
             //replace the data manager with our wrapper to grab absorption
             player.dataManager = new DataManagerWrapper(player, player.dataManager);
@@ -300,11 +271,46 @@ public class EventHandler {
         HealthDistribution.distributeHealth(amount, (EntityPlayer) entity, true);
     }
 
-    @SubscribeEvent(priority = EventPriority.HIGH)
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onLogin(PlayerEvent.PlayerLoggedInEvent event) {
         if (!event.player.world.isRemote) {
             FirstAid.LOGGER.debug("Sending damage model to " + event.player.getName());
             AbstractPlayerDamageModel damageModel = Objects.requireNonNull(event.player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
+            if (event.player.getFoodStats() instanceof IFoodStatsTFC)
+            {
+                float healthModifier = ((IFoodStatsTFC) event.player.getFoodStats()).getHealthModifier();
+                if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
+                {
+                    healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
+                }
+                if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
+                {
+                    healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
+                }
+
+                healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
+                float curHealth = event.player.getHealth();
+                float basePercentage = curHealth / 20;
+                for (AbstractDamageablePart damageablePart : damageModel)
+                {
+                    float partHealth = damageablePart.currentHealth;
+                    float partMax = damageablePart.getMaxHealth();
+                    float partPercentage = partHealth / partMax;
+
+                    if (basePercentage == 1)
+                    {
+                        partPercentage = 1;
+                    }
+
+                    int initialMax = damageablePart.initialMaxHealth;
+                    float newMax = initialMax * healthModifier;
+                    int newInt = (int) Math.ceil(newMax);
+
+                    damageablePart.setMaxHealth(newInt);
+                    damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
+
+                }
+            }
             if (damageModel.hasTutorial)
                 CapProvider.tutorialDone.add(event.player.getName());
             EntityPlayerMP playerMP = (EntityPlayerMP) event.player;
