@@ -168,27 +168,15 @@ public class GeneralEventHandler
 
             healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
 
-            float curHealth = player.getHealth();
-            float basePercentage = curHealth / 20;
-
-
             AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
             for (AbstractDamageablePart damageablePart : damageModel)
             {
-                float partHealth = damageablePart.currentHealth;
-                float partMax = damageablePart.getMaxHealth();
-                float partPercentage = partHealth / partMax;
-
-                if (basePercentage == 1)
-                {
-                    partPercentage = 1;
-                }
                 int initialMax = damageablePart.initialMaxHealth;
                 float newMax = initialMax * healthModifier;
                 int newInt = (int) Math.ceil(newMax);
 
                 damageablePart.setMaxHealth(newInt);
-                damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
+                damageablePart.currentHealth = newInt;
 
             }
         }
@@ -401,7 +389,7 @@ public class GeneralEventHandler
     }
 
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onPlayerLoggedIn(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent event)
     {
         if (event.player instanceof EntityPlayerMP && ServerUtils.isSurvivalOrAdventure(event.player))
