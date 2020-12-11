@@ -31,18 +31,27 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import net.dries007.tfc.api.types.IHuntable;
+import net.dries007.tfc.objects.blocks.BlocksTFC;
+import net.dries007.tfc.util.climate.BiomeHelper;
+import net.dries007.tfc.world.classic.biomes.BiomesTFC;
 import vazkii.quark.base.util.EntityOpacityHandler;
 import vazkii.quark.world.entity.ai.EntityAIRave;
 import vazkii.quark.world.entity.ai.MovementHelperZigZag;
+import vazkii.quark.world.feature.Crabs;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Set;
 
-public class EntityCrab extends EntityAnimal {
+public class EntityCrab extends EntityAnimal implements IHuntable
+{
 
 	public static final ResourceLocation CRAB_LOOT_TABLE = new ResourceLocation("quark", "entities/crab");
 
@@ -73,6 +82,25 @@ public class EntityCrab extends EntityAnimal {
 	{
 		return this.world.checkNoEntityCollision(this.getEntityBoundingBox(), this);
 	}
+
+
+    @Override
+    public float getBlockPathWeight(BlockPos pos) {
+        return BlocksTFC.isSand(this.world.getBlockState(pos.down())) ? 10.0F : this.world.getLightBrightness(pos) - 0.5F;
+    }
+
+    @Override
+    public boolean getCanSpawnHere() {
+        int i = MathHelper.floor(this.posX);
+        int j = MathHelper.floor(this.getEntityBoundingBox().minY);
+        int k = MathHelper.floor(this.posZ);
+        BlockPos blockpos = new BlockPos(i, j, k);
+        IBlockState state = this.world.getBlockState(blockpos.down());
+        if (BlocksTFC.isSand(state) || BlocksTFC.isSoilOrGravel(state)){
+            return true;
+        }
+        return false;
+    }
 
 	@Nonnull
 	@Override
@@ -214,6 +242,17 @@ public class EntityCrab extends EntityAnimal {
 
 	public boolean isRaving() {
         return crabRave;
+    }
+
+
+    @Override
+    public int getSpawnWeight(Biome biome, float temperature, float rainfall, float floraDensity, float floraDiversity)
+    {
+        if (BiomesTFC.isBeachBiome(biome))
+        {
+            return Crabs.weight;
+        }
+        return 0;
     }
 
 	@Override

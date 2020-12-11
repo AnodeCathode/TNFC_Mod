@@ -1,6 +1,7 @@
 package vazkii.quark.world.entity;
 
 import com.google.common.collect.Sets;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -18,17 +19,25 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.Path;
 import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import net.dries007.tfc.api.types.IHuntable;
+import net.dries007.tfc.objects.blocks.BlocksTFC;
+import net.dries007.tfc.util.climate.BiomeHelper;
+import net.dries007.tfc.world.classic.biomes.BiomesTFC;
 import vazkii.quark.base.sounds.QuarkSounds;
 import vazkii.quark.base.util.CommonReflectiveAccessor;
 import vazkii.quark.base.util.EntityOpacityHandler;
 import vazkii.quark.world.entity.ai.EntityAIFavorBlock;
 import vazkii.quark.world.entity.ai.EntityAIPassenger;
 import vazkii.quark.world.entity.ai.EntityAITemptButNice;
+import vazkii.quark.world.feature.Crabs;
 import vazkii.quark.world.feature.Frogs;
 
 import javax.annotation.Nonnull;
@@ -36,7 +45,8 @@ import javax.annotation.Nullable;
 import java.util.Calendar;
 import java.util.Set;
 
-public class EntityFrog extends EntityAnimal {
+public class EntityFrog extends EntityAnimal implements IHuntable
+{
 
 	public static final ResourceLocation FROG_LOOT_TABLE = new ResourceLocation("quark", "entities/frog");
 
@@ -150,6 +160,35 @@ public class EntityFrog extends EntityAnimal {
 		this.prevRotationYaw = this.prevRotationYawHead;
 		this.rotationYaw = this.rotationYawHead;
 	}
+
+    @Override
+    public float getBlockPathWeight(BlockPos pos) {
+        return BlocksTFC.isGrass(this.world.getBlockState(pos.down())) ? 10.0F : this.world.getLightBrightness(pos) - 0.5F;
+    }
+
+    @Override
+    public boolean getCanSpawnHere() {
+        int i = MathHelper.floor(this.posX);
+        int j = MathHelper.floor(this.getEntityBoundingBox().minY);
+        int k = MathHelper.floor(this.posZ);
+        BlockPos blockpos = new BlockPos(i, j, k);
+        IBlockState state = this.world.getBlockState(blockpos.down());
+        if (BlocksTFC.isGrass(state)){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int getSpawnWeight(Biome biome, float temperature, float rainfall, float floraDensity, float floraDiversity)
+    {
+        //BiomeHelper.BiomeType biomeType = BiomeHelper.getBiomeType(temperature, rainfall, floraDensity);
+        if (biome == BiomesTFC.SWAMPLAND)
+        {
+            return Frogs.weight;
+        }
+        return 0;
+    }
 
 	@Override
 	protected boolean canDropLoot() {

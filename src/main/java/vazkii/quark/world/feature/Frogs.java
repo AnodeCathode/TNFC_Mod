@@ -14,6 +14,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import net.dries007.tfc.world.classic.biomes.BiomesTFC;
 import vazkii.arl.recipe.RecipeHandler;
 import vazkii.arl.util.ProxyRegistry;
 import vazkii.quark.base.Quark;
@@ -70,7 +72,7 @@ public class Frogs extends Feature {
 	
 	@Override
 	public void init() {
-		EntityRegistry.addSpawn(EntityFrog.class, weight, min, max, EnumCreatureType.CREATURE, Biomes.SWAMPLAND);
+		EntityRegistry.addSpawn(EntityFrog.class, weight, min, max, EnumCreatureType.CREATURE, BiomesTFC.SWAMPLAND);
 	}
 
 	@Override
