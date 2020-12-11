@@ -47,6 +47,10 @@ tnfcmod.nobait=No bait on rod for fishing
 config.tnfcmod.frozentime=Number of ticks before a chunk is considered 'frozen'
 config.tnfcmod.saplingdropchance=Chance of a sapling to drop with elite level shears
 config.tnfcmod.skillbasedTempDisplay=Whether smithing skill controls numeric temperature display
+config.tnfcmod.crabweight=Weight for crab spawning
+config.tnfcmod.frogweight=Weight for frog spawning
+config.tnfcmod.crabfreq=Frequency of crab spawning
+config.tnfcmod.frogfreq=Frequency of frog spawning
 itemGroup.storagedrawersextra=Storage Drawers Extras
 
 tile.extraDrawers.fulldrawers1.name=Basic Drawer
@@ -80,3 +84,6 @@ storagedrawers.material.tfc:hevea=Hevea
 
 # Materials (Immersive Engineering)
 storagedrawers.material.immersiveengineering:immeng_treated=Treated Wood
+
+
+entity.quark:crab.name=Crab

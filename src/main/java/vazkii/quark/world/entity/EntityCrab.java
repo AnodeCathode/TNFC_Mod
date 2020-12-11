@@ -41,6 +41,7 @@ import net.dries007.tfc.api.types.IHuntable;
 import net.dries007.tfc.objects.blocks.BlocksTFC;
 import net.dries007.tfc.util.climate.BiomeHelper;
 import net.dries007.tfc.world.classic.biomes.BiomesTFC;
+import tnfcmod.util.ConfigTNFCMod;
 import vazkii.quark.base.util.EntityOpacityHandler;
 import vazkii.quark.world.entity.ai.EntityAIRave;
 import vazkii.quark.world.entity.ai.MovementHelperZigZag;
@@ -250,7 +251,7 @@ public class EntityCrab extends EntityAnimal implements IHuntable
     {
         if (BiomesTFC.isBeachBiome(biome))
         {
-            return Crabs.weight;
+            return ConfigTNFCMod.GENERAL.crabweight;
         }
         return 0;
     }

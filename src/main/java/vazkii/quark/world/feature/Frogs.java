@@ -16,6 +16,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import net.dries007.tfc.world.classic.biomes.BiomesTFC;
+import tnfcmod.util.ConfigTNFCMod;
 import vazkii.arl.recipe.RecipeHandler;
 import vazkii.arl.util.ProxyRegistry;
 import vazkii.quark.base.Quark;
@@ -42,9 +43,9 @@ public class Frogs extends Feature {
 
 		jumpBoost = loadPropBool("Frog legs can be made into jump boost reagent", "", true);
 
-		weight = loadPropInt("Spawn Weight", "The higher, the more will spawn", 40);
-		min = loadPropInt("Smallest spawn group", "", 1);
-		max = loadPropInt("Largest spawn group", "", 3);
+		weight = ConfigTNFCMod.GENERAL.frogweight;
+		min = 1;
+		max = 3;
 	}
 
 	@Override

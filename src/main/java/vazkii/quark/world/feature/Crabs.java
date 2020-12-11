@@ -14,6 +14,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import tnfcmod.util.ConfigTNFCMod;
 import vazkii.arl.item.ItemMod;
 import vazkii.quark.base.Quark;
 import vazkii.quark.base.item.ItemQuarkFood;
@@ -39,9 +41,9 @@ public class Crabs extends Feature {
 
 	@Override
 	public void setupConfig() {
-		weight = loadPropInt("Spawn Weight", "The higher, the more will spawn", 40);
-		min = loadPropInt("Smallest spawn group", "", 1);
-		max = loadPropInt("Largest spawn group", "", 3);
+        weight = ConfigTNFCMod.GENERAL.frogweight;
+		min = 1;
+		max = 4;
 	}
 
 	@SubscribeEvent

@@ -31,6 +31,7 @@ import net.dries007.tfc.api.types.IHuntable;
 import net.dries007.tfc.objects.blocks.BlocksTFC;
 import net.dries007.tfc.util.climate.BiomeHelper;
 import net.dries007.tfc.world.classic.biomes.BiomesTFC;
+import tnfcmod.util.ConfigTNFCMod;
 import vazkii.quark.base.sounds.QuarkSounds;
 import vazkii.quark.base.util.CommonReflectiveAccessor;
 import vazkii.quark.base.util.EntityOpacityHandler;
@@ -185,7 +186,7 @@ public class EntityFrog extends EntityAnimal implements IHuntable
         //BiomeHelper.BiomeType biomeType = BiomeHelper.getBiomeType(temperature, rainfall, floraDensity);
         if (biome == BiomesTFC.SWAMPLAND)
         {
-            return Frogs.weight;
+            return ConfigTNFCMod.GENERAL.frogweight;
         }
         return 0;
     }
