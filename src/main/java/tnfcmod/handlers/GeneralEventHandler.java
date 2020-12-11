@@ -46,9 +46,11 @@ import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.util.ItemNBTHelper;
 import com.tmtravlr.jaff.entities.EntityIronFishHook;
 import com.tmtravlr.jaff.items.ItemHookedFishingRod;
+import ichttt.mods.firstaid.FirstAid;
 import ichttt.mods.firstaid.api.CapabilityExtendedHealthSystem;
 import ichttt.mods.firstaid.api.damagesystem.AbstractDamageablePart;
 import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
+import ichttt.mods.firstaid.common.network.MessageSyncDamageModel;
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.Constants;
 import net.dries007.tfc.api.capability.food.*;
@@ -126,6 +128,7 @@ public class GeneralEventHandler
 
                     }
                 }
+                FirstAid.NETWORKING.sendTo(new MessageSyncDamageModel(Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null)), true), (EntityPlayerMP) player);
             }
 
         }
@@ -184,6 +187,7 @@ public class GeneralEventHandler
                 damageablePart.currentHealth = newInt;
 
             }
+            FirstAid.NETWORKING.sendTo(new MessageSyncDamageModel(Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null)), true), (EntityPlayerMP) player);
         }
 
     }
@@ -436,6 +440,7 @@ public class GeneralEventHandler
                     damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
 
                 }
+                FirstAid.NETWORKING.sendTo(new MessageSyncDamageModel(Objects.requireNonNull(event.player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null)), true), (EntityPlayerMP) event.player);
             }
         }
     }
