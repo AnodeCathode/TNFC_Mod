@@ -1,0 +1,25 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "minecraft:cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"variant=stained_planks_black": [{ "textures": { "all": "quark:blocks/stained_planks_black" } }],
+		"variant=stained_planks_blue": [{ "textures": { "all": "quark:blocks/stained_planks_blue" } }],
+		"variant=stained_planks_brown": [{ "textures": { "all": "quark:blocks/stained_planks_brown" } }],
+		"variant=stained_planks_cyan": [{ "textures": { "all": "quark:blocks/stained_planks_cyan" } }],
+		"variant=stained_planks_gray": [{ "textures": { "all": "quark:blocks/stained_planks_gray" } }],
+		"variant=stained_planks_green": [{ "textures": { "all": "quark:blocks/stained_planks_green" } }],
+		"variant=stained_planks_light_blue": [{ "textures": { "all": "quark:blocks/stained_planks_light_blue" } }],
+		"variant=stained_planks_lime": [{ "textures": { "all": "quark:blocks/stained_planks_lime" } }],
+		"variant=stained_planks_magenta": [{ "textures": { "all": "quark:blocks/stained_planks_magenta" } }],
+		"variant=stained_planks_orange": [{ "textures": { "all": "quark:blocks/stained_planks_orange" } }],
+		"variant=stained_planks_pink": [{ "textures": { "all": "quark:blocks/stained_planks_pink" } }],
+		"variant=stained_planks_purple": [{ "textures": { "all": "quark:blocks/stained_planks_purple" } }],
+		"variant=stained_planks_red": [{ "textures": { "all": "quark:blocks/stained_planks_red" } }],
+		"variant=stained_planks_silver": [{ "textures": { "all": "quark:blocks/stained_planks_silver" } }],
+		"variant=stained_planks_white": [{ "textures": { "all": "quark:blocks/stained_planks_white" } }],
+		"variant=stained_planks_yellow": [{ "textures": { "all": "quark:blocks/stained_planks_yellow" } }]
+	}
+}

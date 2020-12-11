@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"variant=swamp_leaves": { "model": "quark:swamp_leaves" },
+		"variant=sakura_leaves": { "model": "quark:sakura_leaves" }
+	}
+}

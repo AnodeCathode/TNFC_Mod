@@ -1,0 +1,24 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "minecraft:cube_bottom_top",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"variant=soul_sandstone": [{ "textures": {
+        	"bottom": "quark:blocks/soul_sandstone_bottom",
+        	"top": "quark:blocks/soul_sandstone_top",
+       		"side": "quark:blocks/soul_sandstone_side"
+    	}}],
+		"variant=chiseled_soul_sandstone": [{ "textures": {
+        	"bottom": "quark:blocks/soul_sandstone_top",
+        	"top": "quark:blocks/soul_sandstone_top",
+       		"side": "quark:blocks/soul_sandstone_carved"
+    	}}],
+		"variant=smooth_soul_sandstone": [{ "textures": {
+        	"bottom": "quark:blocks/soul_sandstone_top",
+        	"top": "quark:blocks/soul_sandstone_top",
+       		"side": "quark:blocks/soul_sandstone_smooth"
+    	}}]
+	}
+}

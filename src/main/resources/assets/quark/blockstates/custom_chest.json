@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"normal": { "model": "quark:custom_chest" },
+		"inventory": { "model": "quark:custom_chest" }
+	}
+}

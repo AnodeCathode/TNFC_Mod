@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "quark:blocks/charred_nether_bricks"
+	}
+}

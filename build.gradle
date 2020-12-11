@@ -33,9 +33,9 @@ minecraft {
     version = "${config.minecraft.version}-${config.forge.version}"
     runDir = "run"
     mappings = "stable_39"
-	
-	replace("@VERSION@", project.version)
-	replace("@FINGERPRINT@", project.findProperty("signSHA1"))
+    coreMod = "vazkii.quark.base.asm.LoadingPlugin"
+    replace("@VERSION@", project.version)
+    replace("@FINGERPRINT@", project.findProperty("signSHA1"))
     replaceIn("tnfcmod.java")
 }
 
@@ -129,7 +129,9 @@ processResources {
 }
 jar {
     manifest {
-        attributes 'FMLAT' : 'tnfc_at.cfg'
+        attributes 'FMLAT' : 'tnfc_at.cfg',
+        "FMLCorePluginContainsFMLMod": "true",
+        "FMLCorePlugin": "vazkii.quark.base.asm.LoadingPlugin"
     }
 }
 // Deobf jar allows people to drop this in mod folder on a dev environment

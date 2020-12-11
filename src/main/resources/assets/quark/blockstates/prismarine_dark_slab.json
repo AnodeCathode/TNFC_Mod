@@ -1,0 +1,20 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:half_slab",
+    "textures": {
+      "bottom": "minecraft:blocks/prismarine_dark",
+      "top": "minecraft:blocks/prismarine_dark",
+      "side": "minecraft:blocks/prismarine_dark"
+    },
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "half=top": [{
+      "x": 180,
+      "uvlock": true
+    }],
+    "half=bottom": [{}],
+    "inventory": [{}]
+  }
+}

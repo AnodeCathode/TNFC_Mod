@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/wall_gate_open",
+    "textures": {
+        "texture": "minecraft:blocks/nether_brick"
+    }
+}

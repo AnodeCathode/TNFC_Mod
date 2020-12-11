@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/pane_side_alt",
+    "textures": {
+        "edge": "quark:blocks/crystal_blue",
+        "pane": "quark:blocks/crystal_blue"
+    }
+}

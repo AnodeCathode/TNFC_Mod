@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/fence_gate_closed",
+    "textures": {
+        "texture": "minecraft:blocks/nether_brick"
+    }
+}

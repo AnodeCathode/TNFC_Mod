@@ -1,0 +1,15 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "minecraft:cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"variant=sandstone_smooth": [{ "textures": { "all": "minecraft:blocks/sandstone_top" } }],
+		"variant=sandstone_bricks": [{ "textures": { "all": "quark:blocks/sandstone_bricks" } }],
+		"variant=red_sandstone_smooth": [{ "textures": { "all": "minecraft:blocks/red_sandstone_top" } }],
+		"variant=red_sandstone_bricks": [{ "textures": { "all": "quark:blocks/red_sandstone_bricks" } }],
+		"variant=soul_sandstone_smooth": [{ "textures": { "all": "quark:blocks/soul_sandstone_top" } }],
+		"variant=soul_sandstone_bricks": [{ "textures": { "all": "quark:blocks/soul_sandstone_bricks" } }]
+	}
+}

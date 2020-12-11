@@ -1,0 +1,8 @@
+{
+	"forge_marker": 1,
+	"variants": {
+		"normal": {
+			"model": "quark:hardened_clay_tiles"
+		}
+	}
+}

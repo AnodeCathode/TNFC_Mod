@@ -1,0 +1,11 @@
+{
+  "parent": "quark:block/tiny_potato",
+  "overrides": [
+    {
+      "predicate": {
+        "quark:angry": 1
+      },
+      "model": "quark:item/angry_potato"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "minecraft:cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"variant=bark_oak": [{ "textures": { "all": "minecraft:blocks/log_oak" } }],
+		"variant=bark_spruce": [{ "textures": { "all": "minecraft:blocks/log_spruce" } }],
+		"variant=bark_birch": [{ "textures": { "all": "minecraft:blocks/log_birch" } }],
+		"variant=bark_jungle": [{ "textures": { "all": "minecraft:blocks/log_jungle" } }],
+		"variant=bark_acacia": [{ "textures": { "all": "minecraft:blocks/log_acacia" } }],
+		"variant=bark_dark_oak": [{ "textures": { "all": "minecraft:blocks/log_big_oak" } }]
+	}
+}

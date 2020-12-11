@@ -30,10 +30,6 @@ public class FirstAidDmgSources
             .registerStatic(DamageSourcesTFC.DEHYDRATION, DamageSourcesTFC.FOOD_POISON);
 
         distributionBuilderFactory.newStandardBuilder()
-            .addDistributionLayer(EntityEquipmentSlot.CHEST, EnumPlayerPart.BODY)
-            .registerStatic(AmbientalDamage.COLD);
-
-        distributionBuilderFactory.newStandardBuilder()
             .addDistributionLayer(EntityEquipmentSlot.FEET, EnumPlayerPart.LEFT_FOOT, EnumPlayerPart.RIGHT_FOOT)
             .addDistributionLayer(EntityEquipmentSlot.LEGS, EnumPlayerPart.LEFT_LEG, EnumPlayerPart.RIGHT_LEG)
             .registerStatic(DamageSourcesTFC.GRILL, DamageSourcesTFC.SOUP);

@@ -1,0 +1,11 @@
+{
+"forge_marker": 1,
+"defaults": {
+	"model": "minecraft:cube_all",
+	"transform": "forge:default-block"
+},
+	"variants": {
+		"normal": [{ "textures": { "all": "quark:blocks/stained_planks_orange" } }],
+		"prop=blarg": [{ "textures": { "all": "quark:blocks/stained_planks_orange" } }]
+	}
+}

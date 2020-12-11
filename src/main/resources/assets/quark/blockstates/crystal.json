@@ -1,0 +1,18 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "minecraft:cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"variant=crystal_white": [{ "textures": { "all": "quark:blocks/crystal_white" } }],
+		"variant=crystal_red": [{ "textures": { "all": "quark:blocks/crystal_red" } }],
+		"variant=crystal_orange": [{ "textures": { "all": "quark:blocks/crystal_orange" } }],
+		"variant=crystal_yellow": [{ "textures": { "all": "quark:blocks/crystal_yellow" } }],
+		"variant=crystal_green": [{ "textures": { "all": "quark:blocks/crystal_green" } }],
+		"variant=crystal_blue": [{ "textures": { "all": "quark:blocks/crystal_blue" } }],
+		"variant=crystal_indigo": [{ "textures": { "all": "quark:blocks/crystal_indigo" } }],
+		"variant=crystal_violet": [{ "textures": { "all": "quark:blocks/crystal_violet" } }],
+		"variant=crystal_black": [{ "textures": { "all": "quark:blocks/crystal_black" } }]
+	}
+}

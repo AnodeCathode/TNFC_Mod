@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "quark:tiny_potato" },
+    "facing=south": { "model": "quark:tiny_potato", "y": 180 },
+    "facing=west": { "model": "quark:tiny_potato", "y": 270 },
+    "facing=east": { "model": "quark:tiny_potato", "y": 90 }
+  }
+}

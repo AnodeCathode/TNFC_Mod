@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"variant=swamp_sapling": { "model": "quark:swamp_sapling" },
+		"variant=sakura_sapling": { "model": "quark:sakura_sapling" }
+	}
+}

@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "quark:blocks/glowshroom_block_inside",
+        "down": "quark:blocks/glowshroom_block_inside",
+        "up": "quark:blocks/glowshroom_block_skin_blue",
+        "north": "quark:blocks/glowshroom_block_inside",
+        "east": "quark:blocks/glowshroom_block_inside",
+        "south": "quark:blocks/glowshroom_block_inside",
+        "west": "quark:blocks/glowshroom_block_skin_blue"
+    }
+}

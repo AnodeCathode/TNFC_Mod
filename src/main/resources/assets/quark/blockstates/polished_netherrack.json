@@ -1,0 +1,11 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "minecraft:cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"variant=polished_netherrack": [{ "textures": { "all": "quark:blocks/polished_netherrack" } }],
+		"variant=polished_netherrack_bricks": [{ "textures": { "all": "quark:blocks/polished_netherrack_bricks" } }]
+	}
+}

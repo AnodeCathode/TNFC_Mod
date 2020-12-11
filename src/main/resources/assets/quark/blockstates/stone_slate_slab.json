@@ -1,0 +1,20 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:half_slab",
+    "textures": {
+      "bottom": "quark:blocks/stone_slate",
+      "top": "quark:blocks/stone_slate",
+      "side": "quark:blocks/stone_slate"
+    },
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "half=top": [{
+      "x": 180,
+      "uvlock": true
+    }],
+    "half=bottom": [{}],
+    "inventory": [{}]
+  }
+}

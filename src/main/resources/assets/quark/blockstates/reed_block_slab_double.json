@@ -1,0 +1,20 @@
+{
+"forge_marker": 1,
+"defaults": {
+	"model": "minecraft:cube",
+	"transform": "forge:default-block",
+	"textures": {
+		"particle": "quark:blocks/reed_block_side",
+		"down": "quark:blocks/reed_block_top",
+		"up": "quark:blocks/reed_block_top",
+		"south": "quark:blocks/reed_block_side",
+		"north": "quark:blocks/reed_block_side",
+		"east": "quark:blocks/reed_block_side",
+		"west": "quark:blocks/reed_block_side"
+	}
+},
+	"variants": {
+		"normal": [{}],
+		"prop=blarg": [{}]
+	}
+}

@@ -1,0 +1,12 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "transform": "forge:default-block",
+    "textures": { "all": "quark:blocks/icy_stone_bricks" }
+  },
+  "variants": {
+    "normal": [{}],
+    "prop=blarg": [{}]
+  }
+}

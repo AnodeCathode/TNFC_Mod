@@ -1,0 +1,7 @@
+{
+	"parent": "item/generated",
+	"textures": { 
+		"layer0": "quark:items/rune",
+		"layer1": "quark:items/rune_overlay"
+	}
+}

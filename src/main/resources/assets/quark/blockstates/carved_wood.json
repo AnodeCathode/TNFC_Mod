@@ -1,0 +1,15 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "minecraft:cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"variant=carved_oak_wood": [{ "textures": { "all": "quark:blocks/carved_oak_wood" } }],
+		"variant=carved_spruce_wood": [{ "textures": { "all": "quark:blocks/carved_spruce_wood" } }],
+		"variant=carved_birch_wood": [{ "textures": { "all": "quark:blocks/carved_birch_wood" } }],
+		"variant=carved_jungle_wood": [{ "textures": { "all": "quark:blocks/carved_jungle_wood" } }],
+		"variant=carved_acacia_wood": [{ "textures": { "all": "quark:blocks/carved_acacia_wood" } }],
+		"variant=carved_dark_oak_wood": [{ "textures": { "all": "quark:blocks/carved_dark_oak_wood" } }]
+	}
+}

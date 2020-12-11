@@ -1,0 +1,7 @@
+{
+	"parent": "item/generated",
+	"textures": { 
+		"layer0": "quark:items/colored_item_frame_overlay",
+		"layer1": "quark:items/colored_item_frame_inside"
+	}
+}
