@@ -85,55 +85,6 @@ public class GeneralEventHandler
     public static final FoodData DEATHRATTLE = new FoodData(-2, -10.0F, 0.0F, 3.0F, 3.0F, 3.0F, 3.0F, 3.0F, 0.0F);
 
 
-    @SubscribeEvent
-    public static void onEntityUseItem(LivingEntityUseItemEvent.Finish event)
-    {
-        //Need to check if the player is eating. Then adjust the FirstAid stuff
-
-        if (event.getEntity() instanceof EntityPlayer)
-        {
-            ItemStack stack = event.getItem();
-            IFood cap = stack.getCapability(CapabilityFood.CAPABILITY, null);
-            if (cap != null)
-            {
-                // We have a food item. Let's recalc.
-                EntityPlayer player = (EntityPlayer) event.getEntity();
-                if (player.getFoodStats() instanceof IFoodStatsTFC)
-                {
-                    float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
-                    if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
-                    {
-                        healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
-                    }
-                    if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
-                    {
-                        healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
-                    }
-
-                    healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
-
-                    AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
-                    for (AbstractDamageablePart damageablePart : damageModel)
-                    {
-                        float partHealth = damageablePart.currentHealth;
-                        float partMax = damageablePart.getMaxHealth();
-                        float partPercentage = partHealth / partMax;
-
-                        int initialMax = damageablePart.initialMaxHealth;
-                        float newMax = initialMax * healthModifier;
-                        int newInt = (int) Math.ceil(newMax);
-
-                        damageablePart.setMaxHealth(newInt);
-                        damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
-
-                    }
-                }
-                FirstAid.NETWORKING.sendTo(new MessageSyncDamageModel(Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null)), true), (EntityPlayerMP) player);
-            }
-
-        }
-    }
-
 
     @SubscribeEvent
     public static void onPlayerClone(PlayerEvent.Clone event)
@@ -164,30 +115,6 @@ public class GeneralEventHandler
             //And makes you thirsty
             newFoodStats.addThirst(-20);
 
-            float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
-            if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
-            {
-                healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
-            }
-            if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
-            {
-                healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
-            }
-
-            healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
-
-            AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
-            for (AbstractDamageablePart damageablePart : damageModel)
-            {
-                int initialMax = damageablePart.initialMaxHealth;
-                float newMax = initialMax * healthModifier;
-                int newInt = (int) Math.ceil(newMax);
-
-                damageablePart.setMaxHealth(newInt);
-                damageablePart.currentHealth = newInt;
-
-            }
-            FirstAid.NETWORKING.sendTo(new MessageSyncDamageModel(Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null)), true), (EntityPlayerMP) player);
         }
 
     }
@@ -228,7 +155,6 @@ public class GeneralEventHandler
            }
        }
    }
-
 
     @SubscribeEvent
     public static void onCropsGrow(BlockEvent.CropGrowEvent event)
@@ -398,54 +324,6 @@ public class GeneralEventHandler
     }
 
 
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void onPlayerLoggedIn(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent event)
-    {
-        if (event.player instanceof EntityPlayerMP && ServerUtils.isSurvivalOrAdventure(event.player))
-        {
-            if (event.player.getFoodStats() instanceof IFoodStatsTFC)
-            {
-                float healthModifier = ((IFoodStatsTFC) event.player.getFoodStats()).getHealthModifier();
-                if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
-                {
-                    healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
-                }
-                if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
-                {
-                    healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
-                }
-
-                healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
-
-                float curHealth = event.player.getHealth();
-                float basePercentage = curHealth / 20;
-
-
-                AbstractPlayerDamageModel damageModel = Objects.requireNonNull(event.player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
-                for (AbstractDamageablePart damageablePart : damageModel)
-                {
-                    float partHealth = damageablePart.currentHealth;
-                    float partMax = damageablePart.getMaxHealth();
-                    float partPercentage = partHealth / partMax;
-
-                    if (basePercentage == 1)
-                    {
-                        partPercentage = 1;
-                    }
-                    int initialMax = damageablePart.initialMaxHealth;
-                    float newMax = initialMax * healthModifier;
-                    int newInt = (int) Math.ceil(newMax);
-
-                    damageablePart.setMaxHealth(newInt);
-                    damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
-
-                }
-                FirstAid.NETWORKING.sendTo(new MessageSyncDamageModel(Objects.requireNonNull(event.player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null)), true), (EntityPlayerMP) event.player);
-            }
-        }
-    }
-
-
     @SubscribeEvent
     public static void onEntityLivingDeath(LivingDeathEvent event)
     {
@@ -512,7 +390,5 @@ public class GeneralEventHandler
 
 
     }
-
-
 
 }
