@@ -86,4 +86,5 @@ storagedrawers.material.tfc:hevea=Hevea
 storagedrawers.material.immersiveengineering:immeng_treated=Treated Wood
 
 
-entity.quark:crab.name=Crab
+entity.quark:crab.name=Crabby McCrabberson
+entity.quark:frog.name=Frogface McGee
