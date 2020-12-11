@@ -25,7 +25,7 @@ public final class LibMisc {
 	public static final String MOD_NAME = MOD_ID;
 	public static final String BUILD = "99";
 	public static final String VERSION = "1.12.2-" + BUILD;
-	public static final String DEPENDENCIES = "required-after:forge@[14.23.5.2831,);required-before:autoreglib@[1.3-32,);after:jei@[4.6.0,);after:firstaid";
+	public static final String DEPENDENCIES = "required-after:forge@[14.23.5.2831,);required-before:autoreglib@[1.3-32,);after:jei@[4.6.0,)";
 	public static final String PREFIX_MOD = MOD_ID + ":";
 
 	// Proxy Constants
