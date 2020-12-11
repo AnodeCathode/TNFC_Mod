@@ -50,26 +50,26 @@ public class ConfigTNFCMod
         public boolean skillbasedTempDisplay= true;
 
 
-        @Config.Comment({"Weight for spawning of crabs?"})
+        @Config.Comment({"Lower for more spawning of crabs?"})
         @Config.LangKey("config." + MODID + ".crabweight")
         @Config.RequiresMcRestart
-        public int crabweight = 400;
+        public int crabweight = 1;
 
-        @Config.Comment({"Weight for spawning of crabs?"})
+        @Config.Comment({"Higher for more spawning of crabs?"})
         @Config.LangKey("config." + MODID + ".crabfreq")
         @Config.RequiresMcRestart
-        public int crabfreq = 40;
+        public int crabfreq = 400;
 
 
-        @Config.Comment({"Weight for spawning of frogs?"})
+        @Config.Comment({"Lower for more spawning of frogs?"})
         @Config.LangKey("config." + MODID + ".frogweight")
         @Config.RequiresMcRestart
-        public int frogweight = 400;
+        public int frogweight = 1;
 
-        @Config.Comment({"Frequency for spawning of frogs?"})
+        @Config.Comment({"Higher for more spawning of frogs?"})
         @Config.LangKey("config." + MODID + ".frogfreq")
         @Config.RequiresMcRestart
-        public int frogfreq = 40;
+        public int frogfreq = 400;
     }
 
 

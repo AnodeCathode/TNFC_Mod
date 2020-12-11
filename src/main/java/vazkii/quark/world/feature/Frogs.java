@@ -73,7 +73,7 @@ public class Frogs extends Feature {
 	
 	@Override
 	public void init() {
-		EntityRegistry.addSpawn(EntityFrog.class, weight, min, max, EnumCreatureType.CREATURE, BiomesTFC.SWAMPLAND);
+		EntityRegistry.addSpawn(EntityFrog.class, ConfigTNFCMod.GENERAL.frogfreq, min, max, EnumCreatureType.CREATURE, BiomesTFC.SWAMPLAND);
 	}
 
 	@Override

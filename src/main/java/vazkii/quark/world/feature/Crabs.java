@@ -41,7 +41,7 @@ public class Crabs extends Feature {
 
 	@Override
 	public void setupConfig() {
-        weight = ConfigTNFCMod.GENERAL.frogweight;
+        weight = ConfigTNFCMod.GENERAL.crabweight;
 		min = 1;
 		max = 4;
 	}
@@ -72,7 +72,7 @@ public class Crabs extends Feature {
 
 	@Override
 	public void init() {
-		EntityRegistry.addSpawn(EntityCrab.class, weight, min, max, EnumCreatureType.CREATURE, Biomes.BEACH);
+		EntityRegistry.addSpawn(EntityCrab.class, ConfigTNFCMod.GENERAL.crabfreq, min, max, EnumCreatureType.CREATURE, Biomes.BEACH);
 	}
 
 	@Override
