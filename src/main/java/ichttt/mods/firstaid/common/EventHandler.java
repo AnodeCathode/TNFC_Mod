@@ -276,41 +276,6 @@ public class EventHandler {
         if (!event.player.world.isRemote) {
             FirstAid.LOGGER.debug("Sending damage model to " + event.player.getName());
             AbstractPlayerDamageModel damageModel = Objects.requireNonNull(event.player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
-            if (event.player.getFoodStats() instanceof IFoodStatsTFC)
-            {
-                float healthModifier = ((IFoodStatsTFC) event.player.getFoodStats()).getHealthModifier();
-                if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
-                {
-                    healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
-                }
-                if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
-                {
-                    healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
-                }
-
-                healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
-                float curHealth = event.player.getHealth();
-                float basePercentage = curHealth / 20;
-                for (AbstractDamageablePart damageablePart : damageModel)
-                {
-                    float partHealth = damageablePart.currentHealth;
-                    float partMax = damageablePart.getMaxHealth();
-                    float partPercentage = partHealth / partMax;
-
-                    if (basePercentage == 1)
-                    {
-                        partPercentage = 1;
-                    }
-
-                    int initialMax = damageablePart.initialMaxHealth;
-                    float newMax = initialMax * healthModifier;
-                    int newInt = (int) Math.ceil(newMax);
-
-                    damageablePart.setMaxHealth(newInt);
-                    damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
-
-                }
-            }
             if (damageModel.hasTutorial)
                 CapProvider.tutorialDone.add(event.player.getName());
             EntityPlayerMP playerMP = (EntityPlayerMP) event.player;
