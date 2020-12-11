@@ -2,6 +2,15 @@ TechnodeFirmaCraft Mod
 
 This is the repo for the 'glue' mod in the modpack TechnodeFirmaCraft (http://github.com/anodecathode/technodefirmacraft). 
 
+Mod includes code from:
+TFC: https://github.com/TerraFirmaCraft/TerraFirmaCraft
+TFC-Ambiental: https://github.com/Lumintorious/TFCAmbiental
+First-Aid: https://github.com/ichttt/FirstAid
+Horsepower: https://github.com/GoryMoon/HorsePower
+StorageDrawersExtras: https://github.com/jaquadro/StorageDrawersExtras
+
+
+Many thanks to the devs of all these mods, and others, that allow Technodefirmacraft to work.
 
 We use YourKit Java Profiler to monitor/profile and learn about the exotic issues faced by modded Minecraft developers. Highly recommended!
 
