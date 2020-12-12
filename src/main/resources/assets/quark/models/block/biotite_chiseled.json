@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/cube_column",
-    "textures": {
-        "side": "quark:blocks/biotite_block_chiseled",
-        "end": "quark:blocks/biotite_block_chiseled_top"
-    }
-}

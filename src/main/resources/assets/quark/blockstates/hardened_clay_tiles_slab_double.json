@@ -1,6 +1,0 @@
-{
-	"variants": {
-		"normal": { "model": "quark:hardened_clay_tiles" },
-		"prop=blarg": { "model": "quark:hardened_clay_tiles" }
-	}
-}

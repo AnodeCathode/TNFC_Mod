@@ -65,7 +65,7 @@ public class Frogs extends Feature {
 			PotionHelper.addMix(PotionTypes.AWKWARD, gildedFrogLeg, PotionTypes.LEAPING);
 		}
 
-		String frogName = "quark:frog";
+		String frogName = "tnfcmod:frog";
 		LootTableList.register(EntityFrog.FROG_LOOT_TABLE);
 		EntityRegistry.registerModEntity(new ResourceLocation(frogName), EntityFrog.class, frogName, LibEntityIDs.FROG, tnfcmod.tnfcmod.instance, 80, 3, true, 0xbc9869, 0xffe6ad);
 	}

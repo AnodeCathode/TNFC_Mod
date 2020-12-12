@@ -52,7 +52,7 @@ import java.util.Set;
 public class EntityCrab extends EntityAnimal implements IHuntable
 {
 
-	public static final ResourceLocation CRAB_LOOT_TABLE = new ResourceLocation("qfc", "entities/crab");
+	public static final ResourceLocation CRAB_LOOT_TABLE = new ResourceLocation("tnfcmod", "entities/crab");
 
 	private static final DataParameter<Float> SIZE_MODIFIER = EntityDataManager.createKey(EntityCrab.class, DataSerializers.FLOAT);
 

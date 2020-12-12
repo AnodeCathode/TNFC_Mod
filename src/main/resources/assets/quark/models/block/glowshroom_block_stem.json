@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "side": "quark:blocks/glowshroom_block_skin_stem",
-        "end": "quark:blocks/glowshroom_block_inside"
-    }
-}

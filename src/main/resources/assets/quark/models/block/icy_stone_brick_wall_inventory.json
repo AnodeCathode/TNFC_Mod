@@ -1,6 +1,0 @@
-{
-	"parent": "minecraft:block/wall_inventory",
-	"textures": {
-		"wall": "quark:blocks/icy_stone_bricks"
-	}
-}

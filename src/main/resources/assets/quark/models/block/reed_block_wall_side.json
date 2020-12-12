@@ -1,6 +1,0 @@
-{
-	"parent": "minecraft:block/wall_side",
-	"textures": {
-		"wall": "quark:blocks/reed_block_side"
-	}
-}

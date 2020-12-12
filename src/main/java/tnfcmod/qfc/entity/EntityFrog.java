@@ -31,7 +31,7 @@ import net.dries007.tfc.api.types.IHuntable;
 import net.dries007.tfc.objects.blocks.BlocksTFC;
 import net.dries007.tfc.world.classic.biomes.BiomesTFC;
 import tnfcmod.util.ConfigTNFCMod;
-import tnfcmod.qfc.sounds.QuarkSounds;
+import tnfcmod.qfc.sounds.QFCSounds;
 import tnfcmod.qfc.util.CommonReflectiveAccessor;
 import tnfcmod.qfc.util.EntityOpacityHandler;
 import tnfcmod.qfc.entity.ai.EntityAIFavorBlock;
@@ -47,7 +47,7 @@ import java.util.Set;
 public class EntityFrog extends EntityAnimal implements IHuntable
 {
 
-	public static final ResourceLocation FROG_LOOT_TABLE = new ResourceLocation("quark", "entities/frog");
+	public static final ResourceLocation FROG_LOOT_TABLE = new ResourceLocation("tnfcmod", "entities/frog");
 
 	private static final DataParameter<Integer> TALK_TIME = EntityDataManager.createKey(EntityFrog.class, DataSerializers.VARINT);
 	private static final DataParameter<Float> SIZE_MODIFIER = EntityDataManager.createKey(EntityFrog.class, DataSerializers.FLOAT);
@@ -249,7 +249,7 @@ public class EntityFrog extends EntityAnimal implements IHuntable
 			if (!world.isRemote && spawnChain > 0 && !isDuplicate) {
 				spawnCd = 50;
 				dataManager.set(TALK_TIME, 80);
-				world.playSound(null, posX, posY, posZ, QuarkSounds.ENTITY_FROG_WEDNESDAY, SoundCategory.NEUTRAL, 1F, 1F);
+				world.playSound(null, posX, posY, posZ, QFCSounds.ENTITY_FROG_WEDNESDAY, SoundCategory.NEUTRAL, 1F, 1F);
 			}
 
 			return true;
@@ -316,21 +316,21 @@ public class EntityFrog extends EntityAnimal implements IHuntable
 
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return QuarkSounds.ENTITY_FROG_IDLE;
+		return QFCSounds.ENTITY_FROG_IDLE;
 	}
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-		return QuarkSounds.ENTITY_FROG_HURT;
+		return QFCSounds.ENTITY_FROG_HURT;
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return QuarkSounds.ENTITY_FROG_DIE;
+		return QFCSounds.ENTITY_FROG_DIE;
 	}
 
 	protected SoundEvent getJumpSound() {
-		return QuarkSounds.ENTITY_FROG_JUMP;
+		return QFCSounds.ENTITY_FROG_JUMP;
 	}
 
 	// Begin copypasta from EntityRabbit

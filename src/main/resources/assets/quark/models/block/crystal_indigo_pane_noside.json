@@ -1,6 +1,0 @@
-{
-    "parent": "minecraft:block/pane_noside",
-    "textures": {
-        "pane": "quark:blocks/crystal_indigo"
-    }
-}

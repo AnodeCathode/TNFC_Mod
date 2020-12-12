@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 import tnfcmod.qfc.module.ModuleLoader;
-import tnfcmod.qfc.sounds.QuarkSounds;
+import tnfcmod.qfc.sounds.QFCSounds;
 
 public class CommonProxy
 {
@@ -18,7 +18,7 @@ public class CommonProxy
     }
 
     public void preInit(FMLPreInitializationEvent event){
-        QuarkSounds.init();
+        QFCSounds.init();
         ModuleLoader.preInit(event);
     }
 

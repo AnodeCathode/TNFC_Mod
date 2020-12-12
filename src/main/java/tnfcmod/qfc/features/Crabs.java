@@ -60,7 +60,7 @@ public class Crabs extends Feature {
 		resilience = new PotionMod("resilience", false, 0x5b1a04, LibPotionIndices.RESILIENCE);
 		resilience.registerPotionAttributeModifier(SharedMonsterAttributes.KNOCKBACK_RESISTANCE, "0cb68666-1b17-42b3-82c0-28412d6c0b22", 0.5, 0);
 
-		String crabName = "quark:crab";
+		String crabName = "tnfcmod:crab";
 		LootTableList.register(EntityCrab.CRAB_LOOT_TABLE);
 		EntityRegistry.registerModEntity(new ResourceLocation(crabName), EntityCrab.class, crabName, LibEntityIDs.CRAB, tnfcmod.instance, 80, 3, true, 0x893c22, 0x916548);
 	}

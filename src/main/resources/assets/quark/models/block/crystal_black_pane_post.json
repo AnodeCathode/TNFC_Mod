@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/pane_post",
-    "textures": {
-        "edge": "quark:blocks/crystal_black",
-        "pane": "quark:blocks/crystal_black"
-    }
-}

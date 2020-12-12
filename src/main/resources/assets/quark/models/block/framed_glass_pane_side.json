@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/pane_side",
-    "textures": {
-        "edge": "quark:blocks/framed_glass_pane_top",
-        "pane": "quark:blocks/framed_glass"
-    }
-}

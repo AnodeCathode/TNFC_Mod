@@ -86,5 +86,20 @@ storagedrawers.material.tfc:hevea=Hevea
 storagedrawers.material.immersiveengineering:immeng_treated=Treated Wood
 
 
-entity.quark:crab.name=Crabby McCrabberson
-entity.quark:frog.name=Frogface McGee
+entity.tnfcmod:crab.name=Crabby McCrabberson
+entity.tnfcmod:frog.name=Frogface McGee
+
+tnfcmod.subtitles.frog_die=Frog croaks
+tnfcmod.subtitles.frog_hurt=Frog squeaks
+tnfcmod.subtitles.frog_idle=Frog ribbits
+tnfcmod.subtitles.frog_jump=Frog hops
+
+item.tnfcmod:frog_leg.name=Frog Leg
+item.tnfcmod:frog_maybe_leg.name=Frog "Leg"
+item.tnfcmod:cooked_frog_leg.name=Cooked Frog Leg
+item.tnfcmod:golden_frog_leg.name=Golden Frog Leg
+item.tnfcmod:crab_leg.name=Crab Leg
+item.tnfcmod:cooked_crab_leg.name=Cooked Crab Leg
+item.tnfcmod:crab_shell.name=Crab Shell Fragment
+tnfcmod.potion.resilience.name=Resilience Potion
+tnfcmod.potion.danger_sight.name=Danger Sight Potion

@@ -20,7 +20,7 @@ public class ModSoundEvent extends SoundEvent {
 	public static final List<ModSoundEvent> allEvents = Lists.newArrayList();
 
 	public ModSoundEvent(String name) {
-		this(new ResourceLocation("quark", name));
+		this(new ResourceLocation("tnfcmod", name));
 	}
 
 	public ModSoundEvent(ResourceLocation soundName) {

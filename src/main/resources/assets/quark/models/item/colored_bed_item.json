@@ -1,7 +1,0 @@
-{
-	"parent": "item/generated",
-	"textures": { 
-		"layer0": "quark:items/bed_uncolored",
-		"layer1": "quark:items/bed_colored"
-	}
-}

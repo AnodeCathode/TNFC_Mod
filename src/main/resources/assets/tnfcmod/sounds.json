@@ -1,0 +1,46 @@
+{
+  "entity.frog.wednesday": {
+    "category": "neutral",
+    "subtitle": "quark.subtitles.hump_day",
+    "sounds": [
+      "quark:entity/frog/wednesday"
+    ]
+  },
+  "entity.frog.die": {
+    "category": "neutral",
+    "subtitle": "quark.subtitles.frog_die",
+    "sounds": [
+      { "name": "quark:entity/frog/die", "volume": 0.5 }
+    ]
+  },
+  "entity.frog.hurt": {
+    "category": "neutral",
+    "subtitle": "quark.subtitles.frog_hurt",
+    "sounds": [
+      { "name": "quark:entity/frog/hurt1", "volume": 0.5 },
+      { "name": "quark:entity/frog/hurt2", "volume": 0.5 },
+      { "name": "quark:entity/frog/hurt3", "volume": 0.5 },
+      { "name": "quark:entity/frog/hurt4", "volume": 0.5 }
+    ]
+  },
+  "entity.frog.idle": {
+    "category": "neutral",
+    "subtitle": "quark.subtitles.frog_idle",
+    "sounds": [
+      { "name": "quark:entity/frog/idle1", "volume": 0.25 },
+      { "name": "quark:entity/frog/idle2", "volume": 0.25 },
+      { "name": "quark:entity/frog/idle3", "volume": 0.25 },
+      { "name": "quark:entity/frog/idle4", "volume": 0.25 }
+    ]
+  },
+  "entity.frog.jump": {
+    "category": "neutral",
+    "subtitle": "quark.subtitles.frog_jump",
+    "sounds": [
+      { "name": "minecraft:mob/rabbit/hop1", "volume": 0.1 },
+      { "name": "minecraft:mob/rabbit/hop2", "volume": 0.1 },
+      { "name": "minecraft:mob/rabbit/hop3", "volume": 0.1 },
+      { "name": "minecraft:mob/rabbit/hop4", "volume": 0.1 }
+    ]
+  }
+}
