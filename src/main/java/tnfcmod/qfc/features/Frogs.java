@@ -14,6 +14,10 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import net.dries007.tfc.api.capability.food.CapabilityFood;
+import net.dries007.tfc.api.capability.food.FoodData;
+import net.dries007.tfc.api.capability.food.FoodHandler;
+import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
 import net.dries007.tfc.world.classic.biomes.BiomesTFC;
 import tnfcmod.util.ConfigTNFCMod;
 import vazkii.arl.recipe.RecipeHandler;
@@ -35,6 +39,9 @@ public class Frogs extends Feature {
 	public static ItemQfcFood frogLeg;
 	public static ItemQfcFood cookedFrogLeg;
 	public static ItemQfcFood gildedFrogLeg;
+
+    public static final FoodData FROG_LEG = new FoodData(4, 0, 0, 0, 0, 0, 0.5f, 0, 1.3f);
+    public static final FoodData COOKED_FROG_LEG = new FoodData(4, 0, 2f, 0, 0, 0, 2.5f, 0, 2.25f);
 
 	@Override
 	public void setupConfig() {
@@ -72,6 +79,8 @@ public class Frogs extends Feature {
 	
 	@Override
 	public void init() {
+        CapabilityFood.CUSTOM_FOODS.put(IIngredient.of(frogLeg), () -> new FoodHandler(null, FROG_LEG));
+        CapabilityFood.CUSTOM_FOODS.put(IIngredient.of(cookedFrogLeg), () -> new FoodHandler(null, COOKED_FROG_LEG));
 		EntityRegistry.addSpawn(EntityFrog.class, ConfigTNFCMod.GENERAL.frogfreq, min, max, EnumCreatureType.CREATURE, BiomesTFC.SWAMPLAND);
 	}
 

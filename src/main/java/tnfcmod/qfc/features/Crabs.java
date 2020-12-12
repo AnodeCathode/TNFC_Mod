@@ -3,6 +3,7 @@ package tnfcmod.qfc.features;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.Biomes;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.util.ResourceLocation;
@@ -15,6 +16,13 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import net.dries007.tfc.api.capability.food.CapabilityFood;
+import net.dries007.tfc.api.capability.food.FoodData;
+import net.dries007.tfc.api.capability.food.FoodHandler;
+import net.dries007.tfc.api.recipes.heat.HeatRecipeSimple;
+import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
+import net.dries007.tfc.objects.items.food.ItemFoodTFC;
+import net.dries007.tfc.util.agriculture.Food;
 import tnfcmod.tnfcmod;
 import tnfcmod.util.ConfigTNFCMod;
 import vazkii.arl.item.ItemMod;
@@ -38,6 +46,9 @@ public class Crabs extends Feature {
 	public static ItemMod crabShell;
 
 	public static PotionMod resilience;
+
+    public static final FoodData CRAB_LEG = new FoodData(4, 0, 0, 0, 0, 0, 0.5f, 0, 1.3f);
+    public static final FoodData COOKED_CRAB_LEG = new FoodData(4, 0, 2f, 0, 0, 0, 2.5f, 0, 2.25f);
 
 	@Override
 	public void setupConfig() {
@@ -72,7 +83,11 @@ public class Crabs extends Feature {
 
 	@Override
 	public void init() {
-		EntityRegistry.addSpawn(EntityCrab.class, ConfigTNFCMod.GENERAL.crabfreq, min, max, EnumCreatureType.CREATURE, Biomes.BEACH);
+
+        CapabilityFood.CUSTOM_FOODS.put(IIngredient.of(crabLeg), () -> new FoodHandler(null, CRAB_LEG));
+        CapabilityFood.CUSTOM_FOODS.put(IIngredient.of(cookedCrabLeg), () -> new FoodHandler(null, COOKED_CRAB_LEG));
+
+	    EntityRegistry.addSpawn(EntityCrab.class, ConfigTNFCMod.GENERAL.crabfreq, min, max, EnumCreatureType.CREATURE, Biomes.BEACH);
 	}
 
 	@Override
