@@ -14,6 +14,7 @@ Horsepower: https://github.com/GoryMoon/HorsePower
 
 StorageDrawersExtras: https://github.com/jaquadro/StorageDrawersExtras
 
+Quark: https://github.com/Vazkii/Quark
 
 
 Many thanks to the devs of all these mods, and others, that allow Technodefirmacraft to work.
