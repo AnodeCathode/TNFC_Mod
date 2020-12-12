@@ -53,7 +53,7 @@ public class ConfigTNFCMod
         @Config.Comment({"Lower for more spawning of crabs?"})
         @Config.LangKey("config." + MODID + ".crabweight")
         @Config.RequiresMcRestart
-        public int crabweight = 1;
+        public int crabweight = 10;
 
         @Config.Comment({"Higher for more spawning of crabs?"})
         @Config.LangKey("config." + MODID + ".crabfreq")
@@ -64,7 +64,7 @@ public class ConfigTNFCMod
         @Config.Comment({"Lower for more spawning of frogs?"})
         @Config.LangKey("config." + MODID + ".frogweight")
         @Config.RequiresMcRestart
-        public int frogweight = 1;
+        public int frogweight = 10;
 
         @Config.Comment({"Higher for more spawning of frogs?"})
         @Config.LangKey("config." + MODID + ".frogfreq")
