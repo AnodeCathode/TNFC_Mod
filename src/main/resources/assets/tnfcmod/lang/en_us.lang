@@ -47,6 +47,10 @@ tnfcmod.nobait=No bait on rod for fishing
 config.tnfcmod.frozentime=Number of ticks before a chunk is considered 'frozen'
 config.tnfcmod.saplingdropchance=Chance of a sapling to drop with elite level shears
 config.tnfcmod.skillbasedTempDisplay=Whether smithing skill controls numeric temperature display
+config.tnfcmod.crabweight=Weight for crab spawning
+config.tnfcmod.frogweight=Weight for frog spawning
+config.tnfcmod.crabfreq=Frequency of crab spawning
+config.tnfcmod.frogfreq=Frequency of frog spawning
 itemGroup.storagedrawersextra=Storage Drawers Extras
 
 tile.extraDrawers.fulldrawers1.name=Basic Drawer
@@ -80,3 +84,22 @@ storagedrawers.material.tfc:hevea=Hevea
 
 # Materials (Immersive Engineering)
 storagedrawers.material.immersiveengineering:immeng_treated=Treated Wood
+
+
+entity.tnfcmod:crab.name=Crabby McCrabberson
+entity.tnfcmod:frog.name=Frogface McGee
+
+tnfcmod.subtitles.frog_die=Frog croaks
+tnfcmod.subtitles.frog_hurt=Frog squeaks
+tnfcmod.subtitles.frog_idle=Frog ribbits
+tnfcmod.subtitles.frog_jump=Frog hops
+
+item.tnfcmod:frog_leg.name=Frog Leg
+item.tnfcmod:frog_maybe_leg.name=Frog "Leg"
+item.tnfcmod:cooked_frog_leg.name=Cooked Frog Leg
+item.tnfcmod:golden_frog_leg.name=Golden Frog Leg
+item.tnfcmod:crab_leg.name=Crab Leg
+item.tnfcmod:cooked_crab_leg.name=Cooked Crab Leg
+item.tnfcmod:crab_shell.name=Crab Shell Fragment
+tnfcmod.potion.resilience.name=Resilience Potion
+tnfcmod.potion.danger_sight.name=Danger Sight Potion

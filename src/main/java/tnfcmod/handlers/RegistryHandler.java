@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import gigaherz.guidebook.client.BookRegistryEvent;
 import net.dries007.tfc.api.recipes.anvil.AnvilRecipe;
 import net.dries007.tfc.api.recipes.barrel.BarrelRecipe;
+import net.dries007.tfc.api.recipes.heat.HeatRecipe;
 import net.dries007.tfc.api.recipes.knapping.KnappingRecipe;
 import tnfcmod.objects.blocks.TNFCBlocks;
 import tnfcmod.objects.items.TNFCItems;
@@ -82,6 +83,11 @@ public final class RegistryHandler
         TFCRecipes.registerKnapping(event);
     }
 
+    @SubscribeEvent
+    public static void onRegisterHeatRecipeEvent(RegistryEvent.Register<HeatRecipe> event)
+    {
+        TFCRecipes.registerHeatRecipes(event);
+    }
 
     /**
      * Register Loot Tables

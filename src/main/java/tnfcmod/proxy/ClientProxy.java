@@ -3,10 +3,14 @@ package tnfcmod.proxy;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.client.resource.VanillaResourceType;
+import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import tnfcmod.handlers.TNFCEntities;
+import tnfcmod.qfc.module.ModuleLoader;
 import tnfcmod.tnfcmod;
 
 public class ClientProxy extends CommonProxy {
@@ -24,8 +28,20 @@ public class ClientProxy extends CommonProxy {
     }
 
     public void preInit(FMLPreInitializationEvent event){
+        super.preInit(event);
+        ModuleLoader.preInitClient(event);
+
+        FMLClientHandler.instance().refreshResources(VanillaResourceType.TEXTURES);
         TNFCEntities.registerRenders();
     }
+
+    @Override
+    public void init(FMLInitializationEvent event)
+    {
+        super.init(event);
+        ModuleLoader.initClient(event);
+    }
+
     public void postInit(FMLPostInitializationEvent event){
 
     }

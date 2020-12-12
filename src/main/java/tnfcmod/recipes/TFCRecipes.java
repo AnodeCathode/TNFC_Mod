@@ -4,10 +4,13 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import net.dries007.tfc.api.recipes.anvil.AnvilRecipe;
 import net.dries007.tfc.api.recipes.barrel.BarrelRecipe;
+import net.dries007.tfc.api.recipes.heat.HeatRecipe;
+import net.dries007.tfc.api.recipes.heat.HeatRecipeSimple;
 import net.dries007.tfc.api.recipes.knapping.KnappingRecipe;
 import net.dries007.tfc.api.recipes.knapping.KnappingRecipeSimple;
 import net.dries007.tfc.api.recipes.knapping.KnappingType;
@@ -20,6 +23,8 @@ import net.dries007.tfc.objects.items.metal.ItemOreTFC;
 import net.dries007.tfc.objects.items.metal.ItemSmallOre;
 import net.dries007.tfc.util.calendar.ICalendar;
 import tnfcmod.objects.items.TNFCItems;
+import tnfcmod.qfc.features.Crabs;
+import tnfcmod.qfc.features.Frogs;
 
 import static net.dries007.tfc.api.types.Metal.ItemType.SHEET;
 import static net.dries007.tfc.objects.fluids.FluidsTFC.LIMEWATER;
@@ -42,6 +47,14 @@ public class TFCRecipes
         event.getRegistry().registerAll(
             new BarrelRecipe(IIngredient.of(LIMEWATER.get(), 5000), IIngredient.of(new ItemStack(Items.LEATHER_CHESTPLATE,1)), null, new ItemStack(TNFCItems.leather_tunic, 1), 8 * ICalendar.TICKS_IN_HOUR).setRegistryName("leathertunic")
             );
+    }
+
+
+    public static void registerHeatRecipes(RegistryEvent.Register<HeatRecipe> event)
+    {
+        IForgeRegistry<HeatRecipe> r = event.getRegistry();
+        r.register(new HeatRecipeSimple(IIngredient.of(Crabs.crabLeg), new ItemStack(Crabs.cookedCrabLeg), 200, 480).setRegistryName("cooked_crab_leg"));
+        r.register(new HeatRecipeSimple(IIngredient.of(Frogs.frogLeg), new ItemStack(Frogs.cookedFrogLeg), 200, 480).setRegistryName("cooked_frog_leg"));
     }
 
     public static void registerAnvil(RegistryEvent.Register<AnvilRecipe> event) {
