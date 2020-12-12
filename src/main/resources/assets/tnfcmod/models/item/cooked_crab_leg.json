@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": { 
-		"layer0": "quark:items/cooked_crab_leg"
+		"layer0": "tnfcmod:items/cooked_crab_leg"
 	}
 }

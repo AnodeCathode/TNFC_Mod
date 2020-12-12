@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 
 public class RenderFrog extends RenderLiving<EntityFrog> {
 
-	private static final ResourceLocation TEXTURE = new ResourceLocation("quark", "textures/entity/frog.png");
+	private static final ResourceLocation TEXTURE = new ResourceLocation("tnfcmod", "textures/entity/frog.png");
 	
 	public static final IRenderFactory<EntityFrog> FACTORY = RenderFrog::new;
 	

@@ -10,13 +10,13 @@ import vazkii.arl.util.ProxyRegistry;
 
 import javax.annotation.Nonnull;
 
-public class ItemQuarkFood extends ItemFood implements IQuarkItem
+public class ItemQfcFood extends ItemFood implements IQfcItem
 {
 
 	private final String bareName;
 	private final String[] variants;
 
-	public ItemQuarkFood(String name, int amount, float saturation, boolean isWolfFood, String... variants) {
+	public ItemQfcFood(String name, int amount, float saturation, boolean isWolfFood, String... variants) {
 		super(amount, saturation, isWolfFood);
 		setTranslationKey(name);
 		bareName = name;
@@ -28,7 +28,7 @@ public class ItemQuarkFood extends ItemFood implements IQuarkItem
 		setCreativeTab(CreativeTabs.FOOD);
 	}
 	
-	public ItemQuarkFood(String name, int amount, float saturation, String... variants) {
+	public ItemQfcFood(String name, int amount, float saturation, String... variants) {
 		this(name, amount, saturation, false, variants);
 	}
 	
@@ -36,7 +36,7 @@ public class ItemQuarkFood extends ItemFood implements IQuarkItem
 	@Override
 	public Item setTranslationKey(@Nonnull String name) {
 		super.setTranslationKey(name);
-		setRegistryName(new ResourceLocation(getPrefix() + name));
+		setRegistryName(new ResourceLocation("tnfcmod:" + name));
 		ProxyRegistry.register(this);
 
 		return this;

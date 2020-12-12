@@ -14,7 +14,8 @@ import net.minecraft.creativetab.CreativeTabs;
 
 import vazkii.arl.item.ItemMod;
 
-public class ItemCrabShell extends ItemMod implements IQuarkItem {
+public class ItemCrabShell extends ItemMod implements IQfcItem
+{
 
 	public ItemCrabShell() {
 		super("crab_shell");

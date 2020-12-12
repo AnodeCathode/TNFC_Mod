@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 
 public class RenderCrab extends RenderLiving<EntityCrab> {
 
-	private static final ResourceLocation TEXTURE = new ResourceLocation("quark", "textures/entity/crab.png");
+	private static final ResourceLocation TEXTURE = new ResourceLocation("tnfcmod", "textures/entity/crab.png");
 	
 	public static final IRenderFactory<EntityCrab> FACTORY = RenderCrab::new;
 

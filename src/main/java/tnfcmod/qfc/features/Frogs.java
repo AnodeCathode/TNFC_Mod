@@ -19,7 +19,7 @@ import tnfcmod.util.ConfigTNFCMod;
 import vazkii.arl.recipe.RecipeHandler;
 import vazkii.arl.util.ProxyRegistry;
 //import vazkii.quark.base.Quark;
-import tnfcmod.qfc.item.ItemQuarkFood;
+import tnfcmod.qfc.item.ItemQfcFood;
 import tnfcmod.qfc.base.LibEntityIDs;
 import tnfcmod.qfc.module.Feature;
 import tnfcmod.qfc.render.RenderFrog;
@@ -32,9 +32,9 @@ public class Frogs extends Feature {
 
 	public static boolean jumpBoost;
 
-	public static ItemQuarkFood frogLeg;
-	public static ItemQuarkFood cookedFrogLeg;
-	public static ItemQuarkFood gildedFrogLeg;
+	public static ItemQfcFood frogLeg;
+	public static ItemQfcFood cookedFrogLeg;
+	public static ItemQfcFood gildedFrogLeg;
 
 	@Override
 	public void setupConfig() {
@@ -49,11 +49,11 @@ public class Frogs extends Feature {
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
-		frogLeg = new ItemQuarkFood("frog_leg", 2, 0.3F, true);
-		cookedFrogLeg = new ItemQuarkFood("cooked_frog_leg", 4, 1.25F, true);
+		frogLeg = new ItemQfcFood("frog_leg", 2, 0.3F, true);
+		cookedFrogLeg = new ItemQfcFood("cooked_frog_leg", 4, 1.25F, true);
 
 		if (jumpBoost) {
-			gildedFrogLeg = new ItemQuarkFood("golden_frog_leg", 4, 2.5F);
+			gildedFrogLeg = new ItemQfcFood("golden_frog_leg", 4, 2.5F);
 			gildedFrogLeg.setCreativeTab(CreativeTabs.BREWING);
 
 			RecipeHandler.addOreDictRecipe(ProxyRegistry.newStack(gildedFrogLeg),

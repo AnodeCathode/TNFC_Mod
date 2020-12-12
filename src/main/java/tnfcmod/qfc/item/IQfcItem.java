@@ -13,7 +13,7 @@ package tnfcmod.qfc.item;
 import vazkii.arl.interf.IVariantHolder;
 import tnfcmod.qfc.util.LibMisc;
 
-public interface IQuarkItem extends IVariantHolder {
+public interface IQfcItem extends IVariantHolder {
 	
 	@Override
 	default String getModNamespace() {

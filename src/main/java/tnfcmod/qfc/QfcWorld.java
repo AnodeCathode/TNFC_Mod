@@ -17,7 +17,7 @@ import tnfcmod.qfc.features.Crabs;
 import tnfcmod.qfc.features.Frogs;
 import tnfcmod.qfc.module.Module;
 
-public class QuarkWorld extends Module {
+public class QfcWorld extends Module {
 
 	@Override
 	public void addFeatures() {

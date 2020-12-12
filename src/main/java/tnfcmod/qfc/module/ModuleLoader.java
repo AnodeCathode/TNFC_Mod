@@ -27,7 +27,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import tnfcmod.qfc.api.module.ModuleLoadedEvent;
 import tnfcmod.qfc.util.LibMisc;
-import tnfcmod.qfc.QuarkWorld;
+import tnfcmod.qfc.QfcWorld;
 
 import java.io.File;
 import java.lang.management.ManagementFactory;
@@ -56,7 +56,7 @@ public final class ModuleLoader {
 
 	private static void setupModuleClasses() {
 		moduleClasses = new ArrayList<>();
-		registerModule(QuarkWorld.class);
+		registerModule(QfcWorld.class);
 
 	}
 	

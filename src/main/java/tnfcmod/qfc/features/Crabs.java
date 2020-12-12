@@ -18,7 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import tnfcmod.tnfcmod;
 import tnfcmod.util.ConfigTNFCMod;
 import vazkii.arl.item.ItemMod;
-import tnfcmod.qfc.item.ItemQuarkFood;
+import tnfcmod.qfc.item.ItemQfcFood;
 import tnfcmod.qfc.base.LibEntityIDs;
 import tnfcmod.qfc.util.LibPotionIndices;
 import tnfcmod.qfc.module.Feature;
@@ -33,8 +33,8 @@ public class Crabs extends Feature {
 
 	public static int weight, min, max;
 
-	public static ItemQuarkFood crabLeg;
-	public static ItemQuarkFood cookedCrabLeg;
+	public static ItemQfcFood crabLeg;
+	public static ItemQfcFood cookedCrabLeg;
 	public static ItemMod crabShell;
 
 	public static PotionMod resilience;
@@ -53,8 +53,8 @@ public class Crabs extends Feature {
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
-		crabLeg = new ItemQuarkFood("crab_leg", 1, 0.3F, true);
-		cookedCrabLeg = new ItemQuarkFood("cooked_crab_leg", 8, 0.8F, true);
+		crabLeg = new ItemQfcFood("crab_leg", 1, 0.3F, true);
+		cookedCrabLeg = new ItemQfcFood("cooked_crab_leg", 8, 0.8F, true);
 		crabShell = new ItemCrabShell();
 
 		resilience = new PotionMod("resilience", false, 0x5b1a04, LibPotionIndices.RESILIENCE);
