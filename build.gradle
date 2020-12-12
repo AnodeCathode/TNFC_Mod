@@ -33,9 +33,8 @@ minecraft {
     version = "${config.minecraft.version}-${config.forge.version}"
     runDir = "run"
     mappings = "stable_39"
-    coreMod = "vazkii.quark.base.asm.LoadingPlugin"
+
     replace("@VERSION@", project.version)
-    replace("@FINGERPRINT@", project.findProperty("signSHA1"))
     replaceIn("tnfcmod.java")
 }
 
