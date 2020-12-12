@@ -47,7 +47,6 @@ public class Frogs extends Feature {
 	public void setupConfig() {
 		frogsDoTheFunny = loadPropBool("Frogs know what day it is", "", false);
 
-		jumpBoost = loadPropBool("Frog legs can be made into jump boost reagent", "", true);
 
 		weight = ConfigTNFCMod.GENERAL.frogweight;
 		min = 1;
@@ -58,19 +57,6 @@ public class Frogs extends Feature {
 	public void preInit(FMLPreInitializationEvent event) {
 		frogLeg = new ItemQfcFood("frog_leg", 2, 0.3F, true);
 		cookedFrogLeg = new ItemQfcFood("cooked_frog_leg", 4, 1.25F, true);
-
-		if (jumpBoost) {
-			gildedFrogLeg = new ItemQfcFood("golden_frog_leg", 4, 2.5F);
-			gildedFrogLeg.setCreativeTab(CreativeTabs.BREWING);
-
-			RecipeHandler.addOreDictRecipe(ProxyRegistry.newStack(gildedFrogLeg),
-					"GGG", "GLG", "GGG",
-					'G', "nuggetGold",
-					'L', ProxyRegistry.newStack(frogLeg));
-
-			PotionHelper.addMix(PotionTypes.WATER, gildedFrogLeg, PotionTypes.MUNDANE);
-			PotionHelper.addMix(PotionTypes.AWKWARD, gildedFrogLeg, PotionTypes.LEAPING);
-		}
 
 		String frogName = "tnfcmod:frog";
 		LootTableList.register(EntityFrog.FROG_LOOT_TABLE);
@@ -85,9 +71,7 @@ public class Frogs extends Feature {
 	}
 
 	@Override
-	public void postInit() {
-		FurnaceRecipes.instance().addSmelting(frogLeg, new ItemStack(cookedFrogLeg), 0.35F);
-	}
+	public void postInit(){	}
 
 	@Override
 	@SideOnly(Side.CLIENT)

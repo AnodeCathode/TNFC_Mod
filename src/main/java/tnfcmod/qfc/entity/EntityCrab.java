@@ -71,7 +71,7 @@ public class EntityCrab extends EntityAnimal implements IHuntable
 	}
 
     public int getMinGroupSize() {
-        return 3;
+        return 2;
     }
     public int getMaxGroupSize() {
         return 5;

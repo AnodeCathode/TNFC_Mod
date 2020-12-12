@@ -2,7 +2,6 @@ package tnfcmod;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
@@ -13,16 +12,9 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
 
-import net.dries007.tfc.objects.entity.animal.*;
-import tnfcmod.handlers.GuiHandler;
 import tnfcmod.proxy.CommonProxy;
-import tnfcmod.recipes.FirstAidDmgSources;
-import tnfcmod.recipes.LootTablesTNFC;
 import tnfcmod.util.VeinLoader;
-
-import static betterwithmods.module.hardcore.creatures.HCEnchanting.addScrollDrop;
 
 
 @SuppressWarnings("WeakerAccess")
@@ -34,7 +26,7 @@ public class tnfcmod {
     public static final String MODID = "tnfcmod";
     public static final String NAME = "Technodefirmacraft";
     public static final String VERSION = "@VERSION@";
-    public static final String DEPENDENCIES = "required-after:tfc;required-after:rockhounding_chemistry;after:immersiveengineering;required-after:betterwithmods;required-after:astikorcarts;required-after:jaff;required:firstaid;after:mineraltracker";
+    public static final String DEPENDENCIES = "required-before:autoreglib;required-after:tfc;required-after:rockhounding_chemistry;after:immersiveengineering;required-after:betterwithmods;required-after:astikorcarts;required-after:jaff;required:firstaid;after:mineraltracker";
 
     private final Logger log = LogManager.getLogger(MODID);
 
@@ -64,7 +56,7 @@ public class tnfcmod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        log.info("Loading TechnodeFirmaCraft Stuff");
+        log.info("preInit TNFCMod Stuff");
         VeinLoader.INSTANCE.preInit(event.getModConfigurationDirectory());
         proxy.preInit(event);
 
@@ -74,28 +66,21 @@ public class tnfcmod {
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        addScrollDrop(EntityPolarBearTFC.class, Enchantments.FROST_WALKER);
-        addScrollDrop(EntityGrizzlyBearTFC.class, Enchantments.KNOCKBACK);
-        addScrollDrop(EntityBlackBearTFC.class, Enchantments.LOOTING);
-        addScrollDrop(EntityDireWolfTFC.class, Enchantments.POWER);
-        addScrollDrop(EntitySaberToothTFC.class, Enchantments.FORTUNE);
-        addScrollDrop(EntityPantherTFC.class, Enchantments.EFFICIENCY);
-        addScrollDrop(EntityLionTFC.class, Enchantments.UNBREAKING);
-        addScrollDrop(EntityCougarTFC.class, Enchantments.SHARPNESS);
-        addScrollDrop(EntityRabbitTFC.class, Enchantments.LUCK_OF_THE_SEA);
-        FirstAidDmgSources.registerDefaults();
-        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
-        LootTablesTNFC.init();
+        log.info("Init TNFCMod Stuff");
+        proxy.init(event);
     }
 
-    @Mod.EventHandler
+    @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
+        log.info("postInit TNFCMod Stuff");
         proxy.postInit(event);
     }
 
     @EventHandler
-    public void serverStarting(FMLServerStartingEvent event) {
+    public void serverStarting(FMLServerStartingEvent event)
+    {
+        log.info("serverStarting TNFCMod Stuff");
         proxy.serverStarting(event);
     }
 

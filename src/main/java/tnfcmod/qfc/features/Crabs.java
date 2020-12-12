@@ -91,9 +91,7 @@ public class Crabs extends Feature {
 	}
 
 	@Override
-	public void postInit() {
-		FurnaceRecipes.instance().addSmelting(crabLeg, new ItemStack(cookedCrabLeg), 0.35F);
-	}
+	public void postInit() {}
 
 	@Override
 	@SideOnly(Side.CLIENT)
