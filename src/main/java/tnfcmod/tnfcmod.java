@@ -12,6 +12,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 import net.dries007.tfc.objects.entity.animal.*;
@@ -67,6 +68,7 @@ public class tnfcmod {
         VeinLoader.INSTANCE.preInit(event.getModConfigurationDirectory());
         proxy.preInit(event);
 
+
     }
 
     @EventHandler
@@ -92,5 +94,9 @@ public class tnfcmod {
         proxy.postInit(event);
     }
 
+    @EventHandler
+    public void serverStarting(FMLServerStartingEvent event) {
+        proxy.serverStarting(event);
+    }
 
 }
