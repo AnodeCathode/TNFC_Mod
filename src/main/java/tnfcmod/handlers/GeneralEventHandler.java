@@ -167,7 +167,11 @@ public class GeneralEventHandler
                 event.setResult(Event.Result.DENY);
                 if (event.getWorld().canSeeSky(event.getPos()))
                 {
-                    event.getWorld().setBlockToAir(event.getPos());
+                    if (event.getWorld().getBlockState(event.getPos().up()).getBlock() == Blocks.AIR)
+                    {
+                        event.getWorld().setBlockToAir(event.getPos());
+                    }
+
                 }
             }
         }
