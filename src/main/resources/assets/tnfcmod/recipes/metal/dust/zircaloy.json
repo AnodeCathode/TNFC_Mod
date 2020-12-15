@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-     "SSS", 
-     "STS", 
-     "SSS"
+     "SCS",
+     "TST",
+     "SPS"
   ],
   "key": {
     "S": {
@@ -13,8 +13,15 @@
     "T": {
       "type": "forge:ore_dict",
       "ore": "dustTin"
+    },
+    "P": {
+      "type": "forge:ore_dict",
+      "ore": "dustPigIron"
+    },
+    "C": {
+      "type": "forge:ore_dict",
+      "ore": "dustChromium"
     }
-
   },
   "result": {
     "item": "tfc:metal/dust/zircaloy",
