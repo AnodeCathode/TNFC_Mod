@@ -23,6 +23,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.api.registries.TFCRegistries;
+import net.dries007.tfc.api.types.ILivestock;
 import net.dries007.tfc.api.types.Plant;
 import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.blocks.agriculture.BlockCropDead;
@@ -68,6 +69,7 @@ public class RegenSurface
         if (event.getWorld().provider.getDimension() == 0 && chunkDataTFC.getLastUpdateTick() + ConfigTNFCMod.GENERAL.frozentime < CalendarTFC.PLAYER_TIME.getTicks())
         {
             // Last update take is greater than 4 in-game days?
+
             // Reset Animals, Crops, Trees?, others?
             FREEZER.add(event.getChunk().getPos());
             //Whatever else happens, let's reset the value.
@@ -161,21 +163,7 @@ public class RegenSurface
 
                     }
 
-                    if (!FREEZER.isEmpty())
-                    {
-                        ChunkPos freezepos = FREEZER.remove(0);
-                        Chunk freezechunk = event.world.getChunk(pos.x, pos.z);
-                        ChunkDataTFC freezechunkDataTFC = ChunkDataTFC.get(chunk);
 
-                        long difference = CalendarTFC.PLAYER_TIME.getTicks() - chunkDataTFC.getLastUpdateTick();
-                        int daysToReverse = (int) difference / 1728000;
-
-                        resetAnimals(chunk, daysToReverse);
-
-
-                        //Whatever else happens, let's reset the value.
-                        chunkDataTFC.resetLastUpdateTick();
-                    }
                     chunk.markDirty();
                     ((ChunkProviderServer) chunkProvider).queueUnload(chunk);
 
@@ -184,6 +172,28 @@ public class RegenSurface
                 {
                     ChunkPos pos = POSITIONS.remove(0);
                 }
+            }
+
+            if (!FREEZER.isEmpty())
+            {
+                ServerUtils su = new ServerUtils();
+                double tps = su.getTPS(event.world, 0);
+                if (tps > 16)
+                {
+                    ChunkPos freezepos = FREEZER.remove(0);
+                    Chunk freezechunk = event.world.getChunk(freezepos.x, freezepos.z);
+                    ChunkDataTFC freezechunkDataTFC = ChunkDataTFC.get(freezechunk);
+
+                    long difference = CalendarTFC.PLAYER_TIME.getTicks() - freezechunkDataTFC.getLastUpdateTick();
+                    int daysToReverse = (int) difference / 1728000;
+
+                    resetAnimals(freezechunk, daysToReverse);
+
+
+                    //Whatever else happens, let's reset the value.
+                    freezechunkDataTFC.resetLastUpdateTick();
+                }
+
             }
         }
 
@@ -194,8 +204,8 @@ public class RegenSurface
         for(ClassInheritanceMultiMap<Entity> list : chunk.getEntityLists()) {
             if (!list.isEmpty()){
                 for (Entity entity : list){
-                    if (entity instanceof EntityAnimalTFC){
-                        // We have some entities
+                    if (entity instanceof EntityAnimalTFC && entity instanceof ILivestock){
+
                         EntityAnimalTFC tfcAnimal = (EntityAnimalTFC) entity;
                         int oldBirthday = tfcAnimal.getBirthDay();
                         int newBirthday = oldBirthday - daysToReverse;
