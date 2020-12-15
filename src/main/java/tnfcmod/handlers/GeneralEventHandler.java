@@ -164,12 +164,13 @@ public class GeneralEventHandler
         {
             if (event.getState().getBlock() instanceof BlockShortGrassTFC || event.getState().getBlock() instanceof BlockTallGrassTFC)
             {
+                BlockPos pos = event.getPos();
                 event.setResult(Event.Result.DENY);
-                if (event.getWorld().canSeeSky(event.getPos()))
+                if (event.getWorld().canSeeSky(pos))
                 {
-                    if (event.getWorld().getBlockState(event.getPos().up()).getBlock() == Blocks.AIR)
+                    if (event.getWorld().getBlockState(pos.up()).getBlock() == Blocks.AIR)
                     {
-                        event.getWorld().setBlockToAir(event.getPos());
+                        event.getWorld().setBlockToAir(pos);
                     }
 
                 }
@@ -244,7 +245,7 @@ public class GeneralEventHandler
             }
         }
         if (block == Blocks.BROWN_MUSHROOM || block == Blocks.RED_MUSHROOM || block instanceof BlockMushroomTFC){
-            // Some sort of mushroom. Get a brand new mushroom or otherwise they are old stupid mushrooms.
+            // Some sort of mushroom. Don't drop a mushroom cause we dropped one in break.
             event.setDropChance(0);
         }
     }
