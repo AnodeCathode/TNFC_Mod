@@ -27,6 +27,7 @@ import net.dries007.tfc.api.types.Plant;
 import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.blocks.agriculture.BlockCropDead;
 import net.dries007.tfc.objects.blocks.plants.BlockMushroomTFC;
+import net.dries007.tfc.objects.entity.animal.EntityAnimalTFC;
 import net.dries007.tfc.objects.items.ItemSeedsTFC;
 import net.dries007.tfc.objects.items.ItemsTFC;
 import net.dries007.tfc.objects.te.TECropBase;
@@ -55,6 +56,7 @@ public class RegenSurface
     public static final WorldGenPlantTFC PLANT_GEN = new WorldGenPlantTFC();
     private static final Random RANDOM = new Random();
     private static final List<ChunkPos> POSITIONS = new LinkedList<>();
+    private static final List<ChunkPos> FREEZER = new LinkedList<>();
 
 
     @SubscribeEvent
@@ -67,9 +69,9 @@ public class RegenSurface
         {
             // Last update take is greater than 4 in-game days?
             // Reset Animals, Crops, Trees?, others?
-
+            FREEZER.add(event.getChunk().getPos());
             //Whatever else happens, let's reset the value.
-            chunkDataTFC.resetLastUpdateTick();
+            //chunkDataTFC.resetLastUpdateTick();
 
         }
         else
@@ -158,6 +160,22 @@ public class RegenSurface
 
 
                     }
+
+                    if (!FREEZER.isEmpty())
+                    {
+                        ChunkPos freezepos = FREEZER.remove(0);
+                        Chunk freezechunk = event.world.getChunk(pos.x, pos.z);
+                        ChunkDataTFC freezechunkDataTFC = ChunkDataTFC.get(chunk);
+
+                        long difference = CalendarTFC.PLAYER_TIME.getTicks() - chunkDataTFC.getLastUpdateTick();
+                        int daysToReverse = (int) difference / 1728000;
+
+                        resetAnimals(chunk, daysToReverse);
+
+
+                        //Whatever else happens, let's reset the value.
+                        chunkDataTFC.resetLastUpdateTick();
+                    }
                     chunk.markDirty();
                     ((ChunkProviderServer) chunkProvider).queueUnload(chunk);
 
@@ -169,6 +187,27 @@ public class RegenSurface
             }
         }
 
+    }
+
+    private static void resetAnimals(Chunk chunk, int daysToReverse)
+    {
+        for(ClassInheritanceMultiMap<Entity> list : chunk.getEntityLists()) {
+            if (!list.isEmpty()){
+                for (Entity entity : list){
+                    if (entity instanceof EntityAnimalTFC){
+                        // We have some entities
+                        EntityAnimalTFC tfcAnimal = (EntityAnimalTFC) entity;
+                        int oldBirthday = tfcAnimal.getBirthDay();
+                        int newBirthday = oldBirthday - daysToReverse;
+
+                        tfcAnimal.setBirthDay(newBirthday);
+
+
+                    }
+
+                }
+            }
+        }
     }
 
     private static void removeAllSurfaceCrap(World world, ChunkPos pos)
