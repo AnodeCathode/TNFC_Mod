@@ -24,7 +24,7 @@
       <p bold="true">Introduction</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
-      <p>Welcome to the latest beta release of TechnodeFirmaCraft for MC 1.12.2</p>
+      <p>Welcome to the latest release of TechnodeFirmaCraft for MC 1.12.2</p>
       <p space="10"/>
       <p space="10"/>
       <p>A lot of work has got us to this point, but there is always work left to do. We always need your assistance to get us the polish and shine that TNFC was known for.</p>
@@ -35,14 +35,14 @@
 
       <p>As it stands now:</p>
       <p space="10"/>
-      <p>The basic set of mods are in place. The core oregen should be in place. This means that worlds should be stable as we update the other bits.</p>
+      <p>The set of mods are in place. The core oregen is in place. This means that worlds are stable as we update the other bits.</p>
       <p space="10"/>
       <p>The other bits will be scripty stuff to integrate mods in, change recipes, change machine mechanics and config changes to balance things out.</p>
       <p space="10"/>
       <p>We can't promise a no-restart-ever future for TNFC but I believe it's pretty stable and you should be able to continue with a world along many TNFC updates.</p>
       <p space="10"/>
       <p>The progression path is similar to 1.7.10 TNFC.</p>
-      <p>The core initial gameplay is very much the TFC experience. You will need to progress with TFC to at least the Iron Age before the features and benefits (and jetpacks) in TNFC start to become feasible.</p>
+      <p>The core initial gameplay is very much the TFC experience. You will need to progress with TFC to at least the Iron Age before the features and benefits (and rockets) in TNFC start to become feasible.</p>
       <p space="10"/>
       <p>The BetterWithMods, Astikorcarts and HorsePower mods allow some early automation and are worth exploring. Once solidly into Iron, Immersive Engineering will open up. Most of it will be gated by steel, so it's wise to continue along the TFC progression (ideally all the way to coloured steels). Immersive Engineering and Petroleum will open up a lot of options.</p>
       <p>PneumaticCraft and Rockhounding open up all sorts of options. Leading finally to</p>
@@ -532,6 +532,7 @@
       <p>Little check on the grass growth suppression. </p>
       <p>Change some TFC defaults. (falling blocks don't crush ores or items - so stop whining). </p>
       <p>Changed the scrap recipes on the Metal Press to increase plausibility.</p>
+      <p>Cleaned up the Excavator recipes and added more missing bits. Apologies..</p>
       <p space="10"/>
       <p>Updates:</p>
       <p>- TNFCMod</p>
