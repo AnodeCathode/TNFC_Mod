@@ -7,7 +7,7 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:metal/javelin_head/zircaloy"
+      "item": "tfc:metal/javelin_head/beryllium_copper"
     },
     "S": {
       "type": "forge:ore_dict",
@@ -15,6 +15,6 @@
     }
   },
   "result": {
-    "item": "tfc:metal/javelin/zircaloy"
+    "item": "tfc:metal/javelin/beryllium_copper"
   }
 }

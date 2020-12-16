@@ -8,11 +8,11 @@
   "key": {
     "X": {
       "type": "forge:ore_dict",
-      "ore": "ingotDoubleZircaloy"
+      "ore": "ingotDoubleBerylliumCopper"
     }
   },
   "result": {
-    "item": "tfc:metal/anvil/zircaloy",
+    "item": "tfc:metal/anvil/beryllium_copper",
     "count": 1
   }
 }

@@ -7,7 +7,7 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:metal/pick_head/zircaloy"
+      "item": "tfc:metal/pick_head/beryllium_copper"
     },
     "S": {
       "type": "forge:ore_dict",
@@ -15,6 +15,6 @@
     }
   },
   "result": {
-    "item": "tfc:metal/pick/zircaloy"
+    "item": "tfc:metal/pick/beryllium_copper"
   }
 }

@@ -7,7 +7,7 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:metal/hoe_head/zircaloy"
+      "item": "tfc:metal/hoe_head/beryllium_copper"
     },
     "S": {
       "type": "forge:ore_dict",
@@ -15,6 +15,6 @@
     }
   },
   "result": {
-    "item": "tfc:metal/hoe/zircaloy"
+    "item": "tfc:metal/hoe/beryllium_copper"
   }
 }

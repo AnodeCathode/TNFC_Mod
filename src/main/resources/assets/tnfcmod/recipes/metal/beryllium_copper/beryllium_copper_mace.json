@@ -7,7 +7,7 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:metal/mace_head/zircaloy"
+      "item": "tfc:metal/mace_head/beryllium_copper"
     },
     "S": {
       "type": "forge:ore_dict",
@@ -15,6 +15,6 @@
     }
   },
   "result": {
-    "item": "tfc:metal/mace/zircaloy"
+    "item": "tfc:metal/mace/beryllium_copper"
   }
 }

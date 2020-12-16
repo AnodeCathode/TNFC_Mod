@@ -7,7 +7,7 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:metal/scythe_blade/zircaloy"
+      "item": "tfc:metal/scythe_blade/beryllium_copper"
     },
     "S": {
       "type": "forge:ore_dict",
@@ -15,6 +15,6 @@
     }
   },
   "result": {
-    "item": "tfc:metal/scythe/zircaloy"
+    "item": "tfc:metal/scythe/beryllium_copper"
   }
 }
