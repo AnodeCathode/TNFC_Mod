@@ -260,7 +260,7 @@ public class IERecipes
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SHOVEL_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_shovel), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SWORD_BLADE), 1), ingredientDoubleIngot, new ItemStack(TNFCItems.mold_sword), 2400);
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.SWORD_BLADE), 1), ingredientIngot, new ItemStack(TNFCItems.mold_sword), 2400).setInputSize(2);
-                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.TUYERE), 1), ingredientDoubleSheet, new ItemStack(TNFCItems.mold_tuyere), 2400).setInputSize(2);
+                MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.TUYERE), 1), ingredientDoubleSheet, new ItemStack(TNFCItems.mold_tuyere), 2400).setInputSize(1);
                 if (metal == Metal.RED_STEEL | metal == Metal.BLUE_STEEL)
                 {
                     MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.BUCKET), 1), ingredientSheet, new ItemStack(TNFCItems.mold_bucket), 2400);
