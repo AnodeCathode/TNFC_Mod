@@ -128,9 +128,7 @@ processResources {
 }
 jar {
     manifest {
-        attributes 'FMLAT' : 'tnfc_at.cfg',
-        "FMLCorePluginContainsFMLMod": "true",
-        "FMLCorePlugin": "vazkii.quark.base.asm.LoadingPlugin"
+        attributes 'FMLAT' : 'tnfc_at.cfg'
     }
 }
 // Deobf jar allows people to drop this in mod folder on a dev environment
