@@ -524,6 +524,22 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p italics="true">Version 12.2.51 - Missed That One Too</p>
+      <p space="10"/>
+      <p>Few missing things. </p>
+      <p>Tool recipes for Zircaloy and Beryllium-Copper. </p>
+      <p>Fix the dust recipe for Zircaloy. </p>
+      <p>Little check on the grass growth suppression. </p>
+      <p>Change some TFC defaults. (falling blocks don't crush ores or items - so stop whining). </p>
+      <p>Changed the scrap recipes on the Metal Press to increase plausibility.</p>
+      <p space="10"/>
+      <p>Updates:</p>
+      <p>- TNFCMod</p>
+      <p>- CraftTweaker</p>
+      <p>- RandomPatches</p>
+      <p>- FoamFix</p>
+      <p>- ForgeEndertech</p>
+      <p space="10"/>
       <p italics="true">Version 12.2.50 - Making mountains out of mole hills</p>
       <p space="10"/>
       <p>Progress on the First Aid integration. Should be much better integrated with 17% less weirdness.</p>
