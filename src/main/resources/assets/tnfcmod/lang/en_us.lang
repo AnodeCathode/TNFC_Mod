@@ -89,10 +89,13 @@ storagedrawers.material.immersiveengineering:immeng_treated=Treated Wood
 entity.tnfcmod:crab.name=Crabby McCrabberson
 entity.tnfcmod:frog.name=Frogface McGee
 
-tnfcmod.subtitles.frog_die=Frog croaks
-tnfcmod.subtitles.frog_hurt=Frog squeaks
-tnfcmod.subtitles.frog_idle=Frog ribbits
-tnfcmod.subtitles.frog_jump=Frog hops
+tnfcmod.subtitles.frog_die=Froggie croaks
+tnfcmod.subtitles.frog_hurt=Froggie squeaks
+tnfcmod.subtitles.frog_idle=Froggie ribbits
+tnfcmod.subtitles.frog_jump=Froggie hops
+
+subtitle.immersivetech.advCokeOven=Coke Oven blurbles happily
+
 
 item.tnfcmod:frog_leg.name=Frog Leg
 item.tnfcmod:frog_maybe_leg.name=Frog "Leg"
