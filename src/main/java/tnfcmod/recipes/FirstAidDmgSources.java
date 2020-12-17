@@ -18,9 +18,14 @@ public class FirstAidDmgSources
 
         distributionBuilderFactory.newStandardBuilder()
             .addDistributionLayer(EntityEquipmentSlot.CHEST, EnumPlayerPart.BODY)
+            .addDistributionLayer(EntityEquipmentSlot.HEAD, EnumPlayerPart.HEAD)
             .registerStatic(AmbientalDamage.HEAT);
 
         distributionBuilderFactory.newStandardBuilder()
+            .addDistributionLayer(EntityEquipmentSlot.FEET, EnumPlayerPart.LEFT_FOOT, EnumPlayerPart.RIGHT_FOOT)
+            .addDistributionLayer(EntityEquipmentSlot.CHEST, EnumPlayerPart.LEFT_ARM, EnumPlayerPart.RIGHT_ARM)
+            .addDistributionLayer(EntityEquipmentSlot.LEGS, EnumPlayerPart.LEFT_LEG, EnumPlayerPart.RIGHT_LEG)
+            .addDistributionLayer(EntityEquipmentSlot.HEAD, EnumPlayerPart.HEAD)
             .addDistributionLayer(EntityEquipmentSlot.CHEST, EnumPlayerPart.BODY)
             .registerStatic(AmbientalDamage.COLD);
 
@@ -54,6 +59,9 @@ public class FirstAidDmgSources
             .addDistributionLayer(EntityEquipmentSlot.FEET, EnumPlayerPart.LEFT_FOOT, EnumPlayerPart.RIGHT_FOOT)
             .registerStatic(TFCThingsDamageSources.BEAR_TRAP);
 
+        distributionBuilderFactory.newStandardBuilder()
+            .addDistributionLayer(EntityEquipmentSlot.HEAD, EnumPlayerPart.HEAD)
+            .registerStatic(TFCThingsDamageSources.PIGVIL);
 
 
     }
