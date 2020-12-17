@@ -42,6 +42,7 @@ public class FirstAidDmgSources
         distributionBuilderFactory.newStandardBuilder()
             .addDistributionLayer(EntityEquipmentSlot.FEET, EnumPlayerPart.LEFT_FOOT, EnumPlayerPart.RIGHT_FOOT)
             .addDistributionLayer(EntityEquipmentSlot.LEGS, EnumPlayerPart.LEFT_LEG, EnumPlayerPart.RIGHT_LEG)
+            .addDistributionLayer(EntityEquipmentSlot.CHEST, EnumPlayerPart.BODY)
             .registerStatic(DamageSource.IN_FIRE, DamageSource.LAVA);
 
         distributionBuilderFactory.newStandardBuilder()
