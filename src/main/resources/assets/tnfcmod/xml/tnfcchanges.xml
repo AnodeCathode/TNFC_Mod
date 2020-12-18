@@ -524,6 +524,28 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p italics="true">Version 12.2.51 - Moar Boats</p>
+      <p space="10"/>
+      <p>Little bugs and moar boats. MoarBoats brings modular boats. Daisy chain boats together with chests and tanks and batteries. </p>
+      <p>To obtain a vanilla chest to place in a boat, use 2 TFC chests to craft one.</p>
+      <p space="10"/>
+      <p>Also:</p>
+      <p>- Fix dmg sources. Cold, Lava, Pigvil all been adjusted</p>
+      <p>- Fix recipes with Minecraft buttons</p>
+      <p>- Fix missing subtitle</p>
+      <p>- Stop attempting to load missing coremod</p>
+      <p>- Allow cooking of crab and frog legs</p>
+      <p>- Make all crates and storage drawers heavy. </p>
+      <p>- Configure the Compacting Drawer for usefulness</p>
+      <p>- Gating for Storage Drawers adjusted</p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- MoarBoats</p>
+      <p>- Forgelin</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p space="10"/>
       <p italics="true">Version 12.2.51 - Missed That One Too</p>
       <p space="10"/>
       <p>Few missing things. </p>
