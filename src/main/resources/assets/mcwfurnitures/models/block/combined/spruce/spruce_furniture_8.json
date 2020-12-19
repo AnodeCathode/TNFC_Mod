@@ -1,0 +1,11 @@
+{
+	"parent": "mcwfurnitures:block/parent/combined/furniture_8",
+	"textures": {
+		"1": "tfc:blocks/wood/planks/spruce",
+		"3": "tfc:blocks/wood/log/spruce",
+		"5": "minecraft:blocks/glass",
+		"8": "mcwfurnitures:block/oak/furniture_glass2",
+		"particle": "tfc:blocks/wood/log/spruce",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

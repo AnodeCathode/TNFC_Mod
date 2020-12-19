@@ -1,0 +1,12 @@
+{
+	"parent": "mcwfurnitures:block/parent/combined/furniture_6",
+	"textures": {
+		"1": "tfc:blocks/wood/planks/kapok",
+		"3": "tfc:blocks/wood/log/kapok",
+		"0": "minecraft:blocks/bookshelf",
+		"4": "tfc:blocks/wood/planks/kapok",
+		"particle": "tfc:blocks/wood/log/kapok",
+		"texture": "tfc:blocks/wood/log/kapok",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

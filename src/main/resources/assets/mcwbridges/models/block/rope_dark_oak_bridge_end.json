@@ -1,0 +1,10 @@
+{
+	"parent": "mcwbridges:block/parent/rope_bridge_end",
+	"textures": {
+		"0": "mcwbridges:blocks/lead_knot_vert",
+		"2": "tfc:blocks/wood/planks/hickory",
+		"3": "tfc:blocks/wood/log/hickory",
+		"4": "mcwbridges:blocks/lead_knot",
+		"particle": "tfc:blocks/wood/log/hickory"
+	}
+}

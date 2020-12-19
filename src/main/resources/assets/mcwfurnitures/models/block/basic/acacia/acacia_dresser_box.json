@@ -1,0 +1,11 @@
+{
+	"parent": "mcwfurnitures:block/parent/dresser_box",
+	"textures": {
+		"1": "tfc:blocks/wood/planks/acacia",
+		"2": "tfc:blocks/wood/planks/acacia",
+		"3": "tfc:blocks/wood/log/acacia",
+		"particle": "tfc:blocks/wood/log/acacia",
+		"texture": "tfc:blocks/wood/log/acacia",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"parent": "mcwfurnitures:block/parent/combined/cupboard_2",
+	"textures": {
+        "0": "tfc:blocks/metal/wrought_iron",
+		"1": "tfc:blocks/wood/log/spruce",
+		"2": "tfc:blocks/wood/planks/spruce",
+		"particle": "tfc:blocks/wood/log/spruce"
+	}
+}

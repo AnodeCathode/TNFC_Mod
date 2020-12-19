@@ -1,0 +1,8 @@
+{
+	"parent": "mcwbridges:block/parent/brick_bridge_end",
+	"textures": {
+		"0": "minecraft:blocks/red_sand",
+		"2": "minecraft:blocks/red_sandstone_normal",
+		"particle": "minecraft:blocks/red_sandstone_normal"
+	}
+}

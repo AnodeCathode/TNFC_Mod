@@ -1,0 +1,9 @@
+{
+	"parent": "mcwfurnitures:block/parent/desk_2",
+	"textures": {
+		"0": "tfc:blocks/wood/planks/spruce",
+		"2": "tfc:blocks/wood/log/spruce",
+		"particle": "tfc:blocks/wood/log/spruce",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

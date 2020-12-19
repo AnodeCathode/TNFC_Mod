@@ -1,0 +1,10 @@
+{
+	"parent": "mcwbridges:block/parent/rail_bridge_powered",
+	"textures": {
+		"0": "tfc:blocks/wood/planks/oak",
+		"1": "tfc:blocks/wood/log/oak",
+		"2": "tfc:blocks/wood/log/oak_top",
+       	"3": "minecraft:blocks/redstone_torch_on",
+		"particle": "tfc:blocks/wood/log/oak"
+	}
+}

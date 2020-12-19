@@ -1,0 +1,8 @@
+{
+	"parent": "mcwwindows:block/parent/window_open",
+	"textures": {
+		"0": "tfc:blocks/wood/log/spruce",
+		"1": "minecraft:blocks/glass",
+		"particle": "tfc:blocks/wood/log/spruce"      
+	}
+}

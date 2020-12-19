@@ -1,0 +1,8 @@
+{
+	"parent": "mcwroofs:block/parent/roof_straight",
+	"textures": {
+		"2": "mcwroofs:block/wood/log_jungle",
+		"3": "mcwroofs:block/wood/log_jungle",
+        "particle": "mcwroofs:block/wood/log_jungle"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"parent": "mcwroofs:block/parent/gutter_corner",
+	"textures": {
+		"0": "mcwroofs:block/rain_gutter_water",
+		"2": "mcwroofs:block/rain_gutter_support",
+		"particle": "mcwroofs:block/rain_gutter_water"
+	}
+}        

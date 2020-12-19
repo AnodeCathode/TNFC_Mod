@@ -1,0 +1,12 @@
+{
+	"parent": "mcwfurnitures:block/parent/combined/furniture_3",
+	"textures": {
+		"1": "tfc:blocks/wood/planks/birch",
+		"3": "tfc:blocks/wood/log/birch",
+		"6": "tfc:blocks/wood/planks/birch",
+		"7": "minecraft:blocks/bookshelf",
+		"particle": "tfc:blocks/wood/log/birch",
+		"texture": "tfc:blocks/wood/log/birch",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

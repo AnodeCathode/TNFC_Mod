@@ -1,0 +1,9 @@
+{
+	"parent": "mcwfurnitures:block/parent/desk_6",
+	"textures": {
+		"0": "tfc:blocks/wood/planks/hickory",
+		"2": "tfc:blocks/metal/wrought_iron",
+		"particle": "tfc:blocks/wood/log/hickory",
+		"texture": "tfc:blocks/wood/log/hickory"
+	}
+}

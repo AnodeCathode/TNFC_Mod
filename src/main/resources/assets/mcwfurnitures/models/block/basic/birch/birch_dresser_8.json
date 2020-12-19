@@ -1,0 +1,9 @@
+{
+	"parent": "mcwfurnitures:block/parent/dresser_8",
+	"textures": {
+		"1": "tfc:blocks/wood/planks/birch",
+		"particle": "tfc:blocks/wood/log/birch",
+		"texture": "tfc:blocks/wood/log/birch",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

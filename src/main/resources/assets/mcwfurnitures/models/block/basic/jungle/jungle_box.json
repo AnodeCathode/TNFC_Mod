@@ -1,0 +1,9 @@
+{
+	"parent": "mcwfurnitures:block/parent/box",
+	"textures": {
+		"2": "tfc:blocks/metal/wrought_iron",
+		"3": "tfc:blocks/wood/log/kapok",
+		"4": "tfc:blocks/wood/planks/kapok",
+		"particle": "tfc:blocks/wood/log/kapok"
+	}
+}

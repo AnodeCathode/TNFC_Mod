@@ -1,0 +1,8 @@
+{
+	"parent": "mcwfurnitures:block/parent/pult",
+	"textures": {
+		"1": "tfc:blocks/wood/log/kapok",
+		"3": "tfc:blocks/wood/log/kapok",
+		"particle": "tfc:blocks/wood/log/kapok"
+	}
+}

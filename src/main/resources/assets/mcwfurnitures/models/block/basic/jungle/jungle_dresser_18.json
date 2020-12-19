@@ -1,0 +1,14 @@
+{
+	"parent": "mcwfurnitures:block/parent/dresser_18",
+	"textures": {
+		"2": "tfc:blocks/wood/planks/kapok",
+		"3": "tfc:blocks/wood/log/kapok",
+		"4": "tfc:blocks/saplings/kapok",
+		"5": "minecraft:blocks/flower_pot",
+		"7": "tfc:blocks/wood/planks/kapok",
+		"8": "minecraft:blocks/dirt",
+		"particle": "tfc:blocks/wood/log/kapok",
+		"texture": "tfc:blocks/wood/log/kapok",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

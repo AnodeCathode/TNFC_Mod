@@ -1,0 +1,11 @@
+{
+	"parent": "mcwfurnitures:block/parent/combined/cupboard",
+	"textures": {
+		"1": "tfc:blocks/wood/log/hickory",
+		"3": "tfc:blocks/wood/log/hickory",
+		"4": "tfc:blocks/wood/planks/hickory",
+		"5": "tfc:blocks/wood/planks/hickory",
+		"particle": "tfc:blocks/wood/log/hickory",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

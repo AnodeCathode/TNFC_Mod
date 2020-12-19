@@ -1,0 +1,10 @@
+{
+	"parent": "mcwfurnitures:block/parent/pult_4",
+	"textures": {
+		"0": "tfc:blocks/wood/planks/spruce",
+		"1": "tfc:blocks/wood/log/spruce",
+		"3": "tfc:blocks/wood/log/spruce",
+		"particle": "tfc:blocks/wood/log/spruce",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

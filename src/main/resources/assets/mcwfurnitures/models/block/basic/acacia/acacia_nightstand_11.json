@@ -1,0 +1,8 @@
+{
+	"parent": "mcwfurnitures:block/parent/nightstand_11",
+	"textures": {
+		"1": "tfc:blocks/wood/log/acacia",
+		"2": "tfc:blocks/wood/log/acacia",
+		"particle": "tfc:blocks/wood/log/acacia"
+	}
+}

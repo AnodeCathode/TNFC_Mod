@@ -1,0 +1,8 @@
+{
+	"parent": "mcwroofs:block/parent/roof_glass",
+	"textures": {
+		"6": "mcwroofs:block/wood/log_acacia",
+		"7": "mcwroofs:block/glass",
+        "particle": "mcwroofs:block/wood/log_acacia"        
+	}
+}

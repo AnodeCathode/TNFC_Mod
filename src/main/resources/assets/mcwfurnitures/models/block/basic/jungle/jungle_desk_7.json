@@ -1,0 +1,7 @@
+{
+	"parent": "mcwfurnitures:block/parent/desk_7",
+	"textures": {
+		"particle": "tfc:blocks/wood/log/kapok",
+		"texture": "tfc:blocks/wood/log/kapok"
+	}
+}

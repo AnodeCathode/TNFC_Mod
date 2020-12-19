@@ -1,0 +1,62 @@
+          
+     //TABS
+itemGroup.wintab=Macaw's Windows
+    
+     //ITEM
+item.window_base.name=Window Base
+item.window_centre_bar_base.name=Window Framed Base
+     
+     //BLOCKS
+tile.oak_window.name=Oak Framed Window
+tile.spruce_window.name=Spruce Framed Window
+tile.birch_window.name=Birch Framed Window
+tile.jungle_window.name=Kapok Framed Window
+tile.acacia_window.name=Acacia Framed Window
+tile.dark_oak_window.name=Hickory Framed Window
+tile.oak_plank_window.name=Oak Plank Framed Window
+tile.spruce_plank_window.name=Spruce Plank Framed Window
+tile.birch_plank_window.name=Birch Plank Framed Window
+tile.jungle_plank_window.name=Kapok Plank Framed Window
+tile.acacia_plank_window.name=Acacia Plank Framed Window
+tile.dark_oak_plank_window.name=Hickory Plank Framed Window
+
+tile.oak_planks_win_2tall.name=2x1 Oak Plank Framed Window
+tile.oak_win_2tall.name=2x1 Oak Framed Window
+tile.spruce_planks_win_2tall.name=2x1 Spruce Plank Framed Window
+tile.spruce_win_2tall.name=2x1 Spruce Framed Window
+tile.birch_planks_win_2tall.name=2x1 Birch Plank Framed Window
+tile.birch_win_2tall.name=2x1 Birch Framed Window
+tile.jungle_planks_win_2tall.name=2x1 Kapok Plank Framed Window
+tile.jungle_win_2tall.name=2x1 Kapok Framed Window
+tile.acacia_planks_win_2tall.name=2x1 Acacia Plank Framed Window
+tile.acacia_win_2tall.name=2x1 Acacia Framed Window
+tile.dark_oak_planks_win_2tall.name=2x1 Hickory Framed Plank Window
+tile.dark_oak_win_2tall.name=2x1 Hickory Framed Window
+
+tile.oak_window2.name=Oak Window
+tile.oak_plank_window2.name=Oak Plank Window
+tile.spruce_window2.name=Spruce Window
+tile.spruce_plank_window2.name=Spruce Plank Window
+tile.birch_window2.name=Birch Window
+tile.birch_plank_window2.name=Birch Plank Window
+tile.jungle_window2.name=Kapok Window
+tile.jungle_plank_window2.name=Kapok Window
+tile.acacia_window2.name=Acacia Window
+tile.acacia_plank_window2.name=Acacia Plank Window
+tile.dark_oak_window2.name=Hickory Window
+
+tile.dark_oak_plank_window2.name=Hickory Window
+tile.oak_window2_2tall.name=Oak 2x1 Window
+tile.oak_plank_window2_2tall.name=Oak Plank 2x1 Window
+tile.spruce_window2_2tall.name=Spruce 2x1 Window
+tile.spruce_plank_window2_2tall.name=Sruce Plank 2x1 Window
+tile.birch_window2_2tall.name=Birch 2x1 Window
+tile.birch_plank_window2_2tall.name=Birch Plank 2x1  Window
+tile.jungle_window2_2tall.name=Kapok 2x1 Window
+tile.jungle_plank_window2_2tall.name=Kapok Plank 2x1 Window
+tile.acacia_window2_2tall.name=Acacia 2x1 Window
+tile.acacia_plank_window2_2tall.name=Acacia Plank 2x1 Window
+tile.dark_oak_window2_2tall.name=Hickory 2x1 Window
+tile.dark_oak_plank_window2_2tall.name=Hickory 2x1 Window
+
+

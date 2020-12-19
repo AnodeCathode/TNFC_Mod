@@ -1,0 +1,8 @@
+{
+	"parent": "mcwfurnitures:block/parent/desk_9",
+	"textures": {
+		"3": "minecraft:blocks/glass",
+		"particle": "tfc:blocks/wood/log/spruce",
+		"texture": "tfc:blocks/wood/log/spruce"
+	}
+}

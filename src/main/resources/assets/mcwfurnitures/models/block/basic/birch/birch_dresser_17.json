@@ -1,0 +1,14 @@
+{
+	"parent": "mcwfurnitures:block/parent/dresser_17",
+	"textures": {
+		"2": "tfc:blocks/wood/planks/birch",
+		"3": "tfc:blocks/wood/log/birch",
+		"4": "tfc:blocks/saplings/birch",
+		"5": "minecraft:blocks/flower_pot",
+		"7": "tfc:blocks/wood/planks/birch",
+		"8": "minecraft:blocks/dirt",
+		"particle": "tfc:blocks/wood/log/birch",
+		"texture": "tfc:blocks/wood/log/birch",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"parent": "mcwfurnitures:block/parent/nightstand_7",
+	"textures": {
+		"1": "tfc:blocks/wood/log/hickory",
+		"2": "tfc:blocks/wood/log/hickory",
+		"3": "minecraft:blocks/glass",
+		"particle": "tfc:blocks/wood/log/hickory",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

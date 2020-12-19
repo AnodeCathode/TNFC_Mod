@@ -1,0 +1,7 @@
+{
+	"parent": "mcwroofs:block/parent/striped_awning",
+	"textures": {
+		"2": "mcwroofs:block/awning/magenta_awning",
+		"particle": "mcwroofs:block/awning/magenta_awning"    
+	}
+}

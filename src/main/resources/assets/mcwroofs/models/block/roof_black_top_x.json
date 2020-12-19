@@ -1,0 +1,8 @@
+{
+	"parent": "mcwroofs:block/parent/roof_top_x",
+	"textures": {
+		"1_2": "mcwroofs:block/black_rectangle_roof",
+		"particle": "mcwroofs:block/black_rectangle_roof",
+		"1_3": "mcwroofs:block/black_roof"
+	}
+}

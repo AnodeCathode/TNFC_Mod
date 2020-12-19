@@ -1,0 +1,8 @@
+{
+	"parent": "mcwroofs:block/parent/roof_top_x",
+	"textures": {
+		"1_2": "mcwroofs:block/wood/planks_acacia",
+		"1_3": "mcwroofs:block/wood/planks_acacia",
+        "particle": "mcwroofs:block/wood/planks_acacia"
+	}
+}

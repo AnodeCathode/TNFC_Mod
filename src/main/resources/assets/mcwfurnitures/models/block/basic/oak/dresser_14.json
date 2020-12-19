@@ -1,0 +1,8 @@
+{
+	"parent": "mcwfurnitures:block/parent/dresser_14",
+	"textures": {
+		"3": "tfc:blocks/wood/log/oak",
+		"particle": "tfc:blocks/wood/log/oak",
+		"texture": "tfc:blocks/wood/log/oak"
+	}
+}

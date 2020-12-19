@@ -1,0 +1,8 @@
+{
+	"parent": "mcwroofs:block/parent/roof_lower",
+	"textures": {
+		"2": "mcwroofs:block/wood/log_birch",
+		"3": "mcwroofs:block/wood/log_birch",
+        "particle": "mcwroofs:block/wood/log_birch"        
+	}
+}

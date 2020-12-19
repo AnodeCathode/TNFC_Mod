@@ -1,0 +1,7 @@
+{
+	"parent": "mcwfurnitures:block/parent/desk_8",
+	"textures": {
+		"particle": "tfc:blocks/wood/log/acacia",
+		"texture": "tfc:blocks/wood/log/acacia"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "mcwroofs:block/parent/roof_steep_inner",
+	"textures": {
+		"3": "mcwroofs:block/wood/planks_dark_oak",
+        "particle": "mcwroofs:block/wood/planks_dark_oak"        
+	}
+}

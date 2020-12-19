@@ -1,0 +1,7 @@
+{
+	"parent": "mcwroofs:block/parent/gutter_middle",
+	"textures": {
+		"0": "mcwroofs:block/white_rain_gutter_water",
+		"particle": "mcwroofs:block/white_rain_gutter_water"
+	}
+}

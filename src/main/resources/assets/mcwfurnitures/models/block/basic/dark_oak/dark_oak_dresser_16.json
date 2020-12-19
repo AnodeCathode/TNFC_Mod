@@ -1,0 +1,14 @@
+{
+	"parent": "mcwfurnitures:block/parent/dresser_16",
+	"textures": {
+		"1": "tfc:blocks/wood/planks/hickory",
+		"2": "tfc:blocks/wood/planks/hickory",
+		"3": "tfc:blocks/wood/log/hickory",
+		"4": "tfc:blocks/saplings/hickory",
+		"5": "minecraft:blocks/flower_pot",
+		"7": "minecraft:blocks/dirt",
+		"particle": "tfc:blocks/wood/log/hickory",
+		"texture": "tfc:blocks/wood/log/hickory",
+		"1_2": "tfc:blocks/metal/wrought_iron"
+	}
+}

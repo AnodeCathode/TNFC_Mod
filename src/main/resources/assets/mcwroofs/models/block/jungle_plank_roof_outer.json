@@ -1,0 +1,9 @@
+{
+	"parent": "mcwroofs:block/parent/roof_rec_4",
+	"textures": {
+		"2": "mcwroofs:block/wood/planks_jungle",
+		"3": "mcwroofs:block/wood/planks_jungle_pyramid",
+		"3_3": "mcwroofs:block/wood/planks_jungle",
+        "particle": "mcwroofs:block/wood/planks_jungle"        
+	}
+}
