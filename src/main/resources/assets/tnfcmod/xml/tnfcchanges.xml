@@ -524,7 +524,57 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p italics="true">Version 12.2.54 - Ethanol Is Not Generally Radioactive</p>
+      <p space="10"/>
+      <p>Fixed making booze with NC. It shouldn't have quite that much kick. </p>
+      <p space="10"/>
+      <p>Updated ImmTech. Added Heat Exchanger. Fixed a number of bugs. Including using ImmTech replacement piping on servers.</p>
+      <p space="10"/>
+      <p>Also added the CTM mod to the CF edition.</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p>- ImmTech</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.53.1 - Just Want A Roof, Is That So Hard?</p>
+      <p space="10"/>
+      <p>**Hotfix for broken brick recipe**</p>
+      <p space="10"/>
+      <p>Folks wanted pretty roofs. So thanks to the hard work of ACGaming, we can add Macaw's Furniture/Doors/Windows/Roofs and Bridges to TNFC. Also addid StuffASockInIt to cut down on some of the pointless log chatter</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- mcw-furnitures</p>
+      <p>- mcw-doors</p>
+      <p>- mcw-bridges</p>
+      <p>- mcw-windows</p>
+      <p>- StuffASockInIt</p>
+      <p space="10"/>
       <p italics="true">Version 12.2.51 - Moar Boats</p>
+      <p space="10"/>
+      <p>Little bugs and moar boats. MoarBoats brings modular boats. Daisy chain boats together with chests and tanks and batteries.  Dye the boats with a bucket of dye and a modular boat. The boat doesn't show in the recipe for some reason, but it's there.</p>
+      <p>To obtain a vanilla chest to place in a boat, use 2 TFC chests to craft 1 vanilla one.</p>
+      <p space="10"/>
+      <p>Also:</p>
+      <p>- Fix dmg sources. Cold, Lava, Pigvil all been adjusted</p>
+      <p>- Fix recipes with Minecraft buttons</p>
+      <p>- Fix missing subtitle</p>
+      <p>- Stop attempting to load missing coremod</p>
+      <p>- Allow cooking of crab and frog legs</p>
+      <p>- Make all crates and storage drawers heavy. </p>
+      <p>- Configure the Compacting Drawer for usefulness (rock - cobble/ poor ores - scrap)</p>
+      <p>- Gating for Storage Drawers adjusted</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- Forgelin</p>
+      <p>- Moarboats</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.52 - Moar Boats</p>
       <p space="10"/>
       <p>Little bugs and moar boats. MoarBoats brings modular boats. Daisy chain boats together with chests and tanks and batteries. </p>
       <p>To obtain a vanilla chest to place in a boat, use 2 TFC chests to craft one.</p>
