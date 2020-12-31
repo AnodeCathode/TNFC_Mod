@@ -26,6 +26,7 @@ public class VanillaRecipes
         addShapelessDmgOreRecipe(new ItemStack(TNFCItems.copper_fishhook,1), 1,"oreCopperSmall", "hammer");
         addShapelessOreRecipe(new ItemStack(Items.CLAY_BALL, 4), Blocks.CLAY);
 
+
       //ADD Shapeless Hammer and Ingot recipes to make delicious metal nuggets.
         for (Metal metal : TFCRegistries.METALS.getValuesCollection())
         {
@@ -137,7 +138,7 @@ public class VanillaRecipes
        RecipeUtils.removeRecipeByName(modRegistry,"minecraft", "fence");
        RecipeUtils.removeRecipeByName(modRegistry,"minecraft", "fence_gate");
        RecipeUtils.removeRecipeByName(modRegistry,"minecraft", "fermented_spider_eye");
-       RecipeUtils.removeRecipeByName(modRegistry,"minecraft", "fireworks");
+       //RecipeUtils.removeRecipeByName(modRegistry,"minecraft", "fireworks");
        RecipeUtils.removeRecipeByName(modRegistry,"minecraft", "fishing_rod");
        RecipeUtils.removeRecipeByName(modRegistry,"minecraft", "flower_pot");
        RecipeUtils.removeRecipeByName(modRegistry,"minecraft", "furnace_minecart");

@@ -12,9 +12,13 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.oredict.RecipeSorter;
 
 import tnfcmod.proxy.CommonProxy;
+import tnfcmod.util.FireworksRecipes;
 import tnfcmod.util.VeinLoader;
+
+import static net.minecraftforge.oredict.RecipeSorter.Category.SHAPELESS;
 
 
 @SuppressWarnings("WeakerAccess")
@@ -81,6 +85,7 @@ public class tnfcmod {
     public void serverStarting(FMLServerStartingEvent event)
     {
         log.info("serverStarting TNFCMod Stuff");
+        RecipeSorter.register("tnfcmod:fireworks",  FireworksRecipes.class, SHAPELESS, "after:minecraft:shapeless");
         proxy.serverStarting(event);
     }
 
