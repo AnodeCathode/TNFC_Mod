@@ -524,6 +524,21 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p italics="true">Version 12.2.55 - A New Year.... And Not Much New</p>
+      <p space="10"/>
+      <p>Little changes to fix some niggling issues, as always.</p>
+      <p space="10"/>
+      <p>- Adjusted the grindstone/millstone plant > dye recipes to sync with TFC</p>
+      <p>- Reenabled nether brick blocks/stairs/slabs</p>
+      <p>- Hide a lot of the unused TFCTech wires/gears etc</p>
+      <p>- Hide the IE Steel tools and armours</p>
+      <p>- Recipe to process RH Yellowcake into more usable items</p>
+      <p>- Re-enable the Engineer's Decor Small Electrical Furnace</p>
+      <p>- Remove all food cooking recipes from the vanilla furnace </p>
+      <p>- Setup individual recipes for all Macaw items. </p>
+      <p>- Removed the Vanilla Substitution routines. Shaves 2 minutes off client load time!</p>
+      <p>- Turn off AR Laser Drill actually drilling blocks and it will just 'poof' the configured ores into existence</p>
+      <p space="10"/>
       <p italics="true">Version 12.2.54 - 2020 Can Go Away Now, kthxbye</p>
       <p space="10"/>
       <p>Readded fireworks to see this sorry year out with a bang Readded fireworks to see this sorry year out with a bang.</p>
