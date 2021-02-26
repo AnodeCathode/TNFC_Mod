@@ -524,6 +524,109 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p italics="true">Version12.2.59 - More little fixes</p>
+      <p space="10"/>
+      <p>TFC updated, so naturally we need a TNFC update too. Not much else to talk about. Updated the Faithful resource pack to the new version as well, so check your resource packs to ensure it's enabled.  AdvancedRocketry updated and may have some fixes related to disconnects when landing on other planets. Also a number of other changes. TFC-Tech updated with some nice QoL fixes. TFC-Decorations updated to fix changes with latest TFC.</p>
+      <p space="10"/>
+      <p>TNFCMod got an update to change the BwM Saw drop from the TFC-Tech Wood Powder (which is gone) to the TFC Wood Ash. So you could also get wood ash for paper making by breaking campfires.</p>
+      <p space="10"/>
+      <p>Note: The AT Launcher continues to have issues identified the replaced mods. So you will have to open the instance folder, go into mods and delete the old versions of Advanced Rocketry, TFC and TFC-Tech. Or delete the entire mod folder and reinstall.</p>
+      <p space="10"/>
+      <p>TFC Fixes:</p>
+      <p>Powderkegs will produce more consistent drops on explosion</p>
+      <p>Added config option for how far away placed items render</p>
+      <p>Fixed crash when welding without flux in a stone anvil (Closes #1698)</p>
+      <p>Some barrel tweaks including: taking items below 'HUGE' only, better tooltips for sealed barrels, and less data wiping (Closes #1691)</p>
+      <p>Updated zh_cn localization</p>
+      <p>Experimental tweak to HWYLA and TOP to better indicate what is inside a log pile</p>
+      <p space="10"/>
+      <p>TFC-Tech update:</p>
+      <p>Added config for induction crucible target temperature (#73)</p>
+      <p>Added waila integration to the item you are looking at in the fridge (#72)</p>
+      <p>Updated hevea recipes, textures and whatnot (#81, #77)</p>
+      <p>Changed bowl name to fluid bowl, for clarification (#79)</p>
+      <p>Removed Ash powder and sawdust, since TFC has now wood ash (#76)</p>
+      <p>Fixed a config parsing issue with latex extractor (#80)</p>
+      <p>Fixed CraftTweaker integration with Smeltery (#71)</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TFC</p>
+      <p>- TFC-Tech</p>
+      <p>- TFC-Decorations</p>
+      <p>-AdvancedRocketry</p>
+      <p space="10"/>
+      <p italics="true">Version12.2.58 - Get me some Animals</p>
+      <p space="10"/>
+      <p>Update to TFC to fix some stuff. Also updates to Rockhounding and AR for some minor fixes.</p>
+      <p space="10"/>
+      <p>TFC Changes:</p>
+      <p>Anvil welding information now outputs to the action bar (above the hotbar) instead of the chat by default. (This is configurable, just like prospecting messages.)</p>
+      <p>Added a action bar tooltip when a player tries to open a vessel that is solidified. ("The liquid has solidified.")</p>
+      <p>Ingot piles now show their total count in "what the heck is being looked at" mods.</p>
+      <p>Fixed #1682: Fix a crash from plucking parrots.</p>
+      <p>Fixed #1674: Picking up a flat item with a full inventory no longer deletes the item.</p>
+      <p>Fixed #1668: Nerfed bellows to not be an infinite heat source.</p>
+      <p>Fixed #1655: Fixed a crash involving addons adding graded, non-metal ores.</p>
+      <p>Fixed #1650: Added a missing model property to red steel shields, allowing them to move when you block with them.</p>
+      <p>Fixed #1637: Lead and steel lamps are identical.</p>
+      <p>Fixed #1629: Small vessels can be dyed in barrels.</p>
+      <p>Fixed #1618: Fixed a quirk with horizontal support beam placement, where they could seemingly be placed through other blocks.</p>
+      <p>Fixed #1586: Added a tooltip for items that have been partially worked in an Anvil.</p>
+      <p>Fixed #1331: Hot crucibles will heat items much faster than cold ones, via the transitive property of thermodynamics or whatnot.</p>
+      <p>Fixed #1310 - Improvements to finding old livestock:</p>
+      <p>Wild livestock (not familiarized) can now "despawn" if they are old enough.</p>
+      <p>Livestock animals can now respawn rarely over time.</p>
+      <p>Fixed #1100: Sapling item entities may now plant themselves when they expire.</p>
+      <p>Fixed #689: TFC plants can now be potted into flower pots.</p>
+      <p>Fixed #556: Barrels now output a comparator signal when sealed.</p>
+      <p space="10"/>
+      <p>Updates:</p>
+      <p>- TFC</p>
+      <p>- TFC Decoration</p>
+      <p>- CraftTweaker</p>
+      <p>- Advanced Rocketry</p>
+      <p>- Rockhounding: Chemistry</p>
+      <p>- Weirding Gadget</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p italics="true">Version12.2.57.1 - Chunks stay loaded. Except when they don't.</p>
+      <p space="10"/>
+      <p>** Hotfix - Forgot to include the better Kimberlite processing in NC Rock Crusher and IE Crusher **</p>
+      <p>** Hotfix 2 - Add a zero **</p>
+      <p space="10"/>
+      <p>Mostly a change for servers. Adding the WeirdingGadget mod for your chunk loading needs. Also removed the FTB Utilities Chunk loading by default. Feel free to enable it for your SSP needs, but the configs are managed with servers in mind. Also adjusted the moarBoats chunk loader to roughly match the Weirding Gadget recipe.</p>
+      <p space="10"/>
+      <p>Also increased the Sequoia sapling drop rate from Improbable to Unlikely</p>
+      <p space="10"/>
+      <p>Small change to login timeout which may help with some servers.</p>
+      <p space="10"/>
+      <p>Adjusted the BwM Anchor recipe to make craftable - Thanks  rhino1998</p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- WeirdingGadget</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p italics="true">Version12.2.56  - Toxic is Toxic, Except When it's Not</p>
+      <p space="10"/>
+      <p>- Fixes for RH to prevent crashes with toxic waste. Also all leachates are again pollutants</p>
+      <p>- Other updates and patches</p>
+      <p>- TFC Update:</p>
+      <p>    Minor optimizations to grass spreading logic</p>
+      <p>    Fix #1649 - Fixed falling blocks destroying unbreakable blocks</p>
+      <p>    Fix #1525 - Axes, hammers and maces now have the ability to disable shields.</p>
+      <p>    Fix #1313 - Added HWYLA tooltips for the Quern</p>
+      <p space="10"/>
+      <p>Update:</p>
+      <p>- TFC</p>
+      <p>- TFThings</p>
+      <p>- Immersive Tech</p>
+      <p>- RH Chemistry</p>
+      <p>- RH Core</p>
+      <p>- Crafttweaker</p>
+      <p>- Patchouli</p>
+      <p>- SimplyJetpacks</p>
+      <p>- FTB Utilities</p>
       <p italics="true">Version 12.2.55 - A New Year.... And Not Much New</p>
       <p space="10"/>
       <p>Little changes to fix some niggling issues, as always.</p>
