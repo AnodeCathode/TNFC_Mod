@@ -111,8 +111,7 @@ public class DamageablePart extends AbstractDamageablePart {
     public NBTTagCompound serializeNBT() {
         NBTTagCompound compound = new NBTTagCompound();
         compound.setFloat("health", currentHealth);
-        if (FirstAidConfig.scaleMaxHealth)
-            compound.setFloat("maxHealth", maxHealth);
+        compound.setFloat("maxHealth", maxHealth);
         if (absorption > 0F)
             compound.setFloat("absorption", absorption);
         if (activeHealer != null) {
@@ -127,8 +126,9 @@ public class DamageablePart extends AbstractDamageablePart {
     public void deserializeNBT(@Nullable NBTTagCompound nbt) {
         if (nbt == null)
             return;
-        if (nbt.hasKey("maxHealth") && FirstAidConfig.scaleMaxHealth)
+        if (nbt.hasKey("maxHealth")){
             maxHealth = nbt.getFloat("maxHealth");
+        }
         currentHealth = Math.min(maxHealth, nbt.getFloat("health"));
         ItemStack stack = null;
         if (nbt.hasKey("healingItem"))
