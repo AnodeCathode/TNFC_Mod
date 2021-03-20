@@ -70,18 +70,14 @@ public class PlayerModelRenderer {
 
     private static void drawPart(Gui gui, AbstractDamageablePart part, int texX, int texY, int sizeX, int sizeY) {
         int rawTexX = texX;
-        int maxHealth = (int) part.getMaxHealth();
+        float maxHealth = part.getMaxHealth();
         if (part.currentHealth <= 0.001) {
             texX += SIZE * 3;
         }
         else if (Math.abs(part.currentHealth - maxHealth) > 0.001) {
             float healthPercentage = part.currentHealth / maxHealth;
-            if (healthPercentage <= 0)
+            if (healthPercentage >= 1 || healthPercentage <= 0)
                 throw new RuntimeException(String.format("Calculated invalid health for part %s with current health %s and max health %d. Got value %s", part.part, part.currentHealth, maxHealth, healthPercentage));
-            if (healthPercentage >= 1)
-            {
-                healthPercentage = 1;
-            }
             texX += SIZE * (healthPercentage > 0.5 ? 1 : 2);
         }
         gui.drawTexturedModalRect(rawTexX, texY, texX, texY, sizeX, sizeY);
