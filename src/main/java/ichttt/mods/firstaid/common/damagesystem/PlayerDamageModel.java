@@ -61,6 +61,7 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
     private final boolean noCritical;
     private boolean needsMorphineUpdate = false;
     private int resyncTimer = -1;
+    private float healthModifier = 1.0f;
 
     public static PlayerDamageModel create() {
         FirstAidRegistry registry = FirstAidRegistryImpl.INSTANCE;
@@ -98,6 +99,7 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
         tagCompound.setTag("rightArm", RIGHT_ARM.serializeNBT());
         tagCompound.setTag("rightLeg", RIGHT_LEG.serializeNBT());
         tagCompound.setTag("rightFoot", RIGHT_FOOT.serializeNBT());
+        tagCompound.setFloat("healthModifier", healthModifier );
         tagCompound.setBoolean("hasTutorial", hasTutorial);
         return tagCompound;
     }
@@ -112,6 +114,8 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
         RIGHT_ARM.deserializeNBT((NBTTagCompound) nbt.getTag("rightArm"));
         RIGHT_LEG.deserializeNBT((NBTTagCompound) nbt.getTag("rightLeg"));
         RIGHT_FOOT.deserializeNBT((NBTTagCompound) nbt.getTag("rightFoot"));
+        if (nbt.hasKey("healthModifier"))
+            healthModifier = nbt.getFloat("healthModifier");
         if (nbt.hasKey("morphineTicks")) { //legacy - we still have to write it
             morphineTicksLeft = nbt.getInteger("morphineTicks");
             needsMorphineUpdate = true;
@@ -131,6 +135,7 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
             throw new RuntimeException("Negative sleepBlockTicks " + sleepBlockTicks);
 
         float newCurrentHealth = calculateNewCurrentHealth(player);
+
         if (Float.isNaN(newCurrentHealth)) {
             FirstAid.LOGGER.warn("New current health is not a number, setting it to 0!");
             newCurrentHealth = 0F;
@@ -139,6 +144,9 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
             FirstAid.LOGGER.error("Got {} health left, but isn't marked as dead!", newCurrentHealth);
             world.profiler.endSection();
             return;
+        }
+        if (newCurrentHealth >= player.getMaxHealth()){
+            newCurrentHealth = player.getMaxHealth();
         }
         if (!world.isRemote && resyncTimer != -1) {
             resyncTimer--;
@@ -151,19 +159,14 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
         if (Float.isInfinite(newCurrentHealth)) {
             FirstAid.LOGGER.error("Error calculating current health: Value was infinite"); //Shouldn't happen anymore, but let's be safe
         } else {
-            if (newCurrentHealth != prevHealthCurrent || newCurrentHealth != player.getHealth())
+            if (newCurrentHealth != prevHealthCurrent)
+            {
                 ((DataManagerWrapper) player.dataManager).set_impl(EntityPlayer.HEALTH, newCurrentHealth);
                 resyncTimer = 1;
+            }
             prevHealthCurrent = newCurrentHealth;
         }
 
-        if (!world.isRemote && resyncTimer != -1) {
-            resyncTimer--;
-            if (resyncTimer == 0) {
-                resyncTimer = -1;
-                FirstAid.NETWORKING.sendTo(new MessageSyncDamageModel(this, true), (EntityPlayerMP) player);
-            }
-        }
         if (!this.hasTutorial)
             this.hasTutorial = CapProvider.tutorialDone.contains(player.getName());
 
@@ -294,20 +297,21 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
             case TNFC:
                 if (player.getFoodStats() instanceof IFoodStatsTFC)
                 {
-                    float healthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
-                    if (healthModifier < ConfigTFC.General.PLAYER.minHealthModifier)
+                    float newhealthModifier = ((IFoodStatsTFC) player.getFoodStats()).getHealthModifier();
+                    if (newhealthModifier< ConfigTFC.General.PLAYER.minHealthModifier)
                     {
-                        healthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
+                        newhealthModifier = (float) ConfigTFC.General.PLAYER.minHealthModifier;
                     }
-                    if (healthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
+                    if (newhealthModifier > ConfigTFC.General.PLAYER.maxHealthModifier)
                     {
-                        healthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
+                        newhealthModifier = (float) ConfigTFC.General.PLAYER.maxHealthModifier;
                     }
 
-                    healthModifier = healthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
+                    newhealthModifier = newhealthModifier + 0.15f; //Add the fudge factor to make the starting healthModifier 1, this simplifies a whole bunch of BS.
 
                     for (AbstractDamageablePart damageablePart : this)
                     {
+
                         float partHealth = damageablePart.currentHealth;
                         float partMax = damageablePart.getMaxHealth();
                         float partPercentage = partHealth / partMax;
@@ -318,6 +322,7 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
                         damageablePart.currentHealth = Math.min(newMax * partPercentage, newMax);
 
                     }
+                    if (healthModifier != newhealthModifier) healthModifier = newhealthModifier;
                 }
                 for (AbstractDamageablePart part : this)
                     currentHealth += part.currentHealth;
@@ -403,8 +408,8 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
     }
 
     @Override
-    public int getCurrentMaxHealth() {
-        int maxHealth = 0;
+    public float getCurrentMaxHealth() {
+        float maxHealth = 0;
         for (AbstractDamageablePart part : this) {
             maxHealth += part.getMaxHealth();
         }
