@@ -136,8 +136,6 @@
       <p space="10"/>
       <p>The IE Excavator does not like to touch TFC blocks (including snow!). When you build the Excavator, remove all blocks within 2 of the Excavator's bucket wheel (including the sides). Also put a roof over the top (with a 2 space gap) to prevent snow from accumulating on the wheel. Failure to do so will crash your game or server.</p>
       <p space="10"/>
-      <p>The IE Mining Drill has a bug with falling blocks. When using the Drill to mine, only drill when no blocks will fall. Either by drilling straight down, or by only drilling in areas with supports. Failure to do so will crash your server/game.</p>
-      <p space="10"/>
       <p>When you make a space station, make copies of the station id chip. If you for some reason lose your only chip and can't get back to the station with a space elevator, the station is lost</p>
       <p space="10"/>
       <p>If you're having timeout issues connecting to a TNFC server, or sometimes even loading a save in single player.</p>
@@ -524,7 +522,145 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
-      <p italics="true">Version12.2.59 - More little fixes</p>
+      <p italics="true">Version 12.2.63.2 - Metal sounds are metal</p>
+      <p space="10"/>
+      <p>** Hotfix to add more tips and have them also display on the world loading screens **</p>
+      <p space="10"/>
+      <p>Mostly a firmalife update and some other mods added for performance and my own amusement. </p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Firmalife update:</p>
+      <p>OVEN CHANGES:</p>
+      <p>- Ovens will now always try to select the cooking slot first for right click actions</p>
+      <p>- Oven rows only need one oven to have fuel (the one that is being lit) to be able to cook</p>
+      <p>- Ovens will light other ovens horizontally if possible</p>
+      <p>- Peels are now only needed within 2 hours after the oven is finished</p>
+      <p>- Uncured oven pieces will now drop themselves on break (Fixes #39)</p>
+      <p>- Fixed oven walls suffocating the player</p>
+      <p>- Most oven recipes now only take 2 hours</p>
+      <p>- Peels can be placed on tool racks</p>
+      <p space="10"/>
+      <p>GREENHOUSE CHANGES:</p>
+      <p>- BUCKETS NO LONGER ARE USED FOR PLANTERS. USING ONE WILL DESTROY YOUR PLANTER.</p>
+      <p>- Added watering cans for watering planters</p>
+      <p>- Changed sound to be metal</p>
+      <p>- Greenhouse walls will place up to three high like support beams</p>
+      <p>- Adding glass to a greenhouse wall will also attempt to add glass up to two blocks above it</p>
+      <p>- Greenhouse walls pop off if not supported by a block</p>
+      <p>- Greenhouse doors now place the opposite of where a regular door might place</p>
+      <p>- Climate station no longer eats items randomly (Fixes #38)</p>
+      <p space="10"/>
+      <p>MISC CHANGES:</p>
+      <p>- Fixed load order crash in some installations</p>
+      <p>- Trail mix gives 4 items instead of 2</p>
+      <p>- Pecans have incorrect recipe (Fixes #37)</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Update:</p>
+      <p> - Firmalife</p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p> - CustomLoadingScreen - Cause it's been on my todo list forever. Now with helpful hints</p>
+      <p>- Modern Lights - Cool looking lights for later game labs/factories</p>
+      <p>- ParryWithShield - Deflect projectiles with shield!</p>
+      <p>-  FasterLadderClimbing - Look up or down to climb/descend faster</p>
+      <p>- SledgeHammer - various fixy bits.</p>
+      <p>- Tips - adds custom tips to world loading screens</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.62.1 - Go Nuts</p>
+      <p space="10"/>
+      <p>Another update mostly for firmalife. Lots of wee changes and fixes. Nuts are a better source of food. Trailmix is a thing.  TFC updated to fix issue needed for firmalife.  Also small fix for Halite recipe in Horsepower millstone to drop the proper amount of salt. OIISA update to fix bug with items getting deleted during yeet process. Thanks Clay!</p>
+      <p space="10"/>
+      <p>** Hotfix for OIISA Update **</p>
+      <p space="10"/>
+      <p>Firmalife changes:</p>
+      <p>Tweaks:</p>
+      <p>- Reworked food registry system internally. Most foods should have their required ore dicts (and some extra!)</p>
+      <p>- Nut hammering now has a much shorter refractory period</p>
+      <p>- You have to walk a certain distance between hammerings to get nuts</p>
+      <p>- Nut hammer is only damaged when successful nut hammering occurs</p>
+      <p>- Hammering nuts makes you hungry</p>
+      <p>- The cooldown and distance are configurable</p>
+      <p space="10"/>
+      <p>Fixes:</p>
+      <p>- Fixed fruit poles not dropping from chain break reactions</p>
+      <p>- Barley slices uncraftable</p>
+      <p space="10"/>
+      <p>Features:</p>
+      <p>- Added pickled eggs that can be preserved in limewater as if it was vinegar</p>
+      <p>- Added trail mix, a meal made from salt, nuts, chocolate, dry fruit, and a knife</p>
+      <p>- Added barrel recipe to get sugar from beets and hot water</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- Firmalife</p>
+      <p>- TFC</p>
+      <p>- OIISA</p>
+      <p space="10"/>
+      <p>Script change:</p>
+      <p>- Remove sugar from beets barrel recipe as it's now part of firmalife.</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.61 - It's a Hard Knock Firmalife</p>
+      <p space="10"/>
+      <p>** Hotfix to update firmalife **</p>
+      <p space="10"/>
+      <p>Fixes:</p>
+      <p>- Mallet has wrong localization (Closes #36)</p>
+      <p>- Some crops don't provide stats tooltip (Closes #34)</p>
+      <p>- Cinnamon trees have inconsistent / non existent spawning</p>
+      <p>- Missing oredicts prevented some FirmaLife foods from being put into meals</p>
+      <p>- Leaf mat sometimes deleted items (not sure if this is 100% fixed, please check)</p>
+      <p>- Drinkable fluids not actually drinkable</p>
+      <p space="10"/>
+      <p>Tweaks:</p>
+      <p>- More obvious indications on if your climate station is correct</p>
+      <p>- Buffed the food stats of most FirmaLife foods</p>
+      <p>- Leaf mats spawn items in world on right click rather than trying to insert into the player's inventory</p>
+      <p space="10"/>
+      <p>Features:</p>
+      <p>- Added large planter, see wiki for info. (Yay, sugarcane!)</p>
+      <p>- Added pineapple bushes, yarn, fiber, pina coladas, pineapple leather, pineapple chunks, dried pineapple.</p>
+      <p>and full CT support</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>First, backed out the changes to storage because of numerous issues and will just live with the other issues that the changes were intended to fix.</p>
+      <p space="10"/>
+      <p>Also,  YABBA has been removed!!!! If you still have stuff in Yabba barrels and then updated you're going to have a bad time. </p>
+      <p space="10"/>
+      <p>Added Firmalife. The cooking with TFC mod created by EERussianguy. Adds greenhouses, new trees, new ways of cooking. Things are changed. You'll have to adjust and adapt.</p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- FirmaLife</p>
+      <p space="10"/>
+      <p>Removed:</p>
+      <p>- YABBA</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p italics="true">Version 12.2.60 - Blow it real good... optimized edition</p>
+      <p space="10"/>
+      <p>** Hotfix for TFC issues related to new tooltips **</p>
+      <p space="10"/>
+      <p>TFC update released to day. Lots of little fixes but one nice one is the powderkeg explosions. Entities dropped by these will now group together and should cause significantly less lag when TNT mining. Enjoy the dwarvish enhancement.</p>
+      <p space="10"/>
+      <p>Also added another couple of alternate recipe using booze to have the aged equivalent be allowed.</p>
+      <p space="10"/>
+      <p>Fixed an issue with nesting of storage objects allowing bypass of size/weight limits. This may have come with unintended side-effects. I look forward to your feedback.</p>
+      <p space="10"/>
+      <p>TFC Changes:</p>
+      <p>  Fix farmland turning into racetracks for fallen dirt (Fixes #524)</p>
+      <p>  Add tooltip info for small vessels when you hover over them</p>
+      <p>  Fix barrel recipe issue where you'd get more than you paid for (Fixes #1692)</p>
+      <p>  Remove skeleton jockies (Fixes #1676, Fixes #1713)</p>
+      <p>  Players can no longer be overburdened in spectator (Fixes #1723)</p>
+      <p>  Added uncrafting recipes for glazed unfired vessels (Fixes #1717)</p>
+      <p>  Added loaded check for chunk protection (Fixes #1707)</p>
+      <p>  Added gold pan output for previously unused variants (Fixes #1672)</p>
+      <p>  Added JEI recipe for hide scraping (Fixes #1704)</p>
+      <p>  Introduced optimization algorithm for powder keg drops (98% less entities)</p>
+      <p>  Nerfed sluices slightly (this doesn't fix any bug, I just thought it would be funny)</p>
+
+      <p space="10"/>
+      <p italics="true">Version 12.2.59 - More little fixes</p>
       <p space="10"/>
       <p>TFC updated, so naturally we need a TNFC update too. Not much else to talk about. Updated the Faithful resource pack to the new version as well, so check your resource packs to ensure it's enabled.  AdvancedRocketry updated and may have some fixes related to disconnects when landing on other planets. Also a number of other changes. TFC-Tech updated with some nice QoL fixes. TFC-Decorations updated to fix changes with latest TFC.</p>
       <p space="10"/>
