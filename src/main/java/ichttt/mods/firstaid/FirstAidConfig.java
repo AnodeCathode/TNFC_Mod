@@ -243,34 +243,34 @@ public class FirstAidConfig {
     public static class DamageSystem {
 
         @Config.RangeDouble(min = 2, max = 12)
-        public float maxHealthHead = 4.0f;
+        public float maxHealthHead = 7.0f;
 
         @Config.RequiresWorldRestart
         public boolean causeDeathHead = true;
 
         @Config.RangeDouble(min = 2, max = 12)
-        public float maxHealthLeftArm = 4.0f;
+        public float maxHealthLeftArm = 5.0f;
 
         @Config.RangeDouble(min = 2, max = 12)
-        public float maxHealthLeftLeg = 4.0f;
+        public float maxHealthLeftLeg = 5.0f;
 
         @Config.RangeDouble(min = 2, max = 12)
-        public float maxHealthLeftFoot = 4.0f;
+        public float maxHealthLeftFoot = 5.0f;
 
         @Config.RangeDouble(min = 2, max = 12)
-        public float maxHealthBody = 6.0f;
+        public float maxHealthBody = 9.0f;
 
         @Config.RequiresWorldRestart
         public boolean causeDeathBody = true;
 
         @Config.RangeDouble(min = 2, max = 12)
-        public float maxHealthRightArm = 4.0f;
+        public float maxHealthRightArm = 5.0f;
 
         @Config.RangeDouble(min = 2, max = 12)
-        public float maxHealthRightLeg = 4.0f;
+        public float maxHealthRightLeg = 5.0f;
 
         @Config.RangeDouble(min = 2, max = 12)
-        public float maxHealthRightFoot = 4.0f;
+        public float maxHealthRightFoot = 5.0f;
     }
 
     public static class Debuffs {
