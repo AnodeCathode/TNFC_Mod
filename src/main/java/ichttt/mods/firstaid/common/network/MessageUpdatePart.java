@@ -31,7 +31,7 @@ import java.util.Objects;
 
 public class MessageUpdatePart implements IMessage {
     private byte id;
-    private int maxHealth;
+    private float maxHealth;
     private float absorption;
     private float currentHealth;
 
@@ -47,7 +47,7 @@ public class MessageUpdatePart implements IMessage {
     @Override
     public void fromBytes(ByteBuf buf) {
         this.id = buf.readByte();
-        this.maxHealth = buf.readInt();
+        this.maxHealth = buf.readFloat();
         this.absorption = buf.readFloat();
         this.currentHealth = buf.readFloat();
         validate();
@@ -56,7 +56,7 @@ public class MessageUpdatePart implements IMessage {
     @Override
     public void toBytes(ByteBuf buf) {
         buf.writeByte(id);
-        buf.writeInt(maxHealth);
+        buf.writeFloat(maxHealth);
         buf.writeFloat(absorption);
         buf.writeFloat(currentHealth);
         validate();

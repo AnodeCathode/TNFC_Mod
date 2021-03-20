@@ -18,10 +18,22 @@
 
 package ichttt.mods.firstaid.common.damagesystem;
 
+import java.util.*;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import com.creativemd.playerrevive.api.IRevival;
 import ichttt.mods.firstaid.FirstAid;
 import ichttt.mods.firstaid.FirstAidConfig;
-import ichttt.mods.firstaid.api.CapabilityExtendedHealthSystem;
 import ichttt.mods.firstaid.api.FirstAidRegistry;
 import ichttt.mods.firstaid.api.damagesystem.AbstractDamageablePart;
 import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
@@ -38,26 +50,6 @@ import ichttt.mods.firstaid.common.network.MessageSyncDamageModel;
 import ichttt.mods.firstaid.common.util.CommonUtils;
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Objects;
-import java.util.Set;
 
 public class PlayerDamageModel extends AbstractPlayerDamageModel {
     private final Set<SharedDebuff> sharedDebuffs = new HashSet<>();
@@ -320,12 +312,10 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
                         float partMax = damageablePart.getMaxHealth();
                         float partPercentage = partHealth / partMax;
 
-                        int initialMax = damageablePart.initialMaxHealth;
+                        float initialMax = damageablePart.initialMaxHealth;
                         float newMax = initialMax * healthModifier;
-                        int newInt = (int) Math.ceil(newMax);
-
-                        damageablePart.setMaxHealth(newInt);
-                        damageablePart.currentHealth = Math.min(newInt * partPercentage, newInt);
+                        damageablePart.setMaxHealth(newMax);
+                        damageablePart.currentHealth = Math.min(newMax * partPercentage, newMax);
 
                     }
                 }
@@ -480,11 +470,11 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
                 float expectedNewMaxHealth = 0F;
                 int newMaxHealth = 0;
                 for (AbstractDamageablePart part : this) {
-                    float floatResult = ((float) part.initialMaxHealth) * globalFactor;
+                    float floatResult = part.initialMaxHealth * globalFactor;
                     expectedNewMaxHealth += floatResult;
                     int result = (int) floatResult;
                     if (result % 2 == 1) {
-                        int partMaxHealth = part.getMaxHealth();
+                        float partMaxHealth = part.getMaxHealth();
                         if (part.currentHealth < partMaxHealth && reduced < 4) {
                             result--;
                             reduced++;
@@ -514,9 +504,9 @@ public class PlayerDamageModel extends AbstractPlayerDamageModel {
                     for (AbstractDamageablePart part : this) {
                         prioList.add(part);
                     }
-                    prioList.sort(Comparator.comparingInt(AbstractDamageablePart::getMaxHealth));
+                    prioList.sort(Comparator.comparingDouble(AbstractDamageablePart::getMaxHealth));
                     for (AbstractDamageablePart part : prioList) {
-                        int maxHealth = part.getMaxHealth();
+                        float maxHealth = part.getMaxHealth();
                         if (FirstAidConfig.debug) {
                             FirstAid.LOGGER.info("Part {}: Second stage with total diff {}", part.part.name(), Math.abs(expectedNewMaxHealth - newMaxHealth));
                         }

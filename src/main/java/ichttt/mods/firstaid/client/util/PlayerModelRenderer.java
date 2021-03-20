@@ -70,7 +70,7 @@ public class PlayerModelRenderer {
 
     private static void drawPart(Gui gui, AbstractDamageablePart part, int texX, int texY, int sizeX, int sizeY) {
         int rawTexX = texX;
-        int maxHealth = part.getMaxHealth();
+        int maxHealth = (int) part.getMaxHealth();
         if (part.currentHealth <= 0.001) {
             texX += SIZE * 3;
         }

@@ -29,7 +29,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public abstract class AbstractDamageablePart implements INBTSerializable<NBTTagCompound> {
-    public final int initialMaxHealth;
+    public final float initialMaxHealth;
     public final boolean canCauseDeath;
     @Nonnull
     public final EnumPlayerPart part;
@@ -37,7 +37,7 @@ public abstract class AbstractDamageablePart implements INBTSerializable<NBTTagC
     public AbstractPartHealer activeHealer;
     public float currentHealth;
 
-    public AbstractDamageablePart(int maxHealth, boolean canCauseDeath, @Nonnull EnumPlayerPart playerPart) {
+    public AbstractDamageablePart(float maxHealth, boolean canCauseDeath, @Nonnull EnumPlayerPart playerPart) {
         this.initialMaxHealth = maxHealth;
         this.canCauseDeath = canCauseDeath;
         this.part = playerPart;
@@ -84,7 +84,7 @@ public abstract class AbstractDamageablePart implements INBTSerializable<NBTTagC
 
     public abstract float getAbsorption();
 
-    public abstract void setMaxHealth(int maxHealth);
+    public abstract void setMaxHealth(float maxHealth);
 
-    public abstract int getMaxHealth();
+    public abstract float getMaxHealth();
 }

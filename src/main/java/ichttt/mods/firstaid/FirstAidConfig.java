@@ -242,35 +242,35 @@ public class FirstAidConfig {
 
     public static class DamageSystem {
 
-        @Config.RangeInt(min = 2, max = 12)
-        public int maxHealthHead = 4;
+        @Config.RangeDouble(min = 2, max = 12)
+        public float maxHealthHead = 4.0f;
 
         @Config.RequiresWorldRestart
         public boolean causeDeathHead = true;
 
-        @Config.RangeInt(min = 2, max = 12)
-        public int maxHealthLeftArm = 4;
+        @Config.RangeDouble(min = 2, max = 12)
+        public float maxHealthLeftArm = 4.0f;
 
-        @Config.RangeInt(min = 2, max = 12)
-        public int maxHealthLeftLeg = 4;
+        @Config.RangeDouble(min = 2, max = 12)
+        public float maxHealthLeftLeg = 4.0f;
 
-        @Config.RangeInt(min = 2, max = 12)
-        public int maxHealthLeftFoot = 4;
+        @Config.RangeDouble(min = 2, max = 12)
+        public float maxHealthLeftFoot = 4.0f;
 
-        @Config.RangeInt(min = 2, max = 12)
-        public int maxHealthBody = 6;
+        @Config.RangeDouble(min = 2, max = 12)
+        public float maxHealthBody = 6.0f;
 
         @Config.RequiresWorldRestart
         public boolean causeDeathBody = true;
 
-        @Config.RangeInt(min = 2, max = 12)
-        public int maxHealthRightArm = 4;
+        @Config.RangeDouble(min = 2, max = 12)
+        public float maxHealthRightArm = 4.0f;
 
-        @Config.RangeInt(min = 2, max = 12)
-        public int maxHealthRightLeg = 4;
+        @Config.RangeDouble(min = 2, max = 12)
+        public float maxHealthRightLeg = 4.0f;
 
-        @Config.RangeInt(min = 2, max = 12)
-        public int maxHealthRightFoot = 4;
+        @Config.RangeDouble(min = 2, max = 12)
+        public float maxHealthRightFoot = 4.0f;
     }
 
     public static class Debuffs {

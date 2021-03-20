@@ -38,12 +38,12 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class DamageablePart extends AbstractDamageablePart {
-    private int maxHealth;
+    private float maxHealth;
     @Nonnull
     private final IDebuff[] debuffs;
     private float absorption;
 
-    public DamageablePart(int maxHealth, boolean canCauseDeath, @Nonnull EnumPlayerPart playerPart, @Nonnull IDebuff... debuffs) {
+    public DamageablePart(float maxHealth, boolean canCauseDeath, @Nonnull EnumPlayerPart playerPart, @Nonnull IDebuff... debuffs) {
         super(maxHealth, canCauseDeath, playerPart);
         this.maxHealth = maxHealth;
         this.currentHealth = maxHealth;
@@ -112,7 +112,7 @@ public class DamageablePart extends AbstractDamageablePart {
         NBTTagCompound compound = new NBTTagCompound();
         compound.setFloat("health", currentHealth);
         if (FirstAidConfig.scaleMaxHealth)
-            compound.setInteger("maxHealth", maxHealth);
+            compound.setFloat("maxHealth", maxHealth);
         if (absorption > 0F)
             compound.setFloat("absorption", absorption);
         if (activeHealer != null) {
@@ -128,7 +128,7 @@ public class DamageablePart extends AbstractDamageablePart {
         if (nbt == null)
             return;
         if (nbt.hasKey("maxHealth") && FirstAidConfig.scaleMaxHealth)
-            maxHealth = nbt.getInteger("maxHealth");
+            maxHealth = nbt.getFloat("maxHealth");
         currentHealth = Math.min(maxHealth, nbt.getFloat("health"));
         ItemStack stack = null;
         if (nbt.hasKey("healingItem"))
@@ -161,7 +161,7 @@ public class DamageablePart extends AbstractDamageablePart {
     }
 
     @Override
-    public void setMaxHealth(int maxHealth) {
+    public void setMaxHealth(float maxHealth) {
         if (maxHealth > 12 && FirstAidConfig.capMaxHealth)
             maxHealth = 12;
         if (maxHealth > 128) //Apply a max cap even if disabled - This is already OP and I know no use case where the limit might be reached
@@ -171,7 +171,7 @@ public class DamageablePart extends AbstractDamageablePart {
     }
 
     @Override
-    public int getMaxHealth() {
+    public float getMaxHealth() {
         return maxHealth;
     }
 }

@@ -18,33 +18,9 @@
 
 package ichttt.mods.firstaid.common;
 
-import com.creativemd.playerrevive.api.event.PlayerKilledEvent;
-import com.creativemd.playerrevive.api.event.PlayerRevivedEvent;
-import ichttt.mods.firstaid.FirstAid;
-import ichttt.mods.firstaid.FirstAidConfig;
-import ichttt.mods.firstaid.api.CapabilityExtendedHealthSystem;
-import ichttt.mods.firstaid.api.IDamageDistribution;
-import ichttt.mods.firstaid.api.damagesystem.AbstractDamageablePart;
-import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
-import ichttt.mods.firstaid.common.apiimpl.FirstAidRegistryImpl;
-import ichttt.mods.firstaid.common.config.ConfigEntry;
-import ichttt.mods.firstaid.common.config.ExtraConfig;
-import ichttt.mods.firstaid.common.damagesystem.PlayerDamageModel;
-import ichttt.mods.firstaid.common.damagesystem.distribution.DamageDistribution;
-import ichttt.mods.firstaid.common.damagesystem.distribution.HealthDistribution;
-import ichttt.mods.firstaid.common.damagesystem.distribution.PreferredDamageDistribution;
-import ichttt.mods.firstaid.common.items.FirstAidItems;
-import ichttt.mods.firstaid.common.network.MessageConfiguration;
-import ichttt.mods.firstaid.common.network.MessageSyncDamageModel;
-import ichttt.mods.firstaid.common.potion.FirstAidPotion;
-import ichttt.mods.firstaid.common.potion.PotionPoisonPatched;
-import ichttt.mods.firstaid.common.util.CommonUtils;
-import ichttt.mods.firstaid.common.util.ProjectileHelper;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.ByteBufAllocator;
-import net.dries007.tfc.ConfigTFC;
-import net.dries007.tfc.api.capability.food.IFoodStatsTFC;
+import java.util.*;
 
+import org.apache.commons.lang3.tuple.Pair;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -81,14 +57,30 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import org.apache.commons.lang3.tuple.Pair;
 
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Random;
-import java.util.WeakHashMap;
+import com.creativemd.playerrevive.api.event.PlayerKilledEvent;
+import com.creativemd.playerrevive.api.event.PlayerRevivedEvent;
+import ichttt.mods.firstaid.FirstAid;
+import ichttt.mods.firstaid.FirstAidConfig;
+import ichttt.mods.firstaid.api.CapabilityExtendedHealthSystem;
+import ichttt.mods.firstaid.api.IDamageDistribution;
+import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
+import ichttt.mods.firstaid.common.apiimpl.FirstAidRegistryImpl;
+import ichttt.mods.firstaid.common.config.ConfigEntry;
+import ichttt.mods.firstaid.common.config.ExtraConfig;
+import ichttt.mods.firstaid.common.damagesystem.PlayerDamageModel;
+import ichttt.mods.firstaid.common.damagesystem.distribution.DamageDistribution;
+import ichttt.mods.firstaid.common.damagesystem.distribution.HealthDistribution;
+import ichttt.mods.firstaid.common.damagesystem.distribution.PreferredDamageDistribution;
+import ichttt.mods.firstaid.common.items.FirstAidItems;
+import ichttt.mods.firstaid.common.network.MessageConfiguration;
+import ichttt.mods.firstaid.common.network.MessageSyncDamageModel;
+import ichttt.mods.firstaid.common.potion.FirstAidPotion;
+import ichttt.mods.firstaid.common.potion.PotionPoisonPatched;
+import ichttt.mods.firstaid.common.util.CommonUtils;
+import ichttt.mods.firstaid.common.util.ProjectileHelper;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.ByteBufAllocator;
 
 public class EventHandler {
     public static final Random rand = new Random();
