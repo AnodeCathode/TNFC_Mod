@@ -522,6 +522,46 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p italics="true">Version 12.2.64.1  -  Jumping Jack Flash update</p>
+      <p space="10"/>
+      <p>** Update Firmalife with new stuff!! **</p>
+      <p space="10"/>
+      <p>** Also sadly OIISA had to be removed. As fun and amusing and sometimes useful as it is, it was causing far more issues than it solved. It may return in a different form, but for now it's out **</p>
+      <p space="10"/>
+      <p>Finally sorted out the various steam issues. The cooling tower / heat exchanger can take the exhaust steam from the Immersive Tech steam turbine and the nuclearcraft reactor and turn it back into fresh water (or distilled water if used as input). The various flue gasses used by both Immersive Tech and Rockhounding should also now be the same. So flue gas created in the Immersive Tech gas turbine can be used in RH Power Stations and conversely the flue gas from RH can be used in the Immersive Tech Heat Exchanger to produce steam. Look forward to finding out what loopholes or infinite energy systems I've created with this.</p>
+      <p space="10"/>
+      <p>Also the long standing First Aid bug with logging in and being damaged has finally been resolved. I think this sorts out First Aid finally so I look forward to your feedback.</p>
+      <p space="10"/>
+      <p>Also fixed up the vanilla chest conversion recipe. It was meant to be only for MoarBoats but as usual, folks began exploiting it. So it's been renamed and it's cost has been appropriately increased.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Firmalife updates:</p>
+      <p>New Features:</p>
+      <p>- Smoking is back. Place wool yarn over a campfire and cook brined meat or cheese. Make sure you only use logs in the campfire or you'll not get anything out.</p>
+      <p>- Added the hanging planter. This goes across the top of your greenhouse (must attach to a wall). Takes pumpkins, melons, and squash.</p>
+      <p>- Added berry trellises for your greenhouse. After 30 days it'll grow a berry. If you leave it for 20 more days and place an empty trellis on the block above, it will grow up into the trellis. Then, you can shift-right click it to remove the new bush.</p>
+      <p>- Added tofu</p>
+      <p>- Added melon slices which you get by smashing melons with a metal mallet</p>
+      <p space="10"/>
+      <p>Tweaks:</p>
+      <p>- Changed greenhouse blocks to need a pickaxe (except the door)</p>
+      <p>- Added proper face handling for greenhouse blocks, so you can mount lamps and things on them</p>
+      <p>- Tweaked placement mechanics of walls and doors again</p>
+      <p>- Tweaked dry fruit and trail mix values</p>
+      <p space="10"/>
+      <p>Fixes:</p>
+      <p>- Fixed major bug with greenhouse detection, check your end walls to make sure they're accurate still</p>
+      <p>- Fixed 3-width roof greenhouses not working</p>
+      <p>- Fixed destroying planters with a water bucket</p>
+      <p>- Fixed Cinnamon trees not growing from saplings</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p>- Firmalife</p>
+      <p space="10"/>
+      <p>Removed:</p>
+      <p>- OIISA</p>
+      <p space="10"/>
       <p italics="true">Version 12.2.63.2 - Metal sounds are metal</p>
       <p space="10"/>
       <p>** Hotfix to add more tips and have them also display on the world loading screens **</p>
