@@ -106,3 +106,13 @@ item.tnfcmod:cooked_crab_leg.name=Cooked Crab Leg
 item.tnfcmod:crab_shell.name=Crab Shell Fragment
 tnfcmod.potion.resilience.name=Resilience Potion
 tnfcmod.potion.danger_sight.name=Danger Sight Potion
+
+# Aged drinks
+fluid.aged_rum=Aged Rum (Jump Boost)
+fluid.aged_whiskey=Aged Whiskey (Haste)
+fluid.aged_rye_whiskey=Aged Rye Whiskey (Haste)
+fluid.aged_corn_whiskey=Aged Corn Whiskey (Haste)
+fluid.aged_vodka=Aged Vodka (Resistance)
+fluid.aged_cider=Aged Cider (Speed)
+fluid.aged_beer=Aged Beer (Speed)
+fluid.aged_sake=Aged Sake (Strength)

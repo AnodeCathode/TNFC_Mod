@@ -12,8 +12,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class TFCAgedDrinks
 {
     public static final String MODID = "aged_drinks";
-    public static final String NAME = "TFC Aged Drinks";
-    public static final String VERSION = "1.0.1";
+    public static final String NAME = "TNFC Aged Drinks";
+    public static final String VERSION = "12.2.65";
 
     @EventHandler
     public void init(FMLInitializationEvent event)
