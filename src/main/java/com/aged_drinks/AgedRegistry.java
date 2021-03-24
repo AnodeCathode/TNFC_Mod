@@ -88,25 +88,25 @@ public class AgedRegistry {
 		event.getRegistry().register(getRecipeFor("rum", new ItemStack(ItemsFL.GROUND_CINNAMON, 4)));
 		
 		WHISKEY = createAgedDrink("whiskey", MobEffects.HASTE, AgedDrinksConfig.General.hasteTicks, AgedDrinksConfig.General.hasteLevel);
-		event.getRegistry().register(getRecipeFor("whiskey", new ItemStack(ItemPowder.get(Powder.CHARCOAL), 4)));
+		event.getRegistry().register(getRecipeFor("whiskey", new ItemStack(ItemsFL.WHEAT_FLATBREAD, 4)));
 		
 		RYE_WHISKEY = createAgedDrink("rye_whiskey", MobEffects.HASTE, AgedDrinksConfig.General.hasteTicks, AgedDrinksConfig.General.hasteLevel);
-		event.getRegistry().register(getRecipeFor("rye_whiskey", new ItemStack(ItemPowder.get(Powder.LIMONITE),4 )));
+		event.getRegistry().register(getRecipeFor("rye_whiskey", new ItemStack(ItemsFL.RYE_FLATBREAD,4 )));
 		
 		CORN_WHISKEY = createAgedDrink("corn_whiskey", MobEffects.HASTE, AgedDrinksConfig.General.hasteTicks, AgedDrinksConfig.General.hasteLevel);
-		event.getRegistry().register(getRecipeFor("corn_whiskey", new ItemStack(ItemPowder.get(Powder.SULFUR),4)));
+		event.getRegistry().register(getRecipeFor("corn_whiskey", new ItemStack(ItemsFL.CORN_FLATBREAD,4)));
 		
 		VODKA = createAgedDrink("vodka", MobEffects.RESISTANCE, AgedDrinksConfig.General.resistanceTicks, AgedDrinksConfig.General.resistanceLevel);
 		event.getRegistry().register(getRecipeFor("vodka", new ItemStack(ItemPowder.get(Powder.FLUX),4)));
 		
 		CIDER = createAgedDrink("cider", MobEffects.SPEED, AgedDrinksConfig.General.speedTicks, AgedDrinksConfig.General.speedLevel);
-		event.getRegistry().register(getRecipeFor("cider", new ItemStack(ItemPowder.get(Powder.SALT),4)));
+		event.getRegistry().register(getRecipeFor("cider", new ItemStack(ItemsFL.DRIED_PINEAPPLE,4)));
 
 		BEER = createAgedDrink("beer", MobEffects.SPEED, AgedDrinksConfig.General.speedTicks, AgedDrinksConfig.General.speedLevel);
-		event.getRegistry().register(getRecipeFor("beer", new ItemStack(ItemPowder.get(Powder.MALACHITE),4)));
+		event.getRegistry().register(getRecipeFor("beer", new ItemStack(ItemsFL.BARLEY_FLATBREAD,4)));
 		
 		SAKE = createAgedDrink("sake", MobEffects.STRENGTH, AgedDrinksConfig.General.strengthTicks, AgedDrinksConfig.General.strengthLevel);
-		event.getRegistry().register(getRecipeFor("sake", new ItemStack(ItemPowder.get(Powder.LAPIS_LAZULI),4)));
+		event.getRegistry().register(getRecipeFor("sake", new ItemStack(ItemsFL.RICE_FLATBREAD,4)));
 		
 	}
 }
