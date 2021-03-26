@@ -252,13 +252,14 @@ public class EnvironmentalModifier extends BaseModifier
         return null;
     }
     public static EnvironmentalModifier handlePotionEffects(EntityPlayer player) {
+        int effectTotal = 0;
         if(player.isPotionActive(TempEffect.COOL)){
-            return new EnvironmentalModifier("cooling_effect", -10F, 0);
+            effectTotal += -10;
         }
         if(player.isPotionActive(TempEffect.WARM)){
-            return new EnvironmentalModifier("heating_effect", 10F, 0);
+            effectTotal += 10;
         }
-        return null;
+        return new EnvironmentalModifier("potion_effect", effectTotal, 0);
     }
 
     public static int getSkylight(EntityPlayer player)
