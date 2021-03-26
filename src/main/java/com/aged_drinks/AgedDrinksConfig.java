@@ -35,11 +35,21 @@ public class AgedDrinksConfig {
 	         	@Config.LangKey("config." + TFCAgedDrinks.MODID + ".general.speedTicks")
 	         	public int speedTicks = 9600;
 
-		    	@Config.RequiresMcRestart
+                @Config.RequiresMcRestart
+                @Config.Comment("How many ticks does the warm effect last?")
+                @Config.LangKey("config." + TFCAgedDrinks.MODID + ".general.warmTicks")
+                public int warmTicks = 9600;
+
+                @Config.RequiresMcRestart
+                @Config.Comment("How many ticks does the cool effect last?")
+                @Config.LangKey("config." + TFCAgedDrinks.MODID + ".general.coolTicks")
+                public int coolTicks = 9600;
+
+                @Config.RequiresMcRestart
 		    	@Config.Comment("What level should the speed effect be? 0 = I, 1 = II, 2 = III ...")
 	         	@Config.LangKey("config." + TFCAgedDrinks.MODID + ".general.speedLevel")
 	         	public int speedLevel = 1;
-		    	
+
 
 		    	@Config.RequiresMcRestart
 		    	@Config.Comment("How many ticks does the jump boost effect last?")
