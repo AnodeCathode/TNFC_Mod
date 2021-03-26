@@ -3,7 +3,6 @@ package tnfcmod.handlers;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.RecipeFireworks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -13,8 +12,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.oredict.RecipeSorter;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import gigaherz.guidebook.client.BookRegistryEvent;
 import net.dries007.tfc.api.recipes.anvil.AnvilRecipe;
@@ -28,8 +25,6 @@ import tnfcmod.recipes.TFCRecipes;
 import tnfcmod.tnfcmod;
 import tnfcmod.util.FireworksRecipes;
 
-import static net.minecraftforge.oredict.RecipeSorter.Category.SHAPED;
-import static net.minecraftforge.oredict.RecipeSorter.Category.SHAPELESS;
 import static tnfcmod.recipes.BwMRecipes.registerBwMSawRecipes;
 import static tnfcmod.recipes.IERecipes.*;
 import static tnfcmod.recipes.LootTablesTNFC.modifyLootTableLoad;
@@ -136,6 +131,7 @@ public final class RegistryHandler
     public static void onRegisterBarrelRecipeEvent(RegistryEvent.Register<BarrelRecipe> event)
     {
         TFCRecipes.registerBarrel(event);
+
     }
 
 
