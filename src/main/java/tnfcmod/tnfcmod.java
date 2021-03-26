@@ -27,6 +27,7 @@ public class tnfcmod {
 
     @Mod.Instance("tnfcmod")
     public static tnfcmod instance;
+
     public static final String MODID = "tnfcmod";
     public static final String NAME = "Technodefirmacraft";
     public static final String VERSION = "@VERSION@";
@@ -44,8 +45,6 @@ public class tnfcmod {
         , 0.0F
     );
 
-    @Mod.Instance
-    private static tnfcmod INSTANCE = null;
 
     @SidedProxy(serverSide = "tnfcmod.proxy.CommonProxy",
         clientSide = "tnfcmod.proxy.ClientProxy")
@@ -54,7 +53,7 @@ public class tnfcmod {
 
     public static Logger getLog()
     {
-        return INSTANCE.log;
+        return instance.log;
     }
 
     @EventHandler
