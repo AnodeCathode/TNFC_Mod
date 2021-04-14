@@ -27,6 +27,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.FoodStats;
@@ -81,6 +83,7 @@ import ichttt.mods.firstaid.common.util.CommonUtils;
 import ichttt.mods.firstaid.common.util.ProjectileHelper;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
+import me.desht.pneumaticcraft.common.item.ItemPneumaticArmor;
 
 public class EventHandler {
     public static final Random rand = new Random();
@@ -99,7 +102,29 @@ public class EventHandler {
         EntityPlayer player = (EntityPlayer) entity;
         AbstractPlayerDamageModel damageModel = Objects.requireNonNull(player.getCapability(CapabilityExtendedHealthSystem.INSTANCE, null));
         DamageSource source = event.getSource();
+        if (source.damageType.equals("fallingBlock") || source.damageType.equals("anvil") || source.damageType.equals("inWall") || source.damageType.equals("explosion") || source.damageType.equals("pigvil") )
+        {
+            //If player is wearing super armour, make them immune to things dropped on their head
+            int superArmourCount = 0;
+            Iterable<ItemStack> armor = player.getArmorInventoryList();
+            for (ItemStack piece : armor)
+            {
 
+                if (piece.getItem() instanceof ItemArmor)
+                {
+                    if (piece.getItem() instanceof ItemPneumaticArmor)
+                    {
+                        superArmourCount += 1;
+                    }
+
+                }
+            }
+            if (superArmourCount == 4){
+                amountToDamage = 0;
+                event.setCanceled(true);
+                return;
+            }
+        }
         if (amountToDamage == Float.MAX_VALUE) {
             damageModel.forEach(damageablePart -> damageablePart.currentHealth = 0F);
             if (player instanceof EntityPlayerMP)
