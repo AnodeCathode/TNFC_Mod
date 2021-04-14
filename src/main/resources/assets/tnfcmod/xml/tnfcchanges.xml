@@ -522,6 +522,184 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p italics="true">Version 12.2.68 -  It's a rewrite, same as the old write</p>
+      <p space="10"/>
+      <p>Updates to Advanced Rocketry and Nuclearcraft for all your newly broken things needs.</p>
+      <p space="10"/>
+      <p>**Nuclearcraft 5.0 update:**</p>
+      <p space="10"/>
+      <p>NOTE: Fission shield manager connections to the neutron shields will break after this update - be sure to reconnect them!</p>
+      <p space="10"/>
+      <p>+ Added fission reactor decay heat and neutron poisoning</p>
+      <p>+ In memory of Paul Ritter, you can now recreate Dyatlov's self-inflicted dilemma</p>
+      <p space="10"/>
+      <p>+ Added MSR vessel bunch mechanics</p>
+      <p>+ Added placement rules for adjacent conductors, neutron irradiators and neutron shields</p>
+      <p>* Fixed possible item duplication bug in fission multiblock components</p>
+      <p space="10"/>
+      <p>+ Added turbine recipe rotor spin-up rate multiplier</p>
+      <p>* Completely rewrote dodgy turbine rotor render data packet code</p>
+      <p>* Turbine rotors now regain their saved rotation angle on world load</p>
+      <p>* Fixed the sound effects of large turbines repeatedly cutting out</p>
+      <p space="10"/>
+      <p>+ Increased scope of script addons to include Modular Machinery .json files</p>
+      <p>* Fixed various technical security flaws in script addon loading such as protection against zip-bombing</p>
+      <p>* Attempted to fix occasional bug where script addon unzipping to the temporary installation folder would fail</p>
+      <p space="10"/>
+      <p>+ Added fission neutron source and neutron shield CT registration methods</p>
+      <p>+ Added RTG and battery CT registration methods</p>
+      <p>+ Added various helper radiation-related CT methods</p>
+      <p space="10"/>
+      <p>+ Began introduction of new Patchouli guide book information [thanks to Zanedema!]</p>
+      <p space="10"/>
+      <p>+ Began introduction of new multiblock OC methods [thanks to igentuman!]</p>
+      <p space="10"/>
+      <p>+ Added new advancement criterion trigger system [thanks to igentuman!]</p>
+      <p space="10"/>
+      <p>* Updated Chinese language file [thanks to WuzgXY!]</p>
+      <p space="10"/>
+      <p>* Fixed chargeable items basically not working at all</p>
+      <p space="10"/>
+      <p>* Improved quantum computer code output</p>
+      <p>* Fixed controlled swap gate decomposition</p>
+      <p space="10"/>
+      <p>+ Added solidified corium</p>
+      <p>+ Added mixing and solidification mechanics to NC fluids</p>
+      <p space="10"/>
+      <p>+ Added configs for whether reaching max radiation is fatal for players, passive mobs and hostile mobs</p>
+      <p>* Fixed rare crash caused by radiation capabilities not existing as expected</p>
+      <p>* Elytra can now have radiation resistance</p>
+      <p space="10"/>
+      <p>* Fixed various feral ghoul rendering glitches</p>
+      <p space="10"/>
+      <p>+ Added configs to modify machine upgrade max stack sizes</p>
+      <p>* Fixed diborane recipe using too little molten boron</p>
+      <p>+ Added molten steel in case other mods that add it aren't installed</p>
+      <p space="10"/>
+      <p>* Fixed GTCE recipe integration conflicting with base GTCE recipes</p>
+      <p>* Fixed crash when Gregicality is installed</p>
+      <p space="10"/>
+      <p>* Fixed glowing mushrooms spreading into the interiors of multiblocks</p>
+      <p space="10"/>
+      <p>* Fixed fluids in GUIs not being coloured correctly</p>
+      <p>* Fixed GUI ghost items not rendering correctly</p>
+      <p space="10"/>
+      <p>* Fixed custom coolant heaters not being related to coolant heater recipes in JEI</p>
+      <p>* Fixed coolant heater recipes with the same input conflicting with each other</p>
+      <p>* Fixed some incorrect units on fission component tooltips</p>
+      <p space="10"/>
+      <p>* Fixed multiblocks sometimes crashing when disassembled</p>
+      <p>* Fixed multiblock NBT data sometimes not loading correctly</p>
+      <p space="10"/>
+      <p>- Removed many old, unused classes</p>
+      <p>- Removed a lot of unnecessary error-catching logic from data packet logic</p>
+      <p space="10"/>
+      <p>**Advanced Rocketry updates:**</p>
+      <p space="10"/>
+      <p>- This is a complete rewrite of all multi-block machinery structures. Your machines will likely need reforming and/or changing. Some may need some reworking. Recipes changed to accommodate other internal changes. So bugs may/will have crept in.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Also fixed the Modern Lights recipes as the had a number of broken references to non-existent items.</p>
+      <p space="10"/>
+      <p>The vanilla flowerpot was unhidden from JEI as it is now rather useful for flowers around beehives.</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>-Advanced Rocketry</p>
+      <p>-libVulpes</p>
+      <p>-Nuclearcraft</p>
+      <p>-ImmersiveTech (nothing exciting)</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.67 - Beeeeeees and milk and cheese.... oh my</p>
+      <p space="10"/>
+      <p>Firmalife update with all sorts of cheesy goodness</p>
+      <p space="10"/>
+      <p>TFC updated with fix for bug with false negatives in propick results</p>
+      <p space="10"/>
+      <p>Firmalife updates:</p>
+      <p space="10"/>
+      <p>Fixes:</p>
+      <p space="10"/>
+      <p>    Planters now update immediately when you put stuff in them</p>
+      <p>    Mallets can be placed on tool racks</p>
+      <p>    Climate Station crashing the game under certain conditions</p>
+      <p space="10"/>
+      <p>Features:</p>
+      <p space="10"/>
+      <p>    The bumper has learned to speak</p>
+      <p>    The bumper gets upset when a player interacts with it while holding another bumper.</p>
+      <p>    The bumper will cancel all fall damage from a player landing on it.</p>
+      <p>    Added beeswax</p>
+      <p>    Added candles</p>
+      <p>    Added alternate treated lumber recipe from beeswax</p>
+      <p>    Added full cheesemaking system</p>
+      <p>    Added wild bee nests (drops useful stuff, but can't be moved)</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>TFC Updates:</p>
+      <p>  There once was a prospector's pick.</p>
+      <p>  False positives were making me sick.</p>
+      <p>  Turns out the class Random,</p>
+      <p>  Was not really random.</p>
+      <p>  Thus we close issue #1736.</p>
+      <p space="10"/>
+      <p>  Also uhh the barrel sealed date is saved when you break it (#1729)</p>
+      <p>  Small optimization for powder keg explosions.</p>
+      <p>  Tool racks should now be more open-minded about other mod's tools.</p>
+      <p>  </p>
+      <p italics="true">Version 12.2.66 - Lost and found</p>
+      <p space="10"/>
+      <p>OIISA removed again. Bugs continuing to pop-up and it's more annoyance than fun.</p>
+      <p space="10"/>
+      <p>Added a new mod to provide some colour and drama to the other planets.</p>
+      <p space="10"/>
+      <p>Added new heavy duty Arc Furnace electrodes, test tubes and graduated cylinders</p>
+      <p space="10"/>
+      <p>Buffed the damage output of the IE Railgun</p>
+      <p space="10"/>
+      <p>Prevent glowing mushrooms from attaching themselves to rocket or space station builds.</p>
+      <p space="10"/>
+      <p>Removed:</p>
+      <p>- OIISA</p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- LostCities-TFC</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.65.2 - Something Old, Something New</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>** 2nd Hotfix for Fimalife update **</p>
+      <p space="10"/>
+      <p>** Firmalife changes: **</p>
+      <p space="10"/>
+      <p>Reduced smoking time</p>
+      <p>Fixed vessel wiping when clicked on a device (Fixes #40)</p>
+      <p>Fixed planter racetracks</p>
+      <p>Added bumper (try to stand on it and see what happens)</p>
+      <p>Add beehives and honey</p>
+      <p space="10"/>
+      <p>** Hotfix for barrels of aged_drinks. Also add Cooling and warming aged drinks (Aged Beer and Aged Rye Whisky)**</p>
+      <p>** Restored the aged drinks to vinegar recipe cause why not **</p>
+      <p>** Minor change to Silt Excavator vein to very rarely provide Exquisite Gems plus other bits **</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p>OIISA is back. Thanks to Clay's swift efforts, OIISA is back for all your burnination needs!</p>
+      <p space="10"/>
+      <p>Advanced Rocketry updated with a whole bunch of space station fixes</p>
+      <p space="10"/>
+      <p>Aged Drinks has been borged and changed. All aged booze recipe now require a catalyst. This will prevent barrels of booze from auto-converting to their aged equivalents. Also the output of aged drinks is now 10:1 to inputs. All alternate booze recipes for their aged counterparts have been removed.</p>
+      <p space="10"/>
+      <p>A recipe for slimeblocks has been added.</p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- OIISA (yay!)</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- AdvancedRocketry</p>
+      <p>- TNFCMod</p>
+      <p>- firmalife</p>
+      <p space="10"/>
+      <p space="10"/>
       <p italics="true">Version 12.2.64.1  -  Jumping Jack Flash update</p>
       <p space="10"/>
       <p>** Update Firmalife with new stuff!! **</p>
