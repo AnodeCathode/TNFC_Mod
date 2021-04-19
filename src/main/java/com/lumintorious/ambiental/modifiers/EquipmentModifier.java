@@ -41,6 +41,7 @@ public class EquipmentModifier extends BaseModifier
             {
                 if (stack.getItem() instanceof ItemSpaceArmor || stack.getItem() instanceof ItemPneumaticArmor)
                 {
+
                     superArmourCount += 1;
                 }
 
@@ -132,6 +133,7 @@ public class EquipmentModifier extends BaseModifier
         if (superArmourCount == 4)
         {
             //Player wearing complete space suit. Remove all the nasty modifiers
+            // Should check for aircon addon for PnC Armour and some oxygen for Spacesuit
             Iterator<BaseModifier> it = modifiers.iterator();
             while (it.hasNext())
             {

@@ -114,6 +114,7 @@ public class EventHandler {
                 {
                     if (piece.getItem() instanceof ItemPneumaticArmor)
                     {
+                        //Need to check that the piece has some air pressure
                         superArmourCount += 1;
                     }
 
