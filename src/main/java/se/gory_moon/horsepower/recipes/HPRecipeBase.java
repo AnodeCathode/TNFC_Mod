@@ -30,6 +30,14 @@ public abstract class HPRecipeBase {
         this.time = time;
     }
 
+    public HPRecipeBase (ItemStack input, ItemStack output, FluidStack fluidOutput, int time){
+        this.input = input;
+        this.output = output;
+        this.outputFluid = fluidOutput;
+        this.secondary = ItemStack.EMPTY;
+        this.time = time;
+    }
+
     public ItemStack getInput() {
         return input;
     }

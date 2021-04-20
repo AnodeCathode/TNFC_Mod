@@ -123,6 +123,13 @@ public class TileEntityPress extends TileEntityHPHorseBase {
 
             if (recipe.isLiquidRecipe()) {
                 tank.fillInternal(fluidResult, true);
+                if (result != ItemStack.EMPTY){
+                    if (output.isEmpty()) {
+                        setInventorySlotContents(1, result.copy());
+                    } else if (output.isItemEqual(result)) {
+                        output.grow(result.getCount());
+                    }
+                }
                 //HorsePowerMod.logger.info("Tank: " + tank.getFluid().amount);
             } else {
                 if (output.isEmpty()) {
@@ -167,6 +174,10 @@ public class TileEntityPress extends TileEntityHPHorseBase {
                 return false;
 
             ItemStack output = getStackInSlot(1);
+            if (recipe.isMixedRecipe()) {
+                return (output.isItemEqual(itemstack) && output.getCount() + itemstack.getCount() <= output.getMaxStackSize() || output.isEmpty()) &&
+                    (tank.getFluidAmount() == 0 || tank.fillInternal(fluidOutput, false) >= fluidOutput.amount);
+            }
             if (recipe.isLiquidRecipe()) {
                 return output.isEmpty() && (tank.getFluidAmount() == 0 || tank.fillInternal(fluidOutput, false) >= fluidOutput.amount);
             } else {

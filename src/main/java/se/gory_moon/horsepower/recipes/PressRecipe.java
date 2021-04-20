@@ -13,8 +13,16 @@ public class PressRecipe extends HPRecipeBase {
         super(input, output, 0);
     }
 
+    public PressRecipe(ItemStack input, ItemStack output, FluidStack fluidOutput) {super(input, output, fluidOutput, 0 ); }
+
     public boolean isLiquidRecipe() {
         return getOutputFluid() != null;
+    }
+
+    public boolean isMixedRecipe() {
+        return getOutputFluid() != null && getOutput() != null;
+
+
     }
 
     @Override
