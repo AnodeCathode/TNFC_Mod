@@ -317,10 +317,10 @@ public abstract class TileEntityHPBase extends TileEntity {
         if (capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
             if (facing == null)
                 return (T) handlerNull;
-            else if (facing == EnumFacing.DOWN)
-                return (T) handlerBottom;
-            else
+            else if (facing == EnumFacing.UP)
                 return (T) handlerIn;
+            else
+                return (T) handlerBottom;
         }
         return super.getCapability(capability, facing);
     }
