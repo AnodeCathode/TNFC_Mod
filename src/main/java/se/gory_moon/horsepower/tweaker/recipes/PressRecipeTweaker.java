@@ -39,6 +39,13 @@ public class PressRecipeTweaker {
     }
 
     @ZenMethod
+    public static void add(IIngredient input, IItemStack output, ILiquidStack fluidoutput) {
+        AddPressRecipe recipe = new AddPressRecipe(input, output, fluidoutput);
+        TweakerPluginImpl.toAdd.add(recipe);
+        TweakerPluginImpl.actions.add(recipe);
+    }
+
+    @ZenMethod
     public static void remove(IIngredient output) {
         RemovePressRecipe recipe = new RemovePressRecipe(output);
         TweakerPluginImpl.toRemove.add(recipe);
@@ -49,18 +56,24 @@ public class PressRecipeTweaker {
 
         private final IIngredient input;
         private final IItemStack output;
-        private final ILiquidStack fluidOuput;
+        private final ILiquidStack fluidOutput;
 
         public AddPressRecipe(IIngredient input, IItemStack output) {
             this.input = input;
             this.output = output;
-            this.fluidOuput = null;
+            this.fluidOutput = null;
         }
 
         public AddPressRecipe(IIngredient input, ILiquidStack output) {
             this.input = input;
-            this.fluidOuput = output;
+            this.fluidOutput = output;
             this.output = null;
+        }
+
+        public AddPressRecipe(IIngredient input, IItemStack output, ILiquidStack fluidOutput){
+            this.input = input;
+            this.fluidOutput = fluidOutput;
+            this.output = output;
         }
 
         @Override
@@ -72,14 +85,20 @@ public class PressRecipeTweaker {
 
             ItemStack[] items2 = getItemStacks(items);
             ItemStack output2 = getItemStack(output);
-            FluidStack fluidStack = getLiquidStack(fluidOuput);
+            FluidStack fluidStack = getLiquidStack(fluidOutput);
 
             for (ItemStack stack: items2) {
                 PressRecipe recipe;
                 if (fluidStack == null)
                     recipe = new PressRecipe(stack, output2, ItemStack.EMPTY, 0, 0);
-                else
+                else if (output2 != null){
+                    recipe = new PressRecipe(stack, output2, fluidStack);
+                } else
+                {
                     recipe = new PressRecipe(stack, fluidStack);
+                }
+
+
                 HPRecipes.instance().addPressRecipe(recipe);
             }
         }
