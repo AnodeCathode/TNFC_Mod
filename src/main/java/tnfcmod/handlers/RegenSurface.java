@@ -24,9 +24,11 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.Plant;
+import net.dries007.tfc.api.types.Rock;
 import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.blocks.agriculture.BlockCropDead;
 import net.dries007.tfc.objects.blocks.plants.BlockMushroomTFC;
+import net.dries007.tfc.objects.blocks.stone.BlockRockVariant;
 import net.dries007.tfc.objects.items.ItemSeedsTFC;
 import net.dries007.tfc.objects.items.ItemsTFC;
 import net.dries007.tfc.objects.te.TECropBase;
@@ -128,29 +130,25 @@ public class RegenSurface
                             WorldGenTrees.generateLooseSticks(RANDOM, pos.x, pos.z, event.world, stickDensity);
                         }
 
+                        //Nuke crops/mushrooms/dead crops (not sure the latter is working.
+                        removeAllSurfaceCrap(event.world, pos);
+                        removeSeedbags(event.world, pos);
 
-                        if (RANDOM.nextInt(1) == 0) //50 50 chance of it happening for this chunk at all.
+                        float avgTemperature = ClimateTFC.getAvgTemp(event.world, blockPos);
+                        float rainfall = ChunkDataTFC.getRainfall(event.world, blockPos);
+                        float floraDensity = chunkDataTFC.getFloraDensity(); // Use for various plant based decoration (tall grass, those vanilla jungle shrub things, etc.)
+                        float floraDiversity = chunkDataTFC.getFloraDiversity();
+                        Plant plant = TFCRegistries.PLANTS.getValue(DefaultPlants.PORCINI);
+                        PLANT_GEN.setGeneratedPlant(plant);
+                        int mushroomCount = 3;
+                        for (float i = RANDOM.nextInt(Math.round(mushroomCount / floraDiversity)); i < (1 + floraDensity) * 5; i++)
                         {
-                            //Nuke crops/mushrooms/dead crops (not sure the latter is working.
-                            removeAllSurfaceCrap(event.world, pos);
-                            removeSeedbags(event.world, pos);
-
-                            float avgTemperature = ClimateTFC.getAvgTemp(event.world, blockPos);
-                            float rainfall = ChunkDataTFC.getRainfall(event.world, blockPos);
-                            float floraDensity = chunkDataTFC.getFloraDensity(); // Use for various plant based decoration (tall grass, those vanilla jungle shrub things, etc.)
-                            float floraDiversity = chunkDataTFC.getFloraDiversity();
-                            Plant plant = TFCRegistries.PLANTS.getValue(DefaultPlants.PORCINI);
-                            PLANT_GEN.setGeneratedPlant(plant);
-                            int mushroomCount = 3;
-                            for (float i = RANDOM.nextInt(Math.round(mushroomCount / floraDiversity)); i < (1 + floraDensity) * 5; i++)
-                            {
-                                BlockPos blockMushroomPos = event.world.getHeight(blockPos.add(RANDOM.nextInt(16) + 8, 0, RANDOM.nextInt(16) + 8));
-                                PLANT_GEN.generate(event.world, RANDOM, blockMushroomPos);
-                            }
-                            CROPS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
-
-
+                            BlockPos blockMushroomPos = event.world.getHeight(blockPos.add(RANDOM.nextInt(16) + 8, 0, RANDOM.nextInt(16) + 8));
+                            PLANT_GEN.generate(event.world, RANDOM, blockMushroomPos);
                         }
+                        CROPS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
+
+
 
                         //Should nuke any bushes in the chunk. For now we just leave the bushes alone.
                         //BUSH_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
@@ -189,7 +187,14 @@ public class RegenSurface
                 {
                     if (block instanceof BlockCropDead || block instanceof BlockMushroomTFC)
                     {
-                        removals.add(topBlock);
+                        IBlockState soil = world.getBlockState(topBlock.down());
+                        if (soil.getBlock() instanceof BlockRockVariant){
+                            BlockRockVariant soilRock = (BlockRockVariant) soil.getBlock();
+                            //Stop removing dead crops from farmland please!
+                            if (soilRock.getType() != Rock.Type.FARMLAND){
+                                removals.add(topBlock);
+                            }
+                        }
                     }
                 }
 
