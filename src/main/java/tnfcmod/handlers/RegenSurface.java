@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ClassInheritanceMultiMap;
 import net.minecraft.util.math.BlockPos;
@@ -30,7 +29,6 @@ import net.dries007.tfc.objects.blocks.agriculture.BlockCropDead;
 import net.dries007.tfc.objects.blocks.plants.BlockMushroomTFC;
 import net.dries007.tfc.objects.blocks.stone.BlockRockVariant;
 import net.dries007.tfc.objects.items.ItemSeedsTFC;
-import net.dries007.tfc.objects.items.ItemsTFC;
 import net.dries007.tfc.objects.te.TECropBase;
 import net.dries007.tfc.objects.te.TEPlacedItemFlat;
 import net.dries007.tfc.types.DefaultPlants;
@@ -38,9 +36,13 @@ import net.dries007.tfc.util.calendar.CalendarTFC;
 import net.dries007.tfc.util.calendar.Month;
 import net.dries007.tfc.util.climate.ClimateTFC;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
-import net.dries007.tfc.world.classic.worldgen.*;
-import tnfcmod.tnfcmod;
+import net.dries007.tfc.world.classic.worldgen.WorldGenBerryBushes;
+import net.dries007.tfc.world.classic.worldgen.WorldGenPlantTFC;
+import net.dries007.tfc.world.classic.worldgen.WorldGenTrees;
+import net.dries007.tfc.world.classic.worldgen.WorldGenWildCrops;
 import tnfcmod.util.ConfigTNFCMod;
+import tnfcmod.util.RegenLooseRocks;
+import tnfcmod.util.RegenWildCrops;
 import tnfcmod.util.ServerUtils;
 
 import static net.dries007.tfc.objects.blocks.agriculture.BlockCropTFC.WILD;
@@ -51,8 +53,8 @@ import static tnfcmod.tnfcmod.MODID;
 public class RegenSurface
 {
 
-    private static final WorldGenLooseRocks ROCKS_GEN = new WorldGenLooseRocks(true);
-    private static final WorldGenWildCrops CROPS_GEN = new WorldGenWildCrops();
+    private static final RegenLooseRocks ROCKS_GEN = new RegenLooseRocks(true);
+    private static final RegenWildCrops CROPS_GEN = new RegenWildCrops();
     private static final WorldGenBerryBushes BUSH_GEN = new WorldGenBerryBushes();
     public static final WorldGenPlantTFC PLANT_GEN = new WorldGenPlantTFC();
     private static final Random RANDOM = new Random();
@@ -118,7 +120,6 @@ public class RegenSurface
                             removeAllPlacedItems(event.world, pos);
                             List<Tree> trees = chunkDataTFC.getValidTrees();
                             double rockModifier = ConfigTFC.General.WORLD_REGEN.sticksRocksModifier;
-                            ROCKS_GEN.setFactor(rockModifier);
                             ROCKS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
 
                             final float density = chunkDataTFC.getFloraDensity();

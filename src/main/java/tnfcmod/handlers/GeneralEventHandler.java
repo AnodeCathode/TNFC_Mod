@@ -1,12 +1,15 @@
 package tnfcmod.handlers;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.item.EntityItem;
@@ -34,12 +37,15 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 import blusunrize.immersiveengineering.common.IEContent;
@@ -56,6 +62,8 @@ import net.dries007.tfc.Constants;
 import net.dries007.tfc.api.capability.food.*;
 import net.dries007.tfc.api.capability.player.CapabilityPlayerData;
 import net.dries007.tfc.api.registries.TFCRegistries;
+import net.dries007.tfc.api.types.ICreatureTFC;
+import net.dries007.tfc.api.types.IHuntable;
 import net.dries007.tfc.api.types.IPredator;
 import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.blocks.BlocksTFC;
@@ -70,6 +78,8 @@ import net.dries007.tfc.util.config.OreTooltipMode;
 import net.dries007.tfc.util.skills.SkillTier;
 import net.dries007.tfc.util.skills.SkillType;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
+import tnfcmod.qfc.entity.EntityCrab;
+import tnfcmod.qfc.entity.EntityFrog;
 import tnfcmod.util.ConfigTNFCMod;
 import tnfcmod.util.MonsterGear;
 import tnfcmod.util.ServerUtils;
@@ -396,4 +406,66 @@ public class GeneralEventHandler
 
     }
 
+    @SubscribeEvent
+    public static void creatureRespawn(LivingSpawnEvent.SpecialSpawn event)
+    {
+        World worldIn = event.getWorld();
+        EntityLiving entity = (EntityLiving) event.getEntity();
+
+        //event.getWorld().getBiome(new BlockPos(event.getX(), event.getY(), event.getZ())).getSpawnableList(EnumCreatureType.CREATURE);
+
+        if (entity instanceof IHuntable || entity instanceof IPredator)
+        {
+            if (entity instanceof EntityCrab || entity instanceof EntityFrog){
+                return;
+            }
+            //so here we are. I think this event is preventing the respawning
+            event.setResult(Event.Result.ALLOW); // Always cancel vanilla's spawning since we take it from here
+            doGroupSpawning(EntityRegistry.getEntry(entity.getClass()), worldIn, (int) event.getX(), (int) event.getZ(), 16, 16, worldIn.rand);
+        }
+    }
+
+    private static void doGroupSpawning(EntityEntry entityEntry, World worldIn, int centerX, int centerZ, int diameterX, int diameterZ, Random randomIn)
+    {
+        List<EntityLiving> group = new ArrayList<>();
+        EntityLiving creature = (EntityLiving)entityEntry.newInstance(worldIn);
+        if (!(creature instanceof ICreatureTFC))
+        {
+            return; // Make sure to not crash
+        }
+        ICreatureTFC creatureTFC = (ICreatureTFC) creature;
+        int fallback = 5; // Fallback measure if some mod completely deny this entity spawn
+        int individuals = Math.max(1, creatureTFC.getMinGroupSize()) + randomIn.nextInt(creatureTFC.getMaxGroupSize() - Math.max(0, creatureTFC.getMinGroupSize() - 1));
+        while (individuals > 0)
+        {
+            int j = centerX + randomIn.nextInt(diameterX);
+            int k = centerZ + randomIn.nextInt(diameterZ);
+            BlockPos blockpos = worldIn.getTopSolidOrLiquidBlock(new BlockPos(j, 0, k));
+            creature.setLocationAndAngles((float) j + 0.5F, blockpos.getY(), (float) k + 0.5F, randomIn.nextFloat() * 360.0F, 0.0F);
+            if (creature.getCanSpawnHere()) // fix entities spawning inside walls
+            {
+
+                fallback = 5;
+                // Spawn pass! let's continue
+                worldIn.spawnEntity(creature);
+                group.add(creature);
+                creature.onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(creature)), null);
+                if (--individuals > 0)
+                {
+                    //We still need to spawn more
+                    creature = (EntityLiving)entityEntry.newInstance(worldIn);
+                    creatureTFC = (ICreatureTFC) creature;
+                }
+            }
+            else
+            {
+                if (--fallback <= 0) //Trying to spawn in water or inside walls too many times, let's break
+                {
+                    break;
+                }
+            }
+        }
+        // Apply the group spawning mechanics!
+        creatureTFC.getGroupingRules().accept(group, randomIn);
+    }
 }
