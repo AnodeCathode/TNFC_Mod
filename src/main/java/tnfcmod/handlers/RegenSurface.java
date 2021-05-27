@@ -38,10 +38,8 @@ import net.dries007.tfc.util.climate.ClimateTFC;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import net.dries007.tfc.world.classic.worldgen.WorldGenBerryBushes;
 import net.dries007.tfc.world.classic.worldgen.WorldGenPlantTFC;
-import net.dries007.tfc.world.classic.worldgen.WorldGenTrees;
-import net.dries007.tfc.world.classic.worldgen.WorldGenWildCrops;
 import tnfcmod.util.ConfigTNFCMod;
-import tnfcmod.util.RegenLooseRocks;
+import tnfcmod.util.RegenRocksSticks;
 import tnfcmod.util.RegenWildCrops;
 import tnfcmod.util.ServerUtils;
 
@@ -53,7 +51,7 @@ import static tnfcmod.tnfcmod.MODID;
 public class RegenSurface
 {
 
-    private static final RegenLooseRocks ROCKS_GEN = new RegenLooseRocks(true);
+    private static final RegenRocksSticks ROCKS_GEN = new RegenRocksSticks(true);
     private static final RegenWildCrops CROPS_GEN = new RegenWildCrops();
     private static final WorldGenBerryBushes BUSH_GEN = new WorldGenBerryBushes();
     public static final WorldGenPlantTFC PLANT_GEN = new WorldGenPlantTFC();
@@ -128,7 +126,7 @@ public class RegenSurface
                             {
                                 stickDensity = 1 + (int) (1.5f * density * rockModifier);
                             }
-                            WorldGenTrees.generateLooseSticks(RANDOM, pos.x, pos.z, event.world, stickDensity);
+                            RegenRocksSticks.generateLooseSticks(RANDOM, pos.x, pos.z, event.world, stickDensity);
                         }
 
                         //Nuke crops/mushrooms/dead crops (not sure the latter is working.

@@ -6,6 +6,8 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -28,12 +30,12 @@ import net.dries007.tfc.world.classic.worldgen.WorldGenOreVeins;
 import net.dries007.tfc.world.classic.worldgen.vein.Vein;
 
 
-public class RegenLooseRocks implements IWorldGenerator
+public class RegenRocksSticks implements IWorldGenerator
 {
     private final boolean generateOres;
     private double factor;
 
-    public RegenLooseRocks(boolean generateOres)
+    public RegenRocksSticks(boolean generateOres)
     {
         this.generateOres = generateOres;
         factor = 1;
@@ -159,7 +161,7 @@ public class RegenLooseRocks implements IWorldGenerator
         return null;
     }
 
-    private Boolean isReplaceable(World world, BlockPos pos)
+    private static Boolean isReplaceable(World world, BlockPos pos)
     {
 
         Block test = world.getBlockState(pos).getBlock();
@@ -169,4 +171,32 @@ public class RegenLooseRocks implements IWorldGenerator
         }
         return false;
     }
+
+    public static void generateLooseSticks(Random rand, int chunkX, int chunkZ, World world, int amount)
+    {
+        if (ConfigTFC.General.WORLD.enableLooseSticks)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                final int x = chunkX * 16 + rand.nextInt(16) + 8;
+                final int z = chunkZ * 16 + rand.nextInt(16) + 8;
+                final BlockPos pos = world.getTopSolidOrLiquidBlock(new BlockPos(x, 0, z));
+
+                // Use air, so it doesn't replace other replaceable world gen
+                // This matches the check in BlockPlacedItemFlat for if the block can stay
+                // Also, only add on soil, since this is called by the world regen handler later
+                IBlockState stateDown = world.getBlockState(pos.down());
+                if (isReplaceable(world, pos) && stateDown.isSideSolid(world, pos.down(), EnumFacing.UP) && BlocksTFC.isGround(stateDown))
+                {
+                    world.setBlockState(pos, BlocksTFC.PLACED_ITEM_FLAT.getDefaultState());
+                    TEPlacedItemFlat tile = (TEPlacedItemFlat) world.getTileEntity(pos);
+                    if (tile != null)
+                    {
+                        tile.setStack(new ItemStack(Items.STICK));
+                    }
+                }
+            }
+        }
+    }
+
 }
