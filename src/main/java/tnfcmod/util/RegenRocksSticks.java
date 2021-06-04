@@ -28,6 +28,7 @@ import net.dries007.tfc.world.classic.ChunkGenTFC;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import net.dries007.tfc.world.classic.worldgen.WorldGenOreVeins;
 import net.dries007.tfc.world.classic.worldgen.vein.Vein;
+import tnfcmod.tnfcmod;
 
 
 public class RegenRocksSticks implements IWorldGenerator
@@ -80,6 +81,7 @@ public class RegenRocksSticks implements IWorldGenerator
 
 
                 veins = WorldGenOreVeins.getNearbyVeins(chunkX, chunkZ, world.getSeed(), 1);
+
                 if (!veins.isEmpty())
                 {
                     veins.removeIf(v -> {

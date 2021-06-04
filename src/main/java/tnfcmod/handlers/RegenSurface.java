@@ -64,24 +64,10 @@ public class RegenSurface
     {
 
         ChunkDataTFC chunkDataTFC = ChunkDataTFC.get(event.getChunk());
-        //chunk freeze check
-        if (event.getWorld().provider.getDimension() == 0 && chunkDataTFC.getLastUpdateTick() + ConfigTNFCMod.GENERAL.frozentime < CalendarTFC.PLAYER_TIME.getTicks())
-        {
-            // Last update take is greater than 4 in-game days?
-            // Reset Animals, Crops, Trees?, others?
 
-            //Whatever else happens, let's reset the value.
-            chunkDataTFC.resetLastUpdateTick();
-
-        }
-        else
-        {
-            //Otherwise it's been more recent so just update the data and move on.
-            chunkDataTFC.resetLastUpdateTick();
-        }
 
         //stick/rock/crop/mushroom/other? regen
-        if (event.getWorld().provider.getDimension() == 0 && POSITIONS.size() < 1000)
+        if (event.getWorld().provider.getDimension() == 0 &&  chunkDataTFC.isInitialized() && POSITIONS.size() < 1000)
         {
             //Only run this in the early months of each year
             if (CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY) && !chunkDataTFC.isSpawnProtected() && CalendarTFC.CALENDAR_TIME.getTotalYears() > chunkDataTFC.getLastUpdateYear())
