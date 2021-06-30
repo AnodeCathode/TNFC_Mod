@@ -1,8 +1,6 @@
 package tnfcmod.util;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
@@ -58,7 +56,7 @@ public class RegenRocksSticks implements IWorldGenerator
             final ChunkDataTFC baseChunkData = ChunkDataTFC.get(world, chunkBlockPos);
 
             // Get the proper list of veins
-            List<Vein> veins = Collections.emptyList();
+            Set<Vein> veins = new HashSet();
             int xoff = chunkX * 16 + 8;
             int zoff = chunkZ * 16 + 8;
 
@@ -79,8 +77,12 @@ public class RegenRocksSticks implements IWorldGenerator
                 // Default to 35 below the surface, like classic
                 int lowestYScan = Math.max(10, world.getTopSolidOrLiquidBlock(chunkBlockPos).getY() - ConfigTFC.General.WORLD.looseRockScan);
 
+                for (ChunkDataTFC data : chunkData)
+                {
+                    veins.addAll(data.getGeneratedVeins());
+                }
+                
 
-                veins = WorldGenOreVeins.getNearbyVeins(chunkX, chunkZ, world.getSeed(), 1);
 
                 if (!veins.isEmpty())
                 {
@@ -89,15 +91,7 @@ public class RegenRocksSticks implements IWorldGenerator
                         {
                             return true;
                         }
-                        for (ChunkDataTFC data : chunkData)
-                        {
-                            // No need to check for initialized chunk data, ores will be empty.
-                            if (data.getGeneratedVeins().contains(v))
-                            {
-                                return false;
-                            }
-                        }
-                        return true;
+                        return false;
                     });
                 }
             }
@@ -150,14 +144,18 @@ public class RegenRocksSticks implements IWorldGenerator
     }
 
     @Nullable
-    private Vein getRandomVein(List<Vein> veins, BlockPos pos, Random rand)
+    private Vein getRandomVein(Set<Vein> veins, BlockPos pos, Random rand)
     {
         if (!veins.isEmpty() && rand.nextDouble() < 0.4)
         {
-            Vein vein = veins.get(rand.nextInt(veins.size()));
-            if (vein.inRange(pos.getX(), pos.getZ(), 8))
+            Optional<Vein> vein = veins.stream().findAny();
+            if (!veins.isEmpty())
             {
-                return vein;
+                Vein veintarget = vein.get();
+                if (veintarget.inRange(pos.getX(), pos.getZ(), 8))
+                {
+                    return veintarget;
+                }
             }
         }
         return null;
