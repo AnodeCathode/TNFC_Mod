@@ -5,26 +5,32 @@ import java.util.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.tileentity.MobSpawnerBaseLogic;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ClassInheritanceMultiMap;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderServer;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.world.ChunkDataEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.api.registries.TFCRegistries;
-import net.dries007.tfc.api.types.Plant;
-import net.dries007.tfc.api.types.Rock;
-import net.dries007.tfc.api.types.Tree;
+import net.dries007.tfc.api.types.*;
 import net.dries007.tfc.objects.blocks.agriculture.BlockCropDead;
 import net.dries007.tfc.objects.blocks.plants.BlockMushroomTFC;
 import net.dries007.tfc.objects.blocks.stone.BlockRockVariant;
@@ -38,7 +44,6 @@ import net.dries007.tfc.util.climate.ClimateTFC;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import net.dries007.tfc.world.classic.worldgen.WorldGenBerryBushes;
 import net.dries007.tfc.world.classic.worldgen.WorldGenPlantTFC;
-import tnfcmod.util.ConfigTNFCMod;
 import tnfcmod.util.RegenRocksSticks;
 import tnfcmod.util.RegenWildCrops;
 import tnfcmod.util.ServerUtils;
@@ -132,8 +137,11 @@ public class RegenSurface
                             PLANT_GEN.generate(event.world, RANDOM, blockMushroomPos);
                         }
                         CROPS_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
-
-
+                        int worldX = pos.x << 4;
+                        int worldZ = pos.z << 4;
+                        BlockPos blockpos = new BlockPos(worldX, 0, worldZ);
+                        Biome biome = event.world.getBiome(blockpos.add(16, 0, 16));
+                        regenPredators(event.world, biome, worldX + 8, worldZ + 8, 16, 16, RANDOM);
 
                         //Should nuke any bushes in the chunk. For now we just leave the bushes alone.
                         //BUSH_GEN.generate(RANDOM, pos.x, pos.z, event.world, chunkGenerator, chunkProvider);
@@ -274,6 +282,71 @@ public class RegenSurface
                 world.removeTileEntity(remove);
                 world.setBlockToAir(remove);
             }
+        }
+    }
+
+
+    public static void regenPredators(World worldIn, Biome biomeIn, int centerX, int centerZ, int diameterX, int diameterZ, Random randomIn) {
+        BlockPos chunkBlockPos = new BlockPos(centerX, 0, centerZ);
+        float temperature = ClimateTFC.getAvgTemp(worldIn, chunkBlockPos);
+        float rainfall = ChunkDataTFC.getRainfall(worldIn, chunkBlockPos);
+        float floraDensity = ChunkDataTFC.getFloraDensity(worldIn, chunkBlockPos);
+        float floraDiversity = ChunkDataTFC.getFloraDiversity(worldIn, chunkBlockPos);
+        ForgeRegistries.ENTITIES.getValuesCollection().stream().filter((x) -> {
+            if (ICreatureTFC.class.isAssignableFrom(x.getEntityClass())) {
+                Entity ent = x.newInstance(worldIn);
+                if (ent instanceof IPredator || ent instanceof IHuntable) {
+                    int weight = ((ICreatureTFC)ent).getSpawnWeight(biomeIn, temperature, rainfall, floraDensity, floraDiversity);
+                    return weight > 0 && randomIn.nextInt(weight) == 0;
+                }
+            }
+
+            return false;
+        }).findAny().ifPresent((entityEntry) -> {
+            doGroupSpawning(entityEntry, worldIn, centerX, centerZ, diameterX, diameterZ, randomIn);
+        });
+    }
+
+    private static void doGroupSpawning(EntityEntry entityEntry, World worldIn, int centerX, int centerZ, int diameterX, int diameterZ, Random randomIn) {
+        List<EntityLiving> group = new ArrayList();
+        EntityLiving creature = (EntityLiving)entityEntry.newInstance(worldIn);
+        if (creature instanceof ICreatureTFC) {
+            ICreatureTFC creatureTFC = (ICreatureTFC)creature;
+            int fallback = 5;
+            int individuals = Math.max(1, creatureTFC.getMinGroupSize()) + randomIn.nextInt(creatureTFC.getMaxGroupSize() - Math.max(0, creatureTFC.getMinGroupSize() - 1));
+
+            while(individuals > 0) {
+                int j = centerX + randomIn.nextInt(diameterX);
+                int k = centerZ + randomIn.nextInt(diameterZ);
+                BlockPos blockpos = worldIn.getTopSolidOrLiquidBlock(new BlockPos(j, 0, k));
+                creature.setLocationAndAngles((double)((float)j + 0.5F), (double)blockpos.getY(), (double)((float)k + 0.5F), randomIn.nextFloat() * 360.0F, 0.0F);
+                if (creature.getCanSpawnHere()) {
+                    if (ForgeEventFactory.canEntitySpawn(creature, worldIn, (float)j + 0.5F, (float)blockpos.getY(), (float)k + 0.5F, (MobSpawnerBaseLogic)null) == Event.Result.DENY) {
+                        --fallback;
+                        if (fallback > 0) {
+                            continue;
+                        }
+                        break;
+                    } else {
+                        fallback = 5;
+                        worldIn.spawnEntity(creature);
+                        group.add(creature);
+                        creature.onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(creature)), (IEntityLivingData)null);
+                        --individuals;
+                        if (individuals > 0) {
+                            creature = (EntityLiving)entityEntry.newInstance(worldIn);
+                            creatureTFC = (ICreatureTFC)creature;
+                        }
+                    }
+                } else {
+                    --fallback;
+                    if (fallback <= 0) {
+                        break;
+                    }
+                }
+            }
+
+            creatureTFC.getGroupingRules().accept(group, randomIn);
         }
     }
 }
