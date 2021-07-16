@@ -33,6 +33,7 @@ import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.blocks.plant.BlockIECrop;
 import com.eerussianguy.firmalife.registry.BlocksFL;
 import com.eerussianguy.firmalife.registry.ItemsFL;
+import com.eerussianguy.firmalife.init.FoodFL;
 import com.pyraliron.advancedtfctech.crafting.GristMillRecipe;
 import net.dries007.tfc.api.capability.food.CapabilityFood;
 import net.dries007.tfc.api.recipes.quern.QuernRecipe;
