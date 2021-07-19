@@ -280,7 +280,7 @@ public class IERecipes
         IngredientStack ingredientPumpkin = new IngredientStack(new ItemStack(BlocksFL.PUMPKIN_FRUIT,1));
 	GristMillRecipe.addRecipe(new ItemStack(ItemsFL.getFood(FoodFL.PUMPKIN_CHUNKS),6), ingredientPumpkin,100,256);
 	IngredientStack ingredientSoybean = new IngredientStack(new ItemStack(ItemFoodTFC.get(Food.SOYBEAN),1));
-	GristMillRecipe.addRecipe(new ItemStack(ItemsFL.getFood(FoodFL.GROUND_SOYBEANS),3), ingredientPumpkin,100,256);
+	GristMillRecipe.addRecipe(new ItemStack(ItemsFL.getFood(FoodFL.GROUND_SOYBEANS),3), ingredientSoybean,100,256);
     }
     public static void registerCrusherRecipes(){
 
