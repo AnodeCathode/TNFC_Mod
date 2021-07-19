@@ -111,6 +111,7 @@ public final class RegistryHandler
         registerArcFurnaceRecipes();
         registerOrePileRecipes();
         registerBwMSawRecipes();
+        registerGristMillRecipes();
         event.getRegistry().register(new FireworksRecipes().setRegistryName(MODID, "fireworks"));
 
 

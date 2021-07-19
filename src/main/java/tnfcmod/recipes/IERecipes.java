@@ -31,6 +31,10 @@ import blusunrize.immersiveengineering.api.crafting.MetalPressRecipe;
 import blusunrize.immersiveengineering.api.tool.BelljarHandler;
 import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.blocks.plant.BlockIECrop;
+import com.eerussianguy.firmalife.registry.BlocksFL;
+import com.eerussianguy.firmalife.registry.ItemsFL;
+import com.eerussianguy.firmalife.init.FoodFL;
+import com.pyraliron.advancedtfctech.crafting.GristMillRecipe;
 import net.dries007.tfc.api.capability.food.CapabilityFood;
 import net.dries007.tfc.api.recipes.quern.QuernRecipe;
 import net.dries007.tfc.api.registries.TFCRegistries;
@@ -47,9 +51,11 @@ import net.dries007.tfc.objects.fluids.FluidsTFC;
 import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
 import net.dries007.tfc.objects.items.ItemPowder;
 import net.dries007.tfc.objects.items.ItemSeedsTFC;
+import net.dries007.tfc.objects.items.food.ItemFoodTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
 import net.dries007.tfc.objects.items.metal.ItemOreTFC;
 import net.dries007.tfc.util.agriculture.Crop;
+import net.dries007.tfc.util.agriculture.Food;
 import tnfcmod.objects.items.TNFCItems;
 
 import static blusunrize.immersiveengineering.api.tool.BelljarHandler.*;
@@ -270,7 +276,12 @@ public class IERecipes
 
         }
     }
-
+    public static void registerGristMillRecipes() {
+        IngredientStack ingredientPumpkin = new IngredientStack(new ItemStack(BlocksFL.PUMPKIN_FRUIT,1));
+	GristMillRecipe.addRecipe(new ItemStack(ItemsFL.getFood(FoodFL.PUMPKIN_CHUNKS),6), ingredientPumpkin,100,256);
+	IngredientStack ingredientSoybean = new IngredientStack(new ItemStack(ItemFoodTFC.get(Food.SOYBEAN),1));
+	GristMillRecipe.addRecipe(new ItemStack(ItemsFL.getFood(FoodFL.GROUND_SOYBEANS),3), ingredientPumpkin,100,256);
+    }
     public static void registerCrusherRecipes(){
 
         for (Metal metal : TFCRegistries.METALS.getValuesCollection())
@@ -369,6 +380,7 @@ public class IERecipes
                 }
             }
         }
+        
     }
 
     public static void registerGardenClocheRecipes()
