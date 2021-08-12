@@ -20,6 +20,6 @@ public class ArmorMaterialsTNFC
     public static final IArmorMaterialTFC TUNGSTEN_STEEL = new ArmorMaterialTFC(EnumHelper.addArmorMaterial("tnfc_tungsten_steel", TerraFirmaCraft.MOD_ID + ":tungsten_steel", 120, new int[] {3, 6, 8, 3}, 22, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 8.0F), 70, 70, 70);
     public static final IArmorMaterialTFC BORON = new ArmorMaterialTFC(EnumHelper.addArmorMaterial("tnfc_boron", TerraFirmaCraft.MOD_ID + ":boron", 120, new int[] {2, 3, 7, 1}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F), 13, 10, 7.5f);
     public static final IArmorMaterialTFC ZIRCALOY = new ArmorMaterialTFC(EnumHelper.addArmorMaterial("tnfc_zircaloy", TerraFirmaCraft.MOD_ID + ":zircaloy", 90, new int[] {2, 5, 5, 3}, 0, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 8.0F), 50, 25, 25);
-    public static final IArmorMaterialTFC BERYLLIUM_COPPER = new ArmorMaterialTFC(EnumHelper.addArmorMaterial("tnfc_beryllium_copper", TerraFirmaCraft.MOD_ID + ":beryllium_copper", 120, new int[] {3, 6, 8, 3}, 30, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 8.0F), 20, 70, 20);
+    public static final IArmorMaterialTFC BERYLLIUM_COPPER = new ArmorMaterialTFC(EnumHelper.addArmorMaterial("tnfc_beryllium_copper", TerraFirmaCraft.MOD_ID + ":beryllium_copper", 70, new int[] {2, 4, 5, 2}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 5.0F), 20, 50, 20);
 
 }
