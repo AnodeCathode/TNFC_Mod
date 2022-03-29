@@ -16,6 +16,8 @@ StorageDrawersExtras: https://github.com/jaquadro/StorageDrawersExtras
 
 Quark: https://github.com/Vazkii/Quark
 
+Signposts: https://github.com/Gollorum/Signpost
+
 
 Many thanks to the devs of all these mods, and others, that allow Technodefirmacraft to work.
 
