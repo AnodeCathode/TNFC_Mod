@@ -8,6 +8,8 @@
       <link ref="intro" color="#000066">-&gt;General Notes</link>
       <link ref="tips" color="#000066">-&gt; Tips and Tricks</link>
       <p space="10"/>
+      <link ref="quest" color="#000066">-&gt; Benanov's Sarcastic Questbook</link>
+      <p space="10"/>
       <link ref="storage" color="#000066">-&gt; TFC Storage</link>
       <p space="10"/>
       <link ref="progression" color="#000066">-&gt;Biletooth's Progression</link>
@@ -77,57 +79,269 @@
       <p space="10"/>
       <p>You can now change the size of the rock layers. If in single player, I recommend setting Rock Layer size to 4 to increase the number of rock layers in your immediate area. Smaller than 4 results in very tiny rock layer regions.</p>
       <p space="10"/>
-      <p>Putting hot things (ingots, sheets, tools) into wooden (chests) or leather (backpack) containers will cause the container to catch on fire. You've been warned</p>
-      <p space="10"/>
-      <p>Wearing armour still hot from the anvil will have disastrous results. Again, you have been warned.</p>
-      <p space="10"/>
       <p>The IE hemp seeds no longer come from zombies. Instead, if you want Hemp you gotta get high. If that's not enough of a clue, use a knife or a scythe on grass at heights greater than 170. It's a rare drop.</p>
       <p space="10"/>
-      <p>Being in the dark without a light source will lead to Gloom, Blindness or even the Grue! Carry a torch in your offhand to light up those areas as you explore</p>
+      <p>You can weld ingots! There's no weld button - shift-right-click on the anvil with hammer in hand</p>
       <p space="10"/>
-      <p>Walking in grass slows you down. Make paths with shovels, or the Plow Cart to speed your travels. Spending time in a chunk accumulates 'Spawn Protection'. Once a chunk is protected, the grass will no longer grow high.</p>
+      <p>Put straw in your inventory to stay warm.</p>
       <p space="10"/>
-      <p>The MineralTracker mod will track the small ores you pick off the ground if you right click to pick them up.</p>
+      <p>Make a pink boat with an alternative recipe not requiring a saw.</p>
       <p space="10"/>
-      <p>Cold is a killer. You can use straw in your inventory to stay warm in exchange for inventory space. Each slot occupied provides some warmth.</p>
+      <p>Tough TFC grass can break stuff 2 blocks above it when growing.</p>
       <p space="10"/>
-      <p>Heat is a killer. You can use ice or snow blocks in your inventory to stay cool in exchange for inventory space. Each slot occupied provides some warmth.</p>
+      <p>Pave under anything you want to keep, otherwise grass will eat your pipes.</p>
       <p space="10"/>
-      <p>Heat is a killer. Wear a hat. You can craft a simple Nifty Straw Hat from straw to keep the rays off your melon.</p>
+      <p>Crops and fruit trees are very particular about growing conditions.</p>
       <p space="10"/>
-      <p>Cold is a killer. Wear armour. The leather and metal armours provide increasing levels of cold protection. Exception being Black Bronze and Red Steel</p>
+      <p>Stay hydrated. Stay well fed.</p>
       <p space="10"/>
-      <p>Heat is a killer. Wear armour. Black Bronze and Red Steel armours provide protection against heat... because reasons.</p>
+      <p>Get high; Y > 170; and find Hemp seeds</p>
       <p space="10"/>
-      <p>Heat is a killer. The Forge is very hot. You can convert a Leather Tunic into a Leather Forging Bib by soaking it in limewater. Worn in Baubles slot it prevents Forge heat.</p>
+      <p>Want a questbook? Benanov made one just for you!</p>
       <p space="10"/>
-      <p>Heat is a killer. The Nether is really hot. Be prepared with cooling armour (black bronze or red steel) and snow or ice blocks.</p>
+      <p>Buckets no longer are used for planters. Using one will destroy your planter.</p>
       <p space="10"/>
-      <p>Temperature in general. Stay hydrated. Stay well fed. Meat and dairy in the cold. Fruit and veg in the heat. Stay in the shade. Build enclosed, lit spaces for comfort.</p>
+      <p>Alternate paper making recipes exist...</p>
       <p space="10"/>
-      <p>Temperature in general. The Advanced Rocketry Space Suit and PneumaticCraft Armour are both immune from temperature effects when complete suit is worn.</p>
+      <p>Alternate sugar making recipes exist...</p>
       <p space="10"/>
-      <p>There are hint rocks for the minerals that don't have surface ores. If you see a rock on the surface out of place for the surrounding rock type, it's a clue to something underneath. Check the recipe for an ore. Then click the Vein Info tab. Click the title at the top to display vein information for ALL TNFC ores with their small ore or hint rock</p>
+      <p>There are hint rocks for the minerals that don't have surface ores...</p>
       <p space="10"/>
-      <p>You can make a boat with an alternative recipe not requiring a saw, great for early exploration!</p>
+      <p>Vein Info tab in JEI is key to knowing where to find ores...</p>
       <p space="10"/>
-      <p>Ice blocks can ONLY be obtained with a Tier VI Saw. Sea ice and regular ice give different blocks</p>
+      <p>Horsepower devices do not require a familiarized animal, but they might not stay!</p>
       <p space="10"/>
-      <p>Horsepower devices do not require a familiarized animal. Just leash one to the mill, press, saw and go!</p>
+      <p>You can use ice or snow blocks in your inventory to stay cool...</p>
       <p space="10"/>
-      <p>The mod mineral tracker is integrated with JourneyMap. Switch to topographic view to see any surface ores you've picked up.</p>
+      <p>Being in the dark without a light source will lead to Gloom, Blindness or even the Grue! </p>
       <p space="10"/>
-      <p>Alternate paper making recipes. Sawdust from BwM saws. Woodpulp from sawdust and vinegar in barrel. Press wood pulp to make paper.</p>
+      <p>The IE Excavator does not like to touch TFC blocks (including snow!) 2 block minimum!</p>
       <p space="10"/>
-      <p>Placing a ladder on every second block works perfectly fine and is a good way to save ladders</p>
+      <p>Barrels of water or other liquid can be used in crafting recipes...</p>
       <p space="10"/>
-      <p>Stuck in the rain? Fire not starting? throw some straw down, make sure you have a log and three sticks, and hide under a tree so you're not directly under the rain.</p>
+      <p>Placing a ladder on every second block works perfectly fine...</p>
       <p space="10"/>
-      <p>Don't swim in the ocean at night. you will freeze.</p>
+      <p>Space Suit and PneumaticCraft Armour are both immune from temperature...</p>
       <p space="10"/>
-      <p>A barrel of water or other liquid can be use in crafting recipes as the equivalent of 10 buckets. Make lots of dough, or treated wood</p>
+      <p>The Nether is hot! Like really really hot!</p>
       <p space="10"/>
-      <p>The incredibly tough TFC grass can break levers, buttons and other objects when it grows. Create paths or other hard surfaces underneath devices, switches and multiblocks.</p>
+      <p>Heat is a killer. Wear a hat...</p>
+      <p space="10"/>
+      <p>Make Waystones using red gems and gold...</p>
+      <p space="10"/>
+      <p>Spiders can drop redstone...</p>
+      <p space="10"/>
+      <p>Creepers can drop glowstone...</p>
+      <p space="10"/>
+      <p>Come see us on Reddit for sarcastic answers to your questions...</p>
+      <p space="10"/>
+      <p>Don't eat the horse that powers your horse grindstone...</p>
+      <p space="10"/>
+      <p>Do not for any reason stack two Raintanks on top of each other or TFC Barrels...</p>
+      <p space="10"/>
+      <p>Don't ask me about Rockhounding, I'm as confused as you are...</p>
+      <p space="10"/>
+      <p>Shift-click crafting stacks of stuff is super laggy... No idea</p>
+      <p space="10"/>
+      <p>The AR Lathe makes crafting pistons much easier...</p>
+      <p space="10"/>
+      <p>The IE Metal Press makes your crafting life easier...</p>
+      <p space="10"/>
+      <p>Horses require a halter to ride. Check JEI...</p>
+      <p space="10"/>
+      <p>Use a stone shovel to remove items from RH Evaporation Tank...</p>
+      <p space="10"/>
+      <p>The refrigerator takes power in from the back top. Then wait!</p>
+      <p space="10"/>
+      <p>Coal Coke is correctly usable for Steel...in the IE Blast Furnace...</p>
+      <p space="10"/>
+      <p>HV IE Wires will give you a boost!</p>
+      <p space="10"/>
+      <p>Bugs are free with every purchase...</p>
+      <p space="10"/>
+      <p>The IE Revolver and Mining Drill have rendering issues sometimes...</p>
+      <p space="10"/>
+      <p>Direwolves are not friendlier versions of TFC Wolves...</p>
+      <p space="10"/>
+      <p>RH Power stations can use RF and Fuel. Recipes need one/the other/both...</p>
+      <p space="10"/>
+      <p>Sneak right-click full ingots to demold...</p>
+      <p space="10"/>
+      <p>Powderkegs pack boom into one block with 100%% drops...Go find that sulfur</p>
+      <p space="10"/>
+      <p>NC Alloy Furnace can be useful for those two part alloy recipes...</p>
+      <p space="10"/>
+      <p>Blue flowers can be found in cool dry areas and hotter wet areas...</p>
+      <p space="10"/>
+      <p>Mature dead crops yield the most seeds...</p>
+      <p space="10"/>
+      <p>Pigvil sometimes shows up for metal carrots, but he needs to like you first...</p>
+      <p space="10"/>
+      <p>Chisel needs a hammer in the off-hand...</p>
+      <p space="10"/>
+      <p>Prospector's Pick scans 12 blocks in every direction...</p>
+      <p space="10"/>
+      <p>Waystone travel uses kaolinite powder to power it...</p>
+      <p space="10"/>
+      <p>The End is a moon of another planet...</p>
+      <p space="10"/>
+      <p>The ultimate prize awaits, just need a Dragon's Egg...</p>
+      <p space="10"/>
+      <p>You need at least a black steel pick to mine obsidian and go to the Nether...</p>
+      <p space="10"/>
+      <p>Spawner fragments from the nether can construct your own mob spawner...</p>
+      <p space="10"/>
+      <p>Make a leather forging bib and stop dying of heatstroke next to the forge...</p>
+      <p space="10"/>
+      <p>Don't use /kill if you aren't comfortable editing your player data after. It's broken...</p>
+      <p space="10"/>
+      <p>Shaders not working? Disable all THREE AR skyboxes! In config/advRocketry...</p>
+      <p space="10"/>
+      <p>Increase your prospecting skill by clicking on ore separated more than 13 blocks apart!</p>
+      <p space="10"/>
+      <p>Panning for gold and silver nuggets is a legitimate path to early bronze...</p>
+      <p space="10"/>
+      <p>Hiking Boots let you move through grass without slowdown...</p>
+      <p space="10"/>
+      <p>Few crops grow over 400 or under 100 rainfall...</p>
+      <p space="10"/>
+      <p>Toxic Slimes don't like Raspberry or Blackberry Bushes...</p>
+      <p space="10"/>
+      <p>Remove the attachment from a firepit with sneak right click, but not while it's hot...</p>
+      <p space="10"/>
+      <p>Toxic Slimes will climb ladders to get to you...</p>
+      <p space="10"/>
+      <p>Making a server? Set level-type=tfc_classic in server.properties</p>
+      <p space="10"/>
+      <p>Tree nuts are harvestable with the right equipment in season, but it's exhausting...</p>
+      <p space="10"/>
+      <p>You should read the tips.</p>
+      <p space="10"/>
+      <p>Make sure to unclaim or allow explosions before you waste the gunpowder!</p>
+      <p space="10"/>
+      <p>While PNC loves to put out flames, there are several ways to relight them...</p>
+      <p space="10"/>
+      <p>Lassos are effective hunting and fishing accessories.</p>
+      <p space="10"/>
+      <p>Don't make a pit kiln near peat blocks...</p>
+      <p space="10"/>
+      <p>Dirt paths are NOT a solid block, and pit kilns will not work when bounded by them.</p>
+      <p space="10"/>
+      <p>Aggregate acts more like vanilla gravel...</p>
+      <p space="10"/>
+      <p>Default PNC Amadron deals can be very helpful...</p>
+      <p space="10"/>
+      <p>Just go for the regular drone, the harvest drone isn't worth the headache.</p>
+      <p space="10"/>
+      <p>Save that creosote, select PNC and RH systems can burn it.</p>
+      <p space="10"/>
+      <p>IE cloches are NOT a farm substitute until you have RF to burn.</p>
+      <p space="10"/>
+      <p>IE cloches need steady power to work.</p>
+      <p space="10"/>
+      <p>Put a TFC seed into a cloche first before using it to grow anything else.</p>
+      <p space="10"/>
+      <p>Bonemeal works as fertilizer in the IE cloche.</p>
+      <p space="10"/>
+      <p>BWM saw makes a very tasty pigman grinder.</p>
+      <p space="10"/>
+      <p>Mushrooms respawn but do not spread in the Overworld...</p>
+      <p space="10"/>
+      <p>Desperate to warm up when huddling in a winter corner? Put straw in your 2x2 grid!</p>
+      <p space="10"/>
+      <p>Iron scrap correctly melts in the crucibles...</p>
+      <p space="10"/>
+      <p>What can some redstone, three hoppers, a water barrel, chests, and a crucible make?</p>
+      <p space="10"/>
+      <p>Cheesemaking is very different than described in the TFC book. See the firmalife wiki.</p>
+      <p space="10"/>
+      <p>Breadmaking is very different than described in the TFC book. See the firmalife wiki.</p>
+      <p space="10"/>
+      <p>Only one connected bread oven requires fuel while cooking bread...</p>
+      <p space="10"/>
+      <p>Greenhouse parts are cheaper out of aluminum.</p>
+      <p space="10"/>
+      <p>Dig down in the northwest corner of the southeast chunk of a nugget cluster.</p>
+      <p space="10"/>
+      <p>IE fluid pipes sometimes magically develop a gap, usually just a visual glitch.</p>
+      <p space="10"/>
+      <p>Dilithium and Iridium are only available on *OTHER* celestial objects.</p>
+      <p space="10"/>
+      <p>Latex collection requires a special fluid bowl on the mount...</p>
+      <p space="10"/>
+      <p>The Observatory and Astrobody Data Processor only look for asteroids.</p>
+      <p space="10"/>
+      <p>The Warp Controller can search for other planets.</p>
+      <p space="10"/>
+      <p>Osmium and Tungsten Steel make the fastest tools.</p>
+      <p space="10"/>
+      <p>To figure out a new anvil recipe, use the communitive property of smithing, A+B = B+A!</p>
+      <p space="10"/>
+      <p>TNFC's many ores only leave hints within 30 blocks of the surface instead of 35!</p>
+      <p space="10"/>
+      <p>Don't harvest animals for food until you need to, meat doesn't expire on the hoof!</p>
+      <p space="10"/>
+      <p>Aged and smoked cheeses last a long time.</p>
+      <p space="10"/>
+      <p>The ruins of ancient civilizations on other planets may reveal the Infernal Enchanter!</p>
+      <p space="10"/>
+      <p>Signpost arrows can be rotated using left and right click with a signpost wrench.</p>
+      <p space="10"/>
+      <p>Maximum HP is 1750. To get there, eat healthy! Drinking milk after meals can help.</p>
+      <p space="10"/>
+      <p>Use the tab key to repeat the last crafting recipe.</p>
+      <p space="10"/>
+      <p>Don't put a speed upgrade in the fluid filter slot of the Gasification Plant.</p>
+      <p space="10"/>
+      <p>You can live in the roof section of your greenhouse.</p>
+      <p space="10"/>
+      <p>A flock of birds is the ultimate early game multiplayer food source.</p>
+      <p space="10"/>
+      <p>A fish tank is the ultimate mid-game multiplayer meat source. Feed with hemp seeds.</p>
+      <p space="10"/>
+      <p>Fish can be turned into tallow for candles.</p>
+      <p space="10"/>
+      <p>A crucible heats ores at least 40% faster than the forge.</p>
+      <p space="10"/>
+      <p>Glowing mushrooms self-multiply and have the same light level as torches. Tacky.</p>
+      <p space="10"/>
+      <p>Move around underwater in your nearest hot spring for fastest healing! Don't drown!</p>
+      <p space="10"/>
+      <p>Plant fruit trees at least 5 blocks apart to get the most fruit.</p>
+      <p space="10"/>
+      <p>Saplings of any kind will not grow if crowded.</p>
+      <p space="10"/>
+      <p>Many vanilla signs close together may severely impact your FPS.</p>
+      <p space="10"/>
+      <p>Any seed is a good seed, but a garlic seed is the best seed.</p>
+      <p space="10"/>
+      <p>Witches can drop sugar!</p>
+      <p space="10"/>
+      <p>Holding shift with the mining drill mines a single block.</p>
+      <p space="10"/>
+      <p>The RH metal alloyer can make some cheap ingots!</p>
+      <p space="10"/>
+      <p>Preheating iron ore before filling the blast furnace can save fuel.</p>
+      <p space="10"/>
+      <p>Cobble slabs are a miner's delight.</p>
+      <p space="10"/>
+      <p>Garlic bread is a good way to eat grains and vegetables.</p>
+      <p space="10"/>
+      <p>You CAN fire pottery in a crucible! It's faster than the forge!</p>
+      <p space="10"/>
+      <p>You CAN cook food in the crucible, but it won't taste all that great.</p>
+      <p space="10"/>
+      <p>You can use rotten meat to make tallow - reduce, reuse, recycle!</p>
+      <p space="10"/>
+      <p>Wooden firestarter works on charcoal pits... and on log piles, beware!</p>
+      <p space="10"/>
+      <p>Some player actions may take a long time on a busy server.</p>
+      <p space="10"/>
+      <p>Set rock layer size = 4 in world generation to decrease exploration needs.</p>
+      <p space="10"/>
+      <p>Basil for pizza can be found in moderate climes with normal to wet rainfall.</p>
+      <p space="10"/>
+      <p>The autorun key (R by default) may save your fingers on those long boat trips.</p>
       <p space="10"/>
       <p>Crops and fruit trees are very particular about growing conditions. Rainfall and temp both apply to whether a crop or fruit tree will grow.</p>
       <p>This <link href="https://docs.google.com/spreadsheets/d/1Ghw3dCmVO5Gv0MMGBydUxox_nwLYmmcZkGSbbf0QSAE/edit#gid=37622487">spreadsheet</link> will provide all the details about crops and fruit trees and the conditions they require.</p>
@@ -144,6 +358,688 @@
       <p bold = "true">-Dfml.readTimeout=512</p>
       <p>Or even to the java parameters for the client.</p>
     </section>
+  </chapter>
+  <chapter id="quest">
+    <section>
+      <p bold="true">Benanov's Sarcastic Questbook</p>
+      <p space="10"/>
+<p space="2"/>
+      <link ref="index" color="#CC3333">&lt;- Index</link>      
+      <p>You all wanted a quest book. This is not the quest book you deserve, but it's the quest book you need.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">STONE AGE</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find rocks and sticks.</p>
+      <p space="10"/>
+      <p>REWARD: You can make stone tools. Get banging.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Cut some grass and look for plants near the water that can assist in the creation of a straw hat. Oddly enough, the reeds required only grow in colder climates.</p>
+      <p space="10"/>
+      <p>REWARD: It looks silly, but it will keep you cooler.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Throw a log, three sticks down on the ground, and some straw, then light it</p>
+      <p space="10"/>
+      <p>REWARD: A fire. That and you can now tell Prometheus, "new phone who dis"</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: kill a cow, a horse, a dire wolf (hah), a bear, or other large animal for a Large Hide. Place atop two thatch blocks.</p>
+      <p space="10"/>
+      <p>REWARD: a bed that sets your spawn point, so you don't have to run south from spawn every time you die.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find some seeds.</p>
+      <p space="10"/>
+      <p>REWARD: Straight out of the late 90's, it's co-ed naked farming: grab a hoe and plant your seed.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Figure out which key is used to place objects on the ground so you can build your first pit kiln.</p>
+      <p space="10"/>
+      <p>REWARD: it's V. The V key. Now make me a pretty pot. Dye it black, because we know you've been killing squid for food.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">COPPER AGE</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find some copper ore.</p>
+      <p space="10"/>
+      <p>REWARD: Copper Saw. Look, I know you all want to make a pick first...</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find some more copper ore.</p>
+      <p space="10"/>
+      <p>REWARD: Okay, NOW you can make a pick.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Even more copper ore.</p>
+      <p space="10"/>
+      <p>REWARD: A storage problem. Easily solved by making chests. THIS time.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find Basalt, Andesite, Rhyolite, or one of the other igneous rocks</p>
+      <p space="10"/>
+      <p>REWARD: Stone Anvil.</p>
+      <p space="10"/>
+      <p>PRO TIP: Anything made with Basalt looks like ass.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find Flux-bearing stone - Limestone, Dolomite, or Marble. Grind it. Make flux.</p>
+      <p space="10"/>
+      <p>REWARD: You can weld ingots! There's no weld button - You shift-right-click on the anvil with a hammer in your hand to weld ingots together.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Flux + water = limewater; log + water = tannin. Soak, scrape, re-soak, and tan leather.</p>
+      <p space="10"/>
+      <p>REWARD: Black pajamas, bellows, a halter, and a saddle - you're dressed for a date, too bad it's with a horse.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Kill a Bear, Cow, Horse or Llama (depending on your butchery skill) until you get a Bladder. Make a leather water flask.</p>
+      <p space="10"/>
+      <p>REWARD: Significantly less cursing due to jug breakage; significantly more cursing when your flask breaks and you realize that was your last bladder.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a leather forging bib.</p>
+      <p space="10"/>
+      <p>REWARD: Not having to stand in water to forge.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Scare up 1400 units of copper and make an anvil.</p>
+      <p space="10"/>
+      <p>REWARD: A sense of pride and accomplishment, and the ability to weld those 14 bronze ingots you've stacked over in the corner immediately afterward.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a horse grindstone</p>
+      <p space="10"/>
+      <p>REWARD: Higher grain yields! No one starves! Yay! Plus the endless entertainment of watching a horse go in a circle.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Get high; Y > 170; and find Hemp</p>
+      <p space="10"/>
+      <p>REWARD: Rope and Fishing Bait</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a BWM vertical windmill and a millstone.</p>
+      <p space="10"/>
+      <p>OPTIONAL QUEST: Make a horizontal windmill and then realize you need Gold to make gearboxes</p>
+      <p space="10"/>
+      <p>REWARD: not having to scrape leather manually; deafness from the CONSTANT GRINDING NOISE</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">BRONZE AGE</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find Bismuth and Zinc; Gold and Silver; or Tin.</p>
+      <p space="10"/>
+      <p>REWARD: Bronze (that you were making anyway)</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Bronze axe.</p>
+      <p space="10"/>
+      <p>REWARD: You are now sentenced to chopping down hundreds of trees in order to make enough charcoal to afford to use that new Bloomery.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find Graphite and Kaolinite.</p>
+      <p space="10"/>
+      <p>REWARD: You can now post "I found graphite!" on r/technode or on the discord, because really - it's an accomplishment. That and you can burn a pile of it on fire clay for now, and later you'll burn out all your Kaolinite Floo Powder teleporting back and forth between your summer plantation and your winter home every 30 seconds because you forgot something, and all your graphite will be used in a Nuclear Reactor. Savor this moment, miner. Savor it, for it is quick to sublimate.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make fire clay</p>
+      <p space="10"/>
+      <p>REWARD: not having to use a pit kiln to mix bronze, allowing you to screw it up in new and exciting ways.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a plow.</p>
+      <p space="10"/>
+      <p>REWARD: Add shovels to it and you can leave evidence of your bad driving, in the form of paths; waste stone on 3 hoes to plow farmlands quickly, or just drag it empty over tall grass to mow the lawn. Unfortunately this quest book does not come with a friendly neighborhood 11-year-old to mow your lawn, you gotta do it yourself.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make Waystones using red gems and gold. Place waystone, give it a name. Make signposts, give them a name that matches the waystone name. Teleport from the sign to the waystone for a price of 1 Kaolinite Powder + 1 per 500m distance.</p>
+      <p space="10"/>
+      <p>REWARD: Watching your basemates deplete your Kaolinite supplies on corpse runs and needless back and forth fetch trips just before you finish making all the things that require fire clay.</p>
+      <p space="10"/>
+      <p>That and now all your roads are somewhat less useful, which is why the plow quest was put first.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a BWM saw</p>
+      <p space="10"/>
+      <p>REWARD: Higher wood yields, a new death message</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">IRON AGE</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make an iron anvil.</p>
+      <p space="10"/>
+      <p>REWARD: You could go after that achievement where you make 4 pieces of iron armor and wear it, but honestly don't bother, you'll get iron from mob drops later. Just make a blast furnace.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a horse chopping block and a horse press</p>
+      <p space="10"/>
+      <p>REWARD: Chopping block - Higher wood yields without the possibility of death.</p>
+      <p space="10"/>
+      <p>REWARD: Press - Paper! You can also get creosote oil early, which is nice at this stage of the game, but when you make a coke oven later you'll just have even more of a storage problem. However, you can use your nice new creosote oil to make Treated Wood Barrels.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a hopper</p>
+      <p space="10"/>
+      <p>REWARD: TPS lag</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make an Iron Water Flask</p>
+      <p space="10"/>
+      <p>REWARD: Your flask now holds two buckets of water (or milk), and lasts long enough to you to forget where you put the bladders. You can also use it to see how full a steel tank is when an update clobbers your WAILA settings.</p>
+      <p space="10"/>
+      <p>However, we all know it's yet another thing that sits in your hotbar while you drink out of ponds.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">STEEL AGE</p>
+      <p space="10"/>
+      <p>QUEST: Make the blast furnace block, anywhere between 12 and 60 wrought iron sheets, and a Tuyere.</p>
+      <p space="10"/>
+      <p>REWARD: Tinnitus, and a new vocabulary word to share with your friends at school when you can go again</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a blast furnace with a Crucible underneath. Spend 5 minutes pumping bellows, or pump only once in a while, or whatever that newfangled trick is that you can do in 1.12; I just wedge a coffee mug on the right mouse button of my trackball and go use the bathroom or something</p>
+      <p space="10"/>
+      <p>REWARD: Steel</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make rudimentary RF power now that you can build an IE windmill</p>
+      <p space="10"/>
+      <p>REWARD: You can power your refrigerator</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a refrigerator</p>
+      <p space="10"/>
+      <p>REWARD: Food will survive you logging out on a multiplayer server</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a TFC Tech Crucible</p>
+      <p space="10"/>
+      <p>REWARD: You can slow down a bit on the tree farm there, Paul Bunyan, you don't need as much charcoal now.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a TFC Tech Electric Forge</p>
+      <p space="10"/>
+      <p>REWARD: all your meat is now perfectly cooked at 200 C, cheap glass blocks, and efficient metal heating</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make Storage Drawers</p>
+      <p space="10"/>
+      <p>REWARD: An actual solution to your growing pile of storage problems</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">COLORED STEEL AGE</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find Nickel</p>
+      <p space="10"/>
+      <p>REWARD: Now you can actually get to the good part of the pack. Reflect on how long it took you to find Nickel.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Mix up some Red and Blue Steel</p>
+      <p space="10"/>
+      <p>REWARD: Freezing in the night time, but you now have a fighting chance in the Nether (Red Steel Armor)...and now you'll overheat in your own buildings in the Winter (Blue Steel Armor)</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Craft an "Ultimate" (Vanilla) bucket.</p>
+      <p space="10"/>
+      <p>REWARD: OMFG it's a vanilla bucket, you've won TFC! Now you can take ponds with you and drink out of them instead of using your flask. Sure you could do this with a red steel bucket, but now you don't have to use a separate bucket just for lava. Saved 100% inventory space over the TFC solution! BAM!</p>
+      <p space="10"/>
+      <p>PRO TIP: Your victory is also short-lived when you see how many recipes call for a vanilla bucket and don't give it back to you.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Nether Portal with your new black steel pick.</p>
+      <p space="10"/>
+      <p>REWARD: Glowstone, netherrack, quartz, and a sense that you should have brought your black bronze armor</p>
+      <p space="10"/>
+      <p>PRO TIP: Don't anger the pigmen. Yet.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a fort and make that a gold farm using your disused vertical windmill and saw.</p>
+      <p space="10"/>
+      <p>REWARD: The joyous sound of Zombie Pigmen queuing to "use" the saw while you slowly dehydrate, hiding in your fort from the ghasts. It's beautiful, really.</p>
+      <p space="10"/>
+      <p>PRO TIP: Zombie Pigmen adore snowball fights</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">IMMERSIVE ENGINEERING AGE</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Metal Press</p>
+      <p space="10"/>
+      <p>REWARD: never having to weld two ingots EVER AGAIN.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Crusher</p>
+      <p space="10"/>
+      <p>REWARD: Never using a Quern again. Also, Tinnitus in your other ear.</p>
+      <p space="10"/>
+      <p>PRO TIP: Don't eat the horse that powers your horse grindstone.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Pumpjack</p>
+      <p space="10"/>
+      <p>REWARD: The crushing realization that you're going to need to make a distillation tower for this, or at least a refinery</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Petroleum distillation tower</p>
+      <p space="10"/>
+      <p>REWARD: Lowered property values as your village is next to an industrial park</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Squeezer, a Fermenter, and a Refinery</p>
+      <p space="10"/>
+      <p>REWARD: You can now stop throwing out all your rotten food</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Diesel Generator</p>
+      <p space="10"/>
+      <p>REWARD: Tinnitus in both ears and your entire household</p>
+      <p space="10"/>
+      <p>QUEST: Make a mining drill</p>
+      <p space="10"/>
+      <p>REWARD: Mining 9 unsupported blocks at a time is almost a guaranteed cave-in</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Farm Ghast Tears. Find Nether Wart. Make a Mixer, a TFC Tech Smeltery, a Blowpipe, and a Bottler. Oh, you'll need Rainwater too, see Rockhounding quests for details, only because I hate repeating myself</p>
+      <p space="10"/>
+      <p>REWARD: Regeneration Extended (Wart -> Tear -> Redstone) is the best healing item in the game. You're gonna be sucking these down like it's your first night in Las Vegas, so make a bunch.</p>
+      <p space="10"/>
+      <p>PRO TIP: Ghasts love snowball fights just as much as Zombie Pigmen do!</p>
+      <p space="10"/>
+      <p>QUEST: Build a solar tower and some mirrors.</p>
+      <p space="10"/>
+      <p>REWARD: The realization that you're a vampire because you can't see yourself in the mirror</p>
+      <p space="10"/>
+      <p>QUEST: Build a Steam Turbine</p>
+      <p space="10"/>
+      <p>REWARD: The Tinnitus is now at "Baby Driver" levels.</p>
+      <p space="10"/>
+      <p>BONUS ACTION: Remembering that movie exists. Sorry not sorry.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make an Extractor. Dig out all blocks around the wheel. PUT A ROOF OVER IT THAT ISN'T RIGHT NEXT TO THE WHEEL. One slab height is not enough, has to be a full block's worth of space.</p>
+      <p space="10"/>
+      <p>REWARD: Multiple server crashes - Did you only do the first thing I said? We're not kidding. The extractor is a crashy bitch in TFC worlds. Do it right and you are rewarded.</p>
+      <p>With a storage problem.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">PNEUMATIC CRAFT</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find sulfur</p>
+      <p space="10"/>
+      <p>REWARD: Not having to kill creepers for gunpowder</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a pressure chamber</p>
+      <p space="10"/>
+      <p>REWARD: Not having to blow up your iron</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a refinery</p>
+      <p space="10"/>
+      <p>REWARD: You weren't using those diamonds anyway. Diamonds aren't a girl's best friend; plastic is.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make an Amadron tablet</p>
+      <p space="10"/>
+      <p>REWARD: When you get the pun</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make an assembly line</p>
+      <p space="10"/>
+      <p>REWARD: 20 bar and the ability to produce pressure with RF</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Rockhounding Precipitation Chamber and make Sodium Polyacrylate. You might have to come back to this one.</p>
+      <p space="10"/>
+      <p>REWARD: You can make snow on demand any time of the year. Oh, that and Etching Acid. Yep, we gated the second half of PneumaticCraft behind Rockhounding. You're welcome.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make an OpenBlocks Glider with your brown plastic and Sodium Polyacrylate</p>
+      <p space="10"/>
+      <p>REWARD: You have been cursed to never having it on your hotbar while falling.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make PnC Armor. Become immune to temperature effects.</p>
+      <p space="10"/>
+      <p>REWARD: Finding out that the AR Space Suit (which is possibly cheaper) also does this.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">ROCKHOUNDING</p>
+      <p space="10"/>
+      <p>QUEST: Make a SimplyLoaders Raintank to start Rainwater Collection.</p>
+      <p space="10"/>
+      <p>REWARD: Water water everywhere but not a drop to drink. It's Vanilla Water!</p>
+      <p space="10"/>
+      <p>PRO TIP: Do not for any reason stack two SimplyLoaders Raintanks on top of each other. No. Really. Not kidding. Your world will not stop crashing the server unless you use external tools. I fixed this bug 7 months ago as of this writing and they still haven't merged it on Github.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make the TFC Tech Smeltery</p>
+      <p space="10"/>
+      <p>REWARD: remembering Tinker's Construct is not in the pack as you make glass bottles</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Slurry Pond, a Gasifier Burner, Gas Purifier, and Two Power Stations. Make Syngas.</p>
+      <p space="10"/>
+      <p>REWARD: I SPENT ALL THAT IRON ON THIS?!</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Mineral Sizer</p>
+      <p space="10"/>
+      <p>REWARD: All the Gangue you can carry, which means Chunkloaders.</p>
+      <p space="10"/>
+      <p>PRO TIP: Rockhounding Power Stations can use Charcoal and Lava (and possibly other burnables) as "Fuel" - this sounds good, until you realize exactly how inefficient using Charcoal is compared to making that Charcoal into Syngas.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Lab Oven, an ElectroChemical CSTR, 4x Evaporation Tanks, a Leaching Controller, and another Gasifier Burner for Water Vapor. (Phew). Make Sulfuric Acid, then Hydrochloric Acid in your Lab Oven. Make Sodium Hydroxide in your CSTR. Realize that you need a good source of Rainwater. Turn Gangue into Shards.</p>
+      <p space="10"/>
+      <p>REWARD: Multiple industrial accidents and two new storage problems - holy crap that's a lot of shards, and that's a lot of leachate</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Retention Controller, a NuclearCraft Rock Crusher, a NuclearCraft Electrolyzer, a NuclearCraft Chemical Reactor, and beg/borrow/steal some way to Hydrofluoric Acid. Turn your leachate into more shards.</p>
+      <p space="10"/>
+      <p>REWARD: The realization that 200mb of High-Grade Leachate turns into 1000mb of Toxic Waste, and an even bigger storage problem - none of these shards are the same as the other ones I made earlier</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Chemical Extractor, a Reforming Tower, and a NuclearCraft Chemical Reactor. Also a NuclearCraft Nitrogen Collector</p>
+      <p space="10"/>
+      <p>REWARD: turn all your shards into Metal Dusts, and a new storage problem - where am I gonna put all this Cadmium and Phosphorous, and what is this Lutetium stuff anyway</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Metal Alloyer</p>
+      <p space="10"/>
+      <p>REWARD: Actual upgraded filters on your leachate controller &amp; retention controller, so you can actually choose the shard you want instead of the "all of them" setting you're using currently</p>
+      <p space="10"/>
+      <p>REWARD: Oh wow I can make Colored Steel in this?</p>
+      <p space="10"/>
+      <p>REWARD: Oh I can make Wrought Iron at the cost of 1 charcoal per 10 ingots? Pinch me</p>
+      <p space="10"/>
+      <p>REWARD: Speed upgrades and more industrial accidents as you realize you tuned your pipe network around the slow machine speeds</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">NuclearCraft</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find a pitchblende vein</p>
+      <p space="10"/>
+      <p>REWARD: Nickel 2.0™</p>
+      <p space="10"/>
+      <p>BONUS ACTION: At least Granite rocks are prettier than Gabbro.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Mine some pitchblende</p>
+      <p space="10"/>
+      <p>REWARD: Guys is radiation bad?</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Throw the pitchblende into your crusher</p>
+      <p space="10"/>
+      <p>REWARD: One pitchblende crushes into 9 Uranium Dust, netting you enough nuclear material to power a small country for a year. For you, it won't be enough.</p>
+      <p space="10"/>
+      <p>PRO TIP: Get a spot in the Treaty on the Non-Proliferation of Nuclear Weapons.</p>
+      <p space="10"/>
+      <p>BONUS ACTION: If you're on the official test server, hit me up for some Rad-Away. I might have you gather mushrooms though. My base glows in the dark but it's not from the radiation.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make some basic plating</p>
+      <p space="10"/>
+      <p>REWARD: Empty space in your Graphite and Lead storage</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make an Alloy Furnace</p>
+      <p space="10"/>
+      <p>REWARD: The realization that all of your Black Steel is going to make Ferroboron</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: make a Geiger Counter</p>
+      <p space="10"/>
+      <p>REWARD: Glorious silence...for now</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make some Advanced plating</p>
+      <p space="10"/>
+      <p>REWARD: Empty space in your Lithium and Redstone storage</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: make a Universal Bin</p>
+      <p space="10"/>
+      <p>REWARD: Looks prettier than a trashcan next to your Turbine. Silicon Carbide being an ingot will remind you Mekanism isn't in the pack</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Separator</p>
+      <p space="10"/>
+      <p>REWARD: A new storage problem; this is the one where all the things are radioactive</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make some Depleted Uranium plating</p>
+      <p space="10"/>
+      <p>REWARD: non-zero radiation levels</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make some Elite Plating</p>
+      <p space="10"/>
+      <p>REWARD: Actually making a Radiation Scrubber</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make some rad-away fluid</p>
+      <p space="10"/>
+      <p>REWARD: Glowing yellow mushrooms all over your base</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make Light Radiation Shielding</p>
+      <p space="10"/>
+      <p>REWARD: Now you can make Medium Radiation Shielding</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make Medium Radiation Shielding</p>
+      <p space="10"/>
+      <p>REWARD: Now you can make Heavy Radiation Shielding</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make Heavy Radiation Shielding and apply it to your Space Suit or PnC Armor</p>
+      <p space="10"/>
+      <p>REWARD: Not dying in 15 seconds after picking up Prometheum by accident</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Find Manganese, Magnesium, and Boron</p>
+      <p space="10"/>
+      <p>REWARD: More ingots to store in a chest somewhere; also you can make batteries and the turbine</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Mine a lot of Zirconium and make -ZA fuel</p>
+      <p space="10"/>
+      <p>REWARD: If you don't have at least 3 stacks of Zirconium dust AFTER alloying all your fuel, repeat this quest until you do</p>
+      <p space="10"/>
+      <p>QUEST: Completely deplete 3 nearest Zirconium veins to power your thirsty IE Excavator</p>
+      <p space="10"/>
+      <p>REWARD: A reminder to look at JEI, because NuclearCraft's Rock Crusher has a chance to turn Diorite rocks into Zirconium dust. Thankfully you hoarded all mined cobblestone in these handy storage drawers instead of throwing it all away eve̵r̶y̷ ̸t̵i̸m̴ë̴̙́,̷͔̓ ̸̼͆r̴̺͊i̵͇͋ḡ̸̨ḩ̸̛̮̹̮̖̺̯̞͛̈́́̈́͑͌̓͠ţ̷̹͓̠͇͓͈̱̂́̈́ͅ?̴̺̝̙̹̈́̀ ̶̢͖̱͈͖̠̜͕̱͗͠R̶̡̳͈͎̼͓͈͓͎͚̭̦͖̗͍̼̮̖͚̗͓̳̥͕̬̗̱̦̳̺͓͍͍̣̼̿͂́̀̿̏͐́̏̓̏̒̈͐̀̀̈͒̆̓͠I̴̢̧̢̛̤͈̙͙̹̬̦̠͕̳͖͚̰͌̔̾̈̓̈́̀̃̔̂̓͛̈̇́̊̃́́̃̕̕͜͠͝͠͠ͅĢ̴̡̧̢̛͈̳̣̘̠͈̪̯̗̖͚̪̮͔͎͓̦͔͚̳͇͍̳̖̬̣̣̱̗̔̉̊͂͊͋̓͂̔̃̌̿͌̀̒̅͊̂͌͆̅̽͗̅̕͝͠͝Ḩ̴̛̜̗͙̰͉̲̥̜̀̏̐̌̀̀̒̈̔̓̊̿̈́̀́̓̚T̷̨̠̻̰̖̝͕̥͉͍̖̯̰̹͗͜ͅ?̴̧̪̝͙̳̱͆̈́͛͘͠</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Decay Hastener</p>
+      <p space="10"/>
+      <p>REWARD: Oh crap that released radiation into the world? WHY DIDN'T YOU TELL ME</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make some radium neutron sources</p>
+      <p space="10"/>
+      <p>REWARD: 90% efficiency (up from 0%)</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make Upgraded Power Storage</p>
+      <p space="10"/>
+      <p>REWARD: Does the tier 3 battery really leak radiation into the world? (YES, but it's a small amount.)</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a Compact Water Source</p>
+      <p space="10"/>
+      <p>REWARD: a crushing realization you can't easily and sustainably convert Rain Water into Fresh Water</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a Dense Water Source</p>
+      <p space="10"/>
+      <p>REWARD: An understanding of what few things Rainwater is used for</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make Heavy Water and fill some Empty Frames with it</p>
+      <p space="10"/>
+      <p>REWARD: A smugness that you can build heavy water moderators whereas in most packs with NuclearCraft everyone is stuck using Beryllium and Graphite. That smugness is soon tempered by the realization that there is no efficiency bonus.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build an XNet controller and a few advanced connectors to shuttle power and HPS around</p>
+      <p space="10"/>
+      <p>REWARD: Lagging the server for a good 30 seconds with a single shift-click</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a Reactor Controller and Fuel Cells</p>
+      <p space="10"/>
+      <p>REWARD: A sparkly new bucket of Corium</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a working nuclear reactor</p>
+      <p space="10"/>
+      <p>2 hours on YouTube later...</p>
+      <p space="10"/>
+      <p>REWARD: One! Two! Three! Four! Four Buckets of Corium! Ah, ah, ah.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a Turbine. Hook universal bin to output port.</p>
+      <p space="10"/>
+      <p>REWARD: 13691 RF/t</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Make a Fuel Reprocessor</p>
+      <p space="10"/>
+      <p>REWARD: a chest full of 1-8 depleted fuel pellets of various types</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Mine some Thorium</p>
+      <p space="10"/>
+      <p>REWARD: A couple of hours of frustration sitting in front of the NC Reactor Planner trying to make a decent Irradiator Design</p>
+      <p>PRO TIP: Yes, if you put Thorium in your Rockhounding Chemical Extractor you *will* get more Thorium than just combining it into scrap. I would consider cranking the Intensity to 16. (I usually leave it at 10 for Nice Round Numbers™, it's profitable even at 10.)</p>
+      <p space="10"/>
+      <p>QUEST: Turn Thorium into Protactinium-Enriched Thorium (TBP), turn that into TBU, then use that as fuel and reprocess it</p>
+      <p space="10"/>
+      <p>REWARD: Neptunium and a new pretty color of isotopes to store (Neptunium is required to complete the tech tree.)</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Turn bismuth into Polonium, make some Po-Be sources</p>
+      <p space="10"/>
+      <p>REWARD: Radiation sickness and 95% efficiency</p>
+      <p>BONUS ACTION: This is one of the more useful deadly things you've made</p>
+      <p>PRO TIP: It takes longer to make Polonium than TBP. Be patient.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Melt sugar into molten sugar, mix with water in Chemical Reactor to make Ethanol</p>
+      <p space="10"/>
+      <p>REWARD: Nuclear Exclusion Zone around your Base (This bug was fixed)</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">ADVANCED ROCKETRY</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a Lathe</p>
+      <p space="10"/>
+      <p>REWARD: Making pistons without heating metal is its own reward.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build an Electrolyzer</p>
+      <p space="10"/>
+      <p>REWARD: A new interesting storage problem and the ability to fill up the Oxygen in your space suit so it doesn't look like a lit cigarette</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a Cutting Machine</p>
+      <p space="10"/>
+      <p>REWARD: Highest yield cutting planks, and a new death message because you can't stop standing on it</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a Chemical Reactor</p>
+      <p space="10"/>
+      <p>REWARD: Silicon Boules</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build that processing assembly line thingie</p>
+      <p space="10"/>
+      <p>REWARD: A cute little factory animation and cheaper AR crafting components for all the machines you already built</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a rolling machine</p>
+      <p space="10"/>
+      <p>REWARD: An inferior metal press that's stuck on "Plate" and requires water, but you're not going to space without it</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a Satellite Builder</p>
+      <p space="10"/>
+      <p>REWARD: We still don't know who watches the watchers, but we know who built the builder.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a launch pad</p>
+      <p space="10"/>
+      <p>REWARD: A complaint from the local township committee about your zoning violations</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build a rocket</p>
+      <p space="10"/>
+      <p>REWARD: the realization that no wiki has been updated for "Bipropellant" rockets yet</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p bold="true">OPEN COMPUTERS</p>
+      <p space="10"/>
+      <p>QUEST: Build a computer case</p>
+      <p space="10"/>
+      <p>REWARD: You teach your kid a few new swear words when the recipe eats your 'Hard' Hammer (yes I reported it)</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: build a Screen</p>
+      <p space="10"/>
+      <p>REWARD: Now your bird has a few chosen phrases to repeat at the screen recipe eats another hammer (reported this one too). T3 is also one of the few blocks that uses Pitchblende that isn't radioactive.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: build a Keyboard</p>
+      <p space="10"/>
+      <p>REWARD: now you can interact with a computer you haven't finished building yet. Appreciate the realism as you realize you have to make nearly all 101 keys yourself.</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: build a Power Convertor</p>
+      <p space="10"/>
+      <p>REWARD: now you can actually power the computer that won't boot yet. Curse as you realize that your computer should be moved up/down 1m and you have to break &amp; replace everything</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: build a graphics card, CPU, ram, a hard disk, and maybe a redstone card or something</p>
+      <p space="10"/>
+      <p>REWARD: your raw materials chests are a little emptier, but hey, at least all the slots are filled</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: build an OpenOS disk AND an EPROM</p>
+      <p space="10"/>
+      <p>REWARD: IT BOOTS!</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: build a Reactor Computer Port and a Turbine Computer Port</p>
+      <p space="10"/>
+      <p>REWARD: Spend 3 hours looking for a program to control your reactor</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build an internet card</p>
+      <p space="10"/>
+      <p>REWARD: actually download and use the program</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>QUEST: Build an RS latch using designs from the minecraft wiki and use your existing XNet setup to control redstone outputs instead of this OpenComputers thingie</p>
+      <p space="10"/>
+      <p>REWARD: about 5 hours saved</p>
+      </section>
   </chapter>
   <chapter id="storage">
     <section>
@@ -521,6 +1417,279 @@
     <section>
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
+      <p space="10"/>
+            <p italics="true">Version 12.2.69 - Bonk on the Head</p>
+      <p space="10"/>
+      <p>Small changes. The AR Vacuum Laser recipe has been changed to not require a Red Crystal. Crystal blocks are in-game but are exceedingly rare (not in this solar system rare). </p>
+      <p space="10"/>
+      <p>Also, wearing a COMPLETE set of PneumaticCraft armour will render the wearer impervious to falling block damage, explosions, falling anvils/pigvils. I think. I look forward to your feedback.</p>
+      <p space="10"/>
+      <p>firmalife fixes nothing that matters to TNFC. Carry on </p>
+      <p space="10"/>
+      <p>Updates:</p>
+      <p>- TNFCMod</p>
+      <p>- firmalife</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.70 - Little Bits of This</p>
+      <p space="10"/>
+      <p>- Added LittleTiles for all your wacky door building needs. CnB is staying in the pack. Yes, they overlap. No, I do not care. - Thanks to ker(∂n)/im(∂n-1)≅πn(X), n≤dim(X) for his LT crafttweaker script.</p>
+      <p space="10"/>
+      <p>- Significantly buffed the asteroid configs and enhanced lava output</p>
+      <p>- Fixed the AR Log Cutting Machine output for wood ash from logs</p>
+      <p>- Fixed PnC Nightvision upgrade</p>
+      <p>- Restored the intended Nuclearcraft basic battery recipe (yes, it's supposed to be expensive)</p>
+      <p space="10"/>
+      <p>- Added a Horsepower Press method for directly making Olive Oil. This utilizes the long neglected jute discs. Thanks to Gaelmare for his work on this.</p>
+      <p>    - Jute disc combined with Olive paste makes a Olive Jute Disc. This can be placed in a HP Press to create olive oil. The olive oil can be drained out of the bottom of the press with a liquid hopper. The used jute discs can be pulled out from the press out of the SIDE of the press with a regular hopper.</p>
+      <p>     - The IE Industrial squeezer can also be used for a higher yield</p>
+      <p>- A pre-configured file for dynamic trees has been added for those that like those trees.</p>
+      <p>- Firmalife updated to finally get rennet drops from cows, goats, sheep, zebu, deer... CHEESE!</p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- LittleTiles</p>
+      <p>- CreativeCore</p>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p>- Nuclearcraft</p>
+      <p>- firmalife</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.71.2 - Crashing is bad mmmkay?</p>
+      <p space="10"/>
+      <p>Update for firmalife to fix worldgen crashing, and add some new bits</p>
+      <p space="10"/>
+      <p>Update for BwM to fix axle breaking?</p>
+      <p space="10"/>
+      <p>Update for Nuclearcraft, Rockhounding and LittleTiles for various issues</p>
+      <p space="10"/>
+      <p>Fix for infinite paper via grinding and crafting the TNFC guidebook</p>
+      <p space="10"/>
+      <p>Added recipes for AR Titanium Aluminide and AR Titanium Iridium dusts.</p>
+      <p space="10"/>
+      <p>Updates:</p>
+      <p>- firmalife</p>
+      <p>- BetterWithMods</p>
+      <p>- Nuclearcraft</p>
+      <p>- Rockhounding Core and Chemistry</p>
+      <p>- LittleTiles and CreativeCore</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.72 - Well That's Not Right</p>
+      <p space="10"/>
+      <p>Another update to firmalife to hopefully stop the melon crashing fun.</p>
+      <p space="10"/>
+      <p>Small config change to make the rock/stick spring regen a little more abundant.</p>
+      <p space="10"/>
+      <p>Changed the insulated wire recipes to use rubber rather than hemp cloth</p>
+      <p space="10"/>
+      <p>Changed other Macaw recipes to use Kapok instead of Sequoia in the Kapok recipes</p>
+      <p space="10"/>
+      <p>Fixed the Lube Addon for the mining drill eating the hammer when crafted</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- Firmalife</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.73 - Fixes and mixes</p>
+      <p space="10"/>
+      <p>Updates to fix stuff.</p>
+      <p space="10"/>
+      <p>TNFCMod - Dead crops should no longer get nuked from farmland in the spring months.</p>
+      <p space="10"/>
+      <p>Waterflasks should have it's flask stacking issues resolved</p>
+      <p space="10"/>
+      <p>Firmalife has fixes for milking and cheese wheel breaking</p>
+      <p space="10"/>
+      <p>Let the PnC EntityImport puzzle piece be available again</p>
+      <p space="10"/>
+      <p>Change the littletiles metal press recipes to use a platinum double ingot rather than the bone block (which seems borked)</p>
+      <p space="10"/>
+      <p>CreativeCore updated</p>
+      <p space="10"/>
+      <p>Dynmap updated to release version (Server installs only)</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p>-  Waterflasks</p>
+      <p>- Firmalife</p>
+      <p>- CreativeCore</p>
+      <p>- Dynmap</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.74 - I Like New Nuggets</p>
+      <p space="10"/>
+      <p>Another fix to the spring regen functions. Any stone/nugget/stick looking to be placed will now ignore grass growing on the block and place it anyway. </p>
+      <p space="10"/>
+      <p>Fixes for little bugs in TFC</p>
+      <p space="10"/>
+      <p>Fixes for firmalife. Milking issues and others</p>
+      <p space="10"/>
+      <p>Updates:</p>
+      <p>- TNFCMod</p>
+      <p>- TFC</p>
+      <p>- firmalife</p>
+      <p>- RH Chemistry</p>
+      <p>- CreativeCore</p>
+      <p>- LittleTiles</p>
+      <p>- AdvancedRocketry</p>
+      <p>- RebornCore</p>
+      <p>- Foamfix</p>
+      <p>- Sledgehammer</p>
+      <p>- CustomLoadingScreen</p>
+      <p>- Crafttweaker</p>
+      <p>- MTLib</p>
+      <p space="10"/>
+      <p>- Resource packs (will have to reenable them manually  for updates)</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.75.1 - Fix more stuff please</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p>- Update Firmalife to 0.5.0:</p>
+      <p space="10"/>
+      <p>Features:</p>
+      <p space="10"/>
+      <p>- Add fruit tree bonsai pots</p>
+      <p space="10"/>
+      <p>- Add sprinklers, which water a 5x5 area around the head</p>
+      <p space="10"/>
+      <p>- Added a proper water drip particle emitted by spouts and sprinklers</p>
+      <p space="10"/>
+      <p>- Add modular climate station:</p>
+      <p space="10"/>
+      <p>- Tier 0: the default climate station</p>
+      <p space="10"/>
+      <p>- Tier 1: visualization of the greenhouse's protected region, and the location of incorrect blocks</p>
+      <p space="10"/>
+      <p>- Tier 2: Planters grow slightly faster</p>
+      <p space="10"/>
+      <p>- Tier 3: Enable growing grains in large planters (maize now requires this tier to grow)</p>
+      <p space="10"/>
+      <p>- Tier 4: Enable growing fruit trees in the new bonsai pots</p>
+      <p space="10"/>
+      <p>- Tier 5: Spouts and Sprinklers get watered automatically</p>
+      <p space="10"/>
+      <p>- Added some more info to HWYLA</p>
+      <p space="10"/>
+      <p>- Scooping pumpkins now gives seeds, 'scooped pumpkin' now unobtainable</p>
+      <p space="10"/>
+      <p>- Chunking pumpkins gives 4 pumpkin fruit</p>
+      <p space="10"/>
+      <p>- Pumpkin has slightly nerfed food stats</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Fixes:</p>
+      <p space="10"/>
+      <p>- Pineapples no longer require knives to cut (Fixes #60)</p>
+      <p space="10"/>
+      <p>- Trellises can be placed on top of each other more predictably (Fixes #61)</p>
+      <p space="10"/>
+      <p>- Fix planters not giving surplus seeds</p>
+      <p space="10"/>
+      <p>- Food coming off of leaf mats should stack more often</p>
+      <p space="10"/>
+      <p>- Fix sync issue with hanging planters</p>
+      <p space="10"/>
+      <p>- Fix hanging planters growing at inconsistent speeds</p>
+      <p space="10"/>
+      <p>- Fix watering cans not watering anything below the player's position</p>
+      <p space="10"/>
+      <p>- Making Hawaiian pizza no longer deletes your food stats</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p space="10"/>
+      <p>- Small change to AdvancedRocketry config. Falling protection in space suit will protect player even in regular/high gravity situations</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>- Advanced Rocketry got a sizable update to fix a bunch of various broken bits. YMMV</p>
+      <p>- Is the nugget spawning fixed? Please!!!! I do believe it finally may be</p>
+      <p>- AdvancedTFCTech updated with new stuff</p>
+      <p>- Nuclearcraft update</p>
+      <p>- Other bits</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- Firmalife</p>
+      <p>- TNFCMod</p>
+      <p>- AdvancedRocketry</p>
+      <p>- AdvancedTFCTech</p>
+      <p>- LittleTiles</p>
+      <p>- CustomLoadingScreen</p>
+      <p>- Nuclearcraft</p>
+      <p>- MouseTweaks</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.76 - More Teeth to the Terrain</p>
+      <p space="10"/>
+      <p>While we wait on the whole regen to be added to TFC *fingers crossed*, here is the update with all the good bits in TNFCmod. Predators will now regenerate in the spring just like crops and rocks.</p>
+      <p space="10"/>
+      <p>Advanced TFC Tech updated to 0.2.3</p>
+      <p space="10"/>
+      <p>Number of small PRs from Gaelmare, PyralIron and Shadefang. Adds RH Transposer recipes to cleanup gas/liquid compat. Pumpkin chunk recipes to Horsepower. Various other recipe changes</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p>- AdvancedTFCTech</p>
+      <p>- terrafirmathings</p>
+      <p>- Nuclearcraft</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.77.2 - Going  Forward By Going Backward</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>** Hotfix 2 **</p>
+      <p>- As we no longer have a Precision Laser Etcher, add the Basic Circuit Board recipe back to the precision assembler</p>
+      <p space="10"/>
+      <p>**Hotfix**</p>
+      <p>Change AR version to a more functional one.</p>
+      <p space="10"/>
+      <p>Backing out the Advanced Rocketry update made a few versions ago. It's too broken and no ETA for an update. The other version had some issues but was at least functional. Hope it doesn't break too much on the backout but it's for the best.</p>
+      <p space="10"/>
+      <p>Also an update for TFC which fixes some bellows issues and integrates the TNFC regen routines into base TFC. Also fixes the bellows max temp.</p>
+      <p space="10"/>
+      <p>So also an update for the TNFCMod which removes the regen routines. Also changed a number of parameters for metals in light of the bellows fix and the too easy crafting of rather OP alternate metal tools/armours. Enjoy!</p>
+      <p space="10"/>
+      <p>Fixed Constantan and Electrum block unpacking exploit.</p>
+      <p space="10"/>
+      <p>Other little updates. Now that the rockets should work, the ability to dream your way to another planet has been enhanced.... try Hydronalium Blocks instead of Diamond. You're welcome!</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- Advanced Rocketry</p>
+      <p>- TFC</p>
+      <p>- TNFCMod</p>
+      <p>- LittleTiles</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.80 - The Door On 1.12.2 Closes</p>
+      <p space="10"/>
+      <p>It's been awhile, but I was finally enthused enough to update. Get Forge updated, TFC updated and a bunch of other little things. Probably going to be the final update for the 1.12.2 version of TNFC. What does the future hold? Who knows.</p>
+      <p space="10"/>
+      <p>Updates:</p>
+      <p>- Forge</p>
+      <p>- TFC</p>
+      <p>- AdvancedRocketry</p>
+      <p>- AnimalNets</p>
+      <p>- AstikorCarts</p>
+      <p>- Athenaeum</p>
+      <p>- CraftTweaker</p>
+      <p>- CreativeCore</p>
+      <p>- Dropt</p>
+      <p>- DynamicSurroundings</p>
+      <p>- EngineersDecor</p>
+      <p>- Firmalife</p>
+      <p>- JEI</p>
+      <p>- LibVulpes</p>
+      <p>- LittleTiles</p>
+      <p>- Macaw's Mods</p>
+      <p>- ModTweaker</p>
+      <p>- Rockhounding</p>
+      <p>- Signpost (the Borg!)</p>
+      <p>- SimplyJetpacks</p>
+      <p>- SledgeHammer</p>
+      <p>- StuffASockInIt</p>
+      <p>- TFC_Decoration</p>
+      <p>- TNFCMod</p>
+      <p>- ToastControl</p>
+      <p space="10"/>
+      <p>Lots of little final fixes and tweaks. Enjoy. It's been an honour to build this and have it loved by you! Thanks to you all and I'll see you in the updates....</p>
+      <p space="10"/>
+      <p>Anode</p>
       <p space="10"/>
       <p italics="true">Version 12.2.68 -  It's a rewrite, same as the old write</p>
       <p space="10"/>
