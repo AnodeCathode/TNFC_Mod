@@ -84,7 +84,7 @@ public class BlockPlayerDetector extends Block
 
     @Override
     public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
-        return world.getBlockState(pos).withProperty(ENABLED, true);
+        return getDefaultState().withProperty(ENABLED, true);
     }
 
     @Override
