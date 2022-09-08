@@ -1,13 +1,18 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        //maven { url = "http://files.minecraftforge.net/maven" }
+        maven { url = 'https://maven.minecraftforge.net/' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'org.spongepowered.mixin'
 
 // Load properties file, easier to manage versions of required dependencies
 file "build.properties" withReader {
@@ -50,10 +55,10 @@ repositories {
         name = "Progwml6 maven"
         url = "https://dvs1.progwml6.com/files/maven/"
     }
-    maven {
-        name = "Hwyla maven"
-        url "http://tehnut.info/maven"
-    }
+//    maven {
+//        name = "Hwyla maven"
+//        url "http://tehnut.info/maven"
+//    }
     maven { // TOP
         name 'tterrag maven'
         url "https://maven.tterrag.com/"
@@ -82,18 +87,28 @@ repositories {
     maven { //Guidebook ffs
         url 'http://dogforce-games.com/maven'
     }
+    maven {
+        url "https://cursemaven.com"
+    }
 }
 
 String mcVersion = config.minecraft.version
 String shortVersion = mcVersion.substring(0, mcVersion.lastIndexOf('.'))
 String strippedVersion = shortVersion.replace(".", "") + "0"
 
+mixin {
+    add sourceSets.main, "tnfcmod.refmap.json"
+    //defaultObfuscationEnv notch
+//    config "tnfcmod.mixins.json"
+}
+
 dependencies {
     deobfProvided ("CraftTweaker2:CraftTweaker2-MC${strippedVersion}-Main:${config.crafttweaker.version}")
     
     // deobfCompile ("mezz.jei:jei_${config.minecraft.version}:${config.jei.version}")
     // deobfCompile ("cofh:RedstoneFlux:1.12-2.0.1+:deobf")
-     deobfCompile("betterwithmods:BetterWithMods:1.12-2.1.+") {
+    //deobfCompile("curse.maven:cofhcore-69162:2920433")
+    deobfCompile("betterwithmods:BetterWithMods:1.12-2.1.+") {
         exclude group: 'mezz.jei', module:'jei_1.12.2'
         exclude group: 'cofh', module:'RedstoneFlux'
     }

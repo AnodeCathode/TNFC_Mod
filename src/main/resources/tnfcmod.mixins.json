@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "tnfcmod.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "tnfcmod.refmap.json",
+  "mixins": [
+    "ArrowHandlerMixin"
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8"
+}
