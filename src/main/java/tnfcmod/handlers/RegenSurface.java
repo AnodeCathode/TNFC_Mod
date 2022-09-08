@@ -63,6 +63,7 @@ public class RegenSurface
         }
     }
 
+    @SuppressWarnings( "deprecation" )
     public static double getTPS(World world, int dimId)
     {
         if (world == null || world.getMinecraftServer() == null) return -1D;
