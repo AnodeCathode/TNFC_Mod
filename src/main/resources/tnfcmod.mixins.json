@@ -1,8 +1,9 @@
 {
   "required": true,
+  "target": "@env(DEFAULT)",
   "package": "tnfcmod.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "tnfcmod.refmap.json",
+  "refmap": "mixins.tnfcmod.refmap.json",
   "mixins": [
     "ArrowHandlerMixin"
   ],

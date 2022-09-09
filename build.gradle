@@ -24,7 +24,7 @@ file "build.properties" withReader {
 if (System.getenv('VERSION') != null) {
     version = System.getenv('VERSION')
 } else {
-    version = "12.2.81-rc3"
+    version = "12.2.81"
 }
 group = "tnfcmod"
 archivesBaseName = "TNFCMod"
@@ -38,6 +38,12 @@ minecraft {
     version = "${config.minecraft.version}-${config.forge.version}"
     runDir = "run"
     mappings = "stable_39"
+
+    def args = [
+            "-Dmixin.debug.export=true",
+            '-Dmixin.hotSwap=true',
+            '-Dmixin.checks.interfaces=true'
+    ]
 
     replace("@VERSION@", project.version)
     replaceIn("tnfcmod.java")
@@ -90,6 +96,10 @@ repositories {
     maven {
         url "https://cursemaven.com"
     }
+    maven {
+        name = "CleanroomMC"
+        url "https://maven.cleanroommc.com"
+    }
 }
 
 String mcVersion = config.minecraft.version
@@ -97,9 +107,7 @@ String shortVersion = mcVersion.substring(0, mcVersion.lastIndexOf('.'))
 String strippedVersion = shortVersion.replace(".", "") + "0"
 
 mixin {
-    add sourceSets.main, "tnfcmod.refmap.json"
-    //defaultObfuscationEnv notch
-//    config "tnfcmod.mixins.json"
+    add sourceSets.main, "mixins.tnfcmod.refmap.json"
 }
 
 dependencies {
@@ -107,11 +115,13 @@ dependencies {
     
     // deobfCompile ("mezz.jei:jei_${config.minecraft.version}:${config.jei.version}")
     // deobfCompile ("cofh:RedstoneFlux:1.12-2.0.1+:deobf")
-    //deobfCompile("curse.maven:cofhcore-69162:2920433")
+    deobfCompile("curse.maven:cofhcore-69162:2920433")
     deobfCompile("betterwithmods:BetterWithMods:1.12-2.1.+") {
         exclude group: 'mezz.jei', module:'jei_1.12.2'
         exclude group: 'cofh', module:'RedstoneFlux'
     }
+    deobfCompile "zone.rong:mixinbooter:4.2"
+
     compile fileTree(include: ["*.jar"], dir: "libs")
     compileOnly fileTree(include: ["*.jar"], dir: "libsCompile")
 }
@@ -138,12 +148,11 @@ processResources {
     from('.') {
         include "LICENSE.txt"
     }
-
-
 }
 jar {
     manifest {
-        attributes 'FMLAT' : 'tnfc_at.cfg'
+        attributes (['FMLAT' : 'tnfc_at.cfg',
+                ])
     }
 }
 // Deobf jar allows people to drop this in mod folder on a dev environment
