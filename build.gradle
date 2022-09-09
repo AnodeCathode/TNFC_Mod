@@ -138,12 +138,15 @@ processResources {
     from('.') {
         include "LICENSE.txt"
     }
-
-
 }
 jar {
     manifest {
-        attributes 'FMLAT' : 'tnfc_at.cfg'
+        attributes (['FMLAT' : 'tnfc_at.cfg',
+                     "FMLCorePluginContainsFMLMod": true,
+                     "FMLCorePlugin": 'tnfcmod.mixin.CoreLoadingPlugin',
+                     "TweakClass": 'org.spongepowered.asm.launch.MixinTweaker',
+                     "MixinConfigs": 'tnfcmod.mixins.json'
+                ])
     }
 }
 // Deobf jar allows people to drop this in mod folder on a dev environment

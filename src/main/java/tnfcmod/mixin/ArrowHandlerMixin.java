@@ -1,5 +1,7 @@
 package tnfcmod.mixin;
 
+import net.dries007.tfc.objects.items.ItemQuiver;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
@@ -12,12 +14,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(EventHandler.class)
 public class ArrowHandlerMixin {
 
-    @Redirect(method="handleArrowNockEvent", at = @At(value="RETURN", target = "Lcofh/core/proxy/EventHandler;handleArrowNockEvent(Lnet/minecraftforge/event/entity/player/ArrowNockEvent;)V"), remap = false)
-    public void returnPass(ArrowNockEvent event, CallbackInfo ci)
+    @Redirect(method = "Lcofh/core/proxy/EventHandler;handleArrowNockEvent(Lnet/minecraftforge/event/entity/player/ArrowNockEvent;)V",
+            at = @At(value="INVOKE", target = "setAction",
+                     ordinal = 1),
+            remap = false)
+    public void checkTFCQuiver(ArrowNockEvent event, CallbackInfo ci)
     {
-        if (event.getAction().getType().equals(EnumActionResult.FAIL))
+        final EntityPlayer player = event.getEntityPlayer();
+        if (player != null && !player.capabilities.isCreativeMode && ItemQuiver.replenishArrow(player))
         {
-            event.setAction(new ActionResult<>(EnumActionResult.PASS,event.getBow()));
+            event.setAction(new ActionResult<>(EnumActionResult.PASS, event.getBow()));
+        }
+        else
+        {
+            event.setAction(new ActionResult<>(EnumActionResult.FAIL, event.getBow()));
         }
     }
 }
