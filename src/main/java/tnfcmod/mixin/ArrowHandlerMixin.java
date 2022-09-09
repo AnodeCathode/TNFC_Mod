@@ -10,7 +10,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import cofh.core.proxy.EventHandler;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EventHandler.class)
 public class ArrowHandlerMixin {
@@ -19,7 +18,7 @@ public class ArrowHandlerMixin {
             at = @At(value="INVOKE", target = "Lnet/minecraftforge/event/entity/player/ArrowNockEvent;setAction(Lnet/minecraft/util/ActionResult;)V",
                     ordinal = 1),
             remap = false)
-    public void checkTFCQuiver(ActionResult<ItemStack> action, ArrowNockEvent event, CallbackInfo ci)
+    public void checkTFCQuiver(ArrowNockEvent event, ActionResult<ItemStack> action, ArrowNockEvent dummy)
     {
         final EntityPlayer player = event.getEntityPlayer();
         if (player != null && !player.capabilities.isCreativeMode && ItemQuiver.replenishArrow(player))
@@ -28,30 +27,7 @@ public class ArrowHandlerMixin {
         }
         else
         {
-            event.setAction(new ActionResult<>(EnumActionResult.FAIL, event.getBow()));
-        }
-    }
-}
-
-/*
-
-@Mixin(EventHandler.class)
-public class ArrowHandlerMixin {
-
-    @Redirect(method = "Lcofh/core/proxy/EventHandler;handleArrowNockEvent(Lnet/minecraftforge/event/entity/player/ArrowNockEvent;)V",
-            at = @At(value="INVOKE", target = "Lnet/minecraftforge/event/entity/player/ArrowNockEvent;setAction(Lnet/minecraft/util/ActionResult;)V",
-            ordinal = 1), remap = false)
-    public void checkTFCQuiver(ArrowNockEvent event, CallbackInfo ci)
-    {
-        final EntityPlayer player = event.getEntityPlayer();
-        if (player != null && !player.capabilities.isCreativeMode && ItemQuiver.replenishArrow(player))
-        {
             event.setAction(new ActionResult<>(EnumActionResult.PASS, event.getBow()));
         }
-        else
-        {
-            event.setAction(new ActionResult<>(EnumActionResult.FAIL, event.getBow()));
-        }
     }
 }
-*/
