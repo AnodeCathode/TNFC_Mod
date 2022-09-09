@@ -1418,7 +1418,30 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
-            <p italics="true">Version 12.2.69 - Bonk on the Head</p>
+      <p italics="true">Version 12.2.81 - And One More Thing...</p>
+      <p space="10"/>
+      <p>The update we need. This fixes a few missing recipes, a few small bugs, and updates Advanced Rocketry and Rockhounding Chemistry for features and a better gunpowder recipe!</p>
+      <p>Some of those bugfixes were very hard-won from the bowels of MC 1.12 and Mixins.</p>
+      <p>Tired of all the livestock in the world disappearing for good? Me too! This update includes a livestock regeneration system that should begin to fix that.</p>
+      <p>It's dependent on chunks reloaded during April through July, so go find them!</p>
+      <p space="10"/>
+      <p>Updates:</p>
+      <p>- AdvancedRocketry</p>
+      <p>- CraftTweaker</p>
+      <p>- Debark</p>
+      <p>- Engineer's Decore</p>
+      <p>- LibVulpes</p>
+      <p>- LittleTiles</p>
+      <p>- modtweaker</p>
+      <p>- Rockhounding:Chemistry</p>
+      <p>- modtweaker</p>
+      <p>- Sledgehammer</p>
+      <p>- TechNodeFirmaCraft</p>
+      <p>- TNFC_Mod</p>
+      <p space="10"/>
+      <p> * Gaelmare as assistant maintainer!</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.69 - Bonk on the Head</p>
       <p space="10"/>
       <p>Small changes. The AR Vacuum Laser recipe has been changed to not require a Red Crystal. Crystal blocks are in-game but are exceedingly rare (not in this solar system rare). </p>
       <p space="10"/>
