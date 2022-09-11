@@ -1423,13 +1423,14 @@
       <p>The update we need. This fixes a few missing recipes, a few small bugs, and updates Advanced Rocketry and Rockhounding Chemistry for features and a better gunpowder recipe!</p>
       <p>Some of those bugfixes were very hard-won from the bowels of MC 1.12 and Mixins.</p>
       <p>Tired of all the livestock in the world disappearing for good? Me too! This update includes a livestock regeneration system that should begin to fix that.</p>
-      <p>It's dependent on chunks reloaded during April through July, so go find them!</p>
+      <p>It's dependent on chunks reloaded during April through July, so spring exploration is an even better idea!</p>
       <p space="10"/>
       <p>Updates:</p>
       <p>- AdvancedRocketry</p>
       <p>- CraftTweaker</p>
       <p>- Debark</p>
       <p>- Engineer's Decore</p>
+      <p>- FoamFix</p>
       <p>- LibVulpes</p>
       <p>- LittleTiles</p>
       <p>- modtweaker</p>
@@ -1439,127 +1440,86 @@
       <p>- TechNodeFirmaCraft</p>
       <p>- TNFC_Mod</p>
       <p space="10"/>
+      <p>Removed/Added:</p>
+      <p space="10"/>
+      <p>- NormalASM in the place of VanillaFix</p>
+      <p space="10"/>
       <p> * Gaelmare as assistant maintainer!</p>
       <p space="10"/>
-      <p italics="true">Version 12.2.69 - Bonk on the Head</p>
+      <p italics="true">Version 12.2.80 - The Door On 1.12.2 Closes</p>
       <p space="10"/>
-      <p>Small changes. The AR Vacuum Laser recipe has been changed to not require a Red Crystal. Crystal blocks are in-game but are exceedingly rare (not in this solar system rare). </p>
-      <p space="10"/>
-      <p>Also, wearing a COMPLETE set of PneumaticCraft armour will render the wearer impervious to falling block damage, explosions, falling anvils/pigvils. I think. I look forward to your feedback.</p>
-      <p space="10"/>
-      <p>firmalife fixes nothing that matters to TNFC. Carry on </p>
+      <p>It's been awhile, but I was finally enthused enough to update. Get Forge updated, TFC updated and a bunch of other little things. Probably going to be the final update for the 1.12.2 version of TNFC. What does the future hold? Who knows.</p>
       <p space="10"/>
       <p>Updates:</p>
-      <p>- TNFCMod</p>
-      <p>- firmalife</p>
-      <p space="10"/>
-      <p italics="true">Version 12.2.70 - Little Bits of This</p>
-      <p space="10"/>
-      <p>- Added LittleTiles for all your wacky door building needs. CnB is staying in the pack. Yes, they overlap. No, I do not care. - Thanks to ker(∂n)/im(∂n-1)≅πn(X), n≤dim(X) for his LT crafttweaker script.</p>
-      <p space="10"/>
-      <p>- Significantly buffed the asteroid configs and enhanced lava output</p>
-      <p>- Fixed the AR Log Cutting Machine output for wood ash from logs</p>
-      <p>- Fixed PnC Nightvision upgrade</p>
-      <p>- Restored the intended Nuclearcraft basic battery recipe (yes, it's supposed to be expensive)</p>
-      <p space="10"/>
-      <p>- Added a Horsepower Press method for directly making Olive Oil. This utilizes the long neglected jute discs. Thanks to Gaelmare for his work on this.</p>
-      <p>    - Jute disc combined with Olive paste makes a Olive Jute Disc. This can be placed in a HP Press to create olive oil. The olive oil can be drained out of the bottom of the press with a liquid hopper. The used jute discs can be pulled out from the press out of the SIDE of the press with a regular hopper.</p>
-      <p>     - The IE Industrial squeezer can also be used for a higher yield</p>
-      <p>- A pre-configured file for dynamic trees has been added for those that like those trees.</p>
-      <p>- Firmalife updated to finally get rennet drops from cows, goats, sheep, zebu, deer... CHEESE!</p>
-      <p space="10"/>
-      <p>Added:</p>
-      <p>- LittleTiles</p>
-      <p>- CreativeCore</p>
-      <p>Updated:</p>
-      <p>- TNFCMod</p>
-      <p>- Nuclearcraft</p>
-      <p>- firmalife</p>
-      <p space="10"/>
-      <p italics="true">Version 12.2.71.2 - Crashing is bad mmmkay?</p>
-      <p space="10"/>
-      <p>Update for firmalife to fix worldgen crashing, and add some new bits</p>
-      <p space="10"/>
-      <p>Update for BwM to fix axle breaking?</p>
-      <p space="10"/>
-      <p>Update for Nuclearcraft, Rockhounding and LittleTiles for various issues</p>
-      <p space="10"/>
-      <p>Fix for infinite paper via grinding and crafting the TNFC guidebook</p>
-      <p space="10"/>
-      <p>Added recipes for AR Titanium Aluminide and AR Titanium Iridium dusts.</p>
-      <p space="10"/>
-      <p>Updates:</p>
-      <p>- firmalife</p>
-      <p>- BetterWithMods</p>
-      <p>- Nuclearcraft</p>
-      <p>- Rockhounding Core and Chemistry</p>
-      <p>- LittleTiles and CreativeCore</p>
-      <p space="10"/>
-      <p italics="true">Version 12.2.72 - Well That's Not Right</p>
-      <p space="10"/>
-      <p>Another update to firmalife to hopefully stop the melon crashing fun.</p>
-      <p space="10"/>
-      <p>Small config change to make the rock/stick spring regen a little more abundant.</p>
-      <p space="10"/>
-      <p>Changed the insulated wire recipes to use rubber rather than hemp cloth</p>
-      <p space="10"/>
-      <p>Changed other Macaw recipes to use Kapok instead of Sequoia in the Kapok recipes</p>
-      <p space="10"/>
-      <p>Fixed the Lube Addon for the mining drill eating the hammer when crafted</p>
-      <p space="10"/>
-      <p space="10"/>
-      <p>Updated:</p>
-      <p>- Firmalife</p>
-      <p space="10"/>
-      <p italics="true">Version 12.2.73 - Fixes and mixes</p>
-      <p space="10"/>
-      <p>Updates to fix stuff.</p>
-      <p space="10"/>
-      <p>TNFCMod - Dead crops should no longer get nuked from farmland in the spring months.</p>
-      <p space="10"/>
-      <p>Waterflasks should have it's flask stacking issues resolved</p>
-      <p space="10"/>
-      <p>Firmalife has fixes for milking and cheese wheel breaking</p>
-      <p space="10"/>
-      <p>Let the PnC EntityImport puzzle piece be available again</p>
-      <p space="10"/>
-      <p>Change the littletiles metal press recipes to use a platinum double ingot rather than the bone block (which seems borked)</p>
-      <p space="10"/>
-      <p>CreativeCore updated</p>
-      <p space="10"/>
-      <p>Dynmap updated to release version (Server installs only)</p>
-      <p space="10"/>
-      <p>Updated:</p>
-      <p>- TNFCMod</p>
-      <p>-  Waterflasks</p>
-      <p>- Firmalife</p>
-      <p>- CreativeCore</p>
-      <p>- Dynmap</p>
-      <p space="10"/>
-      <p italics="true">Version 12.2.74 - I Like New Nuggets</p>
-      <p space="10"/>
-      <p>Another fix to the spring regen functions. Any stone/nugget/stick looking to be placed will now ignore grass growing on the block and place it anyway. </p>
-      <p space="10"/>
-      <p>Fixes for little bugs in TFC</p>
-      <p space="10"/>
-      <p>Fixes for firmalife. Milking issues and others</p>
-      <p space="10"/>
-      <p>Updates:</p>
-      <p>- TNFCMod</p>
+      <p>- Forge</p>
       <p>- TFC</p>
-      <p>- firmalife</p>
-      <p>- RH Chemistry</p>
-      <p>- CreativeCore</p>
-      <p>- LittleTiles</p>
       <p>- AdvancedRocketry</p>
-      <p>- RebornCore</p>
-      <p>- Foamfix</p>
-      <p>- Sledgehammer</p>
-      <p>- CustomLoadingScreen</p>
-      <p>- Crafttweaker</p>
-      <p>- MTLib</p>
+      <p>- AnimalNets</p>
+      <p>- AstikorCarts</p>
+      <p>- Athenaeum</p>
+      <p>- CraftTweaker</p>
+      <p>- CreativeCore</p>
+      <p>- Dropt</p>
+      <p>- DynamicSurroundings</p>
+      <p>- EngineersDecor</p>
+      <p>- Firmalife</p>
+      <p>- JEI</p>
+      <p>- LibVulpes</p>
+      <p>- LittleTiles</p>
+      <p>- Macaw's Mods</p>
+      <p>- ModTweaker</p>
+      <p>- Rockhounding</p>
+      <p>- Signpost (the Borg!)</p>
+      <p>- SimplyJetpacks</p>
+      <p>- SledgeHammer</p>
+      <p>- StuffASockInIt</p>
+      <p>- TFC_Decoration</p>
+      <p>- TNFCMod</p>
+      <p>- ToastControl</p>
       <p space="10"/>
-      <p>- Resource packs (will have to reenable them manually  for updates)</p>
+      <p>Lots of little final fixes and tweaks. Enjoy. It's been an honour to build this and have it loved by you! Thanks to you all and I'll see you in the updates....</p>
+      <p space="10"/>
+      <p>Anode</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.77.2 - Going  Forward By Going Backward</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>** Hotfix 2 **</p>
+      <p>- As we no longer have a Precision Laser Etcher, add the Basic Circuit Board recipe back to the precision assembler</p>
+      <p space="10"/>
+      <p>**Hotfix**</p>
+      <p>Change AR version to a more functional one.</p>
+      <p space="10"/>
+      <p>Backing out the Advanced Rocketry update made a few versions ago. It's too broken and no ETA for an update. The other version had some issues but was at least functional. Hope it doesn't break too much on the backout but it's for the best.</p>
+      <p space="10"/>
+      <p>Also an update for TFC which fixes some bellows issues and integrates the TNFC regen routines into base TFC. Also fixes the bellows max temp.</p>
+      <p space="10"/>
+      <p>So also an update for the TNFCMod which removes the regen routines. Also changed a number of parameters for metals in light of the bellows fix and the too easy crafting of rather OP alternate metal tools/armours. Enjoy!</p>
+      <p space="10"/>
+      <p>Fixed Constantan and Electrum block unpacking exploit.</p>
+      <p space="10"/>
+      <p>Other little updates. Now that the rockets should work, the ability to dream your way to another planet has been enhanced.... try Hydronalium Blocks instead of Diamond. You're welcome!</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- Advanced Rocketry</p>
+      <p>- TFC</p>
+      <p>- TNFCMod</p>
+      <p>- LittleTiles</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.76 - More Teeth to the Terrain</p>
+      <p space="10"/>
+      <p>While we wait on the whole regen to be added to TFC *fingers crossed*, here is the update with all the good bits in TNFCmod. Predators will now regenerate in the spring just like crops and rocks.</p>
+      <p space="10"/>
+      <p>Advanced TFC Tech updated to 0.2.3</p>
+      <p space="10"/>
+      <p>Number of small PRs from Gaelmare, PyralIron and Shadefang. Adds RH Transposer recipes to cleanup gas/liquid compat. Pumpkin chunk recipes to Horsepower. Various other recipe changes</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p>- AdvancedTFCTech</p>
+      <p>- terrafirmathings</p>
+      <p>- Nuclearcraft</p>
       <p space="10"/>
       <p italics="true">Version 12.2.75.1 - Fix more stuff please</p>
       <p space="10"/>
@@ -1639,80 +1599,125 @@
       <p>- Nuclearcraft</p>
       <p>- MouseTweaks</p>
       <p space="10"/>
-      <p italics="true">Version 12.2.76 - More Teeth to the Terrain</p>
+      <p italics="true">Version 12.2.74 - I Like New Nuggets</p>
       <p space="10"/>
-      <p>While we wait on the whole regen to be added to TFC *fingers crossed*, here is the update with all the good bits in TNFCmod. Predators will now regenerate in the spring just like crops and rocks.</p>
+      <p>Another fix to the spring regen functions. Any stone/nugget/stick looking to be placed will now ignore grass growing on the block and place it anyway. </p>
       <p space="10"/>
-      <p>Advanced TFC Tech updated to 0.2.3</p>
+      <p>Fixes for little bugs in TFC</p>
       <p space="10"/>
-      <p>Number of small PRs from Gaelmare, PyralIron and Shadefang. Adds RH Transposer recipes to cleanup gas/liquid compat. Pumpkin chunk recipes to Horsepower. Various other recipe changes</p>
-      <p space="10"/>
-      <p space="10"/>
-      <p>Updated:</p>
-      <p>- TNFCMod</p>
-      <p>- AdvancedTFCTech</p>
-      <p>- terrafirmathings</p>
-      <p>- Nuclearcraft</p>
-      <p space="10"/>
-      <p italics="true">Version 12.2.77.2 - Going  Forward By Going Backward</p>
-      <p space="10"/>
-      <p space="10"/>
-      <p>** Hotfix 2 **</p>
-      <p>- As we no longer have a Precision Laser Etcher, add the Basic Circuit Board recipe back to the precision assembler</p>
-      <p space="10"/>
-      <p>**Hotfix**</p>
-      <p>Change AR version to a more functional one.</p>
-      <p space="10"/>
-      <p>Backing out the Advanced Rocketry update made a few versions ago. It's too broken and no ETA for an update. The other version had some issues but was at least functional. Hope it doesn't break too much on the backout but it's for the best.</p>
-      <p space="10"/>
-      <p>Also an update for TFC which fixes some bellows issues and integrates the TNFC regen routines into base TFC. Also fixes the bellows max temp.</p>
-      <p space="10"/>
-      <p>So also an update for the TNFCMod which removes the regen routines. Also changed a number of parameters for metals in light of the bellows fix and the too easy crafting of rather OP alternate metal tools/armours. Enjoy!</p>
-      <p space="10"/>
-      <p>Fixed Constantan and Electrum block unpacking exploit.</p>
-      <p space="10"/>
-      <p>Other little updates. Now that the rockets should work, the ability to dream your way to another planet has been enhanced.... try Hydronalium Blocks instead of Diamond. You're welcome!</p>
-      <p space="10"/>
-      <p>Updated:</p>
-      <p>- Advanced Rocketry</p>
-      <p>- TFC</p>
-      <p>- TNFCMod</p>
-      <p>- LittleTiles</p>
-      <p space="10"/>
-      <p italics="true">Version 12.2.80 - The Door On 1.12.2 Closes</p>
-      <p space="10"/>
-      <p>It's been awhile, but I was finally enthused enough to update. Get Forge updated, TFC updated and a bunch of other little things. Probably going to be the final update for the 1.12.2 version of TNFC. What does the future hold? Who knows.</p>
+      <p>Fixes for firmalife. Milking issues and others</p>
       <p space="10"/>
       <p>Updates:</p>
-      <p>- Forge</p>
-      <p>- TFC</p>
-      <p>- AdvancedRocketry</p>
-      <p>- AnimalNets</p>
-      <p>- AstikorCarts</p>
-      <p>- Athenaeum</p>
-      <p>- CraftTweaker</p>
-      <p>- CreativeCore</p>
-      <p>- Dropt</p>
-      <p>- DynamicSurroundings</p>
-      <p>- EngineersDecor</p>
-      <p>- Firmalife</p>
-      <p>- JEI</p>
-      <p>- LibVulpes</p>
-      <p>- LittleTiles</p>
-      <p>- Macaw's Mods</p>
-      <p>- ModTweaker</p>
-      <p>- Rockhounding</p>
-      <p>- Signpost (the Borg!)</p>
-      <p>- SimplyJetpacks</p>
-      <p>- SledgeHammer</p>
-      <p>- StuffASockInIt</p>
-      <p>- TFC_Decoration</p>
       <p>- TNFCMod</p>
-      <p>- ToastControl</p>
+      <p>- TFC</p>
+      <p>- firmalife</p>
+      <p>- RH Chemistry</p>
+      <p>- CreativeCore</p>
+      <p>- LittleTiles</p>
+      <p>- AdvancedRocketry</p>
+      <p>- RebornCore</p>
+      <p>- Foamfix</p>
+      <p>- Sledgehammer</p>
+      <p>- CustomLoadingScreen</p>
+      <p>- Crafttweaker</p>
+      <p>- MTLib</p>
       <p space="10"/>
-      <p>Lots of little final fixes and tweaks. Enjoy. It's been an honour to build this and have it loved by you! Thanks to you all and I'll see you in the updates....</p>
+      <p>- Resource packs (will have to reenable them manually  for updates)</p>
       <p space="10"/>
-      <p>Anode</p>
+      <p italics="true">Version 12.2.73 - Fixes and mixes</p>
+      <p space="10"/>
+      <p>Updates to fix stuff.</p>
+      <p space="10"/>
+      <p>TNFCMod - Dead crops should no longer get nuked from farmland in the spring months.</p>
+      <p space="10"/>
+      <p>Waterflasks should have it's flask stacking issues resolved</p>
+      <p space="10"/>
+      <p>Firmalife has fixes for milking and cheese wheel breaking</p>
+      <p space="10"/>
+      <p>Let the PnC EntityImport puzzle piece be available again</p>
+      <p space="10"/>
+      <p>Change the littletiles metal press recipes to use a platinum double ingot rather than the bone block (which seems borked)</p>
+      <p space="10"/>
+      <p>CreativeCore updated</p>
+      <p space="10"/>
+      <p>Dynmap updated to release version (Server installs only)</p>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p>-  Waterflasks</p>
+      <p>- Firmalife</p>
+      <p>- CreativeCore</p>
+      <p>- Dynmap</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.72 - Well That's Not Right</p>
+      <p space="10"/>
+      <p>Another update to firmalife to hopefully stop the melon crashing fun.</p>
+      <p space="10"/>
+      <p>Small config change to make the rock/stick spring regen a little more abundant.</p>
+      <p space="10"/>
+      <p>Changed the insulated wire recipes to use rubber rather than hemp cloth</p>
+      <p space="10"/>
+      <p>Changed other Macaw recipes to use Kapok instead of Sequoia in the Kapok recipes</p>
+      <p space="10"/>
+      <p>Fixed the Lube Addon for the mining drill eating the hammer when crafted</p>
+      <p space="10"/>
+      <p space="10"/>
+      <p>Updated:</p>
+      <p>- Firmalife</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.71.2 - Crashing is bad mmmkay?</p>
+      <p space="10"/>
+      <p>Update for firmalife to fix worldgen crashing, and add some new bits</p>
+      <p space="10"/>
+      <p>Update for BwM to fix axle breaking?</p>
+      <p space="10"/>
+      <p>Update for Nuclearcraft, Rockhounding and LittleTiles for various issues</p>
+      <p space="10"/>
+      <p>Fix for infinite paper via grinding and crafting the TNFC guidebook</p>
+      <p space="10"/>
+      <p>Added recipes for AR Titanium Aluminide and AR Titanium Iridium dusts.</p>
+      <p space="10"/>
+      <p>Updates:</p>
+      <p>- firmalife</p>
+      <p>- BetterWithMods</p>
+      <p>- Nuclearcraft</p>
+      <p>- Rockhounding Core and Chemistry</p>
+      <p>- LittleTiles and CreativeCore</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.70 - Little Bits of This</p>
+      <p space="10"/>
+      <p>- Added LittleTiles for all your wacky door building needs. CnB is staying in the pack. Yes, they overlap. No, I do not care. - Thanks to ker(∂n)/im(∂n-1)≅πn(X), n≤dim(X) for his LT crafttweaker script.</p>
+      <p space="10"/>
+      <p>- Significantly buffed the asteroid configs and enhanced lava output</p>
+      <p>- Fixed the AR Log Cutting Machine output for wood ash from logs</p>
+      <p>- Fixed PnC Nightvision upgrade</p>
+      <p>- Restored the intended Nuclearcraft basic battery recipe (yes, it's supposed to be expensive)</p>
+      <p space="10"/>
+      <p>- Added a Horsepower Press method for directly making Olive Oil. This utilizes the long neglected jute discs. Thanks to Gaelmare for his work on this.</p>
+      <p>    - Jute disc combined with Olive paste makes a Olive Jute Disc. This can be placed in a HP Press to create olive oil. The olive oil can be drained out of the bottom of the press with a liquid hopper. The used jute discs can be pulled out from the press out of the SIDE of the press with a regular hopper.</p>
+      <p>     - The IE Industrial squeezer can also be used for a higher yield</p>
+      <p>- A pre-configured file for dynamic trees has been added for those that like those trees.</p>
+      <p>- Firmalife updated to finally get rennet drops from cows, goats, sheep, zebu, deer... CHEESE!</p>
+      <p space="10"/>
+      <p>Added:</p>
+      <p>- LittleTiles</p>
+      <p>- CreativeCore</p>
+      <p>Updated:</p>
+      <p>- TNFCMod</p>
+      <p>- Nuclearcraft</p>
+      <p>- firmalife</p>
+      <p space="10"/>
+      <p italics="true">Version 12.2.69 - Bonk on the Head</p>
+      <p space="10"/>
+      <p>Small changes. The AR Vacuum Laser recipe has been changed to not require a Red Crystal. Crystal blocks are in-game but are exceedingly rare (not in this solar system rare). </p>
+      <p space="10"/>
+      <p>Also, wearing a COMPLETE set of PneumaticCraft armour will render the wearer impervious to falling block damage, explosions, falling anvils/pigvils. I think. I look forward to your feedback.</p>
+      <p space="10"/>
+      <p>firmalife fixes nothing that matters to TNFC. Carry on </p>
+      <p space="10"/>
+      <p>Updates:</p>
+      <p>- TNFCMod</p>
+      <p>- firmalife</p>
       <p space="10"/>
       <p italics="true">Version 12.2.68 -  It's a rewrite, same as the old write</p>
       <p space="10"/>
