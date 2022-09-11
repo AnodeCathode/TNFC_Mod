@@ -1420,10 +1420,28 @@
       <p space="10"/>
       <p italics="true">Version 12.2.81 - And One More Thing...</p>
       <p space="10"/>
-      <p>The update we need. This fixes a few missing recipes, a few small bugs, and updates Advanced Rocketry and Rockhounding Chemistry for features and a better gunpowder recipe!</p>
+      <p>The update we need. This fixes a few missing recipes, a few bugs, and updates Advanced Rocketry and Rockhounding Chemistry for features and a better gunpowder recipe!</p>
       <p>Some of those bugfixes were very hard-won from the bowels of MC 1.12 and Mixins.</p>
       <p>Tired of all the livestock in the world disappearing for good? Me too! This update includes a livestock regeneration system that should begin to fix that.</p>
       <p>It's dependent on chunks reloaded during April through July, so spring exploration is an even better idea!</p>
+      <p>Bugfixes -</p>
+      <p>- AR laser emitter recipe pulled from the barrels of history</p>
+      <p>- OpenComputer recipes no longer eat the colored steel tools</p>
+      <p>- Quivers work again! Pay no attention to the mixin involved...</p>
+      <p>- Macaw's bridge and door recipe/texture fixes, thanks Surak and Wahazar</p>
+      <p>- Lost City's Portal works again, careful out there!</p>
+      <p>- Double Ingot mold has a texture again</p>
+      <p>- Heavy pressure plate has correct recipe</p>
+      <p>- Attempt to fix missing MT IE ore vein textures for lithium and osmium</p>
+      <p>- Player Detector is placeable again</p>
+      <p space="10"/>
+      <p>New Features -</p>
+      <p>- Livestock regen!</p>
+      <p>- Buffed gunpowder recipe in Lab Blender using new RH update</p>
+      <p>- More lights to drive away Gloom and brighten Lost City</p>
+      <p>- Reinforced RH mold now obtainable</p>
+      <p>- Electrum alloy recipe in RH alloyer</p>
+      <p>- Even MORE tips</p>
       <p space="10"/>
       <p>Updates:</p>
       <p>- AdvancedRocketry</p>
