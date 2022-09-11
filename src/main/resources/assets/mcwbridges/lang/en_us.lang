@@ -45,11 +45,17 @@ tile.orange_sandstone_bridge.name=Red Sandstone Bridge
 tile.orange_sandstone_bridge_end.name=Red Sandstone Bridge End
 
 tile.oak_rail_bridge.name=Oak Rail Bridge
+tile.oak_rail_bridge_end.name=Oak Rail Bridge End
 tile.spruce_rail_bridge.name=Spruce Rail Bridge
+tile.spruce_rail_bridge_end.name=Spruce Rail Bridge End
 tile.birch_rail_bridge.name=Birch Rail Bridge
+tile.birch_rail_bridge_end.name=Birch Rail Bridge End
 tile.jungle_rail_bridge.name=Kapok Rail Bridge
+tile.jungle_rail_bridge_end.name=Kapok Rail Bridge End
 tile.acacia_rail_bridge.name=Acacia Rail Bridge
+tile.acacia_rail_bridge_end.name=Acacia Rail Bridge End
 tile.dark_oak_rail_bridge.name=Hickory Rail Bridge
+tile.dark_oak_rail_bridge_end.name=Hickory Rail Bridge End
 tile.oak_rail_bridge_powered.name=Powered Oak Rail Bridge
 tile.spruce_rail_bridge_powered.name=Powered Spruce Rail Bridge
 tile.birch_rail_bridge_powered.name=Powered Birch Rail Bridge

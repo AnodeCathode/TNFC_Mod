@@ -1,0 +1,9 @@
+{
+	"parent": "mcwbridges:block/parent/rail_bridge_end",
+	"textures": {
+		"5": "tfc:blocks/wood/planks/birch",
+		"2": "tfc:blocks/wood/log/birch",
+		"6": "tfc:blocks/wood/top/birch",
+		"particle": "tfc:blocks/wood/log/birch"
+	}
+}
