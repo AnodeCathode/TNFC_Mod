@@ -24,7 +24,7 @@ file "build.properties" withReader {
 if (System.getenv('VERSION') != null) {
     version = System.getenv('VERSION')
 } else {
-    version = "12.2.81"
+    version = "12.2.82"
 }
 group = "tnfcmod"
 archivesBaseName = "TNFCMod"
