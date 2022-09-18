@@ -1,8 +1,7 @@
 package tnfcmod.handlers;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 import net.dries007.tfc.ConfigTFC;
 import net.minecraft.entity.Entity;
@@ -17,7 +16,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderServer;
-import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.world.ChunkDataEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -32,7 +30,6 @@ import net.dries007.tfc.util.calendar.CalendarTFC;
 import net.dries007.tfc.util.calendar.Month;
 import net.dries007.tfc.util.climate.ClimateTFC;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
-import tnfcmod.util.ServerUtils;
 
 import static com.google.common.math.DoubleMath.mean;
 import static tnfcmod.tnfcmod.MODID;
@@ -44,7 +41,7 @@ public class RegenSurface
 
     private static final Random RANDOM = new Random();
     private static final List<ChunkPos> POSITIONS = new LinkedList<>();
-    private static Stream<EntityEntry> LIVESTOCK = null;
+    private static Set<EntityEntry> LIVESTOCK = null;
 
 
     @SubscribeEvent
@@ -77,19 +74,21 @@ public class RegenSurface
 
         if (!event.world.isRemote && event.phase == TickEvent.Phase.END)
         {
-            if (LIVESTOCK == null)
+            if (LIVESTOCK == null) {
                 LIVESTOCK = ForgeRegistries.ENTITIES.getValuesCollection().stream().filter((x) -> {
                     if (ICreatureTFC.class.isAssignableFrom(x.getEntityClass())) {
                         Entity ent = x.newInstance(event.world);
                         return ent instanceof ILivestock;
                     }
                     return false;
-                });
+                }).collect(Collectors.toSet());
+            }
+
             if (!POSITIONS.isEmpty() && CalendarTFC.CALENDAR_TIME.getMonthOfYear().isWithin(Month.APRIL, Month.JULY))
             {
                 double tps = getTPS(event.world, 0);
                 ChunkPos pos = POSITIONS.remove(0);
-                if (tps > 16)
+                if (tps > ConfigTFC.General.WORLD_REGEN.minRegenTps)
                 {
                     Chunk chunk = event.world.getChunk(pos.x, pos.z);
                     ChunkDataTFC chunkDataTFC = ChunkDataTFC.get(event.world, pos.getBlock(0, 0, 0));
@@ -115,9 +114,7 @@ public class RegenSurface
     {
         int count = 0;
         for (ClassInheritanceMultiMap<Entity> target : world.getChunk(pos.x, pos.z).getEntityLists())
-            count += target.stream().filter(entity -> {
-                return entity instanceof ILivestock;
-            }).count();
+            count += target.stream().filter(entity -> entity instanceof ILivestock).count();
         return count;
     }
 
@@ -128,15 +125,17 @@ public class RegenSurface
         float floraDensity = ChunkDataTFC.getFloraDensity(worldIn, chunkBlockPos);
         float floraDiversity = ChunkDataTFC.getFloraDiversity(worldIn, chunkBlockPos);
 
-        Stream<EntityEntry> stream = LIVESTOCK.filter((x) -> {
+        List<EntityEntry> toSpawn = LIVESTOCK.stream().filter((x) -> {
             Entity ent = x.newInstance(worldIn);
             int weight = ((ICreatureTFC)ent).getSpawnWeight(biomeIn, temperature, rainfall, floraDensity, floraDiversity);
             return weight > 0 && randomIn.nextInt(weight) == 0;
-        });
-        int index = randomIn.nextInt((int)stream.count());
-        stream.skip(index).findFirst().ifPresent((entityEntry) -> {
-            doGroupSpawning(entityEntry, worldIn, centerX, centerZ, diameterX, diameterZ, randomIn);
-        });
+        }).collect(Collectors.toList());
+        int index = toSpawn.size();
+        if (index > 0)
+        {
+            index = randomIn.nextInt(index);
+            doGroupSpawning(toSpawn.get(index), worldIn, centerX, centerZ, diameterX, diameterZ, randomIn);
+        }
     }
 
     private static void doGroupSpawning(EntityEntry entityEntry, World worldIn, int centerX, int centerZ, int diameterX, int diameterZ, Random randomIn) {
