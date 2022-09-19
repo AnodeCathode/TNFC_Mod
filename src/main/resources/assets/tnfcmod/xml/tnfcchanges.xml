@@ -1418,6 +1418,10 @@
       <p bold="true">Changelogs</p>
       <link ref="index" color="#CC3333">&lt;- Index</link>
       <p space="10"/>
+      <p italics="true">Version 12.2.82 - And Another...</p>
+      <p space="10"/>
+      <p>Fix crashes in the new livestock regen handler. I'm not as smart as I thought.</p>
+      <p space="10"/>
       <p italics="true">Version 12.2.81 - And One More Thing...</p>
       <p space="10"/>
       <p>The update we need. This fixes a few missing recipes, a few bugs, and updates Advanced Rocketry and Rockhounding Chemistry for features and a better gunpowder recipe!</p>

@@ -6,8 +6,6 @@ import java.util.stream.Collectors;
 import net.dries007.tfc.ConfigTFC;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.IEntityLivingData;
-import net.minecraft.tileentity.MobSpawnerBaseLogic;
 import net.minecraft.util.ClassInheritanceMultiMap;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -16,20 +14,18 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderServer;
-import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.world.ChunkDataEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.minecraftforge.fml.common.registry.EntityEntry;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import net.dries007.tfc.api.types.*;
 import net.dries007.tfc.util.calendar.CalendarTFC;
 import net.dries007.tfc.util.calendar.Month;
 import net.dries007.tfc.util.climate.ClimateTFC;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import static com.google.common.math.DoubleMath.mean;
 import static tnfcmod.tnfcmod.MODID;
@@ -141,43 +137,53 @@ public class RegenSurface
     private static void doGroupSpawning(EntityEntry entityEntry, World worldIn, int centerX, int centerZ, int diameterX, int diameterZ, Random randomIn) {
         List<EntityLiving> group = new ArrayList<>();
         EntityLiving creature = (EntityLiving)entityEntry.newInstance(worldIn);
-        if (creature instanceof ICreatureTFC) {
-            ICreatureTFC creatureTFC = (ICreatureTFC)creature;
-            int fallback = 5;
-            int individuals = Math.max(1, creatureTFC.getMinGroupSize()) + randomIn.nextInt(creatureTFC.getMaxGroupSize() - Math.max(0, creatureTFC.getMinGroupSize() - 1));
-
-            while(individuals > 0) {
-                int j = centerX + randomIn.nextInt(diameterX);
-                int k = centerZ + randomIn.nextInt(diameterZ);
-                BlockPos blockpos = worldIn.getTopSolidOrLiquidBlock(new BlockPos(j, 0, k));
-                creature.setLocationAndAngles((double)((float)j + 0.5F), (double)blockpos.getY(), (double)((float)k + 0.5F), randomIn.nextFloat() * 360.0F, 0.0F);
-                if (creature.getCanSpawnHere()) {
-                    if (ForgeEventFactory.canEntitySpawn(creature, worldIn, (float)j + 0.5F, (float)blockpos.getY(), (float)k + 0.5F, (MobSpawnerBaseLogic)null) == Event.Result.DENY) {
-                        --fallback;
-                        if (fallback > 0) {
-                            continue;
-                        }
-                        break;
-                    } else {
-                        fallback = 5;
-                        worldIn.spawnEntity(creature);
-                        group.add(creature);
-                        creature.onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(creature)), (IEntityLivingData)null);
-                        --individuals;
-                        if (individuals > 0) {
-                            creature = (EntityLiving)entityEntry.newInstance(worldIn);
-                            creatureTFC = (ICreatureTFC)creature;
-                        }
+        if (!(creature instanceof ICreatureTFC))
+        {
+            return; // Make sure to not crash
+        }
+        ICreatureTFC creatureTFC = (ICreatureTFC) creature;
+        int fallback = 5; // Fallback measure if some mod completely deny this entity spawn
+        int individuals = Math.max(1, creatureTFC.getMinGroupSize()) + randomIn.nextInt(creatureTFC.getMaxGroupSize() - Math.max(0, creatureTFC.getMinGroupSize() - 1));
+        while (individuals > 0)
+        {
+            int j = centerX + randomIn.nextInt(diameterX);
+            int k = centerZ + randomIn.nextInt(diameterZ);
+            BlockPos blockpos = worldIn.getTopSolidOrLiquidBlock(new BlockPos(j, 0, k));
+            creature.setLocationAndAngles((float) j + 0.5F, blockpos.getY(), (float) k + 0.5F, randomIn.nextFloat() * 360.0F, 0.0F);
+            if (creature.getCanSpawnHere()) // fix entities spawning inside walls
+            {
+                if (net.minecraftforge.event.ForgeEventFactory.canEntitySpawn(creature, worldIn, j + 0.5f, (float) blockpos.getY(), k + 0.5f, null) == net.minecraftforge.fml.common.eventhandler.Event.Result.DENY)
+                {
+                    if (--fallback > 0)
+                    {
+                        continue;
                     }
-                } else {
-                    --fallback;
-                    if (fallback <= 0) {
-                        break;
+                    else
+                    {
+                        break; // Someone doesn't want me to spawn :(
                     }
                 }
+                fallback = 5;
+                // Spawn pass! let's continue
+                worldIn.spawnEntity(creature);
+                group.add(creature);
+                creature.onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(creature)), null);
+                if (--individuals > 0)
+                {
+                    //We still need to spawn more
+                    creature = (EntityLiving)entityEntry.newInstance(worldIn);
+                    creatureTFC = (ICreatureTFC) creature;
+                }
             }
-
-            creatureTFC.getGroupingRules().accept(group, randomIn);
+            else
+            {
+                if (--fallback <= 0) //Trying to spawn in water or inside walls too many times, let's break
+                {
+                    break;
+                }
+            }
         }
+        // Apply the group spawning mechanics!
+        creatureTFC.getGroupingRules().accept(group, randomIn);
     }
 }
