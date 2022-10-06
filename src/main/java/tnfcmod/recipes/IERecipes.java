@@ -240,13 +240,13 @@ public class IERecipes
                 MetalPressRecipe.addRecipe(outputSheet, ingredientDoubleIngot, new ItemStack(TNFCItems.mold_sheet), 2400);
                 MetalPressRecipe.addRecipe(outputDoubleSheet, ingredientSheet, new ItemStack(TNFCItems.mold_sheet), 2400).setInputSize(2);
             }
-
+	    MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.TRAPDOOR), 1), ingredientSheet, new ItemStack(ItemMetal.get(Metal.STEEL, Metal.ItemType.TRAPDOOR), 1), 2400);
             if (metal.isToolMetal())
             {
                 Ingredient ingredientKnives = Ingredient.fromStacks(new ItemStack(ItemMetal.get(metal, Metal.ItemType.KNIFE_BLADE)));
 
                 //Sheets and doubles
-
+                
                 //Tools
 
                 MetalPressRecipe.addRecipe(new ItemStack(ItemMetal.get(metal, Metal.ItemType.AXE_HEAD), 1), ingredientIngot, new ItemStack(TNFCItems.mold_axe), 2400);
