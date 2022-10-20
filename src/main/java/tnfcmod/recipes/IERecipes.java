@@ -408,16 +408,7 @@ public class IERecipes
 
     public static void registerGardenClocheRecipes()
     {
-        List<ItemStack> soils = Lists.newArrayList();
         BelljarHandler.registerHandler(tfcBelljarHandler);
-        BlocksTFC.getAllBlockRockVariants().forEach(x ->
-        {
-            if (x.getType() == Rock.Type.DIRT || x.getType() == Rock.Type.GRASS || x.getType() == Rock.Type.FARMLAND)
-            {
-                soils.add(new ItemStack(x, 1));
-            }
-        });
-
 
         for (Crop crop : Crop.values())
         {
