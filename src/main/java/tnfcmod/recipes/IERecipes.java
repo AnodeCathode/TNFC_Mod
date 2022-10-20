@@ -1,8 +1,12 @@
 package tnfcmod.recipes;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
+import java.util.function.Supplier;
+
 import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
@@ -22,7 +26,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
-import blusunrize.immersiveengineering.api.ApiUtils;
 import blusunrize.immersiveengineering.api.ComparableItemStack;
 import blusunrize.immersiveengineering.api.crafting.ArcFurnaceRecipe;
 import blusunrize.immersiveengineering.api.crafting.CrusherRecipe;
@@ -61,151 +64,171 @@ import tnfcmod.objects.items.TNFCItems;
 import static blusunrize.immersiveengineering.api.tool.BelljarHandler.*;
 import static net.dries007.tfc.api.types.Metal.ItemType.*;
 
-
-public class IERecipes
+// TFCJarHandler is an alternative implementation of IPlantHandler based on DefaultPlantHandler, but with support for TFC plants.
+class TFCJarHandler implements IPlantHandler
 {
-    private static final DefaultPlantHandler tfcBelljarHandler = new DefaultPlantHandler()
+    private HashMap<ComparableItemStack, List<Supplier<ItemStack>>> seedOutputMap = new HashMap<>();
+    private HashMap<ComparableItemStack, IBlockState[]> seedRenderMap = new HashMap<>();
+    private HashSet<ComparableItemStack> validSeeds = new HashSet<>();
+    private HashSet<ComparableItemStack> validSoils = new HashSet<>();
+
+    public TFCJarHandler()
     {
-        private HashMap<ComparableItemStack, IngredientStack> seedSoilMap = new HashMap();
-        private HashMap<ComparableItemStack, ItemStack[]> seedOutputMap = new HashMap();
-        private HashMap<ComparableItemStack, IBlockState[]> seedRenderMap = new HashMap();
-        private HashSet<ComparableItemStack> validSeeds = new HashSet<>();
-
-        @Override
-        @SideOnly(Side.CLIENT)
-        public float getRenderSize(ItemStack seed, ItemStack soil, float growth, TileEntity tile)
-        {
-            return .6675f;
-        }
-
-        @Override
-        protected HashSet<ComparableItemStack> getSeedSet() {return validSeeds;}
-
-        @Override
-        public boolean isValid(ItemStack seed)
-        {
-            return seed != null && this.getSeedSet().contains(new ComparableItemStack(seed, false, false));
-        }
-
-        @Override
-        public boolean isCorrectSoil(final ItemStack seed, final ItemStack soil)
-        {
-            IngredientStack reqSoil = (IngredientStack) this.seedSoilMap.get(new ComparableItemStack(seed, false, false));
-            return reqSoil.matchesItemStack(soil);
-        }
-
-        @Override
-        public ItemStack[] getOutput(ItemStack seed, ItemStack soil, TileEntity tile)
-        {
-            return (ItemStack[]) this.seedOutputMap.get(new ComparableItemStack(seed, false, false));
-        }
-
-        @Override
-        @SideOnly(Side.CLIENT)
-        public IBlockState[] getRenderedPlant(ItemStack seed, ItemStack soil, float growth, TileEntity tile)
-        {
-            // Will need to handle vanilla crops? IE Hemp in particular
-            IBlockState[] states = (IBlockState[]) this.seedRenderMap.get(new ComparableItemStack(seed, false, false));
-            //IBlockState[] states = null;
-            if (states == null)
-            {
-                return null;
+        BlocksTFC.getAllBlockRockVariants().forEach(x -> {
+            if (x.getType() == Rock.Type.DIRT || x.getType() == Rock.Type.GRASS || x.getType() == Rock.Type.FARMLAND) {
+                validSoils.add(new ComparableItemStack(new ItemStack(x, 1), false, false));
             }
-            else
+        });
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public float getRenderSize(ItemStack seed, ItemStack soil, float growth, TileEntity tile)
+    {
+        return .6675f;
+    }
+
+    @Override
+    public boolean isValid(ItemStack seed)
+    {
+        return seed != null && validSeeds.contains(new ComparableItemStack(seed, false, false));
+    }
+
+    @Override
+    public boolean isCorrectSoil(final ItemStack seed, final ItemStack soil)
+    {
+        return soil != null && validSoils.contains(new ComparableItemStack(soil, false, false));
+    }
+    
+    @Override
+    public float getGrowthStep(ItemStack seed, ItemStack soil, float growth, TileEntity tile, float fertilizer, boolean render)
+    {
+        return .003125f * fertilizer;
+    }
+
+    @Override
+    public ItemStack[] getOutput(ItemStack seed, ItemStack soil, TileEntity tile)
+    {
+        List<Supplier<ItemStack>> suppliers = this.seedOutputMap.get(new ComparableItemStack(seed, false, false));
+        ItemStack[] result = new ItemStack[suppliers.size()];
+        for (int i = 0; i < suppliers.size(); i++)
+        {
+            // The second get() calls the lambdas that are passed during registerTFC().
+            result[i] = suppliers.get(i).get();
+        }
+
+        return result;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public IBlockState[] getRenderedPlant(ItemStack seed, ItemStack soil, float growth, TileEntity tile)
+    {
+        // Will need to handle vanilla crops? IE Hemp in particular
+        IBlockState[] states = (IBlockState[]) this.seedRenderMap.get(new ComparableItemStack(seed, false, false));
+        //IBlockState[] states = null;
+        if (states == null)
+        {
+            return null;
+        }
+        else
+        {
+            IBlockState[] ret = new IBlockState[states.length];
+
+            label58:
+            for (int i = 0; i < states.length; ++i)
             {
-                IBlockState[] ret = new IBlockState[states.length];
-
-                label58:
-                for (int i = 0; i < states.length; ++i)
+                if (states[i] != null)
                 {
-                    if (states[i] != null)
+                    if (states[i].getBlock() instanceof BlockCrops)
                     {
-                        if (states[i].getBlock() instanceof BlockCrops)
-                        {
-                            int max = ((BlockCrops) states[i].getBlock()).getMaxAge();
-                            ret[i] = ((BlockCrops) states[i].getBlock()).withAge(Math.min(max, Math.round((float) max * growth)));
-                        }
-                        else if (states[i].getBlock() instanceof BlockCropTFC)
-                        {
-                            BlockCropTFC bs = (BlockCropTFC) states[i].getBlock();
-                            ICrop crop = bs.getCrop();
-                            int curStage = states[i].getValue(bs.getStageProperty());
-                            int maxStage = crop.getMaxStage();
-                            int age = Math.min(maxStage, Math.round(growth * maxStage));
-                            return new IBlockState[] {states[i].getBlock().getStateFromMeta(age)};
+                        int max = ((BlockCrops) states[i].getBlock()).getMaxAge();
+                        ret[i] = ((BlockCrops) states[i].getBlock()).withAge(Math.min(max, Math.round((float) max * growth)));
+                    }
+                    else if (states[i].getBlock() instanceof BlockCropTFC)
+                    {
+                        BlockCropTFC bs = (BlockCropTFC) states[i].getBlock();
+                        ICrop crop = bs.getCrop();
+                        int maxStage = crop.getMaxStage();
+                        int age = Math.min(maxStage, Math.round(growth * maxStage));
+                        return new IBlockState[] {states[i].getBlock().getStateFromMeta(age)};
+                    }
+                    //IE Block
+                    else if (states[i].getBlock() instanceof BlockIECrop)
+                    {
+                        int age = Math.min(4, Math.round(growth * 4));
+                        if (age == 4)
+                            return new IBlockState[] {states[i].getBlock().getStateFromMeta(age), states[i].getBlock().getStateFromMeta(age + 1)};
+                        return new IBlockState[] {states[i].getBlock().getStateFromMeta(age)};
+                    }
+                    else
+                    {
+                        Iterator var8 = states[i].getPropertyKeys().iterator();
 
-
-                        }
-                        //IE Block
-                        else if (states[i].getBlock() instanceof BlockIECrop)
+                        while (true)
                         {
-                            int age = Math.min(4, Math.round(growth * 4));
-                            if (age == 4)
-                                return new IBlockState[] {states[i].getBlock().getStateFromMeta(age), states[i].getBlock().getStateFromMeta(age + 1)};
-                            return new IBlockState[] {states[i].getBlock().getStateFromMeta(age)};
-                        }
-                        else
-                        {
-                            Iterator var8 = states[i].getPropertyKeys().iterator();
-
-                            while (true)
+                            IProperty prop;
+                            do
                             {
-                                IProperty prop;
                                 do
                                 {
-                                    do
+                                    if (!var8.hasNext())
                                     {
-                                        if (!var8.hasNext())
+                                        if (ret[i] == null)
                                         {
-                                            if (ret[i] == null)
-                                            {
-                                                ret[i] = states[i];
-                                            }
-                                            continue label58;
+                                            ret[i] = states[i];
                                         }
-
-                                        prop = (IProperty) var8.next();
-                                    } while (!"age".equals(prop.getName()));
-                                } while (!(prop instanceof PropertyInteger));
-
-                                int maxx = 0;
-                                Iterator var11 = ((PropertyInteger) prop).getAllowedValues().iterator();
-
-                                while (var11.hasNext())
-                                {
-                                    Integer allowed = (Integer) var11.next();
-                                    if (allowed != null && allowed > maxx)
-                                    {
-                                        maxx = allowed;
+                                        continue label58;
                                     }
-                                }
 
-                                ret[i] = states[i].withProperty(prop, Math.min(maxx, Math.round((float) maxx * growth)));
+                                    prop = (IProperty) var8.next();
+                                } while (!"age".equals(prop.getName()));
+                            } while (!(prop instanceof PropertyInteger));
+
+                            int maxx = 0;
+                            Iterator var11 = ((PropertyInteger) prop).getAllowedValues().iterator();
+
+                            while (var11.hasNext())
+                            {
+                                Integer allowed = (Integer) var11.next();
+                                if (allowed != null && allowed > maxx)
+                                {
+                                    maxx = allowed;
+                                }
                             }
+
+                            ret[i] = states[i].withProperty(prop, Math.min(maxx, Math.round((float) maxx * growth)));
                         }
                     }
                 }
-
-                return ret;
             }
-        }
 
-        @Override
-        public void register(ItemStack seed, ItemStack[] output, Object soil, IBlockState... render)
+            return ret;
+        }
+    }
+
+    public void registerTFC(ItemStack seed, ItemStack[] output, IBlockState... render)
+    {
+        ArrayList<Supplier<ItemStack>> suppliers = new ArrayList<>(output.length);
+        for (ItemStack stack : output)
         {
-            this.register(seed, output, ApiUtils.createIngredientStack(soil), render);
+            suppliers.add(() -> stack);
         }
+        registerTFC(seed, suppliers, render);
+    }
 
-        public void register(ItemStack seed, ItemStack[] output, IngredientStack soil, IBlockState... render)
-        {
-            ComparableItemStack comp = new ComparableItemStack(seed, false, false);
-            this.getSeedSet().add(comp);
-            this.seedSoilMap.put(comp, soil);
-            this.seedOutputMap.put(comp, output);
-            this.seedRenderMap.put(comp, render);
+    public void registerTFC(ItemStack seed, List<Supplier<ItemStack>> output, IBlockState... render)
+    {
+        ComparableItemStack comp = new ComparableItemStack(seed, false, false);
+        this.validSeeds.add(comp);
+        this.seedOutputMap.put(comp, output);
+        this.seedRenderMap.put(comp, render);
+    }
+}
 
-        }
-    };
+public class IERecipes
+{
+    private static final TFCJarHandler tfcBelljarHandler = new TFCJarHandler();
 
     public static void registerMetalPressRecipes()
     {
@@ -385,8 +408,7 @@ public class IERecipes
 
     public static void registerGardenClocheRecipes()
     {
-
-        java.util.List<ItemStack> soils = Lists.newArrayList();
+        List<ItemStack> soils = Lists.newArrayList();
         BelljarHandler.registerHandler(tfcBelljarHandler);
         BlocksTFC.getAllBlockRockVariants().forEach(x ->
         {
@@ -399,10 +421,18 @@ public class IERecipes
 
         for (Crop crop : Crop.values())
         {
-            tfcBelljarHandler.register(ItemSeedsTFC.get(crop, 1), new ItemStack[] {new ItemStack(ItemSeedsTFC.get(crop), 1), crop.getFoodDrop(crop.getMaxStage())}, soils, BlockCropSimple.get(crop).getDefaultState());
+            // These lambdas will be called when items are actually spawned, NOT during mod initialization.
+            // This makes sure that the items have proper creation dates, and are not copies of the original stack.
+            List<Supplier<ItemStack>> suppliers = new ArrayList<>(2);
+            suppliers.add(() -> ItemSeedsTFC.get(crop, 1));
+            suppliers.add(() -> crop.getFoodDrop(crop.getMaxStage()));
+
+            tfcBelljarHandler.registerTFC(ItemSeedsTFC.get(crop, 1), suppliers, BlockCropSimple.get(crop).getDefaultState());
         }
+
         //Hopefully this takes over from the built in handler for hemp and lets it work with Fresh_water and... stuff. Not caring enough to build it's own entire separate handler ffs
-        tfcBelljarHandler.register(new ItemStack(IEContent.itemSeeds, 1), new ItemStack[] {new ItemStack(IEContent.itemMaterial, 4, 4), new ItemStack(IEContent.itemSeeds, 1)}, soils, IEContent.blockCrop.getDefaultState());
+        tfcBelljarHandler.registerTFC(new ItemStack(IEContent.itemSeeds, 1), new ItemStack[] {new ItemStack(IEContent.itemMaterial, 4, 4), new ItemStack(IEContent.itemSeeds, 1)}, IEContent.blockCrop.getDefaultState());
+
         registerFluidFertilizer(new FluidFertilizerHandler()
         {
             @Override
